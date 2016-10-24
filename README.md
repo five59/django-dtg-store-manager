@@ -17,27 +17,34 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-1. Clone the repository.
 
-2. Add your API credentials to ```web/code/project/settings.py```. You will need to provide API_KEY and API_HASH. You can find these in your PrintAura account.
+#### Step 1
+Clone the repository.
 
-3. Build "web" first. This will install all the packages required using `pip` (these are listed in the [requirements.txt](./web/requirements.txt) file in case you're interested). This will probably take a little bit of time.
+#### Step 2
+Add your API credentials to ```web/code/project/settings.py```. You will need to provide API_KEY and API_HASH. You can find these in your PrintAura account.
+
+#### Step 3
+Build "web" first. This will install all the packages required using `pip` (these are listed in the [requirements.txt](./web/requirements.txt) file in case you're interested). This will probably take a little bit of time.
 ```
 $ docker-compose build web
 ```
 
-4. Bring up "db." This is a postgres box with a couple of volumes defined to persist data across runs. The ```-d``` argument disconnects the process from your terminal session, so you won't see any logging. Just wait a few moments before proceeding.
+#### Step 4
+Bring up "db." This is a postgres box with a couple of volumes defined to persist data across runs. The ```-d``` argument disconnects the process from your terminal session, so you won't see any logging. Just wait a few moments before proceeding.
 ```
 $ docker-compose up db -d
 ```
 (If you know of a way to force Docker to wait for dependencies to come online before starting other services, let me know. This is always a problem for me.)
 
-5. Now, you're ready to bring everything up:
+#### Step 5
+Now, you're ready to bring everything up:
 ```
 $ docker-compose up -d ; docker-compose logs -f
 ```
 
-6. In another terminal window, run the following:
+#### Step 6
+In another terminal window, run the following:
 ```
 $ docker-compose run --rm web /bin/bash
 root@xxxxxxxxxxxx:/code# ./manage.py migrate
@@ -46,16 +53,19 @@ root@xxxxxxxxxxxx:/code# ./manage.py shell_plus
 ```
 This will set up the database and then create a super user (I've left this as an interactive activity so that you can set your own credentials), and then drop you into an interactive shell.
 
-7. Now, you're ready to do an API sync from within the interactive shell:
+#### Step 7
+Now, you're ready to do an API sync from within the interactive shell:
 ```
 >>> from printaura import helper
 >>> helper.sync_api()
 ```
 Look at the ```web/code/printaura/helper.py``` file for additional calls that you can make to sync with different parts of the API.
 
-8. If all has gone well, you should now be able to visit your site at:  ```http://localhost:8015/``` and the admin interface at ```http://localhost:8015/admin```
+#### Step 8
+If all has gone well, you should now be able to visit your site at:  ```http://localhost:8015/``` and the admin interface at ```http://localhost:8015/admin```
 
-9. You might notice that no products show up on the public side. This is by design. I wanted the ability to organize products into my own categories (since sometimes the Print Aura products are categorized in odd ways). In the admin interface, simply create **Local Product Groups** and then assign **Products** to them. These will now show up in the public UI.
+#### Step 9
+You might notice that no products show up on the public side. This is by design. I wanted the ability to organize products into my own categories (since sometimes the Print Aura products are categorized in odd ways). In the admin interface, simply create **Local Product Groups** and then assign **Products** to them. These will now show up in the public UI.
 
 
 ## Depreciated Products
