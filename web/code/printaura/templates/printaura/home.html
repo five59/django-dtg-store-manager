@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5 col-md-3">
+      <div class="sidebar">
+        <ul class="nav nav-pills nav-stacked">
+          {% for group in localproductgroups %}
+          {% if group.get_num_products %}
+          <li role="presentation" {% if forloop.first %}class="active"{% endif %}>
+            <a href="#{{ group.slug }}" role="tab" data-toggle="pill">{{ group.name }} <span class="badge">{{ group.get_num_products }}</span></a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-7 col-md-9">
+      <div class="tab-content">
+        {% for group in localproductgroups %}
+        {% if group.get_num_products %}
+        <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ group.slug }}">
+          <h1>Product Library <small>{{ group.name }}</small></h1>
+          {% for product in group.get_products %}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ product.name }}</h3>
+            </div>
+            <div class="panel-body">
+
+              <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    {% if product.sku %}<th>SKU</th>{% endif %}
+                    {% if product.brand %}<th>Brand</th>{% endif %}
+                    {% if product.material_name %}<th>Material</th>{% endif %}
+                    {% if product.country %}<th>Country</th>{% endif %}
+                    {% if product.price == product.color_price %}
+                    <th>Price</th>
+                    {% else %}
+                    <th>White</th>
+                    <th>Color</th>
+                    {% if product.size_chart_image_url %}<th>Size Chart</th>{% endif %}
+                  {% endif %}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% if product.sku %}<td>{{ product.sku }}</td>{% endif %}
+                    {% if product.brand %}<td>{{ product.brand }}</td>{% endif %}
+                    {% if product.material_name %}<td>{{ product.material_name }}</td>{% endif %}
+                    {% if product.country %}<td>{{ product.country }}</td>{% endif %}
+                    {% if product.price == product.color_price %}
+                    <td>${{ product.price }}</td>
+                    {% else %}
+                    <td>${{ product.price }}</td>
+                    <td>${{ product.color_price }}</td>
+                    {% if product.size_chart_image_url %}
+                    <td><a role="button" class="btn btn-default" href="{{ product.size_chart_image_url }}" target="_blank">Size Chart</a></td>
+                    {% endif %}
+                    {% endif %}
+                  </tr>
+                </tbody>
+              </table>
+
+              <div>
+              {% if product.image %}
+              <div style="float: left; margin-right: 1em; max-width: 200px;" class="thumbnail">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+                </div>
+                {% endif %}
+              {{ product.inventory_description|striptags }}</div>
+
+              <div>
+              {% for variant in product.get_variants %}
+                <div class="variant-chip">
+                  <div class="chip" style="background-color: #{{ variant.color.code }}"></div>
+                  <div class="detail"><strong>{{ variant.color.name }}&nbsp;</strong><br />{{ variant.size.name }}&nbsp;</div>
+                </div>
+              {% endfor %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function() {
+  $().tab
+});
+</script>
+
+{% endblock %}
