@@ -16,12 +16,36 @@ class Brand(models.Model):
     aura_id = models.IntegerField(verbose_name="Aura ID")
     name = models.CharField(verbose_name="Name", max_length=255, default="", blank=True)
     slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
+
+    image_height = models.CharField(blank=True, null=True, default="", max_length=100)
+    image_width = models.CharField(blank=True, null=True, default="", max_length=100)
+    image = models.ImageField(verbose_name="Brand Logo", upload_to="brand/",
+                              blank=True, null=True,
+                              height_field='image_height', width_field="image_width")
+    web_url = models.URLField(blank=True, verbose_name="Website URL")
+    description = models.TextField(blank=True, default="")
+
     class Meta:
         ordering = ('name',)
         verbose_name = "Brand"
         verbose_name_plural = "Brands"
     def __str__(self):
         return self.name
+    def has_logo(self):
+        if self.image:
+            return True
+        return False
+    has_logo.boolean = True
+    has_logo.short_description = "Logo?"
+    def has_description(self):
+        if self.description:
+            return True
+        return False
+    has_description.boolean = True
+    has_description.short_description = "Description?"
+    def get_num_products(self):
+        return Product.objects.filter(brand=self).count()
+    get_num_products.short_description="Product Count"
 
 class Size(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -36,6 +60,10 @@ class Size(models.Model):
         verbose_name_plural = "Sizes"
     def __str__(self):
         return self.name
+    def get_num_productvariants(self):
+        return ProductVariant.objects.filter(size=self).count()
+    get_num_productvariants.short_description = 'Product Variant Count'
+
 
 class Color(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -127,6 +155,13 @@ class Country(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=64, default="", blank=True, verbose_name="Name")
     slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
+
+    image_height = models.CharField(blank=True, null=True, default="", max_length=100)
+    image_width = models.CharField(blank=True, null=True, default="", max_length=100)
+    image = models.ImageField(verbose_name="Country Flag", upload_to="country/",
+                              blank=True, null=True,
+                              height_field='image_height', width_field="image_width")
+
     def __str__(self):
         return self.name
     class Meta:
@@ -162,21 +197,31 @@ class Product(models.Model):
     size_chart_image_url = models.URLField(verbose_name="Size Chart URL", blank=True)
     brand = models.ForeignKey(Brand, null=True, blank=True)
     productgroup = models.ForeignKey(ProductGroup, null=True, blank=True, verbose_name="Product Group")
-    localproductgroup = models.ForeignKey(LocalProductGroup, null=True, blank=True, verbose_name="Local Product Group")
     country = models.ForeignKey(Country, null=True, blank=True)
 
-    # image_height = models.CharField(blank=True, null=True, default="", max_length=100)
-    # image_width = models.CharField(blank=True, null=True, default="", max_length=100)
+    # Local Fields
+    image_height = models.CharField(blank=True, null=True, default="", max_length=100)
+    image_width = models.CharField(blank=True, null=True, default="", max_length=100)
     image = models.ImageField(verbose_name="Product Image", upload_to="product/",
-                              blank=True, null=True)
-                            #   height_field=image_height, width_field=image_width)
+                              blank=True, null=True,
+                              height_field='image_height', width_field="image_width")
+    local_sku = models.CharField(verbose_name="SKU", max_length=50, default="", blank=True)
+    local_name = models.CharField(verbose_name="Name", max_length=255, default="", blank=True)
+    localproductgroup = models.ForeignKey(LocalProductGroup, null=True, blank=True, verbose_name="Local Product Group")
+    local_description = models.TextField(verbose_name="Description", default="", blank=True)
 
     class Meta:
         ordering = ('productgroup','brand','name','sku',)
         verbose_name = "Product"
         verbose_name_plural = "Products"
     def __str__(self):
+        return self.get_name()
+
+    def get_name(self):
+        if self.local_name:
+            return self.local_name
         return self.name
+    get_name.short_description="Name"
 
     def get_variants(self):
         return ProductVariant.objects.filter(product=self)
@@ -208,8 +253,19 @@ class ProductVariant(models.Model):
     product = models.ForeignKey(Product)
     color = models.ForeignKey(Color, null=True, blank=True)
     size = models.ForeignKey(Size, null=True, blank=True)
+
+    image_height = models.CharField(blank=True, null=True, default="", max_length=100)
+    image_width = models.CharField(blank=True, null=True, default="", max_length=100)
+    image = models.ImageField(verbose_name="Variant Image", upload_to="product/",
+                              blank=True, null=True,
+                              height_field='image_height', width_field="image_width")
+    local_sku = models.CharField(verbose_name="SKU", max_length=50, default="", blank=True)
+
     def get_sku(self):
         rv_c, rv_s = "XX"
+        if self.local_sku:
+            return self.local_sku
+
         if self.color:
             rv_c = self.color.aura_id
         if self.size:
@@ -222,3 +278,9 @@ class ProductVariant(models.Model):
         verbose_name = "Product Variant"
         verbose_name_plural = "Product Variants"
         ordering = ('-color__code','size__aura_id',)
+    def has_image(self):
+        if self.image:
+            return True
+        return False
+    has_image.boolean = True
+    has_image.short_description = "Image?"
