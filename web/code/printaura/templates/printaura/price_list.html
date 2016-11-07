@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static humanize markup_tags %}
+{% block content %}
+
+<div class="container-fluid">
+
+  <div class="col-md-12">
+    <h1>Price List</h1>
+  </div>
+<style>
+@media print {
+	.page-break	{ display: block; page-break-before: always; }
+}
+</style>
+  <div class="row">
+    <div class="col-md-12">
+      {% for group in groups %}
+      <div class="page-break"></div>
+      <table class="table table-hover">
+        <tr><th colspan='2'><h4>{{ group.name }} <small>{{ group.get_num_products }} Products</small></h4></th></tr>
+        {% for product in group.get_products %}
+          <tr>
+            <td class="col-md-3">
+              <strong>SKU: <a href="{% url 'printaura_product_detail' product.slug %}">{{ product.get_sku }}</a></strong><br/>
+              {{ product.get_name }}<br />
+              <a href="{% url 'printaura_brand_detail' product.brand.slug %}">{{ product.brand.name }}</a> /
+              {{ product.get_pricing|safe }}</td>
+            <td class="col-md-9"><small>
+              {% for variant in product.get_variants %}
+              <div class="variant-panel">
+                <div class="variant-minichip" style="background-color: #{{ variant.color.code }};"></div>
+                <div class="variant-label">{{ variant.get_sku }} / {{ variant.color.name }}</div>
+              </div>
+              {% endfor %}</small>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+$( document ).ready(function() {
+
+});
+</script>
+
+{% endblock %}

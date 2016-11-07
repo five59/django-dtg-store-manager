@@ -4,8 +4,8 @@ services:
   db:
     build: ./db
     volumes:
-      - /var/lib/postgresql
-      - /run/postgresql
+      - ./db/dblib:/var/lib/postgresql
+      - ./db/dbrun:/run/postgresql
 
   web:
     build: ./web

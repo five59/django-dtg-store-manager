@@ -1,59 +1,82 @@
 {% extends "base.html" %}
-{% load static markup_tags humanize %}
+{% load static humanize markup_tags %}
 {% block content %}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12 col-md-12">
-      <ol class="breadcrumb">
-        <li><a href="{% url 'printaura_home' %}">Home</a></li>
-        <li class="active">Group: {{ group.name }}</li>
-      </ol>
 
-      <h1>{{ group.name }}</h1>
+<div class="container-fluid">
+
+  <div class="col-md-12">
+    <h1>{{ group.name }}</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      {% for product in group.get_products %}
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">{{ product.get_name }}</h4>
+          <table class="table table-condensed">
+            <tr>
+              <td class="col-md-3"><a href="{% url 'printaura_brand_detail' product.brand.slug %}">
+                {% if product.brand.image %}
+                  <img src="{{ product.brand.image.url }}" style="max-width:10em; max-height: 7em;" />
+                {% else %}
+                  <strong>{{ product.brand.name }}</strong>
+                {% endif %}</a>
+              </td>
+              <td class="col-md-2">SKU<br/><strong>{{product.get_sku}}</strong></td>
+              {% if product.is_tiered_pricing %}
+              <td class="col-md-2">Tier 1: <strong>${{ product.price }}</strong><br />
+                {% for variant in product.get_variants_white %}
+                <div class="variant-panel">
+                  <div class="variant-minichip" style="background-color: #{{ variant.color.code }};"></div>
+                  <div class="variant-label">{{ variant.color.name }}</div>
+                </div>                {% endfor %}
+              </td>
+              <td class="col-md-5">Tier 2: <strong>${{ product.color_price }}</strong><br />
+                {% for variant in product.get_variants_color %}
+                <div class="variant-panel">
+                  <div class="variant-minichip" style="background-color: #{{ variant.color.code }};"></div>
+                  <div class="variant-label">{{ variant.color.name }}</div>
+                </div>                {% endfor %}
+              </td>
+              {% else %}
+              <td class="col-md-7">Cost: <strong>${{ product.price }}</strong><br />
+                {% for variant in product.get_variants %}
+                <div class="variant-panel">
+                  <div class="variant-minichip" style="background-color: #{{ variant.color.code }};"></div>
+                  <div class="variant-label">{{ variant.color.name }}</div>
+                </div>
+                {% endfor %}
+              </td>
+              {% endif %}
+
+            </tr>
+          </table>
+
+      </div>
+      <div class="media-right">
+        <a href="{% url 'printaura_product_detail' product.slug %}">
+          {% if product.image %}
+          <img class="media-object productimage" src="{{ product.image.url }}" alt="{{ product.name }}" />
+          {% endif %}
+        </a>
+      </div>
+
+      {% endfor %}
+      {{ variant.get_sku }}
+      {{ variant.color.name }}
+      {{ variant.size.name }}
+
+
     </div>
   </div>
 </div>
-
-<div class="container-fluid">
-  <div class="grid">
-    <div class="grid-sizer col-md-2"></div>
-    {% for product in group.get_products %}
-    <div class="grid-item col-md-4">
-      <div class="grid-item-content">
-        <a class="thumbnail" style="text-align: center;" href="{% url 'printaura_product_detail' product.slug %}">
-          <div class="caption"><strong>{{ product.name }}</strong></div>
-          {% if product.image %}
-          <img class="img-responsive auragrid" src="{{ product.image.url }}" alt="{{ product.name }}" />
-          {% endif %}
-          <div class="caption">
-            <small>
-              <table class="table" style="padding-bottom: 0; margin-bottom: 0;" width="100%">
-                <tr>
-                  <td>Brand<br/><strong>{{product.brand}}</strong></td>
-                  <td>SKU<br/><strong>{{product.sku}}</strong></td>
-                  <td>Variants<br/><strong>{{ product.get_num_variants|apnumber|capfirst }}</strong></td>
-                </tr>
-              </table>
-            </small>
-          </div>
-        </a>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
 </div>
 
 <script>
 $( document ).ready(function() {
 
-  $('.grid').masonry({
-    itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-    columnWidth: '.grid-sizer',
-    percentPosition: true
-  });
-
 });
-
 </script>
 
 {% endblock %}

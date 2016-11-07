@@ -1,0 +1,320 @@
+{
+    "colors": [
+        {
+            "id": "095",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10440_swatch-sm-095.jpg)",
+            "name": "Sport Grey"
+        },
+        {
+            "id": "098",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10441_swatch-sm-098.jpg)",
+            "name": "Daisy"
+        },
+        {
+            "id": "105",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10442_swatch-sm-105.jpg)",
+            "name": "Dark Chocolate"
+        },
+        {
+            "id": "106",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10443_swatch-sm-106.jpg)",
+            "name": "Military Green"
+        },
+        {
+            "id": "091",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10436_swatch-sm-091.jpg)",
+            "name": "Tan"
+        },
+        {
+            "id": "093",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10438_swatch-sm-093.jpg)",
+            "name": "Ash Grey"
+        },
+        {
+            "id": "108",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10444_swatch-sm-108.jpg)",
+            "name": "Dark Heather"
+        },
+        {
+            "id": "109",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10446_swatch-sm-109.jpg)",
+            "name": "Carolina Blue"
+        },
+        {
+            "id": "167",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10447_swatch-sm-167.jpg)",
+            "name": "Irish Green"
+        },
+        {
+            "id": "168",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10449_swatch-sm-168.jpg)",
+            "name": "Pistachio"
+        },
+        {
+            "id": "246",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10470_swatch-sm-246.jpg)",
+            "name": "Antique Cherry Red"
+        },
+        {
+            "id": "248",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10472_swatch-sm-248.jpg)",
+            "name": "Antique Irish Green"
+        },
+        {
+            "id": "253",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10475_swatch-sm-253.jpg)",
+            "name": "Antique Royal"
+        },
+        {
+            "id": "475",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10507_swatch-sm-475.jpg)",
+            "name": "Cornsilk"
+        },
+        {
+            "id": "076",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10429_swatch-sm-076.jpg)",
+            "name": "Blue Dusk"
+        },
+        {
+            "id": "455",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10506_swatch-sm-455.jpg)",
+            "name": "Mint Green"
+        },
+        {
+            "id": "078",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10430_swatch-sm-078.jpg)",
+            "name": "Metro Blue"
+        },
+        {
+            "id": "067",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10426_swatch-sm-067.jpg)",
+            "name": "Prairie Dust"
+        },
+        {
+            "id": "069",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10427_swatch-sm-069.jpg)",
+            "name": "Light Blue"
+        },
+        {
+            "id": "056",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10425_swatch-sm-056.jpg)",
+            "name": "Iris"
+        },
+        {
+            "id": "083",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10433_swatch-sm-083.jpg)",
+            "name": "Maroon"
+        },
+        {
+            "id": "084",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10434_swatch-sm-084.jpg)",
+            "name": "Chestnut"
+        },
+        {
+            "id": "080",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10431_swatch-sm-080.jpg)",
+            "name": "Indigo Blue"
+        },
+        {
+            "id": "081",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10432_swatch-sm-081.jpg)",
+            "name": "Purple"
+        },
+        {
+            "id": "264",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10483_swatch-sm-264.jpg)",
+            "name": "Galapagos Blue"
+        },
+        {
+            "id": "263",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10482_swatch-sm-263.jpg)",
+            "name": "Safety Pink"
+        },
+        {
+            "id": "029",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10412_swatch-sm-029.jpg)",
+            "name": "Jade Dome"
+        },
+        {
+            "id": "033",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10416_swatch-sm-033.jpg)",
+            "name": "Forest Green"
+        },
+        {
+            "id": "035",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10417_swatch-sm-035.jpg)",
+            "name": "Tangerine"
+        },
+        {
+            "id": "036",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10418_swatch-sm-036.jpg)",
+            "name": "Black"
+        },
+        {
+            "id": "037",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10419_swatch-sm-037.jpg)",
+            "name": "Orange"
+        },
+        {
+            "id": "038",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10420_swatch-sm-038.jpg)",
+            "name": "Sand"
+        },
+        {
+            "id": "039",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10421_swatch-sm-039.jpg)",
+            "name": "Olive"
+        },
+        {
+            "id": "040",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10422_swatch-sm-040.jpg)",
+            "name": "Red"
+        },
+        {
+            "id": "042",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10423_swatch-sm-042.jpg)",
+            "name": "Charcoal"
+        },
+        {
+            "id": "051",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10424_swatch-sm-051.jpg)",
+            "name": "Royal"
+        },
+        {
+            "id": "032",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10415_swatch-sm-032.jpg)",
+            "name": "Navy"
+        },
+        {
+            "id": "071",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10428_swatch-sm-071.jpg)",
+            "name": "Azalea"
+        },
+        {
+            "id": "217",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10461_swatch-sm-217.jpg)",
+            "name": "Heather Sapphire"
+        },
+        {
+            "id": "030",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10413_swatch-sm-030.jpg)",
+            "name": "White"
+        },
+        {
+            "id": "194",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10459_swatch-sm-194.jpg)",
+            "name": "Cherry Red"
+        },
+        {
+            "id": "010",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10402_swatch-sm-010.jpg)",
+            "name": "Heliconia"
+        },
+        {
+            "id": "011",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10403_swatch-sm-011.jpg)",
+            "name": "Cardinal Red"
+        },
+        {
+            "id": "009",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10401_swatch-sm-009.jpg)",
+            "name": "Stone Blue"
+        },
+        {
+            "id": "019",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10406_swatch-sm-019.jpg)",
+            "name": "Vegas Gold"
+        },
+        {
+            "id": "020",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10407_swatch-sm-020.jpg)",
+            "name": "Light Pink"
+        },
+        {
+            "id": "012",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10404_swatch-sm-012.jpg)",
+            "name": "Lime"
+        },
+        {
+            "id": "017",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10405_swatch-sm-017.jpg)",
+            "name": "Kelly Green"
+        },
+        {
+            "id": "026",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10411_swatch-sm-026.jpg)",
+            "name": "Sapphire"
+        },
+        {
+            "id": "023",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10408_swatch-sm-023.jpg)",
+            "name": "Ice Grey"
+        },
+        {
+            "id": "024",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10409_swatch-sm-024.jpg)",
+            "name": "Gold"
+        },
+        {
+            "id": "193",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10458_swatch-sm-193.jpg)",
+            "name": "S Orange"
+        },
+        {
+            "id": "191",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10457_swatch-sm-191.jpg)",
+            "name": "Orchid"
+        },
+        {
+            "id": "169",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10450_swatch-sm-169.jpg)",
+            "name": "Heather Cardinal"
+        },
+        {
+            "id": "173",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10452_swatch-sm-173.jpg)",
+            "name": "Heather Indigo"
+        },
+        {
+            "id": "170",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10451_swatch-sm-170.jpg)",
+            "name": "Heather Navy"
+        },
+        {
+            "id": "031",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10414_swatch-sm-031.jpg)",
+            "name": "Natural"
+        },
+        {
+            "id": "187",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10454_swatch-sm-187.jpg)",
+            "name": "Sky"
+        },
+        {
+            "id": "186",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10453_swatch-sm-186.jpg)",
+            "name": "Kiwi"
+        },
+        {
+            "id": "025",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10232_swatch-sm-025.jpg)",
+            "name": "Texas Orange"
+        },
+        {
+            "id": "188",
+            "imageurl": "http://www.mygildan.com/images/MEDIA_CustomProductCatalog/m10455_swatch-sm-188.jpg)",
+            "name": "Safety Green"
+        }
+    ],
+    "name": "Gildan\u00ae Ultra Cotton\u00ae Adult T-Shirt",
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+    ]
+}

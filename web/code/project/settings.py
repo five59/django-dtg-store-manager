@@ -18,8 +18,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'mptt',
+    'django_mptt_admin',
     'django_markup',
     'printaura',
+    'printful',
+    'master',
+    'catalog',
 ]
 
 MIDDLEWARE = [
@@ -86,15 +91,62 @@ STATIC_ROOT = os.path.join(BASE_DIR, '_static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
-API_KEY = '' # This should be defined in a local_settings.py file.
-API_HASH = '' # This should be defined in a local_settings.py file.
-API_URL = 'https://api.printaura.com/api.php'
-
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Print Aura',
-    # 'MENU': (
-    #     {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
-    # ),
+    'ADMIN_NAME': '559 Labs / eShop Manager',
+    'MENU': (
+         {
+            'label': 'Catalog',
+            'icon': 'icon-cog',
+            'models': (
+                'master.Outlet',
+                'master.PODVendor',
+                'master.Brand',
+                'master.Product',
+            ),
+         },
+         {
+             'label': 'Creative',
+             'icon': 'icon-cog',
+             'models': (
+                'master.Artist',
+                'master.Creative',
+                'master.CreativeSeries',
+             ),
+         },
+         {
+            'label': 'Metadata',
+            'icon': 'icon-cog',
+            'models': (
+                'master.Category',
+                'master.GoogleCategory',
+                'master.Color',
+                'master.Size',
+                'master.Variant',
+            ),
+         },
+         {
+            'label': 'Vendor Catalogs',
+            'icon': 'icon-cog',
+            'models': (
+                'master.VendorProduct',
+                'master.VendorVariant',
+                'master.VendorCategory',
+                'master.VendorBrand',
+                'master.VendorColor',
+                'master.VendorSize',
+            ),
+          },
+         {
+             'label': 'Catalog',
+             'icon': 'icon-cog',
+             'app': 'catalog',
+         },
+         {
+             'label': 'Security',
+             'icon': 'icon-cog',
+             'app': 'auth',
+          },
+    )
 }
 
 from .local_settings import *
