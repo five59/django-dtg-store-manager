@@ -52,6 +52,5 @@ venv/
 
 web/code/_media/
 web/code/_static/
-_backup/
 db/dbrun/
 db/dbdata/

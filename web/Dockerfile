@@ -11,4 +11,4 @@ RUN apt-get update && apt-get upgrade -y && apt-get install graphviz -y
 ADD ./code /code/
 
 RUN mkdir -p /root/.ptpython && touch /root/.ptpython/config.py
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
