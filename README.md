@@ -1,9 +1,10 @@
-# Print Aura API Sync
+# Django DTG (Direct-to-Garment) Store Manager
 
-A Django/Python-based app that syncs the Print Aura API locally to provide tools and visibility into your products to make it easier to manage.
+A Django/Python-based app that syncs DTG vendor APIs locally to provide tools and visibility into your products to make it easier to manage.
 
-I created this tool to allow me to make it easier to see all of my options for designing dropship printing products through Print Aura.
+I created this tool to allow me to make it easier to see all of my options for designing dropship printing products through Print Aura and The Printful.
 
+*WARNING* The instructions below are outdated. Please use caution.
 
 ## Getting Started
 
