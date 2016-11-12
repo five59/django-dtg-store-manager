@@ -7,7 +7,8 @@ from django.apps import apps
 from django.core import serializers
 from django.core import management
 from django.db import DEFAULT_DB_ALIAS, router
-from django.core.management.utils import parse_apps_and_model_labels
+from django.core.management.utils import *
+# from django.core.management.utils import parse_apps_and_model_labels
 from django.core.management.commands import dumpdata
 from django.core.management.base import BaseCommand, CommandError
 

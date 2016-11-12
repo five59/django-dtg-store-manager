@@ -52,5 +52,6 @@ venv/
 
 web/code/_media/
 web/code/_static/
+web/code/_fixtures/*.json
 db/dbrun/
-db/dbdata/
+db/dblib/

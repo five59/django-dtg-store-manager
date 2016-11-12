@@ -23,28 +23,18 @@ These instructions will get you a copy of the project up and running on your loc
 Clone the repository.
 
 #### Step 2
-Add your API credentials to ```web/code/project/settings.py```. You will need to provide API_KEY and API_HASH. You can find these in your PrintAura account.
-
-#### Step 3
 Build "web" first. This will install all the packages required using `pip` (these are listed in the [requirements.txt](./web/requirements.txt) file in case you're interested). This will probably take a little bit of time.
 ```
 $ docker-compose build web
 ```
 
-#### Step 4
-Bring up "db." This is a postgres box with a couple of volumes defined to persist data across runs. The ```-d``` argument disconnects the process from your terminal session, so you won't see any logging. Just wait a few moments before proceeding.
-```
-$ docker-compose up db -d
-```
-(If you know of a way to force Docker to wait for dependencies to come online before starting other services, let me know. This is always a problem for me.)
-
-#### Step 5
+#### Step 3
 Now, you're ready to bring everything up:
 ```
 $ docker-compose up -d ; docker-compose logs -f
 ```
 
-#### Step 6
+#### Step 4
 In another terminal window, run the following:
 ```
 $ docker-compose run --rm web /bin/bash
@@ -54,18 +44,10 @@ root@xxxxxxxxxxxx:/code# ./manage.py shell_plus
 ```
 This will set up the database and then create a super user (I've left this as an interactive activity so that you can set your own credentials), and then drop you into an interactive shell.
 
-#### Step 7
-Now, you're ready to do an API sync from within the interactive shell:
-```
->>> from printaura import helper
->>> helper.sync_api()
-```
-Look at the ```web/code/printaura/helper.py``` file for additional calls that you can make to sync with different parts of the API.
-
-#### Step 8
+#### Step 5
 If all has gone well, you should now be able to visit your site at:  ```http://localhost:8015/``` and the admin interface at ```http://localhost:8015/admin```
 
-#### Step 9
+#### Step 6
 You might notice that no products show up on the public side. This is by design. I wanted the ability to organize products into my own categories (since sometimes the Print Aura products are categorized in odd ways). In the admin interface, simply create **Local Product Groups** and then assign **Products** to them. These will now show up in the public UI.
 
 
@@ -105,4 +87,5 @@ This open source software is licensed under the **Apache License 2.0** (see [LIC
 
 ## Acknowledgments
 
-* [Print Aura](http://www.printaura.com/) - Print Aura is white-label solution for companies to have t-shirts printed on demand under YOUR BRAND. Print Aura makes t-shirt drop shipping easy. You control your customer information, we just print and ship and it all appears that it came from you.
+* [Print Aura](http://www.printaura.com/)
+* [The Printful](http://theprintful.com/)
