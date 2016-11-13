@@ -15,6 +15,7 @@ class ItemInline(admin.TabularInline):
 
 class ManufacturerAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'has_key', ]
+    search_fields = ['code', 'name', ]
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -40,14 +41,23 @@ class CategoryAdmin(DraggableMPTTAdmin):
         'tree_actions',
         'indented_title',
     ]
-    # list_display_links = (
-    #     'indented_title',
-    # ),
+    search_fields = ['code', 'name', ]
+    fieldsets = [
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['code', 'name', 'parent'],
+        }),
+    ]
+    suit_form_tabs = (
+        ('info', _("Info")),
+        ('products', _("Items")),
+    )
+    inlines = (ItemInline, )
 admin.site.register(Category, CategoryAdmin)
 
 
 class GoogleCategoryAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['code', 'name', ]
 admin.site.register(GoogleCategory, GoogleCategoryAdmin)
 
 
@@ -59,6 +69,7 @@ class ColorAdmin(admin.ModelAdmin):
         'hex_code',
         'r_value', 'g_value', 'b_value',
     ]
+    search_fields = ['code', 'name', ]
     list_filter = ['pms_family', ]
     fieldsets = [
         (None, {
@@ -96,6 +107,7 @@ class BrandAdmin(admin.ModelAdmin):
     # list_editable = ['code', ]
     inlines = [ItemInline, ]
     form = BrandForm
+    search_fields = ['code', 'name', ]
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -118,17 +130,14 @@ class BrandAdmin(admin.ModelAdmin):
 admin.site.register(Brand, BrandAdmin)
 
 
-class ItemAdmin(ForeignKeyAutocompleteAdmin):
+class ItemAdmin(admin.ModelAdmin):
     list_display = [
         'code', 'name',
         'brand', 'category', 'googlecategory',
         'age_group', 'gender', 'size_type',
     ]
-    # related_search_fields = {
-    #     'brand': ('name',),
-    #     'category': ('name',),
-    #     'googlecategory': ('name',),
-    # }
+    list_editable = ['category', ]
+    search_fields = ['name', 'code', ]
     list_filter = (
         ('brand', admin.RelatedOnlyFieldListFilter),
         ('category', admin.RelatedOnlyFieldListFilter),
@@ -203,6 +212,8 @@ admin.site.register(Item, ItemAdmin)
 
 class ItemVariantAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'product', 'color', 'size', ]
+    search_fields = ['name', 'code', 'product__name', ]
+
     fieldsets = [
         (None, {
             'classes': ['suit-tab', 'suit-tab-info', ],
