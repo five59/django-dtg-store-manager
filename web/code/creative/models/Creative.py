@@ -44,13 +44,24 @@ class Creative(models.Model):
     status_tag.allow_tags = True
 
     def __str__(self):
-        if self.code and self.name:
-            return "[{}] {}".format(self.code, self.name)
+        rv = ""
+        try:
+            if self.series.code:
+                rv = "{}-".format(self.series.code)
+            else:
+                rv = "000-"
+        except:
+            pass
+        if self.code:
+            rv = "{}{} / ".format(rv, self.code)
+        else:
+            rv = "".join([rv, "00"])
         if self.name:
-            return "{}".format(self.name)
+            return "{}{}".format(rv, self.name)
         return _("Unnamed Creative")
 
     class Meta:
         verbose_name = _("Creative")
         verbose_name_plural = _("Creative")
-        ordering = ['name', 'code', ]
+        ordering = ['series__code', 'code', 'name', ]
+        # ordering = ['name', 'code', ]

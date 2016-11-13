@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
+from catalog import models as c
+# from .Item import Item
 
 
 class Brand(models.Model):
@@ -43,10 +45,10 @@ class Brand(models.Model):
     has_description.short_description = _("Description?")
 
     def get_num_products(self):
-        raise NotImplementedError
+        return c.Item.objects.filter(brand=self).count()
 
     def get_products(self):
-        raise NotImplementedError
+        return c.Item.objects.filter(brand=self)
 
     def __str__(self):
         if self.code and self.name:

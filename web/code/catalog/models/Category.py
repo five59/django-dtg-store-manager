@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
 # from .Item import Item
+from catalog import models as c
 
 
 class Category(MPTTModel):
@@ -15,7 +16,7 @@ class Category(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
 
     def num_products(self):
-        return Item.objects.filter(category=self).count()
+        return c.Item.objects.filter(category=self).count()
 
     def __str__(self):
         if self.code and self.name:

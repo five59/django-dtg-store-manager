@@ -4,9 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
-from .Brand import Brand
-from .Category import Category
-from .GoogleCategory import GoogleCategory
+# from .Brand import Brand
+# from .Category import Category
+# from .GoogleCategory import GoogleCategory
+from catalog import models as c
 
 
 class Item(models.Model):
@@ -73,9 +74,9 @@ class Item(models.Model):
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
 
-    brand = models.ForeignKey(Brand, blank=True, null=True)
-    category = models.ForeignKey(Category, blank=True, null=True)
-    googlecategory = TreeForeignKey(GoogleCategory, verbose_name=_(
+    brand = models.ForeignKey(c.Brand, blank=True, null=True)
+    category = models.ForeignKey(c.Category, blank=True, null=True)
+    googlecategory = TreeForeignKey(c.GoogleCategory, verbose_name=_(
         "Google Category"), blank=True, null=True)
 
     age_group = models.CharField(_("Age Group"), max_length=1,

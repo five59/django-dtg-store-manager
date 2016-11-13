@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 from django_extensions.db import fields as extension_fields
 import uuid
+# from catalog import models as c
 
 
 class GoogleCategory(MPTTModel):

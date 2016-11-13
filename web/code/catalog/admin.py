@@ -101,7 +101,8 @@ class BrandAdmin(admin.ModelAdmin):
         'name',
         'code',
         'has_logo', 'has_description',
-        # 'num_vendors','get_num_products',
+        # 'num_vendors',
+        'get_num_products',
         'consumer_url', 'wholesale_url'
     ]
     # list_editable = ['code', ]

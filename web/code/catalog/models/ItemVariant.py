@@ -3,9 +3,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
-from .Item import Item
-from .Color import Color
-from .Size import Size
+# from .Item import Item
+# from .Color import Color
+# from .Size import Size
+from catalog import models as c
 
 
 class ItemVariant(models.Model):
@@ -13,7 +14,7 @@ class ItemVariant(models.Model):
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
 
-    product = models.ForeignKey(Item, null=True, blank=True)
+    product = models.ForeignKey(c.Item, null=True, blank=True)
 
     name = models.CharField(_("Name"), max_length=150, default="",
                             blank=True, null=True, help_text="")
@@ -26,8 +27,8 @@ class ItemVariant(models.Model):
                               height_field="image_height", width_field="image_width", blank=True, null=True, help_text="")
     link = models.URLField(_("Item URL"), default="", blank=True, null=True, help_text="")
 
-    color = models.ForeignKey(Color, blank=True, null=True)
-    size = models.ForeignKey(Size, blank=True, null=True)
+    color = models.ForeignKey(c.Color, blank=True, null=True)
+    size = models.ForeignKey(c.Size, blank=True, null=True)
 
     def __str__(self):
         if self.code and self.name:
