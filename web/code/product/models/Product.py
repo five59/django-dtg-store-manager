@@ -4,8 +4,8 @@ from django.core.urlresolvers import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 from django_extensions.db import fields as extension_fields
 import uuid
-from creative.models import *
-from catalog.models import *
+from creative import models as cr
+from catalog import models as ca
 
 
 class Product(models.Model):
@@ -13,10 +13,10 @@ class Product(models.Model):
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
-    creative = models.ForeignKey(Creative, verbose_name=_("Creative"), blank=True, null=True)
-    item = models.ForeignKey(Item, verbose_name=_("Item"), blank=True, null=True)
+    creative = models.ForeignKey(cr.Creative, verbose_name=_("Creative"), blank=True, null=True)
+    item = models.ForeignKey(ca.Item, verbose_name=_("Item"), blank=True, null=True)
     sales_channel = models.ForeignKey(
-        SalesChannel, verbose_name=_("Sales Channel"), null=True, blank=True)
+        cr.SalesChannel, verbose_name=_("Sales Channel"), null=True, blank=True)
 
     def __str__(self):
         if self.code and self.name:

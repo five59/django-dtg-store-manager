@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
-# from .Creative import Creative
+# from creative import models as c
 
 
 class Artist(models.Model):

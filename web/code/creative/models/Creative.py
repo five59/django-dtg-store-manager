@@ -3,8 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
-from .Artist import Artist
-from .Series import Series
+from creative import models as c
 
 
 class Creative(models.Model):
@@ -23,8 +22,8 @@ class Creative(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    series = models.ForeignKey(Series, null=True, blank=True)
-    artist = models.ForeignKey(Artist, null=True, blank=True)
+    series = models.ForeignKey(c.Series, null=True, blank=True)
+    artist = models.ForeignKey(c.Artist, null=True, blank=True)
     status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=1,
                               default=STATUS_NEW, null=True, blank=True)
     note = models.TextField(_("Note"), null=True, blank=True)
@@ -64,4 +63,3 @@ class Creative(models.Model):
         verbose_name = _("Creative")
         verbose_name_plural = _("Creative")
         ordering = ['series__code', 'code', 'name', ]
-        # ordering = ['name', 'code', ]
