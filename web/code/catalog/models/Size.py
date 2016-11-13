@@ -25,4 +25,4 @@ class Size(models.Model):
     class Meta:
         verbose_name = _("Size")
         verbose_name_plural = _("Sizes")
-        ordering = ['grouping', 'sortorder', ]
+        ordering = ['sortorder', 'grouping', ]

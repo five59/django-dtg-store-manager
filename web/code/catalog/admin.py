@@ -13,6 +13,13 @@ class ItemInline(admin.TabularInline):
     suit_classes = 'suit-tab suit-tab-products'
 
 
+class VendorVariantInline(admin.TabularInline):
+    model = VendorVariant
+    extra = 0
+    fields = ['name', 'code', ]
+    suit_classes = 'suit-tab suit-tab-vendorvariant'
+
+
 class ManufacturerAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'has_key', ]
     search_fields = ['code', 'name', ]
@@ -92,7 +99,8 @@ admin.site.register(Color, ColorAdmin)
 
 
 class SizeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'grouping', 'sortorder', ]
+    list_filter = ['grouping', ]
 admin.site.register(Size, SizeAdmin)
 
 
@@ -233,3 +241,71 @@ class ItemVariantAdmin(admin.ModelAdmin):
         ('info', _('Info')),
     )
 admin.site.register(ItemVariant, ItemVariantAdmin)
+
+
+class VendorItemAdmin(admin.ModelAdmin):
+    list_display = ('code', 'name', 'manufacturer',
+                    'brand', 'category', 'image_url')
+    search_fields = ('name', 'code',)
+    inlines = (VendorVariantInline,)
+    list_filter = ['manufacturer', ]
+    readonly_fields = ('dt_added', 'dt_updated',)
+    fieldsets = [
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['code', 'name', 'manufacturer', ]
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['brand', 'category', ]
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['image_url', ]
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['is_active', 'dt_added', 'dt_updated', ],
+        }),
+    ]
+    suit_form_tabs = (
+        ('info', _('Info')),
+        ('vendorvariant', _('Vendor Variants')),
+    )
+
+admin.site.register(VendorItem, VendorItemAdmin)
+
+
+class VendorVariantAdmin(admin.ModelAdmin):
+    list_display = (
+        'code',
+        'name',
+        'product',
+        'size',
+        'color',
+    )
+    list_filter = ('product',)
+    search_fields = ('name', 'code',)
+    readonly_fields = ('dt_added', 'dt_updated',)
+    fieldsets = [
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['code', 'name', 'product', ]
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['size', 'color', 'color_code']
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['image_url', ]
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-info',),
+            'fields': ['is_active', 'dt_added', 'dt_updated', ],
+        }),
+    ]
+    suit_form_tabs = (
+        ('info', _('Info')),
+    )
+admin.site.register(VendorVariant, VendorVariantAdmin)
