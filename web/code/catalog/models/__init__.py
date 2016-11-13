@@ -9,5 +9,5 @@ from .Brand import Brand
 from .Item import Item
 from .ItemVariant import ItemVariant
 
-from .VendorItem import VendorItem
-from .VendorVariant import VendorVariant
+from .ManufacturerItem import ManufacturerItem
+from .ManufacturerVariant import ManufacturerVariant

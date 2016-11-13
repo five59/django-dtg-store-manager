@@ -13,11 +13,11 @@ class ItemInline(admin.TabularInline):
     suit_classes = 'suit-tab suit-tab-products'
 
 
-class VendorVariantInline(admin.TabularInline):
-    model = VendorVariant
+class ManufacturerVariantInline(admin.TabularInline):
+    model = ManufacturerVariant
     extra = 0
     fields = ['name', 'code', ]
-    suit_classes = 'suit-tab suit-tab-vendorvariant'
+    suit_classes = 'suit-tab suit-tab-ManufacturerVariant'
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
@@ -243,11 +243,11 @@ class ItemVariantAdmin(admin.ModelAdmin):
 admin.site.register(ItemVariant, ItemVariantAdmin)
 
 
-class VendorItemAdmin(admin.ModelAdmin):
+class ManufacturerItemAdmin(admin.ModelAdmin):
     list_display = ('code', 'name', 'manufacturer',
                     'brand', 'category', 'image_url')
     search_fields = ('name', 'code',)
-    inlines = (VendorVariantInline,)
+    inlines = (ManufacturerVariantInline,)
     list_filter = ['manufacturer', ]
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
@@ -270,21 +270,21 @@ class VendorItemAdmin(admin.ModelAdmin):
     ]
     suit_form_tabs = (
         ('info', _('Info')),
-        ('vendorvariant', _('Vendor Variants')),
+        ('ManufacturerVariant', _('Manufacturer Variants')),
     )
 
-admin.site.register(VendorItem, VendorItemAdmin)
+admin.site.register(ManufacturerItem, ManufacturerItemAdmin)
 
 
-class VendorVariantAdmin(admin.ModelAdmin):
+class ManufacturerVariantAdmin(admin.ModelAdmin):
     list_display = (
         'code',
-        'name',
+        # 'name',
         'product',
         'size',
         'color',
     )
-    list_filter = ('product',)
+    list_filter = ('product', 'size', 'color',)
     search_fields = ('name', 'code',)
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
@@ -308,4 +308,4 @@ class VendorVariantAdmin(admin.ModelAdmin):
     suit_form_tabs = (
         ('info', _('Info')),
     )
-admin.site.register(VendorVariant, VendorVariantAdmin)
+admin.site.register(ManufacturerVariant, ManufacturerVariantAdmin)

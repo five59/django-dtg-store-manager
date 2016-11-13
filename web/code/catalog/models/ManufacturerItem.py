@@ -6,7 +6,7 @@ import uuid
 from catalog import models as c
 
 
-class VendorItem(models.Model):
+class ManufacturerItem(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Vendor Code"), max_length=64, default="", blank=True, null=True)
@@ -28,9 +28,9 @@ class VendorItem(models.Model):
             return "{} / {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed Vendor Item")
+        return _("Unnamed Manufacturer Item")
 
     class Meta:
-        verbose_name = _("Vendor Item")
-        verbose_name_plural = _("Vendor Items")
+        verbose_name = _("Manufacturer Item")
+        verbose_name_plural = _("Manufacturer Items")
         ordering = ["name", "code", ]

@@ -6,18 +6,19 @@ import uuid
 from catalog import models as c
 
 
-class VendorVariant(models.Model):
+class ManufacturerVariant(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
-    product = models.ForeignKey(c.VendorItem, null=True, blank=True)
+    product = models.ForeignKey(c.ManufacturerItem, null=True, blank=True)
     name = models.CharField(_("Name"), max_length=150, default="",
                             blank=True, null=True, help_text="")
     size = models.CharField(_("Size"), max_length=64, default="", blank=True, null=True)
-    color = models.CharField(_("Size"), max_length=64, default="", blank=True, null=True)
-    color_code = models.CharField(_("Size"), max_length=64, default="", blank=True, null=True)
+    color = models.CharField(_("Color"), max_length=64, default="", blank=True, null=True)
+    color_code = models.CharField(_("Color Code"), max_length=64, default="", blank=True, null=True)
 
     image_url = models.URLField(_("Image URL"), null=True, blank=True)
     price = models.DecimalField(_("Price"), max_digits=6, decimal_places=2)
+    in_stock = models.BooleanField(_("In Stock?"), default=False)
 
     is_active = models.BooleanField(_("Is Active?"), default=False)
     dt_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -32,9 +33,9 @@ class VendorVariant(models.Model):
             return "[{}] {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed Vendor Variant")
+        return _("Unnamed Manufacturer Variant")
 
     class Meta:
-        verbose_name = _("Vendor Variant")
-        verbose_name_plural = _("Vendor Variants")
+        verbose_name = _("Manufacturer Variant")
+        verbose_name_plural = _("Manufacturer Variants")
         ordering = ["name", "code", ]

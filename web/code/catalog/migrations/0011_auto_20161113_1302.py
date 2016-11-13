@@ -14,45 +14,45 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name='vendoritem',
-            options={'ordering': ['name', 'code'], 'verbose_name': 'Vendor Item', 'verbose_name_plural': 'Vendor Items'},
+            name='VendorItem',
+            options={'ordering': ['name', 'code'], 'verbose_name': 'Manufacturer Item', 'verbose_name_plural': 'Manufacturer Items'},
         ),
         migrations.AlterModelOptions(
-            name='vendorvariant',
-            options={'ordering': ['name', 'code'], 'verbose_name': 'Vendor Variant', 'verbose_name_plural': 'Vendor Variants'},
+            name='VendorVariant',
+            options={'ordering': ['name', 'code'], 'verbose_name': 'Manufacturer Variant', 'verbose_name_plural': 'Manufacturer Variants'},
         ),
         migrations.AddField(
-            model_name='vendoritem',
+            model_name='VendorItem',
             name='dt_added',
             field=models.DateTimeField(auto_now_add=True, null=True),
         ),
         migrations.AddField(
-            model_name='vendoritem',
+            model_name='VendorItem',
             name='dt_updated',
             field=models.DateTimeField(auto_now=True, null=True),
         ),
         migrations.AddField(
-            model_name='vendoritem',
+            model_name='VendorItem',
             name='is_active',
             field=models.BooleanField(default=False, verbose_name='Is Active?'),
         ),
         migrations.AddField(
-            model_name='vendoritem',
+            model_name='VendorItem',
             name='manufacturer',
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='catalog.Manufacturer'),
         ),
         migrations.AddField(
-            model_name='vendorvariant',
+            model_name='VendorVariant',
             name='dt_added',
             field=models.DateTimeField(auto_now_add=True, null=True),
         ),
         migrations.AddField(
-            model_name='vendorvariant',
+            model_name='VendorVariant',
             name='dt_updated',
             field=models.DateTimeField(auto_now=True, null=True),
         ),
         migrations.AddField(
-            model_name='vendorvariant',
+            model_name='VendorVariant',
             name='is_active',
             field=models.BooleanField(default=False, verbose_name='Is Active?'),
         ),
