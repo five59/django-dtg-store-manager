@@ -9,20 +9,45 @@ from django_extensions.admin import ForeignKeyAutocompleteAdmin
 class ItemInline(admin.TabularInline):
     model = Item
     extra = 0
-    fields = ['name', 'code', ]
+    fields = [
+        'code',
+        'name',
+        'description',
+        'googlecategory',
+    ]
+    readonly_fields = [
+        # 'name',
+        'code',
+        'googlecategory',
+    ]
     suit_classes = 'suit-tab suit-tab-products'
+
+
+class ItemVariantInline(admin.TabularInline):
+    model = ItemVariant
+    extra = 5
+    fields = [
+        'code', 'name',
+        # 'image_url',
+        # 'link',
+        # 'color', 'size',
+    ]
+    suit_classes = 'suit-tab suit-tab-itemvariants'
 
 
 class ManufacturerVariantInline(admin.TabularInline):
     model = ManufacturerVariant
     extra = 0
-    fields = ['name', 'code', ]
+    fields = ['code', 'color', 'size', 'base_price', ]
+    readonly_fields = ['code', 'color', 'size', 'base_price', ]
     suit_classes = 'suit-tab suit-tab-ManufacturerVariant'
+    ordering = ['size', 'color', ]
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'has_key', ]
     search_fields = ['code', 'name', ]
+    form = ManufacturerForm
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -36,6 +61,11 @@ class ManufacturerAdmin(admin.ModelAdmin):
             'classes': ('suit-tab', 'suit-tab-info',),
             'fields': ['api_key', 'api_hash', ]
         }),
+        (_("Notes"), {
+            'classes': ('suit-tab', 'suit-tab-info', 'full-width',),
+            'fields': ['notes', ]
+        }),
+
     ]
     suit_form_tabs = (
         ('info', _('Info')),
@@ -47,6 +77,7 @@ class CategoryAdmin(DraggableMPTTAdmin):
     list_display = [
         'tree_actions',
         'indented_title',
+        'num_items',
     ]
     search_fields = ['code', 'name', ]
     fieldsets = [
@@ -142,11 +173,13 @@ admin.site.register(Brand, BrandAdmin)
 class ItemAdmin(admin.ModelAdmin):
     list_display = [
         'code', 'name',
-        'brand', 'category', 'googlecategory',
+        'brand', 'num_vendors',
+        'category', 'googlecategory',
         'age_group', 'gender', 'size_type',
     ]
-    list_editable = ['category', ]
+    # list_editable = ['category', ]
     search_fields = ['name', 'code', ]
+    inlines = (ItemVariantInline,)
     list_filter = (
         ('brand', admin.RelatedOnlyFieldListFilter),
         ('category', admin.RelatedOnlyFieldListFilter),
@@ -155,7 +188,6 @@ class ItemAdmin(admin.ModelAdmin):
         'gender',
         'size_type',
     )
-
     form = ItemForm
     fieldsets = [
         (None, {
@@ -214,6 +246,7 @@ class ItemAdmin(admin.ModelAdmin):
         ('info', _("Info")),
         ('categorization', _("Categorization")),
         ('media', _("Web & Media")),
+        ('itemvariants', _("Variants"))
 
     )
 admin.site.register(Item, ItemAdmin)
@@ -244,11 +277,14 @@ admin.site.register(ItemVariant, ItemVariantAdmin)
 
 
 class ManufacturerItemAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'manufacturer',
-                    'brand', 'category', 'image_url')
+    list_display = ('code', 'name', 'item', 'manufacturer',
+                    'num_variants', 'num_colors', 'num_sizes',
+                    'brand', 'category',
+                    )
     search_fields = ('name', 'code',)
     inlines = (ManufacturerVariantInline,)
-    list_filter = ['manufacturer', ]
+    list_filter = ['manufacturer', 'brand', 'category', ]
+    # list_editable = ['item', ]
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
         (None, {
@@ -290,7 +326,7 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
-            'fields': ['code', 'name', 'product', ]
+            'fields': ['code', 'name', 'product', 'base_price', ]
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'catalog',
     'creative',
     'product',
+    'outlet_woo',
     'vendor_printaura',
     'vendor_printful',
 ]

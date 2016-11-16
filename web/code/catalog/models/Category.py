@@ -25,6 +25,13 @@ class Category(MPTTModel):
             return "{}".format(self.name)
         return _("Unnamed Category")
 
+    def num_items(self):
+        return c.Item.objects.filter(category=self).count()
+    num_items.short_description = "Items"
+
+    def get_items(self):
+        return c.Item.objects.filter(category=self)
+
     class Meta:
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")

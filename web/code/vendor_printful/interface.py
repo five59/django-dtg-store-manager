@@ -5,7 +5,7 @@ from .wrapper import PrintfulClient, PrintfulException, PrintfulApiException
 from decimal import Decimal
 
 
-class PrintfulInterface:
+class APIInterface:
 
     mfgObj = None
 
@@ -82,11 +82,12 @@ class PrintfulInterface:
                         'color': v['color'],
                         'color_code': v['color_code'],
                         'image_url': v['image'],
-                        # 'price': Decimal(v['price']),
                         'in_stock': v['in_stock'],
                         'is_active': True,
+                        'base_price': Decimal(v['price']),
                     },
                 )
+
                 if vcreated:
                     print(" - Created: {} / {} {}".format(vv.code, vv.size, vv.color))
                 else:

@@ -11,11 +11,13 @@ class Color(models.Model):
     PMSFAM_COATED = 'C'
     PMSFAM_METALLIC = 'M'
     PMSFAM_NEON = 'N'
+    PMSFAM_TPX = "X"
     PMSFAM_CHOICES = (
         (PMSFAM_UNCOATED, 'Uncoated'),
         (PMSFAM_COATED, 'Coated'),
         (PMSFAM_METALLIC, 'Metallic'),
         (PMSFAM_NEON, 'Neon'),
+        (PMSFAM_TPX, "TPX")
     )
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=64, default="", blank=True, null=True)
@@ -52,7 +54,7 @@ class Color(models.Model):
 
     def __str__(self):
         if self.code and self.name:
-            return "[{}] {}".format(self.code, self.name)
+            return "{} / {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
         return _("Unnamed Color")
@@ -60,4 +62,4 @@ class Color(models.Model):
     class Meta:
         verbose_name = _("Color")
         verbose_name_plural = _("Colors")
-        ordering = ['name', 'code', ]
+        ordering = ['code', ]

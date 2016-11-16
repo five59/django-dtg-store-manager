@@ -35,10 +35,15 @@ class Command(BaseCommand):
             slug = "printaura"
         elif manufacturer.code == "PF":
             slug = "printful"
+        elif manufacturer.code == "GT":
+            slug = "gooten"
         else:
             CommandError('Invalid vendor module specified.')
 
+        # Now we're ready to load up the appropriate vendor module, and call the
+        # Main interface, APIInterface().
+
         mod_name = "".join(["vendor_", slug, ".interface"])
         vMod = import_module(mod_name)
-        importer = vMod.PrintfulInterface(manufacturer)
+        importer = vMod.APIInterface(manufacturer)
         importer.do_import()

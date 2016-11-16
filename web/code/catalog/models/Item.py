@@ -111,7 +111,12 @@ class Item(models.Model):
                                          height_field="additional_image_height", width_field="additional_image_width",
                                          blank=True, null=True, help_text="")
 
+    def num_vendors(self):
+        return c.ManufacturerItem.objects.filter(item=self).count()
+    num_vendors.short_description = "Vendors"
+
     def __str__(self):
+        # return "{}{} / {}".format(self.brand.code, self.code, self.name)
         if self.code and self.name:
             return "[{}] {}".format(self.code, self.name)
         if self.name:
@@ -121,4 +126,4 @@ class Item(models.Model):
     class Meta:
         verbose_name = _("Item")
         verbose_name_plural = _("Items")
-        ordering = ["name", "code", ]
+        ordering = ["brand__code", "code", "name", ]

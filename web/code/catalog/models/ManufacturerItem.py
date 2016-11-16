@@ -14,6 +14,8 @@ class ManufacturerItem(models.Model):
 
     manufacturer = models.ForeignKey(c.Manufacturer, blank=True, null=True)
 
+    item = models.ForeignKey(c.Item, blank=True, null=True)
+
     brand = models.CharField(_("Brand"), max_length=255, default="", blank=True, null=True)
     category = models.CharField(_("Category"), max_length=255, default="", blank=True, null=True)
 
@@ -22,6 +24,24 @@ class ManufacturerItem(models.Model):
     is_active = models.BooleanField(_("Is Active?"), default=False, blank=True)
     dt_added = models.DateTimeField(_("Date Added"), auto_now_add=True, null=True, blank=True)
     dt_updated = models.DateTimeField(_("Last Updated"), auto_now=True, null=True, blank=True)
+
+    def num_colors(self):
+        return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color').distinct().count()
+    num_colors.short_description = "Colors"
+
+    def get_colors(self):
+        return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color').distinct()
+
+    def num_sizes(self):
+        return c.ManufacturerVariant.objects.filter(product=self).order_by('size').values('size').distinct().count()
+    num_sizes.short_description = "Sizes"
+
+    def get_sizes(self):
+        return c.ManufacturerVariant.objects.filter(product=self).order_by('size').values('size').distinct()
+
+    def num_variants(self):
+        return c.ManufacturerVariant.objects.filter(product=self).count()
+    num_variants.short_description = "Variants"
 
     def __str__(self):
         if self.code and self.name:

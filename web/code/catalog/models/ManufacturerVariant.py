@@ -8,7 +8,7 @@ from catalog import models as c
 
 class ManufacturerVariant(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
+    code = models.CharField(_("Code"), max_length=150, default="", blank=True, null=True)
     product = models.ForeignKey(c.ManufacturerItem, null=True, blank=True)
     name = models.CharField(_("Name"), max_length=150, default="",
                             blank=True, null=True, help_text="")
@@ -17,8 +17,9 @@ class ManufacturerVariant(models.Model):
     color_code = models.CharField(_("Color Code"), max_length=64, default="", blank=True, null=True)
 
     image_url = models.URLField(_("Image URL"), null=True, blank=True)
-    price = models.DecimalField(_("Price"), max_digits=6, decimal_places=2)
     in_stock = models.BooleanField(_("In Stock?"), default=False)
+
+    base_price = models.DecimalField(_("Base Price"), max_digits=6, decimal_places=2, default=0)
 
     is_active = models.BooleanField(_("Is Active?"), default=False)
     dt_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
