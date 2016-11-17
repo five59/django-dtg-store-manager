@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mptt',
     'django_mptt_admin',
     'suit_ckeditor',
+    'timezone_field',
     'django_markup',
     'catalog',
     'creative',

@@ -4,8 +4,12 @@ from django.core.management.base import CommandError
 import requests
 from decimal import Decimal
 import json
+from datetime import datetime
 from woocommerce import API
 from outlet_woo import models as wc
+from django.utils import timezone
+import pytz
+from django.utils.dateparse import parse_datetime
 
 
 class APIInterface:
@@ -49,6 +53,13 @@ class APIInterface:
             p.save()
 
         for p in shopProducts:
+            # Clean up the inbound data.
+            # date_created = parse_datetime(p['date_created'])
+            # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
+            # date_modified = parse_datetime(p['date_modified'])
+            # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
+            # date_on_sale_from = parse_datetrime(p['date_on_sale_from']
+
             sp, spCreated = wc.Product.objects.update_or_create(
                 code=p['id'],
                 shop=self.shopObj,
@@ -57,8 +68,8 @@ class APIInterface:
                     'name': p['name'],
                     'slug': p['slug'],
                     'permalink': p['permalink'],
-                    # 'date_created': p['date_created'],
-                    # 'date_modified': p['date_modified'],
+                    # 'date_created': date_created,
+                    # 'date_modified': date_modified,
                     'product_type': p['type'],
                     'status': p['status'],
                     'featured': p['featured'],
@@ -79,3 +90,28 @@ class APIInterface:
                 print("Item Added: {} / {}".format(sp.code, sp.name))
             else:
                 print("Item Updated: {} / {}".format(sp.code, sp.name))
+
+            # Load in Images
+
+            # TODO Remove all old images.
+            for i in p['images']:
+                # date_created = parse_datetime(i['date_created'])
+                # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
+                # date_modified = parse_datetime(i['date_modified'])
+                # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
+                im, imCreated = wc.ProductImage.objects.update_or_create(
+                    code=i['id'],
+                    product=sp,
+                    defaults={
+                        'name': i['name'],
+                        'src': i['src'],
+                        'alt': i['alt'],
+                        'position': i['position'],
+                        # 'date_created': date_created,
+                        # 'date_modified': date_modified,
+                    }
+                )
+                if imCreated:
+                    print("--> Image Added: {} / {}".format(im.code, im.name))
+                else:
+                    print("--> Image Updated: {} / {}".format(im.code, im.name))

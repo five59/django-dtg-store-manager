@@ -5,6 +5,14 @@ from .forms import *
 from django.utils.translation import ugettext_lazy as _
 
 
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+    extra = 0
+    fields = ['code','name','alt','position',]
+    readonly_fields = fields
+    suit_classes = 'suit-tab suit-tab-productimages'
+
+
 class ShopAdmin(admin.ModelAdmin):
     list_display = (
         'code',
@@ -26,10 +34,12 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'shop',
         'product_type',
+        'num_images',
     )
     list_filter = ['shop', 'product_type', ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
+    inlines = (ProductImageInline,)
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -174,6 +184,10 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields = [
         'code', 'date_created', 'date_modified',
         'app_added', 'app_last_sync', 'total_sales',
+        'purchasable', 'permalink',
+        'price', 'on_sale', 'price_html', 'backorders_allowed', 'backordered',
+        'shipping_required', 'shipping_taxable',
+        'average_rating', 'rating_count',
     ]
     suit_form_tabs = (
         ('info', _('Basic Info')),
@@ -182,7 +196,13 @@ class ProductAdmin(admin.ModelAdmin):
         ('pricing', _('Pricing')),
         ('inventory', _('Inventory')),
         ('reviews', _('Reviews')),
+        ('productimages', _('Images')),
         ('metadata', _('Metadata')),
     )
-
 admin.site.register(Product, ProductAdmin)
+
+
+
+class ProductImageAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(ProductImage, ProductImageAdmin)

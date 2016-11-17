@@ -22,7 +22,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        ignored_apps = ['admin', 'auth', 'sessions', 'contenttypes']
+        ignored_apps = ['admin', 'sessions', 'contenttypes']
 
         for applabel, appitem in apps.all_models.items():
             if not applabel in ignored_apps:

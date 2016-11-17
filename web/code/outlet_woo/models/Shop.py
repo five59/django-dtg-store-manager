@@ -5,6 +5,10 @@ import uuid
 from creative import models as cr
 from catalog import models as ca
 from outlet_woo import models as wc
+import pytz
+import datetime
+from django.utils import timezone
+from timezone_field import TimeZoneField
 
 
 class Shop(models.Model):
@@ -14,6 +18,7 @@ class Shop(models.Model):
     web_url = models.URLField(_("Website"), default="", blank=True, null=True)
     consumer_key = models.CharField(_("Consumer Key"), max_length=43, blank=True, null=True)
     consumer_secret = models.CharField(_("Consumer Secret"), max_length=43, blank=True, null=True)
+    timezone = TimeZoneField(default='America/New_York')
     num_products = models.IntegerField(_("Product Count"), default=0)
     last_sync = models.DateTimeField(auto_now=True)
     added = models.DateTimeField(auto_now_add=True)
