@@ -77,6 +77,8 @@ class Product(models.Model):
     shop = models.ForeignKey(wc.Shop, help_text=_(""), blank=True, null=True)
     is_active = models.BooleanField(_("Is Active?"), help_text=_(
         "Local flag to ensure depreciated products don't break the datastore."), default=False)
+    design = models.ForeignKey(cr.Design, help_text=_(""), blank=True,
+                               null=True, related_name='product_item_design')
 
     app_added = models.DateTimeField(auto_now_add=True, help_text=_(""))
     app_last_sync = models.DateTimeField(auto_now=True, help_text=_(""))
@@ -199,6 +201,23 @@ class Product(models.Model):
     def num_images(self):
         return wc.ProductImage.objects.filter(product=self).count()
     num_images.short_description = _("Image Count")
+
+    def update_sku(self):
+        # SKU should be:
+        # [SERIES][DESIGN]-[SITE][ITEM]-[VARIANT]
+        # (Variant is only used on variants, obvs)
+        r = [
+            self.design.series.code if self.design else "XXX",
+            self.design.code if self.design else "00",
+            "-",
+            self.shop.code if self.shop else "XX",
+            "{0:0>5}".format(self.code) if self.code else "00000",
+        ]
+        self.sku = "".join(r).upper()
+
+    def save(self, *args, **kwargs):
+        self.update_sku()
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self):
         if self.code and self.name:

@@ -90,7 +90,7 @@ class APIInterface:
             p.save()
 
         for p in shopProducts:
-            # Clean up the inbound data.
+            # TODO Clean up the inbound data.
             # date_created = parse_datetime(p['date_created'])
             # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
             # date_modified = parse_datetime(p['date_modified'])
@@ -132,6 +132,7 @@ class APIInterface:
 
             # TODO Remove all old images.
             for i in p['images']:
+                # TODO Clean up image data
                 # date_created = parse_datetime(i['date_created'])
                 # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
                 # date_modified = parse_datetime(i['date_modified'])
