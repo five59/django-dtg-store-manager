@@ -7,18 +7,19 @@ from django.utils.translation import ugettext_lazy as _
 class VariantInline(admin.TabularInline):
     model = Variant
     extra = 5
-    fields = ['code', 'product','color','size', ]
+    fields = ['code', 'product', 'color', 'size', ]
     suit_classes = 'suit-tab suit-tab-variants'
 
+
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'creative', 'item', 'sales_channel',)
-    list_filter = ('creative', 'item')
+    list_display = ('code', 'name', 'design', 'item', 'sales_channel',)
+    list_filter = ('design', 'item')
     search_fields = ('name',)
     inlines = (VariantInline,)
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
-            'fields': ('code','name','creative','item','sales_channel',),
+            'fields': ('code', 'name', 'design', 'item', 'sales_channel',),
         }),
     ]
     suit_form_tabs = (

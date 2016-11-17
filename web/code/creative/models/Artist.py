@@ -31,9 +31,9 @@ class Artist(models.Model):
         raise NotImplementedError
     num_assigned.short_description = "Assigned"
 
-    def total_creative(self):
+    def num_designs(self):
         raise NotImplementedError
-    total_creative.short_description = "Total"
+    num_designs.short_description = "Total"
 
     def __str__(self):
         if self.code and self.name:

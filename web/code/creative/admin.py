@@ -25,8 +25,8 @@ class ArtistInline(admin.TabularInline):
     suit_classes = 'suit-tab suit-tab-artists'
 
 
-class CreativeInline(admin.TabularInline):
-    model = Creative
+class DesignInline(admin.TabularInline):
+    model = Design
     extra = 0
     fields = ['name', 'code', ]
     suit_classes = 'suit-tab suit-tab-creative'
@@ -66,7 +66,7 @@ admin.site.register(SalesChannel, SalesChannelAdmin)
 class SeriesAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'sales_channel', 'creative_lead']
     list_filter = ['sales_channel', 'creative_lead', ]
-    inlines = (CreativeInline,)
+    inlines = (DesignInline,)
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info'),
@@ -75,7 +75,7 @@ class SeriesAdmin(admin.ModelAdmin):
     ]
     suit_form_tabs = (
         ('info', _("Info")),
-        ('creative', _("Creative")),
+        ('design', _("Design")),
     )
 admin.site.register(Series, SeriesAdmin)
 
@@ -83,7 +83,7 @@ admin.site.register(Series, SeriesAdmin)
 class ArtistAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'location']
     list_filter = ['location', ]
-    inlines = (CreativeInline, SeriesInline,)
+    inlines = (DesignInline, SeriesInline,)
     form = ArtistForm
     fieldsets = [
         (None, {
@@ -127,13 +127,13 @@ class ArtistAdmin(admin.ModelAdmin):
         ('info', _("Info")),
         ('legal', _("Legal")),
         ('notes', _("Notes")),
-        ('creative', _("Creative")),
+        ('design', _("Design")),
         ('series', _("Series Leaderships")),
     )
 admin.site.register(Artist, ArtistAdmin)
 
 
-class CreativeAdmin(admin.ModelAdmin):
+class DesignAdmin(admin.ModelAdmin):
     list_display = [
         'code',
         'status_tag',
@@ -158,4 +158,4 @@ class CreativeAdmin(admin.ModelAdmin):
     suit_form_tabs = (
         ('info', _("Info")),
     )
-admin.site.register(Creative, CreativeAdmin)
+admin.site.register(Design, DesignAdmin)

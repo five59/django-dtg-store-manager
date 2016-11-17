@@ -13,7 +13,7 @@ class Product(models.Model):
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
-    creative = models.ForeignKey(cr.Creative, verbose_name=_("Creative"), blank=True, null=True)
+    design = models.ForeignKey(cr.Design, verbose_name=_("Design"), blank=True, null=True)
     item = models.ForeignKey(ca.Item, verbose_name=_("Item"), blank=True, null=True)
     sales_channel = models.ForeignKey(
         cr.SalesChannel, verbose_name=_("Sales Channel"), null=True, blank=True)

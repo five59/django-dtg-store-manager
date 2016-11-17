@@ -6,7 +6,7 @@ import uuid
 from creative import models as c
 
 
-class Creative(models.Model):
+class Design(models.Model):
     """ () """
     STATUS_NEW = "N"
     STATUS_INDEV = "V"
@@ -60,6 +60,6 @@ class Creative(models.Model):
         return _("Unnamed Creative")
 
     class Meta:
-        verbose_name = _("Creative")
-        verbose_name_plural = _("Creative")
+        verbose_name = _("Design")
+        verbose_name_plural = _("Designs")
         ordering = ['series__code', 'code', 'name', ]
