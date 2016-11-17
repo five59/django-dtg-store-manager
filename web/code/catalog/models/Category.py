@@ -20,7 +20,7 @@ class Category(MPTTModel):
 
     def __str__(self):
         if self.code and self.name:
-            return "[{}] {}".format(self.code, self.name)
+            return "{} / {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
         return _("Unnamed Category")
