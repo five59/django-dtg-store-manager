@@ -56,3 +56,4 @@ web/code/_data/
 web/code/_fixtures/*.json
 db/dbrun/
 db/dblib/
+web/code/catalog.pdf

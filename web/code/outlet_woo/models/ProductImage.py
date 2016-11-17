@@ -6,6 +6,11 @@ from datetime import datetime
 from creative import models as cr
 from catalog import models as ca
 from outlet_woo import models as wc
+import requests
+import urllib
+import tempfile
+from django.core import files
+import os
 
 
 class ProductImage(models.Model):
@@ -28,11 +33,32 @@ class ProductImage(models.Model):
     position = models.IntegerField(_("Image Position"), help_text=_(
         "0 means that the image is featured."), default=1)
 
+    image_height = models.CharField(_("Image Height"), default="0", max_length=10)
+    image_width = models.CharField(_("Image Width"), default="0", max_length=10)
+    image = models.ImageField(_("Local Image"), upload_to="outlet_woo/productimage",
+                              height_field="image_height", width_field="image_width",
+                              blank=True, null=True, help_text="")
+
+    def download_image(self):
+        if self.src:
+            request = requests.get(self.src, stream=True)
+            if request.status_code == requests.codes.ok:
+                path = urllib.parse.urlparse(self.src).path
+                ext = os.path.splitext(path)[1]
+                file_name = "{}-{}-{}{}".format(self.product.shop.code,
+                                                self.product.code, self.code, ext)
+                lf = tempfile.NamedTemporaryFile()
+                for block in request.iter_content(1024 * 8):
+                    if not block:
+                        break
+                    lf.write(block)
+                self.image.save(file_name, files.File(lf))
+
     def __str__(self):
-        if self.code and self.name:
-            return "[{}] {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
+        if self.code:
+            return "{}".format(self.code)
         return _("Unnamed ProductImage")
 
     class Meta:
