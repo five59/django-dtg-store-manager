@@ -26,6 +26,8 @@ from catalog import models as ca
 from creative import models as cr
 from outlet_woo import models as wc
 
+from pprint import pprint
+
 
 class APIInterface:
 
@@ -33,6 +35,7 @@ class APIInterface:
 
     def __init__(self, sObj):
         self.shopObj = sObj
+        self.max_per_page = 100  # This is defined by the Rest API
 
     def do_import(self):
 
@@ -51,11 +54,30 @@ class APIInterface:
             version="wc/v1",
         )
 
-        print("--> Starting Import Process")
-        response = apiData.get("products")
+        print("--> Making request to server (Page 1)...")
+        response = apiData.get("products?per_page={}".format(self.max_per_page))
+
         if not response.ok:
+            error = json.loads(response.content.decode('utf-8'))
+            print("--> Error:")
+            print("    Code: {}".format(error.code))
+            print(" Message: {}".format(error.message))
+            print("    Data: {}".format(error.data))
             CommandError("The API returned an error code.")
+
         shopProducts = json.loads(response.content.decode('utf-8'))
+
+        # TODO FIXME This block definitely has some bugs in it. It will cause
+        # problems for sites with more than 100 products.
+        api_total_pages = int(response.headers['X-WP-TotalPages'])
+        api_total_products = int(response.headers['X-WP-Total'])
+        if api_total_pages > 1:
+            for page in range(2, api_total_pages + 1):
+                print("--> Requesting Page {} of {}...".format(str(page), str(api_total_pages)))
+                response = apiData.get("products?per_page={}&page={}".format(
+                    str(self.max_per_page), str(page)))
+                # TODO Refactor this code to include error checking here in Page+1 calls
+                shopProducts.append(json.loads(response.content.decode('utf-8')))
 
         self.shopObj.num_products = len(shopProducts)
         self.shopObj.save()
