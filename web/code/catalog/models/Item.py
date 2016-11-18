@@ -116,12 +116,13 @@ class Item(models.Model):
     num_vendors.short_description = "Vendors"
 
     def __str__(self):
-        # return "{}{} / {}".format(self.brand.code, self.code, self.name)
-        if self.code and self.name:
-            return "{} / {}".format(self.code, self.name)
-        if self.name:
-            return "{}".format(self.name)
-        return _("Unnamed Item")
+        rv = [
+            self.brand.code if self.brand else "ZZ",
+            self.code if self.code else "0000",
+            " / ",
+            self.name if self.name else _("Unnamed Item")
+        ]
+        return "".join(rv)
 
     class Meta:
         verbose_name = _("Item")

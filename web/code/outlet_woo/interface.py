@@ -29,6 +29,18 @@ from outlet_woo import models as wc
 from pprint import pprint
 
 
+class Utility:
+
+    def __init__(self):
+        print("--> Utility Init")
+
+    def update_all_local_product_data():
+        for shop in wc.Shop.objects.all():
+            print("===== UPDATING {} =====".format(shop.name))
+            api = APIInterface(shop)
+            api.do_import()
+
+
 class APIInterface:
 
     shopObj = None
@@ -52,9 +64,10 @@ class APIInterface:
             consumer_secret=self.shopObj.consumer_secret,
             wp_api=True,
             version="wc/v1",
+            timeout=20,
         )
 
-        print("--> Making request to server (Page 1)...")
+        print("--> Making request to {} server (Page 1)...".format(self.shopObj.name))
         response = apiData.get("products?per_page={}".format(self.max_per_page))
 
         if not response.ok:

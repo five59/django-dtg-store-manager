@@ -1,3 +1,4 @@
+colour==0.1.2
 Django==1.10.3
 django-extensions==1.7.4
 django-markdown==0.8.4

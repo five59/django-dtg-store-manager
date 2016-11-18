@@ -77,6 +77,7 @@ class CategoryAdmin(DraggableMPTTAdmin):
     list_display = [
         'tree_actions',
         'indented_title',
+        'code',
         'num_items',
     ]
     search_fields = ['code', 'name', ]
@@ -103,35 +104,56 @@ class ColorAdmin(admin.ModelAdmin):
     list_display = [
         'code',
         'name',
+        'brand',
         'pms_code', 'pms_family',
         'hex_code',
         'r_value', 'g_value', 'b_value',
+        'c_value', 'm_value', 'y_value', 'k_value',
     ]
     search_fields = ['code', 'name', ]
-    list_filter = ['pms_family', ]
+    list_filter = [
+        ('brand', admin.RelatedOnlyFieldListFilter),
+        'pms_family',
+    ]
     fieldsets = [
         (None, {
             'classes': ['suit-tab', 'suit-tab-info', ],
-            'fields': ['code', 'name'],
+            'fields': ['code', 'name', 'brand', 'color_string'],
         }),
         ("PANTONE", {
             'classes': ['suit-tab', 'suit-tab-info', ],
             'fields': ['pms_code', 'pms_family', ],
         }),
         ("Web Color", {
-            'classes': ['suit-tab', 'suit-tab-info', ],
-            'fields': ['hex_code', 'r_value', 'g_value', 'b_value', ],
+            'classes': ['suit-tab', 'suit-tab-color', ],
+            'fields': [
+                'hex_code',
+            ],
+        }),
+        ("RGB Color", {
+            'classes': ['suit-tab', 'suit-tab-color', ],
+            'fields': [
+                'r_value', 'g_value', 'b_value',
+            ],
+        }),
+        ("CMYK Color", {
+            'classes': ['suit-tab', 'suit-tab-color', ],
+            'fields': [
+                'c_value', 'm_value', 'y_value', 'k_value',
+            ],
         }),
     ]
     suit_form_tabs = (
         ('info', _('Info')),
+        ('color', _('Color')),
     )
 admin.site.register(Color, ColorAdmin)
 
 
 class SizeAdmin(admin.ModelAdmin):
-    list_display = ['name', 'grouping', 'sortorder', ]
+    list_display = ['name', 'code', 'grouping', 'sortorder', ]
     list_filter = ['grouping', ]
+    # list_editable = ['code', ]
 admin.site.register(Size, SizeAdmin)
 
 
@@ -284,7 +306,6 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
     search_fields = ('name', 'code',)
     inlines = (ManufacturerVariantInline,)
     list_filter = ['manufacturer', 'brand', 'category', ]
-    # list_editable = ['item', ]
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
         (None, {
@@ -293,7 +314,7 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
-            'fields': ['brand', 'category', ]
+            'fields': ['brand', 'item', 'category', ]
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -308,7 +329,6 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
         ('info', _('Info')),
         ('ManufacturerVariant', _('Manufacturer Variants')),
     )
-
 admin.site.register(ManufacturerItem, ManufacturerItemAdmin)
 
 
