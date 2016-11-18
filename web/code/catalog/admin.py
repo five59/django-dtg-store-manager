@@ -102,15 +102,18 @@ admin.site.register(GoogleCategory, GoogleCategoryAdmin)
 
 class ColorAdmin(admin.ModelAdmin):
     list_display = [
-        'code',
         'name',
+        'code',
         'brand',
         'pms_code', 'pms_family',
         'hex_code',
-        'r_value', 'g_value', 'b_value',
-        'c_value', 'm_value', 'y_value', 'k_value',
+        'get_rgb_str',
+        'get_cmyk_str',
+        # 'r_value', 'g_value', 'b_value',
+        # 'c_value', 'm_value', 'y_value', 'k_value',
     ]
     search_fields = ['code', 'name', ]
+    # list_editable = ['code', ]
     list_filter = [
         ('brand', admin.RelatedOnlyFieldListFilter),
         'pms_family',
@@ -299,10 +302,16 @@ admin.site.register(ItemVariant, ItemVariantAdmin)
 
 
 class ManufacturerItemAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'item', 'manufacturer',
-                    'num_variants', 'num_colors', 'num_sizes',
-                    'brand', 'category',
-                    )
+    list_display = (
+        'code',
+        'brand',
+        'name',
+        'item',
+        'manufacturer',
+        'num_variants', 'num_colors', 'num_sizes',
+        'category',
+    )
+    # list_editable = ['item', ]
     search_fields = ('name', 'code',)
     inlines = (ManufacturerVariantInline,)
     list_filter = ['manufacturer', 'brand', 'category', ]

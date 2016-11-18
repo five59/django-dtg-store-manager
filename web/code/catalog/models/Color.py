@@ -128,6 +128,14 @@ class Color(models.Model):
         # Now we can clear out the temporary field.
         self.color_string = None
 
+    def get_rgb_str(self):
+        return "({0:0>3},{1:0>3},{2:0>3})".format(self.r_value, self.g_value, self.b_value)
+    get_rgb_str.short_description = _("RGB")
+
+    def get_cmyk_str(self):
+        return "({0:0>3},{1:0>3},{2:0>3},{3:0>3})".format(self.c_value, self.m_value, self.y_value, self.k_value)
+    get_cmyk_str.short_description = _("CMYK")
+
     def save(self, *args, **kwargs):
         self.transcode_color()
         if not self.name:
@@ -146,3 +154,4 @@ class Color(models.Model):
         verbose_name = _("Color")
         verbose_name_plural = _("Colors")
         ordering = ['code', ]
+        unique_together = (("code", "brand"),)
