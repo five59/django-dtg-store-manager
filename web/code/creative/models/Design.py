@@ -56,7 +56,7 @@ class Design(models.Model):
         else:
             rv = "".join([rv, "00"])
         if self.name:
-            return "{}{}".format(rv, self.name)
+            return "{} / {}".format(rv, self.name)
         return _("Unnamed Creative")
 
     class Meta:
