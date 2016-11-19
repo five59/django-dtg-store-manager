@@ -35,6 +35,7 @@
 
 
     <div class="col-md-7">
+      {% if d.num_products %}
       <table class="table">
         <tr>
           <th>SKU</th>
@@ -44,11 +45,15 @@
         {% for p in d.get_products %}
         <tr>
           <td>{{ p.sku }}</td>
-          <td>{{ p.name }}</td>
+          <td>
+            <strong>{{ p.item.brand.code }} {{ p.item.code }}</strong> / {{ p.manufacturer }}<br />
+            <small>{{ p.item.name }}</small>
+          </td>
           <td>{{ p.price_html|safe }}</td>
         </tr>
         {% endfor %}
       </table>
+      {% endif %}
     </div>
 
 

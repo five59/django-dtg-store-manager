@@ -60,6 +60,10 @@ class Design(models.Model):
         from outlet_woo.models import Product as WooProduct
         return WooProduct.objects.filter(design=self)
 
+    def num_products(self):
+        from outlet_woo.models import Product as WooProduct
+        return WooProduct.objects.filter(design=self).count()
+
     def __str__(self):
         rv = ""
         try:

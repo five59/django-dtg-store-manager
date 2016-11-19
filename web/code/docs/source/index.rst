@@ -20,3 +20,7 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+To Generate a model graph (somewhat) editable in Illustrator:
+
+$ ./manage.py graph_models -g creative catalog outlet_woo product > models.dot
+$ dot -Gsize=117,165 -Gdpi=60 -omodels.svg -Tsvg models.dot
