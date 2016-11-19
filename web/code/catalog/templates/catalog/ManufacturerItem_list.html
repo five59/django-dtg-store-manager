@@ -1,0 +1,66 @@
+{% extends 'common/base.html' %}
+{% load bootstrap3 humanize catalog_tags %}
+
+{% block bootstrap3_title %}
+  {% block title %}Store Manager / Manufacturer Items{% endblock %}
+{% endblock %}
+
+{% block content %}
+  {% for c in categories %}
+    {% if c.num_items > 0 %}
+      <div class="row">
+        <div class="col-md-12">
+          <h2>{% for ca in c.get_ancestors %}{{ ca }} / {% endfor %}{{ c }} <small>({{ c.num_items }})</small></h2>
+        </div>
+      </div>
+
+      {% for item in c.get_items %}
+
+        {% if item.num_vendors > 0 %}
+        <div class="row">
+          <h4>
+            {{ item.name }}
+            <small>{{ item.brand.name }} {{item.code }}</small>
+          </h4>
+        </div>
+        <div class="row" style="margin-bottom: 1em;">
+          <div class='col-md-3'>
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="..." class="img-thumbnail" />
+            {% endif %}
+          </div>
+          <div class="col-md-9">
+
+            {% for mi in item.get_vendors %}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a href="{% url 'ManufacturerItem_detail' mi.id %}">{{ mi.manufacturer.name }}</a></h3>
+                {{ mi.get_price_range }}
+                {% if mi.num_variants > 1 %}
+                {% if mi.num_colors > 1 %}/ {{ mi.num_colors|apnumber|title }} Colors{% endif %}
+                {% if mi.num_sizes > 1 %}/ {{ mi.num_sizes|apnumber|title }} Sizes{% endif %}
+                ({{ mi.num_variants|apnumber|title }} Variants)
+                {% endif %}
+                {% if mi.num_sizes > 1 %}/ Sizes:
+                {% for si in mi.get_sizes %}{{ si.size }}, {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="panel-body">
+                {% if mi.num_colors > 1 %}
+                {% for co in mi.get_colors %}
+                {{ co.color_code|color_chip:co.color }}
+                {% endfor %}
+                {% endif %}
+              </div>
+
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

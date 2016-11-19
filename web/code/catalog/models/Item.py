@@ -8,6 +8,8 @@ import uuid
 # from .Category import Category
 # from .GoogleCategory import GoogleCategory
 from catalog import models as c
+# from .ManufacturerItem import ManufacturerItem
+# from .ManufacturerVariant import ManufacturerVariant
 
 
 class Item(models.Model):
@@ -113,7 +115,37 @@ class Item(models.Model):
 
     def num_vendors(self):
         return c.ManufacturerItem.objects.filter(item=self).count()
+    num_vendors.short_description = "Vendor Count"
+
+    def get_vendors(self):
+        return c.ManufacturerItem.objects.filter(item=self)
     num_vendors.short_description = "Vendors"
+
+    def get_manufactureritem_matrix(self):
+        matrix = []
+        for mi in self.get_vendors():
+            lev0 = {}
+            for cl in mi.get_colors():
+                lev1 = {}
+                for s in mi.get_sizes():
+                    try:
+                        lev1[s['size']] = c.ManufacturerVariant.objects.get(
+                            product=mi, color=cl['color'], size=s['size'])
+                    except:
+                        lev1[s['size']] = None
+                lev0[cl['color']] = lev1
+            matrix.append({
+                'item': mi,
+                'data': lev0,
+            })
+        return matrix
+
+    def has_image(self):
+        if self.image:
+            return True
+        return False
+    has_image.boolean = True
+    has_image.short_description = "Image?"
 
     def __str__(self):
         rv = [

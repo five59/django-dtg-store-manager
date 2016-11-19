@@ -4,6 +4,13 @@ from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
 from catalog import models as c
+from django.db.models import Avg, Max, Min
+import locale
+import requests
+import urllib
+import tempfile
+from django.core import files
+import os
 
 
 class ManufacturerItem(models.Model):
@@ -30,7 +37,7 @@ class ManufacturerItem(models.Model):
     num_colors.short_description = "Colors"
 
     def get_colors(self):
-        return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color').distinct()
+        return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color', 'color_code').distinct()
 
     def num_sizes(self):
         return c.ManufacturerVariant.objects.filter(product=self).order_by('size').values('size').distinct().count()
@@ -43,12 +50,41 @@ class ManufacturerItem(models.Model):
         return c.ManufacturerVariant.objects.filter(product=self).count()
     num_variants.short_description = "Variants"
 
+    def get_price_range(self):
+        val = c.ManufacturerVariant.objects.filter(
+            product=self).aggregate(Max('base_price'), Min('base_price'))
+        if val['base_price__max'] == val['base_price__min']:
+            return locale.currency(val['base_price__min'])
+        return "{} to {}".format(locale.currency(val['base_price__min']), locale.currency(val['base_price__max']))
+
     def __str__(self):
         if self.code and self.name:
             return "{} / {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
         return _("Unnamed Manufacturer Item")
+
+    def download_image(self):
+        if self.item:
+            if not self.item.image:
+                if self.image_url:
+                    print("--> Attempting download of linked image for {}.".format(self.name))
+                    request = requests.get(self.image_url, stream=True)
+                    if request.status_code == requests.codes.ok:
+                        path = urllib.parse.urlparse(self.image_url).path
+                        ext = os.path.splitext(path)[1]
+                        file_name = "{}-{}-{}{}".format(self.item.brand.code,
+                                                        self.item.code, self.manufacturer.code, ext)
+                        lf = tempfile.NamedTemporaryFile()
+                        for block in request.iter_content(1024 * 8):
+                            if not block:
+                                break
+                            lf.write(block)
+                        self.item.image.save(file_name, files.File(lf))
+
+    def save(self, *args, **kwargs):
+        self.download_image()
+        super(ManufacturerItem, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Manufacturer Item")

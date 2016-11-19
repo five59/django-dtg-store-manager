@@ -89,6 +89,6 @@ class APIInterface:
                 )
 
                 if vcreated:
-                    print(" - Created: {} / {} {}".format(vv.code, vv.size, vv.color))
+                    print(" - Created: {} / {} / {} {}".format(vv.base_price, vv.code, vv.size, vv.color))
                 else:
-                    print(" - Updated: {} / {} {}".format(vv.code, vv.size, vv.color))
+                    print(" - Updated: {} / {} / {} {}".format(vv.base_price, vv.code, vv.size, vv.color))

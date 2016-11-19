@@ -1,0 +1,53 @@
+{% extends 'common/base.html' %}
+{% load bootstrap3 humanize catalog_tags %}
+
+{% block bootstrap3_title %}
+  {% block title %}{{ mi.name }}{% endblock %}
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <h4>
+      {{ mi.name }}
+      <small>{{ mi.item.brand.name }} {{ mi.item.code }}</small>
+    </h4>
+  </div>
+  <div class="row" style="margin-bottom: 1em;">
+    <div class='col-md-3'>
+      {% if mi.item.image %}
+      <img src="{{ mi.item.image.url }}" alt="..." class="img-thumbnail" />
+      {% endif %}
+    </div>
+
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ mi.manufacturer.name }}</h3>
+          {{ mi.get_price_range }}
+
+          {% if mi.num_variants > 1 %}
+
+          {% if mi.num_colors > 1 %}/ {{ mi.num_colors|apnumber|title }} Colors{% endif %}
+
+          {% if mi.num_sizes > 1 %}/ {{ mi.num_sizes|apnumber|title }} Sizes{% endif %}
+          ({{ mi.num_variants|apnumber|title }} Variants)
+          {% endif %}
+
+          {% if mi.num_sizes > 1 %}/ Sizes:
+          {% for si in mi.get_sizes %}{{ si.size }}, {% endfor %}
+          {% endif %}
+
+        </div>
+
+        <div class="panel-body">
+          {% if mi.num_colors > 1 %}
+          {% for co in mi.get_colors %}
+          {{ co.color_code|color_chip:co.color }}
+          {% endfor %}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

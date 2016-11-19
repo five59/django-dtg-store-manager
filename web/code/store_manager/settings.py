@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import locale
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'suit',
     'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.humanize',
     'django.contrib.contenttypes',
@@ -40,11 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+
     'mptt',
     'django_mptt_admin',
+
     'suit_ckeditor',
     'timezone_field',
+
     'django_markup',
+    'bootstrap3',
+
     'catalog',
     'creative',
     'product',
@@ -109,6 +116,7 @@ TIME_ZONE = 'America/New_York'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '_static')

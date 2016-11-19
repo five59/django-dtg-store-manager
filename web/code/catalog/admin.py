@@ -200,6 +200,7 @@ class ItemAdmin(admin.ModelAdmin):
         'code', 'name',
         'brand', 'num_vendors',
         'category', 'googlecategory',
+        'has_image',
         'age_group', 'gender', 'size_type',
     ]
     # list_editable = ['category', ]
