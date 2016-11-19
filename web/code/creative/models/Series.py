@@ -20,6 +20,22 @@ class Series(models.Model):
     def get_designs(self):
         return c.Design.objects.filter(series=self)
 
+    def num_designs(self):
+        return c.Design.objects.filter(series=self).count()
+    num_designs.short_description = 'Designs'
+
+    def percent_designs_live(self):
+        total_designs = c.Design.objects.filter(series=self).count()
+        if total_designs == 0:
+            percent = 0
+        else:
+            live_designs = c.Design.objects.filter(series=self, status=c.Design.STATUS_LIVE).count()
+            percent = live_designs / total_designs * 100
+        if percent == 100:
+            return "100%"
+        return "{:.2f}%".format(percent)
+    percent_designs_live.short_description = "Percent Live"
+
     def __str__(self):
         if self.code and self.name:
             return "{} / {}".format(self.code, self.name)

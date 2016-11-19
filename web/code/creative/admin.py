@@ -28,8 +28,8 @@ class ArtistInline(admin.TabularInline):
 class DesignInline(admin.TabularInline):
     model = Design
     extra = 0
-    fields = ['name', 'code', ]
-    suit_classes = 'suit-tab suit-tab-creative'
+    fields = ['name', 'code', 'note', ]
+    suit_classes = 'suit-tab suit-tab-design'
 
 
 class SalesChannelAdmin(admin.ModelAdmin):
@@ -64,7 +64,8 @@ admin.site.register(SalesChannel, SalesChannelAdmin)
 
 
 class SeriesAdmin(admin.ModelAdmin):
-    list_display = ['code', 'name', 'sales_channel', 'creative_lead']
+    list_display = ['code', 'name', 'sales_channel',
+                    'creative_lead', 'num_designs',  'percent_designs_live', ]
     list_filter = ['sales_channel', 'creative_lead', ]
     inlines = (DesignInline,)
     fieldsets = [

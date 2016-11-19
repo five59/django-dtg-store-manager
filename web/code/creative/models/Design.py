@@ -70,7 +70,7 @@ class Design(models.Model):
         except:
             pass
         if self.code:
-            rv = "{}{} / ".format(rv, self.code)
+            rv = "{}{}".format(rv, self.code)
         else:
             rv = "".join([rv, "00"])
         if self.name:
