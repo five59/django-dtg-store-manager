@@ -3,12 +3,12 @@ from django.utils.translation import ugettext_lazy as _
 from django_extensions.db import fields as extension_fields
 import uuid
 from datetime import datetime
-from creative import models as cr
 from catalog import models as ca
 from outlet_woo import models as wc
 
 
 class Product(models.Model):
+    from creative.models import Design as CreativeDesign
     PRODUCTTYPE_SIMPLE = "simple"
     PRODUCTTYPE_GROUPED = 'grouped'
     PRODUCTTYPE_EXTERNAL = 'external'
@@ -77,7 +77,7 @@ class Product(models.Model):
     shop = models.ForeignKey(wc.Shop, help_text=_(""), blank=True, null=True)
     is_active = models.BooleanField(_("Is Active?"), help_text=_(
         "Local flag to ensure depreciated products don't break the datastore."), default=False)
-    design = models.ForeignKey(cr.Design, help_text=_(""), blank=True,
+    design = models.ForeignKey(CreativeDesign, help_text=_(""), blank=True,
                                null=True, related_name='product_item_design')
 
     app_added = models.DateTimeField(auto_now_add=True, help_text=_(""))
@@ -103,7 +103,7 @@ class Product(models.Model):
                            default="", blank=True, null=True)
 
     price = models.CharField(_("Price"), help_text=_(
-        "READONLY. Current product price. This is setted from regular_price and sale_price.f"), max_length=255, default="", blank=True, null=True)
+        "READONLY. Current product price. This is set from regular_price and sale_price."), max_length=255, default="", blank=True, null=True)
     regular_price = models.CharField(_("Regular Price"), help_text=_("Product regular price."), max_length=255,
                                      default="", blank=True, null=True)
     sale_price = models.CharField(_("Sale Price"), help_text=_("Product sale price."), max_length=255,
@@ -197,6 +197,10 @@ class Product(models.Model):
     def get_images(self):
         return wc.ProductImage.objects.filter(product=self)
     get_images.short_description = _("Get Images")
+
+    def get_main_image(self):
+        return wc.ProductImage.objects.get(product=self, position=0)
+    get_images.short_description = _("Get Main Image")
 
     def num_images(self):
         return wc.ProductImage.objects.filter(product=self).count()

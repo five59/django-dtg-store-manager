@@ -36,11 +36,29 @@ class Design(models.Model):
             self.STATUS_LIVE: '#009900',
             self.STATUS_DEFERRED: '#999999',
         }
-        rv = "<div style='text-align: center; padding: 2px; color:#ffffff; background-color:{};'>{}</div>".format(
+        rv = "<div style='text-align: center; padding: 2px; color:#ffffff; font-size: 0.75em; background-color:{};'>{}</div>".format(
             STATUS_COLORS[self.status], self.get_status_display())
         return rv
     status_tag.short_description = "Status"
     status_tag.allow_tags = True
+
+    # def get_product_images(self):
+    #     from outlet_woo.models import Product as WooProduct
+    #     from outlet_woo.models import ProductImage as WooProductImage
+    #     woo = WooProductImages.objects.filter(product=WooProduct.objects.filter(design=self))
+    #     return woo
+
+    def get_an_image(self):
+        from outlet_woo.models import Product as WooProduct
+        try:
+            woo = WooProduct.objects.filter(design=self)[0]
+            return woo.get_images()[0].image
+        except:
+            return None
+
+    def get_products(self):
+        from outlet_woo.models import Product as WooProduct
+        return WooProduct.objects.filter(design=self)
 
     def __str__(self):
         rv = ""
@@ -63,3 +81,4 @@ class Design(models.Model):
         verbose_name = _("Design")
         verbose_name_plural = _("Designs")
         ordering = ['series__code', 'code', 'name', ]
+        unique_together = ('series', 'code',)

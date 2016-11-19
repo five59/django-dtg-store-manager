@@ -1,9 +1,61 @@
 {% extends 'common/base.html' %}
-{% load bootstrap3 humanize catalog_tags %}
+{% load bootstrap3 humanize catalog_tags l10n %}
 
 {% block bootstrap3_title %}
   {% block title %}Store Manager / Creative Dashboard{% endblock %}
 {% endblock %}
 
 {% block content %}
+  <h1>Creative Dashboard</h1>
+
+  {% for s in series %}
+  <div class="row">
+    <div class="col-md-12" style="border: 1px solid #ccc;">
+      <h3>{{ s.code }} <small>{{ s.name }}</small></h3>
+    </div>
+  </div>
+
+  <p>&nbsp;</p>
+
+  {% for d in s.get_designs %}
+  <div class="row" style="margin-bottom: 1em;">
+
+    <div class="col-md-2">
+      {% if d.get_an_image %}
+        <img src="{{ d.get_an_image.url }}" class="img-thumbnail" />
+      {% endif %}
+    </div>
+
+    <div class="col-md-3">
+      <h4>{{ s.code }}-{{ d.code }}</h4>
+      <p>{{ d.status_tag|safe }}</p>
+      <p>Design: <strong>{{ d.name }}</strong></p>
+      <p>Artist: <strong>{{ d.artist }}</strong></p>
+    </div>
+
+
+    <div class="col-md-7">
+      <table class="table">
+        <tr>
+          <th>SKU</th>
+          <th>Product</th>
+          <th>Price</th>
+        </tr>
+        {% for p in d.get_products %}
+        <tr>
+          <td>{{ p.sku }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price_html|safe }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+
+
+
+  </div>
+  {% endfor %}
+  {% endfor %}
+
 {% endblock %}

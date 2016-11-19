@@ -17,6 +17,9 @@ class Series(models.Model):
                                       verbose_name=_("Sales Channel"))
     note = models.TextField(_("Note"), blank=True, null=True)
 
+    def get_designs(self):
+        return c.Design.objects.filter(series=self)
+
     def __str__(self):
         if self.code and self.name:
             return "{} / {}".format(self.code, self.name)

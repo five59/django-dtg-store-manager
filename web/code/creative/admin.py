@@ -135,12 +135,13 @@ admin.site.register(Artist, ArtistAdmin)
 
 class DesignAdmin(admin.ModelAdmin):
     list_display = [
+        'name',
         'code',
         'status_tag',
         'series',
-        'name',
         'artist',
     ]
+    # list_editable = ['code', ]
     list_filter = [
         'series', 'status'
     ]
