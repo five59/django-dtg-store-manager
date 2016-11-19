@@ -54,6 +54,11 @@ class ProductImage(models.Model):
                     lf.write(block)
                 self.image.save(file_name, files.File(lf))
 
+    def has_local_image(self):
+        return True if self.image else False
+    has_local_image.short_description = _("Local Image?")
+    has_local_image.boolean = True
+
     def __str__(self):
         if self.name:
             return "{}".format(self.name)

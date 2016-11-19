@@ -206,5 +206,11 @@ admin.site.register(Product, ProductAdmin)
 
 
 class ProductImageAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        'code',
+        'name',
+        'product',
+        'position',
+        'has_local_image',
+    ]
 admin.site.register(ProductImage, ProductImageAdmin)

@@ -26,14 +26,15 @@ class Command(BaseCommand):
 
         for applabel, appitem in apps.all_models.items():
             if not applabel in ignored_apps:
-                self.stdout.write("--> App: {}".format(applabel), ending='\n')
                 for model in appitem:
-                    self.stdout.write("    --> {}".format(model), ending='\n')
+                    self.stdout.write(
+                        "--> Exporting data from {}.{}...".format(applabel, model), ending='')
                     sysout = sys.stdout
                     sys.stdout = open('/code/_fixtures/{}.{}.json'.format(applabel, model), 'w')
                     result = management.call_command(dumpdata.Command(), "{}.{}".format(
                         applabel, model), indent=2, format='json')
                     sys.stdout = sysout
+                    self.stdout.write("OK!", ending='\n')
 
     def dobackup(self):
         pass
