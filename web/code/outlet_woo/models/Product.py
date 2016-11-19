@@ -79,6 +79,8 @@ class Product(models.Model):
         "Local flag to ensure depreciated products don't break the datastore."), default=False)
     design = models.ForeignKey(CreativeDesign, help_text=_(""), blank=True,
                                null=True, related_name='product_item_design')
+    item = models.ForeignKey(ca.Item, help_text=_(""), blank=True,
+                             null=True, related_name='product_catalog_item')
 
     app_added = models.DateTimeField(auto_now_add=True, help_text=_(""))
     app_last_sync = models.DateTimeField(auto_now=True, help_text=_(""))
@@ -178,20 +180,22 @@ class Product(models.Model):
     #==FOREIGN KEYS==
     # IMPLEMENTED:
     # images	array	List of images. See Images properties
-    # NOT YET IMPLEMENTED:
-    #
-    # shipping_class	string	Shipping class slug. Shipping classes are used by certain shipping methods to group similar products.
-    # shipping_class_id	integer	Shipping class ID. READ-ONLY
+
+    # CREATED, BUT NOT FULLY IMPLEMENTED:
+    # attributes	array	List of attributes. See Attributes properties.
+    # default_attributes	array	Defaults variation attributes, used only for variations and pre-selected attributes on the frontend. See Default Attributes properties.
     # downloads	array	List of downloadable files. See Downloads properties.
     # dimensions	object	Product dimensions. See Dimensions properties.
+    # categories	array	List of categories. See Categories properties.
+    # tags	array	List of tags. See Tags properties.
+    # variations	array	List of variations. See Variations properties
+
+    # NOT YET IMPLEMENTED:
+    # shipping_class	string	Shipping class slug. Shipping classes are used by certain shipping methods to group similar products.
+    # shipping_class_id	integer	Shipping class ID. READ-ONLY
     # related_ids	array	List of related products IDs (integer). READ-ONLY
     # upsell_ids	array	List of up-sell products IDs (integer). Up-sells are products which you recommend instead of the currently viewed product, for example, products that are more profitable or better quality or more expensive.
     # cross_sell_ids	array	List of cross-sell products IDs. Cross-sells are products which you promote in the cart, based on the current product.
-    # categories	array	List of categories. See Categories properties.
-    # tags	array	List of tags. See Tags properties.
-    # attributes	array	List of attributes. See Attributes properties.
-    # default_attributes	array	Defaults variation attributes, used only for variations and pre-selected attributes on the frontend. See Default Attributes properties.
-    # variations	array	List of variations. See Variations properties
     # grouped_products	array	List of grouped products ID, only for group type products. READ-ONLY
 
     def get_images(self):

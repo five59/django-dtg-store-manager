@@ -33,12 +33,16 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'shop',
+        'item',
         'design',
         'product_type',
         'num_images',
     )
     list_filter = ['shop', 'product_type', ]
-    list_editable = ['design', ]
+    list_editable = [
+        # 'design',
+        'item',
+    ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
     inlines = (ProductImageInline,)
@@ -50,6 +54,7 @@ class ProductAdmin(admin.ModelAdmin):
                 'name',
                 'parent',
                 'shop',
+                'item',
                 'design',
             ]
         }),

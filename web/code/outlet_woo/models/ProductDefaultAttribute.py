@@ -13,7 +13,7 @@ from catalog import models as ca
 from outlet_woo import models as wc
 
 
-class ProductDownload(models.Model):
+class ProductDefaultAttribute(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), help_text=_(""), max_length=16,
                             default="", blank=True, null=True)
@@ -27,9 +27,9 @@ class ProductDownload(models.Model):
             return "{}".format(self.name)
         if self.code:
             return "{}".format(self.code)
-        return _("Unnamed Product Download")
+        return _("Unnamed Product Default Attribute")
 
     class Meta:
-        verbose_name = _("Product Download")
-        verbose_name_plural = _("Product Downloads")
+        verbose_name = _("Product Default Attribute")
+        verbose_name_plural = _("Product Default Attributes")
         ordering = ["name", "code", ]
