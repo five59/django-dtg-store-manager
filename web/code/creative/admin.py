@@ -68,10 +68,15 @@ class SeriesAdmin(admin.ModelAdmin):
                     'creative_lead', 'num_designs',  'percent_designs_live', ]
     list_filter = ['sales_channel', 'creative_lead', ]
     inlines = (DesignInline,)
+    form = SeriesForm
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info'),
             'fields': ['code', 'name', 'creative_lead', 'sales_channel', ]
+        }),
+        ("Note", {
+            'classes': ('suit-tab', 'suit-tab-info', 'full-width'),
+            'fields': ['note', ]
         })
     ]
     suit_form_tabs = (

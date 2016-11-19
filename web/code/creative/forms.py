@@ -6,7 +6,15 @@ class SalesChannelForm(ModelForm):
 
     class Meta:
         widgets = {
-            'description': CKEditorWidget(editor_options={'startupFocus': True})
+            'description': CKEditorWidget(editor_options={})
+        }
+
+
+class SeriesForm(ModelForm):
+
+    class Meta:
+        widgets = {
+            'note': CKEditorWidget(editor_options={})
         }
 
 
@@ -14,6 +22,6 @@ class ArtistForm(ModelForm):
 
     class Meta:
         widgets = {
-            'notes': CKEditorWidget(editor_options={'startupFocus': True}),
-            'agreement': CKEditorWidget(editor_options={'startupFocus': True}),
+            'notes': CKEditorWidget(editor_options={}),
+            'agreement': CKEditorWidget(editor_options={}),
         }
