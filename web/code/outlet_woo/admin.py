@@ -29,20 +29,29 @@ admin.site.register(Shop, ShopAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'code',
+        # 'code',
         'sku',
         'name',
-        'shop',
-        'item',
+        # 'shop',
         'design',
+        'item',
         'product_type',
+        "is_active",
+        "status",
         'num_images',
     )
-    list_filter = ['shop', 'product_type', ]
-    list_editable = [
-        # 'design',
-        'item',
+    list_filter = [
+        'is_active',
+        'status',
+        ('shop', admin.RelatedOnlyFieldListFilter),
+        ('design', admin.RelatedOnlyFieldListFilter),
+        ('item', admin.RelatedOnlyFieldListFilter),
+        # 'product_type',
     ]
+    # list_editable = [
+    #     'design',
+    #     'item',
+    # ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
     inlines = (ProductImageInline,)

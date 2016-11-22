@@ -39,8 +39,11 @@ class ProductImage(models.Model):
                               height_field="image_height", width_field="image_width",
                               blank=True, null=True, help_text="")
 
-    def download_image(self):
+    def download_image(self, force=False):
         if self.src:
+            if not force and self.image:
+                return
+
             request = requests.get(self.src, stream=True)
             if request.status_code == requests.codes.ok:
                 path = urllib.parse.urlparse(self.src).path

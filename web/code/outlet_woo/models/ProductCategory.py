@@ -18,7 +18,6 @@ class ProductCategory(models.Model):
     code = models.CharField(_("Code"), help_text=_(""), max_length=16,
                             default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    product = models.ForeignKey(wc.Product, blank=True, null=True)
     app_added = models.DateTimeField(auto_now_add=True, help_text=_(""))
     app_last_sync = models.DateTimeField(auto_now=True, help_text=_(""))
 

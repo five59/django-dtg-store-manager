@@ -28,7 +28,11 @@ class ArtistInline(admin.TabularInline):
 class DesignInline(admin.TabularInline):
     model = Design
     extra = 0
-    fields = ['name', 'code', 'note', ]
+    fields = [
+        'name',
+        'code',
+        # 'note',
+    ]
     suit_classes = 'suit-tab suit-tab-design'
 
 
@@ -141,13 +145,14 @@ admin.site.register(Artist, ArtistAdmin)
 
 class DesignAdmin(admin.ModelAdmin):
     list_display = [
-        'name',
         'code',
+        'name',
         'status_tag',
+        # 'status',
         'series',
         'artist',
     ]
-    # list_editable = ['code', ]
+    # list_editable = ['status', ]
     list_filter = [
         'series', 'status'
     ]

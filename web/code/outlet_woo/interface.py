@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from django.utils.translation import ugettext as _
 from django_extensions.db import fields as extension_fields
+from django.core.paginator import Paginator
 
 from datetime import datetime
 from decimal import Decimal
@@ -47,7 +48,7 @@ class APIInterface:
 
     def __init__(self, sObj):
         self.shopObj = sObj
-        self.max_per_page = 100  # This is defined by the Rest API
+        self.max_per_page = 50  # Max is 100
 
     def do_import(self):
 
@@ -67,9 +68,8 @@ class APIInterface:
             timeout=20,
         )
 
-        print("--> Making request to {} server (Page 1)...".format(self.shopObj.name))
+        print("--> Making dummy request to extract headers...")
         response = apiData.get("products?per_page={}".format(self.max_per_page))
-
         if not response.ok:
             error = json.loads(response.content.decode('utf-8'))
             print("--> Error:")
@@ -78,23 +78,11 @@ class APIInterface:
             print("    Data: {}".format(error.data))
             CommandError("The API returned an error code.")
 
-        shopProducts = json.loads(response.content.decode('utf-8'))
-
-        # TODO FIXME This block definitely has some bugs in it. It will cause
-        # problems for sites with more than 100 products.
         api_total_pages = int(response.headers['X-WP-TotalPages'])
         api_total_products = int(response.headers['X-WP-Total'])
-        if api_total_pages > 1:
-            for page in range(2, api_total_pages + 1):
-                print("--> Requesting Page {} of {}...".format(str(page), str(api_total_pages)))
-                response = apiData.get("products?per_page={}&page={}".format(
-                    str(self.max_per_page), str(page)))
-                # TODO Refactor this code to include error checking here in Page+1 calls
-                shopProducts.append(json.loads(response.content.decode('utf-8')))
 
-        self.shopObj.num_products = len(shopProducts)
+        self.shopObj.num_products = api_total_products
         self.shopObj.save()
-        print("--> Found {} product(s).".format(self.shopObj.num_products))
 
         # If that was successful, then let's invalidate all local data, by
         # swapping the is_active flag to negative.
@@ -102,70 +90,133 @@ class APIInterface:
             p.is_active = False
             p.save()
 
-        for p in shopProducts:
-            # TODO Clean up the inbound data.
-            # date_created = parse_datetime(p['date_created'])
-            # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
-            # date_modified = parse_datetime(p['date_modified'])
-            # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
-            # date_on_sale_from = parse_datetrime(p['date_on_sale_from']
+        print("--> There are {} products across {} API pages.".format(api_total_products, api_total_pages))
 
-            sp, spCreated = wc.Product.objects.update_or_create(
-                code=p['id'],
-                shop=self.shopObj,
-                defaults={
-                    'is_active': True,
-                    'name': p['name'],
-                    'slug': p['slug'],
-                    'permalink': p['permalink'],
-                    # 'date_created': date_created,
-                    # 'date_modified': date_modified,
-                    'product_type': p['type'],
-                    'status': p['status'],
-                    'featured': p['featured'],
-                    'catalog_visibility': p['catalog_visibility'],
-                    'description': p['description'],
-                    'short_description': p['short_description'],
-                    'sku': p['sku'],
-                    'price': p['price'],
-                    'regular_price': p['regular_price'],
-                    'sale_price': p['sale_price'],
-                    # 'date_on_sale_from': p['date_on_sale_from'],
-                    # 'date_on_sale_to': p['date_on_sale_to'],
-                    'price_html': p['price_html'],
-                    'on_sale': p['on_sale'],
-                }
-            )
-            if spCreated:
-                print("Item Added: {} / {}".format(sp.code, sp.name))
-            else:
-                print("Item Updated: {} / {}".format(sp.code, sp.name))
+        for page in range(1, api_total_pages + 1):
+            print("--> Requesting Page {}...".format(page))
+            response = apiData.get("products?per_page={}&page={}".format(self.max_per_page, page))
+            if not response.ok:
+                error = json.loads(response.content.decode('utf-8'))
+                print("--> Error:")
+                print("    Code: {}".format(error.code))
+                print(" Message: {}".format(error.message))
+                print("    Data: {}".format(error.data))
+                CommandError("The API returned an error code.")
 
-            # Load in Images
+            for p in json.loads(response.content.decode('utf-8')):
 
-            # TODO Remove all old images.
-            for i in p['images']:
-                # TODO Clean up image data
-                # date_created = parse_datetime(i['date_created'])
+                # TODO Clean up the inbound data.
+                # date_created = parse_datetime(p['date_created'])
                 # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
-                # date_modified = parse_datetime(i['date_modified'])
+                # date_modified = parse_datetime(p['date_modified'])
                 # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
-                im, imCreated = wc.ProductImage.objects.update_or_create(
-                    code=i['id'],
-                    product=sp,
+                # date_on_sale_from = parse_datetrime(p['date_on_sale_from']
+                sp, spCreated = wc.Product.objects.update_or_create(
+                    code=p['id'],
+                    shop=self.shopObj,
                     defaults={
-                        'name': i['name'],
-                        'src': i['src'],
-                        'alt': i['alt'],
-                        'position': i['position'],
+                        'is_active': True,
+                        'name': p['name'],
+                        'slug': p['slug'],
+                        'permalink': p['permalink'],
                         # 'date_created': date_created,
                         # 'date_modified': date_modified,
+                        'product_type': p['type'],
+                        'status': p['status'],
+                        'featured': p['featured'],
+                        'catalog_visibility': p['catalog_visibility'],
+                        'description': p['description'],
+                        'short_description': p['short_description'],
+                        'sku': p['sku'],
+                        'price': p['price'],
+                        'regular_price': p['regular_price'],
+                        'sale_price': p['sale_price'],
+                        # 'date_on_sale_from': p['date_on_sale_from'],
+                        # 'date_on_sale_to': p['date_on_sale_to'],
+                        'price_html': p['price_html'],
+                        'on_sale': p['on_sale'],
                     }
                 )
-                if imCreated:
-                    print("--> Image Added: {} / {}".format(im.code, im.name))
+
+                if spCreated:
+                    print("Item Added: {} / {}".format(sp.code, sp.name))
                 else:
-                    print("--> Image Updated: {} / {}".format(im.code, im.name))
+                    print("Item Updated: {} / {}".format(sp.code, sp.name))
+
+                # Load in Images
+
+                # TODO Remove all old images.
+                for i in p['images']:
+                    # TODO Clean up image data
+                    # date_created = parse_datetime(i['date_created'])
+                    # pytz.timezone(self.shopObj.timezone).localize(datetime_created)
+                    # date_modified = parse_datetime(i['date_modified'])
+                    # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
+                    im, imCreated = wc.ProductImage.objects.update_or_create(
+                        code=i['id'],
+                        product=sp,
+                        defaults={
+                            'name': i['name'],
+                            'src': i['src'],
+                            'alt': i['alt'],
+                            'position': i['position'],
+                            # 'date_created': date_created,
+                            # 'date_modified': date_modified,
+                        }
+                    )
+                    # if imCreated:
+                    #     print("--> Image Added: {} / {}".format(im.code, im.name))
+                    # else:
+                    #     print("--> Image Updated: {} / {}".format(im.code, im.name))
+
+    def push_skus(self):
+        if not self.shopObj.has_key:
+            CommandError("There doesn't seem to be a key set for {}.".format(self.shopObj.name))
+
+        if not self.shopObj.has_secret:
+            CommandError(
+                "There doesn't seem to be a 'consumer secret key' set for {}.".format(self.shopObj.name))
+
+        pages = Paginator(wc.Product.objects.filter(shop=self.shopObj), 50)
+        print("There are {} items to update, and I'll do this in {} requests.".format(
+            pages.count, pages.num_pages))
+
+        for pg in pages.page_range:
+            page = pages.page(pg)
+            products = []
+            for p in page:
+                products.append({
+                    "id": p.code,
+                    "sku": p.sku,
+                })
+            data = {"update": products}
+
+            apiData = API(
+                url=self.shopObj.web_url,
+                consumer_key=self.shopObj.consumer_key,
+                consumer_secret=self.shopObj.consumer_secret,
+                wp_api=True,
+                version="wc/v1",
+                timeout=20,
+            )
+
+            print("--> Page {} of {} -- updating {} products with current SKUs...".format(
+                pg,
+                pages.num_pages,
+                self.shopObj.name
+            ))
+            response = apiData.post("products/batch", data)
+
+            if not response.ok:
+                error = json.loads(response.content.decode('utf-8'))
+                print("--> Error:")
+                print(error)
+                # print("    Code: {}".format(error.code))
+                # print(" Message: {}".format(error.message))
+                # print("    Data: {}".format(error.data))
+                CommandError("The API returned an error code.")
+            else:
+                print("--> Success!")
 
 
 class Catalog:
@@ -269,7 +320,8 @@ class Catalog:
                     # move in a negative direction.
                     x = 36 + col * (img_grid_scale + img_grid_gutter)
                     y = img_grid_row_start - row * (img_grid_scale - img_grid_gutter)
-                    p.drawImage(img.image.path, x, y, width=img_grid_scale, height=img_grid_scale)
+                    p.drawImage(img.image.path, x, y, width=img_grid_scale,
+                                height=img_grid_scale)
 
             for k, v in pageContent.items():
                 p.setFont(v['font'], v['fontsize'])

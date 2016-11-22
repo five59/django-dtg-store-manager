@@ -183,10 +183,11 @@ class Product(models.Model):
 
     # CREATED, BUT NOT FULLY IMPLEMENTED:
     # attributes	array	List of attributes. See Attributes properties.
-    # default_attributes	array	Defaults variation attributes, used only for variations and pre-selected attributes on the frontend. See Default Attributes properties.
+    # default_attributes	array	Defaults variation attr§ibutes, used only for variations and pre-selected attributes on the frontend. See Default Attributes properties.
     # downloads	array	List of downloadable files. See Downloads properties.
     # dimensions	object	Product dimensions. See Dimensions properties.
-    # categories	array	List of categories. See Categories properties.
+    categories = models.ManyToManyField(wc.ProductCategory)
+    tags = models.ManyToManyField(wc.ProductTag)
     # tags	array	List of tags. See Tags properties.
     # variations	array	List of variations. See Variations properties
 
