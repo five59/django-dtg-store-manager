@@ -13,6 +13,17 @@ class ProductImageInline(admin.TabularInline):
     suit_classes = 'suit-tab suit-tab-productimages'
 
 
+class ProductVariationInline(admin.TabularInline):
+    model = ProductVariation
+    extra = 0
+    fields = ['code', 'name', 'sku', 'price', 'att_color',
+              'att_color_obj', 'att_size', 'att_size_obj', ]
+    readonly_fields = fields
+    # ['code', 'name', 'price', 'att_color', 'att_size', ]
+
+    suit_classes = 'suit-tab suit-tab-productvariants'
+
+
 class ShopAdmin(admin.ModelAdmin):
     list_display = (
         'code',
@@ -27,6 +38,30 @@ class ShopAdmin(admin.ModelAdmin):
 admin.site.register(Shop, ShopAdmin)
 
 
+class ProductVariationAdmin(admin.ModelAdmin):
+    list_display = (
+        'sku',
+        'name',
+        'product',
+        'price',
+        'regular_price',
+        'att_color',
+        'att_color_obj',
+        'att_size',
+        'att_size_obj',
+    )
+    # list_editable = [
+    #     'att_color_obj',
+    #     'att_size_obj',
+    # ]
+    list_filter = (
+        ('product__item', admin.RelatedOnlyFieldListFilter),
+        ('att_color_obj', admin.RelatedOnlyFieldListFilter),
+        ('att_size_obj', admin.RelatedOnlyFieldListFilter),
+    )
+admin.site.register(ProductVariation, ProductVariationAdmin)
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         # 'code',
@@ -35,6 +70,7 @@ class ProductAdmin(admin.ModelAdmin):
         # 'shop',
         'design',
         'item',
+        'has_attributes_string',
         'product_type',
         "is_active",
         "status",
@@ -54,7 +90,7 @@ class ProductAdmin(admin.ModelAdmin):
     # ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
-    inlines = (ProductImageInline,)
+    inlines = (ProductImageInline, ProductVariationInline, )
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -71,6 +107,7 @@ class ProductAdmin(admin.ModelAdmin):
             'classes': ('suit-tab', 'suit-tab-info', 'full-width',),
             'fields': [
                 'short_description',
+                'attributes_string',
             ]
         }),
         (None, {
@@ -214,6 +251,7 @@ class ProductAdmin(admin.ModelAdmin):
         ('inventory', _('Inventory')),
         ('reviews', _('Reviews')),
         ('productimages', _('Images')),
+        ('productvariants', _('Variants')),
         ('metadata', _('Metadata')),
     )
 admin.site.register(Product, ProductAdmin)
@@ -228,3 +266,24 @@ class ProductImageAdmin(admin.ModelAdmin):
         'has_local_image',
     ]
 admin.site.register(ProductImage, ProductImageAdmin)
+
+
+class ProductAttributeTermInline(admin.TabularInline):
+    model = ProductAttributeTerm
+    extra = 0
+    fields = ['code', 'name', 'menu_order', 'count', ]
+    readonly_fields = ['code', 'count', ]
+
+
+class ProductAttributeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'code', 'shop', 'has_archives', 'input_type', 'order_by', ]
+    # list_editable = ['shop', ]
+    list_filter = ['shop', ]
+    inlines = (ProductAttributeTermInline,)
+admin.site.register(ProductAttribute, ProductAttributeAdmin)
+
+
+class ProductAttributeTermAdmin(admin.ModelAdmin):
+    list_display = ['name', 'code', 'productattribute', 'menu_order', 'count', ]
+    list_filter = ['productattribute', ]
+admin.site.register(ProductAttributeTerm, ProductAttributeTermAdmin)

@@ -25,7 +25,7 @@ class Color(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=64, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
+    # slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
 
     brand = models.ForeignKey(Brand, verbose_name=_("Brand"), blank=True, null=True)
 

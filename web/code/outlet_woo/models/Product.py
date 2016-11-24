@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db import fields as extension_fields
 import uuid
+import json
 from datetime import datetime
 from catalog import models as ca
 from outlet_woo import models as wc
@@ -89,6 +90,13 @@ class Product(models.Model):
     date_modified = models.DateTimeField(_("Modified"), help_text=_(
         "READONLY. The date the product was last modified, in the site's timezone."), blank=True, null=True)
 
+    # Until we build out all of the attributes functionality, this simply holds the values until
+    # we do a push back to the server. This prevents variants from corrupting, since the attributes field
+    # on a product in the API is destructive (that is, you can't simply add
+    # one... you must send back all.)
+    attributes_string = models.TextField(
+        _("Attributes Data"), default="", blank=True, null=True)
+
     product_type = models.CharField(_("Type"), help_text=_("Product type. Default is simple. In general, do not change this."), max_length=15,
                                     default=PRODUCTTYPE_SIMPLE, choices=PRODUCTTYPE_CHOICES)
     status = models.CharField(_("Status"), help_text=_("Product status (post status). Default is publish."), max_length=15,
@@ -125,7 +133,6 @@ class Product(models.Model):
         "READONLY. Amount of sales."), default=0)
     virtual = models.BooleanField(_("Virtual?"), help_text=_(
         "If the product is virtual. Virtual products are intangible and aren’t shipped. Default is false."), default=False)
-
     downloadable = models.BooleanField(_("Downloadable?"), help_text=_(
         "If the product is downloadable. Downloadable products give access to a file upon purchase. Default is false."), default=False)
     download_limit = models.IntegerField(_("Download Limit"), help_text=_(
@@ -223,6 +230,73 @@ class Product(models.Model):
             "{0:0>5}".format(self.code) if self.code else "00000",
         ]
         self.sku = "".join(r).upper()
+        for var in wc.ProductVariation.objects.filter(product=self):
+            var.update_sku()
+            var.save()
+
+    def update_attributes(self):
+        # update attributes
+        current_attributes = json.loads(self.attributes_string)
+        # FIXME Sloppy key search.
+        obj = wc.ProductAttribute.objects.get(name="Design")
+        design_code = obj.code
+        obj = wc.ProductAttribute.objects.get(name="Series")
+        series_code = obj.code
+        obj = wc.ProductAttribute.objects.get(name="Google Merchant Category")
+        gmc_code = obj.code
+
+        newKeys = [
+            {
+                'id': design_code,
+                # 'name': 'Design',
+                'visible': True,
+                'variation': False,
+                'options': [self.design.name],
+            },
+            {
+                'id': series_code,
+                # 'name': 'Series',
+                'visible': True,
+                'variation': False,
+                'options': [self.design.series.name],
+            },
+        ]
+        if self.item.googlecategory:
+            newKeys.append(
+                {
+                    'id': gmc_code,
+                    # 'name': 'Google Merchant Category',
+                    'visible': False,
+                    'variation': False,
+                    'options': [self.item.googlecategory.long_name],
+                }
+            )
+
+        for key in newKeys:
+            for attribute in current_attributes:
+                if key['name'] == attribute.get('name'):
+                    del attribute
+            current_attributes.append(key)
+
+        # # This removes all NON - VARIANT attributes
+        # new = []
+        # for p in current_attributes:
+        #     if p['variation']:
+        #         new.append(p)
+        # self.attributes_string = json.dumps(new)
+
+        self.attributes_string = json.dumps(current_attributes)
+        self.save()
+
+    def get_attributes(self):
+        return json.loads(self.attributes_string)
+
+    def has_attributes_string(self):
+        if self.attributes_string:
+            return True
+        return False
+    has_attributes_string.boolean = True
+    has_attributes_string.short_description = _("AS Exists?")
 
     def save(self, *args, **kwargs):
         self.update_sku()

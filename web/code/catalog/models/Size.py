@@ -10,7 +10,7 @@ class Size(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
+    # slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
 
     sortorder = models.IntegerField(default=0, blank=True, null=True)
     grouping = models.CharField(_("Category"), max_length=100, default="", blank=True)

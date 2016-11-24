@@ -7,6 +7,7 @@ from django.utils.dateparse import parse_datetime
 from django.utils.translation import ugettext as _
 from django_extensions.db import fields as extension_fields
 from django.core.paginator import Paginator
+import html
 
 from datetime import datetime
 from decimal import Decimal
@@ -42,16 +43,36 @@ class Utility:
             api.do_import()
 
 
+def APIShortcut(shop_code):
+    shopObj = wc.Shop.objects.get(code=shop_code)
+
+    if not shopObj.has_key:
+        CommandError("There doesn't seem to be a key set for {}.".format(shopObj.name))
+
+    if not shopObj.has_secret:
+        CommandError(
+            "There doesn't seem to be a 'consumer secret key' set for {}.".format(shopObj.name))
+    return API(
+        url=shopObj.web_url,
+        consumer_key=shopObj.consumer_key,
+        consumer_secret=shopObj.consumer_secret,
+        wp_api=True,
+        version="wc/v1",
+        timeout=20,
+    )
+
+
 class APIInterface:
 
     shopObj = None
+    apiData = None
 
     def __init__(self, sObj):
-        self.shopObj = sObj
         self.max_per_page = 50  # Max is 100
+        self.shopObj = sObj
+        self.apiData = self.getAPI()
 
-    def do_import(self):
-
+    def getAPI(self):
         if not self.shopObj.has_key:
             CommandError("There doesn't seem to be a key set for {}.".format(self.shopObj.name))
 
@@ -59,7 +80,7 @@ class APIInterface:
             CommandError(
                 "There doesn't seem to be a 'consumer secret key' set for {}.".format(self.shopObj.name))
 
-        apiData = API(
+        return API(
             url=self.shopObj.web_url,
             consumer_key=self.shopObj.consumer_key,
             consumer_secret=self.shopObj.consumer_secret,
@@ -68,18 +89,30 @@ class APIInterface:
             timeout=20,
         )
 
+    def do_import(self):
+
         print("--> Making dummy request to extract headers...")
-        response = apiData.get("products?per_page={}".format(self.max_per_page))
+        response = self.apiData.get("products?per_page={}".format(self.max_per_page))
         if not response.ok:
             error = json.loads(response.content.decode('utf-8'))
             print("--> Error:")
-            print("    Code: {}".format(error.code))
-            print(" Message: {}".format(error.message))
-            print("    Data: {}".format(error.data))
+            print(error)
+            # print("    Code: {}".format(error.code))
+            # print(" Message: {}".format(error.message))
+            # print("    Data: {}".format(error.data))
             CommandError("The API returned an error code.")
 
-        api_total_pages = int(response.headers['X-WP-TotalPages'])
-        api_total_products = int(response.headers['X-WP-Total'])
+        # print(response.headers)
+
+        if response.headers['X-WP-TotalPages']:
+            api_total_pages = int(response.headers['X-WP-TotalPages'])
+        else:
+            api_total_pages = 1
+
+        if response.headers['X-WP-Total']:
+            api_total_products = int(response.headers['X-WP-Total'])
+        else:
+            api_total_products = 0
 
         self.shopObj.num_products = api_total_products
         self.shopObj.save()
@@ -93,8 +126,9 @@ class APIInterface:
         print("--> There are {} products across {} API pages.".format(api_total_products, api_total_pages))
 
         for page in range(1, api_total_pages + 1):
-            print("--> Requesting Page {}...".format(page))
-            response = apiData.get("products?per_page={}&page={}".format(self.max_per_page, page))
+            print("\n\n--> Requesting Page {}...\n".format(page))
+            response = self.apiData.get(
+                "products?per_page={}&page={}".format(self.max_per_page, page))
             if not response.ok:
                 error = json.loads(response.content.decode('utf-8'))
                 print("--> Error:")
@@ -111,6 +145,7 @@ class APIInterface:
                 # date_modified = parse_datetime(p['date_modified'])
                 # pytz.timezone(self.shopObj.timezone).localize(datetime_modified)
                 # date_on_sale_from = parse_datetrime(p['date_on_sale_from']
+
                 sp, spCreated = wc.Product.objects.update_or_create(
                     code=p['id'],
                     shop=self.shopObj,
@@ -135,17 +170,12 @@ class APIInterface:
                         # 'date_on_sale_to': p['date_on_sale_to'],
                         'price_html': p['price_html'],
                         'on_sale': p['on_sale'],
+                        'attributes_string': json.dumps(p['attributes']),
                     }
                 )
 
-                if spCreated:
-                    print("Item Added: {} / {}".format(sp.code, sp.name))
-                else:
-                    print("Item Updated: {} / {}".format(sp.code, sp.name))
-
-                # Load in Images
-
                 # TODO Remove all old images.
+                imStats = {'total': 0, 'added': 0}
                 for i in p['images']:
                     # TODO Clean up image data
                     # date_created = parse_datetime(i['date_created'])
@@ -164,48 +194,244 @@ class APIInterface:
                             # 'date_modified': date_modified,
                         }
                     )
-                    # if imCreated:
-                    #     print("--> Image Added: {} / {}".format(im.code, im.name))
-                    # else:
-                    #     print("--> Image Updated: {} / {}".format(im.code, im.name))
+                    imStats['total'] += 1
+                    if imCreated:
+                        imStats['added'] += 1
 
-    def push_skus(self):
-        if not self.shopObj.has_key:
-            CommandError("There doesn't seem to be a key set for {}.".format(self.shopObj.name))
+                pmStats = {'total': 0, 'added': 0}
+                for i in p['variations']:
+                    # FIXME. Short term fix for attributes. Using local COLOR and SIZE.
+                    att_color = next((x for x in i['attributes'] if x[
+                                     'name'] == 'color'), None)
+                    att_size = next((x for x in i['attributes'] if x[
+                                    'name'] == 'size'), None)
+                    att_color = att_color['option'] if att_color else None
+                    att_size = att_size['option'] if att_size else None
 
-        if not self.shopObj.has_secret:
-            CommandError(
-                "There doesn't seem to be a 'consumer secret key' set for {}.".format(self.shopObj.name))
+                    if att_color:
+                        try:
+                            att_color_obj = ca.Color.objects.get(
+                                name=att_color) if ca.Color.objects.get(name=att_color) else None
+                        except:
+                            print('--> Color "{}" object not matched.'.format(att_color))
 
-        pages = Paginator(wc.Product.objects.filter(shop=self.shopObj), 50)
+                    if att_size:
+                        try:
+                            att_size_obj = ca.Size.objects.get(
+                                name=att_size) if ca.Size.objects.get(name=att_size) else None
+                        except:
+                            print('--> Size "{}" object not matched.'.format(att_size))
+
+                    pm, pmCreated = wc.ProductVariation.objects.update_or_create(
+                        code=i['id'],
+                        product=sp,
+                        defaults={
+                            'permalink': p['permalink'],
+                            'sku': p['sku'],
+                            'price': p['price'],
+                            "regular_price": p['regular_price'],
+                            "sale_price": p['sale_price'],
+                            "on_sale": p['on_sale'],
+                            "purchasable": p['purchasable'],
+                            "virtual": p['virtual'],
+                            "downloadable": p['downloadable'],
+                            "download_limit": p['download_limit'],
+                            "download_expiry": p['download_expiry'],
+                            "tax_status": p['tax_status'],
+                            "manage_stock": p['manage_stock'],
+                            # "stock_quantity": p['stock_quantity'],
+                            "in_stock": p['in_stock'],
+                            "backorders": p['backorders'],
+                            "backorders_allowed": p['backorders_allowed'],
+                            "backordered": p['backordered'],
+                            # "weight": p['weight'],
+                            'att_color': att_color,
+                            'att_size': att_size,
+                        }
+                    )
+                    pmStats['total'] += 1
+                    if pmCreated:
+                        pmStats['added'] += 1
+
+                if spCreated:
+                    action = "Added"
+                else:
+                    action = "Updated"
+
+                stats = "--> {} / {} {}\t\tImages: {} Total, {} New\t\tVariants: {} Total, {} New".format(
+
+                    sp.code,
+                    sp.name,
+
+                    action,
+
+                    imStats['total'],
+                    imStats['added'],
+
+                    pmStats['total'],
+                    pmStats['added'],
+
+                )
+                print(stats)
+
+    def get_attributes(self):
+        response = self.apiData.get('products/attributes')
+        if not response.ok:
+            error = json.loads(response.content.decode('utf-8'))
+            print("Error: {}".format(error))
+        data = json.loads(response.content.decode('utf-8'))
+        for i in data:
+            pa, created = wc.ProductAttribute.objects.update_or_create(
+                code=i['id'],
+                shop=self.shopObj,
+                defaults={
+                    'name': html.unescape(i['name']),
+                    'slug': i['slug'],
+                    'has_archives': i['has_archives'],
+                    'input_type': i['type'],
+                    'order_by': i['order_by'],
+                }
+            )
+            response = self.apiData.get('products/attributes/{}/terms'.format(pa.code))
+            if not response.ok:
+                error = json.loads(response.content.decode('utf-8'))
+                print("Error: {}".format(error))
+
+            termdata = json.loads(response.content.decode('utf-8'))
+            for t in termdata:
+                pat, patCreated = wc.ProductAttributeTerm.objects.update_or_create(
+                    code=t['id'],
+                    productattribute=pa,
+                    defaults={
+                        'name': html.unescape(t['name']),
+                        'slug': t['slug'],
+                        'description': t['description'],
+                        'menu_order': t['menu_order'],
+                        'count': t['count'],
+                    }
+                )
+            if created:
+                print("-- Added New Attribute: {}".format(pa.name))
+            else:
+                print("-- Updated: {}".format(pa.name))
+            print("   With {} terms.".format(len(termdata)))
+
+    def generate_attribute_terms(self):
+        obj = wc.Product.objects.filter(
+            shop=self.shopObj).order_by().values(
+            "item__googlecategory__long_name").distinct()
+        pa = wc.ProductAttribute.objects.get(name="Google Merchant Category", shop=self.shopObj)
+        for i in obj:
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=i['item__googlecategory__long_name'],
+                productattribute=pa,
+                defaults={}
+            )
+
+        obj = wc.Product.objects.filter(
+            shop=self.shopObj).order_by().values(
+            "design__name").distinct()
+        pa = wc.ProductAttribute.objects.get(name="Design", shop=self.shopObj)
+        for i in obj:
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=i['design__name'],
+                productattribute=pa,
+                defaults={}
+            )
+
+        obj = wc.Product.objects.filter(
+            shop=self.shopObj).order_by().values(
+            "design__series__name").distinct()
+        pa = wc.ProductAttribute.objects.get(name="Series", shop=self.shopObj)
+        for i in obj:
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=i['design__series__name'],
+                productattribute=pa,
+                defaults={},
+            )
+
+    def put_attributes(self):
+        # TODO Add delete functionality
+        for attribute in wc.ProductAttribute.objects.filter(shop=self.shopObj):
+            data = {
+                "create": [],
+                "update": [],
+                # "delete": [],
+            }
+            for t in wc.ProductAttributeTerm.objects.filter(productattribute=attribute):
+                if t.code:
+                    data['update'].append({
+                        'id': t.code, 'name': html.escape(t.name),
+                    })
+                else:
+                    data['create'].append({'name': html.escape(t.name)})
+            response = self.apiData.post(
+                'products/attributes/{}/terms/batch'.format(attribute.code), data)
+            if not response.ok:
+                error = json.loads(response.content.decode('utf-8'))
+                print("--> Error:")
+                print(error)
+            print("-- Updated {} with {} additions and {} updates.".format(
+                attribute.name,
+                len(data['create']),
+                len(data['update']),
+            ))
+
+        # attributes = json.loads(response.content.decode('utf-8'))
+        #
+        # for k, v in new_attributes.items():      # Loop through the local items
+        #     for i in attributes:                # Loop through the remote data
+        #         if i['name'] in k:              # If the remote Attribute is one that we care about
+        #             v['id'] = i['id']
+        #             response = self.apiData.get('products/attributes/{}/terms')
+        #             if response.ok:
+        #                 v['response'] = json.loads(response.content.decode('utf-8'))
+        #             else:
+        #                 print("--> ERROR occurred while trying to retrieve terms for {}".format(k))
+        #
+
+    def push_data(self):
+
+        pages = Paginator(wc.Product.objects.filter(shop=self.shopObj), 10)
         print("There are {} items to update, and I'll do this in {} requests.".format(
             pages.count, pages.num_pages))
 
         for pg in pages.page_range:
+            console = []
             page = pages.page(pg)
             products = []
             for p in page:
-                products.append({
+                print("--> Product: {}".format(p.sku))
+                data = {
                     "id": p.code,
                     "sku": p.sku,
-                })
+                    "name": p.name,
+                    "attributes": p.get_attributes(),
+                }
+                variants = wc.ProductVariation.objects.filter(product=p)
+                if variants:
+                    print("\t{} variants".format(variants.count()))
+                    data['variations'] = []
+                    for v in variants:
+                        if p.regular_price:
+                            new_price = p.regular_price
+                        else:
+                            new_price = p.price
+                        data['variations'].append({
+                            "id": v.code,
+                            "sku": v.sku,
+                            "name": p.name,
+                            "regular_price": new_price,
+                        })
+                products.append(data)
             data = {"update": products}
-
-            apiData = API(
-                url=self.shopObj.web_url,
-                consumer_key=self.shopObj.consumer_key,
-                consumer_secret=self.shopObj.consumer_secret,
-                wp_api=True,
-                version="wc/v1",
-                timeout=20,
-            )
 
             print("--> Page {} of {} -- updating {} products with current SKUs...".format(
                 pg,
                 pages.num_pages,
                 self.shopObj.name
             ))
-            response = apiData.post("products/batch", data)
+            response = self.apiData.post("products/batch", data)
 
             if not response.ok:
                 error = json.loads(response.content.decode('utf-8'))

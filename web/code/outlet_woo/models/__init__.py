@@ -6,6 +6,7 @@ from .Product import Product
 
 from .ProductAttribute import ProductAttribute
 from .ProductDefaultAttribute import ProductDefaultAttribute
+from .ProductAttributeTerm import ProductAttributeTerm
 from .ProductDimension import ProductDimension
 from .ProductDownload import ProductDownload
 from .ProductImage import ProductImage

@@ -18,9 +18,19 @@ class ProductAttribute(models.Model):
     code = models.CharField(_("Code"), help_text=_(""), max_length=16,
                             default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    product = models.ForeignKey(wc.Product, blank=True, null=True)
+    slug = models.CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
+    has_archives = models.BooleanField(_("Has Archives?"), default=False)
+    input_type = models.CharField(_("Type"), max_length=32, default="text", blank=True, null=True)
+    order_by = models.CharField(_("Order By"), max_length=64, default="", blank=True, null=True)
+    shop = models.ForeignKey(wc.Shop, blank=True, null=True)
     app_added = models.DateTimeField(auto_now_add=True, help_text=_(""))
     app_last_sync = models.DateTimeField(auto_now=True, help_text=_(""))
+
+    def exists_on_server(self):
+        if self.code:
+            return True
+        return False
+    exists_on_server.boolean = True
 
     def __str__(self):
         if self.name:

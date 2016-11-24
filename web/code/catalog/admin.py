@@ -23,6 +23,13 @@ class ItemInline(admin.TabularInline):
     suit_classes = 'suit-tab suit-tab-products'
 
 
+class ItemInlineForGoogle(admin.TabularInline):
+    model = Item
+    extra = 3
+    fields = ['code', 'name']
+    readonly_fields = fields
+
+
 class ItemVariantInline(admin.TabularInline):
     model = ItemVariant
     extra = 5
@@ -97,6 +104,7 @@ admin.site.register(Category, CategoryAdmin)
 
 class GoogleCategoryAdmin(admin.ModelAdmin):
     search_fields = ['code', 'name', ]
+    inlines = (ItemInlineForGoogle, )
 admin.site.register(GoogleCategory, GoogleCategoryAdmin)
 
 
@@ -113,7 +121,7 @@ class ColorAdmin(admin.ModelAdmin):
         # 'c_value', 'm_value', 'y_value', 'k_value',
     ]
     search_fields = ['code', 'name', ]
-    # list_editable = ['code', ]
+    # list_editable = ['code', 'brand', ]
     list_filter = [
         ('brand', admin.RelatedOnlyFieldListFilter),
         'pms_family',
@@ -156,7 +164,7 @@ admin.site.register(Color, ColorAdmin)
 class SizeAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'grouping', 'sortorder', ]
     list_filter = ['grouping', ]
-    # list_editable = ['code', ]
+    # list_editable = ['code', 'grouping', 'sortorder', ]
 admin.site.register(Size, SizeAdmin)
 
 

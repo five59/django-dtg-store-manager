@@ -31,8 +31,9 @@ class DesignInline(admin.TabularInline):
     fields = [
         'name',
         'code',
-        # 'note',
+        'note',
     ]
+    readonly_fields = ['name', 'code', ]
     suit_classes = 'suit-tab suit-tab-design'
 
 
