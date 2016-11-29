@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 0
-    fields = ['code', 'name', 'alt', 'position', ]
+    fields = ['code', 'name', 'src', 'alt', 'position', ]
     readonly_fields = fields
     suit_classes = 'suit-tab suit-tab-productimages'
 
@@ -50,10 +50,10 @@ class ProductVariationAdmin(admin.ModelAdmin):
         'att_size',
         'att_size_obj',
     )
-    # list_editable = [
-    #     'att_color_obj',
-    #     'att_size_obj',
-    # ]
+    list_editable = [
+        # 'att_color_obj',
+        'att_size_obj',
+    ]
     list_filter = (
         ('product__item', admin.RelatedOnlyFieldListFilter),
         ('att_color_obj', admin.RelatedOnlyFieldListFilter),

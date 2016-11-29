@@ -274,7 +274,7 @@ class Product(models.Model):
 
         for key in newKeys:
             for attribute in current_attributes:
-                if key['name'] == attribute.get('name'):
+                if key.get('name') == attribute.get('name'):
                     del attribute
             current_attributes.append(key)
 
