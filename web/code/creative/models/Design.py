@@ -27,6 +27,8 @@ class Design(models.Model):
     status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=1,
                               default=STATUS_NEW, null=True, blank=True)
     note = models.TextField(_("Note"), null=True, blank=True)
+    description = models.TextField(_("Description"), null=True, blank=True, help_text=_(
+        "This will appear in the customer-facing product listing."))
 
     def status_tag(self):
         # return self.status

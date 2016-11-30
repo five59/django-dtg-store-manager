@@ -14,7 +14,17 @@ class SeriesForm(ModelForm):
 
     class Meta:
         widgets = {
-            'note': CKEditorWidget(editor_options={})
+            'note': CKEditorWidget(editor_options={}),
+            'description': CKEditorWidget(editor_options={}),
+        }
+
+
+class DesignForm(ModelForm):
+
+    class Meta:
+        widgets = {
+            'note': CKEditorWidget(editor_options={}),
+            'description': CKEditorWidget(editor_options={}),
         }
 
 
@@ -24,4 +34,5 @@ class ArtistForm(ModelForm):
         widgets = {
             'notes': CKEditorWidget(editor_options={}),
             'agreement': CKEditorWidget(editor_options={}),
+            'description': CKEditorWidget(editor_options={}),
         }

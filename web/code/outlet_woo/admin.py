@@ -50,10 +50,10 @@ class ProductVariationAdmin(admin.ModelAdmin):
         'att_size',
         'att_size_obj',
     )
-    list_editable = [
-        # 'att_color_obj',
-        'att_size_obj',
-    ]
+    # list_editable = [
+    #     'att_color_obj',
+    #     'att_size_obj',
+    # ]
     list_filter = (
         ('product__item', admin.RelatedOnlyFieldListFilter),
         ('att_color_obj', admin.RelatedOnlyFieldListFilter),

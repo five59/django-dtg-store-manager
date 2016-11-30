@@ -82,11 +82,18 @@ class SeriesAdmin(admin.ModelAdmin):
         ("Note", {
             'classes': ('suit-tab', 'suit-tab-info', 'full-width'),
             'fields': ['note', ]
-        })
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-description', 'full-width',),
+            'fields': [
+                'description',
+            ]
+        }),
     ]
     suit_form_tabs = (
         ('info', _("Info")),
         ('design', _("Design")),
+        ('description', _("Description")),
     )
 admin.site.register(Series, SeriesAdmin)
 
@@ -128,6 +135,12 @@ class ArtistAdmin(admin.ModelAdmin):
             ]
         }),
         (None, {
+            'classes': ('suit-tab', 'suit-tab-description', 'full-width',),
+            'fields': [
+                'description',
+            ]
+        }),
+        (None, {
             'classes': ('suit-tab', 'suit-tab-notes', 'full-width',),
             'fields': [
                 'notes',
@@ -137,6 +150,7 @@ class ArtistAdmin(admin.ModelAdmin):
     suit_form_tabs = (
         ('info', _("Info")),
         ('legal', _("Legal")),
+        ('description', _("Description")),
         ('notes', _("Notes")),
         ('design', _("Design")),
         ('series', _("Series Leaderships")),
@@ -157,6 +171,7 @@ class DesignAdmin(admin.ModelAdmin):
     list_filter = [
         'series', 'status'
     ]
+    form = DesignForm
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info'),
@@ -166,9 +181,16 @@ class DesignAdmin(admin.ModelAdmin):
                 'artist',
                 'status',
             ]
-        })
+        }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-description', 'full-width',),
+            'fields': [
+                'description',
+            ]
+        }),
     ]
     suit_form_tabs = (
         ('info', _("Info")),
+        ('description', _("Description")),
     )
 admin.site.register(Design, DesignAdmin)

@@ -289,7 +289,6 @@ admin.site.register(Item, ItemAdmin)
 class ItemVariantAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'product', 'color', 'size', ]
     search_fields = ['name', 'code', 'product__name', ]
-
     fieldsets = [
         (None, {
             'classes': ['suit-tab', 'suit-tab-info', ],

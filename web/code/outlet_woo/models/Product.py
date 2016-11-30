@@ -298,6 +298,37 @@ class Product(models.Model):
     has_attributes_string.boolean = True
     has_attributes_string.short_description = _("AS Exists?")
 
+    def update_description(self):
+        rv = []
+
+        # Design Info
+        if self.design.description:
+            rv.append('<h4>{}</h4>'.format(self.design.name))
+            rv.append(self.design.description)
+
+        # Series Info
+        if self.design.series.description:
+            rv.append('<h4>The &quot;{}&quot; Collection</h4>'.format(self.design.series.name))
+            rv.append(self.design.series.description)
+
+        # Artist Info
+        if self.design.artist.description:
+            rv.append('<h4>About the Designer, {}</h4>'.format(self.design.artist.name))
+            rv.append(self.design.artist.description)
+
+        # product Info
+        if self.item.description:
+            rv.append("<h4>{} Details</h4>".format(self.item.name))
+            rv.append(self.item.description)
+
+        rv = "\n\n".join(rv)
+        print("--> {}".format(self))
+        if len(rv) > 0:
+            self.description = rv
+            self.save()
+        # else:
+        #     print(": No description")
+
     def save(self, *args, **kwargs):
         self.update_sku()
         super(Product, self).save(*args, **kwargs)

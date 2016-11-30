@@ -22,6 +22,8 @@ class Artist(models.Model):
     has_agreement = models.BooleanField(_("Agreement in Place?"), default=False)
 
     notes = models.TextField(_("Notes"), blank=True, null=True, default="")
+    description = models.TextField(_("Description"), null=True, blank=True, help_text=_(
+        "This will appear in the customer-facing product listing."))
 
     def num_live(self):
         raise NotImplementedError

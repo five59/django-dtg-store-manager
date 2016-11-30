@@ -16,6 +16,8 @@ class Series(models.Model):
     sales_channel = models.ForeignKey(c.SalesChannel, blank=True, null=True,
                                       verbose_name=_("Sales Channel"))
     note = models.TextField(_("Note"), blank=True, null=True)
+    description = models.TextField(_("Description"), null=True, blank=True, help_text=_(
+        "This will appear in the customer-facing product listing."))
 
     def get_designs(self):
         return c.Design.objects.filter(series=self)
