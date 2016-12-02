@@ -147,10 +147,16 @@ class Item(models.Model):
     has_image.boolean = True
     has_image.short_description = "Image?"
 
-    def __str__(self):
+    def get_item_code(self):
         rv = [
             self.brand.code if self.brand else "ZZ",
             self.code if self.code else "0000",
+        ]
+        return "".join(rv)
+
+    def __str__(self):
+        rv = [
+            self.get_item_code(),
             " / ",
             self.name if self.name else _("Unnamed Item")
         ]

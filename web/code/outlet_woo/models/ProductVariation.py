@@ -118,6 +118,33 @@ class ProductVariation(models.Model):
         ]
         self.sku = "".join(r).upper()
 
+    def update_meta(self):
+        print("Updating: {}".format(self))
+        if self.att_color:
+            obj, created = ca.Color.objects.update_or_create(
+                name=self.att_color,
+                brand=self.product.item.brand,
+                defaults={}
+            )
+            self.att_color_obj = obj
+            if created:
+                print("-- Color: Created {}".format(self.att_color_obj))
+            else:
+                print("-- Color: Matched {} to {}".format(self.att_color, self.att_color_obj))
+
+        if self.att_size:
+            obj, created = ca.Size.objects.update_or_create(
+                name=self.att_size,
+                defaults={}
+            )
+            self.att_size_obj = obj
+            if created:
+                print("-- Size: Created {}".format(self.att_size_obj))
+            else:
+                print("-- Size: Matched {} to {}".format(self.att_size, self.att_size_obj))
+
+        self.save()
+
     def save(self, *args, **kwargs):
         self.update_sku()
         super(ProductVariation, self).save(*args, **kwargs)

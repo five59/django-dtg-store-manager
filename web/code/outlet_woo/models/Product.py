@@ -244,6 +244,15 @@ class Product(models.Model):
         series_code = obj.code
         obj = wc.ProductAttribute.objects.get(name="Google Merchant Category")
         gmc_code = obj.code
+        obj = wc.ProductAttribute.objects.get(name="Brand")
+        bnd_code = obj.code
+        obj = wc.ProductAttribute.objects.get(name="Gender")
+        gnd_code = obj.code
+        obj = wc.ProductAttribute.objects.get(name="Age Group")
+        agp_code = obj.code
+
+        obj = wc.ProductAttribute.objects.get(name="Shipping Label")
+        spl_code = obj.code
 
         newKeys = [
             {
@@ -260,6 +269,35 @@ class Product(models.Model):
                 'variation': False,
                 'options': [self.design.series.name],
             },
+            {
+                'id': bnd_code,
+                # 'name': 'Brand',
+                'visible': False,
+                'variation': False,
+                'options': [' / '.join([self.shop.name, self.design.series.name])],
+            },
+            {
+                'id': gnd_code,
+                # 'name': 'Gender',
+                'visible': False,
+                'variation': False,
+                'options': [self.item.get_gender_display()],
+            },
+            {
+                'id': agp_code,
+                # 'name': 'Age Group',
+                'visible': False,
+                'variation': False,
+                'options': [self.item.get_age_group_display()],
+            },
+            {
+                'id': spl_code,
+                # 'name': 'Shipping Label',
+                'visible': False,
+                'variation': False,
+                'options': [self.item.get_item_code()],
+            },
+
         ]
         if self.item.googlecategory:
             newKeys.append(
@@ -287,6 +325,7 @@ class Product(models.Model):
 
         self.attributes_string = json.dumps(current_attributes)
         self.save()
+        print("-- Updated {} attributes for {}.".format(len(current_attributes), self))
 
     def get_attributes(self):
         return json.loads(self.attributes_string)

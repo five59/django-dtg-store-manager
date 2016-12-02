@@ -362,23 +362,46 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info',),
+            'classes': ('suit-tab', 'suit-tab-basic',),
             'fields': ['code', 'name', 'product', 'base_price', ]
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info',),
-            'fields': ['size', 'color', 'color_code']
+            'classes': ('suit-tab', 'suit-tab-categorization',),
+            'fields': ['size', 'color', 'color_code', 'weight', ]
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info',),
+            'classes': ('suit-tab', 'suit-tab-basic',),
             'fields': ['image_url', ]
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info',),
+            'classes': ('suit-tab', 'suit-tab-categorization',),
             'fields': ['is_active', 'dt_added', 'dt_updated', ],
+        }),
+        ("Domestic - US", {
+            'classes': ('suit-tab', 'suit-tab-shipping'),
+            'fields': [
+                'shipping_us',
+                'shipping_us_addl',
+            ]
+        }),
+        ("Canada", {
+            'classes': ('suit-tab', 'suit-tab-shipping'),
+            'fields': [
+                'shipping_ca',
+                'shipping_ca_addl',
+            ]
+        }),
+        ("Worldwide", {
+            'classes': ('suit-tab', 'suit-tab-shipping'),
+            'fields': [
+                'shipping_ww',
+                'shipping_ww_addl',
+            ]
         }),
     ]
     suit_form_tabs = (
-        ('info', _('Info')),
+        ('basic', _('Basic')),
+        ('categorization', _('Categorization')),
+        ('shipping', _('Shipping')),
     )
 admin.site.register(ManufacturerVariant, ManufacturerVariantAdmin)

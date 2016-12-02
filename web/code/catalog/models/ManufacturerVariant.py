@@ -25,6 +25,23 @@ class ManufacturerVariant(models.Model):
     dt_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     dt_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
 
+    shipping_us = models.DecimalField(
+        _("Shipping (US)"), help_text=_("Domestic Shipping. Cost for the first item."), max_digits=6, decimal_places=2, default=0)
+    shipping_ca = models.DecimalField(
+        _("Shipping (CA)"), help_text=_("Shipping to Canada. Cost for the first item."), max_digits=6, decimal_places=2, default=0)
+    shipping_ww = models.DecimalField(
+        _("Shipping (WW)"), help_text=_("Global Shipping (ex US/CA). Cost for the first item."), max_digits=6, decimal_places=2, default=0)
+
+    shipping_us_addl = models.DecimalField(
+        _("Shipping (US) Addl"), help_text=_("Cost for subsequent items after the first."), max_digits=6, decimal_places=2, default=0)
+    shipping_ca_addl = models.DecimalField(
+        _("Shipping (CA) Addl"), help_text=_("Cost for subsequent items after the first."), max_digits=6, decimal_places=2, default=0)
+    shipping_ww_addl = models.DecimalField(
+        _("Shipping (WW) Addl"), help_text=_("Cost for subsequent items after the first."), max_digits=6, decimal_places=2, default=0)
+
+    weight = models.DecimalField(
+        _("Weight (oz)"), max_digits=6, decimal_places=2, default=0)
+
     @property
     def price(self):
         return "${}".format(self.price)

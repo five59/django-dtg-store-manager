@@ -59,6 +59,7 @@ class ProductVariationAdmin(admin.ModelAdmin):
         ('att_color_obj', admin.RelatedOnlyFieldListFilter),
         ('att_size_obj', admin.RelatedOnlyFieldListFilter),
     )
+    search_fields = ['code', 'name', ]
 admin.site.register(ProductVariation, ProductVariationAdmin)
 
 
@@ -242,6 +243,7 @@ class ProductAdmin(admin.ModelAdmin):
         'price', 'on_sale', 'price_html', 'backorders_allowed', 'backordered',
         'shipping_required', 'shipping_taxable',
         'average_rating', 'rating_count',
+        'description',
     ]
     suit_form_tabs = (
         ('info', _('Basic Info')),

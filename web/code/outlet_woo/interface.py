@@ -317,6 +317,7 @@ class APIInterface:
             print("   With {} terms.".format(len(termdata)))
 
     def generate_attribute_terms(self):
+        print("-- Google Merchant Category")
         obj = wc.Product.objects.filter(
             shop=self.shopObj).order_by().values(
             "item__googlecategory__long_name").distinct()
@@ -328,6 +329,7 @@ class APIInterface:
                 defaults={}
             )
 
+        print("-- Design")
         obj = wc.Product.objects.filter(
             shop=self.shopObj).order_by().values(
             "design__name").distinct()
@@ -339,13 +341,41 @@ class APIInterface:
                 defaults={}
             )
 
+        print("-- Series & Brand")
         obj = wc.Product.objects.filter(
             shop=self.shopObj).order_by().values(
             "design__series__name").distinct()
         pa = wc.ProductAttribute.objects.get(name="Series", shop=self.shopObj)
+        ba = wc.ProductAttribute.objects.get(name="Brand", shop=self.shopObj)
         for i in obj:
             term, created = wc.ProductAttributeTerm.objects.update_or_create(
                 name=i['design__series__name'],
+                productattribute=pa,
+                defaults={},
+            )
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=" / ".join([
+                    self.shopObj.name,
+                    i['design__series__name'],
+                ]),
+                productattribute=ba,
+                defaults={},
+            )
+
+        print("-- Age Group")
+        pa = wc.ProductAttribute.objects.get(name="Age Group", shop=self.shopObj)
+        for k, v in ca.Item.AGEGROUP_CHOICES:
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=v,
+                productattribute=pa,
+                defaults={},
+            )
+
+        print("-- Gender")
+        pa = wc.ProductAttribute.objects.get(name="Gender", shop=self.shopObj)
+        for k, v in ca.Item.GENDER_CHOICES:
+            term, created = wc.ProductAttributeTerm.objects.update_or_create(
+                name=v,
                 productattribute=pa,
                 defaults={},
             )
@@ -369,8 +399,8 @@ class APIInterface:
                 'products/attributes/{}/terms/batch'.format(attribute.code), data)
             if not response.ok:
                 error = json.loads(response.content.decode('utf-8'))
-                print("--> Error:")
-                print(error)
+                print("-- Error on attribute {}:".format(attribute.name))
+                print("\t{}: {}".format(error['code'], error['message']))
             print("-- Updated {} with {} additions and {} updates.".format(
                 attribute.name,
                 len(data['create']),
@@ -393,7 +423,7 @@ class APIInterface:
     def push_data(self):
 
         pages = Paginator(wc.Product.objects.filter(shop=self.shopObj), 10)
-        print("There are {} items to update, and I'll do this in {} requests.".format(
+        print("\nThere are {} items to update, and I'll do this in {} requests.\n".format(
             pages.count, pages.num_pages))
 
         for pg in pages.page_range:
@@ -401,16 +431,17 @@ class APIInterface:
             page = pages.page(pg)
             products = []
             for p in page:
-                print("--> Product: {}".format(p.sku))
                 data = {
                     "id": p.code,
                     "sku": p.sku,
                     "name": p.name,
                     "attributes": p.get_attributes(),
+                    "regular_price": p.regular_price,
                 }
                 variants = wc.ProductVariation.objects.filter(product=p)
                 if variants:
-                    print("\t{} variants".format(variants.count()))
+                    print("Variant Product: {} ({}) with {} variants.".format(
+                        p.sku, p.name, variants.count()))
                     data['variations'] = []
                     for v in variants:
                         if p.regular_price:
@@ -423,26 +454,27 @@ class APIInterface:
                             "name": p.name,
                             "regular_price": new_price,
                         })
+                else:
+                    print("Standard Product: {} ({}).".format(p.sku, p.name))
                 products.append(data)
             data = {"update": products}
 
-            print("--> Page {} of {} -- updating {} products with current SKUs...".format(
+            print("\nPushing {} products (page {} of {})...".format(
+                self.shopObj.name,
                 pg,
                 pages.num_pages,
-                self.shopObj.name
             ))
             response = self.apiData.post("products/batch", data)
 
             if not response.ok:
                 error = json.loads(response.content.decode('utf-8'))
-                print("--> Error:")
-                print(error)
-                # print("    Code: {}".format(error.code))
-                # print(" Message: {}".format(error.message))
-                # print("    Data: {}".format(error.data))
+                print("Error:")
+                print("-- Code: {}".format(error['code']))
+                print("-- Message: {}".format(error['message']))
+                print("-- Data: {}".format(error['data']))
                 CommandError("The API returned an error code.")
             else:
-                print("--> Success!")
+                print("Success!\n")
 
 
 class Catalog:
