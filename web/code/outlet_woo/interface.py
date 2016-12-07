@@ -89,10 +89,13 @@ class APIInterface:
             timeout=20,
         )
 
-    def do_import(self):
+    def do_import(self, only_private=False):
 
         print("--> Making dummy request to extract headers...")
-        response = self.apiData.get("products?per_page={}".format(self.max_per_page))
+        requestString = "products?per_page={}".format(self.max_per_page)
+        if only_private:
+            requestString = "".join([requestString, "&status=private"])
+        response = self.apiData.get(requestString)
         if not response.ok:
             error = json.loads(response.content.decode('utf-8'))
             print("--> Error:")
@@ -119,9 +122,10 @@ class APIInterface:
 
         # If that was successful, then let's invalidate all local data, by
         # swapping the is_active flag to negative.
-        for p in wc.Product.objects.filter(shop=self.shopObj):
-            p.is_active = False
-            p.save()
+        if not only_private:
+            for p in wc.Product.objects.filter(shop=self.shopObj):
+                p.is_active = False
+                p.save()
 
         print("--> There are {} products across {} API pages.".format(api_total_products, api_total_pages))
 
@@ -420,9 +424,15 @@ class APIInterface:
         #                 print("--> ERROR occurred while trying to retrieve terms for {}".format(k))
         #
 
-    def push_data(self):
+    def push_data(self, only_private=False):
+        items_per_page = 5
+        if only_private:
+            print("-- Requested Private Product Update Only --")
+            objs = wc.Product.objects.filter(shop=self.shopObj, status=wc.Product.STATUS_PRIVATE)
+        else:
+            objs = wc.Product.objects.filter(shop=self.shopObj)
 
-        pages = Paginator(wc.Product.objects.filter(shop=self.shopObj), 10)
+        pages = Paginator(objs, items_per_page)
         print("\nThere are {} items to update, and I'll do this in {} requests.\n".format(
             pages.count, pages.num_pages))
 
@@ -437,7 +447,9 @@ class APIInterface:
                     "name": p.name,
                     "attributes": p.get_attributes(),
                     "regular_price": p.regular_price,
+                    "description": p.description,
                 }
+                # print("-- Description Length: {}".format(len(p.description)))
                 variants = wc.ProductVariation.objects.filter(product=p)
                 if variants:
                     print("Variant Product: {} ({}) with {} variants.".format(

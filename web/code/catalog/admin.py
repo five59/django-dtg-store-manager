@@ -51,6 +51,20 @@ class ManufacturerVariantInline(admin.TabularInline):
     ordering = ['size', 'color', ]
 
 
+class ManufacturerItemFileInline(admin.TabularInline):
+    model = ManufacturerItemFile
+    extra = 0
+    fields = ['code', 'name', 'additional_price', 'is_active']
+    # readonly_fields = fields
+    suit_classes = 'suit-tab suit-tab-specs'
+
+
+class ManufacturerItemDimensionInline(admin.TabularInline):
+    model = ManufacturerItemDimension
+    extra = 0
+    suit_classes = 'suit-tab suit-tab-specs'
+
+
 class ManufacturerAdmin(admin.ModelAdmin):
     list_display = ['code', 'name', 'has_key', ]
     search_fields = ['code', 'name', ]
@@ -113,6 +127,7 @@ class ColorAdmin(admin.ModelAdmin):
         'name',
         'code',
         'brand',
+        'sortorder',
         'pms_code', 'pms_family',
         'hex_code',
         'get_rgb_str',
@@ -121,7 +136,11 @@ class ColorAdmin(admin.ModelAdmin):
         # 'c_value', 'm_value', 'y_value', 'k_value',
     ]
     search_fields = ['code', 'name', ]
-    # list_editable = ['code', 'brand', ]
+    list_editable = [
+        # 'code',
+        # 'brand',
+        # 'sortorder',
+    ]
     list_filter = [
         ('brand', admin.RelatedOnlyFieldListFilter),
         'pms_family',
@@ -151,6 +170,12 @@ class ColorAdmin(admin.ModelAdmin):
             'classes': ['suit-tab', 'suit-tab-color', ],
             'fields': [
                 'c_value', 'm_value', 'y_value', 'k_value',
+            ],
+        }),
+        ("HSL Color", {
+            'classes': ['suit-tab', 'suit-tab-color', ],
+            'fields': [
+                'h_value', 's_value', 'l_value',
             ],
         }),
     ]
@@ -321,7 +346,8 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
     )
     # list_editable = ['item', ]
     search_fields = ('name', 'code',)
-    inlines = (ManufacturerVariantInline,)
+    inlines = (ManufacturerItemFileInline,
+               ManufacturerItemDimensionInline, ManufacturerVariantInline,)
     list_filter = ['manufacturer', 'brand', 'category', ]
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
@@ -344,6 +370,7 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
     ]
     suit_form_tabs = (
         ('info', _('Info')),
+        ('specs', _('Specs')),
         ('ManufacturerVariant', _('Manufacturer Variants')),
     )
 admin.site.register(ManufacturerItem, ManufacturerItemAdmin)
@@ -356,6 +383,7 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
         'product',
         'size',
         'color',
+        'color_obj',
     )
     list_filter = ('product', 'size', 'color',)
     search_fields = ('name', 'code',)
@@ -367,7 +395,7 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-categorization',),
-            'fields': ['size', 'color', 'color_code', 'weight', ]
+            'fields': ['size', 'color', 'color_code', 'color_obj', 'weight', ]
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-basic',),
@@ -405,3 +433,18 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
         ('shipping', _('Shipping')),
     )
 admin.site.register(ManufacturerVariant, ManufacturerVariantAdmin)
+
+
+class ManufacturerItemDimensionAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(ManufacturerItemDimension, ManufacturerItemDimensionAdmin)
+
+
+class ManufacturerItemFileAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(ManufacturerItemFile, ManufacturerItemFileAdmin)
+
+
+class ManufacturerFileLibraryItemAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(ManufacturerFileLibraryItem, ManufacturerFileLibraryItemAdmin)

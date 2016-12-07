@@ -28,7 +28,7 @@ class Color(models.Model):
     # slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
 
     brand = models.ForeignKey(Brand, verbose_name=_("Brand"), blank=True, null=True)
-
+    sortorder = models.CharField(_("Sort Order"), default="", max_length=12)
     pms_code = models.CharField(_("PMS Code"), max_length=64, default="", blank=True, null=True)
     pms_family = models.CharField(_("PMS Family"), max_length=1,
                                   default=PMSFAM_UNKNOWN, blank=True, null=True, choices=PMSFAM_CHOICES)
@@ -48,15 +48,20 @@ class Color(models.Model):
     y_value = models.IntegerField(_("Yellow Value"), default=0, help_text="Scale of 0-100")
     k_value = models.IntegerField(_("Black Value"), default=0, help_text="Scale of 0-100")
 
+    h_value = models.IntegerField(_("Hue Value"), default=0, help_text="Scale of 0-100")
+    s_value = models.IntegerField(_("Saturation Value"), default=0, help_text="Scale of 0-100")
+    l_value = models.IntegerField(_("Luminance Value"), default=0, help_text="Scale of 0-100")
+
     def show_vals(self):
-        print("=================\nRGB: {} {} {} \nCMYK: {} {} {} {}\nHEX: {}\n".format(
-            self.r_value, self.g_value, self.b_value,
-            self.c_value, self.m_value, self.y_value, self.k_value,
-            self.hex_code,
-        ))
+        # print("RGB: {} {} {}\tCMYK: {} {} {} {}\tHEX: {}".format(
+        #     self.r_value, self.g_value, self.b_value,
+        #     self.c_value, self.m_value, self.y_value, self.k_value,
+        #     self.hex_code,
+        # ))
+        pass
 
     def cmyk_to_rgb(self):
-        print("--> CMYK_TO_RGB")
+        # print("--> CMYK_TO_RGB")
         cmyk = (
             self.c_value / 100,
             self.m_value / 100,
@@ -72,7 +77,7 @@ class Color(models.Model):
         self.show_vals()
 
     def rgb_to_cmyk(self):
-        print("--> RGB_TO_CMYK")
+        # print("--> RGB_TO_CMYK")
 
         r = self.r_value / 255
         g = self.g_value / 255
@@ -92,13 +97,14 @@ class Color(models.Model):
         # Clear out values:
         self.r_value, self.g_value, self.b_value,
         self.c_value, self.m_value, self.y_value, self.k_value,
+        self.h_value, self.s_value, self.l_value,
         self.hex_code = None
 
         elementCount = len(self.color_string.split(","))
 
         # Do we have a HEX Code?
         if self.color_string[:1] == "#":
-            print("--> Saw Hex Code")
+            # print("--> Saw Hex Code")
             self.hex_code = self.color_string[1:]
             tmpColor = libColor(self.color_string)
             rgb = tmpColor.get_rgb()
@@ -107,26 +113,31 @@ class Color(models.Model):
 
         # Do we have an RGB Code?
         elif elementCount == 3:
-            print("--> Saw RGB Code")
+            # print("--> Saw RGB Code")
             colorArray = list(map(int, self.color_string.split(",")))
             self.r_value, self.g_value, self.b_value = colorArray
             self.rgb_to_cmyk()
-            imgColor = libColor(rgb=(self.r_value / 255, self.g_value / 255, self.b_value / 255))
-            self.hex_code = imgColor.get_hex()[1:]
+            tmpColor = libColor(rgb=(self.r_value / 255, self.g_value / 255, self.b_value / 255))
+            self.hex_code = tmpColor.get_hex()[1:]
 
         # Do we have a CMYK Code?
         elif elementCount == 4:
             colorArray = list(map(int, self.color_string.split(",")))
             self.c_value, self.m_value, self.y_value, self.k_value = colorArray
             self.cmyk_to_rgb()
-            imgColor = libColor(rgb=(self.r_value / 255, self.g_value / 255, self.b_value / 255))
-            self.hex_code = imgColor.get_hex()[1:]
+            tmpColor = libColor(rgb=(self.r_value / 255, self.g_value / 255, self.b_value / 255))
+            self.hex_code = tmpColor.get_hex()[1:]
 
         else:
-            pass  # Do we need error handling here?
+            pass
 
         # Now we can clear out the temporary field.
         self.color_string = None
+
+        # Now we can set the HSL values.
+        self.h_value = tmpColor.get_hue() * 100
+        self.s_value = tmpColor.get_saturation() * 100
+        self.l_value = tmpColor.get_luminance() * 100
 
     def get_rgb_str(self):
         return "({0:0>3},{1:0>3},{2:0>3})".format(self.r_value, self.g_value, self.b_value)
@@ -135,6 +146,28 @@ class Color(models.Model):
     def get_cmyk_str(self):
         return "({0:0>3},{1:0>3},{2:0>3},{3:0>3})".format(self.c_value, self.m_value, self.y_value, self.k_value)
     get_cmyk_str.short_description = _("CMYK")
+
+    def set_sortorder(self):
+        hue_threshold = 10
+        colorfamilies = {
+            '101': range(0, 6),  # Reds
+            '200': range(6, 21),  # Purples
+            '300': range(21, 48),  # Blues
+            '400': range(48, 80),  # Greens
+            '500': range(80, 96),  # Oranges
+            '100': range(96, 101),  # Reds
+        }
+        if self.s_value < hue_threshold:  # This is a "monochrome" value.
+            self.sortorder = "900{0:0>3}".format(self.l_value)
+        else:  # This is a color value
+            cfamily = ""
+            for k, v in colorfamilies.items():
+                if self.h_value in v:
+                    cfamily = k
+            if cfamily == '101':
+                cfamily = '100'
+            self.sortorder = "{0}{1:0>3}".format(cfamily, self.l_value)
+        self.save()
 
     def save(self, *args, **kwargs):
         self.transcode_color()
@@ -154,4 +187,4 @@ class Color(models.Model):
         verbose_name = _("Color")
         verbose_name_plural = _("Colors")
         ordering = ['code', ]
-        unique_together = (("code", "brand"),)
+        unique_together = (("name", "code", "brand"),)

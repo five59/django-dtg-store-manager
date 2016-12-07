@@ -339,29 +339,35 @@ class Product(models.Model):
 
     def update_description(self):
         rv = []
+        log = []
 
         # Design Info
         if self.design.description:
+            log.append('Design Description: Yes')
             rv.append('<h4>{}</h4>'.format(self.design.name))
             rv.append(self.design.description)
 
         # Series Info
         if self.design.series.description:
+            log.append('Series Description: Yes')
             rv.append('<h4>The &quot;{}&quot; Collection</h4>'.format(self.design.series.name))
             rv.append(self.design.series.description)
 
         # Artist Info
         if self.design.artist.description:
+            log.append('Designer Description: Yes')
             rv.append('<h4>About the Designer, {}</h4>'.format(self.design.artist.name))
             rv.append(self.design.artist.description)
 
         # product Info
         if self.item.description:
+            log.append('Item Description: Yes')
             rv.append("<h4>{} Details</h4>".format(self.item.name))
             rv.append(self.item.description)
 
         rv = "\n\n".join(rv)
-        print("--> {}".format(self))
+        print(self)
+        print("\t".join(log))
         if len(rv) > 0:
             self.description = rv
             self.save()

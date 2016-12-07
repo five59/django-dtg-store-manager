@@ -1,20 +1,31 @@
 from django import template
 from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
+import json
 
 register = template.Library()
 
 
 @register.filter(is_safe=True)
 @stringfilter
-def color_chip(hex_code, label):
+def color_chip(co):
     # {{ hexValue|color_chip:"The Label" }}
 
-    rv = '<div class="color-chip"><div class="color-chip__color" style="background-color:{}"></div><div class="color-chip__info"><div class="color-chip__info__title">{}</div></div></div>'.format(
-        hex_code, label)
-
-    # rv = "<span class='colorchip'><i style='background-color:{};'></i> {}</span>".format(
-    #     hex_code, label)
+    obj = json.loads(co.replace("'", '"'))
+    label = obj['color_obj__name']
+    hex_code = obj['color_obj__hex_code']
+    sortorder = obj['color_obj__sortorder']
+    textcolor = "ffffff" if int(sortorder[3:]) < 50 else "000000"
+    rv = "".join([
+        '<div class="color-chip">',
+        '<div class="color-chip__color" style="background-color:#{}">'.format(hex_code),
+        # '<img src="http://placehold.it/124x42/{}/{}?text={}" />'.format(
+        #     hex_code, textcolor, label.upper()),
+        '<img src="http://placehold.it/110x50/{}/{}?text={}" />'.format(
+            hex_code, hex_code, label.upper()),
+        '</div><div class="color-chip__info">',
+        '<div class="color-chip__info__title">{}</div></div></div>'.format(label)
+    ])
     return mark_safe(rv)
 
 

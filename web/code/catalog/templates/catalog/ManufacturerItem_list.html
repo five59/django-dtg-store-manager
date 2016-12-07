@@ -49,7 +49,7 @@
               <div class="panel-body">
                 {% if mi.num_colors > 1 %}
                 {% for co in mi.get_colors %}
-                {{ co.color_code|color_chip:co.color }}
+                {{ co|color_chip }}
                 {% endfor %}
                 {% endif %}
               </div>

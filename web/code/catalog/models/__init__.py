@@ -10,4 +10,7 @@ from .Item import Item
 from .ItemVariant import ItemVariant
 
 from .ManufacturerItem import ManufacturerItem
+from .ManufacturerItemFile import ManufacturerItemFile
+from .ManufacturerItemDimension import ManufacturerItemDimension
 from .ManufacturerVariant import ManufacturerVariant
+from .ManufacturerFileLibraryItem import ManufacturerFileLibraryItem

@@ -39,7 +39,10 @@ class APIInterface:
             p.save()
 
         # Now, start processing the data.
+        p_count = 0
+        p_total = len(products)
         for p in products:
+            p_count += 1
             vp, pcreated = ca.ManufacturerItem.objects.update_or_create(
                 code=p['id'],
                 manufacturer=self.mfgObj,
@@ -52,15 +55,61 @@ class APIInterface:
                 }
             )
             if pcreated:
-                print("Manufacturer Item Added: {} / {}".format(vp.code, vp.name))
+                print("\n{} of {} Created: \t{} / {}.".format(p_count, p_total, vp.code, vp.name))
             else:
-                print("Manufacturer Item Updated: {} / {}".format(vp.code, vp.name))
+                print("\n{} of {} Updated: \t{} / {}.".format(p_count, p_total, vp.code, vp.name))
+
+            # Import Dimensions
+            if p['dimensions']:
+                # First, flush the is_active field
+                for f in ca.ManufacturerItemDimension.objects.filter(manufacturer_item=vp):
+                    f.is_active = False
+                    f.save()
+                counter = 0
+                for code, name in p['dimensions'].items():
+                    counter += 1
+                    pd, pdcreated = ca.ManufacturerItemDimension.objects.update_or_create(
+                        manufacturer_item=vp,
+                        code=code,
+                        defaults={
+                            'name': name,
+                            'is_active': True,
+                        }
+                    )
+                print("-- Created/updated {} dimensions.".format(counter))
+            else:
+                print('-- No dimensions specified.')
+
+            # Import File Specs
+            if p['files']:
+                # First, flush the is_active field
+                for f in ca.ManufacturerItemFile.objects.filter(manufacturer_item=vp):
+                    f.is_active = False
+                    f.save()
+                counter = 0
+                for f in p['files']:
+                    counter += 1
+                    if not f['additional_price']:
+                        f['additional_price'] = 0
+                    pd, pdcreated = ca.ManufacturerItemFile.objects.update_or_create(
+                        manufacturer_item=vp,
+                        code=f['id'],
+                        defaults={
+                            'name': f['title'],
+                            'additional_price': f['additional_price'],
+                            'is_active': True,
+                        }
+                    )
+                print("-- Created/updated {} file specs.".format(counter))
+            else:
+                print("-- No files specified.")
+
+            # Import Options #TODO
 
             # Now, we're ready to ingest the variants:
             variants = None
             try:
                 variants = api.get('products/{}'.format(vp.code))
-                print("  There are {} variants.".format(len(variants['variants'])))
             except PrintfulApiException as e:
                 print ('API exception: {} {}'.format(e.code, e.message))
             except PrintfulException as e:
@@ -72,6 +121,8 @@ class APIInterface:
                 v.is_active = False
                 v.save()
 
+            c_counter = 0
+            u_counter = 0
             for v in variants['variants']:
                 vv, vcreated = ca.ManufacturerVariant.objects.update_or_create(
                     code=v['id'],
@@ -87,8 +138,60 @@ class APIInterface:
                         'base_price': Decimal(v['price']),
                     },
                 )
-
                 if vcreated:
-                    print(" - Created: {} / {} / {} {}".format(vv.base_price, vv.code, vv.size, vv.color))
+                    c_counter += 1
                 else:
-                    print(" - Updated: {} / {} / {} {}".format(vv.base_price, vv.code, vv.size, vv.color))
+                    u_counter += 1
+            print("-- Updated {} variants, and created {}.".format(u_counter, c_counter))
+
+    def get_filelibrary(self):
+        print("Importing File Library")
+        if not self.mfgObj.api_key:
+            CommandError('This API requires a key.')
+        api = PrintfulClient(self.mfgObj)
+        thefiles = None
+        try:
+            thefiles = api.get('files')
+        except PrintfulApiException as e:
+            print ('API exception:', e)
+        except PrintfulException as e:
+            print("Printful Exception: ", e)
+
+        # if api_total > api_limit:
+            # TODO We need to make multiple calls.
+            # Append offset=x and limit=x, based off of response.item_count()
+
+        for i in ca.ManufacturerFileLibraryItem.objects.filter(manufacturer=self.mfgObj):
+            i.is_active = False
+            i.save()
+
+        for i in thefiles:
+            u_counter = 0
+            c_counter = 0
+            for i in thefiles:
+                fli, created = ca.ManufacturerFileLibraryItem.objects.update_or_create(
+                    code=i['id'],
+                    manufacturer=self.mfgObj,
+                    defaults={
+                        "is_active": True,
+                        "name": i['type'],
+                        "hashvalue": i['hash'],
+                        "url": i['url'],
+                        "filename": i['filename'],
+                        "mime_type": i['mime_type'],
+                        "size": i['size'],
+                        "width": i['width'],
+                        "height": i['height'],
+                        "dpi": i["dpi"],
+                        "status": i["status"],
+                        "created": i["created"],
+                        "thumbnail_url": i["thumbnail_url"],
+                        "preview_url": i["preview_url"],
+                        "visible": i["visible"],
+                    }
+                )
+                if created:
+                    c_counter += 1
+                else:
+                    u_counter += 1
+            print("-- Added {} files, and updated {}.".format(c_coutner, u_counter))

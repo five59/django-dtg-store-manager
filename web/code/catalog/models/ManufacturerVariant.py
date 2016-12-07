@@ -15,6 +15,7 @@ class ManufacturerVariant(models.Model):
     size = models.CharField(_("Size"), max_length=64, default="", blank=True, null=True)
     color = models.CharField(_("Color"), max_length=64, default="", blank=True, null=True)
     color_code = models.CharField(_("Color Code"), max_length=64, default="", blank=True, null=True)
+    color_obj = models.ForeignKey(c.Color, blank=True, null=True)
 
     image_url = models.URLField(_("Image URL"), null=True, blank=True)
     in_stock = models.BooleanField(_("In Stock?"), default=False)

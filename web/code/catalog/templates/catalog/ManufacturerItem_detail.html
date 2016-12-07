@@ -13,13 +13,13 @@
     </h4>
   </div>
   <div class="row" style="margin-bottom: 1em;">
-    <div class='col-md-3'>
+    <div class='col-md-2'>
       {% if mi.item.image %}
       <img src="{{ mi.item.image.url }}" alt="..." class="img-thumbnail" />
       {% endif %}
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-10">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">{{ mi.manufacturer.name }}</h3>
@@ -42,7 +42,7 @@
         <div class="panel-body">
           {% if mi.num_colors > 1 %}
           {% for co in mi.get_colors %}
-          {{ co.color_code|color_chip:co.color }}
+          {{ co|color_chip }}
           {% endfor %}
           {% endif %}
         </div>

@@ -11,6 +11,7 @@ import urllib
 import tempfile
 from django.core import files
 import os
+from colour import Color as libColor
 
 
 class ManufacturerItem(models.Model):
@@ -32,12 +33,47 @@ class ManufacturerItem(models.Model):
     dt_added = models.DateTimeField(_("Date Added"), auto_now_add=True, null=True, blank=True)
     dt_updated = models.DateTimeField(_("Last Updated"), auto_now=True, null=True, blank=True)
 
+    def _colorstep(color, repetitions=1):
+        lum = math.sqrt(.241 * color['r'] + .691 * color['g'] + .068 * color['b'])
+        h, s, v = colorsys.rgb_to_hsv(color['r'], color['g'], color['b'])
+        h2 = int(h * repetitions)
+        lum2 = int(lum * repetitions)
+        v2 = int(v * repetitions)
+        return (h2, lum, v2)
+
+    # TODO Sorted Colors. Not an easy task.
+    # def get_sorted_colors(self):
+    #     # First, get the colors for this item
+    #     colors = c.ManufacturerVariant.objects.filter(product=self).order_by(
+    #         'color').values('color', 'color_code').distinct()
+    #     # Now, hash out the rgb values, based on the hex code and assigned to ordered array
+    #     sortedcolors = []
+    #     for x in colors:
+    #         tmpColor = libColor(x['color_code'])
+    #         vr, vg, vb = tmpColor.get_rgb()
+    #         sortedcolors.append({
+    #             'r': vr,
+    #             'g': vg,
+    #             'b': vb,
+    #             'color_code': x['color_code'],
+    #             'color': x['color']
+    #         })
+    #     # Do the sorting step-by-step
+    #     sorted(sortedcolors, key=lambda color: self._colorstep(sortedcolors, 8))
+    #     return sortedcolors
+
     def num_colors(self):
         return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color').distinct().count()
     num_colors.short_description = "Colors"
 
     def get_colors(self):
-        return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color', 'color_code').distinct()
+        coldata = c.ManufacturerVariant.objects.filter(product=self).order_by('color').values(
+            'color_obj__name', 'color_obj__hex_code', 'color_obj__sortorder').distinct()
+        try:
+            rv = sorted(coldata, key=lambda k: k['color_obj__sortorder'])
+        except:
+            rv = None
+        return rv
 
     def num_sizes(self):
         return c.ManufacturerVariant.objects.filter(product=self).order_by('size').values('size').distinct().count()

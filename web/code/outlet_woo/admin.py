@@ -86,8 +86,8 @@ class ProductAdmin(admin.ModelAdmin):
         # 'product_type',
     ]
     # list_editable = [
-    #     'design',
-    #     'item',
+    # 'design',
+    # 'item',
     # ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
