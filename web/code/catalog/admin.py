@@ -61,6 +61,8 @@ class ManufacturerItemFileInline(admin.TabularInline):
 
 class ManufacturerItemDimensionInline(admin.TabularInline):
     model = ManufacturerItemDimension
+    fields = ['code', 'name', 'is_active', 'get_resolution', ]
+    readonly_fields = fields
     extra = 0
     suit_classes = 'suit-tab suit-tab-specs'
 
@@ -436,7 +438,12 @@ admin.site.register(ManufacturerVariant, ManufacturerVariantAdmin)
 
 
 class ManufacturerItemDimensionAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['code', 'name', 'get_resolution',
+                    'manufacturer_item', 'get_manufacturer', ]
+    list_filter = [
+        ('manufacturer_item', admin.RelatedOnlyFieldListFilter),
+    ]
+
 admin.site.register(ManufacturerItemDimension, ManufacturerItemDimensionAdmin)
 
 
