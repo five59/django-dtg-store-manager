@@ -52,6 +52,7 @@ class SalesChannelAdmin(admin.ModelAdmin):
             'fields': [
                 'category',
                 'web_url',
+                'logo_hires',
             ]
         }),
         (_("Description"), {
@@ -167,7 +168,10 @@ class DesignAdmin(admin.ModelAdmin):
         'series',
         'artist',
     ]
-    # list_editable = ['status', ]
+    # list_editable = [
+    #     'name',
+    #     'status',
+    # ]
     list_filter = [
         'series', 'status'
     ]

@@ -7,7 +7,7 @@ RUN mkdir /code
 WORKDIR /code
 
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y graphviz locales
+    && apt-get install -y graphviz locales ghostscript
 
 RUN sed -i -e "s/# en_US.*/en_US.UTF-8 UTF-8/" /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales

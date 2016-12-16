@@ -146,28 +146,44 @@ class APIInterface:
 
     def get_filelibrary(self):
         print("Importing File Library")
+        ITEMS_PER_PAGE = 100
+
         if not self.mfgObj.api_key:
             CommandError('This API requires a key.')
         api = PrintfulClient(self.mfgObj)
         thefiles = None
         try:
-            thefiles = api.get('files')
+            # First do a quick one to see what the total is.
+            params = {
+                'offset': 0,
+                'limit': 1,
+            }
+            thefiles = api.get('files', params=params)
         except PrintfulApiException as e:
             print ('API exception:', e)
         except PrintfulException as e:
             print("Printful Exception: ", e)
 
-        # if api_total > api_limit:
-            # TODO We need to make multiple calls.
-            # Append offset=x and limit=x, based off of response.item_count()
-
         for i in ca.ManufacturerFileLibraryItem.objects.filter(manufacturer=self.mfgObj):
             i.is_active = False
             i.save()
 
-        for i in thefiles:
-            u_counter = 0
+        for offset in range(0, api.item_count(), ITEMS_PER_PAGE):
+            print("Getting items {} to {} of {}...".format(
+                offset, offset + ITEMS_PER_PAGE, api.item_count()))
+            try:
+                params = {
+                    'offset': offset,
+                    'limit': ITEMS_PER_PAGE,
+                }
+                thefiles = api.get('files', params=params)
+            except PrintfulApiException as e:
+                print ('API exception:', e)
+            except PrintfulException as e:
+                print("Printful Exception: ", e)
+
             c_counter = 0
+            u_counter = 0
             for i in thefiles:
                 fli, created = ca.ManufacturerFileLibraryItem.objects.update_or_create(
                     code=i['id'],
@@ -194,4 +210,4 @@ class APIInterface:
                     c_counter += 1
                 else:
                     u_counter += 1
-            print("-- Added {} files, and updated {}.".format(c_coutner, u_counter))
+            print("-- Page: Added {} files, and updated {}.".format(c_counter, u_counter))

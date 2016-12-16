@@ -71,6 +71,16 @@ class Item(models.Model):
         (SIZESYSTEM_MEX, 'MEX - Mexico'),
         (SIZESYSTEM_AU, 'AU - Australia'),
     )
+
+    LABEL_NONE = 0
+    LABEL_INSIDE = 1
+    LABEL_OUTSIDE = 2
+    LABEL_CHOICES = (
+        (LABEL_NONE, "None"),
+        (LABEL_INSIDE, "Inside"),
+        (LABEL_OUTSIDE, "Outside"),
+    )
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=64, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -89,6 +99,8 @@ class Item(models.Model):
                                 blank=True, null=True, help_text="")
     pattern = models.CharField(_("Pattern"), max_length=100, default="",
                                blank=True, null=True, help_text="")
+    country_origin = models.CharField(_("Country of Origin"), max_length=128, default="",
+                                      blank=True, null=True, help_text=_("This will be visible if using a custom label."))
     size_type = models.CharField(_("Size Type"), max_length=1,
                                  default=SIZETYPE_REGULAR, blank=True, choices=SIZETYPE_CHOICES)
     size_system = models.CharField(_("Size System"), max_length=3,
@@ -112,6 +124,10 @@ class Item(models.Model):
     additional_image = models.ImageField(_("Additional Image"),  upload_to="product_additional",
                                          height_field="additional_image_height", width_field="additional_image_width",
                                          blank=True, null=True, help_text="")
+
+    product_label_type = models.IntegerField(
+        _("Product Label Type"), default=LABEL_NONE, choices=LABEL_CHOICES
+    )
 
     def num_vendors(self):
         return c.ManufacturerItem.objects.filter(item=self).count()

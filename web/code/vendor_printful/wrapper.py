@@ -28,10 +28,17 @@ class PrintfulClient:
     # key - Printful Store API key
     def __init__(self, mObj):
         try:
-            self.key = mObj.api_key.encode('UTF-8')
+            # self.key = mObj.api_key()
+            # self.API_URL = mObj.apibase_url
+            # "nlv91qrs-agxu-vx7g:oy1f-5j84wfefvbqr"
+            # "Basic bmx2OTFxcnMtYWd4dS12eDdnOm95MWYtNWo4NHdmZWZ2YnFyOg=="
+
+            self.key_base64 = mObj.api_key_base64
             self.API_URL = mObj.apibase_url
-        except:
+        except PrintfulException as e:
             raise PrintfulException("API Key not found for Printful. Check the admin dashboard.")
+        except Exception as e:
+            print("Error: {}".format(e))
 
     # Returns total available item count from the last request if it supports
     # paging (e.g order list) or nil otherwise
@@ -77,7 +84,7 @@ class PrintfulClient:
 
         url = self.API_URL + path
         if(params):
-            url += '?' + urllib.request.urlencode(params)
+            url += '?' + urllib.parse.urlencode(params)
 
         if data:
             body = json.dumps(data)
@@ -86,9 +93,15 @@ class PrintfulClient:
 
         request = urllib.request.Request(url)
         request.get_method = lambda: method
-        request.add_header("Authorization", "Basic {}".format(base64.standard_b64encode(self.key)))
+        # request.add_header("Authorization", "Basic {}".format(
+        #     base64.standard_b64encode(self.key_base64)))
+        request.add_header("Authorization", "Basic {}".format(self.key_base64)
+                           )
         request.add_header('User-Agent', self.USER_AGENT)
         request.add_header('Content-Type', 'application/json')
+
+        print(request)
+
         try:
             result = opener.open(request, body, 30)
         except urllib.error.HTTPError as e:

@@ -29,6 +29,18 @@ class SalesChannel(models.Model):
                                 default=CATEGORY_UNKNOWN, choices=CATEGORY_CHOICES)
     description = models.TextField(_("Description"), blank=True, default="")
 
+    logo_hires_height = models.IntegerField(default=0)
+    logo_hires_width = models.IntegerField(default=0)
+    logo_hires = models.ImageField(_("Press-Ready Logo"), height_field="logo_hires_height",
+                                   width_field="logo_hires_width", blank=True, null=True)
+
+    def has_hires_logo(self):
+        if self.logo_hires:
+            return True
+        return False
+    has_hires_logo.boolean = True
+    has_hires_logo.short_description = _("Has High Res Logo?")
+
     def __str__(self):
         if self.code and self.name:
             return "{} / {}".format(self.code, self.name)

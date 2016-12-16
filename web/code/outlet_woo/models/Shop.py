@@ -20,6 +20,10 @@ class Shop(models.Model):
     consumer_secret = models.CharField(_("Consumer Secret"), max_length=43, blank=True, null=True)
     timezone = TimeZoneField(default='America/New_York')
     num_products = models.IntegerField(_("Product Count"), default=0)
+
+    product_label_base = models.ImageField(_("Product Label Base"), blank=True, null=True, help_text=_(
+        "Should be 900x900 pixels (3\"x3\" @ 300dpi)"))
+
     last_sync = models.DateTimeField(auto_now=True)
     added = models.DateTimeField(auto_now_add=True)
 

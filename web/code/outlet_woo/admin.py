@@ -86,8 +86,8 @@ class ProductAdmin(admin.ModelAdmin):
         # 'product_type',
     ]
     # list_editable = [
-    # 'design',
-    # 'item',
+    #     'design',
+    #     'item',
     # ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
@@ -267,6 +267,9 @@ class ProductImageAdmin(admin.ModelAdmin):
         'position',
         'has_local_image',
     ]
+    list_filter = (
+        ('product', admin.RelatedOnlyFieldListFilter),
+    )
 admin.site.register(ProductImage, ProductImageAdmin)
 
 
@@ -280,12 +283,16 @@ class ProductAttributeTermInline(admin.TabularInline):
 class ProductAttributeAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'shop', 'has_archives', 'input_type', 'order_by', ]
     # list_editable = ['shop', ]
-    list_filter = ['shop', ]
+    list_filter = (
+        ('shop', admin.RelatedOnlyFieldListFilter),
+    )
     inlines = (ProductAttributeTermInline,)
 admin.site.register(ProductAttribute, ProductAttributeAdmin)
 
 
 class ProductAttributeTermAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'productattribute', 'menu_order', 'count', ]
-    list_filter = ['productattribute', ]
+    list_filter = (
+        ('productattribute', admin.RelatedOnlyFieldListFilter),
+    )
 admin.site.register(ProductAttributeTerm, ProductAttributeTermAdmin)

@@ -18,6 +18,7 @@ class Manufacturer(models.Model):
 
     api_key = models.CharField(_("API Key"), max_length=64, default="", blank=True)
     api_hash = models.CharField(_("API Hash"), max_length=96, default="", blank=True)
+    api_key_base64 = models.CharField(_("Base64 Key"), max_length=64, default="", blank=True)
 
     notes = models.TextField(_("Notes"), default="", blank=True, null=True)
 

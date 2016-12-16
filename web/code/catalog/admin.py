@@ -62,7 +62,8 @@ class ManufacturerItemFileInline(admin.TabularInline):
 class ManufacturerItemDimensionInline(admin.TabularInline):
     model = ManufacturerItemDimension
     fields = ['code', 'name', 'is_active', 'get_resolution', ]
-    readonly_fields = fields
+    # readonly_fields = fields
+    readonly_fields = ['get_resolution', ]
     extra = 0
     suit_classes = 'suit-tab suit-tab-specs'
 
@@ -82,7 +83,7 @@ class ManufacturerAdmin(admin.ModelAdmin):
         }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
-            'fields': ['api_key', 'api_hash', ]
+            'fields': ['api_key', 'api_hash', 'api_key_base64', ]
         }),
         (_("Notes"), {
             'classes': ('suit-tab', 'suit-tab-info', 'full-width',),
@@ -237,6 +238,7 @@ class ItemAdmin(admin.ModelAdmin):
         'category', 'googlecategory',
         'has_image',
         'age_group', 'gender', 'size_type',
+        'product_label_type',
     ]
     # list_editable = ['category', ]
     search_fields = ['name', 'code', ]
@@ -248,6 +250,7 @@ class ItemAdmin(admin.ModelAdmin):
         'age_group',
         'gender',
         'size_type',
+        'product_label_type',
     )
     form = ItemForm
     fieldsets = [
@@ -257,6 +260,7 @@ class ItemAdmin(admin.ModelAdmin):
                 'code',
                 'brand',
                 'name',
+                'product_label_type',
             ],
         }),
         (None, {
@@ -279,6 +283,7 @@ class ItemAdmin(admin.ModelAdmin):
                 'gender',
                 'material',
                 'pattern',
+                'country_origin',
             ],
         }),
         ("Sizing", {
@@ -453,5 +458,11 @@ admin.site.register(ManufacturerItemFile, ManufacturerItemFileAdmin)
 
 
 class ManufacturerFileLibraryItemAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        'manufacturer', 'code', 'name',
+        'filename', 'get_resolution_string',
+                    'width', 'height', 'dpi',
+                    'status', 'visible',
+    ]
+    list_filter = ['manufacturer', 'status', 'visible', 'dpi', ]
 admin.site.register(ManufacturerFileLibraryItem, ManufacturerFileLibraryItemAdmin)

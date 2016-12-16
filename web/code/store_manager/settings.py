@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import locale
+import logging
+import logging.config
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +28,25 @@ SECRET_KEY = 'ei#&ykz#l6)r$-__!$9@_f(dt+pni!$bj3v6al7qt*#=j3kigj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', ],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    }
+}
+
+logging.config.dictConfig(LOGGING)
 
 ALLOWED_HOSTS = []
 
@@ -55,10 +77,18 @@ INSTALLED_APPS = [
     'catalog',
     'creative',
     'product',
+
     'outlet_woo',
     'vendor_printaura',
     'vendor_printful',
+
+    'app_care',
+    'app_shopfeeds',
 ]
+
+SERIALIZATION_MODULES = {
+    'csv': 'store_manager.csv_serializer',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
