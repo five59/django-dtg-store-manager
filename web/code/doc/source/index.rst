@@ -1,15 +1,17 @@
 .. Django DTG Store Manager documentation master file, created by
-   sphinx-quickstart on Thu Nov 17 06:27:17 2016.
+   sphinx-quickstart on Mon Dec 19 19:07:04 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Django DTG Store Manager's documentation!
-====================================================
+Django DTG Store Manager's documentation
+========================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 2
+
+  modules/models
 
 
 
@@ -19,6 +21,8 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. autosummary::
 
 To Generate a model graph (somewhat) editable in Illustrator:
 
