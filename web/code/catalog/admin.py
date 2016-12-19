@@ -240,7 +240,7 @@ class ItemAdmin(admin.ModelAdmin):
         'age_group', 'gender', 'size_type',
         'product_label_type',
     ]
-    # list_editable = ['category', ]
+    list_editable = ['category', ]
     search_fields = ['name', 'code', ]
     inlines = (ItemVariantInline,)
     list_filter = (

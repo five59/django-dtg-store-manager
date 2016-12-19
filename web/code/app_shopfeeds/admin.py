@@ -22,7 +22,7 @@ class DataFeedItemInline(admin.TabularInline):
 
 
 class DataFeedAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'shop', 'get_num_items',)
+    list_display = ('code', 'name', 'shop', 'get_num_items', 'date_lastgenerated',)
     # inlines = (DataFeedItemInline,)
 admin.site.register(DataFeed, DataFeedAdmin)
 

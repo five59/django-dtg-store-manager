@@ -109,8 +109,11 @@ class ManufacturerItem(models.Model):
                     if request.status_code == requests.codes.ok:
                         path = urllib.parse.urlparse(self.image_url).path
                         ext = os.path.splitext(path)[1]
-                        file_name = "{}-{}-{}{}".format(self.item.brand.code,
-                                                        self.item.code, self.manufacturer.code, ext)
+                        file_name = "{}/{}/{}/{}{}".format(
+                            self.item.brand.code,
+                            self.item.code,
+                            self.manufacturer.code,
+                            ext)
                         lf = tempfile.NamedTemporaryFile()
                         for block in request.iter_content(1024 * 8):
                             if not block:

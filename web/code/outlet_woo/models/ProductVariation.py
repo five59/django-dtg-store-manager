@@ -113,7 +113,9 @@ class ProductVariation(models.Model):
     # shipping_class
     # shipping_class_id
 
-    # image
+    image_url = models.URLField(_("Image URL"), blank=True, null=True,
+                                help_text=_("This is the URL for the primary variant image."))
+
     # attributes
 
     # FIXME This is a short-term fix. Rather than go down the attribute object
@@ -122,6 +124,11 @@ class ProductVariation(models.Model):
     att_color_obj = models.ForeignKey(ca.Color, null=True)
     att_size = models.CharField(_("Size"), max_length=64, null=True, blank=True, default="")
     att_size_obj = models.ForeignKey(ca.Size, null=True)
+
+    def has_image_url(self):
+        return True if self.image_url else False
+    has_image_url.short_description = _("Has Image?")
+    has_image_url.boolean = True
 
     def _add_centered_text(self, image, size, yvalue, content):
         font_path = "/code/_resources/Aller/Aller_Rg.ttf"

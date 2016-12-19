@@ -7,7 +7,7 @@ import uuid
 from outlet_woo import models as wm
 import csv
 from django.core import serializers
-
+from django.utils import timezone
 
 # import argparse
 # from apiclient.discovery import build
@@ -17,13 +17,15 @@ from django.core import serializers
 # from oauth2client import file
 # from oauth2client import tools
 
+
 class DataFeed(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     shop = models.ForeignKey(wm.Shop)
     date_added = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now=True)
+    # date_updated = models.DateTimeField(auto_now=True)
+    date_lastgenerated = models.DateTimeField(_("Last Generated"), blank=True, null=True)
 
     def _remove_html_tags(self, text):
         """Remove html tags from a string"""
@@ -43,10 +45,9 @@ class DataFeed(models.Model):
         for p in products:
             category = [_.name for _ in p.item.category.get_ancestors()]
             category.append(p.item.category.name)
-            category =  " &gt; ".join(category)
+            category = " &gt; ".join(category)
             if p.product_type == p.PRODUCTTYPE_VARIABLE:
                 productvariants = wm.ProductVariation.objects.filter(product=p)
-                print("-- Found {} Variants for {}.".format(productvariants.count(), p.name))
                 for pv in productvariants:
                     theName = p.name
                     theColor = pv.att_color_obj
@@ -54,14 +55,14 @@ class DataFeed(models.Model):
                     permalink_params = []
                     if theColor:
                         theColor = theColor.name
-                        theName = "{} in {}".format(theName,theColor)
+                        theName = "{} in {}".format(theName, theColor)
                         permalink_params.append('attribute_color={}'.format(theColor))
                     else:
                         theColor = "White"
                     theSize = pv.att_size_obj
                     if theSize:
                         theSize = theSize.name
-                        theName = "{} {}".format(theName,theSize)
+                        theName = "{} {}".format(theName, theSize)
                         permalink_params.append('attribute_size={}'.format(theSize))
                     else:
                         theSize = "One Size"
@@ -70,13 +71,13 @@ class DataFeed(models.Model):
                         permalink = "{}?{}".format(permalink, "&".join(permalink_params))
 
                     dfi, created = DataFeedItem.objects.update_or_create(
-                        identifier = pv.sku,
-                        feed = self,
+                        identifier=pv.sku,
+                        feed=self,
                         defaults={
                             'title': theName,
-                            'description': self._remove_html_tags(p.description).replace("\n"," "),
+                            'description': self._remove_html_tags(p.description).replace("\n", " "),
                             'link': permalink,
-                            'image_link': p.get_main_image().src, #TODO Get the appropriate image
+                            'image_link': pv.image_url,
                             'availability': 'in stock',
                             'price': "{} USD".format(pv.price),
                             'google_product_category': p.item.googlecategory.long_name,
@@ -94,13 +95,14 @@ class DataFeed(models.Model):
                         },
                     )
                     # print("-- Added VARIANT Product: {}".format(dfi.title))
+                print("-- Added {} variants for {}.".format(productvariants.count(), p.name))
             elif p.product_type == p.PRODUCTTYPE_SIMPLE:
                 dfi, created = DataFeedItem.objects.update_or_create(
-                    identifier = p.sku,
-                    feed = self,
+                    identifier=p.sku,
+                    feed=self,
                     defaults={
                         'title': p.name,
-                        'description': self._remove_html_tags(p.description).replace("\n"," "),
+                        'description': self._remove_html_tags(p.description).replace("\n", " "),
                         'link': p.permalink,
                         'image_link': p.get_main_image().src,
                         'availability': 'in stock',
@@ -114,14 +116,16 @@ class DataFeed(models.Model):
                         'color': 'White',
                         'gender': p.item.get_gender_display(),
                         'material': p.item.material,
-                        'age_group': 'Adult', # p.item.get_age_group_display()
+                        'age_group': 'Adult',  # p.item.get_age_group_display()
                         'size': 'One Size',
                         'shipping_label': p.item.get_item_code(),
                     },
                 )
-                print("-- Added SIMPLE Product: {}".format(dfi.title))
+                print("-- Added Product: {}".format(dfi.title))
             else:
                 print("-- {} / Unsupported product type ({}).".format(p.name, p.product_type))
+        self.date_lastgenerated = timezone.now()
+        self.save()
 
     def output_file(self, filename=""):
         if not filename:
@@ -152,17 +156,17 @@ class DataFeed(models.Model):
                 print(datarow[0], datarow[1])
                 writer.writerow(datarow)
 
-
     def __str__(self):
         if self.code and self.name:
             return "[{}] {}".format(self.code, self.name)
         if self.name:
             return "{}".format(self.name)
         return _("Unnamed DataFeed")
+
     class Meta:
         verbose_name = _("Data Feed")
         verbose_name_plural = _("Data Feeds")
-        ordering = ["name","code",]
+        ordering = ["name", "code", ]
 
 
 class DataFeedItem(models.Model):
@@ -228,7 +232,7 @@ class DataFeedItem(models.Model):
     item_group_id = models.CharField(max_length=50, default="", blank=True, null=True)
     color = models.CharField(max_length=100, default="", blank=True, null=True)
     gender = models.CharField(max_length=70, default="", blank=True, null=True)
-    material =  models.CharField(max_length=200, default="", blank=True, null=True)
+    material = models.CharField(max_length=200, default="", blank=True, null=True)
     age_group = models.CharField(max_length=70, default="", blank=True, null=True)
     size = models.CharField(max_length=100, default="", blank=True, null=True)
     shipping_label = models.CharField(max_length=100, default="", blank=True, null=True)
@@ -237,11 +241,11 @@ class DataFeedItem(models.Model):
         if self.identifier:
             return "{}".format(self.identifier)
         return _("Unnamed DataFeedItem")
+
     class Meta:
         verbose_name = _("Data Feed Item")
         verbose_name_plural = _("Data Feed Items")
-        ordering = ["feed","identifier",]
-
+        ordering = ["feed", "identifier", ]
 
 
 # class gCredential(models.Model):

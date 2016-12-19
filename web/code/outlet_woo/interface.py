@@ -212,19 +212,24 @@ class APIInterface:
                     att_color = att_color['option'] if att_color else None
                     att_size = att_size['option'] if att_size else None
 
+                    if i['image']:
+                        image_url = i['image'][0]['src']
+                    else:
+                        image_url = ""
+
                     if att_color:
                         try:
-                            att_color_obj = ca.Color.objects.get(
-                                name=att_color) if ca.Color.objects.get(name=att_color) else None
-                        except:
-                            print('--> Color "{}" object not matched.'.format(att_color))
+                            att_color_obj = ca.Color.objects.get(name=att_color)
+                        except Exception as e:
+                            att_color_obj = None
+                            print('--> Color "{}" object not matched.'.format(att_color), e)
 
                     if att_size:
                         try:
-                            att_size_obj = ca.Size.objects.get(
-                                name=att_size) if ca.Size.objects.get(name=att_size) else None
-                        except:
-                            print('--> Size "{}" object not matched.'.format(att_size))
+                            att_size_obj = ca.Size.objects.get(name=att_size)
+                        except Exception as e:
+                            att_size_obj = None
+                            print('--> Size "{}" object not matched.'.format(att_size), e)
 
                     pm, pmCreated = wc.ProductVariation.objects.update_or_create(
                         code=i['id'],
@@ -251,6 +256,7 @@ class APIInterface:
                             # "weight": p['weight'],
                             'att_color': att_color,
                             'att_size': att_size,
+                            'image_url': image_url,
                         }
                     )
                     pmStats['total'] += 1

@@ -49,6 +49,7 @@ class ProductVariationAdmin(admin.ModelAdmin):
         'att_color_obj',
         'att_size',
         'att_size_obj',
+        'has_image_url',
     )
     # list_editable = [
     #     'att_color_obj',

@@ -43,13 +43,27 @@ class ProductImage(models.Model):
         if self.src:
             if not force and self.image:
                 return
-
             request = requests.get(self.src, stream=True)
             if request.status_code == requests.codes.ok:
                 path = urllib.parse.urlparse(self.src).path
                 ext = os.path.splitext(path)[1]
-                file_name = "{}-{}-{}{}".format(self.product.shop.code,
-                                                self.product.code, self.code, ext)
+                file_name = "{}/{}{}/{}/{}{}".format(
+                    self.product.shop.code,
+
+                    self.product.item.brand.code,
+                    self.product.item.code,
+
+                    self.product.sku,
+
+                    self.code,
+                    ext,
+                )
+                # file_name = "{}/{}/{}{}".format(
+                #     self.product.shop.code,
+                #     self.product.code,
+                #     self.code,
+                #     ext
+                #     )
                 lf = tempfile.NamedTemporaryFile()
                 for block in request.iter_content(1024 * 8):
                     if not block:
