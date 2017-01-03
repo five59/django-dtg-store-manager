@@ -192,7 +192,7 @@ admin.site.register(Color, ColorAdmin)
 class SizeAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'grouping', 'sortorder', ]
     list_filter = ['grouping', ]
-    # list_editable = ['code', 'grouping', 'sortorder', ]
+    list_editable = ['code', 'sortorder', ]
 admin.site.register(Size, SizeAdmin)
 
 
@@ -387,12 +387,13 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
     list_display = (
         'code',
         # 'name',
+        'manufacturer',
         'product',
         'size',
         'color',
         'color_obj',
     )
-    list_filter = ('product', 'size', 'color',)
+    list_filter = ('product', 'manufacturer', 'size', 'color',)
     search_fields = ('name', 'code',)
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [

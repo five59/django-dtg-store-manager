@@ -48,7 +48,10 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'hbgdev.duckdns.org',
+]
 
 
 # Application definition
@@ -79,8 +82,11 @@ INSTALLED_APPS = [
     'product',
 
     'outlet_woo',
+
     'vendor_printaura',
     'vendor_printful',
+
+    'api_gooten',
 
     'app_care',
     'app_shopfeeds',

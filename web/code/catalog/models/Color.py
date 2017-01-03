@@ -179,7 +179,7 @@ class Color(models.Model):
 
     def __str__(self):
         return "".join([
-            "{} / ".format(self.code) if self.code else "",
+            "{}{} / ".format(self.brand.code, self.code) if self.code else "",
             str(self.name),
         ])
 
@@ -187,4 +187,4 @@ class Color(models.Model):
         verbose_name = _("Color")
         verbose_name_plural = _("Colors")
         ordering = ['code', ]
-        unique_together = (("name", "code", "brand"),)
+        unique_together = (("code", "brand"),)

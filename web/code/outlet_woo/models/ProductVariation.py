@@ -271,7 +271,7 @@ class ProductVariation(models.Model):
             self.att_color_obj.code if self.att_color_obj else "",
             self.att_size_obj.code if self.att_size_obj else "",
         ]
-        self.sku = "".join(r).upper()
+        self.sku = "".join(r).upper().replace("-XXXXXX", "").replace("XXX", "")
 
     def update_meta(self):
         self.logger.info("Updating: {}".format(self))
@@ -289,6 +289,16 @@ class ProductVariation(models.Model):
                     "-- Color: Matched {} to {}".format(self.att_color, self.att_color_obj))
 
         if self.att_size:
+            if self.att_size == 'Extra Small':
+                self.att_size = 'Extra-Small'
+            elif self.att_size == 'S':
+                self.att_size = "Small"
+            elif self.att_size == 'M':
+                self.att_size = "Medium"
+            elif self.att_size == 'L':
+                self.att_size = 'Large'
+            elif self.att_size == "Extra Large":
+                self.att_size = 'Extra-Large'
             obj, created = ca.Size.objects.update_or_create(
                 name=self.att_size,
                 defaults={}

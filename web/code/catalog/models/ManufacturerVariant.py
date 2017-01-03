@@ -10,6 +10,10 @@ class ManufacturerVariant(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=150, default="", blank=True, null=True)
     product = models.ForeignKey(c.ManufacturerItem, null=True, blank=True)
+
+    # This is a transient value that is calculated on save from the associated product.
+    manufacturer = models.ForeignKey(c.Manufacturer, null=True, blank=True)
+
     name = models.CharField(_("Name"), max_length=150, default="",
                             blank=True, null=True, help_text="")
     size = models.CharField(_("Size"), max_length=64, default="", blank=True, null=True)
@@ -58,3 +62,13 @@ class ManufacturerVariant(models.Model):
         verbose_name = _("Manufacturer Variant")
         verbose_name_plural = _("Manufacturer Variants")
         ordering = ["name", "code", ]
+
+    def save(self, *args, **kwargs):
+        # Manage the transient value here so that we can filter on it, since we
+        # can't filter calculated values.
+        if self.product:
+            self.manufacturer = self.product.manufacturer
+        else:
+            self.manufacturer = None
+
+        super(ManufacturerVariant, self).save(*args, **kwargs)

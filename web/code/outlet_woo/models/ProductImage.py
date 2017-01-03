@@ -33,8 +33,10 @@ class ProductImage(models.Model):
     position = models.IntegerField(_("Image Position"), help_text=_(
         "0 means that the image is featured."), default=1)
 
-    image_height = models.CharField(_("Image Height"), default="0", max_length=10)
-    image_width = models.CharField(_("Image Width"), default="0", max_length=10)
+    image_height = models.CharField(_("Image Height"), default="0",
+                                    max_length=10, blank=True, null=True)
+    image_width = models.CharField(_("Image Width"), default="0",
+                                   max_length=10, blank=True, null=True)
     image = models.ImageField(_("Local Image"), upload_to="outlet_woo/productimage",
                               height_field="image_height", width_field="image_width",
                               blank=True, null=True, help_text="")
@@ -47,15 +49,17 @@ class ProductImage(models.Model):
             if request.status_code == requests.codes.ok:
                 path = urllib.parse.urlparse(self.src).path
                 ext = os.path.splitext(path)[1]
-                file_name = "{}/{}{}/{}/{}{}".format(
+                file_name = "{}/{}{}/{}-{}/{}{}".format(
+
                     self.product.shop.code,
 
                     self.product.item.brand.code,
                     self.product.item.code,
 
-                    self.product.sku,
+                    self.product.design.series.code,
+                    self.product.design.code,
 
-                    self.code,
+                    self.product.sku,
                     ext,
                 )
                 # file_name = "{}/{}/{}{}".format(

@@ -68,7 +68,7 @@ class APIInterface:
     apiData = None
 
     def __init__(self, sObj):
-        self.max_per_page = 50  # Max is 100
+        self.max_per_page = 10  # Max is 100
         self.shopObj = sObj
         self.apiData = self.getAPI()
 
@@ -86,7 +86,7 @@ class APIInterface:
             consumer_secret=self.shopObj.consumer_secret,
             wp_api=True,
             version="wc/v1",
-            timeout=20,
+            timeout=30,
         )
 
     def do_import(self, only_private=False):
@@ -134,11 +134,15 @@ class APIInterface:
             response = self.apiData.get(
                 "products?per_page={}&page={}".format(self.max_per_page, page))
             if not response.ok:
-                error = json.loads(response.content.decode('utf-8'))
-                print("--> Error:")
-                print("    Code: {}".format(error.code))
-                print(" Message: {}".format(error.message))
-                print("    Data: {}".format(error.data))
+                try:
+                    error = json.loads(response.content.decode('utf-8'))
+                    print("--> Error:")
+                    print("    Code: {}".format(error.code))
+                    print(" Message: {}".format(error.message))
+                    print("    Data: {}".format(error.data))
+                except Exception as e:
+                    print(response)
+                    print(e)
                 CommandError("The API returned an error code.")
 
             for p in json.loads(response.content.decode('utf-8')):
@@ -219,12 +223,23 @@ class APIInterface:
 
                     if att_color:
                         try:
-                            att_color_obj = ca.Color.objects.get(name=att_color)
+                            att_color_obj = ca.Color.objects.get(
+                                name=att_color, brand=sp.item.brand)
                         except Exception as e:
                             att_color_obj = None
                             print('--> Color "{}" object not matched.'.format(att_color), e)
 
                     if att_size:
+                        if att_size == 'XS':
+                            att_size = 'Extra-Small'
+                        elif att_size == 'S':
+                            att_size = "Small"
+                        elif att_size == 'M':
+                            att_size = "Medium"
+                        elif att_size == 'L':
+                            att_size = 'Large'
+                        elif att_size == "XL":
+                            att_size = 'Extra-Large'
                         try:
                             att_size_obj = ca.Size.objects.get(name=att_size)
                         except Exception as e:
@@ -235,24 +250,24 @@ class APIInterface:
                         code=i['id'],
                         product=sp,
                         defaults={
-                            'permalink': p['permalink'],
-                            'sku': p['sku'],
-                            'price': p['price'],
-                            "regular_price": p['regular_price'],
-                            "sale_price": p['sale_price'],
-                            "on_sale": p['on_sale'],
-                            "purchasable": p['purchasable'],
-                            "virtual": p['virtual'],
-                            "downloadable": p['downloadable'],
-                            "download_limit": p['download_limit'],
-                            "download_expiry": p['download_expiry'],
-                            "tax_status": p['tax_status'],
-                            "manage_stock": p['manage_stock'],
+                            'permalink': i['permalink'],
+                            'sku': i['sku'],
+                            'price': i['price'],
+                            "regular_price": i['regular_price'],
+                            "sale_price": i['sale_price'],
+                            "on_sale": i['on_sale'],
+                            "purchasable": i['purchasable'],
+                            "virtual": i['virtual'],
+                            "downloadable": i['downloadable'],
+                            "download_limit": i['download_limit'],
+                            "download_expiry": i['download_expiry'],
+                            "tax_status": i['tax_status'],
+                            "manage_stock": i['manage_stock'],
                             # "stock_quantity": p['stock_quantity'],
-                            "in_stock": p['in_stock'],
-                            "backorders": p['backorders'],
-                            "backorders_allowed": p['backorders_allowed'],
-                            "backordered": p['backordered'],
+                            "in_stock": i['in_stock'],
+                            "backorders": i['backorders'],
+                            "backorders_allowed": i['backorders_allowed'],
+                            "backordered": i['backordered'],
                             # "weight": p['weight'],
                             'att_color': att_color,
                             'att_size': att_size,

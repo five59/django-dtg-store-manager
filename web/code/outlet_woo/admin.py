@@ -51,14 +51,15 @@ class ProductVariationAdmin(admin.ModelAdmin):
         'att_size_obj',
         'has_image_url',
     )
-    # list_editable = [
-    #     'att_color_obj',
-    #     'att_size_obj',
-    # ]
+    list_editable = [
+        #     'att_color_obj',
+        # 'att_size_obj',
+    ]
     list_filter = (
         ('product__item', admin.RelatedOnlyFieldListFilter),
         ('att_color_obj', admin.RelatedOnlyFieldListFilter),
         ('att_size_obj', admin.RelatedOnlyFieldListFilter),
+        'product__status',
     )
     search_fields = ['code', 'name', ]
 admin.site.register(ProductVariation, ProductVariationAdmin)
@@ -86,10 +87,10 @@ class ProductAdmin(admin.ModelAdmin):
         ('item', admin.RelatedOnlyFieldListFilter),
         # 'product_type',
     ]
-    # list_editable = [
-    #     'design',
-    #     'item',
-    # ]
+    list_editable = [
+        # 'design',
+        # 'item',
+    ]
     search_fields = ['name', 'code', 'sku']
     form = ProductForm
     inlines = (ProductImageInline, ProductVariationInline, )

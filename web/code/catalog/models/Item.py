@@ -112,8 +112,10 @@ class Item(models.Model):
     link = models.URLField(_("Item URL"), default="", blank=True, null=True, help_text="")
     mobile_link = models.URLField(_("Mobile URL"), default="", blank=True, null=True, help_text="")
 
-    image_height = models.CharField(_("Image Height"), default="0", max_length=10)
-    image_width = models.CharField(_("Image Width"), default="0", max_length=10)
+    image_height = models.CharField(_("Image Height"), default="0",
+                                    max_length=10, blank=True, null=True)
+    image_width = models.CharField(_("Image Width"), default="0",
+                                   max_length=10, blank=True, null=True)
     image = models.ImageField(_("Item Image"), upload_to="product",
                               height_field="image_height", width_field="image_width", blank=True, null=True, help_text="")
 
