@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'api_gooten_spacelayer_list' %}">SpaceLayer Listing</a></p>
+<table class="table">
+<tr><td>pkid</td><td>{{ object.pkid }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>include_in_print</td><td>{{ object.include_in_print }}</td></tr>
+<tr><td>x1</td><td>{{ object.x1 }}</td></tr>
+<tr><td>x2</td><td>{{ object.x2 }}</td></tr>
+<tr><td>y1</td><td>{{ object.y1 }}</td></tr>
+<tr><td>y2</td><td>{{ object.y2 }}</td></tr>
+<tr><td>zIndex</td><td>{{ object.zIndex }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit SpaceLayer</a>
+
+{% endblock %}

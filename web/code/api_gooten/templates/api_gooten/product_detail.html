@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'api_gooten_product_list' %}">Product Listing</a></p>
+<table class="table">
+<tr><td>pkid</td><td>{{ object.pkid }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>uid</td><td>{{ object.uid }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>is_featured</td><td>{{ object.is_featured }}</td></tr>
+<tr><td>is_coming_soon</td><td>{{ object.is_coming_soon }}</td></tr>
+<tr><td>has_available_product_variants</td><td>{{ object.has_available_product_variants }}</td></tr>
+<tr><td>has_product_templates</td><td>{{ object.has_product_templates }}</td></tr>
+<tr><td>description</td><td>{{ object.description }}</td></tr>
+<tr><td>max_zoom</td><td>{{ object.max_zoom }}</td></tr>
+<tr><td>priceinfo_price</td><td>{{ object.priceinfo_price }}</td></tr>
+<tr><td>priceinfo_currencycode</td><td>{{ object.priceinfo_currencycode }}</td></tr>
+<tr><td>priceinfo_currencydigits</td><td>{{ object.priceinfo_currencydigits }}</td></tr>
+<tr><td>priceinfo_currencyformat</td><td>{{ object.priceinfo_currencyformat }}</td></tr>
+<tr><td>priceinfo_formattedprice</td><td>{{ object.priceinfo_formattedprice }}</td></tr>
+<tr><td>retailprice_price</td><td>{{ object.retailprice_price }}</td></tr>
+<tr><td>retailprice_currencycode</td><td>{{ object.retailprice_currencycode }}</td></tr>
+<tr><td>retailprice_currencydigits</td><td>{{ object.retailprice_currencydigits }}</td></tr>
+<tr><td>retailprice_currencyformat</td><td>{{ object.retailprice_currencyformat }}</td></tr>
+<tr><td>retailprice_formattedprice</td><td>{{ object.retailprice_formattedprice }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Product</a>
+
+{% endblock %}
