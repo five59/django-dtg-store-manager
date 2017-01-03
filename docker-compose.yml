@@ -2,10 +2,12 @@ version: '2'
 services:
 
   db:
-    build: ./db
+    image: postgres
     volumes:
-      - ./db/dblib:/var/lib/postgresql
-      - ./db/dbrun:/run/postgresql
+      - dsm_dblib:/var/lib/postgresql
+      - dsm_dbrun:/run/postgresql
+      # - ./db/dblib:/var/lib/postgresql
+      # - ./db/dbrun:/run/postgresql
 
   web:
     build: ./web
@@ -18,3 +20,7 @@ services:
       - "8015:8015"
     depends_on:
       - db
+
+volumes:
+  dsm_dblib:
+  dsm_dbrun:
