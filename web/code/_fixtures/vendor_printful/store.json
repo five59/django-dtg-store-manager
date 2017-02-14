@@ -1,0 +1,32 @@
+[
+{
+  "model": "vendor_printful.store",
+  "pk": "06aee8ea-a8d5-4152-90c6-3df184ef15de",
+  "fields": {
+    "date_added": "2017-02-09T11:59:58.366Z",
+    "date_updated": "2017-02-09T11:59:58.428Z",
+    "code": "HBG",
+    "name": "HotButteredGrits PRODUCTION",
+    "website": "",
+    "created": "",
+    "api_key": "dr3k40bk-r8ky-fyoz:s7ix-xkgorpa9gba8",
+    "api_hash": "",
+    "api_key_base64": "ZHIzazQwYmstcjhreS1meW96OnM3aXgteGtnb3JwYTlnYmE4"
+  }
+},
+{
+  "model": "vendor_printful.store",
+  "pk": "bf95042a-cf77-4e46-ba66-8549f490fa3d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:58.366Z",
+    "date_updated": "2017-02-09T11:59:58.428Z",
+    "code": "HBGDEV",
+    "name": "HotButteredGrits Dev",
+    "website": "",
+    "created": "",
+    "api_key": "",
+    "api_hash": "",
+    "api_key_base64": "OHc2MnIyMTctdmszZy14Z2JzOmc0bTItNDBkYXY2OHY1Ympy"
+  }
+}
+]

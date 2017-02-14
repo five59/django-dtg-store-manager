@@ -1,0 +1,561 @@
+[
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "0a0e284e-91ef-4d23-aefc-30473439fd56",
+  "fields": {
+    "code": "",
+    "name": "Piddles",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "228a7dae-b187-420e-9f57-ca5ba9b4a686",
+  "fields": {
+    "code": "91",
+    "name": "Havali",
+    "slug": "havali",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "29e0daaa-c2e3-4248-b909-6a8e5dcc8a39",
+  "fields": {
+    "code": "131",
+    "name": "99TTS",
+    "slug": "99tts",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "2c9a7923-9dcb-4453-a37d-62b131900dcb",
+  "fields": {
+    "code": "85",
+    "name": "Dur",
+    "slug": "dur",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "38b40221-77b9-4dc2-b8ee-036fb68ee91d",
+  "fields": {
+    "code": "",
+    "name": "Neville",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "3aa3d320-639e-4838-bb01-db8197f05e2b",
+  "fields": {
+    "code": "105",
+    "name": "Electronics > Communications > Telephony > Mobile Phone Accessories > Mobile Phone Cases",
+    "slug": "electronics-communications-telephony-mobile-phone-accessories-mobile-phone-cases",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "3e73a62e-b556-4f0f-9a19-20d3fb76dfb1",
+  "fields": {
+    "code": "",
+    "name": "Von Schoyler",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "41ae7da5-06b3-4a5c-af35-06d70efb0d9d",
+  "fields": {
+    "code": "114",
+    "name": "Adult",
+    "slug": "adult",
+    "description": "",
+    "menu_order": 0,
+    "count": 84,
+    "productattribute": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "520fc019-8e5f-470b-9f29-3e0149b469a4",
+  "fields": {
+    "code": "108",
+    "name": "Luggage & Bags > Shopping Totes",
+    "slug": "luggage-bags-shopping-totes",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "53fc7f96-3b03-49e7-a890-7e66610cc8b5",
+  "fields": {
+    "code": "",
+    "name": "Squonk",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "55bbf63e-8369-4ee9-a11a-7b8440803321",
+  "fields": {
+    "code": "",
+    "name": "Walter",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "5d2eee09-9d34-41d8-af2d-3f869caf5ec7",
+  "fields": {
+    "code": "",
+    "name": "Sloogey",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "61b95cbc-0872-4385-b2e0-fd4e4eaff5a6",
+  "fields": {
+    "code": "",
+    "name": "Snart",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "6b4a92e7-d7d5-4e85-86b9-388893ed2832",
+  "fields": {
+    "code": "109",
+    "name": "Baby Monsters",
+    "slug": "baby-monsters",
+    "description": "",
+    "menu_order": 0,
+    "count": 105,
+    "productattribute": "13a55d6f-538f-4986-96b6-6474d332f4b6"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "6ee266dc-b03f-40d9-b297-0e48ee510814",
+  "fields": {
+    "code": "",
+    "name": "Popple",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "6fca2739-1550-4753-86af-b5af0faed286",
+  "fields": {
+    "code": "129",
+    "name": "99MG",
+    "slug": "99mg",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "74b1c06d-761b-44bd-85b4-5c647b7b0390",
+  "fields": {
+    "code": "122",
+    "name": "Unisex",
+    "slug": "unisex",
+    "description": "",
+    "menu_order": 0,
+    "count": 105,
+    "productattribute": "c75f6065-ecf0-4e7b-a8df-70e22c8ad2e9"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "7776c88f-8fa4-48e4-89ef-b9749be62e25",
+  "fields": {
+    "code": "128",
+    "name": "AA2105",
+    "slug": "aa2105",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "7861261c-a31a-4ec8-81a1-194446787846",
+  "fields": {
+    "code": "130",
+    "name": "99PS",
+    "slug": "99ps",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "7ddf4ccd-8d3f-4d7a-a8a9-d08422792ab3",
+  "fields": {
+    "code": "104",
+    "name": "Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outfits",
+    "slug": "apparel-accessories-clothing-baby-toddler-clothing-baby-toddler-outfits",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "85e4618b-a9c1-4fa4-bc3f-3e808f1d6ba3",
+  "fields": {
+    "code": "",
+    "name": "Werple",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "86ed4d96-f47f-48a0-ad69-d27cbeea265a",
+  "fields": {
+    "code": "121",
+    "name": "Male",
+    "slug": "male",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "c75f6065-ecf0-4e7b-a8df-70e22c8ad2e9"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "8dc74425-bea6-468d-9a16-4087ea90e7c1",
+  "fields": {
+    "code": "117",
+    "name": "Newborn",
+    "slug": "newborn",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "8fb68c67-36b1-49be-b0c7-a77c695775ee",
+  "fields": {
+    "code": "111",
+    "name": "Guya",
+    "slug": "guya",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "93e8d360-65ef-434e-a0b7-842394def743",
+  "fields": {
+    "code": "118",
+    "name": "Toddler",
+    "slug": "toddler",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "9642dbf2-0e86-4853-88dd-90ceff553086",
+  "fields": {
+    "code": "115",
+    "name": "Infant",
+    "slug": "infant",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "97c3f991-35a2-42b1-9ef6-f30d872c7ced",
+  "fields": {
+    "code": "116",
+    "name": "Kids",
+    "slug": "kids",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "9e80eebd-ffcb-42de-b6b7-9427cff17730",
+  "fields": {
+    "code": "84",
+    "name": "Boski",
+    "slug": "boski",
+    "description": "",
+    "menu_order": 0,
+    "count": 4,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "a2c347fe-824d-4272-83c3-2c1e76ff9f29",
+  "fields": {
+    "code": "120",
+    "name": "Female",
+    "slug": "female",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "c75f6065-ecf0-4e7b-a8df-70e22c8ad2e9"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "acd7b12a-8a2a-4633-a37e-c943fcf0eda9",
+  "fields": {
+    "code": "92",
+    "name": "Kibber",
+    "slug": "kibber",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "ad28dbbe-02dd-4115-896f-29f1a91e70fc",
+  "fields": {
+    "code": "",
+    "name": "Lloyd",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "c0ea8303-8a51-441f-9cc1-f2758b26236d",
+  "fields": {
+    "code": "126",
+    "name": "AA4001",
+    "slug": "aa4001",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "c17ebbcd-9b1d-4458-8c8d-7701e47004c5",
+  "fields": {
+    "code": "119",
+    "name": "Hot Buttered Grits / Baby Monsters",
+    "slug": "hot-buttered-grits-baby-monsters",
+    "description": "",
+    "menu_order": 0,
+    "count": 105,
+    "productattribute": "8698d76a-6655-4c62-a124-1edd7f801590"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "c52bd527-1c61-465a-b581-33b00560a82f",
+  "fields": {
+    "code": "127",
+    "name": "99TIP",
+    "slug": "99tip",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "ed09a8b3-e075-4d23-af26-6b862aa03873"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "ce1f4ff7-7d5b-4dd7-bbf5-5cc6945dbe6a",
+  "fields": {
+    "code": "86",
+    "name": "Glublub",
+    "slug": "glublub",
+    "description": "",
+    "menu_order": 0,
+    "count": 6,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "d2c5acdc-4f38-476b-b0dc-74c94899d5ad",
+  "fields": {
+    "code": "89",
+    "name": "Gustus",
+    "slug": "gustus",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "dd1c965f-ef76-468f-a582-7336a47378e1",
+  "fields": {
+    "code": "106",
+    "name": "Home & Garden > Kitchen & Dining > Tableware > Drinkware > Coffee & Tea Cups",
+    "slug": "home-garden-kitchen-dining-tableware-drinkware-coffee-tea-cups",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "e19b8988-255d-4115-8766-b9a83fe01d0b",
+  "fields": {
+    "code": "",
+    "name": "Swiley",
+    "slug": "",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "e3107670-64dd-4a9d-a0b6-f57f0430e01f",
+  "fields": {
+    "code": "113",
+    "name": "Apparel & Accessories > Clothing > Shirts & Tops",
+    "slug": "apparel-accessories-clothing-shirts-tops",
+    "description": "",
+    "menu_order": 0,
+    "count": 0,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "e38187fb-c3cc-47e3-87d2-20b0ba3ad6f0",
+  "fields": {
+    "code": "83",
+    "name": "Audrey",
+    "slug": "audrey",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "e99b4cfc-5899-4425-85a8-96021b494680",
+  "fields": {
+    "code": "88",
+    "name": "G\u00f6zen",
+    "slug": "gozen",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "f6522190-b6c8-4b31-b8f1-6c39c5426744",
+  "fields": {
+    "code": "107",
+    "name": "Home & Garden > Linens & Bedding > Bedding > Pillows",
+    "slug": "home-garden-linens-bedding-bedding-pillows",
+    "description": "",
+    "menu_order": 0,
+    "count": 21,
+    "productattribute": "b7966c44-70c6-49f0-a621-94070b572711"
+  }
+},
+{
+  "model": "outlet_woo.productattributeterm",
+  "pk": "f830cefa-08bb-4922-9bfa-f6f3c4bc9b68",
+  "fields": {
+    "code": "87",
+    "name": "Goober",
+    "slug": "goober",
+    "description": "",
+    "menu_order": 0,
+    "count": 5,
+    "productattribute": "89a0d604-8329-4aac-b45d-f30f1c145588"
+  }
+}
+]

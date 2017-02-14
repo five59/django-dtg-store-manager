@@ -1,0 +1,82 @@
+[
+{
+  "model": "catalog.manufacturer",
+  "pk": "247bd8dc-2fcd-47c9-b3f3-79f3b05505a9",
+  "fields": {
+    "code": "PF",
+    "name": "The Printful / HBG",
+    "slug": "the-printful",
+    "consumer_url": "http://theprintful.com/",
+    "dashboard_url": "https://www.theprintful.com/dashboard/",
+    "apibase_url": "https://api.theprintful.com/",
+    "api_key": "dr3k40bk-r8ky-fyoz:s7ix-xkgorpa9gba8",
+    "api_hash": "",
+    "api_key_base64": "ZHIzazQwYmstcjhreS1meW96OnM3aXgteGtnb3JwYTlnYmE4Og==",
+    "notes": ""
+  }
+},
+{
+  "model": "catalog.manufacturer",
+  "pk": "6175b60c-c2c3-40db-abda-1f5c2218ea6e",
+  "fields": {
+    "code": "PA",
+    "name": "Print Aura",
+    "slug": "print-aura",
+    "consumer_url": "http://printaura.com/",
+    "dashboard_url": "",
+    "apibase_url": "",
+    "api_key": "",
+    "api_hash": "",
+    "api_key_base64": "",
+    "notes": ""
+  }
+},
+{
+  "model": "catalog.manufacturer",
+  "pk": "997b66a5-a632-48f6-8ec4-c1682d1e05d4",
+  "fields": {
+    "code": "KT",
+    "name": "Kite",
+    "slug": "kite",
+    "consumer_url": "https://www.kite.ly",
+    "dashboard_url": "https://www.kite.ly/dashboard/overview/",
+    "apibase_url": "",
+    "api_key": "43ee2cc3cdfbc5b3b26199e99df6cd80350d9b57",
+    "api_hash": "285cb32e13727ddb9bf281551295c38b1bf86896",
+    "api_key_base64": "",
+    "notes": ""
+  }
+},
+{
+  "model": "catalog.manufacturer",
+  "pk": "a1bbd821-957b-4125-8432-a241d882fbba",
+  "fields": {
+    "code": "GT",
+    "name": "Gooten",
+    "slug": "gooten",
+    "consumer_url": "http://gooten.com/",
+    "dashboard_url": "",
+    "apibase_url": "https://api.print.io/api/v/5/source/api/",
+    "api_key": "b0061de3-3d1c-4e13-a408-09126e36afd1",
+    "api_hash": "854c1TIiwIRCbUn6+SfnBvYMSZPYzh4Xk5oK+fVef3Q=",
+    "api_key_base64": "",
+    "notes": ""
+  }
+},
+{
+  "model": "catalog.manufacturer",
+  "pk": "f44c7d22-a871-4586-8e82-e71d5bf250bf",
+  "fields": {
+    "code": "AW",
+    "name": "Art of Where",
+    "slug": "art-of-where",
+    "consumer_url": "http://artofwhere.com",
+    "dashboard_url": "",
+    "apibase_url": "",
+    "api_key": "",
+    "api_hash": "",
+    "api_key_base64": "",
+    "notes": ""
+  }
+}
+]

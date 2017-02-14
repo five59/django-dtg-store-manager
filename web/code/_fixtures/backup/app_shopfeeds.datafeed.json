@@ -1,0 +1,13 @@
+[
+{
+  "model": "app_shopfeeds.datafeed",
+  "pk": "459c3ae1-7c21-4b36-9b63-4ae3635f972d",
+  "fields": {
+    "code": "HBG_FullCatalog",
+    "name": "All Products",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "date_added": "2016-12-15T22:42:16.352Z",
+    "date_lastgenerated": "2016-12-27T22:00:42.076Z"
+  }
+}
+]

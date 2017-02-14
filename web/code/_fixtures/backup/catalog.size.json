@@ -1,0 +1,1642 @@
+[
+{
+  "model": "catalog.size",
+  "pk": "01759cb3-42e0-47ba-b8e4-5afd27ca0ec8",
+  "fields": {
+    "code": "D13",
+    "name": "4\" x 5\"",
+    "sortorder": 1040050,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "0285d67c-8328-49aa-8ef2-e5bc5acb3eb6",
+  "fields": {
+    "code": "D35",
+    "name": "11.5\" x 85\"",
+    "sortorder": 1115850,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "04457845-df44-4788-a99e-455bdebfa828",
+  "fields": {
+    "code": "D12",
+    "name": "4\" x 4\"",
+    "sortorder": 1040040,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "047ded32-1b55-47a3-b1ce-de3d8397a867",
+  "fields": {
+    "code": "D37",
+    "name": "12\" x 12\"",
+    "sortorder": 1120120,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "04f3f905-dc91-46d5-9c39-b0400916bbcf",
+  "fields": {
+    "code": "D127",
+    "name": "88\" x 88\"",
+    "sortorder": 1880880,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "051bd911-5675-4a34-ab5e-9e6846184c36",
+  "fields": {
+    "code": "5XL",
+    "name": "XXXXX-Large",
+    "sortorder": 509,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "0dee0deb-7785-4748-880b-2f05bd0c8b6a",
+  "fields": {
+    "code": "D128",
+    "name": "90\" x 13.8\"",
+    "sortorder": 1900138,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "0fc0868c-dc43-4e95-a56c-3bdddd9b7511",
+  "fields": {
+    "code": "D73",
+    "name": "22.5\" x 37\"",
+    "sortorder": 1225370,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "102cfdc9-8b78-4791-b8e2-b9a3cb340d75",
+  "fields": {
+    "code": "D19",
+    "name": "5\" x 7\"",
+    "sortorder": 1050070,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "123f338b-fbe7-417b-90c0-cbf3c1bedbae",
+  "fields": {
+    "code": "D65",
+    "name": "20\" x 30\"",
+    "sortorder": 1200300,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "12631105-f0f4-46c9-bd59-1cbe51f35ebc",
+  "fields": {
+    "code": "D62",
+    "name": "19\" x 23.5\"",
+    "sortorder": 1190235,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "135172b0-e265-465a-8dbd-f534196857d1",
+  "fields": {
+    "code": "D68",
+    "name": "20\" x 54\"",
+    "sortorder": 1200540,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "135a561f-97b6-4930-a0a3-f77a65ef066e",
+  "fields": {
+    "code": "D121",
+    "name": "72\" x 48\"",
+    "sortorder": 1720480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "153d07f9-4b8f-4284-94cd-def8ff118c49",
+  "fields": {
+    "code": "D102",
+    "name": "46\" x 96\"",
+    "sortorder": 1460960,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "18d6b23b-b85c-4593-8982-0f1f28a6fa1b",
+  "fields": {
+    "code": "D123",
+    "name": "83\" x 11.7\"",
+    "sortorder": 1830117,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "18e61234-9a98-4d04-ba68-c351427ba4ed",
+  "fields": {
+    "code": "D51",
+    "name": "16\" x 16\"",
+    "sortorder": 1160160,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1905a71f-a24e-4005-971d-4afdc5758e24",
+  "fields": {
+    "code": "D61",
+    "name": "19\" x 21\"",
+    "sortorder": 1190210,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1a7c8306-69c4-4ee4-ab9f-f6fbf70f0d94",
+  "fields": {
+    "code": "B18",
+    "name": "18-24m",
+    "sortorder": 318,
+    "grouping": "Infant Apparel"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1bb3b832-de4c-4219-875d-7a0f3c82937c",
+  "fields": {
+    "code": "P6S",
+    "name": "iPhone 6/6s",
+    "sortorder": 911,
+    "grouping": "Tech Case"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1d098b33-d039-4ee3-810e-49ebfb10c34c",
+  "fields": {
+    "code": "D17",
+    "name": "4.5\" x 15\"",
+    "sortorder": 1045150,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1dd7b7cc-926d-4374-b24a-b2fe4bb78c4f",
+  "fields": {
+    "code": "D75",
+    "name": "23.4\" x 33.1\"",
+    "sortorder": 1234331,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "1f772872-4fc8-4092-9580-62987b499b2c",
+  "fields": {
+    "code": "125",
+    "name": "$125",
+    "sortorder": 604,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "21205f4e-7855-49d3-b8d5-ccbc1fe93cb1",
+  "fields": {
+    "code": "D84",
+    "name": "30\" x 30\"",
+    "sortorder": 1300300,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "21cd4825-6578-4780-80b1-81fe12e88662",
+  "fields": {
+    "code": "D96",
+    "name": "36\" x 72\"",
+    "sortorder": 1360720,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "21f15f42-edea-456b-8b33-573b91c47941",
+  "fields": {
+    "code": "D43",
+    "name": "13\" x 13\"",
+    "sortorder": 1130130,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "23e75fe6-6ba3-47a0-ad24-40cba68f1d0c",
+  "fields": {
+    "code": "Y10",
+    "name": "10yrs",
+    "sortorder": 410,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "24c31f71-edad-4c11-aa9e-68ffc76e8ce5",
+  "fields": {
+    "code": "D70",
+    "name": "22\" x 22\"",
+    "sortorder": 1220220,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "2667c128-446a-4350-9dae-20687e4e44a2",
+  "fields": {
+    "code": "D124",
+    "name": "85\" x 6\"",
+    "sortorder": 1850060,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "2694687b-d362-4c56-8267-b8238b64b014",
+  "fields": {
+    "code": "D105",
+    "name": "48\" x 72\"",
+    "sortorder": 1480720,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "293c2705-6334-4599-b41e-940a379898d9",
+  "fields": {
+    "code": "D44",
+    "name": "13\" x 19\"",
+    "sortorder": 1130190,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "29a2fdce-0485-4545-8451-5d9315004933",
+  "fields": {
+    "code": "D67",
+    "name": "20\" x 42\"",
+    "sortorder": 1200420,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "2ae0388c-03cf-4c6f-9a12-0ee1b51f5e49",
+  "fields": {
+    "code": "D122",
+    "name": "82.5\" x 10.5\"",
+    "sortorder": 1825105,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "2d857a55-1b24-473d-b659-cdeede98c56f",
+  "fields": {
+    "code": "D29",
+    "name": "10\" x 10\"",
+    "sortorder": 1100100,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "2f2c5933-2a0e-4448-b2da-fe92fe23d7bf",
+  "fields": {
+    "code": "D20",
+    "name": "6\" x 6\"",
+    "sortorder": 1060060,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "324777fa-ab84-4e2d-a496-46e3b2fd1653",
+  "fields": {
+    "code": "D107",
+    "name": "51\" x 60\"",
+    "sortorder": 1510600,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "32ab66a4-4908-4e01-bf25-14e672bed175",
+  "fields": {
+    "code": "D100",
+    "name": "42\" x 82\"",
+    "sortorder": 1420820,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "34957506-5e75-46d7-9888-859c1db38076",
+  "fields": {
+    "code": "XSM",
+    "name": "Extra-Small",
+    "sortorder": 501,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "35ecab2c-120e-49fa-ada3-34c6b3094f9a",
+  "fields": {
+    "code": "C15",
+    "name": "15oz",
+    "sortorder": 815,
+    "grouping": "Container"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "3a205f8e-4103-471f-8437-2ec1b3d4c13e",
+  "fields": {
+    "code": "D26",
+    "name": "8\" x 64.3\"",
+    "sortorder": 1080643,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "3d46fb1f-a28b-43c3-92c6-4857ca56dd15",
+  "fields": {
+    "code": "D125",
+    "name": "85\" x 11\"",
+    "sortorder": 1850110,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "3f14b590-4941-40f8-a428-4a57b93fa3e2",
+  "fields": {
+    "code": "P7N",
+    "name": "iPhone 7",
+    "sortorder": 901,
+    "grouping": "Tech Case"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "41173a73-e475-41bd-aeae-29566569b28b",
+  "fields": {
+    "code": "D48",
+    "name": "15\" x 24\"",
+    "sortorder": 1150240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "4338e0e6-e7de-4303-b9be-14f3e17830f4",
+  "fields": {
+    "code": "D74",
+    "name": "23.4\" x 33.1\"",
+    "sortorder": 1234331,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "474d331a-c62e-4690-8267-19403968910f",
+  "fields": {
+    "code": "D69",
+    "name": "20\" x 60\"",
+    "sortorder": 1200600,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "4b3a9960-726d-4536-a088-73e6df785629",
+  "fields": {
+    "code": "D90",
+    "name": "32.5\" x 23.8\"",
+    "sortorder": 1325238,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "4b52e7f3-2ecb-4c1e-af95-504c03dc59a9",
+  "fields": {
+    "code": "Y02",
+    "name": "2yrs",
+    "sortorder": 402,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "4dacd1c6-7b56-4df9-9138-f575c3ac35eb",
+  "fields": {
+    "code": "Y04",
+    "name": "4yrs",
+    "sortorder": 404,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "4db23f73-c2ba-4251-b2cb-c78b1f32e7cc",
+  "fields": {
+    "code": "D120",
+    "name": "72\" x 24\"",
+    "sortorder": 1720240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "52a6e79d-8529-4087-8496-c2d008e0cc9a",
+  "fields": {
+    "code": "D79",
+    "name": "24\" x 36\"",
+    "sortorder": 1240360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "52d75b01-e4ac-4fde-a5cf-fd9aa087e8e1",
+  "fields": {
+    "code": "D30",
+    "name": "10\" x 14\"",
+    "sortorder": 1100140,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "5888631d-8aea-465d-a668-2859c79b8359",
+  "fields": {
+    "code": "D25",
+    "name": "8\" x 11\"",
+    "sortorder": 1080110,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "58f6715f-bba3-4ea7-b4d5-a7d4c8136281",
+  "fields": {
+    "code": "D50",
+    "name": "16\" x 20\"",
+    "sortorder": 1160120,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "59a9b003-c8e5-43a8-9cf4-e8fa507cd437",
+  "fields": {
+    "code": "D53",
+    "name": "16.5\" x 23.4\"",
+    "sortorder": 1165234,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "5bef20ef-099c-4bd7-9f62-1cb0f0d351dc",
+  "fields": {
+    "code": "D94",
+    "name": "36\" x 36\"",
+    "sortorder": 1360360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "5f7b1584-1a18-4b9e-b633-7aa03db2fae1",
+  "fields": {
+    "code": "P12",
+    "name": "12.5\" x 8.5\"",
+    "sortorder": 852,
+    "grouping": "Pouch"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "5fe09c23-baf8-479f-89be-1e9cf5c81b55",
+  "fields": {
+    "code": "D39",
+    "name": "12\" x 18\"",
+    "sortorder": 1120180,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "60a9ab05-6497-4c76-a39e-3265c1aca0cb",
+  "fields": {
+    "code": "D91",
+    "name": "32.5\" x 32.5\"",
+    "sortorder": 1325325,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "621e1cc9-cf3c-4f3a-ab83-850b4f92a8a8",
+  "fields": {
+    "code": "D77",
+    "name": "24\" x 24\"",
+    "sortorder": 1240240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "640c4fe9-bf73-49e5-bd21-e1be13af83f7",
+  "fields": {
+    "code": "D64",
+    "name": "20\" x 24\"",
+    "sortorder": 1200240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6545d4df-0f66-425e-b554-fc51f25d4da6",
+  "fields": {
+    "code": "D36",
+    "name": "11.7\" x 16.5\"",
+    "sortorder": 1117165,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6627d6c6-c181-473c-a7bd-431be54baf0c",
+  "fields": {
+    "code": "D93",
+    "name": "35\" x 5\"",
+    "sortorder": 1350050,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "678ff28e-2750-4f9b-b31f-8c36acd80616",
+  "fields": {
+    "code": "D81",
+    "name": "27\" x 72\"",
+    "sortorder": 1270720,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6a81ced0-3e29-4dd4-9cbc-fb7029598113",
+  "fields": {
+    "code": "D109",
+    "name": "55\" x 72.5\"",
+    "sortorder": 1550725,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6b513e4c-af32-4521-8057-3e60b9e55371",
+  "fields": {
+    "code": "B06",
+    "name": "6-12m",
+    "sortorder": 306,
+    "grouping": "Infant Apparel"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6b9d73c5-e42b-4227-88ed-988a2afabea2",
+  "fields": {
+    "code": "D46",
+    "name": "14\" x 14\"",
+    "sortorder": 1140140,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "6c940e52-d3e9-460e-b4e9-8f34e34de8ad",
+  "fields": {
+    "code": "D92",
+    "name": "33.1\" x 46.8\"",
+    "sortorder": 1331468,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "714ea949-363a-48f9-b7a7-4fc6cdb40996",
+  "fields": {
+    "code": "4XL",
+    "name": "XXXX-Large",
+    "sortorder": 508,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "7191cef2-139f-49c4-9333-f8cfb69b30ea",
+  "fields": {
+    "code": "D95",
+    "name": "36\" x 48\"",
+    "sortorder": 1360480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "7239113e-aaa2-4e2e-8479-0e369cb83775",
+  "fields": {
+    "code": "D118",
+    "name": "68\" x 88\"",
+    "sortorder": 1680880,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "733dbbfa-b539-49bd-8345-b4796c7d814d",
+  "fields": {
+    "code": "D10",
+    "name": "2\" x 3.5\"",
+    "sortorder": 1020035,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "742e385b-bcb2-4637-8d5f-9aaa56efb84e",
+  "fields": {
+    "code": "D101",
+    "name": "45\" x 15\"",
+    "sortorder": 1450150,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "74d4eb8a-4462-4ae8-addd-62cc7fb50b96",
+  "fields": {
+    "code": "D119",
+    "name": "70\" x 90\"",
+    "sortorder": 1700900,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "75927a18-d268-442a-8954-442f266cdced",
+  "fields": {
+    "code": "D86",
+    "name": "30\" x 60\"",
+    "sortorder": 1300600,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "760dc93e-9ea2-417d-aa54-ab0ef103a9b4",
+  "fields": {
+    "code": "D133",
+    "name": "96\" x 48\"",
+    "sortorder": 1960480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "77da15a2-fd40-4fd1-bee3-356df31d2c90",
+  "fields": {
+    "code": "C6H",
+    "name": "600ml",
+    "sortorder": 860,
+    "grouping": "Container"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "78e721cb-5982-458b-882d-f17891cd981b",
+  "fields": {
+    "code": "D117",
+    "name": "68\" x 80\"",
+    "sortorder": 1680800,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "7a2d5ba9-ffa5-464c-833b-df95a2d86c83",
+  "fields": {
+    "code": "D55",
+    "name": "18\" x 14\"",
+    "sortorder": 1180140,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "7b92c9c5-bce7-4325-a116-eea8d077f189",
+  "fields": {
+    "code": "D72",
+    "name": "22\" x 31.5\"",
+    "sortorder": 1220315,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "7e31ee4a-b5cb-4f01-ad7e-1ea04358a5a1",
+  "fields": {
+    "code": "100",
+    "name": "$100",
+    "sortorder": 603,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8030a68b-e296-4564-b6e1-45479b728aa2",
+  "fields": {
+    "code": "C11",
+    "name": "11oz",
+    "sortorder": 811,
+    "grouping": "Container"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "817f3af0-1f49-499b-8c42-39725ea12f8d",
+  "fields": {
+    "code": "D38",
+    "name": "12\" x 16\"",
+    "sortorder": 1120160,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "822bff07-209d-415c-b3cc-2bed71b368b0",
+  "fields": {
+    "code": "D106",
+    "name": "50\" x 60\"",
+    "sortorder": 1500600,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8636211c-8502-41a9-a00b-96b672eaad2d",
+  "fields": {
+    "code": "D56",
+    "name": "18\" x 18\"",
+    "sortorder": 1180180,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "877981d8-7321-48e7-a0ec-e3c8861e46c0",
+  "fields": {
+    "code": "D54",
+    "name": "17\" x 17\"",
+    "sortorder": 1170170,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8ce2255f-2530-447e-9689-2f7d285156be",
+  "fields": {
+    "code": "D126",
+    "name": "88\" x 10.4\"",
+    "sortorder": 1880104,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8e5ff627-dc9a-42ad-8c93-cc95b8e002d6",
+  "fields": {
+    "code": "D71",
+    "name": "22\" x 30\"",
+    "sortorder": 1220300,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8e707b8a-e948-4b57-aca5-df172d79d0fb",
+  "fields": {
+    "code": "P09",
+    "name": "9.5\" x 5\"",
+    "sortorder": 851,
+    "grouping": "Pouch"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8f2a6c28-d4da-47b7-95a2-a8eae1d29475",
+  "fields": {
+    "code": "D23",
+    "name": "8\" x 8\"",
+    "sortorder": 1080080,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8f45b369-b82f-4258-b5de-cbca34e7f3de",
+  "fields": {
+    "code": "D111",
+    "name": "58\" x 36\"",
+    "sortorder": 1580360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "8fd6ee2e-cc6a-4487-9dbb-74ce63d68b78",
+  "fields": {
+    "code": "P13",
+    "name": "13.5\" x 9.5\"",
+    "sortorder": 853,
+    "grouping": "Pouch"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "910e8be7-e28b-4a3c-973f-61fa68e625c2",
+  "fields": {
+    "code": "P08",
+    "name": "8.5\" x 6\"",
+    "sortorder": 850,
+    "grouping": "Pouch"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "929397fc-cec9-475b-82c9-27aa0e77b365",
+  "fields": {
+    "code": "Y12",
+    "name": "12yrs",
+    "sortorder": 412,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "93935455-43f4-4853-88ac-6a1e513000e4",
+  "fields": {
+    "code": "D131",
+    "name": "95\" x 6\"",
+    "sortorder": 1950060,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "93dd6b4e-ffb8-42c3-b406-136b7661be70",
+  "fields": {
+    "code": "D80",
+    "name": "25\" x 35\"",
+    "sortorder": 1250350,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "94053fc9-e7d4-4b5f-b152-b62325293c25",
+  "fields": {
+    "code": "D85",
+    "name": "30\" x 40\"",
+    "sortorder": 1300400,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "94bc8ed5-1ce1-4f54-b8b5-16882ef53deb",
+  "fields": {
+    "code": "D112",
+    "name": "58\" x 83\"",
+    "sortorder": 1580830,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "954e936e-6889-4337-aa9f-324aca2251d4",
+  "fields": {
+    "code": "D130",
+    "name": "90\" x 90\"",
+    "sortorder": 1900900,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "9813e230-7c2d-4a2a-9385-1b21cd65907b",
+  "fields": {
+    "code": "D78",
+    "name": "24\" x 30\"",
+    "sortorder": 1240300,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "98522e28-f3a0-4141-bec0-66f2ccb3064a",
+  "fields": {
+    "code": "D104",
+    "name": "48\" x 48\"",
+    "sortorder": 1480480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "98e07819-057a-44ba-84b7-97eed1939996",
+  "fields": {
+    "code": "D116",
+    "name": "60\" x 80\"",
+    "sortorder": 1600800,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "9bd6250d-fea8-4337-a246-6cf47b76a6bf",
+  "fields": {
+    "code": "D103",
+    "name": "47\" x 71\"",
+    "sortorder": 1470710,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "9c4fc6db-3206-470d-aca2-6e2062ca46c1",
+  "fields": {
+    "code": "D76",
+    "name": "23.4\" x 33.1\"",
+    "sortorder": 1234331,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "9e9866a1-aec1-4c78-89f1-245f7bb0a29d",
+  "fields": {
+    "code": "D88",
+    "name": "31.3\" x 3\"",
+    "sortorder": 1313030,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a19bb9f1-3d52-4569-b7bb-da7999251828",
+  "fields": {
+    "code": "P5S",
+    "name": "iPhone 5/5s/SE",
+    "sortorder": 920,
+    "grouping": "Tech Case"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a55fef85-2186-4f86-816c-08c791a0cdc8",
+  "fields": {
+    "code": "D113",
+    "name": "60\" x 36\"",
+    "sortorder": 1600360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a5ac7ea0-e22b-4e53-9dc6-4e84a3e79c54",
+  "fields": {
+    "code": "D63",
+    "name": "20\" x 20\"",
+    "sortorder": 1200200,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a7386104-c3af-426f-a461-d60feceea03f",
+  "fields": {
+    "code": "D59",
+    "name": "18\" x 28\"",
+    "sortorder": 1180280,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a82bbd9b-7013-489f-971e-a1111dce0a5a",
+  "fields": {
+    "code": "075",
+    "name": "$75",
+    "sortorder": 602,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a8f493e1-e8fe-4582-a073-d85cdb90a2db",
+  "fields": {
+    "code": "Y08",
+    "name": "8yrs",
+    "sortorder": 408,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "a9bf608e-02eb-4dff-9550-c3958be072e8",
+  "fields": {
+    "code": "C22",
+    "name": "22oz",
+    "sortorder": 822,
+    "grouping": "Container"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ac108db1-0a7d-44da-86da-bf95686a2e40",
+  "fields": {
+    "code": "SML",
+    "name": "Small",
+    "sortorder": 502,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ad79c6f8-28d1-4df4-b74c-20cea0342b38",
+  "fields": {
+    "code": "D82",
+    "name": "27.5\" x 27.5\"",
+    "sortorder": 1275275,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ae6f06b0-4030-40bc-8a66-1432d0ef3599",
+  "fields": {
+    "code": "D108",
+    "name": "54\" x 36\"",
+    "sortorder": 1540360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "aefc2074-7a6b-448c-8c9e-11914e1c1544",
+  "fields": {
+    "code": "D27",
+    "name": "8.5\" x 11\"",
+    "sortorder": 1085110,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b025a3fd-4872-449d-b1b6-cad09dc08eba",
+  "fields": {
+    "code": "XLG",
+    "name": "Extra-Large",
+    "sortorder": 505,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b02b6725-ce70-49b9-acc1-09fd2cda6db5",
+  "fields": {
+    "code": "175",
+    "name": "$175",
+    "sortorder": 606,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b07b37a7-b2a5-4d95-9440-b0379ae72a5b",
+  "fields": {
+    "code": "D18",
+    "name": "5\" x 5\"",
+    "sortorder": 1050050,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b13c45b3-b156-41d9-be03-4faa8cd6b6bd",
+  "fields": {
+    "code": "D99",
+    "name": "40\" x 50\"",
+    "sortorder": 1400500,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b4a3ee37-6be9-44c2-a78a-d9992ce50025",
+  "fields": {
+    "code": "D16",
+    "name": "4\" x 12\"",
+    "sortorder": 1040120,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b680913a-9671-4d37-8b9f-da5cd6e4e115",
+  "fields": {
+    "code": "D114",
+    "name": "60\" x 48\"",
+    "sortorder": 1600480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b7b8633d-9a23-427f-8bee-16853709fc75",
+  "fields": {
+    "code": "D132",
+    "name": "95\" x 17.25\"",
+    "sortorder": 1950172,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "b99bebe3-c76c-48eb-afce-69e5a6c4a95e",
+  "fields": {
+    "code": "D42",
+    "name": "12.5\" x 85\"",
+    "sortorder": 1125850,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "bbf35acb-ffae-440c-a25d-3728d488306c",
+  "fields": {
+    "code": "200",
+    "name": "$200",
+    "sortorder": 607,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "bbf43be7-21ee-4b6b-8e78-7b6d012b45e2",
+  "fields": {
+    "code": "D22",
+    "name": "7\" x 9\"",
+    "sortorder": 1070090,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "bc522702-4d3e-48d4-bc54-c639c797fde8",
+  "fields": {
+    "code": "D32",
+    "name": "11\" x 14\"",
+    "sortorder": 1110140,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "bff15431-1e07-44dd-bdc9-9f157afc903a",
+  "fields": {
+    "code": "D58",
+    "name": "18\" x 24\"",
+    "sortorder": 1180240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "c2830c79-d4d8-47c8-a2fc-e381942f551d",
+  "fields": {
+    "code": "D98",
+    "name": "37.5\" x 45\"",
+    "sortorder": 1375450,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "c4035ceb-9084-404a-a5b6-2cf01e54ece7",
+  "fields": {
+    "code": "D11",
+    "name": "3.5\" x 5\"",
+    "sortorder": 1035050,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "c50ab359-9f42-46f5-b1a6-f5af0056bf95",
+  "fields": {
+    "code": "D129",
+    "name": "90\" x 16\"",
+    "sortorder": 1900160,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "c9489125-6744-4711-85f6-072474a0678c",
+  "fields": {
+    "code": "D97",
+    "name": "37.5\" x 37.5\"",
+    "sortorder": 1375375,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "c9d854eb-4d5c-4132-ab82-30e942c8c9b5",
+  "fields": {
+    "code": "D66",
+    "name": "20\" x 40\"",
+    "sortorder": 1200400,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ca17696f-3269-44fe-a194-053a54018b5c",
+  "fields": {
+    "code": "D60",
+    "name": "18\" x 30\"",
+    "sortorder": 1180300,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "cbdf8b66-82e4-424d-bce1-2e927f3613c7",
+  "fields": {
+    "code": "XXX",
+    "name": "No Size",
+    "sortorder": 0,
+    "grouping": ""
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "cfe41368-b58b-4db7-ab83-16969ae23d4e",
+  "fields": {
+    "code": "P6P",
+    "name": "iPhone 6 Plus/6s Plus",
+    "sortorder": 910,
+    "grouping": "Tech Case"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d190f21e-8760-490d-bde2-5edaa298b0b1",
+  "fields": {
+    "code": "050",
+    "name": "$50",
+    "sortorder": 601,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d1c3a17b-c3bb-4176-843b-c16a7de46972",
+  "fields": {
+    "code": "Y06",
+    "name": "6yrs",
+    "sortorder": 406,
+    "grouping": "Youth"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d32cd2c5-aa52-4cd6-860e-608d63ad2705",
+  "fields": {
+    "code": "D57",
+    "name": "18\" x 19\"",
+    "sortorder": 1180190,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d3cbd07f-830c-4bde-bce7-1e8cbc548843",
+  "fields": {
+    "code": "D34",
+    "name": "11\" x 85\"",
+    "sortorder": 1110850,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d4411a9f-6023-4b12-ad3e-f63c613f8a7d",
+  "fields": {
+    "code": "B03",
+    "name": "3-6m",
+    "sortorder": 303,
+    "grouping": "Infant Apparel"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d5bf8f82-c873-48d2-aab4-8ed670efdb58",
+  "fields": {
+    "code": "D110",
+    "name": "56\" x 96\"",
+    "sortorder": 1560960,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d64122e0-e8a2-47a1-9c81-e07a99f4c63c",
+  "fields": {
+    "code": "D33",
+    "name": "11\" x 17\"",
+    "sortorder": 1110170,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d88ec357-5821-4718-9303-83773586f733",
+  "fields": {
+    "code": "D14",
+    "name": "4\" x 6\"",
+    "sortorder": 1040060,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "d9f68970-bf9c-44c2-9db0-1482166a2177",
+  "fields": {
+    "code": "D49",
+    "name": "15.6\" x 22.5\"",
+    "sortorder": 1156225,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "da9f90ae-0b59-47af-84e6-4e82daa1f941",
+  "fields": {
+    "code": "B12",
+    "name": "12-18m",
+    "sortorder": 312,
+    "grouping": "Infant Apparel"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "db4ffaa0-e27c-45f5-9800-0701b161c335",
+  "fields": {
+    "code": "LRG",
+    "name": "Large",
+    "sortorder": 504,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "dc5da20a-eaa6-411d-933b-ec8115984a55",
+  "fields": {
+    "code": "D28",
+    "name": "9\" x 9\"",
+    "sortorder": 1090090,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "e07671f7-cd32-4894-83b1-f043aedd1073",
+  "fields": {
+    "code": "MED",
+    "name": "Medium",
+    "sortorder": 503,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "e1f1cb51-5f1e-4594-a7b3-9ede1c9c670c",
+  "fields": {
+    "code": "D83",
+    "name": "28.75\" x 35\"",
+    "sortorder": 1287350,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "e2cf43c6-b71a-4cd6-9c36-f67e49ad0d95",
+  "fields": {
+    "code": "D52",
+    "name": "16\" x 24\"",
+    "sortorder": 1160240,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "e82aad0c-b6e3-49f7-b43e-5930648a8028",
+  "fields": {
+    "code": "D21",
+    "name": "7\" x 3\"",
+    "sortorder": 1070030,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ebce33d6-1edd-404c-9d69-045e726a7c8a",
+  "fields": {
+    "code": "D47",
+    "name": "14\" x 20\"",
+    "sortorder": 1140200,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "ecc0e3ff-f019-4b8a-9f16-0591e2a202d3",
+  "fields": {
+    "code": "D87",
+    "name": "31\" x 35.75\"",
+    "sortorder": 1310357,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "edbb6f95-dc6e-43d7-adde-e4b278475122",
+  "fields": {
+    "code": "P7P",
+    "name": "iPhone 7 Plus",
+    "sortorder": 900,
+    "grouping": "Tech Case"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "efcb6bd1-92c6-493f-89d8-6b3954eeffa5",
+  "fields": {
+    "code": "D15",
+    "name": "4\" x 8\"",
+    "sortorder": 1040080,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f34c4b87-1a9c-490a-9b19-59557f447195",
+  "fields": {
+    "code": "D89",
+    "name": "32\" x 48\"",
+    "sortorder": 1320480,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f38b56fe-6845-4563-9894-b0226e1c6660",
+  "fields": {
+    "code": "D31",
+    "name": "10\" x 20\"",
+    "sortorder": 1100200,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f4078bf3-6a21-4433-b1f1-9c9c6ae8523e",
+  "fields": {
+    "code": "D41",
+    "name": "12\" x 36\"",
+    "sortorder": 1120360,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f74a1146-40ad-4ec1-abb7-6573c5034d9b",
+  "fields": {
+    "code": "150",
+    "name": "$150",
+    "sortorder": 605,
+    "grouping": "Value"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f928a74c-8c3a-421f-9761-ef783f908a06",
+  "fields": {
+    "code": "D40",
+    "name": "12\" x 20\"",
+    "sortorder": 1120200,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "f9a3d5a6-cbbc-44b9-aac0-44f422f0a24f",
+  "fields": {
+    "code": "2XL",
+    "name": "XX-Large",
+    "sortorder": 506,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "fc8cd1a4-8334-49ff-8e90-387f951d9da0",
+  "fields": {
+    "code": "3XL",
+    "name": "XXX-Large",
+    "sortorder": 507,
+    "grouping": "Adult"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "fcf63510-0fd3-472c-992f-02fca6b75bb8",
+  "fields": {
+    "code": "D45",
+    "name": "13.5\" x 9\"",
+    "sortorder": 1135090,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "fdfd3102-9e0b-4916-8ff3-88831be64308",
+  "fields": {
+    "code": "D115",
+    "name": "60\" x 60\"",
+    "sortorder": 1600600,
+    "grouping": "Print Size"
+  }
+},
+{
+  "model": "catalog.size",
+  "pk": "fea251b3-780b-4006-9ce7-139b35818de0",
+  "fields": {
+    "code": "D24",
+    "name": "8\" x 10\"",
+    "sortorder": 1080100,
+    "grouping": "Print Size"
+  }
+}
+]

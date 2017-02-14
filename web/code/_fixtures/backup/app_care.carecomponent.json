@@ -1,0 +1,951 @@
+[
+{
+  "model": "app_care.carecomponent",
+  "pk": "03f9f6e5-8dec-440b-8c82-cabb5261442f",
+  "fields": {
+    "code": "dc_p",
+    "category": 6,
+    "name": "Dryclean, Any Solvent Except Trichloroethylene",
+    "icon_height": 30,
+    "icon_width": 29,
+    "icon": "dc_p.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "0dd0f12f-72df-4693-aa1f-754edc8ec28c",
+  "fields": {
+    "code": "mwgentle",
+    "category": 1,
+    "name": "Machine Wash, Gentle",
+    "icon_height": 39,
+    "icon_width": 32,
+    "icon": "mwgentle.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "0f4ea92e-6b81-4cc0-8135-73a32c42266b",
+  "fields": {
+    "code": "dc_donot",
+    "category": 6,
+    "name": "Do Not Dryclean",
+    "icon_height": 30,
+    "icon_width": 42,
+    "icon": "dc_donot.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "1338f529-f45b-47c8-9a5d-a6308e2ba4fc",
+  "fields": {
+    "code": "b_nonchl",
+    "category": 2,
+    "name": "Non-Chlorine Bleach When Needed",
+    "icon_height": 31,
+    "icon_width": 31,
+    "icon": "b_nonchl.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "1979673d-cf74-4e0f-9ad9-c58adcd72dec",
+  "fields": {
+    "code": "dc_ns_a",
+    "category": 6,
+    "name": "Dryclean, Any Solvent, Low Heat",
+    "icon_height": 31,
+    "icon_width": 35,
+    "icon": "dc_ns_a.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "1d6e9a1d-bec1-4c59-8857-1859fcbaae52",
+  "fields": {
+    "code": "ir_nost1",
+    "category": 5,
+    "name": "Iron, Medium Heat, No Steam",
+    "icon_height": 30,
+    "icon_width": 36,
+    "icon": "ir_nost1.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "25c20e18-c75a-4e90-b946-2af9a75ec45a",
+  "fields": {
+    "code": "dc_rm",
+    "category": 6,
+    "name": "Dryclean, Reduced Moisture",
+    "icon_height": 34,
+    "icon_width": 34,
+    "icon": "dc_rm.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2723449d-31e9-4d73-bcaa-a0628d1ae222",
+  "fields": {
+    "code": "mw30cpd",
+    "category": 1,
+    "name": "Machine Wash, Cold, Permanent Press",
+    "icon_height": 35,
+    "icon_width": 31,
+    "icon": "mw30cpd_X72Ogzj.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "284c99c1-040b-435a-b015-c40598ca2fee",
+  "fields": {
+    "code": "ir_nostm",
+    "category": 5,
+    "name": "Do No Steam",
+    "icon_height": 30,
+    "icon_width": 36,
+    "icon": "ir_nostm.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "29f11553-ff0a-42ef-bccc-d2e245fb875a",
+  "fields": {
+    "code": "hndw30cd",
+    "category": 1,
+    "name": "Hand Wash, Cold",
+    "icon_height": 44,
+    "icon_width": 32,
+    "icon": "hndw30cd_D6rvLC3.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2a21a546-6dcf-452c-9fa6-4a877a943711",
+  "fields": {
+    "code": "mw_ppres",
+    "category": 1,
+    "name": "Machine Wash, Permanent Press",
+    "icon_height": 35,
+    "icon_width": 32,
+    "icon": "mw_ppres.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2b5ac079-d058-45ae-92d0-a7dcd2a1a2fa",
+  "fields": {
+    "code": "mw50cgd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Gentle, 50\u00baC",
+    "icon_height": 39,
+    "icon_width": 31,
+    "icon": "mw50cgd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2cba1924-ca3a-4779-abc9-09f0bfb3fc88",
+  "fields": {
+    "code": "ir_tallm",
+    "category": 5,
+    "name": "Iron, Medium Heat",
+    "icon_height": 29,
+    "icon_width": 36,
+    "icon": "ir_tallm.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2edf30d0-31c9-429a-a187-c87153d222b8",
+  "fields": {
+    "code": "dc_sc_a",
+    "category": 6,
+    "name": "Dryclean, Any Solvent, Short Cycle",
+    "icon_height": 31,
+    "icon_width": 35,
+    "icon": "dc_sc_a.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "2f5fbafe-0dbf-4590-9875-4856156ee61a",
+  "fields": {
+    "code": "td_gentl",
+    "category": 3,
+    "name": "Tumble Dry, Gentle",
+    "icon_height": 38,
+    "icon_width": 33,
+    "icon": "td_gentl.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "330169a5-c7c7-4d28-b4b0-6850e0d19eb0",
+  "fields": {
+    "code": "ir_dontt",
+    "category": 5,
+    "name": "Do Not Iron",
+    "icon_height": 29,
+    "icon_width": 42,
+    "icon": "ir_dontt.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "3ad6f392-e5b1-4f5b-92d0-6e182071ef54",
+  "fields": {
+    "code": "hndw40cd",
+    "category": 1,
+    "name": "Hand Wash, Warm",
+    "icon_height": 44,
+    "icon_width": 32,
+    "icon": "hndw40cd_U8bVzJD.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "421e803e-10b8-42f8-a2d1-94befcce5aa4",
+  "fields": {
+    "code": "mw95cpd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Permanent Press, 95\u00baC",
+    "icon_height": 35,
+    "icon_width": 32,
+    "icon": "mw95cpd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "438f73a8-a844-44da-b380-7133db85bb73",
+  "fields": {
+    "code": "ir_talll",
+    "category": 5,
+    "name": "Iron, Low Heat",
+    "icon_height": 29,
+    "icon_width": 36,
+    "icon": "ir_talll.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "46e33937-46d4-489d-bbb2-9349e71c22ae",
+  "fields": {
+    "code": "dc_rm_a",
+    "category": 6,
+    "name": "Dryclean, Any Solvent, Reduced Moisture",
+    "icon_height": 31,
+    "icon_width": 35,
+    "icon": "dc_rm_a.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "47c5d740-aa44-4348-b80d-eb624ae243ad",
+  "fields": {
+    "code": "mw_norm",
+    "category": 1,
+    "name": "Machine Wash, Normal",
+    "icon_height": 31,
+    "icon_width": 31,
+    "icon": "mw_norm_b36pD3S.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "576ebc28-fd82-42b1-a18e-b65c59139a79",
+  "fields": {
+    "code": "td_ppres",
+    "category": 3,
+    "name": "Tumble Dry, Permanent Press",
+    "icon_height": 33,
+    "icon_width": 32,
+    "icon": "td_ppres.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "5c5585f4-6a0d-4c5f-a02b-78bc30cee223",
+  "fields": {
+    "code": "ir_nosth",
+    "category": 5,
+    "name": "Iron, High Heat, No Steam",
+    "icon_height": 30,
+    "icon_width": 36,
+    "icon": "ir_nosth.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "5d547eec-7175-4669-a7d1-40150c4555aa",
+  "fields": {
+    "code": "td_nor_m",
+    "category": 3,
+    "name": "Tumble Dry, Normal, Medium Heat",
+    "icon_height": 0,
+    "icon_width": 0,
+    "icon": "",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "5e1580d5-a94e-46e9-ac87-7bf73ca14286",
+  "fields": {
+    "code": "td_norm",
+    "category": 3,
+    "name": "Tumble Dry, Normal",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "td_norm.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "5f12a442-48c8-47bc-8248-144567ab2439",
+  "fields": {
+    "code": "dc_f",
+    "category": 6,
+    "name": "Dryclean, Petroleum Solvent Only",
+    "icon_height": 30,
+    "icon_width": 29,
+    "icon": "dc_f.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "6045705d-3b8d-416d-b012-a476ed59ed34",
+  "fields": {
+    "code": "ir_nostl",
+    "category": 5,
+    "name": "Iron, Low Heat, No Steam",
+    "icon_height": 30,
+    "icon_width": 36,
+    "icon": "ir_nostl.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "6270c3ce-91b3-47f2-b1b6-7f67d2f54c69",
+  "fields": {
+    "code": "mw95cd",
+    "category": 1,
+    "name": "Machine Wash, Hot, 95\u00baC",
+    "icon_height": 32,
+    "icon_width": 32,
+    "icon": "mw95cd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "627ae810-6252-4c52-b8bf-663d8258417f",
+  "fields": {
+    "code": "td_nor_l",
+    "category": 3,
+    "name": "Tumble Dry, Normal, Low Heat",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "td_nor_l.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "675c4a3c-530e-4b7a-b436-ba5b9d41d9c6",
+  "fields": {
+    "code": "hndw",
+    "category": 1,
+    "name": "Hand Wash, Normal",
+    "icon_height": 44,
+    "icon_width": 32,
+    "icon": "hndw_Mf8xmyG.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "7471f02f-d6b9-41c4-bb8f-18f559572d29",
+  "fields": {
+    "code": "b_any",
+    "category": 2,
+    "name": "Bleach When Needed",
+    "icon_height": 30,
+    "icon_width": 31,
+    "icon": "b_any.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "783665ae-28d5-454f-b55c-1d44c99309a7",
+  "fields": {
+    "code": "td_nornh",
+    "category": 3,
+    "name": "Tumble Dry, Normal, No Heat",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "td_nornh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "7bfc1153-c80d-489e-8386-968a7f6b6fb1",
+  "fields": {
+    "code": "mw30cgd",
+    "category": 1,
+    "name": "Machine Wash, Cold, Gentle",
+    "icon_height": 39,
+    "icon_width": 31,
+    "icon": "mw30cgd_ZE9h7id.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "7c82417d-6948-472d-b085-91da5725c58a",
+  "fields": {
+    "code": "mw60cgd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Gentle, 60\u00baC",
+    "icon_height": 39,
+    "icon_width": 32,
+    "icon": "mw60cgd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "7f2ae43e-25e5-456c-9192-db7b0d867690",
+  "fields": {
+    "code": "td_nor_h",
+    "category": 3,
+    "name": "Tumble Dry, Normal, High Heat",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "td_nor_h.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+  "fields": {
+    "code": "b_dont_s",
+    "category": 2,
+    "name": "Do Not Bleach",
+    "icon_height": 31,
+    "icon_width": 42,
+    "icon": "b_dont_s.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "822c05bf-fc55-4773-bba5-3c7f90ff8980",
+  "fields": {
+    "code": "mw60cd",
+    "category": 1,
+    "name": "Machine Wash, Hot, 60\u00baC",
+    "icon_height": 32,
+    "icon_width": 32,
+    "icon": "mw60cd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "8709b9e4-1df1-4a13-b90a-bde1ca848148",
+  "fields": {
+    "code": "mw40cpd",
+    "category": 1,
+    "name": "Machine Wash, Warm, Permanent Press",
+    "icon_height": 35,
+    "icon_width": 31,
+    "icon": "mw40cpd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "8800734e-a93f-4482-9a8a-312430795e0e",
+  "fields": {
+    "code": "td_gen_l",
+    "category": 3,
+    "name": "Tumble Dry, Gentle, Low Heat",
+    "icon_height": 38,
+    "icon_width": 33,
+    "icon": "td_gen_l.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "89dd9831-66e3-4274-af3c-b58ab602593b",
+  "fields": {
+    "code": "ir_tallh",
+    "category": 5,
+    "name": "Iron, High Heat",
+    "icon_height": 29,
+    "icon_width": 36,
+    "icon": "ir_tallh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "8a4d25d6-8b02-45f5-9b64-4a0fdb492f48",
+  "fields": {
+    "code": "dr_drpsh",
+    "category": 3,
+    "name": "Drip Dry In Shade",
+    "icon_height": 30,
+    "icon_width": 29,
+    "icon": "dr_drpsh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "8bb2c6b1-8bbc-4b3a-86d4-cd859d9d70c0",
+  "fields": {
+    "code": "mw70cpd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Permanent Press, 70\u00baC",
+    "icon_height": 35,
+    "icon_width": 32,
+    "icon": "mw70cpd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "8c24ddd6-d69c-46e1-ab1c-0be8bf9c77aa",
+  "fields": {
+    "code": "w_donot",
+    "category": 1,
+    "name": "Do Not Wash",
+    "icon_height": 31,
+    "icon_width": 42,
+    "icon": "w_donot_cYgipv6.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9000a522-cd4d-47c6-9549-7882ce176552",
+  "fields": {
+    "code": "dc_circle",
+    "category": 6,
+    "name": "Dryclean",
+    "icon_height": 30,
+    "icon_width": 29,
+    "icon": "dc_circle.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "97abd524-4717-4b70-9fcd-8f703dc40383",
+  "fields": {
+    "code": "dc_sc",
+    "category": 6,
+    "name": "Dryclean, Short Cycle",
+    "icon_height": 34,
+    "icon_width": 34,
+    "icon": "dc_sc.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "97f898af-e707-4c44-8158-9bf4b137ba34",
+  "fields": {
+    "code": "dr_drip",
+    "category": 3,
+    "name": "Drip Dry",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "dr_drip.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "98b5c4bc-9654-4792-8f33-d1a323f72f4d",
+  "fields": {
+    "code": "td_gen_m",
+    "category": 3,
+    "name": "Tumble Dry, Gentle, Medium Heat",
+    "icon_height": 38,
+    "icon_width": 32,
+    "icon": "td_gen_m.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9a255fc4-d7aa-430d-b82f-4e7e3505584f",
+  "fields": {
+    "code": "dr_donot",
+    "category": 3,
+    "name": "Do Not Dry",
+    "icon_height": 29,
+    "icon_width": 42,
+    "icon": "dr_donot.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9d5279e7-5c42-4e4c-a83e-f4a799329357",
+  "fields": {
+    "code": "dr_l_sh",
+    "category": 3,
+    "name": "Line Dry In Shade",
+    "icon_height": 32,
+    "icon_width": 32,
+    "icon": "dr_l_sh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9d870a04-ee44-4a2e-8508-3bbc1b5d6c47",
+  "fields": {
+    "code": "mw50cpd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Permanent Press, 50\u00baC",
+    "icon_height": 35,
+    "icon_width": 31,
+    "icon": "mw50cpd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9fb577ba-c4b7-4b65-b3ac-5dcb7a4ca408",
+  "fields": {
+    "code": "td_gennh",
+    "category": 3,
+    "name": "Tumble Dry, Gentle, No Heat",
+    "icon_height": 38,
+    "icon_width": 33,
+    "icon": "td_gennh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "9fc1a78b-3773-4875-8a3f-d8442ad1a8a0",
+  "fields": {
+    "code": "td_pp_m",
+    "category": 3,
+    "name": "Tumble Dry, Permanent Press, Medium Heat",
+    "icon_height": 34,
+    "icon_width": 32,
+    "icon": "td_pp_m.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "a234a16b-05c4-4aa1-88be-92dd34cae6d3",
+  "fields": {
+    "code": "mw40cgd",
+    "category": 1,
+    "name": "Machine Wash, Warm, Gentle",
+    "icon_height": 39,
+    "icon_width": 31,
+    "icon": "mw40cgd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "a33bd5ec-1867-4650-8bda-b64956204ce7",
+  "fields": {
+    "code": "td_donot",
+    "category": 3,
+    "name": "Do Not Tumble Dry",
+    "icon_height": 30,
+    "icon_width": 43,
+    "icon": "td_donot.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "a5389ed1-7230-4266-bf37-281c72bc6325",
+  "fields": {
+    "code": "mw30cd",
+    "category": 1,
+    "name": "Machine Wash, Cold",
+    "icon_height": 31,
+    "icon_width": 31,
+    "icon": "mw30cd_K7bWShz.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "a551cbf6-04b4-4081-a536-618b0a711ddb",
+  "fields": {
+    "code": "dr_fltsh",
+    "category": 3,
+    "name": "Dry Flat In Shade",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "dr_fltsh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "a5bae39a-05f0-4b08-a91d-2853dee14a17",
+  "fields": {
+    "code": "mw40cd",
+    "category": 1,
+    "name": "Machine Wash, Warm",
+    "icon_height": 31,
+    "icon_width": 31,
+    "icon": "mw40cd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "b73c1610-f84b-4228-bb6e-06e800829c6b",
+  "fields": {
+    "code": "dc_lh",
+    "category": 6,
+    "name": "Dryclean, Low Heat",
+    "icon_height": 34,
+    "icon_width": 33,
+    "icon": "dc_lh.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "b8ca5c3b-f1ad-4556-abff-8de2d27926a4",
+  "fields": {
+    "code": "ir_tall",
+    "category": 5,
+    "name": "Iron, Any Temperature, Steam or Dry",
+    "icon_height": 29,
+    "icon_width": 36,
+    "icon": "ir_tall.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "b91e36d8-08cf-4367-af23-47c8bcf646da",
+  "fields": {
+    "code": "td_pp_l",
+    "category": 3,
+    "name": "Tumble Dry, Permanent Press, Low Heat",
+    "icon_height": 33,
+    "icon_width": 32,
+    "icon": "td_pp_l.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "b95aa175-8920-4781-874b-5c35da4cd3e4",
+  "fields": {
+    "code": "mw50cd",
+    "category": 1,
+    "name": "Machine Wash, Hot, 50\u00baC",
+    "icon_height": 35,
+    "icon_width": 31,
+    "icon": "mw50cd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "ba97f626-20f8-48b0-8183-c39c0224efa6",
+  "fields": {
+    "code": "wr_donot",
+    "category": 4,
+    "name": "Do Not Wring",
+    "icon_height": 29,
+    "icon_width": 41,
+    "icon": "wr_donot.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "c0e2fe02-132c-4c20-b735-40b1a567b56f",
+  "fields": {
+    "code": "mw60cpd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Permanent Press, 60\u00baC",
+    "icon_height": 35,
+    "icon_width": 32,
+    "icon": "mw60cpd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "c4e7dc57-dd4e-40e8-87ab-56b769e99abe",
+  "fields": {
+    "code": "td_gen_h",
+    "category": 3,
+    "name": "Tumble Dry, Gentle, High Heat",
+    "icon_height": 38,
+    "icon_width": 32,
+    "icon": "td_gen_h.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "c5382e7e-b7da-422e-86e6-3586b438f725",
+  "fields": {
+    "code": "dr_flat",
+    "category": 3,
+    "name": "Dry Flat",
+    "icon_height": 29,
+    "icon_width": 29,
+    "icon": "dr_flat.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "d5eab5e9-fcd5-4d6f-9989-0871a76e61ea",
+  "fields": {
+    "code": "dc_lh_a",
+    "category": 6,
+    "name": "Dryclean, Any Solvent, No Steam",
+    "icon_height": 31,
+    "icon_width": 34,
+    "icon": "dc_lh_a.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "d6aa1c6d-286a-4548-ac2a-1f1cbf0c206c",
+  "fields": {
+    "code": "dc_ns",
+    "category": 6,
+    "name": "Dryclean, No Steam",
+    "icon_height": 34,
+    "icon_width": 33,
+    "icon": "dc_ns.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "dc754b0d-1c41-4e4f-8669-dc7aadb58a0f",
+  "fields": {
+    "code": "mw70cgd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Gentle, 70\u00baC",
+    "icon_height": 39,
+    "icon_width": 32,
+    "icon": "mw70cgd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "de64330b-7be2-464b-a319-059ef40e76e9",
+  "fields": {
+    "code": "mw95cgd",
+    "category": 1,
+    "name": "Machine Wash, Hot, Gentle, 95\u00baC",
+    "icon_height": 39,
+    "icon_width": 32,
+    "icon": "mw95cgd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "e3d9dde0-522f-4e45-b2de-ddf4a07ad807",
+  "fields": {
+    "code": "dc_a",
+    "category": 6,
+    "name": "Dryclean, Any Solvent",
+    "icon_height": 30,
+    "icon_width": 29,
+    "icon": "dc_a.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "e53f26e9-fd53-4cc5-a9a2-b6eebac53951",
+  "fields": {
+    "code": "mw70cd",
+    "category": 1,
+    "name": "Machine Wash, Hot, 70\u00baC",
+    "icon_height": 32,
+    "icon_width": 32,
+    "icon": "mw70cd.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "ef1b2c08-e095-49b4-9178-266d6fede76f",
+  "fields": {
+    "code": "dr_line",
+    "category": 3,
+    "name": "Line Dry",
+    "icon_height": 33,
+    "icon_width": 32,
+    "icon": "dr_line.eps",
+    "description": ""
+  }
+},
+{
+  "model": "app_care.carecomponent",
+  "pk": "fcb1d273-33ac-4703-aa4e-6f020c99c694",
+  "fields": {
+    "code": "td_pp_h",
+    "category": 3,
+    "name": "Tumble Dry, Permanent Press, High Heat",
+    "icon_height": 34,
+    "icon_width": 32,
+    "icon": "td_pp_h.eps",
+    "description": ""
+  }
+}
+]

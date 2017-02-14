@@ -1,0 +1,142 @@
+[
+{
+  "model": "app_care.careinstructions",
+  "pk": "0aecfa7b-0d9e-4f8d-86bc-46ceaebc2edf",
+  "fields": {
+    "code": "",
+    "item": "06490a51-cda1-4269-8e96-53bae34a8313",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "24fcdce6-07de-4433-a97c-89b1e15979d2",
+  "fields": {
+    "code": "",
+    "item": "97bc7431-f3af-4a82-8e61-22b8ecdce58a",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "3d48c3bd-76e1-4ad3-baae-d52417c323f1",
+  "fields": {
+    "code": "",
+    "item": "18168d9e-1e30-42d2-9e8e-45ff98eef345",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "83689524-b5cc-404d-845f-038e4bc3aa31",
+  "fields": {
+    "code": "",
+    "item": "4f6c98d2-d483-44fe-a6f9-0b037a59ef31",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "8800734e-a93f-4482-9a8a-312430795e0e",
+    "icon_wring": null,
+    "icon_iron": null,
+    "icon_dryclean": null
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "8461fba1-493f-4c31-9f3c-5c4410c2791b",
+  "fields": {
+    "code": "",
+    "item": "465b0197-067a-42a5-876a-9b13a440a584",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "a1262041-cf4d-4eb6-821a-960b5c375326",
+  "fields": {
+    "code": "",
+    "item": "86518832-b09f-4940-bd39-03a4ff253287",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "b4b21ff1-d2ec-4b6f-8a0b-ac9ab00f1c60",
+  "fields": {
+    "code": "",
+    "item": "2f7248e6-47c2-404a-b922-ff572c5164e7",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "b862bada-6a16-437a-ab81-60f42cc61ea6",
+  "fields": {
+    "code": "",
+    "item": "05de7ca5-accb-445e-a9d8-0ce288eaeeda",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "d71cbe38-48a6-47b7-ae3c-d8fb1c74b4d4",
+  "fields": {
+    "code": "",
+    "item": "029694fc-dae4-4eba-940f-e1f89dc95186",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+},
+{
+  "model": "app_care.careinstructions",
+  "pk": "f789679e-ece2-45a6-9c6c-d9ab13796313",
+  "fields": {
+    "code": "",
+    "item": "f787b729-dccd-4512-b774-21dd156f7056",
+    "icon_wash": "a5389ed1-7230-4266-bf37-281c72bc6325",
+    "icon_bleach": "7feb62f2-0580-4307-bc89-50a5f0f2a2a7",
+    "icon_dry": "627ae810-6252-4c52-b8bf-663d8258417f",
+    "icon_wring": null,
+    "icon_iron": "438f73a8-a844-44da-b380-7133db85bb73",
+    "icon_dryclean": "0f4ea92e-6b81-4cc0-8135-73a32c42266b"
+  }
+}
+]

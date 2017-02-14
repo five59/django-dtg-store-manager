@@ -1,0 +1,2407 @@
+[
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "0090e1dc-42c6-495c-87db-69ccb2f8b2b9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.156Z",
+    "date_updated": "2017-02-09T12:02:56.156Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "02d40334-8627-4707-bbb2-a40a085096a2",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.840Z",
+    "date_updated": "2017-02-09T12:02:27.840Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "06c1711d-2631-4388-b6ef-c71c167b9135",
+  "fields": {
+    "date_added": "2017-02-09T12:02:58.546Z",
+    "date_updated": "2017-02-09T12:02:58.546Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "cb2766cd-281d-4549-bc65-a4b491fe4076"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "07a9cf79-f37d-41de-a325-527c8cf082a5",
+  "fields": {
+    "date_added": "2017-02-09T12:02:54.284Z",
+    "date_updated": "2017-02-09T12:02:54.284Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "218c811f-736d-4b94-9999-30def8d523cd"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "0d14300c-3c50-428e-ba95-3475a4f16b68",
+  "fields": {
+    "date_added": "2017-02-09T12:03:53.199Z",
+    "date_updated": "2017-02-09T12:03:53.199Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "d0b6e9be-e5e2-4173-9991-ff2abc96ae5a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "0f77743c-33d3-458d-9301-52a1991217c3",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.096Z",
+    "date_updated": "2017-02-09T12:02:30.096Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "c5b06ad2-1d29-4ce1-b4a5-207bd1aa02bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "11e76d5e-d15d-4da0-b764-411385057508",
+  "fields": {
+    "date_added": "2017-02-09T12:02:20.673Z",
+    "date_updated": "2017-02-09T12:02:20.673Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "2fc12da7-18c6-4502-8987-4438bdf1043b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "164d62d2-046a-42ff-b32c-68ddc7c15ce6",
+  "fields": {
+    "date_added": "2017-02-09T12:02:08.151Z",
+    "date_updated": "2017-02-09T12:02:08.151Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "031d22e2-a1fe-4b2c-9294-637d4cdf389f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "169e9683-7e9b-4162-93f3-f2e322f1d349",
+  "fields": {
+    "date_added": "2017-02-09T12:03:51.356Z",
+    "date_updated": "2017-02-09T12:03:51.356Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "530d9495-a892-410e-9db9-a4005cba493d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "17e509b1-807e-48f1-bf9c-4d8a72137808",
+  "fields": {
+    "date_added": "2017-02-09T12:03:45.049Z",
+    "date_updated": "2017-02-09T12:03:45.049Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "0880e0e1-6ad2-4045-8d08-817c7af55362"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "194f7491-71fe-479b-a872-b43ef2ecd30f",
+  "fields": {
+    "date_added": "2017-02-09T12:01:53.535Z",
+    "date_updated": "2017-02-09T12:01:53.535Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1a9bbca1-2f25-4fe8-b763-912b44f0b969"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "19e119d1-326f-4783-a572-3a7f5c0389e1",
+  "fields": {
+    "date_added": "2017-02-09T12:02:34.536Z",
+    "date_updated": "2017-02-09T12:02:34.536Z",
+    "pid": "stitch_color",
+    "title": "Zipper & Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "a7c94956-9f5b-4079-9f26-07b037eae3d6"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "1d0e8708-5314-4f99-91a5-83cdb4ae1783",
+  "fields": {
+    "date_added": "2017-02-09T12:03:16.277Z",
+    "date_updated": "2017-02-09T12:03:16.277Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "dd47cad6-393d-48cf-bd7f-50c7f2dba61e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "1e368f88-fa94-4546-aa6a-cc4e2cababb9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.186Z",
+    "date_updated": "2017-02-09T12:02:31.186Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "5012b502-ad56-4aaa-92fc-d294f68a325c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "1f256ab1-0d99-4ebe-9218-b387299dc188",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.031Z",
+    "date_updated": "2017-02-09T12:02:37.031Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "206f7a87-bfb8-40ed-a8bb-5dfd4df2b351",
+  "fields": {
+    "date_added": "2017-02-09T12:03:02.736Z",
+    "date_updated": "2017-02-09T12:03:02.736Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "8954ae3b-0733-4bff-bc70-0592c04693dc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "20fdb76c-818c-4037-a1c1-792a89432cb8",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.337Z",
+    "date_updated": "2017-02-09T12:02:36.337Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "221cb2f2-f945-446c-833e-3ef751151bfd",
+  "fields": {
+    "date_added": "2017-02-09T12:02:26.708Z",
+    "date_updated": "2017-02-09T12:02:26.708Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1cccd2a8-838e-43bb-a34b-d0dfbe82457b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "22c7add0-7203-4069-95e3-237bc67a0bb0",
+  "fields": {
+    "date_added": "2017-02-09T12:02:15.634Z",
+    "date_updated": "2017-02-09T12:02:15.634Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "d1bf2d7a-268e-4ef6-a642-1cb1722261c4"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "2350ba23-b695-424b-b004-81bcaabceac9",
+  "fields": {
+    "date_added": "2017-02-09T12:01:22.441Z",
+    "date_updated": "2017-02-09T12:01:22.441Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1240dc5c-5b78-41a2-b860-31b7d3ea5669"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "241eded9-baab-45d5-8ace-2f1a32e5034c",
+  "fields": {
+    "date_added": "2017-02-09T12:02:47.908Z",
+    "date_updated": "2017-02-09T12:02:47.908Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "08bea583-1a0a-4156-a55b-f319902643c0"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "242d50ef-7972-4283-a5b9-b9c0dc032bb9",
+  "fields": {
+    "date_added": "2017-02-09T12:03:37.066Z",
+    "date_updated": "2017-02-09T12:03:37.066Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "04f275aa-4276-40b3-981a-f5741727a8ba"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "25779360-acd7-413f-baee-ee3469424d31",
+  "fields": {
+    "date_added": "2017-02-09T12:02:50.388Z",
+    "date_updated": "2017-02-09T12:02:50.388Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "931bdab4-c995-4fd3-87a7-7ac54c0da3fd"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "276ea68b-5d84-40c6-92a6-c1e902b73c24",
+  "fields": {
+    "date_added": "2017-02-09T12:03:50.734Z",
+    "date_updated": "2017-02-09T12:03:50.734Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "36f6db00-fe9f-4944-96d7-13e4cf6ddd5f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "27ebb02e-5a8d-475f-93ed-6031287ebdee",
+  "fields": {
+    "date_added": "2017-02-09T12:01:55.581Z",
+    "date_updated": "2017-02-09T12:01:55.581Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "c50eb1ca-c067-45f1-95e2-7c43dc543f1b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "2dc93185-035d-49c2-9e47-b56886128d82",
+  "fields": {
+    "date_added": "2017-02-09T12:03:55.605Z",
+    "date_updated": "2017-02-09T12:03:55.605Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a572ee97-37e2-4771-87a7-05941e9561d9"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "300e5b05-b7b2-41c0-9411-7f26b07b0dfc",
+  "fields": {
+    "date_added": "2017-02-09T12:03:05.749Z",
+    "date_updated": "2017-02-09T12:03:05.749Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1488dbdf-6e65-4e12-9f40-369af49d2834"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "30757985-569e-4231-b1d2-c20f657035a1",
+  "fields": {
+    "date_added": "2017-02-09T12:03:51.951Z",
+    "date_updated": "2017-02-09T12:03:51.951Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "cfa1ab35-fe55-4056-b011-da661280b78b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "32972de0-1413-4207-af58-af37913c2acf",
+  "fields": {
+    "date_added": "2017-02-09T12:02:41.573Z",
+    "date_updated": "2017-02-09T12:02:41.573Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "35c9eddc-1087-4a41-9e8b-7ee5b0128740"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "34e9dab4-c316-4584-8a79-6b5b5d427cfd",
+  "fields": {
+    "date_added": "2017-02-09T12:02:52.381Z",
+    "date_updated": "2017-02-09T12:02:52.381Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "c8517816-dea4-4fb6-a4b7-e505303b00f8"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "35e47d40-1665-44cb-8f7b-2c5541ff7109",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.878Z",
+    "date_updated": "2017-02-09T12:02:27.878Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "38200e19-17c0-4498-915e-64207f4051d9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.889Z",
+    "date_updated": "2017-02-09T12:02:27.889Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "38ea9ebf-fab6-44ee-9b91-112bed51a191",
+  "fields": {
+    "date_added": "2017-02-09T12:04:11.746Z",
+    "date_updated": "2017-02-09T12:04:11.746Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ed0fc5da-4273-4f71-804a-3c9857f74ef2"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "397dca1b-60aa-4945-b6fa-9a8cd72efa4f",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.708Z",
+    "date_updated": "2017-02-09T12:02:37.708Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "a5cfbaf8-9152-447f-a689-5875a84ea446"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3c988ca5-86a8-4aa7-bea7-57b9f0898eee",
+  "fields": {
+    "date_added": "2017-02-09T12:03:45.065Z",
+    "date_updated": "2017-02-09T12:03:45.065Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "0880e0e1-6ad2-4045-8d08-817c7af55362"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3df86ff5-143e-4117-8089-533eb59462fd",
+  "fields": {
+    "date_added": "2017-02-09T12:03:29.133Z",
+    "date_updated": "2017-02-09T12:03:29.133Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "8e2dfd33-c022-4e38-9bf7-0c6a196ab6f7"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3e181919-b22b-43ac-ac57-14d1eaa9bfcf",
+  "fields": {
+    "date_added": "2017-02-09T12:03:57.104Z",
+    "date_updated": "2017-02-09T12:03:57.104Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "37b9eca3-0746-4cda-91b8-eb4ba7537222"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3eb184ad-6e32-430b-89f8-a8cef032a299",
+  "fields": {
+    "date_added": "2017-02-09T12:03:51.965Z",
+    "date_updated": "2017-02-09T12:03:51.965Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "cfa1ab35-fe55-4056-b011-da661280b78b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3f0738a1-1c12-4edc-b302-de10942f31dc",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.823Z",
+    "date_updated": "2017-02-09T12:02:27.823Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "3fcbfcb8-0ab1-46ef-bf92-fbab55cbae87",
+  "fields": {
+    "date_added": "2017-02-09T12:04:03.682Z",
+    "date_updated": "2017-02-09T12:04:03.682Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "50cfd16a-da32-4d86-8028-0bf60edde20a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "42c4fad2-aea8-418a-8929-3488bb813999",
+  "fields": {
+    "date_added": "2017-02-09T12:03:55.002Z",
+    "date_updated": "2017-02-09T12:03:55.002Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "834d2916-b62b-4e4a-ae08-cb9c6045796a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "43836f53-d797-4d3d-b364-0928d85ddd1d",
+  "fields": {
+    "date_added": "2017-02-09T12:03:52.606Z",
+    "date_updated": "2017-02-09T12:03:52.606Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "4ca25a43-064d-421d-99f9-4a09f3fbfbe1"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "4433d90f-e573-42b3-b088-8b4f0c5acf73",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.918Z",
+    "date_updated": "2017-02-09T12:02:31.918Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "4c247c11-85ef-4e02-80e2-6a529974fe95",
+  "fields": {
+    "date_added": "2017-02-09T12:04:06.329Z",
+    "date_updated": "2017-02-09T12:04:06.329Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "6ce1de60-ed30-44e3-8ae3-901e17cee8e2"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "4c39809d-0cd0-4169-83c6-e68ebff0c06a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:37.101Z",
+    "date_updated": "2017-02-09T12:03:37.101Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "04f275aa-4276-40b3-981a-f5741727a8ba"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "4ce69a78-1a16-4e07-a4fa-b38a17a7c0eb",
+  "fields": {
+    "date_added": "2017-02-09T12:03:48.349Z",
+    "date_updated": "2017-02-09T12:03:48.349Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "f9571238-bef3-4163-aef9-4b817ae635b2"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "4eb14654-c173-4d07-8a31-f36764162749",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.172Z",
+    "date_updated": "2017-02-09T12:02:56.172Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "51b30609-1be6-4222-b4b9-ed0b4cd4313e",
+  "fields": {
+    "date_added": "2017-02-09T12:03:43.314Z",
+    "date_updated": "2017-02-09T12:03:43.314Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7aec4a7d-ccb2-4e50-bb60-be83e8018dc4"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "51f08a32-707a-430e-ba0b-a03f663726cd",
+  "fields": {
+    "date_added": "2017-02-09T12:02:59.876Z",
+    "date_updated": "2017-02-09T12:02:59.876Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "f7193663-df58-481f-b83a-54a89d151e99"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "51f8bd67-a6d8-465b-9866-157a04c6f5fa",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.860Z",
+    "date_updated": "2017-02-09T12:02:43.861Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "52617d8e-6816-4e36-a846-0f65a45403e4",
+  "fields": {
+    "date_added": "2017-02-09T12:03:15.782Z",
+    "date_updated": "2017-02-09T12:03:15.782Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "94635517-74ca-43ab-a754-234843bdc455"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "54021fd3-e59d-4245-b464-3320bd3a6048",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.356Z",
+    "date_updated": "2017-02-09T12:02:36.356Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "54129ada-9ffe-4d05-b17d-3d3126ae97dd",
+  "fields": {
+    "date_added": "2017-02-09T12:04:01.758Z",
+    "date_updated": "2017-02-09T12:04:01.758Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "e5389a0e-dcdb-4982-8b0c-c02e2c69b3a7"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "57ed6153-66f6-4e55-bdb5-0eaf56af43cd",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.455Z",
+    "date_updated": "2017-02-09T12:03:54.455Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "59258b19-cb4c-46ca-b792-e3f04753a27a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:43.845Z",
+    "date_updated": "2017-02-09T12:03:43.845Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "41a2abf6-8510-4dcd-8610-e1040fdd1368"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "59f2a00a-97c4-47d5-a5ac-2246c782570f",
+  "fields": {
+    "date_added": "2017-02-09T12:03:38.286Z",
+    "date_updated": "2017-02-09T12:03:38.286Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "25739a4b-cdc4-43e0-92c9-86ae91ac49d9"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5a102c5a-b8bc-4bbc-a99c-3f3ef91de9e6",
+  "fields": {
+    "date_added": "2017-02-09T12:02:57.452Z",
+    "date_updated": "2017-02-09T12:02:57.453Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "dd16555f-d1d5-40a9-a979-9fd0175c7929"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5ae360db-30a8-4664-9df7-54b538396a0b",
+  "fields": {
+    "date_added": "2017-02-09T12:01:57.519Z",
+    "date_updated": "2017-02-09T12:01:57.519Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "cc406788-9aae-4fe5-ae1d-c0264488f87c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5bab1520-9fe1-4902-a8fd-c0535238be6f",
+  "fields": {
+    "date_added": "2017-02-09T12:03:14.156Z",
+    "date_updated": "2017-02-09T12:03:14.156Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "d75b94da-7697-4821-8d3b-ff8c0f8fef9c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5c5116b0-1bd4-4607-8df9-409b1d9fd917",
+  "fields": {
+    "date_added": "2017-02-09T12:03:34.805Z",
+    "date_updated": "2017-02-09T12:03:34.805Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "feee4ceb-cd42-4c01-aa3e-627e53d0aa4e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5d9a84de-6d7d-4753-9b56-97a565c270e7",
+  "fields": {
+    "date_added": "2017-02-09T12:03:27.541Z",
+    "date_updated": "2017-02-09T12:03:27.541Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "210c59c9-8bc9-403a-b76c-e118ffd1e836"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5e515897-4f33-4e0c-b754-b2385db2b8c3",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.446Z",
+    "date_updated": "2017-02-09T12:03:54.446Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "5faa4454-e040-413b-8a08-baf9c0d65495",
+  "fields": {
+    "date_added": "2017-02-09T12:03:52.591Z",
+    "date_updated": "2017-02-09T12:03:52.591Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "4ca25a43-064d-421d-99f9-4a09f3fbfbe1"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6090e2b3-b6b3-46ee-b6af-b28a8141103d",
+  "fields": {
+    "date_added": "2017-02-09T12:02:45.120Z",
+    "date_updated": "2017-02-09T12:02:45.121Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "4396d074-e502-4817-b52c-7c72d1014f16"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6098ff0d-a32e-4fa3-875b-160b11075da8",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.102Z",
+    "date_updated": "2017-02-09T12:02:56.102Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "61030342-cf52-4ed5-8c78-df2e49c8520e",
+  "fields": {
+    "date_added": "2017-02-09T12:03:34.791Z",
+    "date_updated": "2017-02-09T12:03:34.791Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "feee4ceb-cd42-4c01-aa3e-627e53d0aa4e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6471781c-3195-4b37-9bf6-519e6c05cf09",
+  "fields": {
+    "date_added": "2017-02-09T12:01:35.913Z",
+    "date_updated": "2017-02-09T12:01:35.913Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "78093f8e-8421-4c21-9165-df068ed331a9"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "64f661a0-154c-4484-b8c9-59601bcfe362",
+  "fields": {
+    "date_added": "2017-02-09T12:04:10.296Z",
+    "date_updated": "2017-02-09T12:04:10.296Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "e4276835-2eba-4a83-a249-1b0120660f66"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6660a257-eb10-472a-b170-43888bc33b50",
+  "fields": {
+    "date_added": "2017-02-09T12:02:19.775Z",
+    "date_updated": "2017-02-09T12:02:19.775Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ee86c615-2494-4224-93a8-2ac035f260ce"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "668abfe1-78df-490e-bb9f-4b97f67c499c",
+  "fields": {
+    "date_added": "2017-02-09T12:01:58.123Z",
+    "date_updated": "2017-02-09T12:01:58.123Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "335d72b0-2c98-4702-9463-44ea267ba5c6"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "673af03f-6c1b-4771-9b81-93a32996705a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:58.696Z",
+    "date_updated": "2017-02-09T12:03:58.696Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "913cce8b-8828-4b14-b37f-19aff477e729"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6885acec-4921-48ff-b6cf-9d9bf4e638d8",
+  "fields": {
+    "date_added": "2017-02-09T12:03:49.957Z",
+    "date_updated": "2017-02-09T12:03:49.958Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "e1e594bf-8b21-4153-b987-c1c167ddace0"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6941d77b-6aea-4506-86ec-1caa2e4bbb16",
+  "fields": {
+    "date_added": "2017-02-09T12:01:49.706Z",
+    "date_updated": "2017-02-09T12:01:49.706Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "5128edca-177e-403f-92ba-9b9cd6ef2d90"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6b342849-d2ea-4dcd-8e5d-3a1be566dcdd",
+  "fields": {
+    "date_added": "2017-02-09T12:02:29.428Z",
+    "date_updated": "2017-02-09T12:02:29.428Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "7c8a81dd-3d0b-46d2-b5e6-163221811f8c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6d484d7c-2330-4881-a5d9-1ec7345d157a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:32.129Z",
+    "date_updated": "2017-02-09T12:03:32.129Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1f8b039e-afc5-4022-a391-4d1ca70057b3"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6e0372e1-232e-4f80-be8b-0a5ecd8246f3",
+  "fields": {
+    "date_added": "2017-02-09T12:01:34.305Z",
+    "date_updated": "2017-02-09T12:01:34.305Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "20fdc179-df43-42e0-9660-ec8d06efd615"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "6ec345cf-1011-4eee-8d5a-5e904d4f52e5",
+  "fields": {
+    "date_added": "2017-02-09T12:02:29.447Z",
+    "date_updated": "2017-02-09T12:02:29.447Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "7c8a81dd-3d0b-46d2-b5e6-163221811f8c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7079df54-2338-4e9a-b05d-a37a65080e58",
+  "fields": {
+    "date_added": "2017-02-09T12:03:59.693Z",
+    "date_updated": "2017-02-09T12:03:59.693Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "4a7cf3d4-c07c-4c91-8b28-3487d79e12a4"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "712d92cd-b515-4cc1-8790-3b7c8fc33138",
+  "fields": {
+    "date_added": "2017-02-09T12:02:28.839Z",
+    "date_updated": "2017-02-09T12:02:28.839Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "7fc9e603-3e5e-4913-a89f-26a7bf7c3fcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "71797938-3e40-4801-8a1e-88dfcb93f7a1",
+  "fields": {
+    "date_added": "2017-02-09T12:02:03.051Z",
+    "date_updated": "2017-02-09T12:02:03.052Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "d493a41b-eec1-4104-ba23-d2f6beace44a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "74683793-d258-49cd-8fbf-eee255001eb9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.043Z",
+    "date_updated": "2017-02-09T12:02:37.043Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "74f53d5b-e62b-46f8-a320-aeb156e296b6",
+  "fields": {
+    "date_added": "2017-02-09T12:02:28.827Z",
+    "date_updated": "2017-02-09T12:02:28.827Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "7fc9e603-3e5e-4913-a89f-26a7bf7c3fcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "752dd9d7-2bad-48a6-a9a7-71e074c36e39",
+  "fields": {
+    "date_added": "2017-02-09T12:03:35.301Z",
+    "date_updated": "2017-02-09T12:03:35.301Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "9f79236c-d69a-4d0d-b741-811341011c15"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7540d5d8-0b30-4406-b5d1-dfd22bdbc841",
+  "fields": {
+    "date_added": "2017-02-09T12:02:45.135Z",
+    "date_updated": "2017-02-09T12:02:45.135Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "4396d074-e502-4817-b52c-7c72d1014f16"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "75f9a8fb-5339-4e58-82f9-04d4720f5026",
+  "fields": {
+    "date_added": "2017-02-09T12:02:38.385Z",
+    "date_updated": "2017-02-09T12:02:38.385Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ff1017a8-a527-4b8c-aa61-f99b5c777b46"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "76e44374-8550-4bb6-b88e-a653756ba3bb",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.855Z",
+    "date_updated": "2017-02-09T12:02:31.855Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "79ec0f62-83f5-401c-9de9-18bb7e1dde56",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.910Z",
+    "date_updated": "2017-02-09T12:02:43.910Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7a1082c7-221f-4927-af8d-6281cf0f80ad",
+  "fields": {
+    "date_added": "2017-02-09T12:02:39.832Z",
+    "date_updated": "2017-02-09T12:02:39.832Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "8cc37bfe-548b-4771-9be2-1bd444eb85b8"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7aed707d-8cbc-4d9e-96b2-47a590fd4c10",
+  "fields": {
+    "date_added": "2017-02-09T12:01:44.695Z",
+    "date_updated": "2017-02-09T12:01:44.695Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "0b31aa1f-b23c-4634-9016-870ec898ef4f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7b2fc392-6887-461f-9693-b1941f381cbf",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.884Z",
+    "date_updated": "2017-02-09T12:02:31.884Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7c19e202-0bc0-433c-a605-a2bfd85320d8",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.015Z",
+    "date_updated": "2017-02-09T12:02:37.015Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7d29a562-3fcd-40e3-a95c-7d5b88abd860",
+  "fields": {
+    "date_added": "2017-02-09T12:03:44.403Z",
+    "date_updated": "2017-02-09T12:03:44.404Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "af450512-03cd-4e3a-b4b5-8d2b46f26fe2"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "7dc90e1b-96df-4c28-a437-15452cc74da2",
+  "fields": {
+    "date_added": "2017-02-09T12:01:43.403Z",
+    "date_updated": "2017-02-09T12:01:43.403Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "3d73fcfd-33e1-4522-a206-3ba371cd9cdb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "80250176-dd9b-4409-92ac-e80ac8894c86",
+  "fields": {
+    "date_added": "2017-02-09T12:01:39.950Z",
+    "date_updated": "2017-02-09T12:01:39.950Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "986fe11d-1911-4db8-91e0-3539a7d9533a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "812fb56a-badd-465d-95c8-69217bd325bb",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.087Z",
+    "date_updated": "2017-02-09T12:02:30.087Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c5b06ad2-1d29-4ce1-b4a5-207bd1aa02bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "822c8654-4d34-43e6-b586-c4646aace7f5",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.901Z",
+    "date_updated": "2017-02-09T12:02:31.901Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "82aef070-302b-4f9f-a070-90dd925985f6",
+  "fields": {
+    "date_added": "2017-02-09T12:03:58.017Z",
+    "date_updated": "2017-02-09T12:03:58.017Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "0a58b614-9a61-4d49-8970-23224f511616"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "832840c6-9eb9-4b98-a273-56ca93de3863",
+  "fields": {
+    "date_added": "2017-02-09T12:02:04.761Z",
+    "date_updated": "2017-02-09T12:02:04.761Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "b04efb63-ad5f-48d1-b653-947e2b1d3659"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "85965afd-152f-4983-a9f2-d55a669acab9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:28.867Z",
+    "date_updated": "2017-02-09T12:02:28.867Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7fc9e603-3e5e-4913-a89f-26a7bf7c3fcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "8937a10c-3f44-44d8-8610-258a61b714ae",
+  "fields": {
+    "date_added": "2017-02-09T12:04:04.357Z",
+    "date_updated": "2017-02-09T12:04:04.357Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7e94c071-cb9d-47b8-a759-96ec67355b3b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "8c47c4a1-c343-4189-9169-10d8229bf6c8",
+  "fields": {
+    "date_added": "2017-02-09T12:03:37.640Z",
+    "date_updated": "2017-02-09T12:03:37.640Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "c74591e4-94fd-4adc-862b-a21b83a73c56"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "8dae1b86-513a-4bd4-b0f1-3d8d5a22ef05",
+  "fields": {
+    "date_added": "2017-02-09T12:02:22.818Z",
+    "date_updated": "2017-02-09T12:02:22.818Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a2de69ce-58f7-4035-b5f6-2c3efbadc44f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "911ef389-8160-4531-b7f2-46c2a9ae1735",
+  "fields": {
+    "date_added": "2017-02-09T12:02:35.017Z",
+    "date_updated": "2017-02-09T12:02:35.017Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "3b459ede-402f-4c5f-b3fd-f93bbf4db77c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9995ff19-1458-46e9-ba67-c9c7bc9efbc4",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.866Z",
+    "date_updated": "2017-02-09T12:02:27.866Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9abf8e28-69af-4e2f-8948-a4c477c9b229",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.881Z",
+    "date_updated": "2017-02-09T12:02:43.881Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9b6e0784-b422-4454-ac22-b2637ec9e892",
+  "fields": {
+    "date_added": "2017-02-09T12:01:42.410Z",
+    "date_updated": "2017-02-09T12:01:42.410Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "b8d9cfc0-21e3-4c5a-b456-1e63566cc252"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9b8a4d61-5b01-48bf-9188-f058489bb11a",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.075Z",
+    "date_updated": "2017-02-09T12:02:37.075Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9c14e145-e231-482c-bb78-7bf36200c101",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.187Z",
+    "date_updated": "2017-02-09T12:02:56.187Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9cfdcccd-d0d7-4f68-9b3a-aa8dc6a57bf5",
+  "fields": {
+    "date_added": "2017-02-09T12:03:53.817Z",
+    "date_updated": "2017-02-09T12:03:53.817Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "6c20b5fc-4a7c-4834-91d1-84dd0c53d986"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9d4e2d22-5b42-41f0-b53a-d5a72c309379",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.735Z",
+    "date_updated": "2017-02-09T12:02:37.735Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a5cfbaf8-9152-447f-a689-5875a84ea446"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9dfae7fa-3a5c-404c-90bd-a4374af99235",
+  "fields": {
+    "date_added": "2017-02-09T12:02:29.465Z",
+    "date_updated": "2017-02-09T12:02:29.466Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "7c8a81dd-3d0b-46d2-b5e6-163221811f8c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "9f47bc4e-dbf6-4bc0-8b69-015c3255aef6",
+  "fields": {
+    "date_added": "2017-02-09T12:04:00.526Z",
+    "date_updated": "2017-02-09T12:04:00.526Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1a06276b-791f-4a4a-a2ff-20465756dd22"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "a0946adf-6171-4760-b9cd-d0fa6a7f55ae",
+  "fields": {
+    "date_added": "2017-02-09T12:01:51.392Z",
+    "date_updated": "2017-02-09T12:01:51.392Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7d15daa5-c041-4e16-b73b-87438a6545bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "a1d57b52-4bf3-453d-94a0-f4f6c8f20d4d",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.375Z",
+    "date_updated": "2017-02-09T12:02:36.375Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "a34950c8-246f-433b-9104-370c717db600",
+  "fields": {
+    "date_added": "2017-02-09T12:04:11.142Z",
+    "date_updated": "2017-02-09T12:04:11.142Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "f8ceb807-68f1-4a25-bfb4-f9e43f9ec9ce"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "a461d151-ed0a-4a25-9b9d-166453d7e437",
+  "fields": {
+    "date_added": "2017-02-09T12:01:48.189Z",
+    "date_updated": "2017-02-09T12:01:48.189Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "570177fa-0da2-4953-9539-812d0cbe42d9"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "a7164687-4efa-4cf4-9f76-aa1c33d37f79",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.840Z",
+    "date_updated": "2017-02-09T12:02:31.840Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "aa31e2bc-ed13-4b78-833a-19b6e47b918d",
+  "fields": {
+    "date_added": "2017-02-09T12:04:02.461Z",
+    "date_updated": "2017-02-09T12:04:02.461Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "9473ab40-6d59-4257-a3e2-84cd807470ac"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "add5b819-cd56-43af-b19e-42d42e02f704",
+  "fields": {
+    "date_added": "2017-02-09T12:03:34.775Z",
+    "date_updated": "2017-02-09T12:03:34.775Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "feee4ceb-cd42-4c01-aa3e-627e53d0aa4e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ae129f68-aa67-4cb4-9204-19d7c0ca2f9c",
+  "fields": {
+    "date_added": "2017-02-09T12:02:34.549Z",
+    "date_updated": "2017-02-09T12:02:34.549Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a7c94956-9f5b-4079-9f26-07b037eae3d6"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b0710212-e8f6-450a-bb66-8f376dc51fee",
+  "fields": {
+    "date_added": "2017-02-09T12:03:33.327Z",
+    "date_updated": "2017-02-09T12:03:33.327Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "03e82009-d9f6-4322-88cd-154375701271"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b09ec4d7-14b6-4d35-8746-7caa5cc6f844",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.924Z",
+    "date_updated": "2017-02-09T12:02:43.924Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b151b372-61d5-4243-ac9c-012494f96a94",
+  "fields": {
+    "date_added": "2017-02-09T12:03:53.184Z",
+    "date_updated": "2017-02-09T12:03:53.184Z",
+    "pid": "stitch_color",
+    "title": "Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "d0b6e9be-e5e2-4173-9991-ff2abc96ae5a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b360a45d-f76a-4ade-babb-e8cec9cc8f9f",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.694Z",
+    "date_updated": "2017-02-09T12:02:37.694Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "a5cfbaf8-9152-447f-a689-5875a84ea446"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b520f652-0f85-4713-84d8-2912b6b8904e",
+  "fields": {
+    "date_added": "2017-02-09T12:03:50.750Z",
+    "date_updated": "2017-02-09T12:03:50.750Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "36f6db00-fe9f-4944-96d7-13e4cf6ddd5f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b6468145-f6eb-4f37-a42c-e5f3edd5b4c7",
+  "fields": {
+    "date_added": "2017-02-09T12:02:14.525Z",
+    "date_updated": "2017-02-09T12:02:14.525Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "b023c04a-3eba-4175-bae6-8049595cd473"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b867b9ad-823c-43a2-b90d-74ec43549e9b",
+  "fields": {
+    "date_added": "2017-02-09T12:03:08.076Z",
+    "date_updated": "2017-02-09T12:03:08.076Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "fcabd3c6-1ca5-466f-901e-1e815cc4d821"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "b9c86a96-433e-4188-9e54-39e0c24b4f4e",
+  "fields": {
+    "date_added": "2017-02-09T12:02:31.870Z",
+    "date_updated": "2017-02-09T12:02:31.871Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "dde86db6-5d36-41fe-8aec-5b6ae527bfcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "bc35e41f-d039-40ca-b1be-f25982fcecfe",
+  "fields": {
+    "date_added": "2017-02-09T12:03:56.078Z",
+    "date_updated": "2017-02-09T12:03:56.078Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "bbc3bef5-0233-4bdd-95c4-578fd05343bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "bdbd2ff5-c565-4dde-8953-5723703588cf",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.053Z",
+    "date_updated": "2017-02-09T12:02:37.054Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "be430bdd-cdc3-41b9-9758-2b5caab2834d",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.141Z",
+    "date_updated": "2017-02-09T12:02:56.141Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c02ec39d-bad4-4e24-8d8c-0fb244300db6",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.347Z",
+    "date_updated": "2017-02-09T12:02:36.347Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c0b812b5-a536-4e3a-b02f-e89f3696110f",
+  "fields": {
+    "date_added": "2017-02-09T12:03:49.112Z",
+    "date_updated": "2017-02-09T12:03:49.113Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "6b4d9271-2b2b-452e-9f6c-c45a9b7bebd1"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c4a2eda8-737b-4cfe-a4b1-7d7a72748933",
+  "fields": {
+    "date_added": "2017-02-09T12:02:22.094Z",
+    "date_updated": "2017-02-09T12:02:22.094Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ff03e936-e09d-4cc5-ab48-88c9f259e3ab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c57bdb31-35a9-4a05-a43e-eb6c811bbbb8",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.897Z",
+    "date_updated": "2017-02-09T12:02:43.897Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c5f085d8-c0ef-4b43-9b36-bb8047fd10a1",
+  "fields": {
+    "date_added": "2017-02-09T12:02:27.854Z",
+    "date_updated": "2017-02-09T12:02:27.854Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "aa5d9517-2f7d-4d79-939b-b7896d8d9fab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c61ecd22-1b51-4366-9960-27295436901e",
+  "fields": {
+    "date_added": "2017-02-09T12:01:38.383Z",
+    "date_updated": "2017-02-09T12:01:38.383Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "88974601-9eb4-453d-939e-03a68e811df3"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "c8028861-7671-4eb5-b3bf-7764bf1f5cff",
+  "fields": {
+    "date_added": "2017-02-09T12:01:28.981Z",
+    "date_updated": "2017-02-09T12:01:28.981Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1e31c30f-2abe-40aa-b658-8bfa466a413c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "cb2940b2-60d2-4488-bb9f-0bac5520d1b0",
+  "fields": {
+    "date_added": "2017-02-09T12:03:45.725Z",
+    "date_updated": "2017-02-09T12:03:45.725Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "0c6df8b6-3d0c-40c3-aeac-8e921b957575"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ccddb812-eaa2-42af-a8f3-4854a9beb7f9",
+  "fields": {
+    "date_added": "2017-02-09T12:02:45.839Z",
+    "date_updated": "2017-02-09T12:02:45.839Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7fb563ea-ae50-4144-a718-db54048ea74a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "cd59bc38-f8fb-4afb-9d0a-103711503718",
+  "fields": {
+    "date_added": "2017-02-09T12:03:34.759Z",
+    "date_updated": "2017-02-09T12:03:34.759Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "feee4ceb-cd42-4c01-aa3e-627e53d0aa4e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "cfb06689-9b86-4804-b884-b18b05ccda29",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.722Z",
+    "date_updated": "2017-02-09T12:02:30.722Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "51550c8c-0697-47ce-a17d-4d3df0c32de6"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d0cbd2d4-3eab-4a20-9004-84bc7339250e",
+  "fields": {
+    "date_added": "2017-02-09T12:02:33.895Z",
+    "date_updated": "2017-02-09T12:02:33.895Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a537320d-5470-451b-85c2-00e3314a631e"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d21cee0d-166a-4718-8c79-8373663992df",
+  "fields": {
+    "date_added": "2017-02-09T12:02:55.255Z",
+    "date_updated": "2017-02-09T12:02:55.255Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1482e7de-e1c1-4f7b-9bac-d61471f793c5"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d27fadc0-5c28-497f-ad64-fd4bb6a3b230",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.365Z",
+    "date_updated": "2017-02-09T12:02:36.365Z",
+    "pid": "thread_colors_left",
+    "title": "Left side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d2c2a2c1-4a14-4c57-8ee9-50aa7b73fce6",
+  "fields": {
+    "date_added": "2017-02-09T12:02:45.094Z",
+    "date_updated": "2017-02-09T12:02:45.094Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "4396d074-e502-4817-b52c-7c72d1014f16"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d2c51778-8d71-48b7-94be-43098d90ddb9",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.473Z",
+    "date_updated": "2017-02-09T12:03:54.473Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d33c97aa-5818-4bd6-87d9-e0b924fab115",
+  "fields": {
+    "date_added": "2017-02-09T12:02:29.485Z",
+    "date_updated": "2017-02-09T12:02:29.485Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "7c8a81dd-3d0b-46d2-b5e6-163221811f8c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d58ad7b6-d42c-409f-a9d7-d1d8bd3b7a2a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:25.668Z",
+    "date_updated": "2017-02-09T12:03:25.669Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "f37596fd-7be3-4a87-9e8a-aaac6c9cf562"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d6495e32-858b-41fb-855d-39d4552f7bd9",
+  "fields": {
+    "date_added": "2017-02-09T12:03:23.035Z",
+    "date_updated": "2017-02-09T12:03:23.035Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "a4174a32-6cf2-4131-9686-d767b16843ab"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d64c358c-70d9-436a-8c8e-4847b594d332",
+  "fields": {
+    "date_added": "2017-02-09T12:02:32.865Z",
+    "date_updated": "2017-02-09T12:02:32.865Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "93f269a8-d32d-42b2-b7cd-f174c2fa261c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d6dafd38-2cfc-4b6f-ac13-8acc872656cd",
+  "fields": {
+    "date_added": "2017-02-09T12:03:33.841Z",
+    "date_updated": "2017-02-09T12:03:33.841Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "42e6d4ca-43e3-40a0-a09a-b41c1fce481f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d7349c0f-e3bb-4c81-89dd-bc78d0294bf2",
+  "fields": {
+    "date_added": "2017-02-09T12:03:12.209Z",
+    "date_updated": "2017-02-09T12:03:12.209Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "d5b17444-4dfe-4d9d-aa72-0bc28d61d13c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "d8f78d2a-a494-4dfa-ae52-fb989375586d",
+  "fields": {
+    "date_added": "2017-02-09T12:04:01.170Z",
+    "date_updated": "2017-02-09T12:04:01.171Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "1c206f72-4f64-468e-b827-6d88df89e9d1"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "db6f97e6-0fc4-416e-a393-087f452e1909",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.464Z",
+    "date_updated": "2017-02-09T12:03:54.464Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "db91d359-3b03-4aca-a1cf-3d40c0ae4207",
+  "fields": {
+    "date_added": "2017-02-09T12:04:03.122Z",
+    "date_updated": "2017-02-09T12:04:03.122Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ed6a16a8-887c-419d-a307-14bd6370a2df"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "dd7c9fd9-99b9-43b8-93fc-eb116e519555",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.064Z",
+    "date_updated": "2017-02-09T12:02:37.064Z",
+    "pid": "thread_colors_right",
+    "title": "Right side thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "deaee696-59c0-466f-8b67-de274b64c590"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e174c1ed-b2fa-4dbe-81b1-f9b4bfb10961",
+  "fields": {
+    "date_added": "2017-02-09T12:02:56.125Z",
+    "date_updated": "2017-02-09T12:02:56.125Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "fc3e3258-eb5d-497d-92d5-2a52ae919e0d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e18de708-71f1-49da-b253-4bcaab98fc88",
+  "fields": {
+    "date_added": "2017-02-09T12:03:17.547Z",
+    "date_updated": "2017-02-09T12:03:17.547Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "4b1c9492-6151-4875-9095-69ac1c4a081c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e1a74fc9-079d-4cbb-a081-5f9cd8bbce12",
+  "fields": {
+    "date_added": "2017-02-09T12:02:45.085Z",
+    "date_updated": "2017-02-09T12:02:45.085Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "4396d074-e502-4817-b52c-7c72d1014f16"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e1ac460b-c594-49f4-9f6b-faf02de2fdbf",
+  "fields": {
+    "date_added": "2017-02-09T12:03:51.366Z",
+    "date_updated": "2017-02-09T12:03:51.366Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "530d9495-a892-410e-9db9-a4005cba493d"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e4b44d36-5f3d-4afc-9368-5e2f020f58a1",
+  "fields": {
+    "date_added": "2017-02-09T12:02:36.383Z",
+    "date_updated": "2017-02-09T12:02:36.383Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "291264fa-4f48-49a8-ab15-95af361fb964"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e5cecf08-3f14-4d77-9d73-fcb326980ecd",
+  "fields": {
+    "date_added": "2017-02-09T12:03:18.348Z",
+    "date_updated": "2017-02-09T12:03:18.348Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "ee853ae4-05c2-4967-9066-a33628c264e0"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e5d59ac6-1c3f-4b68-b97c-d7fb4c4f7daf",
+  "fields": {
+    "date_added": "2017-02-09T12:03:07.194Z",
+    "date_updated": "2017-02-09T12:03:07.194Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "8db090fe-0adb-49a8-bedd-393fa668542f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e64d39ff-0775-47f7-ac12-bc297c8e991f",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.057Z",
+    "date_updated": "2017-02-09T12:02:30.057Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "c5b06ad2-1d29-4ce1-b4a5-207bd1aa02bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e6b69240-554d-4974-b821-8951f2f09304",
+  "fields": {
+    "date_added": "2017-02-09T12:03:35.860Z",
+    "date_updated": "2017-02-09T12:03:35.860Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "87bc32c8-ee62-4860-96f3-72d9e4a5c956"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e7123d25-7e8d-447c-8465-1f528083d393",
+  "fields": {
+    "date_added": "2017-02-09T12:03:31.276Z",
+    "date_updated": "2017-02-09T12:03:31.276Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "b7a26469-3d19-4f52-83c4-322dfa93e42a"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e76f026a-d1fe-4ec7-a473-c7a5ddb357ef",
+  "fields": {
+    "date_added": "2017-02-09T12:03:58.037Z",
+    "date_updated": "2017-02-09T12:03:58.037Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "0a58b614-9a61-4d49-8970-23224f511616"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e7b52a48-3e1e-43fd-9aab-6f94f8c48e76",
+  "fields": {
+    "date_added": "2017-02-09T12:02:37.723Z",
+    "date_updated": "2017-02-09T12:02:37.723Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "a5cfbaf8-9152-447f-a689-5875a84ea446"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e851201f-fa15-41a9-a7af-34ba63327920",
+  "fields": {
+    "date_added": "2017-02-09T12:03:37.115Z",
+    "date_updated": "2017-02-09T12:03:37.115Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "04f275aa-4276-40b3-981a-f5741727a8ba"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "e8eea28c-f53c-4582-bee7-740218f1f3d7",
+  "fields": {
+    "date_added": "2017-02-09T12:03:24.861Z",
+    "date_updated": "2017-02-09T12:03:24.862Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "e9ac4c9e-7fe3-4b1f-b362-f02c0cb4e115"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "eb62e15f-c259-4d3b-b77d-48631b7d8871",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.706Z",
+    "date_updated": "2017-02-09T12:02:30.706Z",
+    "pid": "stitch_color",
+    "title": "Zipper & Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "51550c8c-0697-47ce-a17d-4d3df0c32de6"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ec82fa5b-94bb-4635-9a9d-aeee9b24532c",
+  "fields": {
+    "date_added": "2017-02-09T12:04:09.189Z",
+    "date_updated": "2017-02-09T12:04:09.189Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "5d7c5454-70fc-4416-8a16-fdc66c57913c"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ee92e0ce-e48b-43cf-b1ac-c8d0877f1f9b",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.426Z",
+    "date_updated": "2017-02-09T12:03:54.426Z",
+    "pid": "embroidery_type",
+    "title": "Embroidery type",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f1fbe035-d581-4380-9e5b-915b64a7e729",
+  "fields": {
+    "date_added": "2017-02-09T12:03:28.471Z",
+    "date_updated": "2017-02-09T12:03:28.471Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "bcd47e78-b692-41e9-ace9-32e6a5e2be54"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f6eaf504-5fa7-47e1-ba54-1dad9609d5fd",
+  "fields": {
+    "date_added": "2017-02-09T12:02:28.848Z",
+    "date_updated": "2017-02-09T12:02:28.848Z",
+    "pid": "thread_colors_3d",
+    "title": "3D Puff thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "7fc9e603-3e5e-4913-a89f-26a7bf7c3fcc"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f85d9b71-1b90-4b71-b461-e95eb9fff38f",
+  "fields": {
+    "date_added": "2017-02-09T12:02:43.936Z",
+    "date_updated": "2017-02-09T12:02:43.936Z",
+    "pid": "notes",
+    "title": "Embroidery notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "07ed1f15-8af2-4fa6-b039-2faf2d4e1329"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f92bc011-6209-4cf0-bb5b-ff8c6eccd58a",
+  "fields": {
+    "date_added": "2017-02-09T12:03:56.065Z",
+    "date_updated": "2017-02-09T12:03:56.065Z",
+    "pid": "stitch_color",
+    "title": "Zipper & Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "bbc3bef5-0233-4bdd-95c4-578fd05343bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f9a3b082-5e78-40f8-a6f7-ca4a00061586",
+  "fields": {
+    "date_added": "2017-02-09T12:04:05.149Z",
+    "date_updated": "2017-02-09T12:04:05.149Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "e50e3172-149c-4501-9f03-1cf5b77b4d44"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f9c38733-19c8-43db-9e76-8a247753046e",
+  "fields": {
+    "date_added": "2017-02-09T12:02:30.073Z",
+    "date_updated": "2017-02-09T12:02:30.073Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c5b06ad2-1d29-4ce1-b4a5-207bd1aa02bb"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "f9ddbaa6-124b-4592-8835-365bec11aec4",
+  "fields": {
+    "date_added": "2017-02-09T12:03:37.086Z",
+    "date_updated": "2017-02-09T12:03:37.086Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "04f275aa-4276-40b3-981a-f5741727a8ba"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "fb3a9fd6-1e1d-4e90-8833-3047a7f63b12",
+  "fields": {
+    "date_added": "2017-02-09T12:03:54.436Z",
+    "date_updated": "2017-02-09T12:03:54.436Z",
+    "pid": "thread_colors",
+    "title": "Flat thread colors",
+    "type": "multi_select",
+    "additional_price": null,
+    "catalogproduct": "c06138a9-9daa-481c-9295-f896ba66d20f"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "fcad4fa9-0af7-420b-8171-ade9ce1e406d",
+  "fields": {
+    "date_added": "2017-02-09T12:02:39.073Z",
+    "date_updated": "2017-02-09T12:02:39.073Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "4d6ecd20-37d5-4b79-aa08-9a7bc1224d5b"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ff9549c3-71b9-458c-8606-45e50a041cb4",
+  "fields": {
+    "date_added": "2017-02-09T12:03:04.791Z",
+    "date_updated": "2017-02-09T12:03:04.791Z",
+    "pid": "notes",
+    "title": "Printing notes",
+    "type": "text",
+    "additional_price": null,
+    "catalogproduct": "27ac2037-5ded-4647-83d4-fb1d89ad9081"
+  }
+},
+{
+  "model": "vendor_printful.catalogoptiontype",
+  "pk": "ffac401b-400d-444a-94d9-3dd7a4f1bc92",
+  "fields": {
+    "date_added": "2017-02-09T12:03:55.592Z",
+    "date_updated": "2017-02-09T12:03:55.592Z",
+    "pid": "stitch_color",
+    "title": "Zipper & Stitch color",
+    "type": "radio",
+    "additional_price": null,
+    "catalogproduct": "a572ee97-37e2-4771-87a7-05941e9561d9"
+  }
+}
+]

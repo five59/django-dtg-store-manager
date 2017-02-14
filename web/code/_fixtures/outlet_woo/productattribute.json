@@ -1,0 +1,107 @@
+[
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "13a55d6f-538f-4986-96b6-6474d332f4b6",
+  "fields": {
+    "code": "6",
+    "name": "Series",
+    "slug": "pa_series",
+    "has_archives": true,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-11-24T03:41:44.231Z",
+    "app_last_sync": "2016-12-04T22:34:14.445Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "8698d76a-6655-4c62-a124-1edd7f801590",
+  "fields": {
+    "code": "8",
+    "name": "Brand",
+    "slug": "pa_brand",
+    "has_archives": false,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-12-01T18:38:32.199Z",
+    "app_last_sync": "2016-12-04T22:34:11.479Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "89a0d604-8329-4aac-b45d-f30f1c145588",
+  "fields": {
+    "code": "5",
+    "name": "Design",
+    "slug": "pa_design",
+    "has_archives": true,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-11-24T03:41:43.223Z",
+    "app_last_sync": "2016-12-04T22:34:12.181Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "b7966c44-70c6-49f0-a621-94070b572711",
+  "fields": {
+    "code": "7",
+    "name": "Google Merchant Category",
+    "slug": "pa_google-merchant-category",
+    "has_archives": false,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-11-24T03:41:43.750Z",
+    "app_last_sync": "2016-12-04T22:34:13.703Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "c75f6065-ecf0-4e7b-a8df-70e22c8ad2e9",
+  "fields": {
+    "code": "9",
+    "name": "Gender",
+    "slug": "pa_gender",
+    "has_archives": false,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-12-01T18:38:33.597Z",
+    "app_last_sync": "2016-12-04T22:34:12.991Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "e13e6b45-5036-4bc9-98ea-116d83f6a4c8",
+  "fields": {
+    "code": "10",
+    "name": "Age Group",
+    "slug": "pa_age-group",
+    "has_archives": false,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-12-01T18:38:31.553Z",
+    "app_last_sync": "2016-12-04T22:34:10.748Z"
+  }
+},
+{
+  "model": "outlet_woo.productattribute",
+  "pk": "ed09a8b3-e075-4d23-af26-6b862aa03873",
+  "fields": {
+    "code": "14",
+    "name": "Shipping Label",
+    "slug": "pa_shipping-label",
+    "has_archives": false,
+    "input_type": "select",
+    "order_by": "name",
+    "shop": "3355d3a4-cc10-40d2-bd80-38324664f917",
+    "app_added": "2016-12-01T20:59:21.925Z",
+    "app_last_sync": "2016-12-04T22:34:15.125Z"
+  }
+}
+]

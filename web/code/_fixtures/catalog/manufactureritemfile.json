@@ -1,0 +1,5975 @@
+[
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "00156e88-5832-4ebf-a9bc-ac5adc67ff38",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "a74e926d-44cd-40ea-a4d8-db72d137c8ce",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "00159d52-173b-4840-b85e-982ac9e5663e",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "47a778c6-7205-4cb2-b1e0-01a288dd6caa",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "00886839-1db6-490f-8b9e-67f6de0c01bf",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "00d55ac3-7e33-474f-9d73-36b791b45775",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "8d14da37-3d40-4554-817b-cd860c6926ac",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "013b9a5b-7d37-4198-acb9-c036dc390391",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "47a778c6-7205-4cb2-b1e0-01a288dd6caa",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "01a3ded1-d33e-469c-b66f-a131b3328ccd",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "2d9a54e8-9bd5-4477-af70-cea821068e66",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "01a9b256-d06b-435c-b8eb-aa2873b1a84c",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "338181c9-93d3-4d06-9320-4b423b04639b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "01bf549f-3422-4b3f-9042-a02da1e63f32",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b5d75f45-c945-49ed-863f-d20d09b14fc3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "01e55eb6-8d1e-4c4b-a66d-59c98f3c0256",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b177ca22-f0bf-4277-a827-80b6b88779ef",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0242f047-8ea5-4276-9529-230f71971128",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "21ae7965-243b-45f2-b327-21152fa85200",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0277b591-2460-4560-82be-dd57c7ec6b34",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e03ad022-7507-4d22-afcf-b16389f8a5ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "031ed846-a677-40de-9815-9e772712a1a2",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "037ee847-4b42-454a-8521-4be7676cb523",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "03cd3e4c-9e23-43e1-b8dc-3f1323f1b673",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "667504d2-87f8-457d-bce7-ce0b94e22eb5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0427fc8b-0015-460b-8604-e277cb88235d",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "de1beea4-8ec5-461e-a5b6-1bf0fa5db15e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "043e093f-cedf-4bd4-b484-6c2c8eaf608e",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b727bb79-877f-4187-aafc-7c216c0f1ce1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0495d4bb-3690-4356-bfab-f4361d2d5566",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "04e77143-2371-4c33-af33-7bab5cb8f7f6",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "051179f8-cad8-4502-9a28-faf775da54d1",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "052a28bf-7965-4656-94a5-8f9344716f09",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b727bb79-877f-4187-aafc-7c216c0f1ce1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0645dc17-39ee-459c-b77c-eb921641404d",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "ca9314e2-87a1-447e-864a-8b27873633ad",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0667d82e-2f12-4ea0-b7ec-b2c3cecaef7f",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b5d75f45-c945-49ed-863f-d20d09b14fc3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0703247b-16ee-46f3-8c4e-0c460925858c",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e02a6391-adc3-4993-a7f4-6d4c94cdb596",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0772ec5b-64a8-4eab-8bfc-779e20c15dcf",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "07d65027-b743-46dc-af78-b3bda1ddd296",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "102495bd-1749-4e24-b8ee-7ab0021c4008",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "07dcf755-9600-448b-87e8-36a73ca37ce8",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "80d4d22f-7245-4242-954d-17f823ff2de6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "09084576-5b62-4bfb-8205-5c5c705d4f86",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "bf863741-0a8e-4559-8c90-4ce3e791b908",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "09cc1e78-26d9-450e-82a6-6de263824722",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "5.00",
+    "manufacturer_item": "f63a0be5-b222-4765-b660-a1984c871d74",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "09f4d0b1-ac06-431d-a045-56fa4ce60c29",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "3588cf98-79cf-4f48-9ec6-eeffbd88c629",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0a25fcd4-5e7b-4029-b197-19e34b7d7dc6",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b62bbc23-22a5-4503-a95b-40882dfc4feb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0b161906-bba8-4e6c-bbc1-0e7fb00b2fd6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0b23ca42-f1fe-4196-957b-0093695a4704",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e03ad022-7507-4d22-afcf-b16389f8a5ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0b321de4-2293-48e4-8383-ea6cd4ecd86b",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "48f1c098-d0ba-4750-b997-a05a632642e0",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0b7c0af3-cc86-4fcb-9fb9-c9db9c340ce1",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "48f1c098-d0ba-4750-b997-a05a632642e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0d3585b5-9610-4c9e-8893-5f56586d5a2f",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "de9f045d-234a-4d9e-b319-f3384e8c5fca",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0e6abaf9-ff4e-41fc-8052-536e3b399f0e",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "0ed418b1-f5b3-4dfb-8cc1-28fe474513b6",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f0ff30d1-cc72-49f5-b285-79da860ecca4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "10b169a9-3d12-4555-8973-a122803268b6",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "10da0c3d-72b3-49d1-8215-4bb7b519c9c5",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "667504d2-87f8-457d-bce7-ce0b94e22eb5",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "10e826a9-be59-42fd-a6ce-81b76974eac4",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "2f0e2456-eb56-420f-9d2a-ac536d918424",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "10f6a7a0-ca09-4502-bb97-0112b914f70a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0be90cd6-1a53-488b-9e98-bb6d6147ea0f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "111ab4a6-2b9c-4d7e-a957-a574c89c1307",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "92d8cf2f-97d7-495e-b19f-b48d3892cde5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1270e4a5-b9a1-4e4d-8ddb-adead47134fa",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "d51f5e4e-4ca7-4c28-860f-a6246b624e73",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "12fdef63-a20b-43f4-814f-36eaa76d3337",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "4057f0c0-a3fd-4992-9a08-4604094cc55c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "132187fd-926f-4f16-a127-bb496e4ad688",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1348825e-501b-42aa-bef0-7be0e7ef3c69",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "eae68d2d-4c2b-48e3-b75e-f7f9c4d50898",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "13cc65c4-6fb4-49d4-b463-864cc8979b4d",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "140c4f8d-81e1-45b0-9d3a-37502148951a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "2f216395-4f8b-43ad-9a1e-b6f61eb2f697",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "147efa47-9c0b-406e-b16f-fe2d500c8959",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "7763019a-e654-463d-ab4a-84e124bdd9ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "14e75e7b-f151-47b1-b093-0518c851827a",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f1491e0d-2b36-477c-b7ba-27108c07e778",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1593469a-d31a-451e-9521-2bc0a2e1af03",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "17e6ec95-df8c-4bbb-bbad-1e5b173f8286",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "a3239cda-2a2d-4e25-8165-1407bd731f67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "189bdf34-8cb3-4d98-ba99-6e90525f51c9",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f7cdc996-42fd-4b11-a2c5-4deff2325e39",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "18be79a4-ef22-4a85-aefa-991edefac864",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b6f41d76-4a5b-478f-8225-361601026c5b",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "18f9f0a8-11c0-4496-8c28-7edc0ec51d77",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6280e8fe-e739-4298-8372-5284229da5a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "193fe2f6-3545-4a90-a019-3f502837d2e2",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "d3d67f22-4d6a-48c6-a1d7-6697d59629fd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "19f833c7-ac96-4a49-a8df-46eb86b8daf2",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "24938716-aea0-4da6-bfa3-5086fad581bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1b3e53fd-508a-4139-99c4-fe2327708565",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "5.00",
+    "manufacturer_item": "13d6ca3f-a875-44f7-820b-a2af1cb8e161",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1b664c2b-7693-4e7d-83de-be071e898f0e",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "bf863741-0a8e-4559-8c90-4ce3e791b908",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1ba0cb2a-3d28-4c8e-a114-b453ebade66e",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "b4ba47f9-e770-4e1e-bc54-74cbce3fbf9c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1ca6019f-c5cc-41cb-8dd5-058f5291a221",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "bf15768b-18c1-4ab4-963c-54962df70336",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1cb8f0b9-3d90-4cb5-b52f-717c038387d0",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1ce4e239-a5b8-458d-9abf-98bf0dbc4ce6",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "de1beea4-8ec5-461e-a5b6-1bf0fa5db15e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1d3c843f-e637-43cc-b5d1-e3a98b6a171a",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "b9a4d7d2-f0a5-4f8e-b3ec-ec4378363ec6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1e1fb2a6-9521-4878-ac3c-0922dab7bd77",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "aa5685a7-3c05-4b5c-b448-16605da3f896",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1ed01d3d-132a-4f6b-bcb9-8b3e6f7d6310",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1f6d0e5d-05e5-4a20-bd5d-ea627f45e4ac",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "d19d41ba-99c4-4894-9e62-6029fd77cbe4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "1fb71ba9-84cf-47ff-90c8-cfd21e0b779b",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "eae68d2d-4c2b-48e3-b75e-f7f9c4d50898",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "20ce9116-0138-4207-a290-1741500b71c7",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "03c87f3e-bcad-470d-92a8-c89c55f3f1a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "20f0c8e2-b044-4af2-8faf-db91ecbc4323",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "bad4ef39-6c4c-46a2-9b65-a872b701f9e2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "22a4afe7-5316-4812-9bc7-471af018b09d",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9aac8077-ac53-44a2-b48f-aadad6307460",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "22b8ba16-8abc-4488-833f-233f2d772b38",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "92d8cf2f-97d7-495e-b19f-b48d3892cde5",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "23f75ddb-66c4-4e23-bb78-8eadca5c4ef5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6cc3e01b-4352-4cfe-9e6e-63da2127e40a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "244e86ff-b3b8-4cb5-8c4d-2a17a0b99755",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "17fe032e-8328-415a-a205-355f9b3400f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "24c7100c-88aa-4e4b-92a4-a105f193acdb",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2638b0bb-e23e-4f9e-a271-ac32a239d060",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "2f0e2456-eb56-420f-9d2a-ac536d918424",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "26bcca82-8095-4706-a9d5-8c4c4984fcc2",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e9de93ab-1833-44be-9c99-756cc2407ce2",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "26be601e-4700-4308-a7dc-cbec72157422",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f8966df3-2da8-4edd-b5cc-c0770fd71d56",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "26eb8db4-9e31-4950-a5c8-ce99823f792b",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "bb42b4c7-405f-4a55-9c5f-edd2f44782f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "26f9d9e2-e645-43a3-86ad-b82eff86019a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "47a778c6-7205-4cb2-b1e0-01a288dd6caa",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "278e73f1-9df4-47c3-a949-b470c6c731e9",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "7ac2efd4-c38e-48a3-9441-c9adf075197d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "27a23259-7823-4a50-b232-aca6cc9b83f4",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f8966df3-2da8-4edd-b5cc-c0770fd71d56",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2872ce84-d66f-4e58-bd0b-d888b013f366",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "28739186-f353-42a0-a653-d2fd98a4dc27",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6eb05a5f-3dab-4135-8ecd-df12e8b5e294",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "29ce445a-219b-4bc9-93df-a7c2e9b18767",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "79223f6a-e934-4c1c-ba6e-20d2a5673b46",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "29d53473-c271-4a4f-9d2a-41a05479f5fa",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "467eb438-0eda-41a9-ac71-4f917503c5f3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "29da1a6f-13e5-40ed-afe1-5482df0671d2",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2a54c340-0186-4c0a-9f31-6c674bd9648f",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "d3fd0a86-9fdc-47c9-bc0f-6f6efdc99c18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2a5b45e7-5497-4f25-a2b5-cb7f3829ebdf",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2a96e765-2b77-4d9b-a62e-1ec462899666",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "8d14da37-3d40-4554-817b-cd860c6926ac",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2c435480-3782-496e-9c18-2dd28776a304",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a258c08e-2988-428d-9ece-717f816ba735",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2c729905-b67d-4146-820b-e2a7c071b9d6",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6f4e1c2d-096f-4a54-b0d1-28d5929e42df",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2ce9ce0f-0b0f-49be-a514-143df78714cf",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b6f41d76-4a5b-478f-8225-361601026c5b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2dfa5f6d-6418-4d72-a807-3f6a49427d53",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "30181dee-bc87-4e5d-8f85-1384f34ba0e4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "2ee2f22b-2447-4439-832d-f682679fc4b5",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b177ca22-f0bf-4277-a827-80b6b88779ef",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "30e701c9-7a56-49df-a916-aefab9c1905f",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6ea1c891-d27c-4cbd-bdb2-1a3f936df805",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "31523c34-4087-4441-a38b-46af4a2cd2b4",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9ac4b537-464f-4dc8-816b-08e2a4a26007",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3200030e-494a-4ad3-80d6-63010111e466",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "33ca0ba5-e5f7-4cc0-b200-8b6d65b85646",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2f216395-4f8b-43ad-9a1e-b6f61eb2f697",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "34003e58-11b6-4264-ae9a-caa12bada680",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "34ab9f2b-81f6-44a9-b79e-5ba3911024e4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "1890cd90-8df5-4256-84df-073d03dc2d4f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "34ed0baf-4816-4a7a-888a-02bac38ef0ba",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "631ae262-ad0a-44be-ab39-8150f2a7de30",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "352712e4-9435-4566-ac28-2ec56a10c62f",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "35ad009e-5a9d-4b3d-8cd6-1bb937940e61",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "bad4ef39-6c4c-46a2-9b65-a872b701f9e2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3699dc07-c24a-4c70-b26a-7e1ca53690c3",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "a258c08e-2988-428d-9ece-717f816ba735",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "37b12127-0bea-45cb-87a1-52d2a4381c1d",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "37d2b4df-79b8-4315-964e-43c2fc18045f",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "37f6e66a-46f4-443d-b4cc-879e745b8e6a",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "4057f0c0-a3fd-4992-9a08-4604094cc55c",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "382ca886-b6cb-41c1-87a3-0ebc48b07d71",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "0.00",
+    "manufacturer_item": "2f0e2456-eb56-420f-9d2a-ac536d918424",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "39407acd-1c51-4844-a78b-340dec4b8455",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "65c75c64-67c3-4e3e-b558-a84fbd5e8d1f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "39dd9d87-0f93-405e-99ce-4db6b7b37999",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e4004f26-95fb-4e58-b05e-9c1153e725de",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "39fc6974-e388-4182-99e9-335a301f9aab",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "467eb438-0eda-41a9-ac71-4f917503c5f3",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3a30151d-a403-45b1-91c1-05e14bc04a00",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0be90cd6-1a53-488b-9e98-bb6d6147ea0f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3bb4d1e2-fce0-4945-bd97-9cb95427bd78",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3c03cc85-01c8-4d75-ac86-096cb0ac7e73",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "8b5bedb1-0693-4aa7-93cc-a623965e830d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3c3fc3f0-30f3-4d71-ab75-9b89c074be9b",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3d2f6633-a2bd-49f9-99e0-60a925f3c417",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "13d6ca3f-a875-44f7-820b-a2af1cb8e161",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3db5b887-ed61-4935-b9b5-ff3438aa999d",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3e1b1905-ab55-446b-a3a5-97921f1d2118",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2f216395-4f8b-43ad-9a1e-b6f61eb2f697",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3f48f64e-09e0-4bd0-920e-648ebc9eccdc",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "92608154-8bd4-400c-9885-00465c5f8c6a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "3fd8301d-a66a-4c6f-abef-f4194a89bc2c",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f63a0be5-b222-4765-b660-a1984c871d74",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "405f4604-9c71-4dc8-83a5-2444ccc8a10d",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "40c3697a-f72e-4b23-a06a-0475f3a0d8a9",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "5.00",
+    "manufacturer_item": "de9f045d-234a-4d9e-b319-f3384e8c5fca",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "415e80c0-5ebe-40e5-a27a-2fe37a54df70",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "aa5685a7-3c05-4b5c-b448-16605da3f896",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4261df35-b944-4dae-8cf7-f4af4366f276",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "d3fd0a86-9fdc-47c9-bc0f-6f6efdc99c18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "42dc8800-6865-496b-9209-82900829a530",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "24938716-aea0-4da6-bfa3-5086fad581bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4390439d-5482-4959-954a-a21bb01b798c",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e02a6391-adc3-4993-a7f4-6d4c94cdb596",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4391fe74-fc1f-479f-9215-2a3f59315e62",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "8d14da37-3d40-4554-817b-cd860c6926ac",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "44ffcd8e-365b-4d25-919b-50d98428fb2f",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "13d6ca3f-a875-44f7-820b-a2af1cb8e161",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "459f40e7-446a-44f5-af12-1f4a4ef996db",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "18eb8403-1ec0-43ba-951b-028472c11c33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "46bab1fa-3579-4c2a-b304-a909c271fba1",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "eae68d2d-4c2b-48e3-b75e-f7f9c4d50898",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "473de563-065b-46b6-a448-1c9f027e96ad",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "47408f7b-7fea-4374-a97d-a8956a914540",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "ca9314e2-87a1-447e-864a-8b27873633ad",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "48276a9a-949d-4447-846f-2eac238c0573",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0cb9fff7-585d-4720-8581-e4e5e49d0c00",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "486c33ba-0e92-4517-b342-fb893d9d72e8",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "92608154-8bd4-400c-9885-00465c5f8c6a",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "49917ab1-f5ea-47ee-9721-464fe56eb4bc",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e9de93ab-1833-44be-9c99-756cc2407ce2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4a64e53c-9c6b-493a-ba7f-143433fffc26",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4ac128ac-3707-403b-b1f7-95b1e6e0d8cb",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e711bae0-91e4-4389-b63a-c0f97c9e4bbf",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4bcbd85f-789b-4a50-9a87-c2999ecad0dd",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "6ea1c891-d27c-4cbd-bdb2-1a3f936df805",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4bd271c8-1c4b-4598-ae44-7d7c3ebbc10a",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "63440ad8-60e8-4ec4-aa3f-c25a0f18cee0",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4bf110c0-7706-48f5-8939-b19697ba8c3c",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "197d43de-d2f3-49d8-a0cd-1e7110fc2d67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4cb66f06-694a-4631-8d3e-94c500b738ab",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e02a6391-adc3-4993-a7f4-6d4c94cdb596",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4cbb9a4b-fc45-4471-b63b-e3bbd5e6b1bb",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "65c75c64-67c3-4e3e-b558-a84fbd5e8d1f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4e868cba-c918-4e5b-8be1-4ce6e0ba75fe",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b6f41d76-4a5b-478f-8225-361601026c5b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4e8cede2-24eb-4417-aff2-e827954dd635",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "54eab9b6-c513-470a-b6c4-1ddce55e9733",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4ebe6f02-e760-4f3f-a362-c6ec083ab875",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "14424504-beb6-4539-9f6e-2c5bdd0491b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4efc801a-efbd-4a8f-83e9-d9caebece9d7",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "52053296-ab87-4b1a-879d-d90d4f3dafde",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4f198881-ea81-4f23-8557-b12dedc840a1",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4f1e2065-33db-4b89-a26f-57a897f93a0a",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0d858137-66c6-4edc-bdbc-16d168d9be7a",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4fe40162-f491-484e-a774-2bea25477eb6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "e02a6391-adc3-4993-a7f4-6d4c94cdb596",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "4feb5b9f-a182-4a03-9bf5-9dfd65d171ee",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "578837a1-169a-4757-acf0-0cb7233b8f81",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5005936d-92d8-4c53-b478-889daec94d92",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "1e50c0be-0864-4403-85dc-1f62345764ab",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5095948c-3b51-4996-bd4f-cd9c285a5fba",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f0ff30d1-cc72-49f5-b285-79da860ecca4",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "509738dc-c07c-4287-a97f-3a97e1d908f9",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "2f216395-4f8b-43ad-9a1e-b6f61eb2f697",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5115f1ef-dffa-4283-916e-c2690988e372",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "93dffa6c-af36-437b-9f4b-ef60c8cce8cd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5191abb1-c2b2-425f-ba3c-73acefde8412",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "51afb7fd-2a00-4585-965b-7e4d202f175f",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "51c1cd4f-0461-4a36-b96e-0a854f76f9d6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "54eab9b6-c513-470a-b6c4-1ddce55e9733",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5210327d-0409-4f9c-a036-5c65a0031dc9",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "467eb438-0eda-41a9-ac71-4f917503c5f3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "527689f2-ecaa-4de3-b158-25175ef90ea8",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "4547e8fa-8842-44e9-b742-b779a97b119d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "527d5cfc-f668-4be4-85c3-79c6ba42d550",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "63440ad8-60e8-4ec4-aa3f-c25a0f18cee0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "52a72e3d-4122-4255-9fe1-e2ab57aeccc0",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "52c56e6c-de14-4990-bbe4-2d45d65f422c",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e03ad022-7507-4d22-afcf-b16389f8a5ff",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "53b511bc-9bfe-4813-beae-7f44fed622c0",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "54703de1-fe4e-4788-84a1-e2f44177d523",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "d3fd0a86-9fdc-47c9-bc0f-6f6efdc99c18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "547ec6e7-7fdb-4cdd-88b9-45918577769f",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "63440ad8-60e8-4ec4-aa3f-c25a0f18cee0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "54bb6239-39f5-4972-8539-32f1e6fd9997",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "54e0343c-1629-4878-8d0c-207bbd05af06",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e87aa601-40b0-4974-a351-190ae8a08b18",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "56224b50-7f0f-4ee0-a630-bbb139d61558",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "56c71264-80d9-4841-933b-c6ad321695da",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "1890cd90-8df5-4256-84df-073d03dc2d4f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "56c75230-ee43-49e0-90bc-a33b3a21b3c7",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "d19d41ba-99c4-4894-9e62-6029fd77cbe4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "57929bdf-30e5-4b3d-899a-6982e74a6b89",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f8966df3-2da8-4edd-b5cc-c0770fd71d56",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "58e29cda-72f2-4225-8d4c-743a8cb8984b",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "a9acb21f-f154-44e4-ac2e-24ca4e6bbede",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "591cfc92-ef5e-4911-8632-fe3a2fe489c4",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a74e926d-44cd-40ea-a4d8-db72d137c8ce",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "599facaa-c323-4cb4-9c57-6e2f55cd283c",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0be90cd6-1a53-488b-9e98-bb6d6147ea0f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5a2a0ba5-0226-44e0-ad33-9533ce4a086b",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "9aac8077-ac53-44a2-b48f-aadad6307460",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5a8f34a9-ae9e-4f40-896b-65a05096ddd7",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0fa92932-f01e-4ea1-88b6-52f36d7760f7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5b33a933-05ce-4ca7-9618-82825251e661",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "52053296-ab87-4b1a-879d-d90d4f3dafde",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5b5e4afa-d727-479b-9d7e-8f2a50ede5b2",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "631ae262-ad0a-44be-ab39-8150f2a7de30",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5b622aba-6096-4bfc-9101-2bfcf391b1c3",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5b9fb89f-f0b8-44e5-8bad-ea71192a377e",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0cb9fff7-585d-4720-8581-e4e5e49d0c00",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5bd1f262-ca46-432c-abdb-387229841ef0",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6d1061a3-5a5b-4f22-9653-e6ba718fa5e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5c1492f6-1024-4d24-9da1-350eac2d0437",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f63a0be5-b222-4765-b660-a1984c871d74",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5c6643de-29c9-4111-9a8a-fe1400da3f44",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "14424504-beb6-4539-9f6e-2c5bdd0491b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5c9e9a43-b9a3-4693-970a-9f692c91c8fb",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "4547e8fa-8842-44e9-b742-b779a97b119d",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5cf0ed99-b050-4bdc-898f-b0aececcc858",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a9acb21f-f154-44e4-ac2e-24ca4e6bbede",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5cf5c138-215d-4630-a8d3-21ce7a62de6d",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "8cef3acd-1f0c-40cf-89bd-37ae43e60402",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5d1717e8-6bef-411d-9203-f7ade88fb79e",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "bf863741-0a8e-4559-8c90-4ce3e791b908",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5d88be2e-c405-4bd5-a782-1cb4f815e56a",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5dcb06af-277c-494e-b328-10c6668ca6c8",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5e2c4d42-11d8-487a-895e-9fc6008d21f6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "4547e8fa-8842-44e9-b742-b779a97b119d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5edfb0d5-ff72-4603-bfdb-95c16772d065",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5ef2a450-26f0-40a1-b10f-7479cda60921",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "4c7dd7f1-0a1a-401c-bdaa-e1c32f40e22c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5f2eedee-6542-494c-9a18-9f231e46de11",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "4c7dd7f1-0a1a-401c-bdaa-e1c32f40e22c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "5ff8c663-df7d-459c-8b09-620dd27e3c96",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6280e8fe-e739-4298-8372-5284229da5a9",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6003ca0c-d362-42bc-9320-633c9eb733e6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "609e3fb6-fbc7-44b9-b777-345a11568b4d",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "33cf1c5b-ad29-42f5-b362-925d844932bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "610ef3fb-30d3-4afa-b2df-561b5f3be9b0",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "2a9e6445-6bfa-459d-9df2-13c6392e1e0e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "619bc141-e616-4399-b912-bb52544e1b7e",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "15afdac3-7e56-45c5-8e32-5e328c57da37",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "61af05b8-431f-48b1-afbd-37f6cdaa48c8",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "61d342cb-f699-415f-839a-1d0bdaf47313",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "4057f0c0-a3fd-4992-9a08-4604094cc55c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "62682144-49ad-4a97-a305-af68bc1e5195",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "62c242fd-2fd6-41a3-b0dd-bd0df4ae97bc",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "d51f5e4e-4ca7-4c28-860f-a6246b624e73",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "639053b8-d536-4762-a6de-cdee450db8c2",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "63db316a-5c47-4a47-8369-80c8b8a5294c",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "d3d67f22-4d6a-48c6-a1d7-6697d59629fd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "64d262a7-d947-4330-b180-f1aa8aaa00b2",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "9638f3aa-0f1d-4911-a3d9-371553ee850e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "65262bc2-6a67-4395-9054-205b5504c5b6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b9a4d7d2-f0a5-4f8e-b3ec-ec4378363ec6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "656be763-ea58-4b3b-be21-89219bd5a257",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b177ca22-f0bf-4277-a827-80b6b88779ef",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "656f4364-2319-4ecb-a7ac-3800243a4301",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b177ca22-f0bf-4277-a827-80b6b88779ef",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6603383a-82ff-4f56-85b7-9aa82e6e2ebf",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "eae68d2d-4c2b-48e3-b75e-f7f9c4d50898",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "669d508d-d092-4556-987e-0b31a792f98e",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "667504d2-87f8-457d-bce7-ce0b94e22eb5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "67e1e569-0108-44d4-8da7-152424808bb4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e9de93ab-1833-44be-9c99-756cc2407ce2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "67e42483-63fd-497d-ba28-325b275ef305",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0d858137-66c6-4edc-bdbc-16d168d9be7a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "680f5457-e7cd-42bf-92ab-a3ed12126ceb",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "667504d2-87f8-457d-bce7-ce0b94e22eb5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6a3b1551-2466-4c90-b428-9958d3d84418",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "8cef3acd-1f0c-40cf-89bd-37ae43e60402",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6a4aa867-b245-4708-9454-eb167739ad4d",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6af6cc01-545b-40f0-b163-a6dfdf51d0de",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "30181dee-bc87-4e5d-8f85-1384f34ba0e4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6b83cca1-706c-4dcf-affd-9a6f8132a5e6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f0ff30d1-cc72-49f5-b285-79da860ecca4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6bde04e8-80a0-4e60-a30f-ad1e9219643f",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6280e8fe-e739-4298-8372-5284229da5a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6ce18a7d-8818-43ea-9877-d066a022c4fd",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "de1beea4-8ec5-461e-a5b6-1bf0fa5db15e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6dbad934-c44b-42f1-b03d-3f31f65bd11c",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0fa92932-f01e-4ea1-88b6-52f36d7760f7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6eb224ec-8fe6-4fb6-b660-4e1d44a286c1",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6f1539ec-302a-40c5-9a54-5931cef31e01",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b4ba47f9-e770-4e1e-bc54-74cbce3fbf9c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6f28e432-4d75-4192-bda3-b05b6bce71de",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b5d75f45-c945-49ed-863f-d20d09b14fc3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6fba8da2-35ca-46b5-a435-6e9d8a6b5b10",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "521cfde8-f74e-4516-98f7-ebf72e163626",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "6fef3529-7dfb-479a-8ed9-f049edef659d",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "041e97a9-4ffa-4c90-b165-795835e05541",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "70236f13-5fde-4bb8-82a1-32513c72e2d1",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "d19d41ba-99c4-4894-9e62-6029fd77cbe4",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "703411b6-b609-42e5-b91e-e2cb0a5d5bb9",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "6ea1c891-d27c-4cbd-bdb2-1a3f936df805",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7048f803-0a2c-4c3a-80bb-022ba8a2ffed",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "d19d41ba-99c4-4894-9e62-6029fd77cbe4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "707c6393-a567-4938-94ab-0db5feb70ec5",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "338181c9-93d3-4d06-9320-4b423b04639b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "707f83a5-0d16-4e00-8b4a-af4eeb3c6833",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "21ae7965-243b-45f2-b327-21152fa85200",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "70a81824-54b2-40d2-8633-f921c5ab05dc",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b6f41d76-4a5b-478f-8225-361601026c5b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "715552ac-8b86-4f52-8f5d-a18a024b29c5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b2e935fe-e05b-4b3e-b14e-38d69e8875c3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "71653c49-0366-4fad-846f-3e5ea26e2014",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "3cd06069-fc1a-4b79-b797-afd67652e602",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "72aa4ec1-958e-4784-b552-d37d8a92efa4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "93dffa6c-af36-437b-9f4b-ef60c8cce8cd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "730a331d-d957-4db7-972c-124f0f03d608",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "ca9314e2-87a1-447e-864a-8b27873633ad",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "74186997-3bba-4318-a0c2-113ac6976373",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "838f97d1-ff5f-468e-b09a-da97a08bc95c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "74448d06-351f-4568-946b-b95f770d3445",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "3ee53376-9adc-4581-97d8-b41c19aa696f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7469f60e-1d9c-4c1a-8273-a841cff2af91",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "4547e8fa-8842-44e9-b742-b779a97b119d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "74d4808d-3fb2-4de7-9060-5217511f260d",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "54eab9b6-c513-470a-b6c4-1ddce55e9733",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "74deb18b-c263-4c80-8e15-fca526366e39",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "e9de93ab-1833-44be-9c99-756cc2407ce2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "74fdfa12-1a83-432b-8b6f-e19f13914edd",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "79223f6a-e934-4c1c-ba6e-20d2a5673b46",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7547936f-5177-4a98-a1bb-b0736f752b2b",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b727bb79-877f-4187-aafc-7c216c0f1ce1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "75db591b-7f3c-46c8-a419-a2704a462e68",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "1e3599c7-93dd-45bd-bbb8-16b1fdf441d9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "75f5bfc0-cefe-4228-ab12-a86dd533cac1",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "76159721-d1e9-468e-b41c-f8fd454149de",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "9638f3aa-0f1d-4911-a3d9-371553ee850e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "76ac1517-7c08-4603-b8ec-c58e8f55342b",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "041e97a9-4ffa-4c90-b165-795835e05541",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "77bc94dd-18c6-4ef3-b600-5c7e67ce0a40",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "92608154-8bd4-400c-9885-00465c5f8c6a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "782fdabb-668a-45ce-9a18-ac936bf8f662",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "6c4a4688-9030-48ce-851e-664e0f009a33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "788cf36c-6762-4221-ab15-e48cc2355589",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "d51f5e4e-4ca7-4c28-860f-a6246b624e73",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "78b57884-0e4a-4fb1-a303-c0e4d9870467",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "bb42b4c7-405f-4a55-9c5f-edd2f44782f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7939485f-7c53-497f-ade3-8763853189b3",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "17fe032e-8328-415a-a205-355f9b3400f0",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7981301e-a63b-4328-b3ad-a53467f16702",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "79b4c396-7d70-4414-8262-a3704c424341",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f7cdc996-42fd-4b11-a2c5-4deff2325e39",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7a3bad1d-6140-4f5b-b963-825317aadc4d",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "65c75c64-67c3-4e3e-b558-a84fbd5e8d1f",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7aec9cad-c07b-4b92-ab30-8ec9a1fc6eb6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0be90cd6-1a53-488b-9e98-bb6d6147ea0f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7ba5fcad-01ab-4434-892d-0abc085689f2",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7bdc6034-558b-46af-bc7c-a5e82e646399",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "d3d67f22-4d6a-48c6-a1d7-6697d59629fd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7d514c81-be4f-4fa8-8b70-b1924cb83aa1",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7e26ee60-bae0-4dac-a974-47c3a5ae6d1d",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "8b5bedb1-0693-4aa7-93cc-a623965e830d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7e2e65e8-3a2e-46b6-be90-fe680f378891",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "65c75c64-67c3-4e3e-b558-a84fbd5e8d1f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7edf6810-ef1b-4bdb-96d2-fe1881898358",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "92d8cf2f-97d7-495e-b19f-b48d3892cde5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7f094697-8210-4aaa-ae87-6940201a9e05",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e87aa601-40b0-4974-a351-190ae8a08b18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7f82d9a7-bf47-4077-b2a6-2a549aabdb84",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e711bae0-91e4-4389-b63a-c0f97c9e4bbf",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "7f8cda7e-53f2-4d64-80a9-82322d9e4621",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "338181c9-93d3-4d06-9320-4b423b04639b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "800e91fd-c3be-4b62-a4ae-e1c6f8bc57d0",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "7ac2efd4-c38e-48a3-9441-c9adf075197d",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8042bfce-aba9-441a-9677-9531518732f2",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "80a2d80c-d6cc-4315-88c4-5dae753890f1",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "3ee53376-9adc-4581-97d8-b41c19aa696f",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "80b458a1-f7f2-47de-9603-0c3294862802",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "1e50c0be-0864-4403-85dc-1f62345764ab",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8194f4bc-05ce-4fad-8e04-cb3a83e16010",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2d9a54e8-9bd5-4477-af70-cea821068e66",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "81b79ec8-f4dd-4c1b-b77d-ea37a4fe2b56",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f8966df3-2da8-4edd-b5cc-c0770fd71d56",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "82ebb905-f1aa-4468-8041-9ddb25e14bbe",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "d3fd0a86-9fdc-47c9-bc0f-6f6efdc99c18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "82edcb07-6ee7-49f6-b215-1f337b4e96b7",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "54eab9b6-c513-470a-b6c4-1ddce55e9733",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8325089b-ddfb-46e4-9ec9-827e4a2df73c",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "93dffa6c-af36-437b-9f4b-ef60c8cce8cd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8398cd94-6f07-4a8d-98e5-5a9af9a23789",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "18eb8403-1ec0-43ba-951b-028472c11c33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "83f447cd-3f59-4d6a-a743-62719716ae87",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "631ae262-ad0a-44be-ab39-8150f2a7de30",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8442bdc2-7327-4e3f-83ad-8724c93212b7",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "9aac8077-ac53-44a2-b48f-aadad6307460",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8460ea3d-ea5b-4f34-abfa-512c75bfb76a",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b6f41d76-4a5b-478f-8225-361601026c5b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "84a417d8-7d66-415a-96fc-9864fcf798ef",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "84f95d7b-08ba-4fe0-93c5-89ecbca7e6ee",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "86155c4f-f301-4362-a400-d57e59d21c07",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f7cdc996-42fd-4b11-a2c5-4deff2325e39",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "86e7b3ef-f34e-4e15-be08-8bf4938445e2",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "9ac4b537-464f-4dc8-816b-08e2a4a26007",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "87207106-0d3a-479c-af35-e37de6c6d30a",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "87349a09-6c1b-40fc-b416-c21fc94e0153",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "bb42b4c7-405f-4a55-9c5f-edd2f44782f0",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "875415f9-e9b3-4a23-b3d7-7a8039257f11",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "5.00",
+    "manufacturer_item": "52053296-ab87-4b1a-879d-d90d4f3dafde",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "87b6575f-f2e7-42f5-b6f9-9c07aebcd3d8",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6f4e1c2d-096f-4a54-b0d1-28d5929e42df",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "88191e6c-9c89-41f3-a4fb-05f4b9e97527",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "1e50c0be-0864-4403-85dc-1f62345764ab",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "889c035c-68c4-441a-8731-6d09751ddb6e",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "88c047b7-ac71-4de4-b31b-6267fffc97a3",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "8ca840e4-40f3-425f-bc9a-c9f15ada88cb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "896af899-8e7b-4001-9911-ab0c034df175",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "521cfde8-f74e-4516-98f7-ebf72e163626",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "899fc464-a7e3-4e4d-8629-df844ae4cfe6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "0.00",
+    "manufacturer_item": "7763019a-e654-463d-ab4a-84e124bdd9ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8b62f251-1324-4c28-934b-1b78416b4cfa",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "631ae262-ad0a-44be-ab39-8150f2a7de30",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8b6efe23-62ed-42a1-9937-352e6449f519",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "838f97d1-ff5f-468e-b09a-da97a08bc95c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8b8d9974-143d-4da9-af67-81798e815dd4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8bcd7506-a10c-417b-9553-13ba632789dc",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "2a9e6445-6bfa-459d-9df2-13c6392e1e0e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8c27930c-b29a-493c-bc41-60fa2e826265",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8cb2a46c-d55f-4f50-889c-50dcb855cde1",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8d56ac77-2e45-4996-ae16-ed3226afe89d",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8d64752f-f97d-4974-9dc4-3887bd0821b3",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "92608154-8bd4-400c-9885-00465c5f8c6a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8da74829-e13c-4891-96cd-74a495ef140f",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "667504d2-87f8-457d-bce7-ce0b94e22eb5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8dadb205-5fc2-4be8-81f7-c247c421bf29",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "665787f3-8f92-4fa4-a1cd-285e5a71fcdb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8db87b05-c809-40a1-895a-4d8987d92068",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "8ca840e4-40f3-425f-bc9a-c9f15ada88cb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8e3e3710-0aa5-43da-9f94-8a3047e94052",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "2d9a54e8-9bd5-4477-af70-cea821068e66",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8e5a75de-c0e2-448e-9274-372d34d11501",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "de1beea4-8ec5-461e-a5b6-1bf0fa5db15e",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8e9b7f04-37af-467c-8d77-c9f577e19eef",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8efb40a9-c846-4fd2-a992-1595d1d07055",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8f455fb0-0af9-4ec6-9591-3f97707967f1",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b727bb79-877f-4187-aafc-7c216c0f1ce1",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8f4bd1b9-f7e2-483a-a8f4-86e9759c6f54",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "6280e8fe-e739-4298-8372-5284229da5a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "8fcbfb01-77ff-4109-bb5d-a5f2901c327f",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0fa92932-f01e-4ea1-88b6-52f36d7760f7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9073f2c7-8848-464f-9eef-e0fdbc81262b",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "30181dee-bc87-4e5d-8f85-1384f34ba0e4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9078a50c-7cad-477b-84af-e8c2ec33b73b",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "17fe032e-8328-415a-a205-355f9b3400f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9125169e-27f9-481c-aa0f-8c852e04b3ce",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "a9acb21f-f154-44e4-ac2e-24ca4e6bbede",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "915bf552-3db6-4900-a41f-2b7158362473",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "a9acb21f-f154-44e4-ac2e-24ca4e6bbede",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "919e0536-0ca5-4917-86a2-a27ca7e9178a",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "ca9314e2-87a1-447e-864a-8b27873633ad",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "91f9d562-0f79-4eb0-ab93-106b802254eb",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "80d4d22f-7245-4242-954d-17f823ff2de6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "92124c6d-b7ca-4b3f-8f7b-13515b560145",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "92232efe-9066-4c00-b6cd-4e8fe5402240",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "932aefc9-b46b-467b-a3da-c193c24e2c23",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "935df537-631c-4d5d-94ab-12702ecd4000",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0fa92932-f01e-4ea1-88b6-52f36d7760f7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "93b22456-7bc7-4710-8a42-47585a2df571",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6f4e1c2d-096f-4a54-b0d1-28d5929e42df",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9469f47f-3c9a-4224-92b1-de3acc0bf759",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "d51f5e4e-4ca7-4c28-860f-a6246b624e73",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "94c15cf0-ea43-409c-8139-f9a304af3d1e",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "7ac2efd4-c38e-48a3-9441-c9adf075197d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "951eb1e8-6d79-4522-9434-ec76ea2abfd5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6280e8fe-e739-4298-8372-5284229da5a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "95af0063-3291-4f2c-8827-910bbdf4b4b5",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "96a7b81a-839c-4e8e-81a0-ad744dd45011",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "96d9cd93-9cb5-42b5-9d86-c7484e40105a",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "97391e85-7ef8-4ff3-86fb-b445a7ce89e8",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "de1beea4-8ec5-461e-a5b6-1bf0fa5db15e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "98228f26-74b3-4b40-8fef-7700027bceb1",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "14424504-beb6-4539-9f6e-2c5bdd0491b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "98c0bc74-0859-4600-b004-887e0506b853",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "521cfde8-f74e-4516-98f7-ebf72e163626",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "98d993cd-c9e5-48db-88ed-658e3192f80c",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2a9e6445-6bfa-459d-9df2-13c6392e1e0e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "999e78e1-22ec-40a0-bb1f-248899eb7ca8",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "63440ad8-60e8-4ec4-aa3f-c25a0f18cee0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "99e14fda-1049-45ea-875d-654d4c2451f1",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b2e935fe-e05b-4b3e-b14e-38d69e8875c3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9b09e613-cd53-48f9-93b2-144c8d9610c5",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "18eb8403-1ec0-43ba-951b-028472c11c33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9c924072-1b95-4728-a678-a51530da68a5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "75e2395d-eacc-46f1-9d9b-e99a15d7a3b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9cc883f9-9b54-494a-ab1c-bf510b5faf8d",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "21ae7965-243b-45f2-b327-21152fa85200",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9dddb676-128a-4036-b1b1-48e9d3f58cf1",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "86edb002-cd92-4c19-b2d9-8f97c0fceb2f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9e942617-241c-4aac-a0ac-ae54bc9d200e",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "24938716-aea0-4da6-bfa3-5086fad581bc",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9ef54287-7641-4402-a624-88b3676db34b",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "521cfde8-f74e-4516-98f7-ebf72e163626",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9f1e248c-c16d-4715-9dc5-b3c8ff4c85b6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "e87aa601-40b0-4974-a351-190ae8a08b18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9fb93c97-6fa0-4890-8a14-037863b9ca7e",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f1491e0d-2b36-477c-b7ba-27108c07e778",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "9fe16b5d-1a83-4a9d-b2a5-917651ad509d",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "b1e687b1-0bf3-4ba4-95e6-80b2e237fa64",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a08eee88-f52b-4c44-9137-4f01a019353f",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6d1061a3-5a5b-4f22-9653-e6ba718fa5e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a165cb6c-290e-47d2-bfe3-e22d7bd5dda3",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "3ee53376-9adc-4581-97d8-b41c19aa696f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a23fd6c0-b99c-4cf6-9211-64d72162279a",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "8d14da37-3d40-4554-817b-cd860c6926ac",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a24e1b8a-2fb8-4923-9a80-2726bdb93350",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "e87aa601-40b0-4974-a351-190ae8a08b18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a252c318-9d5f-4855-9373-91163afbc4b5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "197d43de-d2f3-49d8-a0cd-1e7110fc2d67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a276482c-3fb1-4a91-b7e8-05c686165b54",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0fa92932-f01e-4ea1-88b6-52f36d7760f7",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a36a52d4-5c42-4ef6-8c1c-e4489a68aec4",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a3c6ef2a-5269-483a-b986-aabf108b5315",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "578837a1-169a-4757-acf0-0cb7233b8f81",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a492b5b8-a667-4c5c-9b66-ce5dfc84b1aa",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0be90cd6-1a53-488b-9e98-bb6d6147ea0f",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a5c2f56d-540f-4171-9d6e-cc85a75c40f6",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "de9f045d-234a-4d9e-b319-f3384e8c5fca",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a5f44a9c-f022-49bc-af76-6814d247710f",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "93dffa6c-af36-437b-9f4b-ef60c8cce8cd",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a60b2cff-fb8c-400f-bedf-40a1c512c9f8",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "75e2395d-eacc-46f1-9d9b-e99a15d7a3b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a64876ba-9463-437a-a230-814fb3849732",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0d858137-66c6-4edc-bdbc-16d168d9be7a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a6f28378-263a-4937-833c-0d14bbcd422a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a74c1fdf-f83f-44f9-95c0-a57e514a0d23",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9aac8077-ac53-44a2-b48f-aadad6307460",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a784fb14-cf4a-45d6-a85e-da1909f54287",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "15afdac3-7e56-45c5-8e32-5e328c57da37",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a7eb8012-17c0-4a6c-9b5f-ddcad4a0b1bb",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0cb9fff7-585d-4720-8581-e4e5e49d0c00",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a8655109-8b2b-4a12-a41c-f564fdba8ecc",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "eae68d2d-4c2b-48e3-b75e-f7f9c4d50898",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a874b05e-bcdb-4313-9be0-06629906cf95",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "9ac4b537-464f-4dc8-816b-08e2a4a26007",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a8ba3b2c-ef52-40d4-b950-5b2cbcf68330",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "bf863741-0a8e-4559-8c90-4ce3e791b908",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a8e713f7-28f6-4d57-91b0-0816691a019d",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "b9a4d7d2-f0a5-4f8e-b3ec-ec4378363ec6",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a9dd2c53-38bc-461d-abdf-dbcb21ae0b94",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6cc3e01b-4352-4cfe-9e6e-63da2127e40a",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "a9e8d24a-3971-446e-b468-6f7b26cd1f7e",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "665787f3-8f92-4fa4-a1cd-285e5a71fcdb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aa14ab3a-ff84-4531-a86e-cdbe865f4c12",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "9638f3aa-0f1d-4911-a3d9-371553ee850e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aa17909e-e24c-4b2b-bce8-49678e041012",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "041e97a9-4ffa-4c90-b165-795835e05541",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aa2bab25-e5c9-4496-b857-a7580557fe9b",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "a3239cda-2a2d-4e25-8165-1407bd731f67",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aa61c5fd-edc2-49f2-bb91-636e317fbd3f",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "631ae262-ad0a-44be-ab39-8150f2a7de30",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aac072b6-0277-463c-8a67-4b3b2dd8d9fb",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "79223f6a-e934-4c1c-ba6e-20d2a5673b46",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aaed8f03-00de-4dcf-a247-724db19cc589",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "b1e687b1-0bf3-4ba4-95e6-80b2e237fa64",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "abf4a341-4ac3-4e11-be1f-6e764369049d",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ac0ab042-4506-4c2b-99ff-c23ceb8a3026",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ac1628a2-7bd3-4683-9a47-8d6c2a476233",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "47a778c6-7205-4cb2-b1e0-01a288dd6caa",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "acbe3103-a5a6-43fb-91ff-cadc125d53a3",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "add419de-a737-4a44-803b-95075b309c85",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "ca9314e2-87a1-447e-864a-8b27873633ad",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ae5442bd-1d76-44e7-ba02-8134060ca830",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "8d14da37-3d40-4554-817b-cd860c6926ac",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aeadf2d6-28d9-4c5f-b2f0-bc0dc52b4441",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "aebda86b-60aa-4c36-a9d4-98649cb9f332",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "d3d67f22-4d6a-48c6-a1d7-6697d59629fd",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "af1ba561-94ef-4528-a1b6-14d442ad78ce",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6f4e1c2d-096f-4a54-b0d1-28d5929e42df",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "af1cded3-abf4-4034-8c91-e720babff7a9",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "33cf1c5b-ad29-42f5-b362-925d844932bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b0184f12-3673-4019-82e4-e743a62059e1",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "e03ad022-7507-4d22-afcf-b16389f8a5ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b0256599-3a2b-4d69-a118-1d9d2e5b4e8f",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "2f216395-4f8b-43ad-9a1e-b6f61eb2f697",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b031855f-74c4-4de2-bb80-421319593f2b",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b1498998-5602-4ba9-b0be-4558f8f26276",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "6cc3e01b-4352-4cfe-9e6e-63da2127e40a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b14c233d-6f4b-4b75-a6db-d68ccdf7b16d",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "197d43de-d2f3-49d8-a0cd-1e7110fc2d67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b1785e23-9b29-4a51-84b5-40c1558312b3",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "ddac7941-3f09-4a06-8bf1-269d56345c90",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b180f85a-7da3-4181-aa62-f2ebddf3bd15",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "2d9a54e8-9bd5-4477-af70-cea821068e66",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b2acdc13-2097-4ce5-a3ed-e4906e9a9737",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "54eab9b6-c513-470a-b6c4-1ddce55e9733",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b308ce5a-2fd1-44aa-82b3-47893bd3fd07",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "25a84bcd-1e09-4268-a4ef-d3733d8bd009",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b3260b1e-d590-4fc3-a3f3-53d51c5e6de4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "4057f0c0-a3fd-4992-9a08-4604094cc55c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b34ddb6b-4e69-47c3-a017-5f124ae50a29",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "aa5685a7-3c05-4b5c-b448-16605da3f896",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b36d94ad-5aba-4451-86cd-01f5c7a5de05",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "c655ced7-b54b-4554-9e7a-f79db27b9b47",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b3d503d0-f961-4c6c-a103-a2a50cc1b483",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "25a84bcd-1e09-4268-a4ef-d3733d8bd009",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b4215356-5f34-4bb4-b04c-04598ff2cca8",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0d858137-66c6-4edc-bdbc-16d168d9be7a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b475d33a-f2f0-4239-92f0-15b0350fc58a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e4004f26-95fb-4e58-b05e-9c1153e725de",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b4e80ad0-5958-4e31-8c56-562e13605233",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f8966df3-2da8-4edd-b5cc-c0770fd71d56",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b58d3dd6-94ef-467c-bc87-d55c53b2833a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "7763019a-e654-463d-ab4a-84e124bdd9ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b598a218-654e-4438-914a-522f4a2ad1d9",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f1491e0d-2b36-477c-b7ba-27108c07e778",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b5ddedab-dd23-4dd0-baa5-271996463782",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "79223f6a-e934-4c1c-ba6e-20d2a5673b46",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b5f4757a-64db-4dd7-8632-94450614eb55",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a258c08e-2988-428d-9ece-717f816ba735",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b5f5c7be-247e-4453-967f-deeb4ee7b5e8",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b7476deb-9fe8-4eb3-bcc9-9c6af1acfa74",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "3588cf98-79cf-4f48-9ec6-eeffbd88c629",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "b7a2889a-f69e-43c9-9df7-492723a445ba",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "3ee53376-9adc-4581-97d8-b41c19aa696f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bb8c5ec0-9dc7-45a8-8656-d0696af80fe9",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "80d4d22f-7245-4242-954d-17f823ff2de6",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bb9e546c-00bb-47f5-bc8a-74eb5e1fc5b3",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e87aa601-40b0-4974-a351-190ae8a08b18",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bd21ac19-5b7b-483d-9420-a466e78c0fae",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "14424504-beb6-4539-9f6e-2c5bdd0491b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bd492207-4e83-418f-9cc3-8e07afecd2ac",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bdfce5e9-5a3f-42a0-a4db-61b9ebaf98e3",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "a74e926d-44cd-40ea-a4d8-db72d137c8ce",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "be205d49-da64-4b93-a9b2-1c9bceadb9b0",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "8ca840e4-40f3-425f-bc9a-c9f15ada88cb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "be4e6b5b-83c2-488a-bc52-c64471e9584e",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9e2b6cda-a6b8-4817-9a3e-69591aaa1592",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "be8c3bfa-5356-47e3-b089-10d6a7db6de6",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b2e935fe-e05b-4b3e-b14e-38d69e8875c3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bf72131c-3bcc-4a6a-96d8-bba5783cb047",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "bfdb1e62-02fa-4d13-ad66-c783acfdab1d",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "4c7dd7f1-0a1a-401c-bdaa-e1c32f40e22c",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c0248a73-67e8-46c9-b2c5-b0d6c1d42e90",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "18eb8403-1ec0-43ba-951b-028472c11c33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c04c3aa0-228d-431f-8867-88951b899c70",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "3ee53376-9adc-4581-97d8-b41c19aa696f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c1d1075b-c09a-4df2-b57f-0008b42167b1",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "eede8fe7-0596-434b-aa3a-a6500bbe14c9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c1e28934-217d-4d94-a26e-055925a07556",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c29b5f57-c001-437a-b975-79a34fad3be5",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "102495bd-1749-4e24-b8ee-7ab0021c4008",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c350c8b2-8e49-4089-97cc-a3ebb17ed34f",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "30181dee-bc87-4e5d-8f85-1384f34ba0e4",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c4525703-2c1e-4006-9c38-f0c79720c87b",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c4bb2dcd-b6a3-4dab-b17c-e78dd2952c19",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a74e926d-44cd-40ea-a4d8-db72d137c8ce",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c4de3fe0-f941-4c4e-9919-672b96454a19",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "8ca840e4-40f3-425f-bc9a-c9f15ada88cb",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c691427f-1887-4242-b37b-6c8b7f34af1c",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "d19d41ba-99c4-4894-9e62-6029fd77cbe4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c6cf01f5-d8b6-45ca-93f2-a808359ed9f7",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "338181c9-93d3-4d06-9320-4b423b04639b",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c6d9d66c-bfbc-4453-b47b-52052ee0232f",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "9ac4b537-464f-4dc8-816b-08e2a4a26007",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c71b6e4d-6099-4e95-be8d-2267fb90ef65",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c7b60d57-b2a6-480d-92e6-7a5cd09b5af4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f0ff30d1-cc72-49f5-b285-79da860ecca4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c8a9ec32-d368-48d0-93da-58b40c3f9670",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "17fe032e-8328-415a-a205-355f9b3400f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c8ef47db-72b7-4ff6-bad3-eb0e09295009",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "102495bd-1749-4e24-b8ee-7ab0021c4008",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c9a11b99-6231-4fbe-bef8-54d81ebe8746",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "ffe476ee-6980-4192-b393-da990ab160f5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "c9b9b00a-638e-42e7-9c2f-7fa7a22c7cf2",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ca01c965-65d9-4c01-878e-634b8bd7c4aa",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b177ca22-f0bf-4277-a827-80b6b88779ef",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ca6d97ea-6863-4b18-b8fc-82a740a6c210",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b62bbc23-22a5-4503-a95b-40882dfc4feb",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ca8ab59d-f895-46ba-b621-6c14d98e5063",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cadc7a12-baaa-4642-8dde-61d2dc14b5b1",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "7ac2efd4-c38e-48a3-9441-c9adf075197d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cb5046be-1916-40e2-b3f2-7c8d1c612e99",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6cc3e01b-4352-4cfe-9e6e-63da2127e40a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cb8c5df0-f27f-4ee5-bbda-39d255c8ba50",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "24938716-aea0-4da6-bfa3-5086fad581bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cba39dd7-3718-4310-9c37-c0e11c959694",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "5.00",
+    "manufacturer_item": "6eb05a5f-3dab-4135-8ecd-df12e8b5e294",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cbc4fb4c-2f52-4977-b718-aae004f5d571",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "d3d67f22-4d6a-48c6-a1d7-6697d59629fd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cbce88bd-eeef-474c-99b2-0b8a2fc6bfd6",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0d858137-66c6-4edc-bdbc-16d168d9be7a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cbda01be-afeb-42e5-93ce-54f2d306cdaa",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "9aac8077-ac53-44a2-b48f-aadad6307460",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ce3ab148-6ba2-40be-a710-d362b1eea50a",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "102495bd-1749-4e24-b8ee-7ab0021c4008",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ced71030-5351-463a-ba35-ade5c146104a",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "92608154-8bd4-400c-9885-00465c5f8c6a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ceea060b-fd84-4c04-90f8-67f6af119b50",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "93dffa6c-af36-437b-9f4b-ef60c8cce8cd",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cf939fba-67b0-47c0-9e22-2c9816e608c2",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "838f97d1-ff5f-468e-b09a-da97a08bc95c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "cfed67db-202a-414d-a511-2b0a1b90aa75",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d063f9e8-d60e-460f-b2f0-bcadae5ffffa",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "48f1c098-d0ba-4750-b997-a05a632642e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d0b7905f-0ecc-4fca-9e57-259cc4b9280d",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "30181dee-bc87-4e5d-8f85-1384f34ba0e4",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d0c0fe39-0f4a-4653-a0b5-9d413528cd23",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2a9e6445-6bfa-459d-9df2-13c6392e1e0e",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d0cc4ad6-7cd5-4e0e-ad16-6b9211d390a9",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "ffe476ee-6980-4192-b393-da990ab160f5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d19f78d0-50a7-4baa-8f5c-59daec989b1b",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "6cc3e01b-4352-4cfe-9e6e-63da2127e40a",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d1c3a05f-a5cd-4a0e-a46f-5a0aa5978c66",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "0916f7a0-1190-4806-953a-3ce9652e2a25",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d1d158c4-921b-4040-b6f0-a9b9e2f825c4",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b62bbc23-22a5-4503-a95b-40882dfc4feb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d20456e5-be58-46b8-b1fa-451d038a4f5e",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "102495bd-1749-4e24-b8ee-7ab0021c4008",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d3452f91-dfa5-49ef-8972-cd1bf595f822",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "3cd06069-fc1a-4b79-b797-afd67652e602",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d35d347b-092d-46b7-b97c-f32588df2ee4",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "521cfde8-f74e-4516-98f7-ebf72e163626",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d549ac68-54ac-4c19-8d72-41956a2ba68c",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "041e97a9-4ffa-4c90-b165-795835e05541",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d5ee2fd1-ecd7-4125-884b-5bcfb55a7c94",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "e8684f18-9062-4d8e-984d-8fc0e36e3b3f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d62ecee0-1c67-46ac-8b37-88d77d256d7a",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "a74e926d-44cd-40ea-a4d8-db72d137c8ce",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d6a9675c-d7c2-49c3-8a1a-8eb9539006ed",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "1e50c0be-0864-4403-85dc-1f62345764ab",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d6cafba2-c704-4e67-98da-3eb224805a1f",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "03c87f3e-bcad-470d-92a8-c89c55f3f1a9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d6d35d31-e717-48a1-8443-3556baf9b6f1",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b5d75f45-c945-49ed-863f-d20d09b14fc3",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d6f099a0-a1bf-465b-91fa-d9020d150f78",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "b62bbc23-22a5-4503-a95b-40882dfc4feb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d768a822-52a5-40bd-be19-8a3d9fbdb79f",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d8923cb6-65ba-4c9a-b834-5f8c5b8cda5d",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "2d9a54e8-9bd5-4477-af70-cea821068e66",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "d8c0173d-9e1d-4743-8a13-b38f18971443",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f1491e0d-2b36-477c-b7ba-27108c07e778",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "db8d0c28-918a-458f-9244-8c383bdb6f29",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "17fe032e-8328-415a-a205-355f9b3400f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "dba5f5a7-df21-42b8-83d7-eaa9f9aca8fe",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "7ac2efd4-c38e-48a3-9441-c9adf075197d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "dbe66bed-ba0e-449c-a93d-084c1557a50c",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "1e50c0be-0864-4403-85dc-1f62345764ab",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "dbf4168d-8273-474e-b3ee-e39858d59091",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "dcbe291e-23e8-4fc3-9a34-d588ec2dc43c",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "86edb002-cd92-4c19-b2d9-8f97c0fceb2f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e042ad35-1afa-47f5-ab67-8ac032a8e525",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "497adb20-9c4c-4fc1-98f1-2ea36f5f6209",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e0847dc1-fe89-4258-99e5-bb8058adadfe",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f7cdc996-42fd-4b11-a2c5-4deff2325e39",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e0cea377-2ee6-4d9d-9d31-273410d5fefe",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "665787f3-8f92-4fa4-a1cd-285e5a71fcdb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e0e05ca2-fa06-4c2a-9c8a-19987ae02c2c",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e4004f26-95fb-4e58-b05e-9c1153e725de",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e191447c-7fc5-4f0e-a6e8-559858c2c561",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6c4a4688-9030-48ce-851e-664e0f009a33",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e1d146fa-0779-42fa-bc33-c0d77ee4b2af",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "84b320a6-119f-422d-a72e-7d6ba6d0786b",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e221e931-115e-4835-bc3f-70a6a9f595f1",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "8ae0a40e-07dd-41b6-a391-bc9cd5566057",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e25d4a54-f75b-4680-848a-622421834698",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a3239cda-2a2d-4e25-8165-1407bd731f67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e32a5e69-0f27-4d8e-9f8c-9e8006371926",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "baf01902-1469-4a67-820d-04af8297366e",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e41dfd42-f5c9-4ecf-a967-34026dea63da",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "6eb05a5f-3dab-4135-8ecd-df12e8b5e294",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e42907fa-c16e-4785-b131-2ebc7011defe",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "0cb9fff7-585d-4720-8581-e4e5e49d0c00",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e486ab17-2aa5-4f0c-b95e-186069be2e30",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "65c75c64-67c3-4e3e-b558-a84fbd5e8d1f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e5116ffa-0450-4aa5-a89c-b38e19ee92ae",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e5a54786-2878-4367-ac54-68260f34ae3f",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "4.00",
+    "manufacturer_item": "e711bae0-91e4-4389-b63a-c0f97c9e4bbf",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e5beeb5e-c9a6-4076-bc1b-9dc4600a2381",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "6eb9627d-64f3-44c0-8847-c2f24358ad91",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e746e44c-3301-44fc-ba30-3134a84a092c",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "9638f3aa-0f1d-4911-a3d9-371553ee850e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e755791f-470a-4807-babd-8ce8f228ae04",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "b1e687b1-0bf3-4ba4-95e6-80b2e237fa64",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e77b7321-e20f-4ecb-a0c9-12d2333da882",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e77d1352-80bb-4b0c-8ea0-2a0ea49dbc7b",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "8ca840e4-40f3-425f-bc9a-c9f15ada88cb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e7e7b043-965d-457e-b895-a3ac4cd3fecf",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "467eb438-0eda-41a9-ac71-4f917503c5f3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e834dd0b-83e0-41e2-bf02-2dd85444529f",
+  "fields": {
+    "code": "right",
+    "name": "Right side",
+    "additional_price": "3.00",
+    "manufacturer_item": "b1e687b1-0bf3-4ba4-95e6-80b2e237fa64",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "e8c94b2f-25d4-488f-8e3b-deffbfb4d728",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e02a6391-adc3-4993-a7f4-6d4c94cdb596",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "eab45d0f-ec81-4f90-8c7d-e683e49d6a8b",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "24938716-aea0-4da6-bfa3-5086fad581bc",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "eb473e2b-a139-460c-9ea5-b718d1851c66",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "041e97a9-4ffa-4c90-b165-795835e05541",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "eb93b1b8-faeb-4b2f-9781-639fc3951bb1",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f7cdc996-42fd-4b11-a2c5-4deff2325e39",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ec725968-f13a-4332-95ae-1765426e25a8",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "a3239cda-2a2d-4e25-8165-1407bd731f67",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ed2a99a2-7234-4969-a43a-664ba669f605",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "4057f0c0-a3fd-4992-9a08-4604094cc55c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ed7714f4-2c76-4be9-8abd-37fb1958e496",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "e9de93ab-1833-44be-9c99-756cc2407ce2",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ed916d4d-99ee-4fa5-a899-ff20cdcf3965",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "bb42b4c7-405f-4a55-9c5f-edd2f44782f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "edfc046d-1222-4e42-b8f2-7f8f8dc5eee6",
+  "fields": {
+    "code": "label",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "39b298b4-8586-4354-816d-b319001048ed",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ee1f2e4a-c44a-477e-881f-19020e7b3af2",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "63440ad8-60e8-4ec4-aa3f-c25a0f18cee0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ee273569-0866-4565-b0e2-31a2286a337c",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "9ac4b537-464f-4dc8-816b-08e2a4a26007",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ee5d7b23-b36f-4559-b98a-a58447abcd48",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "bf863741-0a8e-4559-8c90-4ce3e791b908",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "eee4dd89-1278-44f1-810c-5d6865c785ea",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "92d8cf2f-97d7-495e-b19f-b48d3892cde5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ef73a8b3-32c4-4d10-8d9e-4e2c648cb066",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0c20a698-6436-41a0-94c2-eb89fea8f100",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "efb2203e-b162-494f-847f-91e09c7b19d2",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "47a778c6-7205-4cb2-b1e0-01a288dd6caa",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "efb54004-f59b-4e95-aed4-a0f5cf140931",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "79223f6a-e934-4c1c-ba6e-20d2a5673b46",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "efbe4aaf-2555-4f8d-a83f-58ea43e93d63",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "f1c9d121-66e9-4ab6-808e-dcba2dbfa8c5",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "efe71514-8c6f-464b-87e3-04cf5a89aac4",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b62bbc23-22a5-4503-a95b-40882dfc4feb",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f06baf7e-46d5-4b5d-a238-8460bc645011",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "467eb438-0eda-41a9-ac71-4f917503c5f3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f07a984c-c645-439b-851b-ff7e656bf8e7",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "a406f009-50e3-4f56-8376-b83265078f5f",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f0e87bb3-f363-476d-bc2b-0b4071b28993",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "4547e8fa-8842-44e9-b742-b779a97b119d",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f174351e-9020-482a-9bee-587bad75b4b0",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "6f4e1c2d-096f-4a54-b0d1-28d5929e42df",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f21b17a0-5f07-4afd-8a79-d7c6ecaf692e",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "4c7dd7f1-0a1a-401c-bdaa-e1c32f40e22c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f2336fb3-cee6-4ed0-9beb-f8e0bfb68432",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "b9a4d7d2-f0a5-4f8e-b3ec-ec4378363ec6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f2db565d-27c7-42b5-a51c-072c68e452a3",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "0cb9fff7-585d-4720-8581-e4e5e49d0c00",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f3021847-a1d9-4774-afc4-e6e546dea9a6",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "bf15768b-18c1-4ab4-963c-54962df70336",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f3418d10-fd91-44d7-892d-6452e436cf12",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f3cb8c4f-c0f7-4f41-a5d6-f943974ad4ce",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "0.00",
+    "manufacturer_item": "1e3599c7-93dd-45bd-bbb8-16b1fdf441d9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f3f79c6b-2deb-487a-bbad-0e3bac65580c",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f4592916-44ac-46d6-bd74-c57b333661a4",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "838f97d1-ff5f-468e-b09a-da97a08bc95c",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f4e5f158-0348-438e-a19d-32eaa3639bc1",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "b727bb79-877f-4187-aafc-7c216c0f1ce1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f60ba9d0-ae45-4e0d-85d6-5b519950c806",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "18eb8403-1ec0-43ba-951b-028472c11c33",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f73b7476-476c-4c3c-a56e-43083aafa68c",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "b5d75f45-c945-49ed-863f-d20d09b14fc3",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f7493e68-c6de-4ffb-b0dc-0818427e5683",
+  "fields": {
+    "code": "left",
+    "name": "Left side",
+    "additional_price": "3.00",
+    "manufacturer_item": "6ea1c891-d27c-4cbd-bdb2-1a3f936df805",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f8c2a88d-d571-498f-a12f-7cf8c935ed7e",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a9acb21f-f154-44e4-ac2e-24ca4e6bbede",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "f9ef7738-a129-4554-ab99-a7660c532e91",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "1aa95354-3209-4438-bd3f-e5e5d7cb0ea7",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fa618bba-0e96-4674-a31d-f2c8d35ab9c1",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "7.00",
+    "manufacturer_item": "a258c08e-2988-428d-9ece-717f816ba735",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "facc3b6e-320a-4b9d-a716-d42ad7240c9b",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "a3239cda-2a2d-4e25-8165-1407bd731f67",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fb2bf4ac-c71a-40e4-88b3-2030c09531d3",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "bb42b4c7-405f-4a55-9c5f-edd2f44782f0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fba95464-263c-4a03-86e5-66c8c53c77ff",
+  "fields": {
+    "code": "default",
+    "name": "Print file",
+    "additional_price": "0.00",
+    "manufacturer_item": "48f1c098-d0ba-4750-b997-a05a632642e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fc3dcb59-ac18-4c2e-a95a-219969f7e8d4",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f0dff3b1-3ffd-4bf0-a133-668694698922",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fc99de17-ca1a-4cce-92f0-15d6c1189506",
+  "fields": {
+    "code": "back",
+    "name": "Back print",
+    "additional_price": "4.00",
+    "manufacturer_item": "6d1061a3-5a5b-4f22-9653-e6ba718fa5e0",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fcf83e31-70c3-4873-90f5-0222ca06ddf6",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "409d5414-453d-48cc-8ee5-e88cae2d91b1",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fd871be5-fcb8-4d71-adfe-b8baaac12309",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "1e3599c7-93dd-45bd-bbb8-16b1fdf441d9",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fda29f7c-f177-485c-910d-9c44e025c05a",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "61491d65-2082-4784-847c-63e4414d173e",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fdd2c4e6-fbcc-4a45-aa40-9dab3e50d617",
+  "fields": {
+    "code": "default",
+    "name": "Front",
+    "additional_price": "0.00",
+    "manufacturer_item": "8ae0a40e-07dd-41b6-a391-bc9cd5566057",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fe563dce-72c5-4b80-b877-621b260f766b",
+  "fields": {
+    "code": "label",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "f1491e0d-2b36-477c-b7ba-27108c07e778",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "fedc6230-568b-4716-a381-9deb120a616f",
+  "fields": {
+    "code": "preview",
+    "name": "Mockup",
+    "additional_price": "0.00",
+    "manufacturer_item": "a258c08e-2988-428d-9ece-717f816ba735",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ff1b68ea-b71e-4702-b75c-e2bafa5d51a8",
+  "fields": {
+    "code": "label_outside",
+    "name": "Outside label",
+    "additional_price": "3.00",
+    "manufacturer_item": "e03ad022-7507-4d22-afcf-b16389f8a5ff",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ff6acc13-2a77-4d7b-b22e-d7cf1c2f9172",
+  "fields": {
+    "code": "label_inside",
+    "name": "Inside label",
+    "additional_price": "0.00",
+    "manufacturer_item": "80d4d22f-7245-4242-954d-17f823ff2de6",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.manufactureritemfile",
+  "pk": "ff9eae50-a6ee-4e3e-b62c-e851418cc5ff",
+  "fields": {
+    "code": "default",
+    "name": "Front print",
+    "additional_price": "0.00",
+    "manufacturer_item": "f0ff30d1-cc72-49f5-b285-79da860ecca4",
+    "is_active": true
+  }
+}
+]

@@ -1,0 +1,82 @@
+[
+{
+  "model": "outlet_woo.shop",
+  "pk": "1b8c90ea-614f-4791-902d-95c39e324205",
+  "fields": {
+    "code": "HH",
+    "name": "Hot House Yoga",
+    "web_url": "",
+    "consumer_key": "",
+    "consumer_secret": "",
+    "timezone": "America/New_York",
+    "num_products": 0,
+    "product_label_base": "",
+    "last_sync": "2016-11-19T20:04:57.165Z",
+    "added": "2016-11-19T20:04:57.165Z"
+  }
+},
+{
+  "model": "outlet_woo.shop",
+  "pk": "3355d3a4-cc10-40d2-bd80-38324664f917",
+  "fields": {
+    "code": "BG",
+    "name": "Hot Buttered Grits",
+    "web_url": "https://hotbutteredgrits.com/",
+    "consumer_key": "ck_66d963e249ee70ffcc10dd00bd8bd63a82554151",
+    "consumer_secret": "cs_0851866462214e86ed58af78b740226842b231b4",
+    "timezone": "America/New_York",
+    "num_products": 11,
+    "product_label_base": "HBG_Label_Base_If1g4vD.png",
+    "last_sync": "2017-01-19T16:47:36.487Z",
+    "added": "2016-11-17T00:17:56.475Z"
+  }
+},
+{
+  "model": "outlet_woo.shop",
+  "pk": "4fd208f4-e2fc-4581-b60b-1be3f3d71dd6",
+  "fields": {
+    "code": "HX",
+    "name": "Homosexualish",
+    "web_url": "http://homosexualish.com/",
+    "consumer_key": "ck_85a1599105576d66ce23a076d6c950b378544687",
+    "consumer_secret": "cs_d80212416657aa3d73a92ae3b1d998e43a7fd42c",
+    "timezone": "America/New_York",
+    "num_products": 19,
+    "product_label_base": "",
+    "last_sync": "2016-11-19T01:52:35.604Z",
+    "added": "2016-11-16T14:25:41.115Z"
+  }
+},
+{
+  "model": "outlet_woo.shop",
+  "pk": "5323ac65-19f7-468b-8438-d2e87be635b0",
+  "fields": {
+    "code": "AC",
+    "name": "Art Central Foundation",
+    "web_url": "http://shop.artcentralfoundation.org/",
+    "consumer_key": "",
+    "consumer_secret": "",
+    "timezone": "America/New_York",
+    "num_products": 0,
+    "product_label_base": "",
+    "last_sync": "2016-11-19T20:05:21.895Z",
+    "added": "2016-11-19T20:05:21.895Z"
+  }
+},
+{
+  "model": "outlet_woo.shop",
+  "pk": "e124a623-0125-435c-8207-652a81d72c5b",
+  "fields": {
+    "code": "H2",
+    "name": "Hot Buttered Grits V2",
+    "web_url": "http://hbgdev.duckdns.org",
+    "consumer_key": "ck_d408a8e04d0221b8fbde984844743aab44d33bdd",
+    "consumer_secret": "cs_d53e9077cdc09019a8345e04d3bd10d2732721fa",
+    "timezone": "America/New_York",
+    "num_products": 0,
+    "product_label_base": "",
+    "last_sync": "2016-12-15T03:53:03.557Z",
+    "added": "2016-12-15T03:00:21.056Z"
+  }
+}
+]

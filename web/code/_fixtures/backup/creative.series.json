@@ -1,0 +1,242 @@
+[
+{
+  "model": "creative.series",
+  "pk": "14fe2b7a-bf8f-40a4-b71d-3183379f411e",
+  "fields": {
+    "code": "TWW",
+    "name": "Trans Wonder Women",
+    "creative_lead": null,
+    "sales_channel": "329ade0f-18bc-419e-a3d7-9934609b0730",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "1aa9ac4b-3c06-4eb9-a062-8093fa99d1ee",
+  "fields": {
+    "code": "BTX",
+    "name": "Botanica Exotica",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": "<p>Taking inspiration from Elizabeth Blackwell&#39;s &quot;A Curious Herbal, Containing Five Hundred Cuts of the Most Useful Plants, Which Are Now Used in the Practice of Physick,&quot; published in 1739, this series modernizes her plant illustrations, drawn from London&#39;s Chelsea Physik Garden. The original collection was received favorably, and funded the release of her husband from debtors&#39; prison.</p>"
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "3520d789-23cb-49b9-ba98-588885d5f3b1",
+  "fields": {
+    "code": "BLP",
+    "name": "Blasphemy",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "3c9f15b6-01f1-4b2e-af36-1472bff5c6e2",
+  "fields": {
+    "code": "WPA",
+    "name": "WPA-Style City",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "In the vein of Reginald Marsh. City illustration, showing working-class.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "3dc1ae37-593f-4fcc-b02f-11090784aa9a",
+  "fields": {
+    "code": "ARA",
+    "name": "Its Just Arabic",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "Innocuous Persian phrases.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "3f0f334c-a137-4b36-949b-2147845f855d",
+  "fields": {
+    "code": "BBM",
+    "name": "Baby Monsters",
+    "creative_lead": "b29aae50-c36a-4897-a3e9-f91d117b2d1b",
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": "<p>Let us introduce you to the Baby Monsters Series, new to HotButteredGrits.com. How do these huge personalities fit into such small bodies? Unlike other mythological creatures, they are never ill-mannered or mischievious. Sure, they&#39;ll play a joke now and then... but it&#39;s always in good fun and never mean-spirited. They love to dance and sing, and tend to live outside of human sight. Fun, playful, and usually a bit confused, these creatures are curious but frighten easily.</p>"
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "45848d0c-e070-4e34-bc36-2f2be85ac1fe",
+  "fields": {
+    "code": "HBG",
+    "name": "Hot Buttered Grits",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": ""
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "4a307fb0-d6f5-48fb-bfda-1d44aab309a7",
+  "fields": {
+    "code": "HNL",
+    "name": "Historiae Naturalis",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": "<p>The <strong>Historiae naturalis</strong> was published in London between 1650 and 1653 by Joannes Jonstonus and Georg Marggraf&nbsp;with illustrations by Matthaeus Merian. It is a collection of creatures, broken out into a series of six books (the translation below&nbsp;from the Latin is approximate).</p>\r\n\r\n<ul>\r\n\t<li>Libri 1: Historiae naturalis de quadripedibus (The Natural History Book of the Four-Legged Animal).</li>\r\n\t<li>Libri 2: Historiae naturalis de serpentibus (The Natural History Book of the Serpent).</li>\r\n\t<li>Libri 3: Historiae naturalis de insectis (The Natural History Book of Insects).</li>\r\n\t<li>Libri 4: Historiae naturalis de exanguibus aquaticis (The Natural History book of the Bloodless Waters).</li>\r\n\t<li>Libri 5: Historiae naturalis cetis et de piscibus (The Natural History Book of Fish and Whales).</li>\r\n\t<li>Libri 6: Historiae Naturalis de avibus (The Natural History Book of Birds).</li>\r\n</ul>\r\n\r\n<p>From the 16th and into the 19th centuries, European books &ndash; especially those of scientific, literary or other &quot;academic&quot; purpose &ndash; were commonly authored in Neo-Latin. This afforded knowledge to be shared amongst the learned elite throughout Europe, regardless of the local language.</p>"
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "4d29351d-a909-408f-9a3b-75767a8564a6",
+  "fields": {
+    "code": "UXT",
+    "name": "Unexpected Travel",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "Interesting off-the-beaten path travel imagery.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "4e9afde9-78a3-4bc5-b0b8-29153b6b484d",
+  "fields": {
+    "code": "DSA",
+    "name": "Disinterested Animals",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "5aa0af26-9ecf-49cc-9327-7b79affb6d66",
+  "fields": {
+    "code": "SHD",
+    "name": "Burning in the Shade",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "329ade0f-18bc-419e-a3d7-9934609b0730",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "5cf2f610-e823-4bf6-98ad-3964f2336bc0",
+  "fields": {
+    "code": "ELE",
+    "name": "Elemental",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "5e1b7440-ec66-4f8d-a175-04846c1b2b74",
+  "fields": {
+    "code": "RSA",
+    "name": "Russian Sex Alphabet",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "6505d159-b044-453c-8fad-33d9b2a96c7d",
+  "fields": {
+    "code": "RBP",
+    "name": "The Rainbow of Pride",
+    "creative_lead": null,
+    "sales_channel": "329ade0f-18bc-419e-a3d7-9934609b0730",
+    "note": "A variety of different pride flags for all types of sexuality.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "7cac700d-7042-4243-9919-9b4ae0dc14a4",
+  "fields": {
+    "code": "MFE",
+    "name": "Many Fancy English",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "Chicken Turkish, Engrish, and everything akin.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "7d0c8244-2901-4245-a52e-818b8fac6c1e",
+  "fields": {
+    "code": "GDD",
+    "name": "Grande Dames / Dead Divas",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "329ade0f-18bc-419e-a3d7-9934609b0730",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "90c7f650-47c3-4467-8d91-3f03bd20c00c",
+  "fields": {
+    "code": "PDM",
+    "name": "Politica Disastrum",
+    "creative_lead": "a4e65973-a4c1-49ac-b759-4bbed9b1f70b",
+    "sales_channel": "329ade0f-18bc-419e-a3d7-9934609b0730",
+    "note": null,
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "c1552b88-4f2d-4bde-bece-c22f33f42b8c",
+  "fields": {
+    "code": "MST",
+    "name": "Ms. Thang",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "Similar in theme to http://www.mrmen.com/ , but drag queen personalities or dark themes.\r\n\r\nEach character has three adjectives and three statements that describe him/her/it.",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "c3de269a-ac45-46e0-b5df-dc2f159e636b",
+  "fields": {
+    "code": "KED",
+    "name": "Kediler / Cats of Istanbul",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+},
+{
+  "model": "creative.series",
+  "pk": "f76f55f4-7e98-4277-8bee-38499059c527",
+  "fields": {
+    "code": "MFY",
+    "name": "Month/Year",
+    "creative_lead": null,
+    "sales_channel": "af8ff959-b5ee-4dd5-a49d-59555bc355b7",
+    "note": "",
+    "description": null
+  }
+}
+]

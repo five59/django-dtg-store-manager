@@ -1,0 +1,2412 @@
+[
+{
+  "model": "vendor_printful.country",
+  "pk": "00201f05-24b9-489d-9b42-db344038d3f4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PS",
+    "name": "Palestinian Territory, Occupied"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "006229e4-34bb-49f0-91d5-cb2364e6c597",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ZW",
+    "name": "Zimbabwe"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "010e1223-2ec8-4beb-a515-2a4da45932f0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ZM",
+    "name": "Zambia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "034e67e3-f223-4cef-872d-7cdd0e890d20",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DE",
+    "name": "Germany"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "061fbe76-a71b-43cf-a708-1307375db011",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NA",
+    "name": "Namibia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "069448fb-5263-4663-a5c2-a19e662d64e3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PH",
+    "name": "Philippines"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "06ac5f6b-312f-4b8d-ac37-d1aee6bf52fc",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MP",
+    "name": "Northern Mariana Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "07342737-4ef2-4441-861b-1cb66a751555",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SL",
+    "name": "Sierra Leone"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "076efae9-dccd-4e0c-881f-cff732644343",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GN",
+    "name": "Guinea"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "0883ae2b-0e35-4051-8a58-2d7fd6c9e4e4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PT",
+    "name": "Portugal"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "0a297998-e563-4be9-adc8-4be634ce2d10",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LI",
+    "name": "Liechtenstein"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "0a4e9287-d429-4dcd-9652-21cddabcb1a1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IT",
+    "name": "Italy"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "0c8c10ac-6789-495c-9d53-95a738b7dd04",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KN",
+    "name": "Saint Kitts and Nevis"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "0dbd211c-9f10-4b54-8112-b9f159043c32",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "UA",
+    "name": "Ukraine"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "101af05c-680c-4b74-ba2d-6ef6483147ff",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CN",
+    "name": "China"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "10e8242a-3a0f-44ac-ba8f-01eb30a87893",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NF",
+    "name": "Norfolk Island"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "126a24c9-da04-4438-ad33-53f6d2213e61",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VC",
+    "name": "Saint Vincent and the Grenadines"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "143ab0ea-2870-4041-9946-48fe026d281a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HR",
+    "name": "Croatia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "155209a8-25c7-48c4-b035-8113c28faf09",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "US",
+    "name": "United States"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "172ead41-c2ef-4f2c-8bf0-944a83217a38",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TK",
+    "name": "Tokelau"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "182780e5-1526-4894-a93a-57f148a29130",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MY",
+    "name": "Malaysia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "183c9b4f-401c-484e-977d-c3d511ea61bd",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PF",
+    "name": "French Polynesia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1917ec72-3447-4215-94b1-e2162d15c572",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CV",
+    "name": "Cape Verde"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1aed7e17-ceb9-416f-a8d9-d5a9c78edc9a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "JM",
+    "name": "Jamaica"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1ca0bb55-fd5c-4cea-8bf7-bb396fd23765",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SD",
+    "name": "Sudan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1e967d56-d29e-4a38-a67b-5b62f56f8db1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LB",
+    "name": "Lebanon"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1ec0ac32-e8b4-4f7d-be1d-629bdff8dcb7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GG",
+    "name": "Guernsey"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "1ef00946-f673-4fa6-b397-013b4870f1bb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "WF",
+    "name": "Wallis and Futuna"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "21cdbb26-f73b-415e-9cb9-1220e6cc21a7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HU",
+    "name": "Hungary"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "22abe042-96cd-42f3-aeb5-e5bf7dd40541",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "UG",
+    "name": "Uganda"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2508a6ed-f0d9-4b93-aeb3-5f416f7e2391",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FM",
+    "name": "Micronesia, Federated States of"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "25243201-372b-4fb2-b9a4-fca10e761383",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "RO",
+    "name": "Romania"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "25af8e59-7f53-45f5-91d8-a84837332e39",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AL",
+    "name": "Albania"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "26646df3-a742-402c-aa59-902328eba5f5",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "EH",
+    "name": "Western Sahara"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "275d92bd-f440-4bd5-9fad-1b2bc803e3e2",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KP",
+    "name": "Korea, Democratic People's Republic of"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "29f24f6b-9a15-4793-bae8-c33f000083e2",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KG",
+    "name": "Kyrgyzstan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2a4a5ed6-0316-4268-a3bd-5b9f34e968e6",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VE",
+    "name": "Venezuela"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2b19cd87-b5f9-4fc7-8fd3-afeda048996b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GU",
+    "name": "Guam"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2bacccb8-ee73-4b67-a216-68338a028a49",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AM",
+    "name": "Armenia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2c5929a4-5d12-4fd0-b669-55730272adb1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BH",
+    "name": "Bahrain"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "2c726825-d599-4095-a43c-e9f56b3dcbf6",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BJ",
+    "name": "Benin"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "30974e31-05d6-4bd3-8198-d3cc1bac8437",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LU",
+    "name": "Luxembourg"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "31244e67-e57a-4516-8740-29f4c80f7312",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ER",
+    "name": "Eritrea"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "31b7f801-34f8-48de-b27a-ae7efdb72c96",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "EC",
+    "name": "Ecuador"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "31ede47e-cb16-48b6-bcc4-4f351c804fd4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GA",
+    "name": "Gabon"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "321c068b-ca7a-4d3a-8315-1ee9129cac01",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CX",
+    "name": "Christmas Island"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "327bedf8-3e4b-4124-b0e5-3e060ef4d417",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IS",
+    "name": "Iceland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3282f882-b452-47d0-a548-1a0b367de3c3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GW",
+    "name": "Guinea-Bissau"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "33fabfa4-3cb5-44a6-9207-90192f6a0914",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ML",
+    "name": "Mali"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "346d5550-4ecc-4c4b-86fa-cb40938f080d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TN",
+    "name": "Tunisia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "355c1b99-73f5-4b75-a5bd-a399dc27b013",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GT",
+    "name": "Guatemala"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3604032d-bd1f-40ff-93c3-0bc3ac7012f0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "JO",
+    "name": "Jordan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3604433e-07f8-4fc6-9b52-444139466035",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VG",
+    "name": "Virgin Islands, British"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3626e4a7-851b-4fcf-9c95-67e175662da3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LR",
+    "name": "Liberia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "364a700e-4f67-4e3b-9961-868ead4d1d3b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ME",
+    "name": "Montenegro"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "36c1a378-60a6-46db-805d-885814aa45fc",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NR",
+    "name": "Nauru"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "38534a83-4cf5-4aa2-85e0-76200d12b22b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "WS",
+    "name": "Samoa"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "393b93f2-4a15-4c6f-b7cc-39ad7c3ac70c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "QA",
+    "name": "Qatar"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3c133b84-788d-4321-8291-14625478ff9b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PN",
+    "name": "Pitcairn"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3d3c0c59-a588-4832-822b-ae5634f75281",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CD",
+    "name": "Congo, the Democratic Republic of the"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3dbadc67-3680-4f1c-93cc-e5e7e66e67d8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TM",
+    "name": "Turkmenistan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3df47b6f-5db1-400f-b42a-743aa690e69b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FO",
+    "name": "Faroe Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3e4267b7-d238-4cd4-90da-9f925cc2a977",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AF",
+    "name": "Afghanistan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3e9c88c8-3f3f-4555-80e1-3cd70a77fca3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NP",
+    "name": "Nepal"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3eb2adfc-a920-436e-93ed-f688925fbeb1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LY",
+    "name": "Libyan Arab Jamahiriya"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3f38b230-cd8f-4463-ac2f-8f4b3ec7ac19",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AW",
+    "name": "Aruba"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3f48e8f8-d11b-4862-a89c-9fef604fcc3d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CL",
+    "name": "Chile"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "3f4a563b-58dc-45ae-aa12-6cfea5910d9e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ES",
+    "name": "Spain"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4012c3c7-abfb-4222-af80-249f321b9fbf",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "YT",
+    "name": "Mayotte"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4020dd41-c020-4301-8500-682e9ee420b6",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AU",
+    "name": "Australia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "40b300cd-075d-4deb-a148-51b2cb4b42b7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TF",
+    "name": "French Southern Territories"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "414adc3e-6cb4-4016-aee8-e702e1799221",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PY",
+    "name": "Paraguay"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "415bb3d4-b3e4-4ddd-b274-e82d77ee8d3f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BS",
+    "name": "Bahamas"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "41e3f62f-b2f9-49db-9cea-caf08b498e93",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "OM",
+    "name": "Oman"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "42204f0f-1782-4653-9bb6-63ade48f1d6d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HM",
+    "name": "Heard Island and Mcdonald Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "42c9d8b7-abc2-4998-b152-aca4224a0146",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "RE",
+    "name": "Reunion"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "43a34623-9b81-4a66-bce3-536baeee0437",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KY",
+    "name": "Cayman Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4472f54c-80ae-4a53-a8cb-59a454779cab",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KW",
+    "name": "Kuwait"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "456990e4-5cc9-4526-9453-29d3169fedbc",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GQ",
+    "name": "Equatorial Guinea"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "47b1301a-de3f-4898-8b8f-cc70b6c03136",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BB",
+    "name": "Barbados"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "47ff2401-ffe7-4767-9f4c-fc182a72aa16",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HT",
+    "name": "Haiti"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4980f1c1-04e1-453b-83ba-e647b9a9384e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DJ",
+    "name": "Djibouti"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4a214101-7eb5-4df6-ab36-3d033846c7cb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LK",
+    "name": "Sri Lanka"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4abcf200-dfc3-4ce4-8306-02b32f2d2882",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PL",
+    "name": "Poland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4bf93018-5951-4510-aaeb-a3cf18eafeb9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BZ",
+    "name": "Belize"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4c76931b-3e46-450e-bb9b-48733f5e86ad",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AD",
+    "name": "Andorra"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4cf9d941-72aa-47cc-906b-84e669b91064",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "JP",
+    "name": "Japan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4d33cc4b-b10a-4b42-b7e8-d090288e1089",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GB",
+    "name": "United Kingdom"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4d345ec1-ea2a-4915-bfa6-8213ce32b15d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TL",
+    "name": "Timor-Leste"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4f56a503-b9cf-4cd5-833b-016e1eb89a99",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NI",
+    "name": "Nicaragua"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "4fe18835-9911-4a67-8fe7-3889075e7d97",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IQ",
+    "name": "Iraq"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "51e7d9e6-7777-42be-b223-50996a517634",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GF",
+    "name": "French Guiana"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "52659f21-7c5d-47b3-bb41-4f3267197d1c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VA",
+    "name": "Vatican City"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "52ebdc62-1bd7-4431-bab8-e194b2965083",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SA",
+    "name": "Saudi Arabia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "54a80578-4016-4cdf-8782-69dbf55edd05",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IO",
+    "name": "British Indian Ocean Territory"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "54b43a5f-ebad-4f56-9433-b35005b89a6c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MH",
+    "name": "Marshall Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "576818b7-5f0b-49bb-b195-0bf25eaf8def",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NO",
+    "name": "Norway"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "58d46f7b-d6da-4c99-b942-22b67ac1b6f8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SR",
+    "name": "Suriname"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "59afb76f-04ef-4bea-9709-3c027565da1e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AZ",
+    "name": "Azerbaijan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "59b21550-960b-4e13-88da-12a39c826284",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GR",
+    "name": "Greece"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "59c505aa-0ff3-4a56-8141-fc9b2121fdeb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GS",
+    "name": "South Georgia and the South Sandwich Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "5aa3ab45-e162-40ff-b5ae-86f6c7ad5777",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PM",
+    "name": "Saint Pierre and Miquelon"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "5f7d522e-2e81-401a-9d8d-d72ce7c90864",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SI",
+    "name": "Slovenia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "5fe078ae-fad8-410f-8005-6304b532b4c9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TG",
+    "name": "Togo"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6181496d-23fe-4e84-8a0a-1add56419de3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BI",
+    "name": "Burundi"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6298789c-9f00-4709-98ef-24cace92666d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NZ",
+    "name": "New Zealand"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "64236b10-05a3-444f-bc65-30a998c2130d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TO",
+    "name": "Tonga"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "64b9b4a5-020a-4194-9287-17ac02b116f4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MG",
+    "name": "Madagascar"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "650314bd-d926-4f18-95ca-b1637bae87e8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TJ",
+    "name": "Tajikistan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "681a3759-2c1c-4b92-8151-cf37e9ba61e3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CG",
+    "name": "Congo"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "686d4fcb-4fdf-48a4-b1a4-c1be7831ef51",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "EE",
+    "name": "Estonia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "692e8e4b-5109-42c2-bf08-81929d323bae",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MX",
+    "name": "Mexico"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6aed567a-6e5c-4c63-a155-0dbc72950af9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "UM",
+    "name": "United States Minor Outlying Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6cb055c0-5573-4ef8-b9d9-b675dcc76323",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MU",
+    "name": "Mauritius"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6cd29fd8-de43-4708-b4ab-8bb5deb852c3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DK",
+    "name": "Denmark"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6da9d28c-06a8-4494-84c6-f0e79fe3f45a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AS",
+    "name": "American Samoa"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6eb7a42a-bfee-42ec-8baf-3672ba57ebb8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MW",
+    "name": "Malawi"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "6fa9504c-b41a-4d5f-b751-58d10b29a8b3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GE",
+    "name": "Georgia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "70149fe2-3968-4276-9c57-42657d198ad0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SY",
+    "name": "Syrian Arab Republic"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7037935b-e899-40c3-a39f-db848e96f3c9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "UZ",
+    "name": "Uzbekistan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "720fb228-3cb9-4fe6-9ec0-5567fd1b21eb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VN",
+    "name": "Vietnam"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "737d8820-80a8-458f-83e2-f61c520c637b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CR",
+    "name": "Costa Rica"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "73e21fa3-80a3-4889-b12d-0b4e5bda64b8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KZ",
+    "name": "Kazakhstan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "74accdc0-96b7-4add-9bfa-c62ba9110d35",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NC",
+    "name": "New Caledonia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7522aa3b-c382-4c90-93d4-4c038db5a3b4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LS",
+    "name": "Lesotho"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "77f61c4c-71a4-4c83-ae1b-2a31a1067df9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PW",
+    "name": "Palau"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7829adfc-402c-41c9-87af-9f0d20251a40",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CW",
+    "name": "Curacao"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "792de320-f3fe-4934-9737-ae0d865fd31b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MT",
+    "name": "Malta"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7959fe57-f50e-4fb2-bce4-72d60d6efdd9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SV",
+    "name": "El Salvador"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "79932563-0b9a-4b79-8658-0a372de0f110",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CF",
+    "name": "Central African Republic"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7a2bb9e7-d20c-457c-a538-1fa1fcf2a94b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GI",
+    "name": "Gibraltar"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7daa9535-a615-41ea-b424-93180978a603",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AT",
+    "name": "Austria"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "7e807cc0-979b-4aae-951a-3f96dbe9fb14",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "RU",
+    "name": "Russian Federation"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "80a7c916-a139-4543-af5a-1c974bf2baeb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MO",
+    "name": "Macao"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "822a9d24-ebdc-4170-a561-6d86e26d4a16",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GH",
+    "name": "Ghana"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "84826507-09e7-426a-92c2-5b258fd5da12",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ET",
+    "name": "Ethiopia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "84d8738c-b0be-4b93-956a-374353f42447",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NL",
+    "name": "Netherlands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "84feda31-33a5-4ace-b27c-59d9dfd6c901",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CZ",
+    "name": "Czech Republic"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "888fdc7a-2589-46b1-86c9-5d58bf8dfe1d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CK",
+    "name": "Cook Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "8970950e-c806-4e5d-9727-5c26104c4f8a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MC",
+    "name": "Monaco"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "8c85f797-5bc8-479d-86b1-ad6a7233b5b4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PA",
+    "name": "Panama"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "8f21c606-c931-4c7b-b707-ba6d6abfa65b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DM",
+    "name": "Dominica"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "8f8c46b3-9033-42c5-b6d3-d40de4e62610",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VI",
+    "name": "Virgin Islands, U.s."
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "8fb52d2c-0daf-4b46-ae83-a0b44f45fb86",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CM",
+    "name": "Cameroon"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "90603a2f-22ba-4386-b3f9-a19caea9e14c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FI",
+    "name": "Finland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "9091bf4f-3717-4790-a47d-08f0736624c1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BN",
+    "name": "Brunei Darussalam"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "939e257a-341b-4152-b9b7-2eafe61564df",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ZA",
+    "name": "South Africa"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "961ab394-57fc-4cc9-ace2-4bb3055d72fc",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HK",
+    "name": "Hong Kong"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "9632a4f4-f6b9-4f79-a45f-c8355ca8a1bd",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SK",
+    "name": "Slovakia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "96d23d1c-a211-4e34-802d-098e6537e660",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DZ",
+    "name": "Algeria"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "96e1e55b-828e-4e9e-9bdf-b54cf144f463",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BT",
+    "name": "Bhutan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "979a452e-7a48-4fa6-9c10-c628f17440a0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SM",
+    "name": "San Marino"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "994da358-6eb8-4d07-b9aa-bcfc4ad82fc3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ID",
+    "name": "Indonesia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "99c19a96-44d1-46e1-a256-5ed0dd1c9cfb",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LA",
+    "name": "Lao People's Democratic Republic"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "99eef4e9-df61-4bce-843f-bedf382ae3cf",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GL",
+    "name": "Greenland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "9a58643d-4eda-43b4-a18a-5080b70de8a0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PR",
+    "name": "Puerto Rico"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "9bfb7b02-c3a0-4711-bd88-99ac33efc43e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "VU",
+    "name": "Vanuatu"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "9c1e10c3-5d57-44aa-9495-84ff19101982",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TR",
+    "name": "Turkey"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a0333c6a-ea71-4405-ba3f-a4333f221862",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AG",
+    "name": "Antigua and Barbuda"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a17f96d6-34a2-4cdd-a63d-0cd636b1ac3a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MD",
+    "name": "Moldova, Republic of"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a2697ddb-5277-4791-952b-29a0794ded5a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PK",
+    "name": "Pakistan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a35e8e84-9457-414f-b5ab-01deba904bf9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TW",
+    "name": "Taiwan"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a494857f-7889-4373-8c09-09be24299f3f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SJ",
+    "name": "Svalbard and Jan Mayen"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a66b97c8-9323-4b09-b922-25779382c60a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IE",
+    "name": "Ireland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a6914bf8-3c08-41de-a496-c7ebf8856296",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NE",
+    "name": "Niger"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a694ca39-d785-4c2f-950d-1640d46259fa",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BR",
+    "name": "Brazil"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a836d0f3-678f-493f-8dc6-af8ee3dcd89e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MS",
+    "name": "Montserrat"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "a89ca653-8d15-4f7e-b7bc-221b3ee4e9a3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AE",
+    "name": "United Arab Emirates"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "aa20d049-f962-45b9-a0b1-e658370239b0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MR",
+    "name": "Mauritania"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ab011e36-3201-4af2-86ea-9f4343bf49a8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SO",
+    "name": "Somalia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ab227a01-a4e4-4b60-9a5c-d9b5f2adff7b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MQ",
+    "name": "Martinique"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "acc6cb05-4411-45af-a914-7bd2dd3d9e2c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MZ",
+    "name": "Mozambique"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ad286bab-14c7-41ab-860b-c48bd7af9199",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GM",
+    "name": "Gambia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ae491009-e3d0-43d6-abdd-bc8b51eefb76",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BM",
+    "name": "Bermuda"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "af72f6c1-43ef-49a2-bf45-b693db79a04f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SN",
+    "name": "Senegal"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "b07c4321-56ec-43cd-ab69-78ccea6671af",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BA",
+    "name": "Bosnia and Herzegovina"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "b145ab5f-08e0-4680-a414-5732b4cba575",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SB",
+    "name": "Solomon Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "b6cae234-7910-4dac-bcf8-3ea3cfbd10d2",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SC",
+    "name": "Seychelles"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ba8dd87b-9d8e-49cc-a32c-2c4453fd9f30",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "UY",
+    "name": "Uruguay"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "bac789c5-ffed-4d87-8b10-bf9c772dcf47",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MK",
+    "name": "Macedonia, the Former Yugoslav Republic of"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "bae06369-5d7e-40bb-be81-163a9d2349b0",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CC",
+    "name": "Cocos (Keeling) Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "bb37d1d3-ff1a-4b37-91a0-0c74ecdd5e0a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FJ",
+    "name": "Fiji"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c083c252-d912-4063-881c-c856cd5e7b83",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SZ",
+    "name": "Swaziland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c1bebbe7-cba5-438d-bde2-952e59911ca7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CI",
+    "name": "Cote D'Ivoire"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c442193c-dc93-4265-bf4b-37f9e9ee9b68",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AR",
+    "name": "Argentina"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c60401d0-9bd4-4bd8-8bdb-3f9cb5ee7caa",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GD",
+    "name": "Grenada"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c70fbf35-8d0b-4cf0-9d62-3252ff360b41",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "RS",
+    "name": "Serbia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c71ad8e8-1e0b-49f1-b9d7-a0282bc4407f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FR",
+    "name": "France"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c7d83be4-b2e4-4a1b-9443-64439693dc95",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AI",
+    "name": "Anguilla"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c8e37b1a-8928-403d-a875-dc6b57573870",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CY",
+    "name": "Cyprus"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "c9915e0d-9d02-465b-8dca-16849ba63bcf",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NU",
+    "name": "Niue"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ca4b36f2-7af2-4ba7-94dd-0e417ec4690d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "HN",
+    "name": "Honduras"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d378f695-bcb9-4e8f-be3f-ad6475ae88e7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CO",
+    "name": "Colombia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d49793b8-b896-4c6f-a857-9f8cc409edc4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KM",
+    "name": "Comoros"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d4e5d8ec-4543-4e4b-9007-b6a56cfabfda",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CH",
+    "name": "Switzerland"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d4e7bd6a-ab1c-42d0-abb1-cf358ab2445e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "DO",
+    "name": "Dominican Republic"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d4eb9052-6d01-45f0-a829-353c3ffc1bc3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BD",
+    "name": "Bangladesh"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d4ee0821-8324-4c9b-ac7a-097eb6a91d81",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MV",
+    "name": "Maldives"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d63d30b4-db23-4235-9acc-282f88d048c7",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TZ",
+    "name": "Tanzania"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d6663d3b-d3fc-44b9-9619-343345934fa9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MA",
+    "name": "Morocco"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d688caa8-48be-4cb1-8cb4-c09c3c28b153",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TD",
+    "name": "Chad"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d736597b-1078-4af3-8972-b4ae07f3bb5c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GP",
+    "name": "Guadeloupe"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d7a6d216-aeac-4c7e-945a-448f8f27fee8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "ST",
+    "name": "Sao Tome and Principe"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d804c7aa-c72d-4b1f-87c8-17feec51de63",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SG",
+    "name": "Singapore"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d8316aea-ba68-4871-8996-a352eec4c481",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LT",
+    "name": "Lithuania"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d8acfeb6-5430-4e90-937a-999f47f351b8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SH",
+    "name": "Saint Helena"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d90a64e3-2fb1-45a3-9ee4-1410454e2c28",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TV",
+    "name": "Tuvalu"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d9134a66-e7f5-4e5d-b90d-3da11c89b499",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KI",
+    "name": "Kiribati"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d913843f-e5d1-4956-a2b6-2fd3d7d632ea",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BF",
+    "name": "Burkina Faso"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "d993cfd7-f894-49cd-b5c0-716474edd913",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BW",
+    "name": "Botswana"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "da9c2adf-daca-457a-b5e9-530fe090dfb4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PE",
+    "name": "Peru"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "db080134-cb35-4f5a-9d16-2ac1fa14168e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KE",
+    "name": "Kenya"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "dca514cb-ce62-43e7-a61e-391fb16e56b5",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "FK",
+    "name": "Falkland Islands (Malvinas)"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ddc2603c-414e-4c53-a40a-da57efbe0291",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "SE",
+    "name": "Sweden"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "de44bb84-4362-4e22-b36e-a616b9d58b65",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TH",
+    "name": "Thailand"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "decb2392-377f-4bb3-95f1-6af5a2cdf8a3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AO",
+    "name": "Angola"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e1adad0b-d409-45dc-a79c-b43d5a2587cf",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LC",
+    "name": "Saint Lucia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e1e98100-f4e8-4e26-a074-d23fa68a2051",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "YE",
+    "name": "Yemen"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e2a80bf3-c0f3-4372-955a-24956482e3b8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TC",
+    "name": "Turks and Caicos Islands"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e611868c-a885-4576-8b02-e263596ca876",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "NG",
+    "name": "Nigeria"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e66f2616-a7bc-4ed3-995a-f265a098193d",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IN",
+    "name": "India"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e755fa25-f33f-48a9-aa4e-7c5f2e327f1b",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AN",
+    "name": "Netherlands Antilles"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e91f9cf6-2dd4-4c2b-a27a-4e55d98fa183",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KH",
+    "name": "Cambodia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "e9dcd667-ab4f-4731-a80e-bf9f995aaa1a",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BG",
+    "name": "Bulgaria"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ebcb5d67-7f1c-4f19-bf78-0a39f361bfc6",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BV",
+    "name": "Bouvet Island"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ef89d468-834a-43fb-8903-3f1f8464d14e",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MF",
+    "name": "Sint Maarten"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "efadf558-509e-4ba9-bde7-e60a4d1ece0f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "AQ",
+    "name": "Antarctica"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f0067e4e-a715-4809-bbcd-8d2a8bc8042f",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MM",
+    "name": "Myanmar"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f17a4c6e-d745-445e-8a77-af78b0d548d5",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "IL",
+    "name": "Israel"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f1ad79f5-fde3-442c-acc1-d20954b89569",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "KR",
+    "name": "Korea, Republic of"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f2bd12d5-5cda-4e8b-8ecd-b67443f20809",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BY",
+    "name": "Belarus"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f33b3eda-05ad-4777-9857-9a33bc86f2c8",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BE",
+    "name": "Belgium"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f4d859c0-fe84-4cc8-8bb1-91c048c25524",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "PG",
+    "name": "Papua New Guinea"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f5f53724-5b84-4128-9d0a-e14c07f601bd",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "EG",
+    "name": "Egypt"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f643e6d2-ef8d-4601-875a-933d8ac986c3",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "CA",
+    "name": "Canada"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f76a9e3c-db26-42eb-bfb5-98542ce090e4",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "LV",
+    "name": "Latvia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f87ed007-9235-4774-84dd-8e4c371b4329",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "BO",
+    "name": "Bolivia"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "f9e82da2-6a14-43ad-b7b6-3ec8edf2c222",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "GY",
+    "name": "Guyana"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "fb6d8c9d-e79e-4ba2-ac06-1d4984302fe1",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "RW",
+    "name": "Rwanda"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "fe5bda39-78a9-46b3-9732-5b08dc26f92c",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "TT",
+    "name": "Trinidad and Tobago"
+  }
+},
+{
+  "model": "vendor_printful.country",
+  "pk": "ffd0992b-179e-40c9-8a8a-75de75a715b9",
+  "fields": {
+    "date_added": "2017-02-09T11:59:57.984Z",
+    "date_updated": "2017-02-09T11:59:58.017Z",
+    "code": "MN",
+    "name": "Mongolia"
+  }
+}
+]
