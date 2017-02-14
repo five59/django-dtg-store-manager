@@ -8,7 +8,9 @@ I created this tool to allow me to make it easier to see all of my options for d
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+(Currently being rewritten.)
+
+<!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 
 ### Prerequisites
@@ -59,7 +61,7 @@ Something you'll find is that there are "depreciated" products mixed in. You can
 >>> for p in Product.objects.filter(name__contains='depreciated'):
 ...     p.localproductgroup = lpg
 ...     p.save()
-```
+``` -->
 
 ## Built With
 
@@ -70,7 +72,7 @@ Something you'll find is that there are "depreciated" products mixed in. You can
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/printaura-api-wrapper/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/559labs/django-dtg-store-manager/tags).
 
 
 ## Authors
