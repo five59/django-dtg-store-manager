@@ -89,5 +89,5 @@ This open source software is licensed under the **Apache License 2.0** (see [LIC
 
 ## Acknowledgments
 
-* [Print Aura](http://www.printaura.com/)
-* [The Printful](http://theprintful.com/)
+* [WooCommerce](http://woocommerce.com/)
+* [Printful](http://printful.com/)
