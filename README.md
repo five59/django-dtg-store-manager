@@ -8,9 +8,8 @@ I created this tool to allow me to make it easier to see all of my options for d
 
 ## Getting Started
 
-(Currently being rewritten.)
 
-<!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 
 ### Prerequisites
@@ -25,16 +24,18 @@ I created this tool to allow me to make it easier to see all of my options for d
 Clone the repository.
 
 #### Step 2
-Build "web" first. This will install all the packages required using `pip` (these are listed in the [requirements.txt](./web/requirements.txt) file in case you're interested). This will probably take a little bit of time.
+Build the images. This will install all the packages required using `pip` (these are listed in the [requirements.txt](./web/requirements.txt) file in case you're interested). This will probably take a little bit of time.
 ```
-$ docker-compose build web
+$ docker-compose build
 ```
 
 #### Step 3
-Now, you're ready to bring everything up:
+Now, you're ready to bring everything up. I prefer to do this when developing:
+
 ```
 $ docker-compose up -d ; docker-compose logs -f
 ```
+It brings the images up and disconnects. It then gives a live stream of the logs in a separate process so that if you break out of it (ctrl-C), it doesn't kill the machines as well. If you've not downloaded the PostgreSQL image before, it will take a little time to download it before starting everything up.
 
 #### Step 4
 In another terminal window, run the following:
@@ -50,18 +51,8 @@ This will set up the database and then create a super user (I've left this as an
 If all has gone well, you should now be able to visit your site at:  ```http://localhost:8015/``` and the admin interface at ```http://localhost:8015/admin```
 
 #### Step 6
-You might notice that no products show up on the public side. This is by design. I wanted the ability to organize products into my own categories (since sometimes the Print Aura products are categorized in odd ways). In the admin interface, simply create **Local Product Groups** and then assign **Products** to them. These will now show up in the public UI.
+You might notice that no products show up on the public side. You need to create a "Store" under Vendor:Printful and connect to it with your API keys.
 
-
-## Depreciated Products
-Something you'll find is that there are "depreciated" products mixed in. You can move them to their own group with the following snippet in the interactive shell:
-```
->>> lpg = LocalProductGroup(name="Depreciated", slug='depreciated')
->>> lpg.save()
->>> for p in Product.objects.filter(name__contains='depreciated'):
-...     p.localproductgroup = lpg
-...     p.save()
-``` -->
 
 ## Built With
 
