@@ -22,4 +22,14 @@ urlpatterns = [
     url(r'^manufactureritem/(?P<id>[^/]+)/$',
         views.ManufacturerItem_detail, name='ManufacturerItem_detail'),
 
+    url(r'^manufacturervariant/$', views.ManufacturerVariant_list, name='ManufacturerVariant_list'),
+
+    url(r'^manufacturervariant/(?P<manufacturercode>[^/]+)/$',
+        views.ManufacturerVariant_list, name='ManufacturerVariant_list'),
+
+    url(r'^manufactureritem-export.txt$',
+        views.ManufacturerItem_export, name='ManufacturerItem_export'), #
+
+    url(r'^manufacturervariant/(?P<manufacturercode>[^/]+)/(?P<brandcode>[^/]+)/$',
+        views.ManufacturerVariant_list, name='ManufacturerVariant_list'),
 ]

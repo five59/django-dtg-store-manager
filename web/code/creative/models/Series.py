@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
 from creative import models as c
+from outlet_woo import models as wm
 
 
 class Series(models.Model):
@@ -21,6 +22,26 @@ class Series(models.Model):
 
     def get_designs(self):
         return c.Design.objects.filter(series=self)
+
+    def has_live_designs(self):
+        if c.Design.objects.filter(series=self, status=c.Design.STATUS_LIVE).count() > 0:
+            return True
+        return False
+    has_live_designs.short_description = "Live"
+    has_live_designs.boolean = True
+
+    def has_live_product(self, shopobj=None):
+        if shopobj:
+            rv = wm.Product.objects.filter(shop=shopobj, design__series=self, status=wm.Product.STATUS_PUBLISH).count()
+        else:
+            rv = wm.Product.objects.filter(design__series=self, status=wm.Product.STATUS_PUBLISH).count()
+        if rv > 0:
+            return True
+        return False
+
+    has_live_product.short_description = "Live Product?"
+    has_live_product.boolean = True
+
 
     def num_designs(self):
         return c.Design.objects.filter(series=self).count()

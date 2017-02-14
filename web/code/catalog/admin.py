@@ -45,8 +45,8 @@ class ItemVariantInline(admin.TabularInline):
 class ManufacturerVariantInline(admin.TabularInline):
     model = ManufacturerVariant
     extra = 0
-    fields = ['code', 'color', 'size', 'base_price', ]
-    readonly_fields = ['code', 'color', 'size', 'base_price', ]
+    fields = ['code', 'product', 'color', 'size', 'base_price', ]
+    readonly_fields = ['code', 'product', 'color', 'size', 'base_price', ]
     suit_classes = 'suit-tab suit-tab-ManufacturerVariant'
     ordering = ['size', 'color', ]
 
@@ -94,6 +94,8 @@ class ManufacturerAdmin(admin.ModelAdmin):
     suit_form_tabs = (
         ('info', _('Info')),
     )
+
+
 admin.site.register(Manufacturer, ManufacturerAdmin)
 
 
@@ -115,13 +117,17 @@ class CategoryAdmin(DraggableMPTTAdmin):
         ('info', _("Info")),
         ('products', _("Items")),
     )
-    inlines = (ItemInline, )
+    inlines = (ItemInline,)
+
+
 admin.site.register(Category, CategoryAdmin)
 
 
 class GoogleCategoryAdmin(admin.ModelAdmin):
     search_fields = ['code', 'name', ]
-    inlines = (ItemInlineForGoogle, )
+    inlines = (ItemInlineForGoogle,)
+
+
 admin.site.register(GoogleCategory, GoogleCategoryAdmin)
 
 
@@ -186,6 +192,8 @@ class ColorAdmin(admin.ModelAdmin):
         ('info', _('Info')),
         ('color', _('Color')),
     )
+
+
 admin.site.register(Color, ColorAdmin)
 
 
@@ -193,6 +201,8 @@ class SizeAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'grouping', 'sortorder', ]
     list_filter = ['grouping', ]
     list_editable = ['code', 'sortorder', ]
+
+
 admin.site.register(Size, SizeAdmin)
 
 
@@ -228,19 +238,24 @@ class BrandAdmin(admin.ModelAdmin):
         ('media', _('Media & Web')),
         ('products', _('Items'))
     )
+
+
 admin.site.register(Brand, BrandAdmin)
 
 
 class ItemAdmin(admin.ModelAdmin):
     list_display = [
         'code', 'name',
-        'brand', 'num_vendors',
+        'brand',
+        'default_retail',
+        'get_manufacturer_price_range',
+        'num_vendors',
         'category', 'googlecategory',
         'has_image',
         'age_group', 'gender', 'size_type',
         'product_label_type',
     ]
-    list_editable = ['category', ]
+    # list_editable = ['category', ]
     search_fields = ['name', 'code', ]
     inlines = (ItemVariantInline,)
     list_filter = (
@@ -255,29 +270,30 @@ class ItemAdmin(admin.ModelAdmin):
     form = ItemForm
     fieldsets = [
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info', ),
+            'classes': ('suit-tab', 'suit-tab-info',),
             'fields': [
                 'code',
                 'brand',
                 'name',
                 'product_label_type',
+                'default_retail',
             ],
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-info', 'full-width', ),
+            'classes': ('suit-tab', 'suit-tab-info', 'full-width',),
             'fields': [
                 'description',
             ],
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-categorization', ),
+            'classes': ('suit-tab', 'suit-tab-categorization',),
             'fields': [
                 'category',
                 'googlecategory',
             ],
         }),
         ("Metadata", {
-            'classes': ('suit-tab', 'suit-tab-categorization', ),
+            'classes': ('suit-tab', 'suit-tab-categorization',),
             'fields': [
                 'age_group',
                 'gender',
@@ -287,21 +303,21 @@ class ItemAdmin(admin.ModelAdmin):
             ],
         }),
         ("Sizing", {
-            'classes': ('suit-tab', 'suit-tab-categorization', ),
+            'classes': ('suit-tab', 'suit-tab-categorization',),
             'fields': [
                 'size_type',
                 'size_system',
             ],
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-media', ),
+            'classes': ('suit-tab', 'suit-tab-media',),
             'fields': [
                 'link',
                 'mobile_link',
             ],
         }),
         (None, {
-            'classes': ('suit-tab', 'suit-tab-media', ),
+            'classes': ('suit-tab', 'suit-tab-media',),
             'fields': [
                 'image',
                 'additional_image',
@@ -315,6 +331,8 @@ class ItemAdmin(admin.ModelAdmin):
         ('itemvariants', _("Variants"))
 
     )
+
+
 admin.site.register(Item, ItemAdmin)
 
 
@@ -338,6 +356,8 @@ class ItemVariantAdmin(admin.ModelAdmin):
     suit_form_tabs = (
         ('info', _('Info')),
     )
+
+
 admin.site.register(ItemVariant, ItemVariantAdmin)
 
 
@@ -348,6 +368,8 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
         'name',
         'item',
         'manufacturer',
+        'get_price_range',
+        'get_master_category',
         'num_variants', 'num_colors', 'num_sizes',
         'category',
     )
@@ -356,7 +378,13 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
     inlines = (ManufacturerItemFileInline,
                ManufacturerItemDimensionInline, ManufacturerVariantInline,)
     list_filter = ['manufacturer', 'brand', 'category', ]
-    readonly_fields = ('dt_added', 'dt_updated',)
+    readonly_fields = ('dt_added', 'dt_updated',
+                       'get_price_range',
+                       # 'get_profit_str',
+                       # 'get_profit_margin',
+                       # 'get_profit_coupon10_str',
+                       # 'get_profit_margin_coupon10',
+                       )
     fieldsets = [
         (None, {
             'classes': ('suit-tab', 'suit-tab-info',),
@@ -374,12 +402,26 @@ class ManufacturerItemAdmin(admin.ModelAdmin):
             'classes': ('suit-tab', 'suit-tab-info',),
             'fields': ['is_active', 'dt_added', 'dt_updated', ],
         }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-money',),
+            'fields': [
+                'get_price_range',
+                # 'get_profit_str', 'get_profit_margin',
+            ],
+        }),
+        # ("10% Coupon", {
+        #     'classes': ('suit-tab', 'suit-tab-money',),
+        #     'fields': ['get_profit_coupon10_str', 'get_profit_margin_coupon10', ],
+        # }),
     ]
     suit_form_tabs = (
         ('info', _('Info')),
         ('specs', _('Specs')),
+        ('money', _('Money')),
         ('ManufacturerVariant', _('Manufacturer Variants')),
     )
+
+
 admin.site.register(ManufacturerItem, ManufacturerItemAdmin)
 
 
@@ -389,11 +431,13 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
         # 'name',
         'manufacturer',
         'product',
+        'weight',
+        'shippingclass',
         'size',
         'color',
         'color_obj',
     )
-    list_filter = ('product', 'manufacturer', 'size', 'color',)
+    list_filter = ('product', 'manufacturer', 'shippingclass', 'size', 'color',)
     search_fields = ('name', 'code',)
     readonly_fields = ('dt_added', 'dt_updated',)
     fieldsets = [
@@ -413,33 +457,35 @@ class ManufacturerVariantAdmin(admin.ModelAdmin):
             'classes': ('suit-tab', 'suit-tab-categorization',),
             'fields': ['is_active', 'dt_added', 'dt_updated', ],
         }),
-        ("Domestic - US", {
-            'classes': ('suit-tab', 'suit-tab-shipping'),
-            'fields': [
-                'shipping_us',
-                'shipping_us_addl',
-            ]
-        }),
-        ("Canada", {
-            'classes': ('suit-tab', 'suit-tab-shipping'),
-            'fields': [
-                'shipping_ca',
-                'shipping_ca_addl',
-            ]
-        }),
-        ("Worldwide", {
-            'classes': ('suit-tab', 'suit-tab-shipping'),
-            'fields': [
-                'shipping_ww',
-                'shipping_ww_addl',
-            ]
-        }),
+        # ("Domestic - US", {
+        #     'classes': ('suit-tab', 'suit-tab-shipping'),
+        #     'fields': [
+        #         'shipping_us',
+        #         'shipping_us_addl',
+        #     ]
+        # }),
+        # ("Canada", {
+        #     'classes': ('suit-tab', 'suit-tab-shipping'),
+        #     'fields': [
+        #         'shipping_ca',
+        #         'shipping_ca_addl',
+        #     ]
+        # }),
+        # ("Worldwide", {
+        #     'classes': ('suit-tab', 'suit-tab-shipping'),
+        #     'fields': [
+        #         'shipping_ww',
+        #         'shipping_ww_addl',
+        #     ]
+        # }),
     ]
     suit_form_tabs = (
         ('basic', _('Basic')),
         ('categorization', _('Categorization')),
         ('shipping', _('Shipping')),
     )
+
+
 admin.site.register(ManufacturerVariant, ManufacturerVariantAdmin)
 
 
@@ -450,11 +496,14 @@ class ManufacturerItemDimensionAdmin(admin.ModelAdmin):
         ('manufacturer_item', admin.RelatedOnlyFieldListFilter),
     ]
 
+
 admin.site.register(ManufacturerItemDimension, ManufacturerItemDimensionAdmin)
 
 
 class ManufacturerItemFileAdmin(admin.ModelAdmin):
     pass
+
+
 admin.site.register(ManufacturerItemFile, ManufacturerItemFileAdmin)
 
 
@@ -462,8 +511,48 @@ class ManufacturerFileLibraryItemAdmin(admin.ModelAdmin):
     list_display = [
         'manufacturer', 'code', 'name',
         'filename', 'get_resolution_string',
-                    'width', 'height', 'dpi',
-                    'status', 'visible',
+        'width', 'height', 'dpi',
+        'status', 'visible',
     ]
-    list_filter = ['manufacturer', 'status', 'visible', 'dpi', ]
+    list_filter = ['manufacturer', 'status', 'name', 'visible', 'dpi', ]
+    search_fields = ['filename', ]
+
+
 admin.site.register(ManufacturerFileLibraryItem, ManufacturerFileLibraryItemAdmin)
+
+
+class ShippingClassAdmin(admin.ModelAdmin):
+    list_display = [
+        'manufacturer',
+        'code', 'name',
+        'num_items',
+        'us_item1', 'ca_item1', 'ww_item1',
+        'us_addl', 'ca_addl', 'ww_addl',
+    ]
+    # list_editable = ['code','name',]
+    inlines = (ManufacturerVariantInline,)
+
+    list_filter = ('manufacturer',)
+    search_fields = ('name', 'code', 'us_item1',)
+    # readonly_fields = ('dt_added', 'dt_updated',)
+    fieldsets = [
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-basic',),
+            'fields': ['code', 'name', ]
+        }),
+        ("First Item", {
+            'classes': ('suit-tab', 'suit-tab-basic',),
+            'fields': ['us_item1', 'ca_item1', 'ww_item1', ]
+        }),
+        ("Additional Item", {
+            'classes': ('suit-tab', 'suit-tab-basic',),
+            'fields': ['us_addl', 'ca_addl', 'ww_addl', ]
+        }),
+    ]
+    suit_form_tabs = (
+        ('basic', _('Basic')),
+        ('ManufacturerVariant', _('Items')),
+    )
+
+
+admin.site.register(ShippingClass, ShippingClassAdmin)

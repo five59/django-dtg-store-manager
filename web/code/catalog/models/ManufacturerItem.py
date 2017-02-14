@@ -12,6 +12,7 @@ import tempfile
 from django.core import files
 import os
 from colour import Color as libColor
+from decimal import *
 
 
 class ManufacturerItem(models.Model):
@@ -62,6 +63,12 @@ class ManufacturerItem(models.Model):
     #     sorted(sortedcolors, key=lambda color: self._colorstep(sortedcolors, 8))
     #     return sortedcolors
 
+    def get_master_category(self):
+        if self.item:
+            return self.item.category
+        return None
+    get_master_category.short_description = "Master Category"
+
     def num_colors(self):
         return c.ManufacturerVariant.objects.filter(product=self).order_by('color').values('color').distinct().count()
     num_colors.short_description = "Colors"
@@ -82,9 +89,17 @@ class ManufacturerItem(models.Model):
     def get_sizes(self):
         return c.ManufacturerVariant.objects.filter(product=self).order_by('size').values('size').distinct()
 
+    def get_variants(self):
+        return c.ManufacturerVariant.objects.filter(product=self)
+    get_variants.short_description = "Variants"
+
     def num_variants(self):
-        return c.ManufacturerVariant.objects.filter(product=self).count()
+        return self.get_variants().count()
     num_variants.short_description = "Variants"
+
+    def get_price_min(self):
+        rv = c.ManufacturerVariant.objects.filter(product=self).aggregate(Min('base_price'))
+        return rv['base_price__min']
 
     def get_price_range(self):
         val = c.ManufacturerVariant.objects.filter(
@@ -92,8 +107,46 @@ class ManufacturerItem(models.Model):
         if val['base_price__max'] == val['base_price__min']:
             return locale.currency(val['base_price__min'])
         return "{} to {}".format(locale.currency(val['base_price__min']), locale.currency(val['base_price__max']))
+    get_price_range.short_description = 'Price Range'
+
+    # def get_profit(self):
+    #     rv = self.item.default_retail - self.get_price_min()
+    #     return rv
+    # get_profit.short_description = 'Profit'
+    #
+    # def get_profit_str(self):
+    #     return'${:,.2f}'.format(self.get_profit())
+    # get_profit_str.short_description = 'Profit'
+    #
+    # def get_profit_margin(self):
+    #     rv = self.get_profit() / self.item.default_retail
+    #     return "{0:.0f}%".format(rv*100)
+    # get_profit_margin.short_description = 'Margin'
+    #
+    # def get_profit_coupon10(self):
+    #     rv = self.get_profit() - (
+    #         self.item.default_retail * Decimal('0.1')
+    #     )
+    #     return rv
+    # get_profit_coupon10.short_description="10% Coupon Profit"
+    #
+    # def get_profit_coupon10_str(self):
+    #     return '${:,.2f}'.format(self.get_profit_coupon10())
+    # get_profit_coupon10_str.short_description = '10% Coupon Profit'
+    #
+    # def get_edc_coupon10(self):
+    #     rv = self.item.default_retail * Decimal('0.1')
+    #     return '${:,.2f}'.format(rv)
+    # get_edc_coupon10.short_description = 'Effective Discount 10%'
+    #
+    # def get_profit_margin_coupon10(self):
+    #     rv = self.get_profit_coupon10() / self.item.default_retail
+    #     return "{0:.0f}%".format(rv * 100)
+    # get_profit_margin_coupon10.short_description='10% Coupon Margin'
 
     def __str__(self):
+        if self.item:
+            return "{}".format(self.item)
         if self.code and self.name:
             return "{} / {}".format(self.code, self.name)
         if self.name:
@@ -109,11 +162,12 @@ class ManufacturerItem(models.Model):
                     if request.status_code == requests.codes.ok:
                         path = urllib.parse.urlparse(self.image_url).path
                         ext = os.path.splitext(path)[1]
-                        file_name = "{}/{}/{}/{}{}".format(
+                        file_name = "mfg_item/{}/{}/{}{}".format(
                             self.item.brand.code,
                             self.item.code,
                             self.manufacturer.code,
-                            ext)
+                            ext
+                        )
                         lf = tempfile.NamedTemporaryFile()
                         for block in request.iter_content(1024 * 8):
                             if not block:

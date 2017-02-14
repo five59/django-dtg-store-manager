@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
 from creative import models as c
+from outlet_woo import models as wm
 
 
 class Design(models.Model):
@@ -22,13 +23,16 @@ class Design(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    series = models.ForeignKey(c.Series, null=True, blank=True)
-    artist = models.ForeignKey(c.Artist, null=True, blank=True)
+    series = models.ForeignKey('creative.Series', null=True, blank=True)
+    artist = models.ForeignKey('creative.Artist', null=True, blank=True)
     status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=1,
                               default=STATUS_NEW, null=True, blank=True)
     note = models.TextField(_("Note"), null=True, blank=True)
     description = models.TextField(_("Description"), null=True, blank=True, help_text=_(
         "This will appear in the customer-facing product listing."))
+
+    reference_url = models.URLField(_("Reference URL"), null=True, blank=True)
+    reference_note = models.CharField(_("Reference Note"), null=True, blank=True, max_length=4000)
 
     def status_tag(self):
         # return self.status
@@ -65,6 +69,17 @@ class Design(models.Model):
     def num_products(self):
         from outlet_woo.models import Product as WooProduct
         return WooProduct.objects.filter(design=self).count()
+
+    def has_live_product(self, shopobj=None):
+        if shopobj:
+            rv = wm.Product.objects.filter(shop=shopobj, design=self, status=self.STATUS_LIVE).count()
+        else:
+            rv = wm.Product.objects.filter(design=self, status=self.STATUS_LIVE).count()
+        if rv > 0:
+            return True
+        return False
+    has_live_product.short_description = "Live Product?"
+    has_live_product.boolean = True
 
     def __str__(self):
         rv = ""

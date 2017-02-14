@@ -5,6 +5,7 @@ from .GoogleCategory import GoogleCategory
 from .Color import Color
 from .Size import Size
 from .Brand import Brand
+from .ShippingClass import ShippingClass
 
 from .Item import Item
 from .ItemVariant import ItemVariant
@@ -14,3 +15,4 @@ from .ManufacturerItemFile import ManufacturerItemFile
 from .ManufacturerItemDimension import ManufacturerItemDimension
 from .ManufacturerVariant import ManufacturerVariant
 from .ManufacturerFileLibraryItem import ManufacturerFileLibraryItem
+

@@ -1,0 +1,41 @@
+{% extends 'common/base.html' %}
+{% load bootstrap3 humanize catalog_tags %}
+
+{% block bootstrap3_title %}
+  {% block title %}Store Manager / Manufacturer Variant Items{% endblock %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for v in mv %}
+        <div class="col-3">
+            <div class="card text-center">
+                <img class="card-img-top img-fluid" src="{{ v.image_url }}" alt="{{ v.product.item.name }}" />
+                <div class="card-block">
+                    <h4 class="card-title">{{ v.product.item.brand.code }}
+                    {{ v.product.item.code }} / {{ v.color_obj.name }}</h4>
+                    <p class="card-text">
+                        {{ v.product.item.name }}<br />
+                        {{  v.product.get_price_range }} / ${{ v.product.item.default_retail }}
+                    </p>
+                </div>
+            </div>
+        </div>
+            {% if forloop.counter|divisibleby:4 %}</div><div class="row">{% endif %}
+        {% endfor %}
+    </div>
+
+
+
+    <style>
+    h4 { font-size: 1.25em; }
+    body { font-size: 0.75em; }
+    .card { margin-bottom: 2em; }
+{#    @media print { div.col-2 {#}
+{#        page-break-inside: avoid;#}
+{#        display: inline-block;#}
+{#        vertical-align: top;#}
+{#        width: 100%;#}
+{#    }  }#}
+    </style>
+{% endblock %}

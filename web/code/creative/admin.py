@@ -33,7 +33,7 @@ class DesignInline(admin.TabularInline):
         'code',
         'note',
     ]
-    readonly_fields = ['name', 'code', ]
+    readonly_fields = ['name', 'code', 'note', ]
     suit_classes = 'suit-tab suit-tab-design'
 
 
@@ -100,8 +100,8 @@ admin.site.register(Series, SeriesAdmin)
 
 
 class ArtistAdmin(admin.ModelAdmin):
-    list_display = ['code', 'name', 'location']
-    list_filter = ['location', ]
+    list_display = ['code', 'name', 'location', 'has_agreement']
+    list_filter = ['location', 'has_agreement', ]
     inlines = (DesignInline, SeriesInline,)
     form = ArtistForm
     fieldsets = [
@@ -173,7 +173,7 @@ class DesignAdmin(admin.ModelAdmin):
     #     'status',
     # ]
     list_filter = [
-        'series', 'status'
+        'series', 'status', 'artist',
     ]
     form = DesignForm
     fieldsets = [
@@ -186,15 +186,29 @@ class DesignAdmin(admin.ModelAdmin):
                 'status',
             ]
         }),
+        ("Reference/Inspiration", {
+            'classes': ('suit-tab', 'suit-tab-info'),
+            'fields': [
+                'reference_url',
+                'reference_note',
+            ]
+        }),
         (None, {
             'classes': ('suit-tab', 'suit-tab-description', 'full-width',),
             'fields': [
                 'description',
             ]
         }),
+        (None, {
+            'classes': ('suit-tab', 'suit-tab-note', 'full-width',),
+            'fields': [
+                'note',
+            ]
+        }),
     ]
     suit_form_tabs = (
         ('info', _("Info")),
+        ('note', _("Note")),
         ('description', _("Description")),
     )
 admin.site.register(Design, DesignAdmin)

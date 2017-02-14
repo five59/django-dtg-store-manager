@@ -2,65 +2,152 @@
 {% load bootstrap3 humanize catalog_tags %}
 
 {% block bootstrap3_title %}
-  {% block title %}Store Manager / Manufacturer Items{% endblock %}
+    {% block title %}Store Manager / Manufacturer Items{% endblock %}
 {% endblock %}
 
 {% block content %}
-  {% for c in categories %}
-    {% if c.num_items > 0 %}
-      <div class="row">
-        <div class="col-md-12">
-          <h2>{% for ca in c.get_ancestors %}{{ ca }} / {% endfor %}{{ c }} <small>({{ c.num_items }})</small></h2>
+    <style>
+        .majorhead {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+        }
+
+        .dim {
+            color: rgb(127, 127, 127);
+        }
+
+        .thumbnorm {
+            max-height: 200px;
+            max-width: 200px;
+        }
+
+        .productsep {
+            border-bottom: 1px dotted rgb(127, 127, 127);
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+        }
+    </style>
+
+    <nav class="navbar fixed-top navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        {% for c in categories %}
+                            {% if c.num_items > 0 %}
+                                <a class="dropdown-item" data-toggle="tab" href="#section-{{ c.id }}"
+                                   role="tab">
+                                    {% for ca in c.get_ancestors %}{{ ca.name }} &raquo; {% endfor %}{{ c.name }}
+                                    ({{ c.num_items }})</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
         </div>
-      </div>
+    </nav>
 
-      {% for item in c.get_items %}
 
-        {% if item.num_vendors > 0 %}
-        <div class="row">
-          <h4>
-            {{ item.name }}
-            <small>{{ item.brand.name }} {{item.code }}</small>
-          </h4>
-        </div>
-        <div class="row" style="margin-bottom: 1em;">
-          <div class='col-md-3'>
-            {% if item.image %}
-            <img src="{{ item.image.url }}" alt="..." class="img-thumbnail" />
-            {% endif %}
-          </div>
-          <div class="col-md-9">
+    <div class="tab-content" style="margin-top: 75px;">
+        {% for c in categories %}
 
-            {% for mi in item.get_vendors %}
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title"><a href="{% url 'ManufacturerItem_detail' mi.id %}">{{ mi.manufacturer.name }}</a></h3>
-                {{ mi.get_price_range }}
-                {% if mi.num_variants > 1 %}
-                {% if mi.num_colors > 1 %}/ {{ mi.num_colors|apnumber|title }} Colors{% endif %}
-                {% if mi.num_sizes > 1 %}/ {{ mi.num_sizes|apnumber|title }} Sizes{% endif %}
-                ({{ mi.num_variants|apnumber|title }} Variants)
+
+            <div class="tab-pane" id="section-{{ c.id }}" role="tabpanel">
+
+                {% if c.num_items > 0 %}
+                    <div class="row mt-5 mb-3">
+                        <div class="col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">Categories</li>
+                                {% for ca in c.get_ancestors %}
+                                <li class="breadcrumb-item">{{ ca.name }}</li>
+                                {% endfor %}
+                                <li class="breadcrumb-item active">{{ c.name }}</li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    {% for item in c.get_items %}
+
+                        {% if item.num_vendors > 0 %}
+                            <div class="row productsep">
+                                <div class='col-12'>
+                                    {% if item.get_vendors %}
+                                        {% for mi in item.get_vendors %}
+                                            <div class="panel panel-default clearfix">
+                                                <div class="panel-heading">
+                                                    {% if item.image %}
+                                                        <div class="float-right ml-4">
+                                                            <img src="{{ item.image.url }}" alt="..."
+                                                                 class="img-thumbnail thumbnorm"/>
+                                                        </div>
+                                                    {% endif %}
+                                                    <h4>
+                                                        <a class="btn btn-outline-info btn-sm" role="button"
+                                                           href="{% url 'ManufacturerItem_detail' mi.id %}">{{ mi.manufacturer.code }}</a>
+                                                        {{ item.brand.code }} {{ item.code }}
+                                                        <small>{{ item.name }} ({{ item.brand.name }})</small>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="panel-body">
+
+                                                    Cost: {{ mi.get_price_range }}
+
+                                                    {% if item.default_retail %}
+                                                        / Retail: ${{ item.default_retail }}
+                                                        / 5%: ±${{ item.royaltycalc_5 }}
+                                                    {% endif %}
+
+                                                    {% if mi.num_variants > 0 %}
+                                                        / {{ mi.num_variants|apnumber|title }} Variants
+
+                                                        {% if mi.num_colors > 1 %}/ {{ mi.num_colors|apnumber|title }}
+                                                            Colors
+                                                        {% endif %}
+                                                        {% if mi.num_sizes > 1 %}/ {{ mi.num_sizes|apnumber|title }}
+                                                            Sizes
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                    {% if mi.num_sizes > 1 %} -
+                                                        {% for si in mi.get_sizes %}{{ si.size }}, {% endfor %}
+                                                    {% endif %}
+                                                    {% if mi.num_colors > 1 %}
+                                                        <div>
+                                                            {% for co in mi.get_colors %}
+                                                                {{ co|color_chip }}
+                                                            {% endfor %}
+
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+
+                                            </div>
+
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>No vendors found.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
-                {% if mi.num_sizes > 1 %}/ Sizes:
-                {% for si in mi.get_sizes %}{{ si.size }}, {% endfor %}
-                {% endif %}
-              </div>
-
-              <div class="panel-body">
-                {% if mi.num_colors > 1 %}
-                {% for co in mi.get_colors %}
-                {{ co|color_chip }}
-                {% endfor %}
-                {% endif %}
-              </div>
-
             </div>
+        {% endfor %}
+    </div>
 
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
 {% endblock %}

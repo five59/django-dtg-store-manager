@@ -59,7 +59,6 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'suit',
     'django.contrib.admin',
-
     'django.contrib.auth',
     'django.contrib.humanize',
     'django.contrib.contenttypes',
@@ -67,29 +66,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-
     'mptt',
     'django_mptt_admin',
-
     'suit_ckeditor',
     'timezone_field',
-
     'django_markup',
     'bootstrap3',
 
-    'catalog',
-    'creative',
-    'product',
+    # 'catalog',
+    # 'creative',
+    # 'product',
 
-    'outlet_woo',
+    'business',
 
-    'vendor_printaura',
+    'outlet_woocommerce',
+    # 'outlet_woo',
+
     'vendor_printful',
+    # 'vendor_printaura',
+    # 'api_gooten',
 
-    'api_gooten',
-
-    'app_care',
-    'app_shopfeeds',
+    # 'app_care',
+    # 'app_shopfeeds',
 ]
 
 SERIALIZATION_MODULES = {

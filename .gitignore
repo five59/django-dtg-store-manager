@@ -57,3 +57,8 @@ web/code/_fixtures/*.json
 db/dbrun/
 db/dblib/
 web/code/catalog.pdf
+web/code/_fixtures/
+web/code/_resources/
+web/code/__archived/
+site-packages/
+.idea/

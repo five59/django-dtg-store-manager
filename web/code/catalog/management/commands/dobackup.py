@@ -22,7 +22,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        ignored_apps = ['admin', 'sessions', 'contenttypes']
+        ignored_apps = ['admin', 'sessions', 'contenttypes', 'product', 'api_gooten']
 
         for applabel, appitem in apps.all_models.items():
             if not applabel in ignored_apps:
@@ -30,7 +30,7 @@ class Command(BaseCommand):
                     self.stdout.write(
                         "--> Exporting data from {}.{}...".format(applabel, model), ending='')
                     sysout = sys.stdout
-                    sys.stdout = open('/code/_fixtures/{}.{}.json'.format(applabel, model), 'w')
+                    sys.stdout = open('/code/_fixtures/{}/{}.json'.format(applabel, model), 'w')
                     result = management.call_command(dumpdata.Command(), "{}.{}".format(
                         applabel, model), indent=2, format='json')
                     sys.stdout = sysout

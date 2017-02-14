@@ -26,6 +26,7 @@ def color_chip(co):
         '</div><div class="color-chip__info">',
         '<div class="color-chip__info__title">{}</div></div></div>'.format(label)
     ])
+
     return mark_safe(rv)
 
 

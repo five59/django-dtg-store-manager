@@ -4,10 +4,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
+from django.db.models import Avg, Max, Min
+import locale
+from decimal import *
 # from .Brand import Brand
 # from .Category import Category
 # from .GoogleCategory import GoogleCategory
 from catalog import models as c
+
+
 # from .ManufacturerItem import ManufacturerItem
 # from .ManufacturerVariant import ManufacturerVariant
 
@@ -100,7 +105,8 @@ class Item(models.Model):
     pattern = models.CharField(_("Pattern"), max_length=100, default="",
                                blank=True, null=True, help_text="")
     country_origin = models.CharField(_("Country of Origin"), max_length=128, default="",
-                                      blank=True, null=True, help_text=_("This will be visible if using a custom label."))
+                                      blank=True, null=True,
+                                      help_text=_("This will be visible if using a custom label."))
     size_type = models.CharField(_("Size Type"), max_length=1,
                                  default=SIZETYPE_REGULAR, blank=True, choices=SIZETYPE_CHOICES)
     size_system = models.CharField(_("Size System"), max_length=3,
@@ -117,13 +123,14 @@ class Item(models.Model):
     image_width = models.CharField(_("Image Width"), default="0",
                                    max_length=10, blank=True, null=True)
     image = models.ImageField(_("Item Image"), upload_to="product",
-                              height_field="image_height", width_field="image_width", blank=True, null=True, help_text="")
+                              height_field="image_height", width_field="image_width", blank=True, null=True,
+                              help_text="")
 
     additional_image_height = models.CharField(
         _("Additional Image Height"), default="0", max_length=10)
     additional_image_width = models.CharField(
         _("Additional Image Width"), default="0", max_length=10)
-    additional_image = models.ImageField(_("Additional Image"),  upload_to="product_additional",
+    additional_image = models.ImageField(_("Additional Image"), upload_to="product_additional",
                                          height_field="additional_image_height", width_field="additional_image_width",
                                          blank=True, null=True, help_text="")
 
@@ -131,13 +138,38 @@ class Item(models.Model):
         _("Product Label Type"), default=LABEL_NONE, choices=LABEL_CHOICES
     )
 
+    default_retail = models.DecimalField(verbose_name="Retail", max_digits=10, decimal_places=2, default=0, blank=True,
+                                         null=True)
+
+    def royaltycalc_5(self):
+        if self.default_retail:
+            rv = self.default_retail * Decimal('0.05')
+            rv = round(rv, 2)
+            return rv
+        else:
+            return 0
+
     def num_vendors(self):
         return c.ManufacturerItem.objects.filter(item=self).count()
+
     num_vendors.short_description = "Vendor Count"
 
     def get_vendors(self):
         return c.ManufacturerItem.objects.filter(item=self)
+
     num_vendors.short_description = "Vendors"
+
+    def get_manufacturer_price_range(self):
+        val = c.ManufacturerVariant.objects.filter(product__item=self)
+        if len(val) > 0:
+            val = val.aggregate(Max('base_price'), Min('base_price'))
+            if val['base_price__max'] == val['base_price__min']:
+                return locale.currency(val['base_price__min'])
+            return "{} to {}".format(locale.currency(val['base_price__min']), locale.currency(val['base_price__max']))
+        else:
+            return "--na--"
+
+    get_manufacturer_price_range.short_description = 'Price Range'
 
     def get_manufactureritem_matrix(self):
         matrix = []
@@ -162,12 +194,14 @@ class Item(models.Model):
         if self.image:
             return True
         return False
+
     has_image.boolean = True
     has_image.short_description = "Image?"
 
     def get_item_code(self):
         rv = [
             self.brand.code if self.brand else "ZZ",
+            '-',
             self.code if self.code else "0000",
         ]
         return "".join(rv)
