@@ -40,7 +40,11 @@ admin.site.register(bzBrand, bzBrandAdmin)
 class bzProductAdmin(admin.ModelAdmin):
     list_display = ('code', 'name', 'bzDesign', 'bzLayout',
                     'pfProduct', 'wcProduct', 'num_pfvariants',)
-    list_filter = ('bzDesign', 'pfProduct', 'bzDesign__bzcreativecollection__bzbrand')
+    list_filter = (
+        ('bzDesign',  admin.RelatedOnlyFieldListFilter),
+        ('pfProduct',  admin.RelatedOnlyFieldListFilter),
+        ('bzDesign__bzcreativecollection__bzbrand',  admin.RelatedOnlyFieldListFilter),
+    )
     readonly_fields = ('code', 'num_pfvariants', 'get_pfvariants',)
     inlines = (bzProductVariantInline, )
     fieldsets = [
@@ -87,7 +91,11 @@ admin.site.register(bzProduct, bzProductAdmin)
 
 class bzProductVariantAdmin(admin.ModelAdmin):
     list_display = ("code", "is_active", 'bzproduct', 'pfcatalogvariant', 'get_color', 'get_size',)
-    list_filter = ('is_active', 'bzproduct', )
+    list_filter = ('is_active',
+                   ('bzproduct', admin.RelatedOnlyFieldListFilter),
+                   ('pfcatalogvariant__pfcolor', admin.RelatedOnlyFieldListFilter),
+                   ('pfcatalogvariant__pfsize', admin.RelatedOnlyFieldListFilter),
+                   )
     search_fields = ("code",)
 admin.site.register(bzProductVariant, bzProductVariantAdmin)
 

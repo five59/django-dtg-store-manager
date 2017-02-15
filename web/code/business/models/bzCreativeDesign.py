@@ -32,4 +32,4 @@ class bzCreativeDesign(models.Model):
     class Meta:
         verbose_name = _("Creative Design")
         verbose_name_plural = _("Creative Designs")
-        ordering = ["code", ]
+        ordering = ["bzcreativecollection__code", "code", ]

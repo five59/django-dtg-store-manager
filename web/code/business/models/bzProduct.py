@@ -5,6 +5,10 @@ from django_extensions.db import fields as extension_fields
 import uuid
 from vendor_printful.models.pfCatalogVariant import pfCatalogVariant
 from .bzProductVariant import bzProductVariant
+from .bzCreativeCollection import bzCreativeCollection
+from .bzCreativeLayout import bzCreativeLayout
+from .bzCreativeDesign import bzCreativeDesign
+from vendor_printful.models.pfCatalogProduct import pfCatalogProduct
 
 
 class bzProduct(models.Model):
@@ -12,7 +16,7 @@ class bzProduct(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
-    code = models.CharField(_("Code"), max_length=16, default="", blank=True, null=True)
+    code = models.CharField(_("Code"), max_length=64, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
     bzDesign = models.ForeignKey("business.bzCreativeDesign", verbose_name=_(
@@ -39,6 +43,7 @@ class bzProduct(models.Model):
 
     def _update_sku(self):
         sku = []
+        # First Group: Creative & Store
         if self.bzDesign.bzcreativecollection:
             sku.append(self.bzDesign.bzcreativecollection.code)
         else:
@@ -47,11 +52,22 @@ class bzProduct(models.Model):
             sku.append(self.bzDesign.code)
         else:
             sku.append("XX")
-        sku.append("-")
+        # -- Store (WooCommerce)
         if self.get_woostore():
             sku.append(self.get_woostore().code)
         else:
             sku.append("XX")
+        sku.append("-")
+
+        # Second Group: Product Construction
+        if self.pfProduct:
+            if self.pfProduct.pid:
+                sku.append("{num:04d}".format(num=int(self.pfProduct.pid)))
+            else:
+                sku.append("0000")
+        else:
+            sku.append("0000")
+
         if self.wcProduct:
             if self.wcProduct.wid:
                 sku.append("{num:05d}".format(num=int(self.wcProduct.wid)))
@@ -59,6 +75,7 @@ class bzProduct(models.Model):
                 sku.append("00000")
         else:
             sku.append("XXXXX")
+
         rv = "".join(sku)
         self.code = rv
 
@@ -76,7 +93,6 @@ class bzProduct(models.Model):
         except:
             rv = pfCatalogVariant.objects.none()
         return rv
-
     get_pfvariants.short_description = _("Variants")
 
     def num_pfvariants(self):
@@ -101,6 +117,27 @@ class bzProduct(models.Model):
                 "Created" if created else "Updated",
                 bzVariantObj.code,
             ))
+
+    def create_by_creativecollection(collection_code=None, layout_code=None, pfProduct_id=None, name_template="{}"):
+        bzCollectionObj = bzCreativeCollection.objects.get(code=collection_code)
+        bzLayoutObj = bzCreativeLayout.objects.get(
+            code=layout_code, bzcreativecollection=bzCollectionObj)
+        pfProductObj = pfCatalogProduct.objects.get(pid=pfProduct_id)
+        print(bzCollectionObj, bzLayoutObj, pfProductObj)
+
+        for d in bzCreativeDesign.objects.filter(bzcreativecollection=bzCollectionObj):
+            p = bzProduct.objects.create(
+                name=name_template.format(d.name),
+                bzDesign=d,
+                bzLayout=bzLayoutObj,
+                pfProduct=pfProductObj,
+            )
+            p.save()  # Need to save it so that the links get created.
+            for c in p.pfProduct.get_colors():
+                p.pfColors.add(c)
+            for s in p.pfProduct.get_sizes():
+                p.pfSizes.add(s)
+            p.save()
 
     def save(self, *args, **kwargs):
         # Set the Code (SKU Base)
