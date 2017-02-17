@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Business Module &mdash; Django DTG Store Manager 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Model Definitions" href="index.html"/>
+        <link rel="next" title="Outlet: WooCommerce Module" href="outlet_woocommerce.html"/>
+        <link rel="prev" title="Model Definitions" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../how-tos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Model Definitions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Business Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outlet_woocommerce.html">Outlet: WooCommerce Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_printful.html">Vendor: Printful Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Django DTG Store Manager</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Model Definitions</a> &raquo;</li>
+      
+    <li>Business Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/modules/business.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.models.bzBrand">
+<span id="business-module"></span><h1>Business Module<a class="headerlink" href="#module-business.models.bzBrand" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.models.bzBrand.bzBrand">
+<em class="property">class </em><code class="descclassname">business.models.bzBrand.</code><code class="descname">bzBrand</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzBrand.html#bzBrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzBrand.bzBrand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Links a <a href="#id1"><span class="problematic" id="id2">:model:`vendor_printful.pfStore`</span></a> with a <a href="#id3"><span class="problematic" id="id4">:model:`outlet_woocommerce.wooStore`</span></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-business.models.bzCreativeCollection"></span><dl class="class">
+<dt id="business.models.bzCreativeCollection.bzCreativeCollection">
+<em class="property">class </em><code class="descclassname">business.models.bzCreativeCollection.</code><code class="descname">bzCreativeCollection</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>code</em>, <em>name</em>, <em>bzbrand</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzCreativeCollection.html#bzCreativeCollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzCreativeCollection.bzCreativeCollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-business.models.bzCreativeDesign"></span><dl class="class">
+<dt id="business.models.bzCreativeDesign.bzCreativeDesign">
+<em class="property">class </em><code class="descclassname">business.models.bzCreativeDesign.</code><code class="descname">bzCreativeDesign</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>code</em>, <em>name</em>, <em>bzcreativecollection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzCreativeDesign.html#bzCreativeDesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzCreativeDesign.bzCreativeDesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-business.models.bzCreativeLayout"></span><dl class="class">
+<dt id="business.models.bzCreativeLayout.bzCreativeLayout">
+<em class="property">class </em><code class="descclassname">business.models.bzCreativeLayout.</code><code class="descname">bzCreativeLayout</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>code</em>, <em>name</em>, <em>bzcreativecollection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzCreativeLayout.html#bzCreativeLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzCreativeLayout.bzCreativeLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-business.models.bzCreativeRendering"></span><dl class="class">
+<dt id="business.models.bzCreativeRendering.bzCreativeRendering">
+<em class="property">class </em><code class="descclassname">business.models.bzCreativeRendering.</code><code class="descname">bzCreativeRendering</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>bzcreativedesign</em>, <em>bzcreativelayout</em>, <em>pfcatalogfilespec</em>, <em>pfprintfile</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzCreativeRendering.html#bzCreativeRendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzCreativeRendering.bzCreativeRendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-business.models.bzProduct"></span><dl class="class">
+<dt id="business.models.bzProduct.bzProduct">
+<em class="property">class </em><code class="descclassname">business.models.bzProduct.</code><code class="descname">bzProduct</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>code</em>, <em>name</em>, <em>bzDesign</em>, <em>bzLayout</em>, <em>pfProduct</em>, <em>wcProduct</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzProduct.html#bzProduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzProduct.bzProduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-business.models.bzProductVariant"></span><dl class="class">
+<dt id="business.models.bzProductVariant.bzProductVariant">
+<em class="property">class </em><code class="descclassname">business.models.bzProductVariant.</code><code class="descname">bzProductVariant</code><span class="sig-paren">(</span><em>id</em>, <em>date_added</em>, <em>date_updated</em>, <em>code</em>, <em>is_active</em>, <em>bzproduct</em>, <em>pfcatalogvariant</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/models/bzProductVariant.html#bzProductVariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.models.bzProductVariant.bzProductVariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="outlet_woocommerce.html" class="btn btn-neutral float-right" title="Outlet: WooCommerce Module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Model Definitions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, 559 Labs &lt;http://559labs.com/&gt;.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

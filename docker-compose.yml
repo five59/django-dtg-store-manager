@@ -17,7 +17,8 @@ services:
     # restart: always
     volumes:
       - ./web/code:/code
-      - ./site-packages:/usr/local/lib/python3.5/site-packages
+      - ./docs:/docs
+      # - ./site-packages:/usr/local/lib/python3.5/site-packages
     ports:
       - "8015:8015"
     depends_on:
@@ -30,4 +31,4 @@ volumes:
 networks:
   default:
     external:
-      name: dtgnet_default
+      name: dtgnet
