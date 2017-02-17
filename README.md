@@ -4,12 +4,10 @@ A Django/Python-based app that syncs DTG vendor APIs locally to provide tools an
 
 I created this tool to allow me to make it easier to see all of my options for designing dropship printing products through Print Aura and The Printful.
 
-*WARNING* The instructions below are outdated. Please use caution.
 
-## Getting Started
+## Getting Started / Documentation
 
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+See http://559labs.github.io/django-dtg-store-manager for documentation.
 
 
 ### Prerequisites
