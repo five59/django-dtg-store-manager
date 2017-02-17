@@ -26,6 +26,10 @@ sys.path.insert(0, os.path.abspath("/code"))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'store_manager.settings'
 django.setup()
 
+# sys.path.insert(0, os.path.abspath('/code'))
+# from django.conf import settings
+# settings.configure()
+
 
 # -- General configuration ------------------------------------------------
 
@@ -147,7 +151,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'DjangoDTGStoreManager.tex', 'Django DTG Store Manager Documentation',
-     'Andrew Marconi \\textless{}andrew@559labs.com\\textgreater{}', 'manual'),
+     'Andrew Marconi andrew@559labs.com', 'manual'),
 ]
 
 
