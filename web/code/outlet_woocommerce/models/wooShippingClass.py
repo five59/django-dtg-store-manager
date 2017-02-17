@@ -8,6 +8,9 @@ from django.core import files
 
 
 class wooShippingClass(models.Model):
+    """
+    Defines a product shipping class.
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     wid = models.CharField(_("Woo ID"), max_length=64, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -26,3 +29,18 @@ class wooShippingClass(models.Model):
         verbose_name = _("Shipping Class")
         verbose_name_plural = _("Shipping Classes")
         ordering = ["name", "wid", ]
+
+    def _api_create(self):
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_get(self):
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_listall(self):
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_delete(self):
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_batch(self):
+        raise NotImplementedError("Not Implemented (Yet)")
