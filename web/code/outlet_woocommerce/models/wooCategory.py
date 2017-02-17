@@ -8,7 +8,7 @@ from django.core import files
 from outlet_woocommerce.api import *
 
 
-class wooProductCategory(models.Model):
+class wooCategory(models.Model):
 
     DISPLAY_DEFAULT = 'default'
     DISPLAY_PRODUCTS = 'products'
@@ -60,7 +60,7 @@ class wooProductCategory(models.Model):
             return "{} - {}".format(self.wid, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed wooProductCategory")
+        return _("Unnamed wooCategory")
 
     class Meta:
         verbose_name = _("Product Category")

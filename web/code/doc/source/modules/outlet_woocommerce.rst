@@ -28,8 +28,8 @@ Outlet: WooCommerce Module
 .. automodule:: outlet_woocommerce.models.wooVariant
   :members:
 
-.. automodule:: outlet_woocommerce.models.wooMedia
+.. automodule:: outlet_woocommerce.models.wpMedia
   :members:
 
-.. automodule:: outlet_woocommerce.models.wooMediaSize
+.. automodule:: outlet_woocommerce.models.wpMediaSize
   :members:

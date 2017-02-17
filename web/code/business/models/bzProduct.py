@@ -3,12 +3,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
-from vendor_printful.models.pfCatalogVariant import pfCatalogVariant
+from decimal import *
 from .bzProductVariant import bzProductVariant
 from .bzCreativeCollection import bzCreativeCollection
 from .bzCreativeLayout import bzCreativeLayout
 from .bzCreativeDesign import bzCreativeDesign
 from vendor_printful.models.pfCatalogProduct import pfCatalogProduct
+from vendor_printful.models.pfCatalogVariant import pfCatalogVariant
+from outlet_woocommerce.models.wooProduct import wooProduct
+# from outlet_woocommerce.models.wooProductVariant import wooProductVariant
 
 
 class bzProduct(models.Model):
@@ -118,6 +121,39 @@ class bzProduct(models.Model):
                 bzVariantObj.code,
             ))
 
+    # def _update_wooProductVariants(self):
+    #     wooProductVariant.objects.filter(wooproduct=self.wooproduct).update(is_active=False)
+    #     for pfv in self.get_woovariants():
+    #         bzVariantObj, created = bzProductVariant.objects.update_or_create(
+    #             bzproduct=self,
+    #             pfcatalogvariant=pfv,
+    #             defaults={
+    #                 "is_active": True,
+    #             },
+    #         )
+    #         print("-- {} {}.".format(
+    #             "Created" if created else "Updated",
+    #             bzVariantObj.code,
+    #         ))
+
+    def _update_wooProduct(self):
+        if self.wcProduct:
+            self.wcProduct.name = self.name
+            self.wcProduct.type = wooProduct.TYPE_VARIABLE
+            self.wcProduct.catalog_visibility = wooProduct.VISIBILITY_VISIBLE
+            self.wcProduct.sku = self.code
+            self.wcProduct.regular_price = Decimal("0.00")  # TODO
+            self.wcProduct.save()
+
+        else:
+            self.wcProduct = wooProduct.objects.create(
+                name=self.name,
+                type=wooProduct.TYPE_VARIABLE,
+                catalog_visibility=wooProduct.VISIBILITY_VISIBLE,
+                sku=self.code,
+                regular_price=Decimal("0.00"),  # TODO
+            )
+
     def create_by_creativecollection(collection_code=None, layout_code=None, pfProduct_id=None, name_template="{}"):
         bzCollectionObj = bzCreativeCollection.objects.get(code=collection_code)
         bzLayoutObj = bzCreativeLayout.objects.get(
@@ -140,9 +176,8 @@ class bzProduct(models.Model):
             p.save()
 
     def save(self, *args, **kwargs):
-        # Set the Code (SKU Base)
         self._update_sku()
-        # self._update_wooProduct()
+        self._update_wooProduct()
         self._update_bzProductVariants()
         super(bzProduct, self).save(*args, **kwargs)
 

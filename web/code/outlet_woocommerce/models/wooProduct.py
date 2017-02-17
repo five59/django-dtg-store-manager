@@ -157,14 +157,18 @@ class wooProduct(models.Model):
     sold_individually = models.BooleanField(_("Sold Individually?"), help_text=_(
         "Allow one item to be bought in a single order. Default is false."), default=False)
 
+    dimension_length = models.DecimalField(_("Length"), max_digits=10, decimal_places=2, default=0)
+    dimension_width = models.DecimalField(_("Width"), max_digits=10, decimal_places=2, default=0)
+    dimension_height = models.DecimalField(_("Height"), max_digits=10, decimal_places=2, default=0)
     weight = models.DecimalField(_("Weight"), help_text=_("Product weight in decimal format."), max_digits=10, decimal_places=2,
                                  default=0)
     shipping_required = models.BooleanField(_("Requires Shipping?"), help_text=_(
         "READONLY. Shows if the product need to be shipped."), default=False)
     shipping_taxable = models.BooleanField(_("Taxable Shipping?"), help_text=_(
         "READONLY. Shows whether or not the product shipping is taxable."), default=False)
-    # TODO shipping_class
-    # TODO shipping_class_id
+
+    shipping_class = models.ForeignKey("outlet_woocommerce.wooShippingClass", null=True, blank=True)
+
     reviews_allowed = models.BooleanField(_("Reviewed Allowed?"), help_text=_(
         "Allow reviews. Default is true."), default=True)
     average_rating = models.CharField(
@@ -181,14 +185,18 @@ class wooProduct(models.Model):
         "Menu order, used to custom sort products."), default=0)
 
     # COLLECTIONS
+    categories = models.ManyToManyField(
+        "outlet_woocommerce.wooCategory", verbose_name=_("Categories"), blank=True)
+    tags = models.ManyToManyField("outlet_woocommerce.wooTag", verbose_name=_("Tags"), blank=True)
+    images = models.ManyToManyField("outlet_woocommerce.wooImage",
+                                    verbose_name=_("Images"), blank=True)
+    attributes = models.ManyToManyField(
+        "outlet_woocommerce.wooAttribute", verbose_name=_("Attributes"), related_name='attributes', blank=True)
+    default_attributes = models.ManyToManyField(
+        "outlet_woocommerce.wooAttribute", verbose_name=_("Default Attributes"), related_name='default_attributes', blank=True)
+    variations = models.ManyToManyField(
+        "outlet_woocommerce.wooVariant", verbose_name=_("Variations"), blank=True)
 
-    # TODO dimensions
-    # TODO categories
-    # TODO tags
-    # TODO images
-    # TODO attributes
-    # TODO default_attributes
-    # TODO variations
     # TODO related_ids
     # TODO upsell_ids
     # TODO cross_sell_ids
@@ -205,3 +213,125 @@ class wooProduct(models.Model):
         verbose_name = _("Product")
         verbose_name_plural = _("Products")
         ordering = ["name", "wid", ]
+
+    def _api_pull(data, store):
+        """
+        Adds a new or updates an existing wooProduct object.
+        """
+        obj, created = wooProduct.objects.update_or_create(
+            wid=data['id'],
+            store=store,
+            defaults={
+                "is_active": True,
+                # TODO
+                # "name": data['name'],
+                # "slug": data['slug'],
+                # "type": data['type'],
+                # "order_by": data['order_by'],
+                # "has_archives": data['has_archives'],
+            }
+        )
+        return obj
+
+    def api_push(self):
+        """
+        Pushes the object to the remote WooCommerce API. Handles switching
+        between Create and Update mode automatically.
+        """
+
+        variations = []
+        for v in wooProductVariant.objects.filter():
+            variations.append({
+                "regular_price": v.regular_price,
+                "image": [],  # TODO
+                "attributes": []  # TODO
+            })
+        data = {
+            "name": self.name,
+            "type": self.type,
+            "description": self.description,
+            "short_description": self.short_description,
+            "categories": [],  # TODO
+            "images": [],  # TODO
+            "attributes": [],  # TODO
+            "default_attributes": [],  # TODO
+            "variations": variations,
+        }
+        if self.wid:  # If has a remote ID, then we know it already exists.
+            self._api_update(data)
+        else:  # This doesn't exist remotely, so we can create it.
+            self._api_create(data)
+
+    # API Interface Methods
+    def api_pull_all(store, import_terms=True):
+        """
+        Pulls all data via the remote WooCommerce API related to products.
+        """
+        path = "wc/v1/products"
+        a = wcClient(store=store)
+        data = a.get(path)
+        wooProeduct.objects.filter(store=store).update(is_active=False)
+        while a.link_next:
+            for d in data:
+                attribObj = wooProduct._api_pull(d, store)
+                if import_terms:
+                    wooProductVariant.api_pull_all(store, attribObj)
+            if a.link_next:
+                res = a.get(data.link_next)
+        else:
+            for d in data:
+                attribObj = wooProduct._api_pull(d, store)
+                if import_terms:
+                    wooProductVariant.api_pull_all(store, attribObj)
+
+    def _api_create(self, data):
+        """
+        Method to call a remote store via the WooCommerce API that creates a new product.
+        """
+        method = "POST"
+        path = "wc/v1/products"
+        try:
+            a = wcClient(store=self.store)
+            data = a.post(path, data)
+        except Exception as e:
+            raise Exception(e)
+        print("Created")
+        self.wid = data['id']
+        self.save()
+
+    def _api_retrieve(self):
+        """
+        Method to call a remote store via the WooCommerce API that retrieves an existing product.
+        """
+        method = "GET"
+        path = "wc/v1/products/<id>"
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_update(self, data):
+        """
+        Method to call a remote store via the WooCommerce API that updates an existing product.
+        """
+        method = "PUT"
+        path = "wc/v1/products/" + str(self.wid)
+        try:
+            a = wcClient(store=self.store)
+            data = a.post(path, data)
+        except Exception as e:
+            raise Exception(e)
+        self.save()
+
+    def _api_delete(self):
+        """
+        Method to call a remote store via the WooCommerce API that deletes a product.
+        """
+        method = "DELETE"
+        path = "wc/v1/products/<id>"
+        raise NotImplementedError("Not Implemented (Yet)")
+
+    def _api_batch(data):
+        """
+        Method to call a remote store via the WooCommerce API that performs a batch edit (multiple edits at once).
+        """
+        method = 'POST'
+        path = "wc/v1/products/batch"
+        raise NotImplementedError("Not Implemented (Yet) ")

@@ -5,16 +5,16 @@ from django_extensions.db import fields as extension_fields
 from datetime import datetime
 from django.core import files
 
-from .wooProductAttribute import *
+from .wooAttribute import *
 from outlet_woocommerce.api import *
 
 
-class wooProductAttributeTerm(models.Model):
+class wooTerm(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     productattribute = models.ForeignKey(
-        "outlet_woocommerce.wooProductAttribute", verbose_name=_("Product Attribute"), blank=True, null=True)
+        "outlet_woocommerce.wooAttribute", verbose_name=_("Product Attribute"), blank=True, null=True)
     is_active = models.BooleanField(_("Is Active?"), default=True)
 
     wid = models.CharField(_("Woo ID"), max_length=16, default="", blank=True, null=True)
@@ -34,7 +34,7 @@ class wooProductAttributeTerm(models.Model):
             return "[{}] {}".format(self.wid, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed wooProductAttributeTerm")
+        return _("Unnamed wooTerm")
 
     class Meta:
         verbose_name = _("Product Attribute Term")
@@ -69,7 +69,7 @@ class wooProductAttributeTerm(models.Model):
             wr_color = ""
             wr_label = ""
 
-        obj, created = wooProductAttributeTerm.objects.update_or_create(
+        obj, created = wooTerm.objects.update_or_create(
             wid=data['id'],
             productattribute=attribute,
             defaults={
@@ -89,18 +89,18 @@ class wooProductAttributeTerm(models.Model):
         path = "wc/v1/products/attributes/{}/terms".format(attribute.wid)
         a = wcClient(store=store)
         data = a.get(path)
-        wooProductAttributeTerm.objects.filter(productattribute=attribute).update(is_active=False)
+        wooTerm.objects.filter(productattribute=attribute).update(is_active=False)
         while a.link_next:
             for d in data:
-                attribTermObj = wooProductAttributeTerm.api_pull(d, attribute)
+                attribTermObj = wooTerm.api_pull(d, attribute)
             if a.link_next:
                 res = a.get(data.link_next)
         else:
             for d in data:
-                attribTermObj = wooProductAttributeTerm.api_pull(d, attribute)
+                attribTermObj = wooTerm.api_pull(d, attribute)
 
     def push_family(attribute):
-        family = wooProductAttributeTerm.objects.filter(productattribute=attribute)
+        family = wooTerm.objects.filter(productattribute=attribute)
         if family:
             data = {
                 "create": [],
@@ -124,7 +124,7 @@ class wooProductAttributeTerm(models.Model):
                 else:
                     data['create'].append(datum)
 
-            wooProductAttributeTerm._api_batch(attribute, data)
+            wooTerm._api_batch(attribute, data)
 
     def _api_create(data):
         method = "POST"
@@ -159,7 +159,7 @@ class wooProductAttributeTerm(models.Model):
             a = wcClient(store=attribute.store)
             data = a.post(path, data)
             for d in data['create']:
-                wooProductAttributeTerm.objects.filter(
+                wooTerm.objects.filter(
                     name=d['name'], slug=d['slug']).update(
                         wid=d['id'], count=d['count'])
         except Exception as e:

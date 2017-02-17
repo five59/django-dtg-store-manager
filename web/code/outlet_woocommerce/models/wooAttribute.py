@@ -5,11 +5,11 @@ from django_extensions.db import fields as extension_fields
 from datetime import datetime
 from django.core import files
 
-from .wooProductAttributeTerm import *
+from .wooTerm import *
 from outlet_woocommerce.api import *
 
 
-class wooProductAttribute(models.Model):
+class wooAttribute(models.Model):
 
     TYPE_TEXT = "text"
     TYPE_COLORPICKER = "color picker"
@@ -54,7 +54,7 @@ class wooProductAttribute(models.Model):
             return "[{}] {}".format(self.wid, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed wooProductAttribute")
+        return _("Unnamed wooAttribute")
 
     class Meta:
         verbose_name = _("Product Attribute")
@@ -62,7 +62,7 @@ class wooProductAttribute(models.Model):
         ordering = ["store", "order_by", "name", ]
 
     def get_terms(self):
-        return wooProductAttributeTerm.objects.filter(productattribute=self)
+        return wooTerm.objects.filter(productattribute=self)
     get_terms.short_description = _("Terms")
 
     def num_terms(self):
@@ -71,7 +71,7 @@ class wooProductAttribute(models.Model):
 
     def _api_pull(data, store):
         # Adds or Updates an existing record
-        obj, created = wooProductAttribute.objects.update_or_create(
+        obj, created = wooAttribute.objects.update_or_create(
             wid=data['id'],
             store=store,
             defaults={
@@ -103,26 +103,26 @@ class wooProductAttribute(models.Model):
             self._api_create(data)
 
         if terms:
-            wooProductAttributeTerm.push_family(self)
+            wooTerm.push_family(self)
 
     # API Interface Methods
     def api_pull_all(store, import_terms=True):
         path = "wc/v1/products/attributes"
         a = wcClient(store=store)
         data = a.get(path)
-        wooProductAttribute.objects.filter(store=store).update(is_active=False)
+        wooAttribute.objects.filter(store=store).update(is_active=False)
         while a.link_next:
             for d in data:
-                attribObj = wooProductAttribute._api_pull(d, store)
+                attribObj = wooAttribute._api_pull(d, store)
                 if import_terms:
-                    wooProductAttributeTerm.api_pull_all(store, attribObj)
+                    wooTerm.api_pull_all(store, attribObj)
             if a.link_next:
                 res = a.get(data.link_next)
         else:
             for d in data:
-                attribObj = wooProductAttribute._api_pull(d, store)
+                attribObj = wooAttribute._api_pull(d, store)
                 if import_terms:
-                    wooProductAttributeTerm.api_pull_all(store, attribObj)
+                    wooTerm.api_pull_all(store, attribObj)
 
     def _api_create(self, data):
         method = "POST"

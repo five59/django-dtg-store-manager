@@ -6,8 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 # Inlines
 
 
-class wooProductAttributeTermInline(admin.TabularInline):
-    model = wooProductAttributeTerm
+class wooTermInline(admin.TabularInline):
+    model = wooTerm
     extra = 0
     can_delete = False
     fields = ("wid", "name", "menu_order", "count",)
@@ -228,7 +228,7 @@ class wooProductAdmin(admin.ModelAdmin):
 admin.site.register(wooProduct, wooProductAdmin)
 
 
-class wooProductAttributeAdmin(admin.ModelAdmin):
+class wooAttributeAdmin(admin.ModelAdmin):
     list_display = ("wid", "name", "slug", "type", "order_by",
                     "has_archives", "is_active", "store", "num_terms",
                     )
@@ -239,11 +239,11 @@ class wooProductAttributeAdmin(admin.ModelAdmin):
         "has_archives",
     )
     readonly_fields = ("wid", )
-    inlines = (wooProductAttributeTermInline,)
-admin.site.register(wooProductAttribute, wooProductAttributeAdmin)
+    inlines = (wooTermInline,)
+admin.site.register(wooAttribute, wooAttributeAdmin)
 
 
-class wooProductAttributeTermAdmin(admin.ModelAdmin):
+class wooTermAdmin(admin.ModelAdmin):
     list_display = ("wid", "name", "slug", "productattribute", "is_active",
                     "menu_order", "count", "get_store_code",
                     'wr_tooltip', 'wr_color', 'wr_label',
@@ -256,25 +256,25 @@ class wooProductAttributeTermAdmin(admin.ModelAdmin):
         'menu_order', 'wr_tooltip', 'wr_color', 'wr_label',
     )
     readonly_fields = ("wid", "count", "is_active", )
-admin.site.register(wooProductAttributeTerm, wooProductAttributeTermAdmin)
+admin.site.register(wooTerm, wooTermAdmin)
 
 
-class wooProductCategoryAdmin(admin.ModelAdmin):
+class wooCategoryAdmin(admin.ModelAdmin):
     list_display = ("wid", "name", "parent", "display", "image_id", "count", "is_active")
     list_filter = (
         ('store', admin.RelatedOnlyFieldListFilter),
     )
     readonly_fields = ("wid", "image_id", "count", )
-admin.site.register(wooProductCategory, wooProductCategoryAdmin)
+admin.site.register(wooCategory, wooCategoryAdmin)
 
 
-class wooProductTagAdmin(admin.ModelAdmin):
+class wooTagAdmin(admin.ModelAdmin):
     list_display = ("wid", "name", "slug", "count", "is_active")
     list_filter = (
         ('store', admin.RelatedOnlyFieldListFilter),
     )
     readonly_fields = ("wid", "count", )
-admin.site.register(wooProductTag, wooProductTagAdmin)
+admin.site.register(wooTag, wooTagAdmin)
 
 
 class wpMediaAdmin(admin.ModelAdmin):

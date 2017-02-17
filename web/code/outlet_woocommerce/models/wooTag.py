@@ -8,7 +8,7 @@ from django.core import files
 from outlet_woocommerce.api import *
 
 
-class wooProductTag(models.Model):
+class wooTag(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_added = models.DateTimeField(auto_now_add=True)
@@ -27,7 +27,7 @@ class wooProductTag(models.Model):
             return "{} - {}".format(self.wid, self.name)
         if self.name:
             return "{}".format(self.name)
-        return _("Unnamed wooProductTag")
+        return _("Unnamed wooTag")
 
     class Meta:
         verbose_name = _("Product Tag")
@@ -36,7 +36,7 @@ class wooProductTag(models.Model):
 
     def _api_pull(data, store):
         # Adds or Updates an existing record
-        obj, created = wooProductTag.objects.update_or_create(
+        obj, created = wooTag.objects.update_or_create(
             wid=data['id'],
             store=store,
             defaults={
@@ -69,15 +69,15 @@ class wooProductTag(models.Model):
         path = "wc/v1/products/tags"
         a = wcClient(store=store)
         data = a.get(path)
-        wooProductTag.objects.filter(store=store).update(is_active=False)
+        wooTag.objects.filter(store=store).update(is_active=False)
         while a.link_next:
             for d in data:
-                attribObj = wooProductTag._api_pull(d, store)
+                attribObj = wooTag._api_pull(d, store)
             if a.link_next:
                 res = a.get(data.link_next)
         else:
             for d in data:
-                attribObj = wooProductTag._api_pull(d, store)
+                attribObj = wooTag._api_pull(d, store)
 
     def _api_create(self, data):
         method = "POST"

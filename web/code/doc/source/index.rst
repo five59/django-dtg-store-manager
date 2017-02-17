@@ -23,3 +23,5 @@ Indices and tables
 * :ref:`search`
 
 .. autosummary::
+
+.. include:: /code/README.md
