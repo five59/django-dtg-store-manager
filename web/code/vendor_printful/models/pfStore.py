@@ -40,6 +40,10 @@ class pfStore(models.Model):
         ordering = ["name", "code", ]
 
     def sync_printful_products(self):
+        """
+        Syncs the Printful product library with the local database. Doesn't delete anything locally,
+        but instead flags it with the is_active attribute.
+        """
         from vendor_printful.api import pfClient
         if self.has_api_auth():
             a = pfClient(store=self)
@@ -48,6 +52,10 @@ class pfStore(models.Model):
             raise Exception("API Key not found for this store. Check the admin dashboard.")
 
     def sync_printful_printfiles(self):
+        """
+        Syncs the Printful file library for this particular store. Doesn't delete anything locally,
+        but instead flags it with the is_active attribute.
+        """
         from vendor_printful.api import pfClient
         if self.has_api_auth():
             a = pfClient(store=self)
@@ -56,6 +64,10 @@ class pfStore(models.Model):
             raise Exception("API Key not found for this store. Check the admin dashboard.")
 
     def sync_printful_syncproducts(self):
+        """
+        Syncs the 'syncproducts' between the store and the local database. These define how a particular
+        SKU should be produced.
+        """
         from vendor_printful.api import pfClient
         if self.has_api_auth():
             a = pfClient(store=self)
@@ -64,6 +76,9 @@ class pfStore(models.Model):
             raise Exception("API Key not found for this store. Check the admin dashboard.")
 
     def sync_printful_geos(self):
+        """
+        Syncs the pfState and pfCountry database tabales with the Printful API.
+        """
         from vendor_printful.api import pfClient
         if self.has_api_auth():
             a = pfClient(store=self)

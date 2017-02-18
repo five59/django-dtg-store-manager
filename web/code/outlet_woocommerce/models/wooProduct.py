@@ -191,7 +191,7 @@ class wooProduct(models.Model):
     images = models.ManyToManyField("outlet_woocommerce.wooImage",
                                     verbose_name=_("Images"), blank=True)
     attributes = models.ManyToManyField(
-        "outlet_woocommerce.wooAttribute", verbose_name=_("Attributes"), related_name='attributes', blank=True)
+        "outlet_woocommerce.wooAttribute", verbose_name=_("Attributes"), related_name='product_attributes', blank=True)
     default_attributes = models.ManyToManyField(
         "outlet_woocommerce.wooAttribute", verbose_name=_("Default Attributes"), related_name='default_attributes', blank=True)
     variations = models.ManyToManyField(

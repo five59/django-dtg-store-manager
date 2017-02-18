@@ -54,13 +54,15 @@ class pfCatalogColorAdmin(admin.ModelAdmin):
     list_display = ("label", "code", "label_clean", "hex_code",)
     readonly_fields = ("label", "hex_code",)
     list_editable = ("code", "label_clean", )
+    search_fields = ("label", "code", "label_clean", "hex_code",)
 admin.site.register(pfCatalogColor, pfCatalogColorAdmin)
 
 
 class pfCatalogFileSpecAdmin(admin.ModelAdmin):
     list_display = ('get_dimensions', 'name',
                     'width_in', 'height_in',
-                    'note', 'ratio', 'colorsystem',)
+                    # 'note',
+                    'ratio', 'colorsystem',)
     # list_editable = ('name',)
     list_filter = ('width_in', 'height_in')
 admin.site.register(pfCatalogFileSpec, pfCatalogFileSpecAdmin)
@@ -99,7 +101,7 @@ class pfCatalogSizeAdmin(admin.ModelAdmin):
     list_display = ("label", "code", "label_clean", "sort_group", "sort_order",)
     readonly_fields = ("label",)
     list_filter = ("sort_group",)
-    list_editable = ("code", "label_clean", "sort_order",)
+    # list_editable = ("code", "label_clean", "sort_order", "sort_group",)
 admin.site.register(pfCatalogSize, pfCatalogSizeAdmin)
 
 
