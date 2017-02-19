@@ -243,6 +243,11 @@ class wooAttributeAdmin(admin.ModelAdmin):
 admin.site.register(wooAttribute, wooAttributeAdmin)
 
 
+class wooImageAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(wooImage, wooImageAdmin)
+
+
 class wooTermAdmin(admin.ModelAdmin):
     list_display = ("wid", "name", "slug", "productattribute", "is_active",
                     "menu_order", "count", "get_store_code",
@@ -275,6 +280,11 @@ class wooTagAdmin(admin.ModelAdmin):
     )
     readonly_fields = ("wid", "count", )
 admin.site.register(wooTag, wooTagAdmin)
+
+
+class wooVariantAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(wooVariant, wooVariantAdmin)
 
 
 class wpMediaAdmin(admin.ModelAdmin):
