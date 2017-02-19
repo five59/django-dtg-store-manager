@@ -1,6 +1,8 @@
 Outlet: WooCommerce Module
 ==========================
 
+.. image:: mod_woo.png
+
 .. automodule:: outlet_woocommerce.models.wooAttribute
   :members:
 

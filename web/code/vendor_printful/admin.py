@@ -63,7 +63,7 @@ class pfCatalogFileSpecAdmin(admin.ModelAdmin):
                     'width_in', 'height_in',
                     # 'note',
                     'ratio', 'colorsystem',)
-    # list_editable = ('name',)
+    # list_editable = ('name', 'ratio',)
     list_filter = ('width_in', 'height_in')
 admin.site.register(pfCatalogFileSpec, pfCatalogFileSpecAdmin)
 

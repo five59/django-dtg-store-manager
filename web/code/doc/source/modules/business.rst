@@ -1,6 +1,8 @@
 Business Module
 ===============
 
+.. image:: mod_bz.png
+
 .. automodule:: business.models.bzBrand
     :members:
 
