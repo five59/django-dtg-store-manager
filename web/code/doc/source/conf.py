@@ -66,7 +66,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Django DTG Store Manager'
-copyright = '2016, 559 Labs <http://559labs.com/>'
+copyright = '2016-2017, 559 Labs - http://559labs.com/'
 author = 'Andrew Marconi <andrew@559labs.com>'
 
 # The version info for the project you're documenting, acts as replacement for
