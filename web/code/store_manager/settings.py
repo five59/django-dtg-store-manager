@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
     'mptt',
     'django_mptt_admin',
     'suit_ckeditor',
@@ -79,16 +78,17 @@ INSTALLED_APPS = [
     # 'product',
 
     'business',
-
     'outlet_woocommerce',
     # 'outlet_woo',
-
     'vendor_printful',
     # 'vendor_printaura',
     # 'api_gooten',
 
     # 'app_care',
     # 'app_shopfeeds',
+
+    'django_extensions',
+
 ]
 
 SERIALIZATION_MODULES = {

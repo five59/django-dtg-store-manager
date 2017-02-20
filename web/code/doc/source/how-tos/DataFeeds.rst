@@ -1,6 +1,8 @@
 Data Feeds
 ==========
 
+*WARNING* THIS DOCUMENTATION IS OUT OF DATE.
+
 For Facebook product catalogs and Google Merchant (amongst other outlets), its simple
 to create and output a data feed. Future development may offer automatic uploads, but for
 now, you can simply do it manually:

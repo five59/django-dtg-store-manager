@@ -1,6 +1,9 @@
 Publishing a Batch of New Products
 ==================================
 
+
+*WARNING* THIS DOCUMENTATION IS OUT OF DATE.
+
 To process a batch of incoming products from Printful to WooCommerce:
 
 

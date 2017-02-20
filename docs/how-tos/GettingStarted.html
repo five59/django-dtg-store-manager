@@ -157,29 +157,35 @@
 <div class="section" id="step-2">
 <h2>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h2>
 <p>Build the images. This will install all the packages required using <cite>pip</cite> (these are listed in the [requirements.txt](./web/requirements.txt) file in case you&#8217;re interested). This will probably take a little bit of time.</p>
-<blockquote>
-<div>$ docker-compose build</div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose build
+</pre></div>
+</div>
 </div>
 <div class="section" id="step-3">
 <h2>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h2>
 <p>Now, you&#8217;re ready to bring everything up. I prefer to do this when developing:</p>
-<blockquote>
-<div>$ docker-compose up -d ; docker-compose logs -f</div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose up -d <span class="p">;</span> docker-compose logs -f
+</pre></div>
+</div>
 <p>It brings the images up and disconnects. It then gives a live stream of the logs in a separate process so that if you break out of it (ctrl-C), it doesn&#8217;t kill the machines as well. If you&#8217;ve not downloaded the PostgreSQL image before, it will take a little time to download it before starting everything up.</p>
 </div>
 <div class="section" id="step-4">
 <h2>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h2>
 <p>In another terminal window, run the following:</p>
-<blockquote>
-<div>$ docker-compose run &#8211;rm web /bin/bash
-<a class="reference external" href="mailto:root&#37;&#52;&#48;xxxxxxxxxxxx">root<span>&#64;</span>xxxxxxxxxxxx</a>:/code# ./manage.py migrate
-<a class="reference external" href="mailto:root&#37;&#52;&#48;xxxxxxxxxxxx">root<span>&#64;</span>xxxxxxxxxxxx</a>:/code# ./manage.py createsuperuser
-<a class="reference external" href="mailto:root&#37;&#52;&#48;xxxxxxxxxxxx">root<span>&#64;</span>xxxxxxxxxxxx</a>:/code# ./manage.py shell_plus</div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose run --rm web /bin/bash
+root@xxxxxxxxxxxx:/code# ./manage.py migrate
+root@xxxxxxxxxxxx:/code# ./manage.py createsuperuser
+root@xxxxxxxxxxxx:/code# ./manage.py shell_plus
+</pre></div>
+</div>
 <p>This will set up the database and then create a super user (I&#8217;ve left this as an interactive activity so that you can set your own credentials), and then drop you into an interactive shell.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>root@xxxxxxxxxxxx:/code# ./manage.py createsuperuser
+</pre></div>
+</div>
 </div>
 <div class="section" id="step-5">
 <h2>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h2>
-<p>If all has gone well, you should now be able to visit your site at:  <cite>http://localhost:8015/</cite> and the admin interface at <cite>http://localhost:8015/admin</cite></p>
+<p>If all has gone well, you should now be able to visit your site at:  &lt;<a class="reference external" href="http://localhost:8015/">http://localhost:8015/</a>&gt; and the admin interface at &lt;<a class="reference external" href="http://localhost:8015/admin">http://localhost:8015/admin</a>&gt;</p>
 </div>
 <div class="section" id="step-6">
 <h2>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h2>
