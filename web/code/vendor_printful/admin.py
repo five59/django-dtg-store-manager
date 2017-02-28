@@ -87,7 +87,7 @@ admin.site.register(pfCatalogOptionType, pfCatalogOptionTypeAdmin)
 class pfCatalogProductAdmin(admin.ModelAdmin):
     list_display = ('pid', 'type', 'brand', 'model',
                     'variant_count', 'num_colors', 'num_sizes',
-                    'is_active', 'num_out_of_stock', )
+                    'is_active', 'num_out_of_stock', 'get_percent_out_of_stock')
     list_filter = ('type', 'brand', 'is_active',)
     search_fields = ('pid', 'brand', 'model',)
     fields = ('id', 'pid', 'type', 'brand', 'model', 'image',

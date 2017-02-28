@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from django_extensions.db import fields as extension_fields
 import uuid
@@ -15,12 +15,22 @@ from outlet_woocommerce.models.wooProduct import wooProduct
 
 
 class bzProduct(models.Model):
+    STATUS_DRAFT = "draft"
+    STATUS_PUBLIC = "public"
+    STATUS_CHOICES = (
+        (STATUS_DRAFT, "Draft"),
+        (STATUS_PUBLIC, "Public"),
+    )
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
     code = models.CharField(_("Code"), max_length=64, default="", blank=True, null=True)
     name = models.CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+
+    status = models.CharField(_("Status"), max_length=32,
+                              default=STATUS_DRAFT, choices=STATUS_CHOICES)
 
     bzDesign = models.ForeignKey("business.bzCreativeDesign", verbose_name=_(
         "Creative Design"), blank=True, null=True)

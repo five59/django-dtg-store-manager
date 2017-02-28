@@ -40,6 +40,10 @@ class pfCatalogProduct(models.Model):
         return pfCatalogVariant.objects.filter(pfcatalogproduct=self)
     get_variants.short_description = _("Variants")
 
+    def num_variants(self):
+        return self.get_variants().count()
+    num_variants.short_description = _("Variants")
+
     def get_colors(self):
         # Get all color objects associated with this product's variants.
         # return pfCatalogColor.objects.filter()
@@ -82,3 +86,13 @@ class pfCatalogProduct(models.Model):
     def num_out_of_stock(self):
         return self.get_out_of_stock().count()
     num_out_of_stock.short_description = _("Out of Stock")
+
+    def get_percent_out_of_stock(self, as_string=True):
+        if self.num_variants():
+            rv = int(self.num_out_of_stock() / self.num_variants() * 100)
+            if as_string:
+                return "{}%".format(rv)
+            return rv
+        else:
+            return "--"
+    get_percent_out_of_stock.short_description = _("% Out of Stock")

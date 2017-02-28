@@ -1,12 +1,13 @@
 import uuid
 from django.db import models
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _
 from django_extensions.db import fields as extension_fields
 from datetime import datetime
 from django.core import files
 
 from outlet_woocommerce.api import *
+from outlet_woocommerce.models.wooVariant import wooVariant
 
 
 class wooProduct(models.Model):
@@ -220,7 +221,7 @@ class wooProduct(models.Model):
         """
         obj, created = wooProduct.objects.update_or_create(
             wid=data['id'],
-            store=store,
+            woostore=store,
             defaults={
                 "is_active": True,
                 # TODO
@@ -240,7 +241,7 @@ class wooProduct(models.Model):
         """
 
         variations = []
-        for v in wooProductVariant.objects.filter():
+        for v in wooVariant.objects.filter():
             variations.append({
                 "regular_price": v.regular_price,
                 "image": [],  # TODO
@@ -270,19 +271,19 @@ class wooProduct(models.Model):
         path = "wc/v1/products"
         a = wcClient(store=store)
         data = a.get(path)
-        wooProeduct.objects.filter(store=store).update(is_active=False)
+        wooProduct.objects.filter(woostore=store).update(is_active=False)
         while a.link_next:
             for d in data:
                 attribObj = wooProduct._api_pull(d, store)
                 if import_terms:
-                    wooProductVariant.api_pull_all(store, attribObj)
+                    wooVariant.api_pull_all(store, attribObj)
             if a.link_next:
                 res = a.get(data.link_next)
         else:
             for d in data:
                 attribObj = wooProduct._api_pull(d, store)
                 if import_terms:
-                    wooProductVariant.api_pull_all(store, attribObj)
+                    wooVariant.api_pull_all(store, attribObj)
 
     def _api_create(self, data):
         """
@@ -291,7 +292,7 @@ class wooProduct(models.Model):
         method = "POST"
         path = "wc/v1/products"
         try:
-            a = wcClient(store=self.store)
+            a = wcClient(store=self.woostore)
             data = a.post(path, data)
         except Exception as e:
             raise Exception(e)
@@ -314,7 +315,7 @@ class wooProduct(models.Model):
         method = "PUT"
         path = "wc/v1/products/" + str(self.wid)
         try:
-            a = wcClient(store=self.store)
+            a = wcClient(store=self.woostore)
             data = a.post(path, data)
         except Exception as e:
             raise Exception(e)
