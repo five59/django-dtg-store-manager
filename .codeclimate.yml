@@ -13,12 +13,12 @@ engines:
     enabled: true
   fixme:
     enabled: true
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - python
-      - javascript
+  # duplication:
+  #   enabled: true
+  #   config:
+  #     languages:
+  #     - python
+  #     - javascript
 ratings:
   paths:
   - "src/**"
@@ -27,3 +27,4 @@ exclude_paths:
 - "logs/"
 - "src/static/"
 - "src/**/migrations/"
+- "src/**/tests.py"
