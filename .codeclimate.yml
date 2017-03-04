@@ -2,15 +2,15 @@ engines:
   rubocop:
     enabled: true
   brakeman:
-   	enabled: true
+    enabled: true
   eslint:
     enabled: true
   csslint:
     enabled: true
   duplication:
-  	enabled: true
+    enabled: true
     config:
-    	languages:
+      languages:
       - python
       - javascript
 ratings:
