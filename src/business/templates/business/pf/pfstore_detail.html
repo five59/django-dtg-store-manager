@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_pfstore_list' %}">pfStore Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>code</td><td>{{ object.code }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>website</td><td>{{ object.website }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>consumer_key</td><td>{{ object.consumer_key }}</td></tr>
+<tr><td>consumer_secret</td><td>{{ object.consumer_secret }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit pfStore</a>
+
+{% endblock %}

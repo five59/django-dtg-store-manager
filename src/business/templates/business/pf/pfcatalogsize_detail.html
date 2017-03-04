@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_pfcatalogsize_list' %}">pfCatalogSize Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>code</td><td>{{ object.code }}</td></tr>
+<tr><td>label</td><td>{{ object.label }}</td></tr>
+<tr><td>label_clean</td><td>{{ object.label_clean }}</td></tr>
+<tr><td>sort_group</td><td>{{ object.sort_group }}</td></tr>
+<tr><td>sort_order</td><td>{{ object.sort_order }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit pfCatalogSize</a>
+
+{% endblock %}

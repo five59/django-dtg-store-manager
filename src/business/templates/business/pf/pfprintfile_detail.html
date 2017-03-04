@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_pfprintfile_list' %}">pfPrintFile Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>pid</td><td>{{ object.pid }}</td></tr>
+<tr><td>type</td><td>{{ object.type }}</td></tr>
+<tr><td>hash</td><td>{{ object.hash }}</td></tr>
+<tr><td>url</td><td>{{ object.url }}</td></tr>
+<tr><td>filename</td><td>{{ object.filename }}</td></tr>
+<tr><td>mime_type</td><td>{{ object.mime_type }}</td></tr>
+<tr><td>size</td><td>{{ object.size }}</td></tr>
+<tr><td>width</td><td>{{ object.width }}</td></tr>
+<tr><td>height</td><td>{{ object.height }}</td></tr>
+<tr><td>dpi</td><td>{{ object.dpi }}</td></tr>
+<tr><td>status</td><td>{{ object.status }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>thumbnail_url</td><td>{{ object.thumbnail_url }}</td></tr>
+<tr><td>visible</td><td>{{ object.visible }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit pfPrintFile</a>
+
+{% endblock %}

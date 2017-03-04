@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_woovariant_list' %}">wooVariant Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>is_active</td><td>{{ object.is_active }}</td></tr>
+<tr><td>wid</td><td>{{ object.wid }}</td></tr>
+<tr><td>date_created</td><td>{{ object.date_created }}</td></tr>
+<tr><td>permalink</td><td>{{ object.permalink }}</td></tr>
+<tr><td>sku</td><td>{{ object.sku }}</td></tr>
+<tr><td>price</td><td>{{ object.price }}</td></tr>
+<tr><td>dimension_length</td><td>{{ object.dimension_length }}</td></tr>
+<tr><td>dimension_width</td><td>{{ object.dimension_width }}</td></tr>
+<tr><td>dimension_height</td><td>{{ object.dimension_height }}</td></tr>
+<tr><td>weight</td><td>{{ object.weight }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit wooVariant</a>
+
+{% endblock %}

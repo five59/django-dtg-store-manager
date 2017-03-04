@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_pfcatalogfiletype_list' %}">pfCatalogFileType Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>pid</td><td>{{ object.pid }}</td></tr>
+<tr><td>title</td><td>{{ object.title }}</td></tr>
+<tr><td>additional_price</td><td>{{ object.additional_price }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit pfCatalogFileType</a>
+
+{% endblock %}

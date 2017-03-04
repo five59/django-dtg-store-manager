@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_wooimage_list' %}">wooImage Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>is_active</td><td>{{ object.is_active }}</td></tr>
+<tr><td>wid</td><td>{{ object.wid }}</td></tr>
+<tr><td>date_created</td><td>{{ object.date_created }}</td></tr>
+<tr><td>alt</td><td>{{ object.alt }}</td></tr>
+<tr><td>position</td><td>{{ object.position }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit wooImage</a>
+
+{% endblock %}

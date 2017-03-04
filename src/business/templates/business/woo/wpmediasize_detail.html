@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_wpmediasize_list' %}">wpMediaSize Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>is_active</td><td>{{ object.is_active }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>file</td><td>{{ object.file }}</td></tr>
+<tr><td>mime_type</td><td>{{ object.mime_type }}</td></tr>
+<tr><td>width</td><td>{{ object.width }}</td></tr>
+<tr><td>height</td><td>{{ object.height }}</td></tr>
+<tr><td>source_url</td><td>{{ object.source_url }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit wpMediaSize</a>
+
+{% endblock %}

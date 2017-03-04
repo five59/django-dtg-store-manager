@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.5"
+install:
+  - pip install -r requirements.txt
+  - cd ..
+  - django-admin.py startproject --template=./edge --extension=py,md,html,env storemanager
+  - cd storemanager/src
+  - cp storemanager/settings/local.sample.env storemanager/settings/local.env
+  - python manage.py migrate
+script:
+  - python manage.py test profiles
