@@ -1,7 +1,7 @@
 import unittest
 from django.core.urlresolvers import reverse
 from django.test import Client
-from .models import bzBrand, bzCreativeCollection, bzCreativeDesign, bzCreativeLayout, bzCreativeRendering, bzProduct, bzProductVariant, wooAttribute, wooCategory, wooImage, wooProduct, wooShippingClass, wooStore, wooTag, wooTerm, wooVariant, wpMedia, wpMediaSize, pfCountry, pfState, pfSyncProduct, pfSyncVariant, pfSyncItemOption, pfCatalogColor, pfCatalogSize, pfCatalogFileSpec, pfCatalogFileType, pfCatalogOptionType, pfCatalogProduct, pfCatalogVariant, pfStore, pfPrintFile
+from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib.contenttypes.models import ContentType
@@ -35,7 +35,7 @@ def create_bzbrand(**kwargs):
     defaults["name"] = "name"
     defaults.update(**kwargs)
     if "vendor" not in defaults:
-        defaults["vendor"] = create_'pfstore'()
+        defaults["vendor"] = create_pfstore()
     return bzBrand.objects.create(**defaults)
 
 
@@ -46,7 +46,7 @@ def create_bzcreativecollection(**kwargs):
     defaults["name"] = "name"
     defaults.update(**kwargs)
     if "bzbrand" not in defaults:
-        defaults["bzbrand"] = create_'bzbrand'()
+        defaults["bzbrand"] = create_bzbrand()
     return bzCreativeCollection.objects.create(**defaults)
 
 
@@ -57,7 +57,7 @@ def create_bzcreativedesign(**kwargs):
     defaults["name"] = "name"
     defaults.update(**kwargs)
     if "bzcreativecollection" not in defaults:
-        defaults["bzcreativecollection"] = create_'bzcreativecollection'()
+        defaults["bzcreativecollection"] = create_bzcreativecollection()
     return bzCreativeDesign.objects.create(**defaults)
 
 
@@ -68,7 +68,7 @@ def create_bzcreativelayout(**kwargs):
     defaults["name"] = "name"
     defaults.update(**kwargs)
     if "bzcreativecollection" not in defaults:
-        defaults["bzcreativecollection"] = create_'bzcreativecollection'()
+        defaults["bzcreativecollection"] = create_bzcreativecollection()
     return bzCreativeLayout.objects.create(**defaults)
 
 
@@ -77,9 +77,9 @@ def create_bzcreativerendering(**kwargs):
     defaults["date_updated"] = "date_updated"
     defaults.update(**kwargs)
     if "bzcreativedesign" not in defaults:
-        defaults["bzcreativedesign"] = create_'bzcreativedesign'()
+        defaults["bzcreativedesign"] = create_bzcreativedesign()
     if "bzcreativelayout" not in defaults:
-        defaults["bzcreativelayout"] = create_'bzcreativelayout'()
+        defaults["bzcreativelayout"] = create_bzcreativelayout()
     return bzCreativeRendering.objects.create(**defaults)
 
 
@@ -91,7 +91,7 @@ def create_bzproduct(**kwargs):
     defaults["status"] = "status"
     defaults.update(**kwargs)
     if "bzDesign" not in defaults:
-        defaults["bzDesign"] = create_'bzcreativedesign'()
+        defaults["bzDesign"] = create_bzcreativedesign()
     return bzProduct.objects.create(**defaults)
 
 
@@ -102,9 +102,9 @@ def create_bzproductvariant(**kwargs):
     defaults["is_active"] = "is_active"
     defaults.update(**kwargs)
     if "bzproduct" not in defaults:
-        defaults["bzproduct"] = create_'bzproduct'()
+        defaults["bzproduct"] = create_bzproduct()
     if "pfcatalogvariant" not in defaults:
-        defaults["pfcatalogvariant"] = create_'pfcatalogvariant'()
+        defaults["pfcatalogvariant"] = create_pfcatalogvariant()
     return bzProductVariant.objects.create(**defaults)
 
 
@@ -492,6 +492,7 @@ class bzBrandViewTest(unittest.TestCase):
     '''
     Tests for bzBrand
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -506,14 +507,14 @@ class bzBrandViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "vendor": create_'pfstore'().pk,
+            "vendor": create_pfstore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzbrand(self):
         bzbrand = create_bzbrand()
-        url = reverse('business_bzbrand_detail', args=[bzbrand.pk,])
+        url = reverse('business_bzbrand_detail', args=[bzbrand.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -523,9 +524,9 @@ class bzBrandViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "vendor": create_'pfstore'().pk,
+            "vendor": create_pfstore().pk,
         }
-        url = reverse('business_bzbrand_update', args=[bzbrand.pk,])
+        url = reverse('business_bzbrand_update', args=[bzbrand.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -534,6 +535,7 @@ class bzCreativeCollectionViewTest(unittest.TestCase):
     '''
     Tests for bzCreativeCollection
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -548,14 +550,14 @@ class bzCreativeCollectionViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzbrand": create_'bzbrand'().pk,
+            "bzbrand": create_bzbrand().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzcreativecollection(self):
         bzcreativecollection = create_bzcreativecollection()
-        url = reverse('business_bzcreativecollection_detail', args=[bzcreativecollection.pk,])
+        url = reverse('business_bzcreativecollection_detail', args=[bzcreativecollection.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -565,9 +567,9 @@ class bzCreativeCollectionViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzbrand": create_'bzbrand'().pk,
+            "bzbrand": create_bzbrand().pk,
         }
-        url = reverse('business_bzcreativecollection_update', args=[bzcreativecollection.pk,])
+        url = reverse('business_bzcreativecollection_update', args=[bzcreativecollection.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -576,6 +578,7 @@ class bzCreativeDesignViewTest(unittest.TestCase):
     '''
     Tests for bzCreativeDesign
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -590,14 +593,14 @@ class bzCreativeDesignViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzcreativecollection": create_'bzcreativecollection'().pk,
+            "bzcreativecollection": create_bzcreativecollection().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzcreativedesign(self):
         bzcreativedesign = create_bzcreativedesign()
-        url = reverse('business_bzcreativedesign_detail', args=[bzcreativedesign.pk,])
+        url = reverse('business_bzcreativedesign_detail', args=[bzcreativedesign.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -607,9 +610,9 @@ class bzCreativeDesignViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzcreativecollection": create_'bzcreativecollection'().pk,
+            "bzcreativecollection": create_bzcreativecollection().pk,
         }
-        url = reverse('business_bzcreativedesign_update', args=[bzcreativedesign.pk,])
+        url = reverse('business_bzcreativedesign_update', args=[bzcreativedesign.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -618,6 +621,7 @@ class bzCreativeLayoutViewTest(unittest.TestCase):
     '''
     Tests for bzCreativeLayout
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -632,14 +636,14 @@ class bzCreativeLayoutViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzcreativecollection": create_'bzcreativecollection'().pk,
+            "bzcreativecollection": create_bzcreativecollection().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzcreativelayout(self):
         bzcreativelayout = create_bzcreativelayout()
-        url = reverse('business_bzcreativelayout_detail', args=[bzcreativelayout.pk,])
+        url = reverse('business_bzcreativelayout_detail', args=[bzcreativelayout.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -649,9 +653,9 @@ class bzCreativeLayoutViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "bzcreativecollection": create_'bzcreativecollection'().pk,
+            "bzcreativecollection": create_bzcreativecollection().pk,
         }
-        url = reverse('business_bzcreativelayout_update', args=[bzcreativelayout.pk,])
+        url = reverse('business_bzcreativelayout_update', args=[bzcreativelayout.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -660,6 +664,7 @@ class bzCreativeRenderingViewTest(unittest.TestCase):
     '''
     Tests for bzCreativeRendering
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -672,15 +677,15 @@ class bzCreativeRenderingViewTest(unittest.TestCase):
         url = reverse('business_bzcreativerendering_create')
         data = {
             "date_updated": "date_updated",
-            "bzcreativedesign": create_'bzcreativedesign'().pk,
-            "bzcreativelayout": create_'bzcreativelayout'().pk,
+            "bzcreativedesign": create_bzcreativedesign().pk,
+            "bzcreativelayout": create_bzcreativelayout().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzcreativerendering(self):
         bzcreativerendering = create_bzcreativerendering()
-        url = reverse('business_bzcreativerendering_detail', args=[bzcreativerendering.pk,])
+        url = reverse('business_bzcreativerendering_detail', args=[bzcreativerendering.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -688,10 +693,10 @@ class bzCreativeRenderingViewTest(unittest.TestCase):
         bzcreativerendering = create_bzcreativerendering()
         data = {
             "date_updated": "date_updated",
-            "bzcreativedesign": create_'bzcreativedesign'().pk,
-            "bzcreativelayout": create_'bzcreativelayout'().pk,
+            "bzcreativedesign": create_bzcreativedesign().pk,
+            "bzcreativelayout": create_bzcreativelayout().pk,
         }
-        url = reverse('business_bzcreativerendering_update', args=[bzcreativerendering.pk,])
+        url = reverse('business_bzcreativerendering_update', args=[bzcreativerendering.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -700,6 +705,7 @@ class bzProductViewTest(unittest.TestCase):
     '''
     Tests for bzProduct
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -715,14 +721,14 @@ class bzProductViewTest(unittest.TestCase):
             "code": "code",
             "name": "name",
             "status": "status",
-            "bzDesign": create_'bzcreativedesign'().pk,
+            "bzDesign": create_bzcreativedesign().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzproduct(self):
         bzproduct = create_bzproduct()
-        url = reverse('business_bzproduct_detail', args=[bzproduct.pk,])
+        url = reverse('business_bzproduct_detail', args=[bzproduct.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -733,9 +739,9 @@ class bzProductViewTest(unittest.TestCase):
             "code": "code",
             "name": "name",
             "status": "status",
-            "bzDesign": create_'bzcreativedesign'().pk,
+            "bzDesign": create_bzcreativedesign().pk,
         }
-        url = reverse('business_bzproduct_update', args=[bzproduct.pk,])
+        url = reverse('business_bzproduct_update', args=[bzproduct.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -744,6 +750,7 @@ class bzProductVariantViewTest(unittest.TestCase):
     '''
     Tests for bzProductVariant
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -758,15 +765,15 @@ class bzProductVariantViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "is_active": "is_active",
-            "bzproduct": create_'bzproduct'().pk,
-            "pfcatalogvariant": create_'pfcatalogvariant'().pk,
+            "bzproduct": create_bzproduct().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
 
     def test_detail_bzproductvariant(self):
         bzproductvariant = create_bzproductvariant()
-        url = reverse('business_bzproductvariant_detail', args=[bzproductvariant.pk,])
+        url = reverse('business_bzproductvariant_detail', args=[bzproductvariant.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -776,10 +783,10 @@ class bzProductVariantViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "is_active": "is_active",
-            "bzproduct": create_'bzproduct'().pk,
-            "pfcatalogvariant": create_'pfcatalogvariant'().pk,
+            "bzproduct": create_bzproduct().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
-        url = reverse('business_bzproductvariant_update', args=[bzproductvariant.pk,])
+        url = reverse('business_bzproductvariant_update', args=[bzproductvariant.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -788,6 +795,7 @@ class wooAttributeViewTest(unittest.TestCase):
     '''
     Tests for wooAttribute
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -813,7 +821,7 @@ class wooAttributeViewTest(unittest.TestCase):
 
     def test_detail_wooattribute(self):
         wooattribute = create_wooattribute()
-        url = reverse('business_wooattribute_detail', args=[wooattribute.slug,])
+        url = reverse('business_wooattribute_detail', args=[wooattribute.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -829,7 +837,7 @@ class wooAttributeViewTest(unittest.TestCase):
             "has_archives": "has_archives",
             "store": create_"woostore"().pk,
         }
-        url = reverse('business_wooattribute_update', args=[wooattribute.slug,])
+        url = reverse('business_wooattribute_update', args=[wooattribute.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -838,6 +846,7 @@ class wooCategoryViewTest(unittest.TestCase):
     '''
     Tests for wooCategory
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -867,7 +876,7 @@ class wooCategoryViewTest(unittest.TestCase):
 
     def test_detail_woocategory(self):
         woocategory = create_woocategory()
-        url = reverse('business_woocategory_detail', args=[woocategory.slug,])
+        url = reverse('business_woocategory_detail', args=[woocategory.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -887,7 +896,7 @@ class wooCategoryViewTest(unittest.TestCase):
             "image_date_created": "image_date_created",
             "store": create_"woostore"().pk,
         }
-        url = reverse('business_woocategory_update', args=[woocategory.slug,])
+        url = reverse('business_woocategory_update', args=[woocategory.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -896,6 +905,7 @@ class wooImageViewTest(unittest.TestCase):
     '''
     Tests for wooImage
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -919,7 +929,7 @@ class wooImageViewTest(unittest.TestCase):
 
     def test_detail_wooimage(self):
         wooimage = create_wooimage()
-        url = reverse('business_wooimage_detail', args=[wooimage.pk,])
+        url = reverse('business_wooimage_detail', args=[wooimage.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -933,7 +943,7 @@ class wooImageViewTest(unittest.TestCase):
             "alt": "alt",
             "position": "position",
         }
-        url = reverse('business_wooimage_update', args=[wooimage.pk,])
+        url = reverse('business_wooimage_update', args=[wooimage.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -942,6 +952,7 @@ class wooProductViewTest(unittest.TestCase):
     '''
     Tests for wooProduct
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -974,7 +985,7 @@ class wooProductViewTest(unittest.TestCase):
 
     def test_detail_wooproduct(self):
         wooproduct = create_wooproduct()
-        url = reverse('business_wooproduct_detail', args=[wooproduct.slug,])
+        url = reverse('business_wooproduct_detail', args=[wooproduct.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -997,7 +1008,7 @@ class wooProductViewTest(unittest.TestCase):
             "tags": create_"wootag"().pk,
             "images": create_"wooimage"().pk,
         }
-        url = reverse('business_wooproduct_update', args=[wooproduct.slug,])
+        url = reverse('business_wooproduct_update', args=[wooproduct.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1006,6 +1017,7 @@ class wooShippingClassViewTest(unittest.TestCase):
     '''
     Tests for wooShippingClass
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1028,7 +1040,7 @@ class wooShippingClassViewTest(unittest.TestCase):
 
     def test_detail_wooshippingclass(self):
         wooshippingclass = create_wooshippingclass()
-        url = reverse('business_wooshippingclass_detail', args=[wooshippingclass.slug,])
+        url = reverse('business_wooshippingclass_detail', args=[wooshippingclass.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1041,7 +1053,7 @@ class wooShippingClassViewTest(unittest.TestCase):
             "description": "description",
             "count": "count",
         }
-        url = reverse('business_wooshippingclass_update', args=[wooshippingclass.slug,])
+        url = reverse('business_wooshippingclass_update', args=[wooshippingclass.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1050,6 +1062,7 @@ class wooStoreViewTest(unittest.TestCase):
     '''
     Tests for wooStore
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1073,7 +1086,7 @@ class wooStoreViewTest(unittest.TestCase):
 
     def test_detail_woostore(self):
         woostore = create_woostore()
-        url = reverse('business_woostore_detail', args=[woostore.pk,])
+        url = reverse('business_woostore_detail', args=[woostore.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1087,7 +1100,7 @@ class wooStoreViewTest(unittest.TestCase):
             "timezone": "timezone",
             "verify_ssl": "verify_ssl",
         }
-        url = reverse('business_woostore_update', args=[woostore.pk,])
+        url = reverse('business_woostore_update', args=[woostore.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1096,6 +1109,7 @@ class wooTagViewTest(unittest.TestCase):
     '''
     Tests for wooTag
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1121,7 +1135,7 @@ class wooTagViewTest(unittest.TestCase):
 
     def test_detail_wootag(self):
         wootag = create_wootag()
-        url = reverse('business_wootag_detail', args=[wootag.slug,])
+        url = reverse('business_wootag_detail', args=[wootag.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1137,7 +1151,7 @@ class wooTagViewTest(unittest.TestCase):
             "count": "count",
             "store": create_"woostore"().pk,
         }
-        url = reverse('business_wootag_update', args=[wootag.slug,])
+        url = reverse('business_wootag_update', args=[wootag.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1146,6 +1160,7 @@ class wooTermViewTest(unittest.TestCase):
     '''
     Tests for wooTerm
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1172,7 +1187,7 @@ class wooTermViewTest(unittest.TestCase):
 
     def test_detail_wooterm(self):
         wooterm = create_wooterm()
-        url = reverse('business_wooterm_detail', args=[wooterm.slug,])
+        url = reverse('business_wooterm_detail', args=[wooterm.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1189,7 +1204,7 @@ class wooTermViewTest(unittest.TestCase):
             "wr_label": "wr_label",
             "productattribute": create_"wooattribute"().pk,
         }
-        url = reverse('business_wooterm_update', args=[wooterm.slug,])
+        url = reverse('business_wooterm_update', args=[wooterm.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1198,6 +1213,7 @@ class wooVariantViewTest(unittest.TestCase):
     '''
     Tests for wooVariant
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1228,7 +1244,7 @@ class wooVariantViewTest(unittest.TestCase):
 
     def test_detail_woovariant(self):
         woovariant = create_woovariant()
-        url = reverse('business_woovariant_detail', args=[woovariant.pk,])
+        url = reverse('business_woovariant_detail', args=[woovariant.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1249,7 +1265,7 @@ class wooVariantViewTest(unittest.TestCase):
             "shipping_class": create_"wooshippingclass"().pk,
             "images": create_"wooimage"().pk,
         }
-        url = reverse('business_woovariant_update', args=[woovariant.pk,])
+        url = reverse('business_woovariant_update', args=[woovariant.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1258,6 +1274,7 @@ class wpMediaViewTest(unittest.TestCase):
     '''
     Tests for wpMedia
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1299,7 +1316,7 @@ class wpMediaViewTest(unittest.TestCase):
 
     def test_detail_wpmedia(self):
         wpmedia = create_wpmedia()
-        url = reverse('business_wpmedia_detail', args=[wpmedia.slug,])
+        url = reverse('business_wpmedia_detail', args=[wpmedia.slug, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1331,7 +1348,7 @@ class wpMediaViewTest(unittest.TestCase):
             "type": "type",
             "woostore": create_"woostore"().pk,
         }
-        url = reverse('business_wpmedia_update', args=[wpmedia.slug,])
+        url = reverse('business_wpmedia_update', args=[wpmedia.slug, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1340,6 +1357,7 @@ class wpMediaSizeViewTest(unittest.TestCase):
     '''
     Tests for wpMediaSize
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1366,7 +1384,7 @@ class wpMediaSizeViewTest(unittest.TestCase):
 
     def test_detail_wpmediasize(self):
         wpmediasize = create_wpmediasize()
-        url = reverse('business_wpmediasize_detail', args=[wpmediasize.pk,])
+        url = reverse('business_wpmediasize_detail', args=[wpmediasize.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1383,7 +1401,7 @@ class wpMediaSizeViewTest(unittest.TestCase):
             "source_url": "source_url",
             "wpmedia": create_"wpmedia"().pk,
         }
-        url = reverse('business_wpmediasize_update', args=[wpmediasize.pk,])
+        url = reverse('business_wpmediasize_update', args=[wpmediasize.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1392,6 +1410,7 @@ class pfCountryViewTest(unittest.TestCase):
     '''
     Tests for pfCountry
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1412,7 +1431,7 @@ class pfCountryViewTest(unittest.TestCase):
 
     def test_detail_pfcountry(self):
         pfcountry = create_pfcountry()
-        url = reverse('business_pfcountry_detail', args=[pfcountry.pk,])
+        url = reverse('business_pfcountry_detail', args=[pfcountry.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1423,7 +1442,7 @@ class pfCountryViewTest(unittest.TestCase):
             "code": "code",
             "name": "name",
         }
-        url = reverse('business_pfcountry_update', args=[pfcountry.pk,])
+        url = reverse('business_pfcountry_update', args=[pfcountry.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1432,6 +1451,7 @@ class pfStateViewTest(unittest.TestCase):
     '''
     Tests for pfState
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1453,7 +1473,7 @@ class pfStateViewTest(unittest.TestCase):
 
     def test_detail_pfstate(self):
         pfstate = create_pfstate()
-        url = reverse('business_pfstate_detail', args=[pfstate.pk,])
+        url = reverse('business_pfstate_detail', args=[pfstate.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1465,7 +1485,7 @@ class pfStateViewTest(unittest.TestCase):
             "name": "name",
             "pfcountry": create_"pfcountry"().pk,
         }
-        url = reverse('business_pfstate_update', args=[pfstate.pk,])
+        url = reverse('business_pfstate_update', args=[pfstate.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1474,6 +1494,7 @@ class pfSyncProductViewTest(unittest.TestCase):
     '''
     Tests for pfSyncProduct
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1497,7 +1518,7 @@ class pfSyncProductViewTest(unittest.TestCase):
 
     def test_detail_pfsyncproduct(self):
         pfsyncproduct = create_pfsyncproduct()
-        url = reverse('business_pfsyncproduct_detail', args=[pfsyncproduct.pk,])
+        url = reverse('business_pfsyncproduct_detail', args=[pfsyncproduct.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1511,7 +1532,7 @@ class pfSyncProductViewTest(unittest.TestCase):
             "synced": "synced",
             "pfstore": create_"pfstore"().pk,
         }
-        url = reverse('business_pfsyncproduct_update', args=[pfsyncproduct.pk,])
+        url = reverse('business_pfsyncproduct_update', args=[pfsyncproduct.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1520,6 +1541,7 @@ class pfSyncVariantViewTest(unittest.TestCase):
     '''
     Tests for pfSyncVariant
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1543,7 +1565,7 @@ class pfSyncVariantViewTest(unittest.TestCase):
 
     def test_detail_pfsyncvariant(self):
         pfsyncvariant = create_pfsyncvariant()
-        url = reverse('business_pfsyncvariant_detail', args=[pfsyncvariant.pk,])
+        url = reverse('business_pfsyncvariant_detail', args=[pfsyncvariant.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1557,7 +1579,7 @@ class pfSyncVariantViewTest(unittest.TestCase):
             "pfsyncproduct": create_"pfsyncproduct"().pk,
             "files": create_"pfprintfile"().pk,
         }
-        url = reverse('business_pfsyncvariant_update', args=[pfsyncvariant.pk,])
+        url = reverse('business_pfsyncvariant_update', args=[pfsyncvariant.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1566,6 +1588,7 @@ class pfSyncItemOptionViewTest(unittest.TestCase):
     '''
     Tests for pfSyncItemOption
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1587,7 +1610,7 @@ class pfSyncItemOptionViewTest(unittest.TestCase):
 
     def test_detail_pfsyncitemoption(self):
         pfsyncitemoption = create_pfsyncitemoption()
-        url = reverse('business_pfsyncitemoption_detail', args=[pfsyncitemoption.pk,])
+        url = reverse('business_pfsyncitemoption_detail', args=[pfsyncitemoption.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1599,7 +1622,7 @@ class pfSyncItemOptionViewTest(unittest.TestCase):
             "value": "value",
             "pfsyncvariant": create_"pfsyncvariant"().pk,
         }
-        url = reverse('business_pfsyncitemoption_update', args=[pfsyncitemoption.pk,])
+        url = reverse('business_pfsyncitemoption_update', args=[pfsyncitemoption.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1608,6 +1631,7 @@ class pfCatalogColorViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogColor
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1630,7 +1654,7 @@ class pfCatalogColorViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogcolor(self):
         pfcatalogcolor = create_pfcatalogcolor()
-        url = reverse('business_pfcatalogcolor_detail', args=[pfcatalogcolor.pk,])
+        url = reverse('business_pfcatalogcolor_detail', args=[pfcatalogcolor.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1643,7 +1667,7 @@ class pfCatalogColorViewTest(unittest.TestCase):
             "label_clean": "label_clean",
             "hex_code": "hex_code",
         }
-        url = reverse('business_pfcatalogcolor_update', args=[pfcatalogcolor.pk,])
+        url = reverse('business_pfcatalogcolor_update', args=[pfcatalogcolor.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1652,6 +1676,7 @@ class pfCatalogSizeViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogSize
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1675,7 +1700,7 @@ class pfCatalogSizeViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogsize(self):
         pfcatalogsize = create_pfcatalogsize()
-        url = reverse('business_pfcatalogsize_detail', args=[pfcatalogsize.pk,])
+        url = reverse('business_pfcatalogsize_detail', args=[pfcatalogsize.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1689,7 +1714,7 @@ class pfCatalogSizeViewTest(unittest.TestCase):
             "sort_group": "sort_group",
             "sort_order": "sort_order",
         }
-        url = reverse('business_pfcatalogsize_update', args=[pfcatalogsize.pk,])
+        url = reverse('business_pfcatalogsize_update', args=[pfcatalogsize.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1698,6 +1723,7 @@ class pfCatalogFileSpecViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogFileSpec
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1724,7 +1750,7 @@ class pfCatalogFileSpecViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogfilespec(self):
         pfcatalogfilespec = create_pfcatalogfilespec()
-        url = reverse('business_pfcatalogfilespec_detail', args=[pfcatalogfilespec.pk,])
+        url = reverse('business_pfcatalogfilespec_detail', args=[pfcatalogfilespec.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1741,7 +1767,7 @@ class pfCatalogFileSpecViewTest(unittest.TestCase):
             "ratio": "ratio",
             "colorsystem": "colorsystem",
         }
-        url = reverse('business_pfcatalogfilespec_update', args=[pfcatalogfilespec.pk,])
+        url = reverse('business_pfcatalogfilespec_update', args=[pfcatalogfilespec.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1750,6 +1776,7 @@ class pfCatalogFileTypeViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogFileType
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1772,7 +1799,7 @@ class pfCatalogFileTypeViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogfiletype(self):
         pfcatalogfiletype = create_pfcatalogfiletype()
-        url = reverse('business_pfcatalogfiletype_detail', args=[pfcatalogfiletype.pk,])
+        url = reverse('business_pfcatalogfiletype_detail', args=[pfcatalogfiletype.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1785,7 +1812,7 @@ class pfCatalogFileTypeViewTest(unittest.TestCase):
             "additional_price": "additional_price",
             "pfcatalogvariant": create_"pfcatalogvariant"().pk,
         }
-        url = reverse('business_pfcatalogfiletype_update', args=[pfcatalogfiletype.pk,])
+        url = reverse('business_pfcatalogfiletype_update', args=[pfcatalogfiletype.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1794,6 +1821,7 @@ class pfCatalogOptionTypeViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogOptionType
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1817,7 +1845,7 @@ class pfCatalogOptionTypeViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogoptiontype(self):
         pfcatalogoptiontype = create_pfcatalogoptiontype()
-        url = reverse('business_pfcatalogoptiontype_detail', args=[pfcatalogoptiontype.pk,])
+        url = reverse('business_pfcatalogoptiontype_detail', args=[pfcatalogoptiontype.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1831,7 +1859,7 @@ class pfCatalogOptionTypeViewTest(unittest.TestCase):
             "additional_price": "additional_price",
             "pfcatalogvariant": create_"pfcatalogvariant"().pk,
         }
-        url = reverse('business_pfcatalogoptiontype_update', args=[pfcatalogoptiontype.pk,])
+        url = reverse('business_pfcatalogoptiontype_update', args=[pfcatalogoptiontype.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1840,6 +1868,7 @@ class pfCatalogProductViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogProduct
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1865,7 +1894,7 @@ class pfCatalogProductViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogproduct(self):
         pfcatalogproduct = create_pfcatalogproduct()
-        url = reverse('business_pfcatalogproduct_detail', args=[pfcatalogproduct.pk,])
+        url = reverse('business_pfcatalogproduct_detail', args=[pfcatalogproduct.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1881,7 +1910,7 @@ class pfCatalogProductViewTest(unittest.TestCase):
             "image": "image",
             "variant_count": "variant_count",
         }
-        url = reverse('business_pfcatalogproduct_update', args=[pfcatalogproduct.pk,])
+        url = reverse('business_pfcatalogproduct_update', args=[pfcatalogproduct.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1890,6 +1919,7 @@ class pfCatalogVariantViewTest(unittest.TestCase):
     '''
     Tests for pfCatalogVariant
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1916,7 +1946,7 @@ class pfCatalogVariantViewTest(unittest.TestCase):
 
     def test_detail_pfcatalogvariant(self):
         pfcatalogvariant = create_pfcatalogvariant()
-        url = reverse('business_pfcatalogvariant_detail', args=[pfcatalogvariant.pk,])
+        url = reverse('business_pfcatalogvariant_detail', args=[pfcatalogvariant.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1933,7 +1963,7 @@ class pfCatalogVariantViewTest(unittest.TestCase):
             "weight": "weight",
             "pfsize": create_"pfcatalogsize"().pk,
         }
-        url = reverse('business_pfcatalogvariant_update', args=[pfcatalogvariant.pk,])
+        url = reverse('business_pfcatalogvariant_update', args=[pfcatalogvariant.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1942,6 +1972,7 @@ class pfStoreViewTest(unittest.TestCase):
     '''
     Tests for pfStore
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -1966,7 +1997,7 @@ class pfStoreViewTest(unittest.TestCase):
 
     def test_detail_pfstore(self):
         pfstore = create_pfstore()
-        url = reverse('business_pfstore_detail', args=[pfstore.pk,])
+        url = reverse('business_pfstore_detail', args=[pfstore.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -1981,7 +2012,7 @@ class pfStoreViewTest(unittest.TestCase):
             "consumer_key": "consumer_key",
             "consumer_secret": "consumer_secret",
         }
-        url = reverse('business_pfstore_update', args=[pfstore.pk,])
+        url = reverse('business_pfstore_update', args=[pfstore.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -1990,6 +2021,7 @@ class pfPrintFileViewTest(unittest.TestCase):
     '''
     Tests for pfPrintFile
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -2023,7 +2055,7 @@ class pfPrintFileViewTest(unittest.TestCase):
 
     def test_detail_pfprintfile(self):
         pfprintfile = create_pfprintfile()
-        url = reverse('business_pfprintfile_detail', args=[pfprintfile.pk,])
+        url = reverse('business_pfprintfile_detail', args=[pfprintfile.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -2047,8 +2079,6 @@ class pfPrintFileViewTest(unittest.TestCase):
             "visible": "visible",
             "pfstore": create_pfstore().pk,
         }
-        url = reverse('business_pfprintfile_update', args=[pfprintfile.pk,])
+        url = reverse('business_pfprintfile_update', args=[pfprintfile.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
-
-

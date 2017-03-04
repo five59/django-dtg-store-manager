@@ -144,7 +144,8 @@ class wooAttributeAdmin(admin.ModelAdmin):
     list_display = ['id', 'date_added', 'date_updated',
                     'is_active', 'wid', 'name', 'slug', 'type', 'has_archives']
     readonly_fields = ['id', 'date_added', 'date_updated',
-                       'is_active', 'wid', 'name', 'slug', 'type', 'has_archives']
+                       'is_active', 'wid', 'name', 'slug',
+                       'type', 'has_archives']
 
 admin.site.register(wooAttribute, wooAttributeAdmin)
 
@@ -158,10 +159,14 @@ class wooCategoryAdminForm(forms.ModelForm):
 
 class wooCategoryAdmin(admin.ModelAdmin):
     form = wooCategoryAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug',
-                    'parent', 'description', 'display', 'count', 'image_id', 'image_date_created']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name',
-                       'slug', 'parent', 'description', 'display', 'count', 'image_id', 'image_date_created']
+    list_display = ['id', 'date_added', 'date_updated',
+                    'is_active', 'wid', 'name', 'slug',
+                    'parent', 'description', 'display', 'count',
+                    'image_id', 'image_date_created']
+    readonly_fields = ['id', 'date_added', 'date_updated',
+                       'is_active', 'wid', 'name',
+                       'slug', 'parent', 'description', 'display',
+                       'count', 'image_id', 'image_date_created']
 
 admin.site.register(wooCategory, wooCategoryAdmin)
 
@@ -192,10 +197,14 @@ class wooProductAdminForm(forms.ModelForm):
 
 class wooProductAdmin(admin.ModelAdmin):
     form = wooProductAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'slug', 'permalink',
-                    'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'slug', 'permalink',
-                       'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed']
+    list_display = ['id', 'date_added', 'date_updated', 'is_active',
+                    'wid', 'slug', 'permalink',
+                    'date_created', 'dimension_length', 'dimension_width',
+                    'dimension_height', 'weight', 'reviews_allowed']
+    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active', 'wid',
+                       'slug', 'permalink',
+                       'date_created', 'dimension_length', 'dimension_width',
+                       'dimension_height', 'weight', 'reviews_allowed']
 
 admin.site.register(wooProduct, wooProductAdmin)
 
@@ -247,7 +256,8 @@ class wooTagAdmin(admin.ModelAdmin):
     list_display = ['id', 'date_added', 'date_updated',
                     'is_active', 'wid', 'name', 'slug', 'description', 'count']
     readonly_fields = ['id', 'date_added', 'date_updated',
-                       'is_active', 'wid', 'name', 'slug', 'description', 'count']
+                       'is_active', 'wid', 'name', 'slug',
+                       'description', 'count']
 
 admin.site.register(wooTag, wooTagAdmin)
 
@@ -264,7 +274,8 @@ class wooTermAdmin(admin.ModelAdmin):
     list_display = ['id', 'date_added', 'date_updated', 'wid', 'name',
                     'slug', 'menu_order', 'count', 'wr_tooltip', 'wr_label']
     readonly_fields = ['id', 'date_added', 'date_updated', 'wid',
-                       'name', 'slug', 'menu_order', 'count', 'wr_tooltip', 'wr_label']
+                       'name', 'slug', 'menu_order', 'count', 'wr_tooltip',
+                       'wr_label']
 
 admin.site.register(wooTerm, wooTermAdmin)
 
@@ -278,10 +289,14 @@ class wooVariantAdminForm(forms.ModelForm):
 
 class wooVariantAdmin(admin.ModelAdmin):
     form = wooVariantAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created',
-                    'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created',
-                       'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight']
+    list_display = ['id', 'date_added', 'date_updated', 'is_active',
+                    'wid', 'date_created',
+                    'permalink', 'sku', 'price', 'dimension_length',
+                    'dimension_width', 'dimension_height', 'weight']
+    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active',
+                       'wid', 'date_created',
+                       'permalink', 'sku', 'price', 'dimension_length',
+                       'dimension_width', 'dimension_height', 'weight']
 
 admin.site.register(wooVariant, wooVariantAdmin)
 
@@ -295,10 +310,18 @@ class wpMediaAdminForm(forms.ModelForm):
 
 class wpMediaAdmin(admin.ModelAdmin):
     form = wpMediaAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid',
-                    'source_url', 'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid',
-                       'source_url', 'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type']
+    list_display = ['id', 'date_added', 'date_updated', 'is_active',
+                    'alt_text', 'width', 'height', 'file', 'author',
+                    'mime_type', 'comment_status', 'wid',
+                    'source_url', 'template', 'ping_status', 'caption',
+                    'link', 'slug', 'modified', 'guid', 'description',
+                    'modified_gmt', 'title', 'date_gmt', 'type']
+    readonly_fields = ['id', 'date_added', 'date_updated', 'is_active',
+                       'alt_text', 'width', 'height', 'file', 'author',
+                       'mime_type', 'comment_status', 'wid',
+                       'source_url', 'template', 'ping_status', 'caption',
+                       'link', 'slug', 'modified', 'guid', 'description',
+                       'modified_gmt', 'title', 'date_gmt', 'type']
 
 admin.site.register(wpMedia, wpMediaAdmin)
 
@@ -313,9 +336,11 @@ class wpMediaSizeAdminForm(forms.ModelForm):
 class wpMediaSizeAdmin(admin.ModelAdmin):
     form = wpMediaSizeAdminForm
     list_display = ['id', 'date_added', 'date_updated', 'is_active',
-                    'name', 'file', 'mime_type', 'width', 'height', 'source_url']
+                    'name', 'file', 'mime_type',
+                    'width', 'height', 'source_url']
     readonly_fields = ['id', 'date_added', 'date_updated', 'is_active',
-                       'name', 'file', 'mime_type', 'width', 'height', 'source_url']
+                       'name', 'file', 'mime_type',
+                       'width', 'height', 'source_url']
 
 admin.site.register(wpMediaSize, wpMediaSizeAdmin)
 
@@ -359,7 +384,8 @@ class pfSyncProductAdminForm(forms.ModelForm):
 
 class pfSyncProductAdmin(admin.ModelAdmin):
     form = pfSyncProductAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'variants', 'synced']
+    list_display = ['id', 'date_added', 'date_updated', 'pid', 'external_id',
+                    'variants', 'synced']
     readonly_fields = ['id', 'date_added', 'date_updated',
                        'pid', 'external_id', 'variants', 'synced']
 
@@ -375,8 +401,10 @@ class pfSyncVariantAdminForm(forms.ModelForm):
 
 class pfSyncVariantAdmin(admin.ModelAdmin):
     form = pfSyncVariantAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'synced']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'synced']
+    list_display = ['id', 'date_added', 'date_updated',
+                    'pid', 'external_id', 'synced']
+    readonly_fields = ['id', 'date_added', 'date_updated',
+                       'pid', 'external_id', 'synced']
 
 admin.site.register(pfSyncVariant, pfSyncVariantAdmin)
 
@@ -440,9 +468,11 @@ class pfCatalogFileSpecAdminForm(forms.ModelForm):
 class pfCatalogFileSpecAdmin(admin.ModelAdmin):
     form = pfCatalogFileSpecAdminForm
     list_display = ['id', 'date_added', 'date_updated', 'name', 'note',
-                    'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem']
+                    'width', 'height',
+                    'width_in', 'height_in', 'ratio', 'colorsystem']
     readonly_fields = ['id', 'date_added', 'date_updated', 'name', 'note',
-                       'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem']
+                       'width', 'height',
+                       'width_in', 'height_in', 'ratio', 'colorsystem']
 
 admin.site.register(pfCatalogFileSpec, pfCatalogFileSpecAdmin)
 
@@ -456,8 +486,10 @@ class pfCatalogFileTypeAdminForm(forms.ModelForm):
 
 class pfCatalogFileTypeAdmin(admin.ModelAdmin):
     form = pfCatalogFileTypeAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'title', 'additional_price']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'pid', 'title', 'additional_price']
+    list_display = ['id', 'date_added', 'date_updated',
+                    'pid', 'title', 'additional_price']
+    readonly_fields = ['id', 'date_added', 'date_updated',
+                       'pid', 'title', 'additional_price']
 
 admin.site.register(pfCatalogFileType, pfCatalogFileTypeAdmin)
 
@@ -471,7 +503,8 @@ class pfCatalogOptionTypeAdminForm(forms.ModelForm):
 
 class pfCatalogOptionTypeAdmin(admin.ModelAdmin):
     form = pfCatalogOptionTypeAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'title', 'type', 'additional_price']
+    list_display = ['id', 'date_added', 'date_updated',
+                    'pid', 'title', 'type', 'additional_price']
     readonly_fields = ['id', 'date_added', 'date_updated',
                        'pid', 'title', 'type', 'additional_price']
 
@@ -490,7 +523,8 @@ class pfCatalogProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'date_added', 'date_updated', 'is_active',
                     'pid', 'type', 'brand', 'model', 'image', 'variant_count']
     readonly_fields = ['id', 'date_added', 'date_updated', 'is_active',
-                       'pid', 'type', 'brand', 'model', 'image', 'variant_count']
+                       'pid', 'type', 'brand', 'model',
+                       'image', 'variant_count']
 
 admin.site.register(pfCatalogProduct, pfCatalogProductAdmin)
 
@@ -524,7 +558,8 @@ class pfStoreAdmin(admin.ModelAdmin):
     list_display = ['id', 'date_added', 'date_updated', 'code', 'name',
                     'website', 'created', 'consumer_key', 'consumer_secret']
     readonly_fields = ['id', 'date_added', 'date_updated', 'code',
-                       'name', 'website', 'created', 'consumer_key', 'consumer_secret']
+                       'name', 'website', 'created',
+                       'consumer_key', 'consumer_secret']
 
 admin.site.register(pfStore, pfStoreAdmin)
 
@@ -538,9 +573,13 @@ class pfPrintFileAdminForm(forms.ModelForm):
 
 class pfPrintFileAdmin(admin.ModelAdmin):
     form = pfPrintFileAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'type', 'hash', 'url', 'filename',
-                    'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'pid', 'type', 'hash', 'url', 'filename',
-                       'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible']
+    list_display = ['id', 'date_added', 'date_updated', 'pid', 'type',
+                    'hash', 'url', 'filename',
+                    'mime_type', 'size', 'width', 'height', 'dpi',
+                    'status', 'created', 'thumbnail_url', 'visible']
+    readonly_fields = ['id', 'date_added', 'date_updated', 'pid',
+                       'type', 'hash', 'url', 'filename',
+                       'mime_type', 'size', 'width', 'height', 'dpi',
+                       'status', 'created', 'thumbnail_url', 'visible']
 
 admin.site.register(pfPrintFile, pfPrintFileAdmin)
