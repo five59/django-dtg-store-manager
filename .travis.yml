@@ -6,8 +6,7 @@ env:
 install:
   - pip install -r requirements.txt
   - cd ..
-  - cd storemanager/src
-  # - cp storemanager/settings/local.sample.env storemanager/settings/local.env
+  - cd src
   - python manage.py migrate
 script:
   - python manage.py test profiles

@@ -1,4 +1,4 @@
 exclude_paths:
-- docs/**/**/*
-- logs/**
-- src/static/**/*
+- "docs/"
+- "logs/"
+- "src/static/"
