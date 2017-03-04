@@ -119,7 +119,7 @@ def create_wooattribute(**kwargs):
     defaults["has_archives"] = "has_archives"
     defaults.update(**kwargs)
     if "store" not in defaults:
-        defaults["store"] = create_"woostore"()
+        defaults["store"] = create_woostore()
     return wooAttribute.objects.create(**defaults)
 
 
@@ -138,7 +138,7 @@ def create_woocategory(**kwargs):
     defaults["image_date_created"] = "image_date_created"
     defaults.update(**kwargs)
     if "store" not in defaults:
-        defaults["store"] = create_"woostore"()
+        defaults["store"] = create_woostore()
     return wooCategory.objects.create(**defaults)
 
 
@@ -169,13 +169,13 @@ def create_wooproduct(**kwargs):
     defaults["reviews_allowed"] = "reviews_allowed"
     defaults.update(**kwargs)
     if "woostore" not in defaults:
-        defaults["woostore"] = create_"woostore"()
+        defaults["woostore"] = create_woostore()
     if "shipping_class" not in defaults:
-        defaults["shipping_class"] = create_"wooshippingclass"()
+        defaults["shipping_class"] = create_wooshippingclass()
     if "tags" not in defaults:
-        defaults["tags"] = create_"wootag"()
+        defaults["tags"] = create_wootag()
     if "images" not in defaults:
-        defaults["images"] = create_"wooimage"()
+        defaults["images"] = create_wooimage()
     return wooProduct.objects.create(**defaults)
 
 
@@ -213,7 +213,7 @@ def create_wootag(**kwargs):
     defaults["count"] = "count"
     defaults.update(**kwargs)
     if "store" not in defaults:
-        defaults["store"] = create_"woostore"()
+        defaults["store"] = create_woostore()
     return wooTag.objects.create(**defaults)
 
 
@@ -229,7 +229,7 @@ def create_wooterm(**kwargs):
     defaults["wr_label"] = "wr_label"
     defaults.update(**kwargs)
     if "productattribute" not in defaults:
-        defaults["productattribute"] = create_"wooattribute"()
+        defaults["productattribute"] = create_wooattribute()
     return wooTerm.objects.create(**defaults)
 
 
@@ -248,9 +248,9 @@ def create_woovariant(**kwargs):
     defaults["weight"] = "weight"
     defaults.update(**kwargs)
     if "shipping_class" not in defaults:
-        defaults["shipping_class"] = create_"wooshippingclass"()
+        defaults["shipping_class"] = create_wooshippingclass()
     if "images" not in defaults:
-        defaults["images"] = create_"wooimage"()
+        defaults["images"] = create_wooimage()
     return wooVariant.objects.create(**defaults)
 
 
@@ -281,7 +281,7 @@ def create_wpmedia(**kwargs):
     defaults["type"] = "type"
     defaults.update(**kwargs)
     if "woostore" not in defaults:
-        defaults["woostore"] = create_"woostore"()
+        defaults["woostore"] = create_woostore()
     return wpMedia.objects.create(**defaults)
 
 
@@ -297,7 +297,7 @@ def create_wpmediasize(**kwargs):
     defaults["source_url"] = "source_url"
     defaults.update(**kwargs)
     if "wpmedia" not in defaults:
-        defaults["wpmedia"] = create_"wpmedia"()
+        defaults["wpmedia"] = create_wpmedia()
     return wpMediaSize.objects.create(**defaults)
 
 
@@ -317,7 +317,7 @@ def create_pfstate(**kwargs):
     defaults["name"] = "name"
     defaults.update(**kwargs)
     if "pfcountry" not in defaults:
-        defaults["pfcountry"] = create_"pfcountry"()
+        defaults["pfcountry"] = create_pfcountry()
     return pfState.objects.create(**defaults)
 
 
@@ -330,7 +330,7 @@ def create_pfsyncproduct(**kwargs):
     defaults["synced"] = "synced"
     defaults.update(**kwargs)
     if "pfstore" not in defaults:
-        defaults["pfstore"] = create_"pfstore"()
+        defaults["pfstore"] = create_pfstore()
     return pfSyncProduct.objects.create(**defaults)
 
 
@@ -342,9 +342,9 @@ def create_pfsyncvariant(**kwargs):
     defaults["synced"] = "synced"
     defaults.update(**kwargs)
     if "pfsyncproduct" not in defaults:
-        defaults["pfsyncproduct"] = create_"pfsyncproduct"()
+        defaults["pfsyncproduct"] = create_pfsyncproduct()
     if "files" not in defaults:
-        defaults["files"] = create_"pfprintfile"()
+        defaults["files"] = create_pfprintfile()
     return pfSyncVariant.objects.create(**defaults)
 
 
@@ -355,7 +355,7 @@ def create_pfsyncitemoption(**kwargs):
     defaults["value"] = "value"
     defaults.update(**kwargs)
     if "pfsyncvariant" not in defaults:
-        defaults["pfsyncvariant"] = create_"pfsyncvariant"()
+        defaults["pfsyncvariant"] = create_pfsyncvariant()
     return pfSyncItemOption.objects.create(**defaults)
 
 
@@ -405,7 +405,7 @@ def create_pfcatalogfiletype(**kwargs):
     defaults["additional_price"] = "additional_price"
     defaults.update(**kwargs)
     if "pfcatalogvariant" not in defaults:
-        defaults["pfcatalogvariant"] = create_"pfcatalogvariant"()
+        defaults["pfcatalogvariant"] = create_pfcatalogvariant()
     return pfCatalogFileType.objects.create(**defaults)
 
 
@@ -418,7 +418,7 @@ def create_pfcatalogoptiontype(**kwargs):
     defaults["additional_price"] = "additional_price"
     defaults.update(**kwargs)
     if "pfcatalogvariant" not in defaults:
-        defaults["pfcatalogvariant"] = create_"pfcatalogvariant"()
+        defaults["pfcatalogvariant"] = create_pfcatalogvariant()
     return pfCatalogOptionType.objects.create(**defaults)
 
 
@@ -448,7 +448,7 @@ def create_pfcatalogvariant(**kwargs):
     defaults["weight"] = "weight"
     defaults.update(**kwargs)
     if "pfsize" not in defaults:
-        defaults["pfsize"] = create_"pfcatalogsize"()
+        defaults["pfsize"] = create_pfcatalogsize()
     return pfCatalogVariant.objects.create(**defaults)
 
 
@@ -814,7 +814,7 @@ class wooAttributeViewTest(unittest.TestCase):
             "slug": "slug",
             "type": "type",
             "has_archives": "has_archives",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -835,7 +835,7 @@ class wooAttributeViewTest(unittest.TestCase):
             "slug": "slug",
             "type": "type",
             "has_archives": "has_archives",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         url = reverse('business_wooattribute_update', args=[wooattribute.slug, ])
         response = self.client.post(url, data)
@@ -869,7 +869,7 @@ class wooCategoryViewTest(unittest.TestCase):
             "count": "count",
             "image_id": "image_id",
             "image_date_created": "image_date_created",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -894,7 +894,7 @@ class wooCategoryViewTest(unittest.TestCase):
             "count": "count",
             "image_id": "image_id",
             "image_date_created": "image_date_created",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         url = reverse('business_woocategory_update', args=[woocategory.slug, ])
         response = self.client.post(url, data)
@@ -975,10 +975,10 @@ class wooProductViewTest(unittest.TestCase):
             "dimension_height": "dimension_height",
             "weight": "weight",
             "reviews_allowed": "reviews_allowed",
-            "woostore": create_"woostore"().pk,
-            "shipping_class": create_"wooshippingclass"().pk,
-            "tags": create_"wootag"().pk,
-            "images": create_"wooimage"().pk,
+            "woostore": create_woostore().pk,
+            "shipping_class": create_wooshippingclass().pk,
+            "tags": create_wootag().pk,
+            "images": create_wooimage().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1003,10 +1003,10 @@ class wooProductViewTest(unittest.TestCase):
             "dimension_height": "dimension_height",
             "weight": "weight",
             "reviews_allowed": "reviews_allowed",
-            "woostore": create_"woostore"().pk,
-            "shipping_class": create_"wooshippingclass"().pk,
-            "tags": create_"wootag"().pk,
-            "images": create_"wooimage"().pk,
+            "woostore": create_woostore().pk,
+            "shipping_class": create_wooshippingclass().pk,
+            "tags": create_wootag().pk,
+            "images": create_wooimage().pk,
         }
         url = reverse('business_wooproduct_update', args=[wooproduct.slug, ])
         response = self.client.post(url, data)
@@ -1128,7 +1128,7 @@ class wooTagViewTest(unittest.TestCase):
             "slug": "slug",
             "description": "description",
             "count": "count",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1149,7 +1149,7 @@ class wooTagViewTest(unittest.TestCase):
             "slug": "slug",
             "description": "description",
             "count": "count",
-            "store": create_"woostore"().pk,
+            "store": create_woostore().pk,
         }
         url = reverse('business_wootag_update', args=[wootag.slug, ])
         response = self.client.post(url, data)
@@ -1180,7 +1180,7 @@ class wooTermViewTest(unittest.TestCase):
             "count": "count",
             "wr_tooltip": "wr_tooltip",
             "wr_label": "wr_label",
-            "productattribute": create_"wooattribute"().pk,
+            "productattribute": create_wooattribute().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1202,7 +1202,7 @@ class wooTermViewTest(unittest.TestCase):
             "count": "count",
             "wr_tooltip": "wr_tooltip",
             "wr_label": "wr_label",
-            "productattribute": create_"wooattribute"().pk,
+            "productattribute": create_wooattribute().pk,
         }
         url = reverse('business_wooterm_update', args=[wooterm.slug, ])
         response = self.client.post(url, data)
@@ -1236,8 +1236,8 @@ class wooVariantViewTest(unittest.TestCase):
             "dimension_width": "dimension_width",
             "dimension_height": "dimension_height",
             "weight": "weight",
-            "shipping_class": create_"wooshippingclass"().pk,
-            "images": create_"wooimage"().pk,
+            "shipping_class": create_wooshippingclass().pk,
+            "images": create_wooimage().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1262,8 +1262,8 @@ class wooVariantViewTest(unittest.TestCase):
             "dimension_width": "dimension_width",
             "dimension_height": "dimension_height",
             "weight": "weight",
-            "shipping_class": create_"wooshippingclass"().pk,
-            "images": create_"wooimage"().pk,
+            "shipping_class": create_wooshippingclass().pk,
+            "images": create_wooimage().pk,
         }
         url = reverse('business_woovariant_update', args=[woovariant.pk, ])
         response = self.client.post(url, data)
@@ -1309,7 +1309,7 @@ class wpMediaViewTest(unittest.TestCase):
             "title": "title",
             "date_gmt": "date_gmt",
             "type": "type",
-            "woostore": create_"woostore"().pk,
+            "woostore": create_woostore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1346,7 +1346,7 @@ class wpMediaViewTest(unittest.TestCase):
             "title": "title",
             "date_gmt": "date_gmt",
             "type": "type",
-            "woostore": create_"woostore"().pk,
+            "woostore": create_woostore().pk,
         }
         url = reverse('business_wpmedia_update', args=[wpmedia.slug, ])
         response = self.client.post(url, data)
@@ -1377,7 +1377,7 @@ class wpMediaSizeViewTest(unittest.TestCase):
             "width": "width",
             "height": "height",
             "source_url": "source_url",
-            "wpmedia": create_"wpmedia"().pk,
+            "wpmedia": create_wpmedia().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1399,7 +1399,7 @@ class wpMediaSizeViewTest(unittest.TestCase):
             "width": "width",
             "height": "height",
             "source_url": "source_url",
-            "wpmedia": create_"wpmedia"().pk,
+            "wpmedia": create_wpmedia().pk,
         }
         url = reverse('business_wpmediasize_update', args=[wpmediasize.pk, ])
         response = self.client.post(url, data)
@@ -1466,7 +1466,7 @@ class pfStateViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "pfcountry": create_"pfcountry"().pk,
+            "pfcountry": create_pfcountry().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1483,7 +1483,7 @@ class pfStateViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "code": "code",
             "name": "name",
-            "pfcountry": create_"pfcountry"().pk,
+            "pfcountry": create_pfcountry().pk,
         }
         url = reverse('business_pfstate_update', args=[pfstate.pk, ])
         response = self.client.post(url, data)
@@ -1511,7 +1511,7 @@ class pfSyncProductViewTest(unittest.TestCase):
             "external_id": "external_id",
             "variants": "variants",
             "synced": "synced",
-            "pfstore": create_"pfstore"().pk,
+            "pfstore": create_pfstore().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1530,7 +1530,7 @@ class pfSyncProductViewTest(unittest.TestCase):
             "external_id": "external_id",
             "variants": "variants",
             "synced": "synced",
-            "pfstore": create_"pfstore"().pk,
+            "pfstore": create_pfstore().pk,
         }
         url = reverse('business_pfsyncproduct_update', args=[pfsyncproduct.pk, ])
         response = self.client.post(url, data)
@@ -1557,8 +1557,8 @@ class pfSyncVariantViewTest(unittest.TestCase):
             "pid": "pid",
             "external_id": "external_id",
             "synced": "synced",
-            "pfsyncproduct": create_"pfsyncproduct"().pk,
-            "files": create_"pfprintfile"().pk,
+            "pfsyncproduct": create_pfsyncproduct().pk,
+            "files": create_pfprintfile().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1576,8 +1576,8 @@ class pfSyncVariantViewTest(unittest.TestCase):
             "pid": "pid",
             "external_id": "external_id",
             "synced": "synced",
-            "pfsyncproduct": create_"pfsyncproduct"().pk,
-            "files": create_"pfprintfile"().pk,
+            "pfsyncproduct": create_pfsyncproduct().pk,
+            "files": create_pfprintfile().pk,
         }
         url = reverse('business_pfsyncvariant_update', args=[pfsyncvariant.pk, ])
         response = self.client.post(url, data)
@@ -1603,7 +1603,7 @@ class pfSyncItemOptionViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "pid": "pid",
             "value": "value",
-            "pfsyncvariant": create_"pfsyncvariant"().pk,
+            "pfsyncvariant": create_pfsyncvariant().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1620,7 +1620,7 @@ class pfSyncItemOptionViewTest(unittest.TestCase):
             "date_updated": "date_updated",
             "pid": "pid",
             "value": "value",
-            "pfsyncvariant": create_"pfsyncvariant"().pk,
+            "pfsyncvariant": create_pfsyncvariant().pk,
         }
         url = reverse('business_pfsyncitemoption_update', args=[pfsyncitemoption.pk, ])
         response = self.client.post(url, data)
@@ -1792,7 +1792,7 @@ class pfCatalogFileTypeViewTest(unittest.TestCase):
             "pid": "pid",
             "title": "title",
             "additional_price": "additional_price",
-            "pfcatalogvariant": create_"pfcatalogvariant"().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1810,7 +1810,7 @@ class pfCatalogFileTypeViewTest(unittest.TestCase):
             "pid": "pid",
             "title": "title",
             "additional_price": "additional_price",
-            "pfcatalogvariant": create_"pfcatalogvariant"().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
         url = reverse('business_pfcatalogfiletype_update', args=[pfcatalogfiletype.pk, ])
         response = self.client.post(url, data)
@@ -1838,7 +1838,7 @@ class pfCatalogOptionTypeViewTest(unittest.TestCase):
             "title": "title",
             "type": "type",
             "additional_price": "additional_price",
-            "pfcatalogvariant": create_"pfcatalogvariant"().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1857,7 +1857,7 @@ class pfCatalogOptionTypeViewTest(unittest.TestCase):
             "title": "title",
             "type": "type",
             "additional_price": "additional_price",
-            "pfcatalogvariant": create_"pfcatalogvariant"().pk,
+            "pfcatalogvariant": create_pfcatalogvariant().pk,
         }
         url = reverse('business_pfcatalogoptiontype_update', args=[pfcatalogoptiontype.pk, ])
         response = self.client.post(url, data)
@@ -1939,7 +1939,7 @@ class pfCatalogVariantViewTest(unittest.TestCase):
             "price": "price",
             "in_stock": "in_stock",
             "weight": "weight",
-            "pfsize": create_"pfcatalogsize"().pk,
+            "pfsize": create_pfcatalogsize().pk,
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 302)
@@ -1961,7 +1961,7 @@ class pfCatalogVariantViewTest(unittest.TestCase):
             "price": "price",
             "in_stock": "in_stock",
             "weight": "weight",
-            "pfsize": create_"pfcatalogsize"().pk,
+            "pfsize": create_pfcatalogsize().pk,
         }
         url = reverse('business_pfcatalogvariant_update', args=[pfcatalogvariant.pk, ])
         response = self.client.post(url, data)

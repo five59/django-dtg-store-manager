@@ -11,9 +11,18 @@ for designing dropship printing products through Print Aura and The Printful.
 See the [project site](http://559labs.github.io/django-dtg-store-manager)
 for documentation.
 
-### Badges
+#### Code Climate
 
 [![Code Climate](https://codeclimate.com/github/559Labs/django-dtg-store-manager/badges/gpa.svg)](https://codeclimate.com/github/559Labs/django-dtg-store-manager)
-[![Test Coverage](https://codeclimate.com/github/559Labs/django-dtg-store-manager/badges/coverage.svg)](https://codeclimate.com/github/559Labs/django-dtg-store-manager/coverage)
-[![Issue Count](https://codeclimate.com/github/559Labs/django-dtg-store-manager/badges/issue_count.svg)](https://codeclimate.com/github/559Labs/django-dtg-store-manager)
+[![CC Issues](https://codeclimate.com/github/559Labs/django-dtg-store-manager/badges/issue_count.svg)](https://codeclimate.com/github/559Labs/django-dtg-store-manager)
+
+#### Build Status
+
 [![Build Status](https://travis-ci.org/559Labs/django-dtg-store-manager.svg?branch=master)](https://travis-ci.org/559Labs/django-dtg-store-manager)
+
+#### GitHub Information
+
+![Open Issues](https://img.shields.io/github/issues/559Labs/django-dtg-store-manager.svg)
+![GitHub Forks](https://img.shields.io/github/forks/559Labs/django-dtg-store-manager.svg)
+![GitHub Stars](https://img.shields.io/github/stars/559Labs/django-dtg-store-manager.svg)
+![License](https://img.shields.io/badge/license-Apache%202-blue.svg)

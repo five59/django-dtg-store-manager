@@ -1053,7 +1053,7 @@ class wooAttributeCreateView(CreateView):
 
 class wooAttributeDetailView(DetailView):
     model = wooAttribute
-    template_name = "business/wo/wooattribute_detail.html"
+    template_name = "business/woo/wooattribute_detail.html"
 
 
 class wooAttributeUpdateView(UpdateView):
@@ -1101,7 +1101,7 @@ class wooCategoryCreateView(CreateView):
 
 class wooCategoryDetailView(DetailView):
     model = wooCategory
-    template_name = "business/wo/woocategory_detail.html"
+    template_name = "business/woo/woocategory_detail.html"
 
 
 class wooCategoryUpdateView(UpdateView):
@@ -1149,7 +1149,7 @@ class wooImageCreateView(CreateView):
 
 class wooImageDetailView(DetailView):
     model = wooImage
-    template_name = "business/wo/wooimage_detail.html"
+    template_name = "business/woo/wooimage_detail.html"
 
 
 class wooImageUpdateView(UpdateView):
@@ -1197,7 +1197,7 @@ class wooProductCreateView(CreateView):
 
 class wooProductDetailView(DetailView):
     model = wooProduct
-    template_name = "business/wo/wooproduct_detail.html"
+    template_name = "business/woo/wooproduct_detail.html"
 
 
 class wooProductUpdateView(UpdateView):
@@ -1245,7 +1245,7 @@ class wooShippingClassCreateView(CreateView):
 
 class wooShippingClassDetailView(DetailView):
     model = wooShippingClass
-    template_name = "business/wo/wooshippingclass_detail.html"
+    template_name = "business/woo/wooshippingclass_detail.html"
 
 
 class wooShippingClassUpdateView(UpdateView):
@@ -1293,7 +1293,7 @@ class wooStoreCreateView(CreateView):
 
 class wooStoreDetailView(DetailView):
     model = wooStore
-    template_name = "business/wo/woostore_detail.html"
+    template_name = "business/woo/woostore_detail.html"
 
 
 class wooStoreUpdateView(UpdateView):
@@ -1341,7 +1341,7 @@ class wooTagCreateView(CreateView):
 
 class wooTagDetailView(DetailView):
     model = wooTag
-    template_name = "business/wo/wootag_detail.html"
+    template_name = "business/woo/wootag_detail.html"
 
 
 class wooTagUpdateView(UpdateView):
@@ -1389,7 +1389,7 @@ class wooTermCreateView(CreateView):
 
 class wooTermDetailView(DetailView):
     model = wooTerm
-    template_name = "business/wo/wooterm_detail.html"
+    template_name = "business/woo/wooterm_detail.html"
 
 
 class wooTermUpdateView(UpdateView):
@@ -1437,7 +1437,7 @@ class wooVariantCreateView(CreateView):
 
 class wooVariantDetailView(DetailView):
     model = wooVariant
-    template_name = "business/wo/woovariant_detail.html"
+    template_name = "business/woo/woovariant_detail.html"
 
 
 class wooVariantUpdateView(UpdateView):

@@ -20,12 +20,18 @@ import uuid
 from decimal import *
 
 
-class bzBrand(models.Model):
-
-    # Fields
+class commonBusinessModel(models.Model):
     id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_added = DateTimeField(auto_now_add=True)
     date_updated = DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class bzBrand(commonBusinessModel):
+
+    # Fields
     code = CharField(_("Code"), max_length=2)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -52,12 +58,9 @@ class bzBrand(models.Model):
         return reverse('business:business_bzbrand_update', args=(self.pk,))
 
 
-class bzCreativeCollection(models.Model):
+class bzCreativeCollection(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=3)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -83,12 +86,9 @@ class bzCreativeCollection(models.Model):
         return reverse('business:business_bzcreativecollection_update', args=(self.pk,))
 
 
-class bzCreativeDesign(models.Model):
+class bzCreativeDesign(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=2)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -114,12 +114,9 @@ class bzCreativeDesign(models.Model):
         return reverse('business:business_bzcreativedesign_update', args=(self.pk,))
 
 
-class bzCreativeLayout(models.Model):
+class bzCreativeLayout(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=2)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -145,12 +142,9 @@ class bzCreativeLayout(models.Model):
         return reverse('business:business_bzcreativelayout_update', args=(self.pk,))
 
 
-class bzCreativeRendering(models.Model):
+class bzCreativeRendering(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
 
     # Relationship Fields
     bzcreativedesign = ForeignKey('business.bzCreativeDesign', verbose_name=_("Design"))
@@ -173,7 +167,7 @@ class bzCreativeRendering(models.Model):
         return reverse('business:business_bzcreativerendering_update', args=(self.pk,))
 
 
-class bzProduct(models.Model):
+class bzProduct(commonBusinessModel):
     STATUS_DRAFT = "draft"
     STATUS_PUBLIC = "public"
     STATUS_CHOICES = (
@@ -181,9 +175,6 @@ class bzProduct(models.Model):
         (STATUS_PUBLIC, "Public"),
     )
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=64, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     status = CharField(_("Status"), max_length=32, default=STATUS_DRAFT, choices=STATUS_CHOICES)
@@ -217,12 +208,9 @@ class bzProduct(models.Model):
         return reverse('business:business_bzproduct_update', args=(self.pk,))
 
 
-class bzProductVariant(models.Model):
+class bzProductVariant(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(verbose_name=_("Code"), max_length=64, default="", blank=True, null=True)
     is_active = BooleanField(verbose_name=_("Is Active"), default=True)
 
@@ -254,7 +242,7 @@ class bzProductVariant(models.Model):
         return reverse('business:business_bzproductvariant_update', args=(self.pk,))
 
 
-class wooAttribute(models.Model):
+class wooAttribute(commonBusinessModel):
     TYPE_TEXT = "text"
     TYPE_COLORPICKER = "color picker"
     TYPE_IMAGESELECT = "image select"
@@ -278,9 +266,6 @@ class wooAttribute(models.Model):
     )
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -307,7 +292,7 @@ class wooAttribute(models.Model):
         return reverse('business:business_wooattribute_update', args=(self.slug,))
 
 
-class wooCategory(models.Model):
+class wooCategory(commonBusinessModel):
     DISPLAY_DEFAULT = 'default'
     DISPLAY_PRODUCTS = 'products'
     DISPLAY_SUBCATEGORIES = 'subcategories'
@@ -319,9 +304,6 @@ class wooCategory(models.Model):
         (DISPLAY_BOTH, _("Display Both"))
     )
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = IntegerField(_("WP ID"), default=0, blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -353,12 +335,9 @@ class wooCategory(models.Model):
         return reverse('business:business_woocategory_update', args=(self.slug,))
 
 
-class wooImage(models.Model):
+class wooImage(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, help_text=_(
         "Image ID (attachment ID). In write-mode used to attach pre-existing images."))
@@ -383,12 +362,9 @@ class wooImage(models.Model):
         return reverse('business:business_wooimage_update', args=(self.pk,))
 
 
-class wooProduct(models.Model):
+class wooProduct(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, )
     slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
@@ -424,10 +400,9 @@ class wooProduct(models.Model):
         return reverse('business:business_wooproduct_update', args=(self.slug,))
 
 
-class wooShippingClass(models.Model):
+class wooShippingClass(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     wid = CharField(_("WP ID"), max_length=64, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
@@ -449,12 +424,9 @@ class wooShippingClass(models.Model):
         return reverse('business:business_wooshippingclass_update', args=(self.slug,))
 
 
-class wooStore(models.Model):
+class wooStore(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=16, default="", blank=True, null=True,
                      help_text=_("Generally, a two-character uppercase code. Used in SKUs."))
     base_url = URLField(_("Base URL"), default="", blank=True, null=True, help_text=_(
@@ -484,12 +456,9 @@ class wooStore(models.Model):
         return reverse('business:business_woostore_update', args=(self.pk,))
 
 
-class wooTag(models.Model):
+class wooTag(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = IntegerField(_("WP ID"), default=0)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -515,12 +484,9 @@ class wooTag(models.Model):
         return reverse('business:business_wootag_update', args=(self.slug,))
 
 
-class wooTerm(models.Model):
+class wooTerm(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
@@ -548,12 +514,9 @@ class wooTerm(models.Model):
         return reverse('business:business_wooterm_update', args=(self.slug,))
 
 
-class wooVariant(models.Model):
+class wooVariant(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, )
     date_created = DateField(_("Date Created"), help_text=_(
@@ -588,7 +551,7 @@ class wooVariant(models.Model):
         return reverse('business:business_woovariant_update', args=(self.pk,))
 
 
-class wpMedia(models.Model):
+class wpMedia(commonBusinessModel):
     STATUSBOOL_OPEN = 'open'
     STATUSBOOL_CLOSED = 'closed'
     STATUSBOOL_CHOICES = (
@@ -604,9 +567,6 @@ class wpMedia(models.Model):
     )
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     alt_text = CharField(_("Alternate Text"), max_length=255, default="", blank=True, null=True)
     width = IntegerField(_("Width"), default=0)
@@ -650,12 +610,9 @@ class wpMedia(models.Model):
         return reverse('business:business_wpmedia_update', args=(self.slug,))
 
 
-class wpMediaSize(models.Model):
+class wpMediaSize(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     file = CharField(_("File"), max_length=255, default="", blank=True, null=True)
@@ -682,12 +639,9 @@ class wpMediaSize(models.Model):
         return reverse('business:business_wpmediasize_update', args=(self.pk,))
 
 
-class pfCountry(models.Model):
+class pfCountry(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -706,12 +660,9 @@ class pfCountry(models.Model):
         return reverse('business:business_pfcountry_update', args=(self.pk,))
 
 
-class pfState(models.Model):
+class pfState(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
 
@@ -733,12 +684,9 @@ class pfState(models.Model):
         return reverse('business:business_pfstate_update', args=(self.pk,))
 
 
-class pfSyncProduct(models.Model):
+class pfSyncProduct(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
     external_id = CharField(_("External ID"), max_length=200, default="", blank=True, null=True)
     variants = IntegerField(_("Variant Count"), default=0)
@@ -762,12 +710,9 @@ class pfSyncProduct(models.Model):
         return reverse('business:business_pfsyncproduct_update', args=(self.pk,))
 
 
-class pfSyncVariant(models.Model):
+class pfSyncVariant(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
     external_id = CharField(_("External ID"), max_length=200, default="", blank=True, null=True)
     synced = BooleanField(_("Synced"), default=False)
@@ -791,12 +736,9 @@ class pfSyncVariant(models.Model):
         return reverse('business:business_pfsyncvariant_update', args=(self.pk,))
 
 
-class pfSyncItemOption(models.Model):
+class pfSyncItemOption(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
     value = CharField(_("Value"), max_length=255, default="", blank=True, null=True)
 
@@ -818,12 +760,9 @@ class pfSyncItemOption(models.Model):
         return reverse('business:business_pfsyncitemoption_update', args=(self.pk,))
 
 
-class pfCatalogColor(models.Model):
+class pfCatalogColor(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=3, default="", blank=True, null=True)
     label = CharField(_("Color"), max_length=255, default="", blank=True, null=True)
     label_clean = CharField(_("Clean Label"), max_length=255, default="", blank=True, null=True)
@@ -853,12 +792,9 @@ class pfCatalogColor(models.Model):
         return reverse('business:business_pfcatalogcolor_update', args=(self.pk,))
 
 
-class pfCatalogSize(models.Model):
+class pfCatalogSize(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=3, default="", blank=True, null=True)
     label = CharField(_("Size"), max_length=255, default="", blank=True, null=True)
     label_clean = CharField(_("Clean Label"), max_length=255, default="", blank=True, null=True)
@@ -889,7 +825,7 @@ class pfCatalogSize(models.Model):
         return reverse('business:business_pfcatalogsize_update', args=(self.pk,))
 
 
-class pfCatalogFileSpec(models.Model):
+class pfCatalogFileSpec(commonBusinessModel):
     COLORSYSTEM_RGB = 'R'
     COLORSYSTEM_CMYK = 'Y'
     COLORSYSTEM_CHOICES = (
@@ -897,9 +833,6 @@ class pfCatalogFileSpec(models.Model):
         (COLORSYSTEM_CMYK, "CMYK"),
     )
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     name = CharField(_("Name"), max_length=5, default="", blank=True, null=True)
     note = TextField(_("Note"), default="", blank=True, null=True)
     width = IntegerField(_("Width"), default=0)
@@ -927,12 +860,9 @@ class pfCatalogFileSpec(models.Model):
         return reverse('business:business_pfcatalogfilespec_update', args=(self.pk,))
 
 
-class pfCatalogFileType(models.Model):
+class pfCatalogFileType(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
     title = CharField(_("Title"), max_length=255, default="", blank=True, null=True)
     additional_price = CharField(_("Additional Price"), max_length=100,
@@ -956,12 +886,9 @@ class pfCatalogFileType(models.Model):
         return reverse('business:business_pfcatalogfiletype_update', args=(self.pk,))
 
 
-class pfCatalogOptionType(models.Model):
+class pfCatalogOptionType(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
     title = CharField(_("Title"), max_length=255, default="", blank=True, null=True)
     type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
@@ -986,12 +913,9 @@ class pfCatalogOptionType(models.Model):
         return reverse('business:business_pfcatalogoptiontype_update', args=(self.pk,))
 
 
-class pfCatalogProduct(models.Model):
+class pfCatalogProduct(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(_("Is Active?"), default=True)
     pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
     type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
@@ -1015,12 +939,9 @@ class pfCatalogProduct(models.Model):
         return reverse('business:business_pfcatalogproduct_update', args=(self.pk,))
 
 
-class pfCatalogVariant(models.Model):
+class pfCatalogVariant(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     is_active = BooleanField(verbose_name=_("Is Active"), default=True)
     pid = CharField(_("Printful ID"), max_length=16, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
@@ -1048,12 +969,9 @@ class pfCatalogVariant(models.Model):
         return reverse('business:business_pfcatalogvariant_update', args=(self.pk,))
 
 
-class pfStore(models.Model):
+class pfStore(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
     website = CharField(_("Website"), max_length=255, default="", blank=True, null=True)
@@ -1081,12 +999,9 @@ class pfStore(models.Model):
         return reverse('business:business_pfstore_update', args=(self.pk,))
 
 
-class pfPrintFile(models.Model):
+class pfPrintFile(commonBusinessModel):
 
     # Fields
-    id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
     pid = IntegerField(_("Printful ID"), default=0)
     type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
     hash = CharField(_("Hash"), max_length=255, default="", blank=True, null=True)
