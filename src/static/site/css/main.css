@@ -73,6 +73,10 @@ body>.navbar-default {
     margin-right: 10px;
 }
 
+.navbar-right { margin-right: 20px; }
+
+.dropdown-header { text-transform: uppercase; font-size: 9px; color: rgb(220,220,220); }
+
 .navbar-default { background:rgb(100,148,170); border-bottom:none; }
 .navbar-default .nav > li > a {color: rgba(255,255,255,0.7); }
 .navbar-default .nav > li > a:hover {color: #fff; background-color: rgba(0,0,0,0.1);}
@@ -88,12 +92,20 @@ body>.navbar-default {
 .navbar-xs .navbar-default .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 28px; }
 .navbar-xs .navbar-default .navbar .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 28px; }
 
-.btn {
+.profile-image {
+  border: 2px solid rgba(255,255,255,0.75);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+
+}
+
+/*.btn {
     background-image: none;
     -webkit-box-shadow: 0px 1px 0px #ddd;
     -moz-box-shadow: 0px 1px 0px #ddd;
     box-shadow: 0px 1px 0px #ddd;
-}
+}*/
 
 /* Home page styling */
 .corporate-jumbo {

@@ -47,20 +47,24 @@
           <ul class="nav navbar-nav navbar-right">
             {% block navbar-right %}
             {% if user.is_authenticated %}
-            {% if user.is_staff %}
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
-            {% endif %}
             <li class="dropdown">
               <a href="#" class="dropdown-toggle profile-menu" data-toggle="dropdown">
-                <img src="{% thumbnail user.profile.picture|default:'default_profile.png' 30x30 crop %}" alt="" />
-                {{ user.get_full_name|truncatechars:20 }}
+                <img class="img-circle profile-image" src="{% thumbnail user.profile.picture|default:'default_profile.png' 26x26 crop %}" alt="{{ user.get_full_name|truncatechars:20 }}" />
+                {# {{ user.get_full_name|truncatechars:20 }}#}
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{% url 'profiles:show_self' %}">Profile</a></li>
-                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                <li><a href="{% url 'profiles:show_self' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Profile</a></li>
+                {% if user.is_staff %}
+                <li><a href="{% url 'admin:index' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Go to Backend</a></li>
+                <li role="separator" class="divider"></li>
+                {% endif %}
+                <li><a href="{% url 'accounts:logout' %}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
               </ul>
             </li>
+            {% else %}
+              <li><a href="{% url 'accounts:login' %}" role="button"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign In</a></li>
+              {# <li><a href="{% url 'accounts:signup' %}" role="button">Register</a></li>#}
             {% endif %}
             {% endblock %}
           </ul>

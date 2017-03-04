@@ -28,30 +28,36 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
   aria-haspopup="true" aria-expanded="false">Catalog <span class="caret"></span></a>
   <ul class="dropdown-menu">
+    <li class="dropdown-header">Business</li>
     <li><a href="{% url 'business:business_bzproduct_list' %}">Products</a></li>
     <li><a href="{% url 'business:business_bzproductvariant_list' %}">Variants</a></li>
     <li role="separator" class="divider"></li>
+    <li class="dropdown-header">WooCommerce</li>
+    <li><a href="{% url 'business:business_wooproduct_list' %}">Products</a></li>
+    <li><a href="{% url 'business:business_woovariant_list' %}">Variants</a></li>
+    <li><a href="{% url 'business:business_wooimage_list' %}">Product Images</a></li>
+    <li role="separator" class="divider"></li>
+    <li class="dropdown-header">Printful</li>
     <li><a href="{% url 'business:business_pfcatalogproduct_list' %}">Product Catalog</a></li>
     <li><a href="{% url 'business:business_pfcatalogvariant_list' %}">Variant Catalog</a></li>
     <li><a href="{% url 'business:business_pfcatalogoptiontype_list' %}">Catalog Options</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_wooproduct_list' %}">Woo Products</a></li>
-    <li><a href="{% url 'business:business_woovariant_list' %}">Woo Variants</a></li>
-    <li role="separator" class="divider"></li>
     <li><a href="{% url 'business:business_pfsyncproduct_list' %}">Sync Products</a></li>
     <li><a href="{% url 'business:business_pfsyncvariant_list' %}">Sync Variants</a></li>
   </ul>
 </li>
 
+<span class="glyphicon glyphicon-" aria-hidden="true"></span>
+
 <li class="dropdown{% if active_link == 'media' %} active{% endif %}">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
   aria-haspopup="true" aria-expanded="false">Media <span class="caret"></span></a>
   <ul class="dropdown-menu">
-    <li><a href="{% url 'business:business_pfprintfile_list' %}">Printful Files</a></li>
+    <li class="dropdown-header">WooCommerce</li>
+    <li><a href="{% url 'business:business_wpmedia_list' %}">Media</a></li>
+    <li><a href="{% url 'business:business_wpmediasize_list' %}">Media Sizes</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_wooimage_list' %}">Woo Images</a></li>
-    <li><a href="{% url 'business:business_wpmedia_list' %}">Woo Media</a></li>
-    <li><a href="{% url 'business:business_wpmediasize_list' %}">Woo Media Sizes</a></li>
+    <li class="dropdown-header">Printful</li>
+    <li><a href="{% url 'business:business_pfprintfile_list' %}">Files</a></li>
   </ul>
 </li>
 
