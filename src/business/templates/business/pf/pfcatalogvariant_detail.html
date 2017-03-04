@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_pfcatalogvariant_list' %}">pfCatalogVariant Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>is_active</td><td>{{ object.is_active }}</td></tr>
+<tr><td>pid</td><td>{{ object.pid }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>image</td><td>{{ object.image }}</td></tr>
+<tr><td>price</td><td>{{ object.price }}</td></tr>
+<tr><td>in_stock</td><td>{{ object.in_stock }}</td></tr>
+<tr><td>weight</td><td>{{ object.weight }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit pfCatalogVariant</a>
+
+{% endblock %}

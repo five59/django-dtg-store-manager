@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+{% block title %}{{ block.super }}{{ object_name }}{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link=object_group %}
+{% endblock %}
+
+{% block container %}
+
+<div class="container business-head">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>
+        {% if object_icon %}<small><span class="glyphicon glyphicon-{{ object_icon }}"></span></small>{% endif %}
+        {{ object_name }}
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <div class="text-right">
+        <div class="btn-group" role="group">
+          <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container business-body">
+  <div class="row">
+    <div class="col-md-12">
+      {% render_table table %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

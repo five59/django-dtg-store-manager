@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_bzproduct_list' %}">bzProduct Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>code</td><td>{{ object.code }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>status</td><td>{{ object.status }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit bzProduct</a>
+
+{% endblock %}

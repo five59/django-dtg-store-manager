@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles crispy_forms_tags %}
+{% block title %}{{ block.super }}{{ object_name }}{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link=object_group %}
+{% endblock %}
+
+{% block container %}
+<form method="post">
+
+  <div class="container business-head">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>
+          {% if object_icon %}<small><span class="glyphicon glyphicon-{{ object_icon }}"></span></small>{% endif %}
+          {{ object_name }}</h2>
+      </div>
+      <div class="col-md-4">
+        <div class="text-right">
+          <div class="btn-group" role="group">
+            <a href="{{ action_list }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Cancel</a>
+            {# <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button>#}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container business-body">
+    <div class="row">
+      <div class="col-md-12">
+          <h3>
+            {% if mode == 'create' %}Create New{% endif %}
+            {% if mode == 'update' %}Update{% endif %}
+             {{ object_name }}</h3>
+          <hr />
+          {% csrf_token %}
+          {% crispy form %}
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

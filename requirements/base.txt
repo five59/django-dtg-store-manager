@@ -1,0 +1,16 @@
+Django>=1.10.6
+django-environ>=0.4.1
+django-braces>=1.11.0
+django-crispy-forms>=1.6.1
+django-admin-bootstrapped>=2.5.7
+django-authtools>=1.5.0
+djangorestframework>=3.5.4
+easy-thumbnails>=2.3
+django-tables2>=1.4.1
+django-extensions>=1.7.7
+django-timezone-field>=2.0
+olefile>=0.44
+Pillow>=4.0.0
+pytz>=2016.10
+six>=1.10.0
+sqlparse>=0.2.3

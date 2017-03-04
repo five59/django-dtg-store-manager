@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_wooterm_list' %}">wooTerm Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>date_added</td><td>{{ object.date_added }}</td></tr>
+<tr><td>date_updated</td><td>{{ object.date_updated }}</td></tr>
+<tr><td>wid</td><td>{{ object.wid }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>menu_order</td><td>{{ object.menu_order }}</td></tr>
+<tr><td>count</td><td>{{ object.count }}</td></tr>
+<tr><td>wr_tooltip</td><td>{{ object.wr_tooltip }}</td></tr>
+<tr><td>wr_label</td><td>{{ object.wr_label }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit wooTerm</a>
+
+{% endblock %}

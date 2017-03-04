@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container %}
+<p><a class="btn btn-default" href="{% url 'business:business_wooshippingclass_list' %}">wooShippingClass Listing</a></p>
+<table class="table">
+<tr><td>id</td><td>{{ object.id }}</td></tr>
+<tr><td>wid</td><td>{{ object.wid }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>description</td><td>{{ object.description }}</td></tr>
+<tr><td>count</td><td>{{ object.count }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit wooShippingClass</a>
+
+{% endblock %}
