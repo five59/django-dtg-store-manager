@@ -44,8 +44,10 @@ urlpatterns = (
 
 urlpatterns += (
     # urls for bzBrand
-    url(r'^bzbrand/$', views.bzBrandListView.as_view(), name='business_bzbrand_list'),
-    url(r'^bzbrand/create/$', views.bzBrandCreateView.as_view(), name='business_bzbrand_create'),
+    url(r'^bzbrand/$', views.bzBrandListView.as_view(),
+        name='business_bzbrand_list'),
+    url(r'^bzbrand/create/$', views.bzBrandCreateView.as_view(),
+        name='business_bzbrand_create'),
     url(r'^bzbrand/detail/(?P<pk>\S+)/$',
         views.bzBrandDetailView.as_view(), name='business_bzbrand_detail'),
     url(r'^bzbrand/update/(?P<pk>\S+)/$',
@@ -102,7 +104,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for bzProduct
-    url(r'^bzproduct/$', views.bzProductListView.as_view(), name='business_bzproduct_list'),
+    url(r'^bzproduct/$', views.bzProductListView.as_view(),
+        name='business_bzproduct_list'),
     url(r'^bzproduct/create/$', views.bzProductCreateView.as_view(),
         name='business_bzproduct_create'),
     url(r'^bzproduct/detail/(?P<pk>\S+)/$',
@@ -137,7 +140,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooCategory
-    url(r'^woocategory/$', views.wooCategoryListView.as_view(), name='business_woocategory_list'),
+    url(r'^woocategory/$', views.wooCategoryListView.as_view(),
+        name='business_woocategory_list'),
     url(r'^woocategory/create/$', views.wooCategoryCreateView.as_view(),
         name='business_woocategory_create'),
     url(r'^woocategory/detail/(?P<slug>\S+)/$',
@@ -148,8 +152,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooImage
-    url(r'^wooimage/$', views.wooImageListView.as_view(), name='business_wooimage_list'),
-    url(r'^wooimage/create/$', views.wooImageCreateView.as_view(), name='business_wooimage_create'),
+    url(r'^wooimage/$', views.wooImageListView.as_view(),
+        name='business_wooimage_list'),
+    url(r'^wooimage/create/$', views.wooImageCreateView.as_view(),
+        name='business_wooimage_create'),
     url(r'^wooimage/detail/(?P<pk>\S+)/$',
         views.wooImageDetailView.as_view(), name='business_wooimage_detail'),
     url(r'^wooimage/update/(?P<pk>\S+)/$',
@@ -158,7 +164,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooProduct
-    url(r'^wooproduct/$', views.wooProductListView.as_view(), name='business_wooproduct_list'),
+    url(r'^wooproduct/$', views.wooProductListView.as_view(),
+        name='business_wooproduct_list'),
     url(r'^wooproduct/create/$', views.wooProductCreateView.as_view(),
         name='business_wooproduct_create'),
     url(r'^wooproduct/detail/(?P<slug>\S+)/$',
@@ -181,8 +188,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooStore
-    url(r'^woostore/$', views.wooStoreListView.as_view(), name='business_woostore_list'),
-    url(r'^woostore/create/$', views.wooStoreCreateView.as_view(), name='business_woostore_create'),
+    url(r'^woostore/$', views.wooStoreListView.as_view(),
+        name='business_woostore_list'),
+    url(r'^woostore/create/$', views.wooStoreCreateView.as_view(),
+        name='business_woostore_create'),
     url(r'^woostore/detail/(?P<pk>\S+)/$',
         views.wooStoreDetailView.as_view(), name='business_woostore_detail'),
     url(r'^woostore/update/(?P<pk>\S+)/$',
@@ -192,7 +201,8 @@ urlpatterns += (
 urlpatterns += (
     # urls for wooTag
     url(r'^wootag/$', views.wooTagListView.as_view(), name='business_wootag_list'),
-    url(r'^wootag/create/$', views.wooTagCreateView.as_view(), name='business_wootag_create'),
+    url(r'^wootag/create/$', views.wooTagCreateView.as_view(),
+        name='business_wootag_create'),
     url(r'^wootag/detail/(?P<slug>\S+)/$',
         views.wooTagDetailView.as_view(), name='business_wootag_detail'),
     url(r'^wootag/update/(?P<slug>\S+)/$',
@@ -201,8 +211,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooTerm
-    url(r'^wooterm/$', views.wooTermListView.as_view(), name='business_wooterm_list'),
-    url(r'^wooterm/create/$', views.wooTermCreateView.as_view(), name='business_wooterm_create'),
+    url(r'^wooterm/$', views.wooTermListView.as_view(),
+        name='business_wooterm_list'),
+    url(r'^wooterm/create/$', views.wooTermCreateView.as_view(),
+        name='business_wooterm_create'),
     url(r'^wooterm/detail/(?P<slug>\S+)/$',
         views.wooTermDetailView.as_view(), name='business_wooterm_detail'),
     url(r'^wooterm/update/(?P<slug>\S+)/$',
@@ -211,7 +223,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wooVariant
-    url(r'^woovariant/$', views.wooVariantListView.as_view(), name='business_woovariant_list'),
+    url(r'^woovariant/$', views.wooVariantListView.as_view(),
+        name='business_woovariant_list'),
     url(r'^woovariant/create/$', views.wooVariantCreateView.as_view(),
         name='business_woovariant_create'),
     url(r'^woovariant/detail/(?P<pk>\S+)/$',
@@ -222,8 +235,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wpMedia
-    url(r'^wpmedia/$', views.wpMediaListView.as_view(), name='business_wpmedia_list'),
-    url(r'^wpmedia/create/$', views.wpMediaCreateView.as_view(), name='business_wpmedia_create'),
+    url(r'^wpmedia/$', views.wpMediaListView.as_view(),
+        name='business_wpmedia_list'),
+    url(r'^wpmedia/create/$', views.wpMediaCreateView.as_view(),
+        name='business_wpmedia_create'),
     url(r'^wpmedia/detail/(?P<slug>\S+)/$',
         views.wpMediaDetailView.as_view(), name='business_wpmedia_detail'),
     url(r'^wpmedia/update/(?P<slug>\S+)/$',
@@ -232,7 +247,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for wpMediaSize
-    url(r'^wpmediasize/$', views.wpMediaSizeListView.as_view(), name='business_wpmediasize_list'),
+    url(r'^wpmediasize/$', views.wpMediaSizeListView.as_view(),
+        name='business_wpmediasize_list'),
     url(r'^wpmediasize/create/$', views.wpMediaSizeCreateView.as_view(),
         name='business_wpmediasize_create'),
     url(r'^wpmediasize/detail/(?P<pk>\S+)/$',
@@ -243,7 +259,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for pfCountry
-    url(r'^pfcountry/$', views.pfCountryListView.as_view(), name='business_pfcountry_list'),
+    url(r'^pfcountry/$', views.pfCountryListView.as_view(),
+        name='business_pfcountry_list'),
     url(r'^pfcountry/create/$', views.pfCountryCreateView.as_view(),
         name='business_pfcountry_create'),
     url(r'^pfcountry/detail/(?P<pk>\S+)/$',
@@ -254,8 +271,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for pfState
-    url(r'^pfstate/$', views.pfStateListView.as_view(), name='business_pfstate_list'),
-    url(r'^pfstate/create/$', views.pfStateCreateView.as_view(), name='business_pfstate_create'),
+    url(r'^pfstate/$', views.pfStateListView.as_view(),
+        name='business_pfstate_list'),
+    url(r'^pfstate/create/$', views.pfStateCreateView.as_view(),
+        name='business_pfstate_create'),
     url(r'^pfstate/detail/(?P<pk>\S+)/$',
         views.pfStateDetailView.as_view(), name='business_pfstate_detail'),
     url(r'^pfstate/update/(?P<pk>\S+)/$',
@@ -384,8 +403,10 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for pfStore
-    url(r'^pfstore/$', views.pfStoreListView.as_view(), name='business_pfstore_list'),
-    url(r'^pfstore/create/$', views.pfStoreCreateView.as_view(), name='business_pfstore_create'),
+    url(r'^pfstore/$', views.pfStoreListView.as_view(),
+        name='business_pfstore_list'),
+    url(r'^pfstore/create/$', views.pfStoreCreateView.as_view(),
+        name='business_pfstore_create'),
     url(r'^pfstore/detail/(?P<pk>\S+)/$',
         views.pfStoreDetailView.as_view(), name='business_pfstore_detail'),
     url(r'^pfstore/update/(?P<pk>\S+)/$',
@@ -394,7 +415,8 @@ urlpatterns += (
 
 urlpatterns += (
     # urls for pfPrintFile
-    url(r'^pfprintfile/$', views.pfPrintFileListView.as_view(), name='business_pfprintfile_list'),
+    url(r'^pfprintfile/$', views.pfPrintFileListView.as_view(),
+        name='business_pfprintfile_list'),
     url(r'^pfprintfile/create/$', views.pfPrintFileCreateView.as_view(),
         name='business_pfprintfile_create'),
     url(r'^pfprintfile/detail/(?P<pk>\S+)/$',

@@ -82,10 +82,12 @@ class bzCreativeCollection(commonBusinessModel):
         return _("Unknown Collection")
 
     def get_absolute_url(self):
-        return reverse('business:business_bzcreativecollection_detail', args=(self.pk,))
+        return reverse(
+            'business:business_bzcreativecollection_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzcreativecollection_update', args=(self.pk,))
+        return reverse(
+            'business:business_bzcreativecollection_update', args=(self.pk,))
 
 
 class bzCreativeDesign(commonBusinessModel):
@@ -112,10 +114,12 @@ class bzCreativeDesign(commonBusinessModel):
         return _("Unknown Design")
 
     def get_absolute_url(self):
-        return reverse('business:business_bzcreativedesign_detail', args=(self.pk,))
+        return reverse('business:business_bzcreativedesign_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzcreativedesign_update', args=(self.pk,))
+        return reverse('business:business_bzcreativedesign_update',
+                       args=(self.pk,))
 
 
 class bzCreativeLayout(commonBusinessModel):
@@ -142,10 +146,12 @@ class bzCreativeLayout(commonBusinessModel):
         return _("Unknown Design")
 
     def get_absolute_url(self):
-        return reverse('business:business_bzcreativelayout_detail', args=(self.pk,))
+        return reverse('business:business_bzcreativelayout_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzcreativelayout_update', args=(self.pk,))
+        return reverse('business:business_bzcreativelayout_update',
+                       args=(self.pk,))
 
 
 class bzCreativeRendering(commonBusinessModel):
@@ -165,14 +171,17 @@ class bzCreativeRendering(commonBusinessModel):
 
     def __str__(self):
         if self.bzcreativedesign and self.bzcreativelayout:
-            return "{} - {}".format(self.bzcreativedesign.code, self.bzcreativelayout.code)
+            return "{} - {}".format(self.bzcreativedesign.code,
+                                    self.bzcreativelayout.code)
         return _("Unknown Rendering")
 
     def get_absolute_url(self):
-        return reverse('business:business_bzcreativerendering_detail', args=(self.pk,))
+        return reverse('business:business_bzcreativerendering_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzcreativerendering_update', args=(self.pk,))
+        return reverse('business:business_bzcreativerendering_update',
+                       args=(self.pk,))
 
 
 class bzProduct(commonBusinessModel):
@@ -194,11 +203,14 @@ class bzProduct(commonBusinessModel):
     bzDesign = ForeignKey('business.bzCreativeDesign',
                           verbose_name=_("Design"))
     pfProduct = ForeignKey('business.pfCatalogProduct',
-                           verbose_name=_("Vendor Product"), blank=True, null=True, )
+                           verbose_name=_("Vendor Product"),
+                           blank=True, null=True, )
     wooProduct = ForeignKey('business.wooProduct',
-                            verbose_name=_("Outlet Product"), blank=True, null=True, )
+                            verbose_name=_("Outlet Product"),
+                            blank=True, null=True, )
     pfSyncProduct = ForeignKey('business.pfSyncProduct',
-                               verbose_name=_("Sync Product"), blank=True, null=True, )
+                               verbose_name=_("Sync Product"),
+                               blank=True, null=True, )
 
     class Meta:
         ordering = ('code',)
@@ -251,10 +263,12 @@ class bzProductVariant(commonBusinessModel):
         return " - ".join(rv)
 
     def get_absolute_url(self):
-        return reverse('business:business_bzproductvariant_detail', args=(self.pk,))
+        return reverse('business:business_bzproductvariant_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzproductvariant_update', args=(self.pk,))
+        return reverse('business:business_bzproductvariant_update',
+                       args=(self.pk,))
 
 
 class wooAttribute(commonBusinessModel):
@@ -304,10 +318,12 @@ class wooAttribute(commonBusinessModel):
         return u'%s' % self.slug
 
     def get_absolute_url(self):
-        return reverse('business:business_wooattribute_detail', args=(self.slug,))
+        return reverse('business:business_wooattribute_detail',
+                       args=(self.slug,))
 
     def get_update_url(self):
-        return reverse('business:business_wooattribute_update', args=(self.slug,))
+        return reverse('business:business_wooattribute_update',
+                       args=(self.slug,))
 
 
 class wooCategory(commonBusinessModel):
@@ -350,20 +366,24 @@ class wooCategory(commonBusinessModel):
         return u'%s' % self.slug
 
     def get_absolute_url(self):
-        return reverse('business:business_woocategory_detail', args=(self.slug,))
+        return reverse('business:business_woocategory_detail',
+                       args=(self.slug,))
 
     def get_update_url(self):
-        return reverse('business:business_woocategory_update', args=(self.slug,))
+        return reverse('business:business_woocategory_update',
+                       args=(self.slug,))
 
 
 class wooImage(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, help_text=_(
+    wid = CharField(_("WP ID"), max_length=16, default="", blank=True,
+                    null=True, help_text=_(
         "Image ID (attachment ID). In write-mode used to attach pre-existing images."))
     date_created = DateField(_("Date Created"), help_text=_(
-        "READONLY. The date the product was created, in the sites timezone."), blank=True, null=True)
+        "READONLY. The date the product was created, in the sites timezone."),
+        blank=True, null=True)
     alt = CharField(_("Alt"), max_length=255,
                     default="", blank=True, null=True)
     position = IntegerField(_("Position"), default=0, help_text=_(
@@ -394,7 +414,8 @@ class wooProduct(commonBusinessModel):
                      default="", blank=True, null=True)
     permalink = URLField(_("Permalink"), blank=True)
     date_created = DateField(_("Date Created"), help_text=_(
-        "READONLY. The date the product was created, in the sites timezone."), blank=True, null=True)
+        "READONLY. The date the product was created, in the sites timezone."),
+        blank=True, null=True)
     dimension_length = DecimalField(
         _("Length"), max_digits=10, decimal_places=2, default=0)
     dimension_width = DecimalField(
@@ -402,7 +423,9 @@ class wooProduct(commonBusinessModel):
     dimension_height = DecimalField(
         _("Height"), max_digits=10, decimal_places=2, default=0)
     weight = DecimalField(_("Weight"), help_text=_(
-        "Product weight in decimal format."), max_digits=10, decimal_places=2, default=0)
+        "Product weight in decimal format."),
+        max_digits=10, decimal_places=2,
+        default=0)
     reviews_allowed = BooleanField(_("Reviewed Allowed?"), help_text=_(
         "Allow reviews. Default is true."), default=True)
 
@@ -425,10 +448,12 @@ class wooProduct(commonBusinessModel):
         return u'%s' % self.slug
 
     def get_absolute_url(self):
-        return reverse('business:business_wooproduct_detail', args=(self.slug,))
+        return reverse('business:business_wooproduct_detail',
+                       args=(self.slug,))
 
     def get_update_url(self):
-        return reverse('business:business_wooproduct_update', args=(self.slug,))
+        return reverse('business:business_wooproduct_update',
+                       args=(self.slug,))
 
 
 class wooShippingClass(commonBusinessModel):
@@ -453,10 +478,12 @@ class wooShippingClass(commonBusinessModel):
         return u'%s' % self.slug
 
     def get_absolute_url(self):
-        return reverse('business:business_wooshippingclass_detail', args=(self.slug,))
+        return reverse(
+            'business:business_wooshippingclass_detail', args=(self.slug,))
 
     def get_update_url(self):
-        return reverse('business:business_wooshippingclass_update', args=(self.slug,))
+        return reverse(
+            'business:business_wooshippingclass_update', args=(self.slug,))
 
 
 class wooStore(commonBusinessModel):
@@ -772,10 +799,12 @@ class pfSyncProduct(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfsyncproduct_detail', args=(self.pk,))
+        return reverse('business:business_pfsyncproduct_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfsyncproduct_update', args=(self.pk,))
+        return reverse('business:business_pfsyncproduct_update',
+                       args=(self.pk,))
 
 
 class pfSyncVariant(commonBusinessModel):
@@ -801,10 +830,12 @@ class pfSyncVariant(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfsyncvariant_detail', args=(self.pk,))
+        return reverse('business:business_pfsyncvariant_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfsyncvariant_update', args=(self.pk,))
+        return reverse('business:business_pfsyncvariant_update',
+                       args=(self.pk,))
 
 
 class pfSyncItemOption(commonBusinessModel):
@@ -827,10 +858,12 @@ class pfSyncItemOption(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfsyncitemoption_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfsyncitemoption_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfsyncitemoption_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfsyncitemoption_update', args=(self.pk,))
 
 
 class pfCatalogColor(commonBusinessModel):
@@ -863,10 +896,12 @@ class pfCatalogColor(commonBusinessModel):
         return _("Unknown Color")
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogcolor_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogcolor_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogcolor_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogcolor_update', args=(self.pk,))
 
 
 class pfCatalogSize(commonBusinessModel):
@@ -901,10 +936,12 @@ class pfCatalogSize(commonBusinessModel):
         return _("Unknown Size")
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogsize_detail', args=(self.pk,))
+        return reverse('business:business_pfcatalogsize_detail',
+                       args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogsize_update', args=(self.pk,))
+        return reverse('business:business_pfcatalogsize_update',
+                       args=(self.pk,))
 
 
 class pfCatalogFileSpec(commonBusinessModel):
@@ -940,10 +977,12 @@ class pfCatalogFileSpec(commonBusinessModel):
         return _("Unknown File Spec")
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogfilespec_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogfilespec_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogfilespec_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogfilespec_update', args=(self.pk,))
 
 
 class pfCatalogFileType(commonBusinessModel):
@@ -969,10 +1008,12 @@ class pfCatalogFileType(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogfiletype_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogfiletype_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogfiletype_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogfiletype_update', args=(self.pk,))
 
 
 class pfCatalogOptionType(commonBusinessModel):
@@ -999,10 +1040,12 @@ class pfCatalogOptionType(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogoptiontype_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogoptiontype_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogoptiontype_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogoptiontype_update', args=(self.pk,))
 
 
 class pfCatalogProduct(commonBusinessModel):
@@ -1030,10 +1073,12 @@ class pfCatalogProduct(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogproduct_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogproduct_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogproduct_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogproduct_update', args=(self.pk,))
 
 
 class pfCatalogVariant(commonBusinessModel):
@@ -1065,10 +1110,12 @@ class pfCatalogVariant(commonBusinessModel):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('business:business_pfcatalogvariant_detail', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogvariant_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfcatalogvariant_update', args=(self.pk,))
+        return reverse(
+            'business:business_pfcatalogvariant_update', args=(self.pk,))
 
 
 class pfStore(commonBusinessModel):
