@@ -1,11 +1,17 @@
 engines:
-  rubocop:
+  pep8:
     enabled: true
-  brakeman:
+  radon:
+    enabled: true
+    config:
+      python_version: 3
+  markdownlint:
     enabled: true
   eslint:
     enabled: true
   csslint:
+    enabled: true
+  fixme:
     enabled: true
   duplication:
     enabled: true
@@ -20,3 +26,4 @@ exclude_paths:
 - "docs/"
 - "logs/"
 - "src/static/"
+- "src/**/migrations/"
