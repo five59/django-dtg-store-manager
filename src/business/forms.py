@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset, ButtonHolder
+from crispy_forms.layout import *
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from django.contrib.auth import get_user_model
 from .models import *
@@ -139,7 +139,8 @@ class wooCategoryForm(forms.ModelForm):
     class Meta:
         model = wooCategory
         fields = ['is_active', 'wid', 'name', 'slug', 'parent',
-                  'description', 'display', 'count', 'image_id', 'image_date_created', 'store']
+                  'description', 'display', 'count', 'image_id',
+                  'image_date_created', 'store']
 
 
 class wooImageForm(forms.ModelForm):
@@ -153,8 +154,10 @@ class wooProductForm(forms.ModelForm):
 
     class Meta:
         model = wooProduct
-        fields = ['is_active', 'wid', 'slug', 'permalink', 'date_created', 'dimension_length',
-                  'dimension_width', 'dimension_height', 'weight', 'reviews_allowed', 'woostore', 'shipping_class', 'tags', 'images']
+        fields = ['is_active', 'wid', 'slug', 'permalink', 'date_created',
+                  'dimension_length', 'dimension_width', 'dimension_height',
+                  'weight', 'reviews_allowed', 'woostore', 'shipping_class',
+                  'tags', 'images']
 
 
 class wooShippingClassForm(forms.ModelForm):
@@ -189,7 +192,8 @@ class wooStoreForm(forms.ModelForm):
 
     class Meta:
         model = wooStore
-        fields = ['code', 'base_url', 'consumer_secret', 'timezone', 'verify_ssl']
+        fields = ['code', 'base_url', 'consumer_secret', 'timezone',
+                  'verify_ssl']
 
 
 class wooTagForm(forms.ModelForm):
@@ -212,16 +216,20 @@ class wooVariantForm(forms.ModelForm):
 
     class Meta:
         model = wooVariant
-        fields = ['is_active', 'wid', 'date_created', 'permalink', 'sku', 'price',
-                  'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'shipping_class', 'images']
+        fields = ['is_active', 'wid', 'date_created', 'permalink', 'sku',
+                  'price', 'dimension_length', 'dimension_width',
+                  'dimension_height', 'weight', 'shipping_class', 'images']
 
 
 class wpMediaForm(forms.ModelForm):
 
     class Meta:
         model = wpMedia
-        fields = ['is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid', 'source_url',
-                  'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type', 'woostore']
+        fields = ['is_active', 'alt_text', 'width', 'height', 'file', 'author',
+                  'mime_type', 'comment_status', 'wid', 'source_url',
+                  'template', 'ping_status', 'caption', 'link', 'slug',
+                  'modified', 'guid', 'description', 'modified_gmt', 'title',
+                  'date_gmt', 'type', 'woostore']
 
 
 class wpMediaSizeForm(forms.ModelForm):
@@ -300,7 +308,8 @@ class pfCatalogOptionTypeForm(forms.ModelForm):
 
     class Meta:
         model = pfCatalogOptionType
-        fields = ['pid', 'title', 'type', 'additional_price', 'pfcatalogvariant']
+        fields = ['pid', 'title', 'type',
+                  'additional_price', 'pfcatalogvariant']
 
 
 class pfCatalogProductForm(forms.ModelForm):
@@ -349,5 +358,6 @@ class pfPrintFileForm(forms.ModelForm):
 
     class Meta:
         model = pfPrintFile
-        fields = ['pid', 'type', 'hash', 'url', 'filename', 'mime_type', 'size',
-                  'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible', 'pfstore']
+        fields = ['pid', 'type', 'hash', 'url', 'filename', 'mime_type',
+                  'size', 'width', 'height', 'dpi', 'status', 'created',
+                  'thumbnail_url', 'visible', 'pfstore']

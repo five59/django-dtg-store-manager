@@ -33,7 +33,8 @@ class bzBrand(commonBusinessModel):
 
     # Fields
     code = CharField(_("Code"), max_length=2)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
     vendor = ForeignKey('business.pfStore', blank=True, null=True, )
@@ -62,7 +63,8 @@ class bzCreativeCollection(commonBusinessModel):
 
     # Fields
     code = CharField(_("Code"), max_length=3)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
     bzbrand = ForeignKey('business.bzBrand', verbose_name=_("Brand"))
@@ -90,10 +92,12 @@ class bzCreativeDesign(commonBusinessModel):
 
     # Fields
     code = CharField(_("Code"), max_length=2)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
-    bzcreativecollection = ForeignKey('business.bzCreativeCollection', verbose_name=_("Collection"))
+    bzcreativecollection = ForeignKey(
+        'business.bzCreativeCollection', verbose_name=_("Collection"))
 
     class Meta:
         ordering = ('bzcreativecollection__code', 'code',)
@@ -118,10 +122,12 @@ class bzCreativeLayout(commonBusinessModel):
 
     # Fields
     code = CharField(_("Code"), max_length=2)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
-    bzcreativecollection = ForeignKey('business.bzCreativeCollection', verbose_name=_("Collection"))
+    bzcreativecollection = ForeignKey(
+        'business.bzCreativeCollection', verbose_name=_("Collection"))
 
     class Meta:
         ordering = ('bzcreativecollection__code', 'code',)
@@ -147,8 +153,10 @@ class bzCreativeRendering(commonBusinessModel):
     # Fields
 
     # Relationship Fields
-    bzcreativedesign = ForeignKey('business.bzCreativeDesign', verbose_name=_("Design"))
-    bzcreativelayout = ForeignKey('business.bzCreativeLayout', verbose_name=_("Layout"))
+    bzcreativedesign = ForeignKey(
+        'business.bzCreativeDesign', verbose_name=_("Design"))
+    bzcreativelayout = ForeignKey(
+        'business.bzCreativeLayout', verbose_name=_("Layout"))
 
     class Meta:
         ordering = ('bzcreativedesign__code', 'bzcreativelayout__code',)
@@ -175,9 +183,12 @@ class bzProduct(commonBusinessModel):
         (STATUS_PUBLIC, "Public"),
     )
     # Fields
-    code = CharField(_("Code"), max_length=64, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    status = CharField(_("Status"), max_length=32, default=STATUS_DRAFT, choices=STATUS_CHOICES)
+    code = CharField(_("Code"), max_length=64,
+                     default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    status = CharField(_("Status"), max_length=32,
+                       default=STATUS_DRAFT, choices=STATUS_CHOICES)
 
     # Relationship Fields
     bzDesign = ForeignKey('business.bzCreativeDesign',
@@ -211,16 +222,20 @@ class bzProduct(commonBusinessModel):
 class bzProductVariant(commonBusinessModel):
 
     # Fields
-    code = CharField(verbose_name=_("Code"), max_length=64, default="", blank=True, null=True)
+    code = CharField(verbose_name=_("Code"), max_length=64,
+                     default="", blank=True, null=True)
     is_active = BooleanField(verbose_name=_("Is Active"), default=True)
 
     # Relationship Fields
     bzproduct = ForeignKey('business.bzProduct', verbose_name=_("Product"))
-    pfcatalogvariant = ForeignKey('business.pfCatalogVariant', verbose_name=_("Vendor Variant"), )
+    pfcatalogvariant = ForeignKey(
+        'business.pfCatalogVariant', verbose_name=_("Vendor Variant"), )
     pfcolor = ForeignKey('business.pfCatalogColor',
                          verbose_name=_("Color"), blank=True, null=True, )
-    pfsize = ForeignKey('business.pfCatalogSize', verbose_name=_("Size"), blank=True, null=True, )
-    price = DecimalField(_("Price"), max_digits=5, decimal_places=2, default=Decimal("0"))
+    pfsize = ForeignKey('business.pfCatalogSize',
+                        verbose_name=_("Size"), blank=True, null=True, )
+    price = DecimalField(_("Price"), max_digits=5,
+                         decimal_places=2, default=Decimal("0"))
 
     class Meta:
         ordering = ('bzproduct', 'pfsize', 'pfcolor',)
@@ -267,9 +282,12 @@ class wooAttribute(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
+    wid = CharField(_("WP ID"), max_length=16,
+                    default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
     type = CharField(_("Type"), max_length=255, default="",
                      blank=True, null=True, choices=TYPE_CHOICES)
     has_archives = BooleanField(_("Has Archives?"), default=False)
@@ -306,10 +324,13 @@ class wooCategory(commonBusinessModel):
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = IntegerField(_("WP ID"), default=0, blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
     parent = IntegerField(_("Parent ID"), default=0)
-    description = TextField(_("Description"), default="", blank=True, null=True)
+    description = TextField(
+        _("Description"), default="", blank=True, null=True)
     display = CharField(_("Display"), max_length=255,
                         default=DISPLAY_DEFAULT, choices=DISPLAY_CHOICES)
     count = IntegerField(_("Count"), default=0)
@@ -343,7 +364,8 @@ class wooImage(commonBusinessModel):
         "Image ID (attachment ID). In write-mode used to attach pre-existing images."))
     date_created = DateField(_("Date Created"), help_text=_(
         "READONLY. The date the product was created, in the sites timezone."), blank=True, null=True)
-    alt = CharField(_("Alt"), max_length=255, default="", blank=True, null=True)
+    alt = CharField(_("Alt"), max_length=255,
+                    default="", blank=True, null=True)
     position = IntegerField(_("Position"), default=0, help_text=_(
         "Image position. 0 means that the image is featured."))
 
@@ -366,24 +388,33 @@ class wooProduct(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, )
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
+    wid = CharField(_("WP ID"), max_length=16,
+                    default="", blank=True, null=True, )
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
     permalink = URLField(_("Permalink"), blank=True)
     date_created = DateField(_("Date Created"), help_text=_(
         "READONLY. The date the product was created, in the sites timezone."), blank=True, null=True)
-    dimension_length = DecimalField(_("Length"), max_digits=10, decimal_places=2, default=0)
-    dimension_width = DecimalField(_("Width"), max_digits=10, decimal_places=2, default=0)
-    dimension_height = DecimalField(_("Height"), max_digits=10, decimal_places=2, default=0)
+    dimension_length = DecimalField(
+        _("Length"), max_digits=10, decimal_places=2, default=0)
+    dimension_width = DecimalField(
+        _("Width"), max_digits=10, decimal_places=2, default=0)
+    dimension_height = DecimalField(
+        _("Height"), max_digits=10, decimal_places=2, default=0)
     weight = DecimalField(_("Weight"), help_text=_(
         "Product weight in decimal format."), max_digits=10, decimal_places=2, default=0)
     reviews_allowed = BooleanField(_("Reviewed Allowed?"), help_text=_(
         "Allow reviews. Default is true."), default=True)
 
     # Relationship Fields
-    woostore = ForeignKey('business.wooStore', verbose_name=_("Store"), blank=True, null=True)
-    shipping_class = ForeignKey('business.wooShippingClass', null=True, blank=True)
-    tags = ManyToManyField('business.wooTag', verbose_name=_("Tags"), blank=True)
-    images = ManyToManyField('business.wooImage', verbose_name=_("Images"), blank=True)
+    woostore = ForeignKey('business.wooStore', verbose_name=_(
+        "Store"), blank=True, null=True)
+    shipping_class = ForeignKey(
+        'business.wooShippingClass', null=True, blank=True)
+    tags = ManyToManyField(
+        'business.wooTag', verbose_name=_("Tags"), blank=True)
+    images = ManyToManyField(
+        'business.wooImage', verbose_name=_("Images"), blank=True)
 
     class Meta:
         ordering = ('-pk',)
@@ -403,10 +434,14 @@ class wooProduct(commonBusinessModel):
 class wooShippingClass(commonBusinessModel):
 
     # Fields
-    wid = CharField(_("WP ID"), max_length=64, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
-    description = TextField(_("Description"), default="", blank=True, null=True)
+    wid = CharField(_("WP ID"), max_length=64,
+                    default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
+    description = TextField(
+        _("Description"), default="", blank=True, null=True)
     count = IntegerField(_("Count"), default=0)
 
     class Meta:
@@ -431,7 +466,8 @@ class wooStore(commonBusinessModel):
                      help_text=_("Generally, a two-character uppercase code. Used in SKUs."))
     base_url = URLField(_("Base URL"), default="", blank=True, null=True, help_text=_(
         "Include the schema and FQDN only (e.g., 'https://example.com'). No trailing slash."))
-    consumer_secret = CharField(_("Consumer Secret"), max_length=43, blank=True, null=True)
+    consumer_secret = CharField(
+        _("Consumer Secret"), max_length=43, blank=True, null=True)
     timezone = TimeZoneField(default='America/New_York')
     verify_ssl = BooleanField(_("Verify SSL?"), default=True, help_text=_(
         "Uncheck this if you are using a self-signed SSL certificate to disable ssl verification."))
@@ -461,9 +497,12 @@ class wooTag(commonBusinessModel):
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
     wid = IntegerField(_("WP ID"), default=0)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
-    description = TextField(_("Description"), default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
+    description = TextField(
+        _("Description"), default="", blank=True, null=True)
     count = IntegerField(_("Count"), default=0)
 
     # Relationship Fields
@@ -487,13 +526,18 @@ class wooTag(commonBusinessModel):
 class wooTerm(commonBusinessModel):
 
     # Fields
-    wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    slug = CharField(_("Slug"), max_length=255, default="", blank=True, null=True)
+    wid = CharField(_("WP ID"), max_length=16,
+                    default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    slug = CharField(_("Slug"), max_length=255,
+                     default="", blank=True, null=True)
     menu_order = IntegerField(_("Menu Order"), default=0)
     count = IntegerField(_("Count"), default=0)
-    wr_tooltip = CharField(_("WR Tooltip"), max_length=255, default="", blank=True, null=True)
-    wr_label = CharField(_("WR Label"), max_length=255, default="", blank=True, null=True)
+    wr_tooltip = CharField(_("WR Tooltip"), max_length=255,
+                           default="", blank=True, null=True)
+    wr_label = CharField(_("WR Label"), max_length=255,
+                         default="", blank=True, null=True)
 
     # Relationship Fields
     productattribute = ForeignKey('business.wooAttribute', verbose_name=_(
@@ -518,7 +562,8 @@ class wooVariant(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    wid = CharField(_("WP ID"), max_length=16, default="", blank=True, null=True, )
+    wid = CharField(_("WP ID"), max_length=16,
+                    default="", blank=True, null=True, )
     date_created = DateField(_("Date Created"), help_text=_(
         "READONLY. The date the product was created, in the sites timezone."), blank=True, null=True)
     permalink = URLField(_("Permalink"), blank=True)
@@ -526,15 +571,20 @@ class wooVariant(commonBusinessModel):
                     max_length=255, default="", blank=True, null=True)
     price = CharField(_("Price"), help_text=_(
         "READONLY. Current product price. This is set from regular_price and sale_price."), max_length=255, default="", blank=True, null=True)
-    dimension_length = DecimalField(_("Length"), max_digits=10, decimal_places=2, default=0)
-    dimension_width = DecimalField(_("Width"), max_digits=10, decimal_places=2, default=0)
-    dimension_height = DecimalField(_("Height"), max_digits=10, decimal_places=2, default=0)
+    dimension_length = DecimalField(
+        _("Length"), max_digits=10, decimal_places=2, default=0)
+    dimension_width = DecimalField(
+        _("Width"), max_digits=10, decimal_places=2, default=0)
+    dimension_height = DecimalField(
+        _("Height"), max_digits=10, decimal_places=2, default=0)
     weight = DecimalField(_("Weight"), help_text=_(
         "Product weight in decimal format."), max_digits=10, decimal_places=2, default=0)
 
     # Relationship Fields
-    shipping_class = ForeignKey('business.wooShippingClass', null=True, blank=True)
-    images = ManyToManyField('business.wooImage', verbose_name=_("Images"), blank=True)
+    shipping_class = ForeignKey(
+        'business.wooShippingClass', null=True, blank=True)
+    images = ManyToManyField(
+        'business.wooImage', verbose_name=_("Images"), blank=True)
 
     class Meta:
         ordering = ('-pk',)
@@ -568,29 +618,38 @@ class wpMedia(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    alt_text = CharField(_("Alternate Text"), max_length=255, default="", blank=True, null=True)
+    alt_text = CharField(_("Alternate Text"), max_length=255,
+                         default="", blank=True, null=True)
     width = IntegerField(_("Width"), default=0)
     height = IntegerField(_("Height"), default=0)
-    file = CharField(_("File"), max_length=255, default="", blank=True, null=True)
+    file = CharField(_("File"), max_length=255,
+                     default="", blank=True, null=True)
     author = IntegerField(_("Author"), default=0)
-    mime_type = CharField(_("MIME Type"), max_length=255, default="", blank=True, null=True)
+    mime_type = CharField(_("MIME Type"), max_length=255,
+                          default="", blank=True, null=True)
     comment_status = CharField(_("Comment Status"), max_length=255,
                                default=STATUSBOOL_OPEN, choices=STATUSBOOL_CHOICES)
     wid = CharField(_("ID"), max_length=16, default="", blank=True, null=True)
     source_url = URLField(_("Source URL"), blank=True, null=True)
-    template = CharField(_("Template"), max_length=255, default="", blank=True, null=True)
+    template = CharField(_("Template"), max_length=255,
+                         default="", blank=True, null=True)
     ping_status = CharField(_("Ping Status"), max_length=255,
                             default=STATUSBOOL_OPEN, choices=STATUSBOOL_CHOICES)
-    caption = CharField(_("Caption"), max_length=255, default="", blank=True, null=True)
+    caption = CharField(_("Caption"), max_length=255,
+                        default="", blank=True, null=True)
     link = URLField(_("Link"), default="", blank=True, null=True)
     slug = CharField(_("Slug"), max_length=255, blank=True, null=True)
     modified = DateTimeField(_("Modified"), blank=True, null=True)
-    guid = CharField(_("GUID"), max_length=255, default="", blank=True, null=True)
-    description = TextField(_("Description"), default="", blank=True, null=True)
+    guid = CharField(_("GUID"), max_length=255,
+                     default="", blank=True, null=True)
+    description = TextField(
+        _("Description"), default="", blank=True, null=True)
     modified_gmt = DateTimeField(_("Modified GMT"), blank=True, null=True)
-    title = CharField(_("Title"), max_length=255, default="", blank=True, null=True)
+    title = CharField(_("Title"), max_length=255,
+                      default="", blank=True, null=True)
     date_gmt = DateTimeField(_("Date GMT"), blank=True, null=True)
-    type = CharField(_("Type"), max_length=64, default="", blank=True, null=True)
+    type = CharField(_("Type"), max_length=64,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
     woostore = ForeignKey('business.woostore', blank=True, null=True)
@@ -614,9 +673,12 @@ class wpMediaSize(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    file = CharField(_("File"), max_length=255, default="", blank=True, null=True)
-    mime_type = CharField(_("MIME Type"), max_length=255, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    file = CharField(_("File"), max_length=255,
+                     default="", blank=True, null=True)
+    mime_type = CharField(_("MIME Type"), max_length=255,
+                          default="", blank=True, null=True)
     width = IntegerField(_("Width"), default=0)
     height = IntegerField(_("Height"), default=0)
     source_url = URLField(_("Source URL"), default="", blank=True, null=True)
@@ -642,8 +704,10 @@ class wpMediaSize(commonBusinessModel):
 class pfCountry(commonBusinessModel):
 
     # Fields
-    code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    code = CharField(_("Code"), max_length=50,
+                     default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     class Meta:
         ordering = ('-pk',)
@@ -663,8 +727,10 @@ class pfCountry(commonBusinessModel):
 class pfState(commonBusinessModel):
 
     # Fields
-    code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
+    code = CharField(_("Code"), max_length=50,
+                     default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
 
     # Relationship Fields
     pfcountry = ForeignKey('business.pfCountry', verbose_name=_("Country"))
@@ -687,8 +753,10 @@ class pfState(commonBusinessModel):
 class pfSyncProduct(commonBusinessModel):
 
     # Fields
-    pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
-    external_id = CharField(_("External ID"), max_length=200, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=200,
+                    default="", blank=True, null=True)
+    external_id = CharField(_("External ID"), max_length=200,
+                            default="", blank=True, null=True)
     variants = IntegerField(_("Variant Count"), default=0)
     synced = IntegerField(_("Synced"), default=0)
 
@@ -713,12 +781,15 @@ class pfSyncProduct(commonBusinessModel):
 class pfSyncVariant(commonBusinessModel):
 
     # Fields
-    pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
-    external_id = CharField(_("External ID"), max_length=200, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=200,
+                    default="", blank=True, null=True)
+    external_id = CharField(_("External ID"), max_length=200,
+                            default="", blank=True, null=True)
     synced = BooleanField(_("Synced"), default=False)
 
     # Relationship Fields
-    pfsyncproduct = ForeignKey('business.pfSyncProduct', verbose_name=_("Sync Product"))
+    pfsyncproduct = ForeignKey(
+        'business.pfSyncProduct', verbose_name=_("Sync Product"))
     files = ManyToManyField('business.pfPrintFile', blank=True)
 
     class Meta:
@@ -739,8 +810,10 @@ class pfSyncVariant(commonBusinessModel):
 class pfSyncItemOption(commonBusinessModel):
 
     # Fields
-    pid = CharField(_("Printful ID"), max_length=200, default="", blank=True, null=True)
-    value = CharField(_("Value"), max_length=255, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=200,
+                    default="", blank=True, null=True)
+    value = CharField(_("Value"), max_length=255,
+                      default="", blank=True, null=True)
 
     # Relationship Fields
     pfsyncvariant = ForeignKey('business.pfSyncVariant', )
@@ -763,10 +836,14 @@ class pfSyncItemOption(commonBusinessModel):
 class pfCatalogColor(commonBusinessModel):
 
     # Fields
-    code = CharField(_("Code"), max_length=3, default="", blank=True, null=True)
-    label = CharField(_("Color"), max_length=255, default="", blank=True, null=True)
-    label_clean = CharField(_("Clean Label"), max_length=255, default="", blank=True, null=True)
-    hex_code = CharField(_("Color Hex Code"), max_length=255, default="", blank=True, null=True)
+    code = CharField(_("Code"), max_length=3,
+                     default="", blank=True, null=True)
+    label = CharField(_("Color"), max_length=255,
+                      default="", blank=True, null=True)
+    label_clean = CharField(_("Clean Label"), max_length=255,
+                            default="", blank=True, null=True)
+    hex_code = CharField(_("Color Hex Code"), max_length=255,
+                         default="", blank=True, null=True)
 
     class Meta:
         ordering = ('-pk',)
@@ -795,11 +872,16 @@ class pfCatalogColor(commonBusinessModel):
 class pfCatalogSize(commonBusinessModel):
 
     # Fields
-    code = CharField(_("Code"), max_length=3, default="", blank=True, null=True)
-    label = CharField(_("Size"), max_length=255, default="", blank=True, null=True)
-    label_clean = CharField(_("Clean Label"), max_length=255, default="", blank=True, null=True)
-    sort_group = CharField(_("Sort Group"), max_length=2, default="", blank=True, null=True)
-    sort_order = CharField(_("Sort Order"), max_length=16, default="", blank=True, null=True)
+    code = CharField(_("Code"), max_length=3,
+                     default="", blank=True, null=True)
+    label = CharField(_("Size"), max_length=255,
+                      default="", blank=True, null=True)
+    label_clean = CharField(_("Clean Label"), max_length=255,
+                            default="", blank=True, null=True)
+    sort_group = CharField(_("Sort Group"), max_length=2,
+                           default="", blank=True, null=True)
+    sort_order = CharField(_("Sort Order"), max_length=16,
+                           default="", blank=True, null=True)
 
     class Meta:
         ordering = ('sort_group', 'sort_order',)
@@ -833,13 +915,17 @@ class pfCatalogFileSpec(commonBusinessModel):
         (COLORSYSTEM_CMYK, "CMYK"),
     )
     # Fields
-    name = CharField(_("Name"), max_length=5, default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=5,
+                     default="", blank=True, null=True)
     note = TextField(_("Note"), default="", blank=True, null=True)
     width = IntegerField(_("Width"), default=0)
     height = IntegerField(_("Height"), default=0)
-    width_in = DecimalField(_("Width (in)"), default=0, decimal_places=2, max_digits=4)
-    height_in = DecimalField(_("Height (in)"), default=0, decimal_places=2, max_digits=4)
-    ratio = CharField(_("Ratio"), max_length=32, default="", blank=True, null=True)
+    width_in = DecimalField(_("Width (in)"), default=0,
+                            decimal_places=2, max_digits=4)
+    height_in = DecimalField(_("Height (in)"), default=0,
+                             decimal_places=2, max_digits=4)
+    ratio = CharField(_("Ratio"), max_length=32,
+                      default="", blank=True, null=True)
     colorsystem = CharField(_("Color System"), max_length=1,
                             default="R", choices=COLORSYSTEM_CHOICES)
 
@@ -863,13 +949,16 @@ class pfCatalogFileSpec(commonBusinessModel):
 class pfCatalogFileType(commonBusinessModel):
 
     # Fields
-    pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
-    title = CharField(_("Title"), max_length=255, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=255,
+                    default="", blank=True, null=True)
+    title = CharField(_("Title"), max_length=255,
+                      default="", blank=True, null=True)
     additional_price = CharField(_("Additional Price"), max_length=100,
                                  default="", blank=True, null=True)
 
     # Relationship Fields
-    pfcatalogvariant = ForeignKey('business.pfCatalogVariant', verbose_name=_("Variant"))
+    pfcatalogvariant = ForeignKey(
+        'business.pfCatalogVariant', verbose_name=_("Variant"))
 
     class Meta:
         ordering = ('-pk',)
@@ -889,9 +978,12 @@ class pfCatalogFileType(commonBusinessModel):
 class pfCatalogOptionType(commonBusinessModel):
 
     # Fields
-    pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
-    title = CharField(_("Title"), max_length=255, default="", blank=True, null=True)
-    type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=255,
+                    default="", blank=True, null=True)
+    title = CharField(_("Title"), max_length=255,
+                      default="", blank=True, null=True)
+    type = CharField(_("Type"), max_length=255,
+                     default="", blank=True, null=True)
     additional_price = CharField(_("Additional Price"), max_length=100,
                                  default="", blank=True, null=True)
 
@@ -917,11 +1009,16 @@ class pfCatalogProduct(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
-    pid = CharField(_("Printful ID"), max_length=255, default="", blank=True, null=True)
-    type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
-    brand = CharField(_("Brand"), max_length=255, default="", blank=True, null=True)
-    model = CharField(_("Model"), max_length=255, default="", blank=True, null=True)
-    image = CharField(_("Image"), max_length=255, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=255,
+                    default="", blank=True, null=True)
+    type = CharField(_("Type"), max_length=255,
+                     default="", blank=True, null=True)
+    brand = CharField(_("Brand"), max_length=255,
+                      default="", blank=True, null=True)
+    model = CharField(_("Model"), max_length=255,
+                      default="", blank=True, null=True)
+    image = CharField(_("Image"), max_length=255,
+                      default="", blank=True, null=True)
     variant_count = IntegerField(_("Variants"), default=0)
 
     class Meta:
@@ -943,16 +1040,21 @@ class pfCatalogVariant(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(verbose_name=_("Is Active"), default=True)
-    pid = CharField(_("Printful ID"), max_length=16, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    image = CharField(_("Image"), max_length=255, default="", blank=True, null=True)
-    price = CharField(_("Price"), max_length=255, default="", blank=True, null=True)
+    pid = CharField(_("Printful ID"), max_length=16,
+                    default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    image = CharField(_("Image"), max_length=255,
+                      default="", blank=True, null=True)
+    price = CharField(_("Price"), max_length=255,
+                      default="", blank=True, null=True)
     in_stock = BooleanField(_("In Stock"), default=False)
     weight = DecimalField(_("Weight (oz)"), default=0, blank=True,
                           null=True, decimal_places=2, max_digits=5)
 
     # Relationship Fields
-    pfsize = ForeignKey('business.pfCatalogSize', blank=True, null=True, verbose_name=_("Size"))
+    pfsize = ForeignKey('business.pfCatalogSize', blank=True,
+                        null=True, verbose_name=_("Size"))
 
     class Meta:
         ordering = ('-pk',)
@@ -972,12 +1074,18 @@ class pfCatalogVariant(commonBusinessModel):
 class pfStore(commonBusinessModel):
 
     # Fields
-    code = CharField(_("Code"), max_length=50, default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255, default="", blank=True, null=True)
-    website = CharField(_("Website"), max_length=255, default="", blank=True, null=True)
-    created = CharField(_("Created"), max_length=255, default="", blank=True, null=True)
-    consumer_key = CharField(_("API Consumer Key"), max_length=64, default="", blank=True)
-    consumer_secret = CharField(_("API Consumer Secret"), max_length=64, default="", blank=True)
+    code = CharField(_("Code"), max_length=50,
+                     default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    website = CharField(_("Website"), max_length=255,
+                        default="", blank=True, null=True)
+    created = CharField(_("Created"), max_length=255,
+                        default="", blank=True, null=True)
+    consumer_key = CharField(_("API Consumer Key"),
+                             max_length=64, default="", blank=True)
+    consumer_secret = CharField(
+        _("API Consumer Secret"), max_length=64, default="", blank=True)
 
     class Meta:
         ordering = ('-created',)
@@ -1003,18 +1111,26 @@ class pfPrintFile(commonBusinessModel):
 
     # Fields
     pid = IntegerField(_("Printful ID"), default=0)
-    type = CharField(_("Type"), max_length=255, default="", blank=True, null=True)
-    hash = CharField(_("Hash"), max_length=255, default="", blank=True, null=True)
-    url = CharField(_("URL"), max_length=255, default="", blank=True, null=True)
-    filename = CharField(_("Filename"), max_length=255, default="", blank=True, null=True)
-    mime_type = CharField(_("MIME Type"), max_length=255, default="", blank=True, null=True)
+    type = CharField(_("Type"), max_length=255,
+                     default="", blank=True, null=True)
+    hash = CharField(_("Hash"), max_length=255,
+                     default="", blank=True, null=True)
+    url = CharField(_("URL"), max_length=255,
+                    default="", blank=True, null=True)
+    filename = CharField(_("Filename"), max_length=255,
+                         default="", blank=True, null=True)
+    mime_type = CharField(_("MIME Type"), max_length=255,
+                          default="", blank=True, null=True)
     size = IntegerField(_("Size"), default=0)
     width = IntegerField(_("Width"), default=0)
     height = IntegerField(_("Height"), default=0)
     dpi = IntegerField(_("DPI"), default=0)
-    status = CharField(_("Status"), max_length=255, default="", blank=True, null=True)
-    created = CharField(_("Created"), max_length=255, default="", blank=True, null=True)
-    thumbnail_url = CharField(_("Thumbnail URL"), max_length=255, default="", blank=True, null=True)
+    status = CharField(_("Status"), max_length=255,
+                       default="", blank=True, null=True)
+    created = CharField(_("Created"), max_length=255,
+                        default="", blank=True, null=True)
+    thumbnail_url = CharField(
+        _("Thumbnail URL"), max_length=255, default="", blank=True, null=True)
     visible = BooleanField(_("Visible"), default=False)
 
     # Relationship Fields
