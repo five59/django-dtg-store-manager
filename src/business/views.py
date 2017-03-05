@@ -8,7 +8,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
-from django_tables2 import RequestConfig
+from django_tables2 import *
 
 from .models import *
 from .forms import *
@@ -67,12 +67,15 @@ class bzCreativeCollectionListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeCollectionListView, self).get_context_data(**kwargs)
-        context['table'] = bzCreativeCollectionTable(bzCreativeCollection.objects.all())
+        context = super(bzCreativeCollectionListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = bzCreativeCollectionTable(
+            bzCreativeCollection.objects.all())
         context['object_name'] = "Creative Collection"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_bzcreativecollection_create')
+        context['action_new'] = reverse(
+            'business:business_bzcreativecollection_create')
         return context
 
 
@@ -82,12 +85,14 @@ class bzCreativeCollectionCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeCollectionCreateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeCollectionCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Collection"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativecollection_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativecollection_list')
         return context
 
 
@@ -102,12 +107,14 @@ class bzCreativeCollectionUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeCollectionUpdateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeCollectionUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Collection"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativecollection_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativecollection_list')
         return context
 
 
@@ -115,12 +122,15 @@ class bzCreativeDesignListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeDesignListView, self).get_context_data(**kwargs)
-        context['table'] = bzCreativeDesignTable(bzCreativeDesign.objects.all())
+        context = super(bzCreativeDesignListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = bzCreativeDesignTable(
+            bzCreativeDesign.objects.all())
         context['object_name'] = "Creative Design"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_bzcreativedesign_create')
+        context['action_new'] = reverse(
+            'business:business_bzcreativedesign_create')
         return context
 
 
@@ -130,12 +140,14 @@ class bzCreativeDesignCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeDesignCreateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeDesignCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Design"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativedesign_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativedesign_list')
         return context
 
 
@@ -150,12 +162,14 @@ class bzCreativeDesignUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeDesignUpdateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeDesignUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Design"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativedesign_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativedesign_list')
         return context
 
 
@@ -163,12 +177,15 @@ class bzCreativeLayoutListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeLayoutListView, self).get_context_data(**kwargs)
-        context['table'] = bzCreativeLayoutTable(bzCreativeLayout.objects.all())
+        context = super(bzCreativeLayoutListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = bzCreativeLayoutTable(
+            bzCreativeLayout.objects.all())
         context['object_name'] = "Creative Layout"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_bzcreativelayout_create')
+        context['action_new'] = reverse(
+            'business:business_bzcreativelayout_create')
         return context
 
 
@@ -178,12 +195,14 @@ class bzCreativeLayoutCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeLayoutCreateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeLayoutCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Layout"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativelayout_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativelayout_list')
         return context
 
 
@@ -198,12 +217,14 @@ class bzCreativeLayoutUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeLayoutUpdateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeLayoutUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Layout"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativelayout_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativelayout_list')
         return context
 
 
@@ -211,12 +232,15 @@ class bzCreativeRenderingListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeRenderingListView, self).get_context_data(**kwargs)
-        context['table'] = bzCreativeRenderingTable(bzCreativeRendering.objects.all())
+        context = super(bzCreativeRenderingListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = bzCreativeRenderingTable(
+            bzCreativeRendering.objects.all())
         context['object_name'] = "Creative Rendering"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_bzcreativerendering_create')
+        context['action_new'] = reverse(
+            'business:business_bzcreativerendering_create')
         return context
 
 
@@ -226,12 +250,14 @@ class bzCreativeRenderingCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeRenderingCreateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeRenderingCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Rendering"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativerendering_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativerendering_list')
         return context
 
 
@@ -246,12 +272,14 @@ class bzCreativeRenderingUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzCreativeRenderingUpdateView, self).get_context_data(**kwargs)
+        context = super(bzCreativeRenderingUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Creative Rendering"
         context['object_group'] = "creative"
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzcreativerendering_list')
+        context['action_list'] = reverse(
+            'business:business_bzcreativerendering_list')
         return context
 
 
@@ -307,12 +335,15 @@ class bzProductVariantListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzProductVariantListView, self).get_context_data(**kwargs)
-        context['table'] = bzProductVariantTable(bzProductVariant.objects.all())
+        context = super(bzProductVariantListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = bzProductVariantTable(
+            bzProductVariant.objects.all())
         context['object_name'] = "Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_bzproductvariant_create')
+        context['action_new'] = reverse(
+            'business:business_bzproductvariant_create')
         return context
 
 
@@ -322,12 +353,14 @@ class bzProductVariantCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzProductVariantCreateView, self).get_context_data(**kwargs)
+        context = super(bzProductVariantCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzproductvariant_list')
+        context['action_list'] = reverse(
+            'business:business_bzproductvariant_list')
         return context
 
 
@@ -342,12 +375,14 @@ class bzProductVariantUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(bzProductVariantUpdateView, self).get_context_data(**kwargs)
+        context = super(bzProductVariantUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_bzproductvariant_list')
+        context['action_list'] = reverse(
+            'business:business_bzproductvariant_list')
         return context
 
 
@@ -355,12 +390,14 @@ class pfCatalogColorListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogColorListView, self).get_context_data(**kwargs)
+        context = super(pfCatalogColorListView,
+                        self).get_context_data(**kwargs)
         context['table'] = pfCatalogColorTable(pfCatalogColor.objects.all())
         context['object_name'] = "Printful Color"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogcolor_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogcolor_create')
         return context
 
 
@@ -370,12 +407,14 @@ class pfCatalogColorCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogColorCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogColorCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Color"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogcolor_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogcolor_list')
         return context
 
 
@@ -390,12 +429,14 @@ class pfCatalogColorUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogColorUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogColorUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Color"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogcolor_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogcolor_list')
         return context
 
 
@@ -403,12 +444,15 @@ class pfCatalogFileSpecListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileSpecListView, self).get_context_data(**kwargs)
-        context['table'] = pfCatalogFileSpecTable(pfCatalogFileSpec.objects.all())
+        context = super(pfCatalogFileSpecListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfCatalogFileSpecTable(
+            pfCatalogFileSpec.objects.all())
         context['object_name'] = "Printful File Spec"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogfilespec_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogfilespec_create')
         return context
 
 
@@ -418,12 +462,14 @@ class pfCatalogFileSpecCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileSpecCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogFileSpecCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful File Spec"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogfilespec_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogfilespec_list')
         return context
 
 
@@ -438,12 +484,14 @@ class pfCatalogFileSpecUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileSpecUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogFileSpecUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful File Spec"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogfilespec_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogfilespec_list')
         return context
 
 
@@ -451,12 +499,15 @@ class pfCatalogFileTypeListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileTypeListView, self).get_context_data(**kwargs)
-        context['table'] = pfCatalogFileTypeTable(pfCatalogFileType.objects.all())
+        context = super(pfCatalogFileTypeListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfCatalogFileTypeTable(
+            pfCatalogFileType.objects.all())
         context['object_name'] = "Printful File Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogfiletype_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogfiletype_create')
         return context
 
 
@@ -466,12 +517,14 @@ class pfCatalogFileTypeCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileTypeCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogFileTypeCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful File Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogfiletype_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogfiletype_list')
         return context
 
 
@@ -486,12 +539,14 @@ class pfCatalogFileTypeUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogFileTypeUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogFileTypeUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful File Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogfiletype_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogfiletype_list')
         return context
 
 
@@ -499,12 +554,15 @@ class pfCatalogOptionTypeListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogOptionTypeListView, self).get_context_data(**kwargs)
-        context['table'] = pfCatalogOptionTypeTable(pfCatalogOptionType.objects.all())
+        context = super(pfCatalogOptionTypeListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfCatalogOptionTypeTable(
+            pfCatalogOptionType.objects.all())
         context['object_name'] = "Printful Option Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogoptiontype_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogoptiontype_create')
         return context
 
 
@@ -514,12 +572,14 @@ class pfCatalogOptionTypeCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogOptionTypeCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogOptionTypeCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Option Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogoptiontype_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogoptiontype_list')
         return context
 
 
@@ -534,12 +594,14 @@ class pfCatalogOptionTypeUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogOptionTypeUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogOptionTypeUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Option Type"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogoptiontype_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogoptiontype_list')
         return context
 
 
@@ -547,12 +609,15 @@ class pfCatalogProductListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogProductListView, self).get_context_data(**kwargs)
-        context['table'] = pfCatalogProductTable(pfCatalogProduct.objects.all())
+        context = super(pfCatalogProductListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfCatalogProductTable(
+            pfCatalogProduct.objects.all())
         context['object_name'] = "Printful Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogproduct_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogproduct_create')
         return context
 
 
@@ -562,12 +627,14 @@ class pfCatalogProductCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogProductCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogProductCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogproduct_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogproduct_list')
         return context
 
 
@@ -582,12 +649,14 @@ class pfCatalogProductUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogProductUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogProductUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogproduct_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogproduct_list')
         return context
 
 
@@ -600,7 +669,8 @@ class pfCatalogSizeListView(TemplateView):
         context['object_name'] = "Printful Size"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogsize_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogsize_create')
         return context
 
 
@@ -610,12 +680,14 @@ class pfCatalogSizeCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogSizeCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogSizeCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Size"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogsize_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogsize_list')
         return context
 
 
@@ -630,12 +702,14 @@ class pfCatalogSizeUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogSizeUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogSizeUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Size"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogsize_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogsize_list')
         return context
 
 
@@ -643,12 +717,15 @@ class pfCatalogVariantListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogVariantListView, self).get_context_data(**kwargs)
-        context['table'] = pfCatalogVariantTable(pfCatalogVariant.objects.all())
+        context = super(pfCatalogVariantListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfCatalogVariantTable(
+            pfCatalogVariant.objects.all())
         context['object_name'] = "Printful Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfcatalogvariant_create')
+        context['action_new'] = reverse(
+            'business:business_pfcatalogvariant_create')
         return context
 
 
@@ -658,12 +735,14 @@ class pfCatalogVariantCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogVariantCreateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogVariantCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogvariant_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogvariant_list')
         return context
 
 
@@ -678,21 +757,24 @@ class pfCatalogVariantUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfCatalogVariantUpdateView, self).get_context_data(**kwargs)
+        context = super(pfCatalogVariantUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Printful Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfcatalogvariant_list')
+        context['action_list'] = reverse(
+            'business:business_pfcatalogvariant_list')
         return context
 
 
-class pfCountryListView(TemplateView):
+class pfCountryListView(SingleTableView):
     template_name = "business/object_list.html"
+    model = pfCountry
+    table_class = pfCountryTable
 
     def get_context_data(self, **kwargs):
         context = super(pfCountryListView, self).get_context_data(**kwargs)
-        context['table'] = pfCountryTable(pfCountry.objects.all())
         context['object_name'] = "Country"
         context['object_group'] = ""
         context['object_icon'] = None
@@ -783,12 +865,13 @@ class pfPrintFileUpdateView(UpdateView):
         return context
 
 
-class pfStateListView(TemplateView):
+class pfStateListView(SingleTableView):
     template_name = "business/object_list.html"
+    model = pfState
+    table_class = pfStateTable
 
     def get_context_data(self, **kwargs):
         context = super(pfStateListView, self).get_context_data(**kwargs)
-        context['table'] = pfStateTable(pfState.objects.all())
         context['object_name'] = "State"
         context['object_group'] = ""
         context['object_icon'] = None
@@ -883,12 +966,15 @@ class pfSyncItemOptionListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncItemOptionListView, self).get_context_data(**kwargs)
-        context['table'] = pfSyncItemOptionTable(pfSyncItemOption.objects.all())
+        context = super(pfSyncItemOptionListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = pfSyncItemOptionTable(
+            pfSyncItemOption.objects.all())
         context['object_name'] = "Sync Item Option"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfsyncitemoption_create')
+        context['action_new'] = reverse(
+            'business:business_pfsyncitemoption_create')
         return context
 
 
@@ -898,12 +984,14 @@ class pfSyncItemOptionCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncItemOptionCreateView, self).get_context_data(**kwargs)
+        context = super(pfSyncItemOptionCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Item Option"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncitemoption_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncitemoption_list')
         return context
 
 
@@ -918,12 +1006,14 @@ class pfSyncItemOptionUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncItemOptionUpdateView, self).get_context_data(**kwargs)
+        context = super(pfSyncItemOptionUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Item Option"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncitemoption_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncitemoption_list')
         return context
 
 
@@ -936,7 +1026,8 @@ class pfSyncProductListView(TemplateView):
         context['object_name'] = "Sync Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfsyncproduct_create')
+        context['action_new'] = reverse(
+            'business:business_pfsyncproduct_create')
         return context
 
 
@@ -946,12 +1037,14 @@ class pfSyncProductCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncProductCreateView, self).get_context_data(**kwargs)
+        context = super(pfSyncProductCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncproduct_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncproduct_list')
         return context
 
 
@@ -966,12 +1059,14 @@ class pfSyncProductUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncProductUpdateView, self).get_context_data(**kwargs)
+        context = super(pfSyncProductUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Product"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncproduct_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncproduct_list')
         return context
 
 
@@ -984,7 +1079,8 @@ class pfSyncVariantListView(TemplateView):
         context['object_name'] = "Sync Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_pfsyncvariant_create')
+        context['action_new'] = reverse(
+            'business:business_pfsyncvariant_create')
         return context
 
 
@@ -994,12 +1090,14 @@ class pfSyncVariantCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncVariantCreateView, self).get_context_data(**kwargs)
+        context = super(pfSyncVariantCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncvariant_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncvariant_list')
         return context
 
 
@@ -1014,12 +1112,14 @@ class pfSyncVariantUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(pfSyncVariantUpdateView, self).get_context_data(**kwargs)
+        context = super(pfSyncVariantUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Sync Variant"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_pfsyncvariant_list')
+        context['action_list'] = reverse(
+            'business:business_pfsyncvariant_list')
         return context
 
 
@@ -1032,7 +1132,8 @@ class wooAttributeListView(TemplateView):
         context['object_name'] = "Wp Attribute"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_wooattribute_create')
+        context['action_new'] = reverse(
+            'business:business_wooattribute_create')
         return context
 
 
@@ -1042,7 +1143,8 @@ class wooAttributeCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(wooAttributeCreateView, self).get_context_data(**kwargs)
+        context = super(wooAttributeCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Wp Attribute"
         context['object_group'] = ""
@@ -1062,7 +1164,8 @@ class wooAttributeUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(wooAttributeUpdateView, self).get_context_data(**kwargs)
+        context = super(wooAttributeUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Wp Attribute"
         context['object_group'] = ""
@@ -1219,12 +1322,15 @@ class wooShippingClassListView(TemplateView):
     template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(wooShippingClassListView, self).get_context_data(**kwargs)
-        context['table'] = wooShippingClassTable(wooShippingClass.objects.all())
+        context = super(wooShippingClassListView,
+                        self).get_context_data(**kwargs)
+        context['table'] = wooShippingClassTable(
+            wooShippingClass.objects.all())
         context['object_name'] = "Wp Shipping Class"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_new'] = reverse('business:business_wooshippingclass_create')
+        context['action_new'] = reverse(
+            'business:business_wooshippingclass_create')
         return context
 
 
@@ -1234,12 +1340,14 @@ class wooShippingClassCreateView(CreateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(wooShippingClassCreateView, self).get_context_data(**kwargs)
+        context = super(wooShippingClassCreateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Wp Shipping Class"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_wooshippingclass_list')
+        context['action_list'] = reverse(
+            'business:business_wooshippingclass_list')
         return context
 
 
@@ -1254,12 +1362,14 @@ class wooShippingClassUpdateView(UpdateView):
     template_name = "business/object_form.html"
 
     def get_context_data(self, **kwargs):
-        context = super(wooShippingClassUpdateView, self).get_context_data(**kwargs)
+        context = super(wooShippingClassUpdateView,
+                        self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['object_name'] = "Wp Shipping Class"
         context['object_group'] = ""
         context['object_icon'] = None
-        context['action_list'] = reverse('business:business_wooshippingclass_list')
+        context['action_list'] = reverse(
+            'business:business_wooshippingclass_list')
         return context
 
 

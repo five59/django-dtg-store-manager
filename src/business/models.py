@@ -737,18 +737,30 @@ class pfCountry(commonBusinessModel):
                      default="", blank=True, null=True)
 
     class Meta:
-        ordering = ('-pk',)
+        ordering = ('code',)
         verbose_name = _("Country")
         verbose_name_plural = _("Countries")
 
     def __str__(self):
-        return u'%s' % self.pk
+        if self.code and self.name:
+            return "{} - {}".format(self.code, self.name)
+        elif self.name:
+            return "{}".format(self.name)
+        return _("Unknown Country")
 
     def get_absolute_url(self):
         return reverse('business:business_pfcountry_detail', args=(self.pk,))
 
     def get_update_url(self):
         return reverse('business:business_pfcountry_update', args=(self.pk,))
+
+    def get_states(self):
+        return pfState.objects.filter(pfcountry=self)
+    get_states.short_description = _("States")
+
+    def num_states(self):
+        return self.get_states().count()
+    num_states.short_description = _("States")
 
 
 class pfState(commonBusinessModel):
@@ -758,17 +770,20 @@ class pfState(commonBusinessModel):
                      default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255,
                      default="", blank=True, null=True)
-
     # Relationship Fields
     pfcountry = ForeignKey('business.pfCountry', verbose_name=_("Country"))
 
     class Meta:
-        ordering = ('-pk',)
+        ordering = ('pfcountry__code', 'code',)
         verbose_name = _("State")
         verbose_name_plural = _("States")
 
     def __str__(self):
-        return u'%s' % self.pk
+        if self.code and self.name:
+            return "{} - {}".format(self.code, self.name)
+        elif self.name:
+            return "{}".format(self.name)
+        return _("Unknown State")
 
     def get_absolute_url(self):
         return reverse('business:business_pfstate_detail', args=(self.pk,))
@@ -1152,6 +1167,13 @@ class pfStore(commonBusinessModel):
 
     def get_update_url(self):
         return reverse('business:business_pfstore_update', args=(self.pk,))
+
+    def has_auth(self):
+        if self.consumer_key and self.consumer_secret:
+            return True
+        return False
+    has_auth.short_description = _("Auth?")
+    has_auth.boolean = True
 
 
 class pfPrintFile(commonBusinessModel):
