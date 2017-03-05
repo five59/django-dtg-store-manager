@@ -1,10 +1,8 @@
 # Django DTG (Direct-to-Garment) Store Manager
 
-A Django/Python-based app that syncs DTG vendor APIs locally to provide tools
-and visibility into your products to make it easier to manage.
-
-I created this tool to allow me to make it easier to see all of my options
-for designing dropship printing products through Print Aura and The Printful.
+A Django/Python-based app that helps to manage an e-commerce product catalog.
+This tool understands the concept of DTG printing and dropship services
+(Printful). The goal is to provide a pluggable architecture for integrating each.
 
 ## Getting Started / Documentation
 

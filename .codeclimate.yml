@@ -21,7 +21,7 @@ engines:
   #     - javascript
 ratings:
   paths:
-  - "src/**"
+  - "**"
 exclude_paths:
 - "docs/"
 - "logs/"

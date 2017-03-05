@@ -106,6 +106,20 @@ class bzCreativeLayoutForm(forms.ModelForm):
 
 
 class bzCreativeRenderingForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(bzCreativeRenderingForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                'bzcreativedesign',
+                'bzcreativelayout',
+            ),
+            FormActions(
+                Submit('update', 'Save', css_class="btn-success"),
+            )
+        )
 
     class Meta:
         model = bzCreativeRendering
@@ -113,6 +127,25 @@ class bzCreativeRenderingForm(forms.ModelForm):
 
 
 class bzProductForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(bzProductForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                'code',
+                'name',
+                'status',
+                'bzDesign',
+                'pfProduct',
+                'wooProduct',
+                'pfSyncProduct',
+            ),
+            FormActions(
+                Submit('update', 'Save', css_class="btn-success"),
+            )
+        )
 
     class Meta:
         model = bzProduct
@@ -120,10 +153,30 @@ class bzProductForm(forms.ModelForm):
 
 
 class bzProductVariantForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(bzProductVariantForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                'code',
+                'is_active',
+                'bzproduct',
+                'pfcatalogvariant',
+                'pfcolor',
+                'pfsize',
+            ),
+            PrependedText('price', '$', placeholder="0.00"),
+            FormActions(
+                Submit('update', 'Save', css_class="btn-success"),
+            )
+        )
 
     class Meta:
         model = bzProductVariant
-        fields = ['code', 'is_active', 'bzproduct', 'pfcatalogvariant']
+        fields = ['code', 'is_active', 'bzproduct', 'pfcatalogvariant',
+                  'pfcolor', 'pfsize', 'price', ]
 
 
 class wooAttributeForm(forms.ModelForm):
