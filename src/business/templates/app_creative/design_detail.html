@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles crispy_forms_tags %}
+{% block title %}{{ block.super }}Design{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" %}
+{% endblock %}
+
+{% block container %}
+
+<div class="container business-head">
+  <div class="row">
+    <div class="col-md-8">
+      <h2><small><span class="glyphicon glyphicon-shopping-cart"></span></small> Design</h2>
+    </div>
+    <div class="col-md-4">
+      <div class="text-right">
+        <div class="btn-group" role="group">
+          <a href="{% url 'business:app_creative_home' %}" role="button"
+            class="btn btn-default btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Cancel</a>
+          <a href="{{object.get_update_url}}" role="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container business-body">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h4>Design Info</h4>
+      <table class="table table-striped">
+        <tr>
+          <th class="col-md-3">Code</th>
+          <td class="col-md-9">{{ object.code }}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{ object.name }}</td>
+        </tr>
+        <h3>{{ object.code }}
+
+
+      </table>
+
+      <h4>Metadata</h4>
+      <table class="table table-striped">
+        <tr>
+          <th class="col-md-3">ID</th>
+          <td class="col-md-9">{{object.id}}</td>
+        </tr>
+        <tr>
+          <th>Date Added</th>
+          <td>{{ object.date_added }}</td>
+        </tr>
+        <tr>
+          <th>Date Updated</th>
+          <td>{{ object.date_updated }}</td>
+        </tr>
+
+
+      </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

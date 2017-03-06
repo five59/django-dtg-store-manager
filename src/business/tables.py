@@ -1,6 +1,7 @@
 import django_tables2 as tables
 from .models import *
 from django_tables2.utils import A
+from django.utils.translation import ugettext_lazy as _
 
 
 class bzBrandTable(tables.Table):
@@ -33,30 +34,36 @@ class bzCreativeCollectionTable(tables.Table):
 
 class bzCreativeDesignTable(tables.Table):
     ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a href="{% url 'business:app_creative_design_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:app_creative_design_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    product_count = tables.Column(A('num_products'))
 
     class Meta:
         model = bzCreativeDesign
-        sequence = ('actions', 'code', 'name', 'bzcreativecollection',)
-        exclude = ('date_added', 'date_updated', 'id',)
+        sequence = ('actions', 'code', 'name', 'product_count', 'date_added',
+                    'date_updated',)
+        exclude = ('id', 'bzcreativecollection',)
         attrs = {'class': 'table table-striped'}
+        empty_text = "No Designs Found."
 
 
 class bzCreativeLayoutTable(tables.Table):
     ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a href="{% url 'business:app_creative_layout_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:app_creative_layout_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    num_products = tables.Column(A('num_products'))
 
     class Meta:
         model = bzCreativeLayout
-        sequence = ('actions', 'code', 'name', 'bzcreativecollection',)
-        exclude = ('date_added', 'date_updated', 'id',)
+        sequence = ('actions', 'code', 'name', 'num_products',
+                    'date_added', 'date_updated',)
+        exclude = ('id', 'bzcreativecollection',)
         attrs = {'class': 'table table-striped'}
+        empty_text = "No Layouts Found."
 
 
 class bzCreativeRenderingTable(tables.Table):
@@ -145,9 +152,17 @@ class pfCatalogVariantTable(tables.Table):
 
 
 class pfCountryTable(tables.Table):
+    ACTION_TEMPLATE = '''
+       <a href="{% url 'business:business_pfcountry_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:business_pfcountry_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    '''
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    num_states = tables.Column(A('num_states'))
 
     class Meta:
         model = pfCountry
+        sequence = ('actions', 'code', 'name', 'num_states')
+        exclude = ('date_added', 'date_updated', 'id')
         attrs = {'class': 'table table-striped'}
 
 
@@ -159,16 +174,32 @@ class pfPrintFileTable(tables.Table):
 
 
 class pfStateTable(tables.Table):
+    ACTION_TEMPLATE = '''
+       <a href="{% url 'business:business_pfstate_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:business_pfstate_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    '''
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = pfState
+        sequence = ('actions', 'code', 'name', 'pfcountry',)
+        exclude = ('date_added', 'date_updated', 'id')
         attrs = {'class': 'table table-striped'}
 
 
 class pfStoreTable(tables.Table):
+    ACTION_TEMPLATE = '''
+       <a href="{% url 'business:business_pfstore_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:business_pfstore_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    '''
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    has_auth = tables.columns.BooleanColumn(A('has_auth'))
 
     class Meta:
         model = pfStore
+        sequence = ('actions', 'has_auth', 'code', 'name', 'website', )
+        exclude = ('date_added', 'date_updated', 'id',
+                   'consumer_key', 'consumer_secret',)
         attrs = {'class': 'table table-striped'}
 
 
@@ -237,7 +268,8 @@ class wooStoreTable(tables.Table):
 
     class Meta:
         model = wooStore
-        sequence = ('actions', 'code', 'base_url', 'consumer_secret', 'verify_ssl', 'timezone')
+        sequence = ('actions', 'code', 'base_url',
+                    'consumer_secret', 'verify_ssl', 'timezone')
         exclude = ('date_added', 'date_updated', 'id')
         attrs = {'class': 'table table-striped'}
 
