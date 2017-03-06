@@ -1,85 +1,10 @@
 {% if user.is_authenticated %}
-
-{# <li {% if active_link == "home" %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>#}
-
-<li class="dropdown{% if active_link == 'stores' %} active{% endif %}">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-  aria-haspopup="true" aria-expanded="false">Stores <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="{% url 'business:business_bzbrand_list' %}">Brands</a></li>
-    <li><a href="{% url 'business:business_woostore_list' %}">Woo Stores</a></li>
-    <li><a href="{% url 'business:business_pfstore_list' %}">Printful Stores</a></li>
-  </ul>
-</li>
-
-<li class="dropdown{% if active_link == 'creative' %} active{% endif %}">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-  aria-haspopup="true" aria-expanded="false">Creative <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="{% url 'business:business_bzcreativecollection_list' %}">Collections</a></li>
-    <li><a href="{% url 'business:business_bzcreativedesign_list' %}">Designs</a></li>
-    <li><a href="{% url 'business:business_bzcreativelayout_list' %}">Layouts</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_bzcreativerendering_list' %}">Renderings</a></li>
-  </ul>
-</li>
-
-<li class="dropdown{% if active_link == 'catalog' %} active{% endif %}">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-  aria-haspopup="true" aria-expanded="false">Catalog <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li class="dropdown-header">Business</li>
-    <li><a href="{% url 'business:business_bzproduct_list' %}">Products</a></li>
-    <li><a href="{% url 'business:business_bzproductvariant_list' %}">Variants</a></li>
-    <li role="separator" class="divider"></li>
-    <li class="dropdown-header">WooCommerce</li>
-    <li><a href="{% url 'business:business_wooproduct_list' %}">Products</a></li>
-    <li><a href="{% url 'business:business_woovariant_list' %}">Variants</a></li>
-    <li><a href="{% url 'business:business_wooimage_list' %}">Product Images</a></li>
-    <li role="separator" class="divider"></li>
-    <li class="dropdown-header">Printful</li>
-    <li><a href="{% url 'business:business_pfcatalogproduct_list' %}">Product Catalog</a></li>
-    <li><a href="{% url 'business:business_pfcatalogvariant_list' %}">Variant Catalog</a></li>
-    <li><a href="{% url 'business:business_pfcatalogoptiontype_list' %}">Catalog Options</a></li>
-    <li><a href="{% url 'business:business_pfsyncproduct_list' %}">Sync Products</a></li>
-    <li><a href="{% url 'business:business_pfsyncvariant_list' %}">Sync Variants</a></li>
-  </ul>
-</li>
-
-<li class="dropdown{% if active_link == 'media' %} active{% endif %}">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-  aria-haspopup="true" aria-expanded="false">Media <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li class="dropdown-header">WooCommerce</li>
-    <li><a href="{% url 'business:business_wpmedia_list' %}">Media</a></li>
-    <li><a href="{% url 'business:business_wpmediasize_list' %}">Media Sizes</a></li>
-    <li role="separator" class="divider"></li>
-    <li class="dropdown-header">Printful</li>
-    <li><a href="{% url 'business:business_pfprintfile_list' %}">Files</a></li>
-  </ul>
-</li>
-
-<li class="dropdown{% if active_link == 'metadata' %} active{% endif %}">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-  aria-haspopup="true" aria-expanded="false">Metadata <span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="{% url 'business:business_pfstate_list' %}">States</a></li>
-    <li><a href="{% url 'business:business_pfcountry_list' %}">Countries</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_pfcatalogcolor_list' %}">Colors</a></li>
-    <li><a href="{% url 'business:business_pfcatalogsize_list' %}">Sizes</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_woocategory_list' %}">Categories</a></li>
-    <li><a href="{% url 'business:business_wooattribute_list' %}">Attributes</a></li>
-    <li><a href="{% url 'business:business_wootag_list' %}">Tags</a></li>
-    <li><a href="{% url 'business:business_wooterm_list' %}">Terms</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_wooshippingclass_list' %}">Shipping Classes</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="{% url 'business:business_pfsyncitemoption_list' %}">Sync Options</a></li>
-    <li><a href="{% url 'business:business_pfcatalogfilespec_list' %}">File Specs</a></li>
-    <li><a href="{% url 'business:business_pfcatalogfiletype_list' %}">File Types</a></li>
-  </ul>
-</li>
-
+{% if active_app == 'welcome' %}{% include "nav/_welcome.html" %}{% endif %}
+{% if active_app == 'dashboard' %}{% include "nav/_dashboard.html" %}{% endif %}
+{% if active_app == 'creative' %}{% include "nav/_creative.html" %}{% endif %}
+{% if active_app == 'product' %}{% include "nav/_product.html" %}{% endif %}
+{% if active_app == 'store' %}{% include "nav/_store.html" %}{% endif %}
+{% if active_app == 'dams' %}{% include "nav/_dams.html" %}{% endif %}
+{% if active_app == 'content' %}{% include "nav/_content.html" %}{% endif %}
+{% if active_app == 'lists' %}{% include "nav/_lists.html" %}{% endif %}
 {% endif %}

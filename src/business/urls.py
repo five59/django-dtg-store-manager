@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from business import api, views
+from business import api
+from business.views import *
 
 router = routers.DefaultRouter()
 router.register(r'bzbrand', api.bzBrandViewSet)
@@ -42,385 +43,431 @@ urlpatterns = (
     url(r'^api/v1/', include(router.urls)),
 )
 
+
+urlpatterns += (
+    # urls for Home Page et al.
+    url(r'^$', bzHomeView.as_view(), name='business_home_view'),
+)
+
+urlpatterns += (
+    # URLs for Apps
+    url(r'^dashboard/$', appDashboardHome.as_view(), name='app_dashboard_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^creative/$', appCreativeHome.as_view(), name='app_creative_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^product/$', appProductHome.as_view(), name='app_product_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^store/$', appStoreHome.as_view(), name='app_store_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^dams/$', appDAMSHome.as_view(), name='app_dams_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^content/$', appContentHome.as_view(), name='app_content_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+
+    # URLs for Apps
+    url(r'^lists/$', appListsHome.as_view(), name='app_lists_home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # url(r'^/$', appHome.as_view(), name='app__home'),
+)
+
+
+# Old data patterns
+
 urlpatterns += (
     # urls for bzBrand
-    url(r'^bzbrand/$', views.bzBrandListView.as_view(),
+    url(r'^bzbrand/$', bzBrandListView.as_view(),
         name='business_bzbrand_list'),
-    url(r'^bzbrand/create/$', views.bzBrandCreateView.as_view(),
+    url(r'^bzbrand/create/$', bzBrandCreateView.as_view(),
         name='business_bzbrand_create'),
     url(r'^bzbrand/detail/(?P<pk>\S+)/$',
-        views.bzBrandDetailView.as_view(), name='business_bzbrand_detail'),
+        bzBrandDetailView.as_view(), name='business_bzbrand_detail'),
     url(r'^bzbrand/update/(?P<pk>\S+)/$',
-        views.bzBrandUpdateView.as_view(), name='business_bzbrand_update'),
+        bzBrandUpdateView.as_view(), name='business_bzbrand_update'),
 )
 
 urlpatterns += (
     # urls for bzCreativeCollection
-    url(r'^bzcreativecollection/$', views.bzCreativeCollectionListView.as_view(),
+    url(r'^bzcreativecollection/$', bzCreativeCollectionListView.as_view(),
         name='business_bzcreativecollection_list'),
     url(r'^bzcreativecollection/create/$',
-        views.bzCreativeCollectionCreateView.as_view(), name='business_bzcreativecollection_create'),
+        bzCreativeCollectionCreateView.as_view(), name='business_bzcreativecollection_create'),
     url(r'^bzcreativecollection/detail/(?P<pk>\S+)/$',
-        views.bzCreativeCollectionDetailView.as_view(), name='business_bzcreativecollection_detail'),
+        bzCreativeCollectionDetailView.as_view(), name='business_bzcreativecollection_detail'),
     url(r'^bzcreativecollection/update/(?P<pk>\S+)/$',
-        views.bzCreativeCollectionUpdateView.as_view(), name='business_bzcreativecollection_update'),
+        bzCreativeCollectionUpdateView.as_view(), name='business_bzcreativecollection_update'),
 )
 
 urlpatterns += (
     # urls for bzCreativeDesign
-    url(r'^bzcreativedesign/$', views.bzCreativeDesignListView.as_view(),
+    url(r'^bzcreativedesign/$', bzCreativeDesignListView.as_view(),
         name='business_bzcreativedesign_list'),
-    url(r'^bzcreativedesign/create/$', views.bzCreativeDesignCreateView.as_view(),
+    url(r'^bzcreativedesign/create/$', bzCreativeDesignCreateView.as_view(),
         name='business_bzcreativedesign_create'),
     url(r'^bzcreativedesign/detail/(?P<pk>\S+)/$',
-        views.bzCreativeDesignDetailView.as_view(), name='business_bzcreativedesign_detail'),
+        bzCreativeDesignDetailView.as_view(), name='business_bzcreativedesign_detail'),
     url(r'^bzcreativedesign/update/(?P<pk>\S+)/$',
-        views.bzCreativeDesignUpdateView.as_view(), name='business_bzcreativedesign_update'),
+        bzCreativeDesignUpdateView.as_view(), name='business_bzcreativedesign_update'),
 )
 
 urlpatterns += (
     # urls for bzCreativeLayout
-    url(r'^bzcreativelayout/$', views.bzCreativeLayoutListView.as_view(),
+    url(r'^bzcreativelayout/$', bzCreativeLayoutListView.as_view(),
         name='business_bzcreativelayout_list'),
-    url(r'^bzcreativelayout/create/$', views.bzCreativeLayoutCreateView.as_view(),
+    url(r'^bzcreativelayout/create/$', bzCreativeLayoutCreateView.as_view(),
         name='business_bzcreativelayout_create'),
     url(r'^bzcreativelayout/detail/(?P<pk>\S+)/$',
-        views.bzCreativeLayoutDetailView.as_view(), name='business_bzcreativelayout_detail'),
+        bzCreativeLayoutDetailView.as_view(), name='business_bzcreativelayout_detail'),
     url(r'^bzcreativelayout/update/(?P<pk>\S+)/$',
-        views.bzCreativeLayoutUpdateView.as_view(), name='business_bzcreativelayout_update'),
+        bzCreativeLayoutUpdateView.as_view(), name='business_bzcreativelayout_update'),
 )
 
 urlpatterns += (
     # urls for bzCreativeRendering
-    url(r'^bzcreativerendering/$', views.bzCreativeRenderingListView.as_view(),
+    url(r'^bzcreativerendering/$', bzCreativeRenderingListView.as_view(),
         name='business_bzcreativerendering_list'),
     url(r'^bzcreativerendering/create/$',
-        views.bzCreativeRenderingCreateView.as_view(), name='business_bzcreativerendering_create'),
+        bzCreativeRenderingCreateView.as_view(), name='business_bzcreativerendering_create'),
     url(r'^bzcreativerendering/detail/(?P<pk>\S+)/$',
-        views.bzCreativeRenderingDetailView.as_view(), name='business_bzcreativerendering_detail'),
+        bzCreativeRenderingDetailView.as_view(), name='business_bzcreativerendering_detail'),
     url(r'^bzcreativerendering/update/(?P<pk>\S+)/$',
-        views.bzCreativeRenderingUpdateView.as_view(), name='business_bzcreativerendering_update'),
+        bzCreativeRenderingUpdateView.as_view(), name='business_bzcreativerendering_update'),
 )
 
 urlpatterns += (
     # urls for bzProduct
-    url(r'^bzproduct/$', views.bzProductListView.as_view(),
+    url(r'^bzproduct/$', bzProductListView.as_view(),
         name='business_bzproduct_list'),
-    url(r'^bzproduct/create/$', views.bzProductCreateView.as_view(),
+    url(r'^bzproduct/create/$', bzProductCreateView.as_view(),
         name='business_bzproduct_create'),
     url(r'^bzproduct/detail/(?P<pk>\S+)/$',
-        views.bzProductDetailView.as_view(), name='business_bzproduct_detail'),
+        bzProductDetailView.as_view(), name='business_bzproduct_detail'),
     url(r'^bzproduct/update/(?P<pk>\S+)/$',
-        views.bzProductUpdateView.as_view(), name='business_bzproduct_update'),
+        bzProductUpdateView.as_view(), name='business_bzproduct_update'),
 )
 
 urlpatterns += (
     # urls for bzProductVariant
-    url(r'^bzproductvariant/$', views.bzProductVariantListView.as_view(),
+    url(r'^bzproductvariant/$', bzProductVariantListView.as_view(),
         name='business_bzproductvariant_list'),
-    url(r'^bzproductvariant/create/$', views.bzProductVariantCreateView.as_view(),
+    url(r'^bzproductvariant/create/$', bzProductVariantCreateView.as_view(),
         name='business_bzproductvariant_create'),
     url(r'^bzproductvariant/detail/(?P<pk>\S+)/$',
-        views.bzProductVariantDetailView.as_view(), name='business_bzproductvariant_detail'),
+        bzProductVariantDetailView.as_view(), name='business_bzproductvariant_detail'),
     url(r'^bzproductvariant/update/(?P<pk>\S+)/$',
-        views.bzProductVariantUpdateView.as_view(), name='business_bzproductvariant_update'),
+        bzProductVariantUpdateView.as_view(), name='business_bzproductvariant_update'),
 )
 
 urlpatterns += (
     # urls for wooAttribute
-    url(r'^wooattribute/$', views.wooAttributeListView.as_view(),
+    url(r'^wooattribute/$', wooAttributeListView.as_view(),
         name='business_wooattribute_list'),
-    url(r'^wooattribute/create/$', views.wooAttributeCreateView.as_view(),
+    url(r'^wooattribute/create/$', wooAttributeCreateView.as_view(),
         name='business_wooattribute_create'),
     url(r'^wooattribute/detail/(?P<slug>\S+)/$',
-        views.wooAttributeDetailView.as_view(), name='business_wooattribute_detail'),
+        wooAttributeDetailView.as_view(), name='business_wooattribute_detail'),
     url(r'^wooattribute/update/(?P<slug>\S+)/$',
-        views.wooAttributeUpdateView.as_view(), name='business_wooattribute_update'),
+        wooAttributeUpdateView.as_view(), name='business_wooattribute_update'),
 )
 
 urlpatterns += (
     # urls for wooCategory
-    url(r'^woocategory/$', views.wooCategoryListView.as_view(),
+    url(r'^woocategory/$', wooCategoryListView.as_view(),
         name='business_woocategory_list'),
-    url(r'^woocategory/create/$', views.wooCategoryCreateView.as_view(),
+    url(r'^woocategory/create/$', wooCategoryCreateView.as_view(),
         name='business_woocategory_create'),
     url(r'^woocategory/detail/(?P<slug>\S+)/$',
-        views.wooCategoryDetailView.as_view(), name='business_woocategory_detail'),
+        wooCategoryDetailView.as_view(), name='business_woocategory_detail'),
     url(r'^woocategory/update/(?P<slug>\S+)/$',
-        views.wooCategoryUpdateView.as_view(), name='business_woocategory_update'),
+        wooCategoryUpdateView.as_view(), name='business_woocategory_update'),
 )
 
 urlpatterns += (
     # urls for wooImage
-    url(r'^wooimage/$', views.wooImageListView.as_view(),
+    url(r'^wooimage/$', wooImageListView.as_view(),
         name='business_wooimage_list'),
-    url(r'^wooimage/create/$', views.wooImageCreateView.as_view(),
+    url(r'^wooimage/create/$', wooImageCreateView.as_view(),
         name='business_wooimage_create'),
     url(r'^wooimage/detail/(?P<pk>\S+)/$',
-        views.wooImageDetailView.as_view(), name='business_wooimage_detail'),
+        wooImageDetailView.as_view(), name='business_wooimage_detail'),
     url(r'^wooimage/update/(?P<pk>\S+)/$',
-        views.wooImageUpdateView.as_view(), name='business_wooimage_update'),
+        wooImageUpdateView.as_view(), name='business_wooimage_update'),
 )
 
 urlpatterns += (
     # urls for wooProduct
-    url(r'^wooproduct/$', views.wooProductListView.as_view(),
+    url(r'^wooproduct/$', wooProductListView.as_view(),
         name='business_wooproduct_list'),
-    url(r'^wooproduct/create/$', views.wooProductCreateView.as_view(),
+    url(r'^wooproduct/create/$', wooProductCreateView.as_view(),
         name='business_wooproduct_create'),
     url(r'^wooproduct/detail/(?P<slug>\S+)/$',
-        views.wooProductDetailView.as_view(), name='business_wooproduct_detail'),
+        wooProductDetailView.as_view(), name='business_wooproduct_detail'),
     url(r'^wooproduct/update/(?P<slug>\S+)/$',
-        views.wooProductUpdateView.as_view(), name='business_wooproduct_update'),
+        wooProductUpdateView.as_view(), name='business_wooproduct_update'),
 )
 
 urlpatterns += (
     # urls for wooShippingClass
-    url(r'^wooshippingclass/$', views.wooShippingClassListView.as_view(),
+    url(r'^wooshippingclass/$', wooShippingClassListView.as_view(),
         name='business_wooshippingclass_list'),
-    url(r'^wooshippingclass/create/$', views.wooShippingClassCreateView.as_view(),
+    url(r'^wooshippingclass/create/$', wooShippingClassCreateView.as_view(),
         name='business_wooshippingclass_create'),
     url(r'^wooshippingclass/detail/(?P<slug>\S+)/$',
-        views.wooShippingClassDetailView.as_view(), name='business_wooshippingclass_detail'),
+        wooShippingClassDetailView.as_view(), name='business_wooshippingclass_detail'),
     url(r'^wooshippingclass/update/(?P<slug>\S+)/$',
-        views.wooShippingClassUpdateView.as_view(), name='business_wooshippingclass_update'),
+        wooShippingClassUpdateView.as_view(), name='business_wooshippingclass_update'),
 )
 
 urlpatterns += (
     # urls for wooStore
-    url(r'^woostore/$', views.wooStoreListView.as_view(),
+    url(r'^woostore/$', wooStoreListView.as_view(),
         name='business_woostore_list'),
-    url(r'^woostore/create/$', views.wooStoreCreateView.as_view(),
+    url(r'^woostore/create/$', wooStoreCreateView.as_view(),
         name='business_woostore_create'),
     url(r'^woostore/detail/(?P<pk>\S+)/$',
-        views.wooStoreDetailView.as_view(), name='business_woostore_detail'),
+        wooStoreDetailView.as_view(), name='business_woostore_detail'),
     url(r'^woostore/update/(?P<pk>\S+)/$',
-        views.wooStoreUpdateView.as_view(), name='business_woostore_update'),
+        wooStoreUpdateView.as_view(), name='business_woostore_update'),
 )
 
 urlpatterns += (
     # urls for wooTag
-    url(r'^wootag/$', views.wooTagListView.as_view(), name='business_wootag_list'),
-    url(r'^wootag/create/$', views.wooTagCreateView.as_view(),
+    url(r'^wootag/$', wooTagListView.as_view(), name='business_wootag_list'),
+    url(r'^wootag/create/$', wooTagCreateView.as_view(),
         name='business_wootag_create'),
     url(r'^wootag/detail/(?P<slug>\S+)/$',
-        views.wooTagDetailView.as_view(), name='business_wootag_detail'),
+        wooTagDetailView.as_view(), name='business_wootag_detail'),
     url(r'^wootag/update/(?P<slug>\S+)/$',
-        views.wooTagUpdateView.as_view(), name='business_wootag_update'),
+        wooTagUpdateView.as_view(), name='business_wootag_update'),
 )
 
 urlpatterns += (
     # urls for wooTerm
-    url(r'^wooterm/$', views.wooTermListView.as_view(),
+    url(r'^wooterm/$', wooTermListView.as_view(),
         name='business_wooterm_list'),
-    url(r'^wooterm/create/$', views.wooTermCreateView.as_view(),
+    url(r'^wooterm/create/$', wooTermCreateView.as_view(),
         name='business_wooterm_create'),
     url(r'^wooterm/detail/(?P<slug>\S+)/$',
-        views.wooTermDetailView.as_view(), name='business_wooterm_detail'),
+        wooTermDetailView.as_view(), name='business_wooterm_detail'),
     url(r'^wooterm/update/(?P<slug>\S+)/$',
-        views.wooTermUpdateView.as_view(), name='business_wooterm_update'),
+        wooTermUpdateView.as_view(), name='business_wooterm_update'),
 )
 
 urlpatterns += (
     # urls for wooVariant
-    url(r'^woovariant/$', views.wooVariantListView.as_view(),
+    url(r'^woovariant/$', wooVariantListView.as_view(),
         name='business_woovariant_list'),
-    url(r'^woovariant/create/$', views.wooVariantCreateView.as_view(),
+    url(r'^woovariant/create/$', wooVariantCreateView.as_view(),
         name='business_woovariant_create'),
     url(r'^woovariant/detail/(?P<pk>\S+)/$',
-        views.wooVariantDetailView.as_view(), name='business_woovariant_detail'),
+        wooVariantDetailView.as_view(), name='business_woovariant_detail'),
     url(r'^woovariant/update/(?P<pk>\S+)/$',
-        views.wooVariantUpdateView.as_view(), name='business_woovariant_update'),
+        wooVariantUpdateView.as_view(), name='business_woovariant_update'),
 )
 
 urlpatterns += (
     # urls for wpMedia
-    url(r'^wpmedia/$', views.wpMediaListView.as_view(),
+    url(r'^wpmedia/$', wpMediaListView.as_view(),
         name='business_wpmedia_list'),
-    url(r'^wpmedia/create/$', views.wpMediaCreateView.as_view(),
+    url(r'^wpmedia/create/$', wpMediaCreateView.as_view(),
         name='business_wpmedia_create'),
     url(r'^wpmedia/detail/(?P<slug>\S+)/$',
-        views.wpMediaDetailView.as_view(), name='business_wpmedia_detail'),
+        wpMediaDetailView.as_view(), name='business_wpmedia_detail'),
     url(r'^wpmedia/update/(?P<slug>\S+)/$',
-        views.wpMediaUpdateView.as_view(), name='business_wpmedia_update'),
+        wpMediaUpdateView.as_view(), name='business_wpmedia_update'),
 )
 
 urlpatterns += (
     # urls for wpMediaSize
-    url(r'^wpmediasize/$', views.wpMediaSizeListView.as_view(),
+    url(r'^wpmediasize/$', wpMediaSizeListView.as_view(),
         name='business_wpmediasize_list'),
-    url(r'^wpmediasize/create/$', views.wpMediaSizeCreateView.as_view(),
+    url(r'^wpmediasize/create/$', wpMediaSizeCreateView.as_view(),
         name='business_wpmediasize_create'),
     url(r'^wpmediasize/detail/(?P<pk>\S+)/$',
-        views.wpMediaSizeDetailView.as_view(), name='business_wpmediasize_detail'),
+        wpMediaSizeDetailView.as_view(), name='business_wpmediasize_detail'),
     url(r'^wpmediasize/update/(?P<pk>\S+)/$',
-        views.wpMediaSizeUpdateView.as_view(), name='business_wpmediasize_update'),
+        wpMediaSizeUpdateView.as_view(), name='business_wpmediasize_update'),
 )
 
 urlpatterns += (
     # urls for pfCountry
-    url(r'^pfcountry/$', views.pfCountryListView.as_view(),
+    url(r'^pfcountry/$', pfCountryListView.as_view(),
         name='business_pfcountry_list'),
-    url(r'^pfcountry/create/$', views.pfCountryCreateView.as_view(),
+    url(r'^pfcountry/create/$', pfCountryCreateView.as_view(),
         name='business_pfcountry_create'),
     url(r'^pfcountry/detail/(?P<pk>\S+)/$',
-        views.pfCountryDetailView.as_view(), name='business_pfcountry_detail'),
+        pfCountryDetailView.as_view(), name='business_pfcountry_detail'),
     url(r'^pfcountry/update/(?P<pk>\S+)/$',
-        views.pfCountryUpdateView.as_view(), name='business_pfcountry_update'),
+        pfCountryUpdateView.as_view(), name='business_pfcountry_update'),
 )
 
 urlpatterns += (
     # urls for pfState
-    url(r'^pfstate/$', views.pfStateListView.as_view(),
+    url(r'^pfstate/$', pfStateListView.as_view(),
         name='business_pfstate_list'),
-    url(r'^pfstate/create/$', views.pfStateCreateView.as_view(),
+    url(r'^pfstate/create/$', pfStateCreateView.as_view(),
         name='business_pfstate_create'),
     url(r'^pfstate/detail/(?P<pk>\S+)/$',
-        views.pfStateDetailView.as_view(), name='business_pfstate_detail'),
+        pfStateDetailView.as_view(), name='business_pfstate_detail'),
     url(r'^pfstate/update/(?P<pk>\S+)/$',
-        views.pfStateUpdateView.as_view(), name='business_pfstate_update'),
+        pfStateUpdateView.as_view(), name='business_pfstate_update'),
 )
 
 urlpatterns += (
     # urls for pfSyncProduct
-    url(r'^pfsyncproduct/$', views.pfSyncProductListView.as_view(),
+    url(r'^pfsyncproduct/$', pfSyncProductListView.as_view(),
         name='business_pfsyncproduct_list'),
-    url(r'^pfsyncproduct/create/$', views.pfSyncProductCreateView.as_view(),
+    url(r'^pfsyncproduct/create/$', pfSyncProductCreateView.as_view(),
         name='business_pfsyncproduct_create'),
     url(r'^pfsyncproduct/detail/(?P<pk>\S+)/$',
-        views.pfSyncProductDetailView.as_view(), name='business_pfsyncproduct_detail'),
+        pfSyncProductDetailView.as_view(), name='business_pfsyncproduct_detail'),
     url(r'^pfsyncproduct/update/(?P<pk>\S+)/$',
-        views.pfSyncProductUpdateView.as_view(), name='business_pfsyncproduct_update'),
+        pfSyncProductUpdateView.as_view(), name='business_pfsyncproduct_update'),
 )
 
 urlpatterns += (
     # urls for pfSyncVariant
-    url(r'^pfsyncvariant/$', views.pfSyncVariantListView.as_view(),
+    url(r'^pfsyncvariant/$', pfSyncVariantListView.as_view(),
         name='business_pfsyncvariant_list'),
-    url(r'^pfsyncvariant/create/$', views.pfSyncVariantCreateView.as_view(),
+    url(r'^pfsyncvariant/create/$', pfSyncVariantCreateView.as_view(),
         name='business_pfsyncvariant_create'),
     url(r'^pfsyncvariant/detail/(?P<pk>\S+)/$',
-        views.pfSyncVariantDetailView.as_view(), name='business_pfsyncvariant_detail'),
+        pfSyncVariantDetailView.as_view(), name='business_pfsyncvariant_detail'),
     url(r'^pfsyncvariant/update/(?P<pk>\S+)/$',
-        views.pfSyncVariantUpdateView.as_view(), name='business_pfsyncvariant_update'),
+        pfSyncVariantUpdateView.as_view(), name='business_pfsyncvariant_update'),
 )
 
 urlpatterns += (
     # urls for pfSyncItemOption
-    url(r'^pfsyncitemoption/$', views.pfSyncItemOptionListView.as_view(),
+    url(r'^pfsyncitemoption/$', pfSyncItemOptionListView.as_view(),
         name='business_pfsyncitemoption_list'),
-    url(r'^pfsyncitemoption/create/$', views.pfSyncItemOptionCreateView.as_view(),
+    url(r'^pfsyncitemoption/create/$', pfSyncItemOptionCreateView.as_view(),
         name='business_pfsyncitemoption_create'),
     url(r'^pfsyncitemoption/detail/(?P<pk>\S+)/$',
-        views.pfSyncItemOptionDetailView.as_view(), name='business_pfsyncitemoption_detail'),
+        pfSyncItemOptionDetailView.as_view(), name='business_pfsyncitemoption_detail'),
     url(r'^pfsyncitemoption/update/(?P<pk>\S+)/$',
-        views.pfSyncItemOptionUpdateView.as_view(), name='business_pfsyncitemoption_update'),
+        pfSyncItemOptionUpdateView.as_view(), name='business_pfsyncitemoption_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogColor
-    url(r'^pfcatalogcolor/$', views.pfCatalogColorListView.as_view(),
+    url(r'^pfcatalogcolor/$', pfCatalogColorListView.as_view(),
         name='business_pfcatalogcolor_list'),
-    url(r'^pfcatalogcolor/create/$', views.pfCatalogColorCreateView.as_view(),
+    url(r'^pfcatalogcolor/create/$', pfCatalogColorCreateView.as_view(),
         name='business_pfcatalogcolor_create'),
     url(r'^pfcatalogcolor/detail/(?P<pk>\S+)/$',
-        views.pfCatalogColorDetailView.as_view(), name='business_pfcatalogcolor_detail'),
+        pfCatalogColorDetailView.as_view(), name='business_pfcatalogcolor_detail'),
     url(r'^pfcatalogcolor/update/(?P<pk>\S+)/$',
-        views.pfCatalogColorUpdateView.as_view(), name='business_pfcatalogcolor_update'),
+        pfCatalogColorUpdateView.as_view(), name='business_pfcatalogcolor_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogSize
-    url(r'^pfcatalogsize/$', views.pfCatalogSizeListView.as_view(),
+    url(r'^pfcatalogsize/$', pfCatalogSizeListView.as_view(),
         name='business_pfcatalogsize_list'),
-    url(r'^pfcatalogsize/create/$', views.pfCatalogSizeCreateView.as_view(),
+    url(r'^pfcatalogsize/create/$', pfCatalogSizeCreateView.as_view(),
         name='business_pfcatalogsize_create'),
     url(r'^pfcatalogsize/detail/(?P<pk>\S+)/$',
-        views.pfCatalogSizeDetailView.as_view(), name='business_pfcatalogsize_detail'),
+        pfCatalogSizeDetailView.as_view(), name='business_pfcatalogsize_detail'),
     url(r'^pfcatalogsize/update/(?P<pk>\S+)/$',
-        views.pfCatalogSizeUpdateView.as_view(), name='business_pfcatalogsize_update'),
+        pfCatalogSizeUpdateView.as_view(), name='business_pfcatalogsize_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogFileSpec
-    url(r'^pfcatalogfilespec/$', views.pfCatalogFileSpecListView.as_view(),
+    url(r'^pfcatalogfilespec/$', pfCatalogFileSpecListView.as_view(),
         name='business_pfcatalogfilespec_list'),
-    url(r'^pfcatalogfilespec/create/$', views.pfCatalogFileSpecCreateView.as_view(),
+    url(r'^pfcatalogfilespec/create/$', pfCatalogFileSpecCreateView.as_view(),
         name='business_pfcatalogfilespec_create'),
     url(r'^pfcatalogfilespec/detail/(?P<pk>\S+)/$',
-        views.pfCatalogFileSpecDetailView.as_view(), name='business_pfcatalogfilespec_detail'),
+        pfCatalogFileSpecDetailView.as_view(), name='business_pfcatalogfilespec_detail'),
     url(r'^pfcatalogfilespec/update/(?P<pk>\S+)/$',
-        views.pfCatalogFileSpecUpdateView.as_view(), name='business_pfcatalogfilespec_update'),
+        pfCatalogFileSpecUpdateView.as_view(), name='business_pfcatalogfilespec_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogFileType
-    url(r'^pfcatalogfiletype/$', views.pfCatalogFileTypeListView.as_view(),
+    url(r'^pfcatalogfiletype/$', pfCatalogFileTypeListView.as_view(),
         name='business_pfcatalogfiletype_list'),
-    url(r'^pfcatalogfiletype/create/$', views.pfCatalogFileTypeCreateView.as_view(),
+    url(r'^pfcatalogfiletype/create/$', pfCatalogFileTypeCreateView.as_view(),
         name='business_pfcatalogfiletype_create'),
     url(r'^pfcatalogfiletype/detail/(?P<pk>\S+)/$',
-        views.pfCatalogFileTypeDetailView.as_view(), name='business_pfcatalogfiletype_detail'),
+        pfCatalogFileTypeDetailView.as_view(), name='business_pfcatalogfiletype_detail'),
     url(r'^pfcatalogfiletype/update/(?P<pk>\S+)/$',
-        views.pfCatalogFileTypeUpdateView.as_view(), name='business_pfcatalogfiletype_update'),
+        pfCatalogFileTypeUpdateView.as_view(), name='business_pfcatalogfiletype_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogOptionType
-    url(r'^pfcatalogoptiontype/$', views.pfCatalogOptionTypeListView.as_view(),
+    url(r'^pfcatalogoptiontype/$', pfCatalogOptionTypeListView.as_view(),
         name='business_pfcatalogoptiontype_list'),
     url(r'^pfcatalogoptiontype/create/$',
-        views.pfCatalogOptionTypeCreateView.as_view(), name='business_pfcatalogoptiontype_create'),
+        pfCatalogOptionTypeCreateView.as_view(), name='business_pfcatalogoptiontype_create'),
     url(r'^pfcatalogoptiontype/detail/(?P<pk>\S+)/$',
-        views.pfCatalogOptionTypeDetailView.as_view(), name='business_pfcatalogoptiontype_detail'),
+        pfCatalogOptionTypeDetailView.as_view(), name='business_pfcatalogoptiontype_detail'),
     url(r'^pfcatalogoptiontype/update/(?P<pk>\S+)/$',
-        views.pfCatalogOptionTypeUpdateView.as_view(), name='business_pfcatalogoptiontype_update'),
+        pfCatalogOptionTypeUpdateView.as_view(), name='business_pfcatalogoptiontype_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogProduct
-    url(r'^pfcatalogproduct/$', views.pfCatalogProductListView.as_view(),
+    url(r'^pfcatalogproduct/$', pfCatalogProductListView.as_view(),
         name='business_pfcatalogproduct_list'),
-    url(r'^pfcatalogproduct/create/$', views.pfCatalogProductCreateView.as_view(),
+    url(r'^pfcatalogproduct/create/$', pfCatalogProductCreateView.as_view(),
         name='business_pfcatalogproduct_create'),
     url(r'^pfcatalogproduct/detail/(?P<pk>\S+)/$',
-        views.pfCatalogProductDetailView.as_view(), name='business_pfcatalogproduct_detail'),
+        pfCatalogProductDetailView.as_view(), name='business_pfcatalogproduct_detail'),
     url(r'^pfcatalogproduct/update/(?P<pk>\S+)/$',
-        views.pfCatalogProductUpdateView.as_view(), name='business_pfcatalogproduct_update'),
+        pfCatalogProductUpdateView.as_view(), name='business_pfcatalogproduct_update'),
 )
 
 urlpatterns += (
     # urls for pfCatalogVariant
-    url(r'^pfcatalogvariant/$', views.pfCatalogVariantListView.as_view(),
+    url(r'^pfcatalogvariant/$', pfCatalogVariantListView.as_view(),
         name='business_pfcatalogvariant_list'),
-    url(r'^pfcatalogvariant/create/$', views.pfCatalogVariantCreateView.as_view(),
+    url(r'^pfcatalogvariant/create/$', pfCatalogVariantCreateView.as_view(),
         name='business_pfcatalogvariant_create'),
     url(r'^pfcatalogvariant/detail/(?P<pk>\S+)/$',
-        views.pfCatalogVariantDetailView.as_view(), name='business_pfcatalogvariant_detail'),
+        pfCatalogVariantDetailView.as_view(), name='business_pfcatalogvariant_detail'),
     url(r'^pfcatalogvariant/update/(?P<pk>\S+)/$',
-        views.pfCatalogVariantUpdateView.as_view(), name='business_pfcatalogvariant_update'),
+        pfCatalogVariantUpdateView.as_view(), name='business_pfcatalogvariant_update'),
 )
 
 urlpatterns += (
     # urls for pfStore
-    url(r'^pfstore/$', views.pfStoreListView.as_view(),
+    url(r'^pfstore/$', pfStoreListView.as_view(),
         name='business_pfstore_list'),
-    url(r'^pfstore/create/$', views.pfStoreCreateView.as_view(),
+    url(r'^pfstore/create/$', pfStoreCreateView.as_view(),
         name='business_pfstore_create'),
     url(r'^pfstore/detail/(?P<pk>\S+)/$',
-        views.pfStoreDetailView.as_view(), name='business_pfstore_detail'),
+        pfStoreDetailView.as_view(), name='business_pfstore_detail'),
     url(r'^pfstore/update/(?P<pk>\S+)/$',
-        views.pfStoreUpdateView.as_view(), name='business_pfstore_update'),
+        pfStoreUpdateView.as_view(), name='business_pfstore_update'),
 )
 
 urlpatterns += (
     # urls for pfPrintFile
-    url(r'^pfprintfile/$', views.pfPrintFileListView.as_view(),
+    url(r'^pfprintfile/$', pfPrintFileListView.as_view(),
         name='business_pfprintfile_list'),
-    url(r'^pfprintfile/create/$', views.pfPrintFileCreateView.as_view(),
+    url(r'^pfprintfile/create/$', pfPrintFileCreateView.as_view(),
         name='business_pfprintfile_create'),
     url(r'^pfprintfile/detail/(?P<pk>\S+)/$',
-        views.pfPrintFileDetailView.as_view(), name='business_pfprintfile_detail'),
+        pfPrintFileDetailView.as_view(), name='business_pfprintfile_detail'),
     url(r'^pfprintfile/update/(?P<pk>\S+)/$',
-        views.pfPrintFileUpdateView.as_view(), name='business_pfprintfile_update'),
+        pfPrintFileUpdateView.as_view(), name='business_pfprintfile_update'),
 )

@@ -10,9 +10,13 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
 from django_tables2 import *
 
-from .models import *
-from .forms import *
-from .tables import *
+from business.models import *
+from business.forms import *
+from business.tables import *
+
+
+class bzHomeView(TemplateView):
+    template_name = "home.html"
 
 
 class bzBrandListView(TemplateView):
@@ -876,6 +880,7 @@ class pfStateListView(SingleTableView):
         context['object_group'] = ""
         context['object_icon'] = None
         context['action_new'] = reverse('business:business_pfstate_create')
+        context['active_app'] = "lists"
         return context
 
 

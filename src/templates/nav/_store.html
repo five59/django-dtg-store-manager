@@ -1,0 +1,14 @@
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+    aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;
+    Store Management<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="{% url 'business:app_dashboard_home' %}"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp; Dashboard</a></li>
+    <li><a href="{% url 'business:app_creative_home' %}"><span class="glyphicon glyphicon-certificate"></span>&nbsp;&nbsp;&nbsp; Creative Management</a></li>
+    {# <li><a href="{% url 'business:app_store_home' %}"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;&nbsp; Store Management</a></li>#}
+    <li><a href="{% url 'business:app_product_home' %}"><span class="glyphicon glyphicon-gift"></span>&nbsp;&nbsp;&nbsp; Product Catalog</a></li>
+    <li><a href="{% url 'business:app_dams_home' %}"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;&nbsp; Digital Asset Management</a></li>
+    <li><a href="{% url 'business:app_content_home' %}"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp; Content Editor</a></li>
+    <li><a href="{% url 'business:app_lists_home' %}"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;&nbsp; List Editor</a></li>
+  </ul>
+</li>
