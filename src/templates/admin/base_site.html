@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block nav-global %}
-  <li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Switch to Site</a></li>
+  <li><a href="{% url 'business:business_home_view' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Switch to Site</a></li>
 {% endblock %}
 
 {% block extrahead %}{{ block.super }}
