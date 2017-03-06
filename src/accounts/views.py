@@ -28,7 +28,7 @@ class LoginView(bracesviews.AnonymousRequiredMixin,
 
 
 class LogoutView(authviews.LogoutView):
-    url = reverse_lazy('home')
+    url = reverse_lazy('business:business_home_view')
 
 
 class SignUpView(bracesviews.AnonymousRequiredMixin,
@@ -37,7 +37,7 @@ class SignUpView(bracesviews.AnonymousRequiredMixin,
     form_class = forms.SignupForm
     model = User
     template_name = 'accounts/signup.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('business:business_home_view')
     form_valid_message = "You're signed up!"
 
     def form_valid(self, form):
@@ -52,7 +52,7 @@ class SignUpView(bracesviews.AnonymousRequiredMixin,
 class PasswordChangeView(authviews.PasswordChangeView):
     form_class = forms.PasswordChangeForm
     template_name = 'accounts/password-change.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('business:business_home_view')
 
     def form_valid(self, form):
         form.save()

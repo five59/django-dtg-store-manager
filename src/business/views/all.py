@@ -59,7 +59,7 @@ class bzBrandUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(bzBrandUpdateView, self).get_context_data(**kwargs)
-        context['mode'] = "create"
+        context['mode'] = "update"
         context['object_name'] = "Brand"
         context['object_group'] = "stores"
         context['object_icon'] = None

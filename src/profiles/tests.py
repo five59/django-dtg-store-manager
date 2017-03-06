@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 
 class PageOpenTestCase(TestCase):
     def test_home_page_exists(self):
-        url = reverse('home')
+        url = reverse('business:business_home_view')
         r = self.client.get(url)
         self.assertEqual(r.status_code, 200)
 

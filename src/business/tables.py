@@ -34,30 +34,36 @@ class bzCreativeCollectionTable(tables.Table):
 
 class bzCreativeDesignTable(tables.Table):
     ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a href="{% url 'business:app_creative_design_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:app_creative_design_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    product_count = tables.Column(A('num_products'))
 
     class Meta:
         model = bzCreativeDesign
-        sequence = ('actions', 'code', 'name', 'bzcreativecollection',)
-        exclude = ('date_added', 'date_updated', 'id',)
+        sequence = ('actions', 'code', 'name', 'product_count', 'date_added',
+                    'date_updated',)
+        exclude = ('id', 'bzcreativecollection',)
         attrs = {'class': 'table table-striped'}
+        empty_text = "No Designs Found."
 
 
 class bzCreativeLayoutTable(tables.Table):
     ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a href="{% url 'business:app_creative_layout_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:app_creative_layout_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    num_products = tables.Column(A('num_products'))
 
     class Meta:
         model = bzCreativeLayout
-        sequence = ('actions', 'code', 'name', 'bzcreativecollection',)
-        exclude = ('date_added', 'date_updated', 'id',)
+        sequence = ('actions', 'code', 'name', 'num_products',
+                    'date_added', 'date_updated',)
+        exclude = ('id', 'bzcreativecollection',)
         attrs = {'class': 'table table-striped'}
+        empty_text = "No Layouts Found."
 
 
 class bzCreativeRenderingTable(tables.Table):

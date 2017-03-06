@@ -3,46 +3,46 @@ from rest_framework import routers
 from business import api
 from business.views import *
 
-router = routers.DefaultRouter()
-router.register(r'bzbrand', api.bzBrandViewSet)
-router.register(r'bzcreativecollection', api.bzCreativeCollectionViewSet)
-router.register(r'bzcreativedesign', api.bzCreativeDesignViewSet)
-router.register(r'bzcreativelayout', api.bzCreativeLayoutViewSet)
-router.register(r'bzcreativerendering', api.bzCreativeRenderingViewSet)
-router.register(r'bzproduct', api.bzProductViewSet)
-router.register(r'bzproductvariant', api.bzProductVariantViewSet)
-router.register(r'wooattribute', api.wooAttributeViewSet)
-router.register(r'woocategory', api.wooCategoryViewSet)
-router.register(r'wooimage', api.wooImageViewSet)
-router.register(r'wooproduct', api.wooProductViewSet)
-router.register(r'wooshippingclass', api.wooShippingClassViewSet)
-router.register(r'woostore', api.wooStoreViewSet)
-router.register(r'wootag', api.wooTagViewSet)
-router.register(r'wooterm', api.wooTermViewSet)
-router.register(r'woovariant', api.wooVariantViewSet)
-router.register(r'wpmedia', api.wpMediaViewSet)
-router.register(r'wpmediasize', api.wpMediaSizeViewSet)
-router.register(r'pfcountry', api.pfCountryViewSet)
-router.register(r'pfstate', api.pfStateViewSet)
-router.register(r'pfsyncproduct', api.pfSyncProductViewSet)
-router.register(r'pfsyncvariant', api.pfSyncVariantViewSet)
-router.register(r'pfsyncitemoption', api.pfSyncItemOptionViewSet)
-router.register(r'pfcatalogcolor', api.pfCatalogColorViewSet)
-router.register(r'pfcatalogsize', api.pfCatalogSizeViewSet)
-router.register(r'pfcatalogfilespec', api.pfCatalogFileSpecViewSet)
-router.register(r'pfcatalogfiletype', api.pfCatalogFileTypeViewSet)
-router.register(r'pfcatalogoptiontype', api.pfCatalogOptionTypeViewSet)
-router.register(r'pfcatalogproduct', api.pfCatalogProductViewSet)
-router.register(r'pfcatalogvariant', api.pfCatalogVariantViewSet)
-router.register(r'pfstore', api.pfStoreViewSet)
-router.register(r'pfprintfile', api.pfPrintFileViewSet)
-
-
+# router = routers.DefaultRouter()
+# router.register(r'bzbrand', api.bzBrandViewSet)
+# router.register(r'bzcreativecollection', api.bzCreativeCollectionViewSet)
+# router.register(r'bzcreativedesign', api.bzCreativeDesignViewSet)
+# router.register(r'bzcreativelayout', api.bzCreativeLayoutViewSet)
+# router.register(r'bzcreativerendering', api.bzCreativeRenderingViewSet)
+# router.register(r'bzproduct', api.bzProductViewSet)
+# router.register(r'bzproductvariant', api.bzProductVariantViewSet)
+# router.register(r'wooattribute', api.wooAttributeViewSet)
+# router.register(r'woocategory', api.wooCategoryViewSet)
+# router.register(r'wooimage', api.wooImageViewSet)
+# router.register(r'wooproduct', api.wooProductViewSet)
+# router.register(r'wooshippingclass', api.wooShippingClassViewSet)
+# router.register(r'woostore', api.wooStoreViewSet)
+# router.register(r'wootag', api.wooTagViewSet)
+# router.register(r'wooterm', api.wooTermViewSet)
+# router.register(r'woovariant', api.wooVariantViewSet)
+# router.register(r'wpmedia', api.wpMediaViewSet)
+# router.register(r'wpmediasize', api.wpMediaSizeViewSet)
+# router.register(r'pfcountry', api.pfCountryViewSet)
+# router.register(r'pfstate', api.pfStateViewSet)
+# router.register(r'pfsyncproduct', api.pfSyncProductViewSet)
+# router.register(r'pfsyncvariant', api.pfSyncVariantViewSet)
+# router.register(r'pfsyncitemoption', api.pfSyncItemOptionViewSet)
+# router.register(r'pfcatalogcolor', api.pfCatalogColorViewSet)
+# router.register(r'pfcatalogsize', api.pfCatalogSizeViewSet)
+# router.register(r'pfcatalogfilespec', api.pfCatalogFileSpecViewSet)
+# router.register(r'pfcatalogfiletype', api.pfCatalogFileTypeViewSet)
+# router.register(r'pfcatalogoptiontype', api.pfCatalogOptionTypeViewSet)
+# router.register(r'pfcatalogproduct', api.pfCatalogProductViewSet)
+# router.register(r'pfcatalogvariant', api.pfCatalogVariantViewSet)
+# router.register(r'pfstore', api.pfStoreViewSet)
+# router.register(r'pfprintfile', api.pfPrintFileViewSet)
+#
+#
 urlpatterns = (
-    # urls for Django Rest Framework API
-    url(r'^api/v1/', include(router.urls)),
+    #     # urls for Django Rest Framework API
+    #     url(r'^api/v1/', include(router.urls)),
 )
-
+#
 
 urlpatterns += (
     # urls for Home Page et al.
@@ -55,10 +55,32 @@ urlpatterns += (
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
 
-    # URLs for Apps
-    url(r'^creative/$', appCreativeHome.as_view(), name='app_creative_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
+    # URLs for Creative App
+    url(r'^creative/$',
+        appCreativeHome.as_view(), name='app_creative_home'),
+    url(r'^creative/collection-(?P<collection>\S+)/$',
+        appCreativeHome.as_view(), name='app_creative_home'),
+    url(r'^creative/collection/detail/(?P<pk>\S+)/$',
+        appCreativeCollectionDetail.as_view(), name='app_creative_collection_detail'),
+    url(r'^creative/design/detail/(?P<pk>\S+)/$',
+        appCreativeDesignDetail.as_view(), name='app_creative_design_detail'),
+    url(r'^creative/layout/detail/(?P<pk>\S+)/$',
+        appCreativeLayoutDetail.as_view(), name='app_creative_layout_detail'),
+
+    url(r'^creative/collection/update/(?P<pk>\S+)/$',
+        appCreativeCollectionUpdate.as_view(), name='app_creative_collection_update'),
+    url(r'^creative/design/update/(?P<pk>\S+)/$',
+        appCreativeDesignUpdate.as_view(), name='app_creative_design_update'),
+    url(r'^creative/layout/update/(?P<pk>\S+)/$',
+        appCreativeLayoutUpdate.as_view(), name='app_creative_layout_update'),
+
+    url(r'^creative/collection/create/$',
+        appCreativeCollectionCreate.as_view(), name='app_creative_collection_create'),
+    url(r'^creative/design/create/$',
+        appCreativeDesignCreate.as_view(), name='app_creative_design_create'),
+    url(r'^creative/layout/create/$',
+        appCreativeLayoutCreate.as_view(), name='app_creative_layout_create'),
+
 
     # URLs for Apps
     url(r'^product/$', appProductHome.as_view(), name='app_product_home'),

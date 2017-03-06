@@ -89,6 +89,22 @@ class bzCreativeCollection(commonBusinessModel):
         return reverse(
             'business:business_bzcreativecollection_update', args=(self.pk,))
 
+    def get_designs(self):
+        return bzCreativeDesign.objects.filter(bzcreativecollection=self)
+    get_designs.short_description = _("Designs")
+
+    def num_designs(self):
+        return self.get_designs().count()
+    num_designs.short_description = _("Designs")
+
+    def get_layouts(self):
+        return bzCreativeLayout.objects.filter(bzcreativecollection=self)
+    get_designs.short_description = _("Layouts")
+
+    def num_layouts(self):
+        return self.get_layouts().count()
+    num_layouts.short_description = _("Layouts")
+
 
 class bzCreativeDesign(commonBusinessModel):
 
@@ -121,6 +137,14 @@ class bzCreativeDesign(commonBusinessModel):
         return reverse('business:business_bzcreativedesign_update',
                        args=(self.pk,))
 
+    def get_products(self):
+        return bzProduct.objects.filter(bzDesign=self)
+    get_products.short_description = _("Products")
+
+    def num_products(self):
+        return self.get_products().count()
+    num_products.short_description = _("Products")
+
 
 class bzCreativeLayout(commonBusinessModel):
 
@@ -152,6 +176,14 @@ class bzCreativeLayout(commonBusinessModel):
     def get_update_url(self):
         return reverse('business:business_bzcreativelayout_update',
                        args=(self.pk,))
+
+    def get_products(self):
+        return bzProduct.objects.filter(bzDesign=self)
+    get_products.short_description = _("Products")
+
+    def num_products(self):
+        return self.get_products().count()
+    num_products.short_description = _("Products")
 
 
 class bzCreativeRendering(commonBusinessModel):
