@@ -91,11 +91,10 @@ class bzProductTable(tables.Table):
 
 
 class bzProductVariantTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
-    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    # ACTION_TEMPLATE = '''
+    #    <a href="{% url 'business:business_bzvariant_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    # '''
+    # actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = bzProductVariant
