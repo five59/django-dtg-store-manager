@@ -91,22 +91,28 @@ urlpatterns += (
     url(r'^product/update/(?P<pk>\S+)/$',
         appProductUpdate.as_view(), name="app_product_update"),
 
-    # URLs for Apps
+    # URLs for Stores
     url(r'^store/$', appStoreHome.as_view(), name='app_store_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
+    url(r'^store/brand/$', appStoreBrandList.as_view(),
+        name='app_store_brand_list'),
+    url(r'^store/brand/detail/(?P<pk>\S+)/$',
+        appStoreBrandDetail.as_view(), name='app_store_brand_detail'),
+    url(r'^store/brand/create/$', appStoreBrandCreate.as_view(),
+        name='app_store_brand_create'),
+    url(r'^store/brand/update/(?P<pk>\S+)/$',
+        appStoreBrandUpdate.as_view(), name='app_store_brand_update'),
 
-    # URLs for Apps
+    # URLs for DAMS
     url(r'^dams/$', appDAMSHome.as_view(), name='app_dams_home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
 
-    # URLs for Apps
+    # URLs for Content
     url(r'^content/$', appContentHome.as_view(), name='app_content_home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
 
-    # URLs for Apps
+    # URLs for Lists
     url(r'^lists/$', appListsHome.as_view(), name='app_lists_home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),

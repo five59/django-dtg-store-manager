@@ -22,16 +22,15 @@ class commonBusinessTable(tables.Table):
 
 
 class bzBrandTable(commonBusinessTable):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'business_bzbrand')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = bzBrand
-        sequence = ('actions', 'code', 'name', 'vendor', 'outlet')
-        exclude = ('date_added', 'date_updated', 'id')
+        sequence = ('actions', 'code', 'name', 'vendor',
+                    'outlet', 'date_added', 'date_updated',)
+        exclude = ('id',)
         attrs = {'class': 'table table-striped table-hover'}
 
 
