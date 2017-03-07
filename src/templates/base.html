@@ -56,10 +56,6 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{% url 'profiles:show_self' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Profile</a></li>
-                {% if user.is_staff %}
-                <li><a href="{% url 'admin:index' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Go to Backend</a></li>
-                <li role="separator" class="divider"></li>
-                {% endif %}
                 <li><a href="{% url 'accounts:logout' %}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
               </ul>
             </li>
@@ -89,24 +85,15 @@
     {% block splash %}{% endblock splash %}
 
     {% block container %}
-    <div class="container">
-      <div class="starter-template">
-        <h1>New Project</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-    </div>
+    <div class="container"></div>
     {% endblock %}
 
     {% block footer %}
-      <a name="contact"></a>
-      <div class="container">
-        <div class="footer">
-        <div class="row">
-          <div class="col-lg-6">
-            <p>Copyright &copy;{% now 'Y' %}, <a href="http://559labs.com/" target="_blank">559 Labs</a>.</p>
-          </div>
-          <div class="col-lg-6 text-right">
-          </div>
+    <div class="footer">
+      <div class="row">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6 text-right">
+          <p>Copyright &copy;{% now 'Y' %}, <a href="http://559labs.com/" target="_blank">559 Labs</a>.</p>
         </div>
       </div>
     </div>
@@ -114,7 +101,14 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    {% block scripts %}
-    {% endblock scripts %}
+    <script>
+    $(function() {
+            $(".appnav").hover(
+                function(){ $(this).addClass('open') },
+                function(){ $(this).removeClass('open') }
+            );
+        });
+      </script>
+    {% block scripts %}{% endblock scripts %}
   </body>
 </html>

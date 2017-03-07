@@ -82,10 +82,14 @@ urlpatterns += (
         appCreativeLayoutCreate.as_view(), name='app_creative_layout_create'),
 
 
-    # URLs for Apps
+    # URLs for Product
     url(r'^product/$', appProductHome.as_view(), name='app_product_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
+    url(r'^product/detail-(?P<product>\S+)/$',
+        appProductHome.as_view(), name="app_product_home"),
+    url(r'^product/create/$',
+        appProductCreate.as_view(), name="app_product_create"),
+    url(r'^product/update/(?P<pk>\S+)/$',
+        appProductUpdate.as_view(), name="app_product_update"),
 
     # URLs for Apps
     url(r'^store/$', appStoreHome.as_view(), name='app_store_home'),

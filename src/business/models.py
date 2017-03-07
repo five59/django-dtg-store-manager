@@ -22,8 +22,8 @@ from decimal import *
 
 class commonBusinessModel(models.Model):
     id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
+    date_added = DateTimeField(auto_now_add=True, verbose_name=_("Added"))
+    date_updated = DateTimeField(auto_now=True, verbose_name=_("Updated"))
 
     class Meta:
         abstract = True
@@ -178,7 +178,7 @@ class bzCreativeLayout(commonBusinessModel):
                        args=(self.pk,))
 
     def get_products(self):
-        return bzProduct.objects.filter(bzDesign=self)
+        return bzProduct.objects.filter(bzLayout=self)
     get_products.short_description = _("Products")
 
     def num_products(self):
@@ -234,6 +234,8 @@ class bzProduct(commonBusinessModel):
     # Relationship Fields
     bzDesign = ForeignKey('business.bzCreativeDesign',
                           verbose_name=_("Design"))
+    bzLayout = ForeignKey('business.bzCreativeLayout',
+                          verbose_name=_("Layout"), null=True, blank=True)
     pfProduct = ForeignKey('business.pfCatalogProduct',
                            verbose_name=_("Vendor Product"),
                            blank=True, null=True, )

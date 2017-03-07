@@ -2,9 +2,26 @@ import django_tables2 as tables
 from .models import *
 from django_tables2.utils import A
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.humanize.templatetags.humanize import naturaltime
 
 
-class bzBrandTable(tables.Table):
+class commonBusinessTable(tables.Table):
+    ACTION_TEMPLATE = '''
+       <a href="{% url 'business:[M]_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
+       <a href="{% url 'business:[M]_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    '''
+
+    date_added = tables.Column()
+    date_updated = tables.Column()
+
+    def render_date_added(self, value):
+        return naturaltime(value)
+
+    def render_date_updated(self, value):
+        return naturaltime(value)
+
+
+class bzBrandTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -15,70 +32,62 @@ class bzBrandTable(tables.Table):
         model = bzBrand
         sequence = ('actions', 'code', 'name', 'vendor', 'outlet')
         exclude = ('date_added', 'date_updated', 'id')
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class bzCreativeCollectionTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+class bzCreativeCollectionTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'business_bzbrand')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = bzCreativeCollection
         sequence = ('actions', 'code', 'name', 'bzbrand',)
         exclude = ('date_added', 'date_updated', 'id',)
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class bzCreativeDesignTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:app_creative_design_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:app_creative_design_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+class bzCreativeDesignTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_creative_design')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    product_count = tables.Column(A('num_products'))
+    product_count = tables.TemplateColumn("{{ record.num_products }}")
 
     class Meta:
         model = bzCreativeDesign
         sequence = ('actions', 'code', 'name', 'product_count', 'date_added',
                     'date_updated',)
         exclude = ('id', 'bzcreativecollection',)
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
         empty_text = "No Designs Found."
 
 
-class bzCreativeLayoutTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:app_creative_layout_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:app_creative_layout_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+class bzCreativeLayoutTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_creative_layout')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    num_products = tables.Column(A('num_products'))
+    product_count = tables.TemplateColumn("{{ record.num_products }}")
 
     class Meta:
         model = bzCreativeLayout
-        sequence = ('actions', 'code', 'name', 'num_products',
+        sequence = ('actions', 'code', 'name', 'product_count',
                     'date_added', 'date_updated',)
         exclude = ('id', 'bzcreativecollection',)
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
         empty_text = "No Layouts Found."
 
 
-class bzCreativeRenderingTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+class bzCreativeRenderingTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_creative_rendering')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = bzCreativeRendering
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class bzProductTable(tables.Table):
+class bzProductTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -87,71 +96,68 @@ class bzProductTable(tables.Table):
 
     class Meta:
         model = bzProduct
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class bzProductVariantTable(tables.Table):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
-    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+class bzProductVariantTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'business_bzvariant')
 
     class Meta:
         model = bzProductVariant
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogColorTable(tables.Table):
+class pfCatalogColorTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogColor
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogFileSpecTable(tables.Table):
+class pfCatalogFileSpecTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogFileSpec
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogFileTypeTable(tables.Table):
+class pfCatalogFileTypeTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogFileType
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogOptionTypeTable(tables.Table):
+class pfCatalogOptionTypeTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogOptionType
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogProductTable(tables.Table):
+class pfCatalogProductTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogProduct
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogSizeTable(tables.Table):
+class pfCatalogSizeTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogSize
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCatalogVariantTable(tables.Table):
+class pfCatalogVariantTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogVariant
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfCountryTable(tables.Table):
+class pfCountryTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_pfcountry_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_pfcountry_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -163,17 +169,17 @@ class pfCountryTable(tables.Table):
         model = pfCountry
         sequence = ('actions', 'code', 'name', 'num_states')
         exclude = ('date_added', 'date_updated', 'id')
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfPrintFileTable(tables.Table):
+class pfPrintFileTable(commonBusinessTable):
 
     class Meta:
         model = pfPrintFile
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfStateTable(tables.Table):
+class pfStateTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_pfstate_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_pfstate_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -184,10 +190,10 @@ class pfStateTable(tables.Table):
         model = pfState
         sequence = ('actions', 'code', 'name', 'pfcountry',)
         exclude = ('date_added', 'date_updated', 'id')
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfStoreTable(tables.Table):
+class pfStoreTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_pfstore_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_pfstore_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -200,66 +206,66 @@ class pfStoreTable(tables.Table):
         sequence = ('actions', 'has_auth', 'code', 'name', 'website', )
         exclude = ('date_added', 'date_updated', 'id',
                    'consumer_key', 'consumer_secret',)
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfSyncItemOptionTable(tables.Table):
+class pfSyncItemOptionTable(commonBusinessTable):
 
     class Meta:
         model = pfSyncItemOption
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfSyncProductTable(tables.Table):
+class pfSyncProductTable(commonBusinessTable):
 
     class Meta:
         model = pfSyncProduct
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfSyncVariantTable(tables.Table):
+class pfSyncVariantTable(commonBusinessTable):
 
     class Meta:
         model = pfSyncVariant
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooAttributeTable(tables.Table):
+class wooAttributeTable(commonBusinessTable):
 
     class Meta:
         model = wooAttribute
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooCategoryTable(tables.Table):
+class wooCategoryTable(commonBusinessTable):
 
     class Meta:
         model = wooCategory
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooImageTable(tables.Table):
+class wooImageTable(commonBusinessTable):
 
     class Meta:
         model = wooImage
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooProductTable(tables.Table):
+class wooProductTable(commonBusinessTable):
 
     class Meta:
         model = wooProduct
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooShippingClassTable(tables.Table):
+class wooShippingClassTable(commonBusinessTable):
 
     class Meta:
         model = wooShippingClass
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooStoreTable(tables.Table):
+class wooStoreTable(commonBusinessTable):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:business_woostore_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:business_woostore_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -271,39 +277,39 @@ class wooStoreTable(tables.Table):
         sequence = ('actions', 'code', 'base_url',
                     'consumer_secret', 'verify_ssl', 'timezone')
         exclude = ('date_added', 'date_updated', 'id')
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooTagTable(tables.Table):
+class wooTagTable(commonBusinessTable):
 
     class Meta:
         model = wooTag
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooTermTable(tables.Table):
+class wooTermTable(commonBusinessTable):
 
     class Meta:
         model = wooTerm
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wooVariantTable(tables.Table):
+class wooVariantTable(commonBusinessTable):
 
     class Meta:
         model = wooVariant
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wpMediaTable(tables.Table):
+class wpMediaTable(commonBusinessTable):
 
     class Meta:
         model = wpMedia
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}
 
 
-class wpMediaSizeTable(tables.Table):
+class wpMediaSizeTable(commonBusinessTable):
 
     class Meta:
         model = wpMediaSize
-        attrs = {'class': 'table table-striped'}
+        attrs = {'class': 'table table-striped table-hover'}

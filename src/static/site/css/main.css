@@ -6,8 +6,28 @@ html, body{
   background: #e0eef5;
   font-family: 'Rubik', sans-serif;
 }
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
+    url("/static/site/img/banner.jpg");
+  background-color: rgb(100,148,170);
+  background-repeat: no-repeat;
+  background-position: 80% center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
 h1, h2, h3, h4, h5 {
   font-family: 'BioRhyme', serif;
+}
+
+.btn-default {
+  background-color: rgb(255,255,255);
+}
+.btn-default:hover {
+  background-color: rgb(245,245,245);
+  -webkit-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
 }
 
 .starter-template {
@@ -16,12 +36,20 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #eee;
+  padding: 0.5em 2em;
+  font-size: 0.75em;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5em;
+  background:rgb(100,148,170);
+  border: none;
 }
-
+.footer a {
+  color: #ffffff;
+}
+.footer p { margin: 0; padding: 0;}
 .alert {
     margin-top: 55px;
     margin-bottom: 0;
@@ -114,13 +142,7 @@ body>.navbar-default {
 
 /* Home page styling */
 .corporate-jumbo {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
-      url("/static/site/img/banner.jpg");
-    background-repeat: no-repeat;
-    background-position: 80% center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    background-size: cover;
+    background: none;
     color: #f5f5f5;
     padding: 10em 0;
     margin-bottom: 0;
@@ -175,17 +197,29 @@ body>.navbar-default {
     padding: 4px 0px;
 }
 
+ul.nav.nav-tabs>li>a { background: rgba(255,255,255,0.5); }
+ul.nav.nav-tabs>li.active>a { background: #ffffff; }
+
 /* business page styling */
 .business-head {
-    /*background-color: #fafafa;*/
-    padding: 70px 0px 10px 0px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 60px 20px 20px 20px;
+    margin-bottom: 1em;
+    background: rgba(255,255,255,0.6);
+    -webkit-backdrop-filter: blur(10px);
 }
 .business-body {
     padding: 1em;
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
-    background: #ffffff;
+    background: rgba(255,255,255,0.6);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -202,6 +236,13 @@ body>.navbar-default {
   -moz-border-top-left-radius: 1px;
   -webkit-border-top-left-radius: 1px;
 }
+.tab-content {
+  background: rgb(255,255,255);
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 1em;
+}
+
 .text-page {
     padding: 120px 0;
 }
