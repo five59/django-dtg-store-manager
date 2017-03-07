@@ -128,12 +128,21 @@ class appStorePFCreate(CreateView):
         return context
 
 
-class appStorePFUpdate(TemplateView):
-    template_name = "content/page.html"
+class appStorePFUpdate(UpdateView):
+    model = pfStore
+    form_class = pfStoreForm
+    template_name = "business/object_form.html"
+    success_url = reverse_lazy('business:app_store_pf_list')
 
     def get_context_data(self, **kwargs):
-        context = super(appStorePFUpdate, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context = super(appStorePFUpdate,
+                        self).get_context_data(**kwargs)
+        context['mode'] = "update"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Printful Stores"
+        context['action_list'] = reverse('business:app_store_pf_list')
         return context
 
 
@@ -164,7 +173,7 @@ class appStoreWPDetail(DetailView):
         return context
 
 
-class appStoreWPCreate(TemplateView):
+class appStoreWPCreate(CreateView):
     model = wooStore
     form_class = wooStoreForm
     template_name = "business/object_form.html"
@@ -182,10 +191,19 @@ class appStoreWPCreate(TemplateView):
         return context
 
 
-class appStoreWPUpdate(TemplateView):
-    template_name = "content/page.html"
+class appStoreWPUpdate(UpdateView):
+    model = wooStore
+    form_class = wooStoreForm
+    template_name = "business/object_form.html"
+    success_url = reverse_lazy('business:app_store_wp_list')
 
     def get_context_data(self, **kwargs):
-        context = super(appStoreWPUpdate, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context = super(appStoreWPUpdate,
+                        self).get_context_data(**kwargs)
+        context['mode'] = "update"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "WordPress Sites"
+        context['action_list'] = reverse('business:app_store_wp_list')
         return context
