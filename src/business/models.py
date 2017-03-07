@@ -22,8 +22,8 @@ from decimal import *
 
 class commonBusinessModel(models.Model):
     id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_added = DateTimeField(auto_now_add=True)
-    date_updated = DateTimeField(auto_now=True)
+    date_added = DateTimeField(auto_now_add=True, verbose_name=_("Added"))
+    date_updated = DateTimeField(auto_now=True, verbose_name=_("Updated"))
 
     class Meta:
         abstract = True
