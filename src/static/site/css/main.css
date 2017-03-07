@@ -200,6 +200,10 @@ body>.navbar-default {
 ul.nav.nav-tabs>li>a { background: rgba(255,255,255,0.5); }
 ul.nav.nav-tabs>li.active>a { background: #ffffff; }
 
+#navSidebar a.list-group-item {
+  font-size: 11px;
+}
+
 /* business page styling */
 .business-head {
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
@@ -224,6 +228,7 @@ ul.nav.nav-tabs>li.active>a { background: #ffffff; }
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border: 0px none #ffffff;
+    min-height: 300px;
 }
 .business-head h2 {
   padding-top: 0; margin-top: 0;

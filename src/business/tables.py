@@ -93,6 +93,7 @@ class bzProductTable(commonBusinessTable):
        <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    variant_count = tables.TemplateColumn("{{ record.num_variants }}")
 
     class Meta:
         model = bzProduct

@@ -123,10 +123,21 @@ class bzCreativeDesign(commonBusinessModel):
         verbose_name_plural = _("Creative Designs")
 
     def __str__(self):
-        if self.code and self.name:
-            return "{} - {}".format(self.code, self.name)
-        elif self.name:
-            return "{}".format(self.name)
+        rv = []
+        if self.bzcreativecollection:
+            if self.bzcreativecollection.code:
+                rv.append(self.bzcreativecollection.code + "-")
+        if self.code:
+            rv.append(self.code)
+
+        if self.bzcreativecollection:
+            if self.bzcreativecollection.code:
+                rv.append(" / " + self.bzcreativecollection.name)
+        if self.name:
+            rv.append(" / " + self.name)
+
+        if rv:
+            return "".join(rv)
         return _("Unknown Design")
 
     def get_absolute_url(self):
@@ -263,6 +274,14 @@ class bzProduct(commonBusinessModel):
 
     def get_update_url(self):
         return reverse('business:business_bzproduct_update', args=(self.pk,))
+
+    def get_variants(self):
+        return bzProductVariant.objects.filter(bzproduct=self)
+    get_variants.short_description = _("Variants")
+
+    def num_variants(self):
+        return self.get_variants().count()
+    num_variants.short_description = _("Variants")
 
 
 class bzProductVariant(commonBusinessModel):

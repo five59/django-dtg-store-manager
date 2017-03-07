@@ -1,5 +1,5 @@
 from django.core.urlresolvers import reverse, reverse_lazy
-
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 
 from django.shortcuts import render
@@ -24,12 +24,17 @@ class appProductHome(TemplateView):
         context['active_apptitle'] = "Product Catalog"
         context['products'] = bzProduct.objects.all()
         if context['products']:
-            context['active_product'] = context['products'][0]
+            try:
+                if 'product' in self.kwargs:
+                    context['active_product'] = bzProduct.objects.get(
+                        pk=self.kwargs['product'])
+            except ObjectDoesNotExist:
+                context['active_product'] = context['creativecollections'][0]
+
             context['table_variants'] = bzProductVariantTable(
                 bzProductVariant.objects.filter(
                     bzproduct=context['active_product'])
             )
-        # TODO Do we need an else here?
 
         return context
 
