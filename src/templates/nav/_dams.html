@@ -10,5 +10,9 @@
     {# <li><a href="{% url 'business:app_dams_home' %}"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;&nbsp; Digital Asset Management</a></li>#}
     <li><a href="{% url 'business:app_content_home' %}"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp; Content Editor</a></li>
     <li><a href="{% url 'business:app_lists_home' %}"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;&nbsp; List Editor</a></li>
+    {% if user.is_staff %}
+    <li role="separator" class="divider"></li>
+    <li><a href="{% url 'admin:index' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp; System Management</a></li>
+    {% endif %}
   </ul>
 </li>
