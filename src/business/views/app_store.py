@@ -97,12 +97,16 @@ class appStorePFList(TemplateView):
         return context
 
 
-class appStorePFDetail(TemplateView):
-    template_name = "content/page.html"
+class appStorePFDetail(DetailView):
+    template_name = "app_store/pf_detail.html"
+    model = pfStore
 
     def get_context_data(self, **kwargs):
         context = super(appStorePFDetail, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Printful Stores"
         return context
 
 
@@ -138,12 +142,16 @@ class appStoreWPList(TemplateView):
         return context
 
 
-class appStoreWPDetail(TemplateView):
-    template_name = "content/page.html"
+class appStoreWPDetail(DetailView):
+    template_name = "app_store/wp_detail.html"
+    model = wooStore
 
     def get_context_data(self, **kwargs):
         context = super(appStoreWPDetail, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "WordPress Sites"
         return context
 
 
