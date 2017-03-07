@@ -84,11 +84,16 @@ class appStoreBrandUpdate(UpdateView):
 
 
 class appStorePFList(TemplateView):
-    template_name = "content/page.html"
+    template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(appStorePFList, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Printful Stores"
+        context['action_new'] = reverse('business:app_store_pf_create')
+        context['table'] = pfStoreTable(pfStore.objects.all())
         return context
 
 
@@ -120,11 +125,16 @@ class appStorePFUpdate(TemplateView):
 
 
 class appStoreWPList(TemplateView):
-    template_name = "content/page.html"
+    template_name = "business/object_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(appStoreWPList, self).get_context_data(**kwargs)
-        context['active_apptitle'] = "Not Implemented"
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "WordPress Sites"
+        context['action_new'] = reverse('business:app_store_wp_create')
+        context['table'] = wooStoreTable(wooStore.objects.all())
         return context
 
 
