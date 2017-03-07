@@ -23,7 +23,7 @@ class commonBusinessTable(tables.Table):
 
 class bzBrandTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
-        '[M]', 'business_bzbrand')
+        '[M]', 'app_store_brand')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:

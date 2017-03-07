@@ -44,18 +44,20 @@ urlpatterns = (
 )
 #
 
+# urls for Home Page et al.
 urlpatterns += (
-    # urls for Home Page et al.
     url(r'^$', bzHomeView.as_view(), name='business_home_view'),
 )
 
+# URLs for Dashboard App
 urlpatterns += (
-    # URLs for Apps
     url(r'^dashboard/$', appDashboardHome.as_view(), name='app_dashboard_home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
+)
 
-    # URLs for Creative App
+# URLs for Creative App
+urlpatterns += (
     url(r'^creative/$',
         appCreativeHome.as_view(), name='app_creative_home'),
     url(r'^creative/collection-(?P<collection>\S+)/$',
@@ -80,9 +82,10 @@ urlpatterns += (
         appCreativeDesignCreate.as_view(), name='app_creative_design_create'),
     url(r'^creative/layout/create/$',
         appCreativeLayoutCreate.as_view(), name='app_creative_layout_create'),
+)
 
-
-    # URLs for Product
+# URLs for Product
+urlpatterns += (
     url(r'^product/$', appProductHome.as_view(), name='app_product_home'),
     url(r'^product/detail-(?P<product>\S+)/$',
         appProductHome.as_view(), name="app_product_home"),
@@ -90,9 +93,12 @@ urlpatterns += (
         appProductCreate.as_view(), name="app_product_create"),
     url(r'^product/update/(?P<pk>\S+)/$',
         appProductUpdate.as_view(), name="app_product_update"),
+)
 
-    # URLs for Stores
+# URLs for Store App
+urlpatterns += (
     url(r'^store/$', appStoreHome.as_view(), name='app_store_home'),
+
     url(r'^store/brand/$', appStoreBrandList.as_view(),
         name='app_store_brand_list'),
     url(r'^store/brand/detail/(?P<pk>\S+)/$',
@@ -102,20 +108,38 @@ urlpatterns += (
     url(r'^store/brand/update/(?P<pk>\S+)/$',
         appStoreBrandUpdate.as_view(), name='app_store_brand_update'),
 
-    # URLs for DAMS
+    url(r'^store/printful/$', appStorePFList.as_view(), name='app_store_pf_list'),
+    url(r'^store/printful/detail/(?P<pk>\S+)/$',
+        appStorePFDetail.as_view(), name='app_store_pf_detail'),
+    url(r'^store/printful/create/$',
+        appStorePFCreate.as_view(), name='app_store_pf_create'),
+    url(r'^store/printful/update/(?P<pk>\S+)/$',
+        appStorePFUpdate.as_view(), name='app_store_pf_update'),
+
+    url(r'^store/wordpress/$', appStoreWPList.as_view(), name='app_store_wp_list'),
+    url(r'^store/wordpress/detail/(?P<pk>\S+)/$',
+        appStoreWPDetail.as_view(), name='app_store_wp_detail'),
+    url(r'^store/wordpress/create/$',
+        appStoreWPCreate.as_view(), name='app_store_wp_create'),
+    url(r'^store/wordpress/update/(?P<pk>\S+)/$',
+        appStoreWPUpdate.as_view(), name='app_store_wp_update'),
+)
+
+# URLs for DAMS App
+urlpatterns += (
     url(r'^dams/$', appDAMSHome.as_view(), name='app_dams_home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
     # url(r'^/$', appHome.as_view(), name='app__home'),
+)
 
-    # URLs for Content
+# URLs for Content App
+urlpatterns += (
     url(r'^content/$', appContentHome.as_view(), name='app_content_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
+)
 
-    # URLs for Lists
+# URLs for List App
+urlpatterns += (
     url(r'^lists/$', appListsHome.as_view(), name='app_lists_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
 )
 
 

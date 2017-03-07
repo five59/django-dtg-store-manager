@@ -34,9 +34,17 @@ class appStoreBrandList(TemplateView):
         return context
 
 
-class appStoreBrandDetail(TemplateView):
+class appStoreBrandDetail(DetailView):
     template_name = "app_store/brand_detail.html"
     model = bzBrand
+
+    def get_context_data(self, **kwargs):
+        context = super(appStoreBrandDetail, self).get_context_data(**kwargs)
+        context['active_app'] = "store"
+        context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Brands"
+        return context
 
 
 class appStoreBrandCreate(CreateView):
@@ -50,8 +58,9 @@ class appStoreBrandCreate(CreateView):
                         self).get_context_data(**kwargs)
         context['mode'] = "create"
         context['active_app'] = "store"
-        context['object_name'] = "Collection"
         context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Brands"
         context['action_list'] = reverse('business:app_store_brand_list')
         return context
 
@@ -67,7 +76,80 @@ class appStoreBrandUpdate(UpdateView):
                         self).get_context_data(**kwargs)
         context['mode'] = "update"
         context['active_app'] = "store"
-        context['object_name'] = "Collection"
         context['active_apptitle'] = "Store Management"
+        context['object_icon'] = 'shopping-cart'
+        context['object_name'] = "Brands"
         context['action_list'] = reverse('business:app_store_brand_list')
+        return context
+
+
+class appStorePFList(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStorePFList, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStorePFDetail(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStorePFDetail, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStorePFCreate(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStorePFCreate, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStorePFUpdate(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStorePFUpdate, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStoreWPList(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStoreWPList, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStoreWPDetail(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStoreWPDetail, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStoreWPCreate(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStoreWPCreate, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
+        return context
+
+
+class appStoreWPUpdate(TemplateView):
+    template_name = "content/page.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(appStoreWPUpdate, self).get_context_data(**kwargs)
+        context['active_apptitle'] = "Not Implemented"
         return context
