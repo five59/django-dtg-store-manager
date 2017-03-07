@@ -28,8 +28,10 @@ class appProductHome(TemplateView):
                 if 'product' in self.kwargs:
                     context['active_product'] = bzProduct.objects.get(
                         pk=self.kwargs['product'])
+                else:
+                    context['active_product'] = context['products'][0]
             except ObjectDoesNotExist:
-                context['active_product'] = context['creativecollections'][0]
+                context['active_product'] = context['products'][0]
 
             context['table_variants'] = bzProductVariantTable(
                 bzProductVariant.objects.filter(
