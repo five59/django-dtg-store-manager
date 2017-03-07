@@ -53,10 +53,10 @@ class bzBrand(commonBusinessModel):
         return _("Unknown Brand")
 
     def get_absolute_url(self):
-        return reverse('business:business_bzbrand_detail', args=(self.pk,))
+        return reverse('business:app_store_brand_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_bzbrand_update', args=(self.pk,))
+        return reverse('business:app_store_brand_update', args=(self.pk,))
 
 
 class bzCreativeCollection(commonBusinessModel):
@@ -566,10 +566,10 @@ class wooStore(commonBusinessModel):
         return _("Unknown Store")
 
     def get_absolute_url(self):
-        return reverse('business:business_woostore_detail', args=(self.pk,))
+        return reverse('business:app_store_wp_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_woostore_update', args=(self.pk,))
+        return reverse('business:app_store_wp_update', args=(self.pk,))
 
 
 class wooTag(commonBusinessModel):
@@ -1216,10 +1216,10 @@ class pfStore(commonBusinessModel):
         return _("Unknown Store")
 
     def get_absolute_url(self):
-        return reverse('business:business_pfstore_detail', args=(self.pk,))
+        return reverse('business:app_store_pf_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:business_pfstore_update', args=(self.pk,))
+        return reverse('business:app_store_pf_detail', args=(self.pk,))
 
     def has_auth(self):
         if self.consumer_key and self.consumer_secret:

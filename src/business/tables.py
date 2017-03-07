@@ -22,16 +22,15 @@ class commonBusinessTable(tables.Table):
 
 
 class bzBrandTable(commonBusinessTable):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_bzbrand_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_bzbrand_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_store_brand')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = bzBrand
-        sequence = ('actions', 'code', 'name', 'vendor', 'outlet')
-        exclude = ('date_added', 'date_updated', 'id')
+        sequence = ('actions', 'code', 'name', 'vendor',
+                    'outlet', 'date_added', 'date_updated',)
+        exclude = ('id',)
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -195,18 +194,17 @@ class pfStateTable(commonBusinessTable):
 
 
 class pfStoreTable(commonBusinessTable):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_pfstore_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_pfstore_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_store_pf')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
     has_auth = tables.columns.BooleanColumn(A('has_auth'))
 
     class Meta:
         model = pfStore
-        sequence = ('actions', 'has_auth', 'code', 'name', 'website', )
-        exclude = ('date_added', 'date_updated', 'id',
-                   'consumer_key', 'consumer_secret',)
+        sequence = ('actions', 'code', 'name', 'has_auth',
+                    'date_added', 'date_updated',)
+        exclude = ('id', 'consumer_key', 'consumer_secret',
+                   'created', 'website',)
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -267,17 +265,15 @@ class wooShippingClassTable(commonBusinessTable):
 
 
 class wooStoreTable(commonBusinessTable):
-    ACTION_TEMPLATE = '''
-       <a href="{% url 'business:business_woostore_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
-       <a href="{% url 'business:business_woostore_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    '''
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_store_wp')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
 
     class Meta:
         model = wooStore
-        sequence = ('actions', 'code', 'base_url',
-                    'consumer_secret', 'verify_ssl', 'timezone')
-        exclude = ('date_added', 'date_updated', 'id')
+        sequence = ('actions', 'code', 'base_url', 'timezone', 'verify_ssl',
+                    'date_added', 'date_updated',)
+        exclude = ('id', 'consumer_secret')
         attrs = {'class': 'table table-striped table-hover'}
 
 

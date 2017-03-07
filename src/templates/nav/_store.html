@@ -16,3 +16,12 @@
     {% endif %}
   </ul>
 </li>
+
+{% block navbar-secondary %}
+<li{% if object_name == "Brands" %} class="active"{% endif %}>
+  <a href="{% url 'business:app_store_brand_list' %}">Brands</a></li>
+<li{% if object_name == "Printful Stores" %} class="active"{% endif %}>
+  <a href="{% url 'business:app_store_pf_list' %}">Printful Stores</a></li>
+<li{% if object_name == "WordPress Sites" %} class="active"{% endif %}>
+  <a href="{% url 'business:app_store_wp_list' %}">WordPress Sites</a></li>
+{% endblock %}
