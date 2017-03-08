@@ -1,12 +1,28 @@
 from __future__ import unicode_literals
 from django import forms
-from crispy_forms.helper import FormHelper
+from crispy_forms.helper import *
 from crispy_forms.layout import *
-from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
+from crispy_forms.bootstrap import *
 from django.contrib.auth import get_user_model
 from .models import *
 
 User = get_user_model()
+
+# Helper methods
+
+
+def generateTable(data):
+    rv = []
+    rv.append('<table class="table table-striped">')
+    for label, value in data.items():
+        # FIXME There is definitely a better way to format this string.
+        rv.append(
+            '<tr><th>{}</th><td>[[object.{}]]</td></tr>'.format(
+                label, value).replace('[', '{').replace(']', '}'))
+    rv.append('</table>')
+    return "".join(rv)
+
+# Forms
 
 
 class bzBrandForm(forms.ModelForm):
@@ -387,22 +403,44 @@ class pfStoreForm(forms.ModelForm):
         super(pfStoreForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
+
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'website',
-                'key',
-            ),
             FormActions(
                 Submit('update', 'Save', css_class="btn-success"),
-            )
+            ),
+            TabHolder(
+                Tab('Basic Info',
+                    Fieldset('',
+                             'code', 'name', 'website', 'key'),
+                    ),
+                Tab('Addresses',
+                    HTML(
+                        "{% if object.return_address %}<h4>Return Address</h4>{{ object.return_address.asHTML|safe }}{% endif %}"),
+                    HTML(
+                        "{% if object.billing_address %}<h4>Billing Address</h4>{{ object.billing_address.asHTML|safe }}{% endif %}"),
+                    ),
+                Tab('Credit Card Info',
+                    HTML(generateTable({
+                        'Payment Type': 'payment_type',
+                        'Card Number (Masked)': 'payment_number_mask',
+                        'Card Expires': 'payment_expires',
+                    })),
+                    ),
+                Tab('Packing Slip',
+                    Fieldset("This information gets printed on your customers' packing slips.",
+                             'packingslip_email', 'packingslip_phone', 'packingslip_message'),
+                    ),
+            ),
         )
 
     class Meta:
         model = pfStore
-        fields = ['code', 'name', 'website', 'key', ]
+        # fields = ['code', 'name', 'website', 'key', ]
+        exclude = []
+        readonly_fields = [
+            'payment_type', 'payment_number_mask', 'payment_expires',
+            'website', 'return_address', 'billing_address',
+        ]
 
 
 class pfPrintFileForm(forms.ModelForm):

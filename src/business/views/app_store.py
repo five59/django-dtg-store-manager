@@ -7,6 +7,8 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
+from django.views.generic.detail import SingleObjectMixin
+from django.views.generic.base import RedirectView
 
 from django_tables2 import *
 
@@ -144,6 +146,20 @@ class appStorePFUpdate(UpdateView):
         context['object_name'] = "Printful Stores"
         context['action_list'] = reverse('business:app_store_pf_list')
         return context
+
+
+class appStorePFPull(RedirectView):
+    """
+    Performs an API pull on the store, and then redirects to the detail page.
+    """
+    permanent = False
+    query_string = False
+    pattern_name = 'business:app_store_pf_detail'
+
+    def get_redirect_url(self, *args, **kwargs):
+        _store = pfStore.objects.get(pk=kwargs['pk'])
+        _store.api_pull()
+        return super(appStorePFPull, self).get_redirect_url(*args, **kwargs)
 
 
 class appStoreWPList(TemplateView):

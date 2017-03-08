@@ -201,10 +201,10 @@ class pfStoreTable(commonBusinessTable):
 
     class Meta:
         model = pfStore
+        fields = ('actions', 'code', 'name', 'has_auth',
+                  'date_added', 'date_updated',)
         sequence = ('actions', 'code', 'name', 'has_auth',
                     'date_added', 'date_updated',)
-        exclude = ('id', 'key',
-                   'created', 'website',)
         attrs = {'class': 'table table-striped table-hover'}
 
 

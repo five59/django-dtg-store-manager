@@ -1225,11 +1225,28 @@ class pfStore(commonBusinessModel):
                      default="", blank=True, null=True)
     name = CharField(_("Name"), max_length=255,
                      default="", blank=True, null=True)
+    pid = IntegerField(_("Printful ID"), default=0)
     website = CharField(_("Website"), max_length=255,
                         default="", blank=True, null=True)
     created = CharField(_("Created"), max_length=255,
                         default="", blank=True, null=True)
     key = CharField(_("API Key"), max_length=64, default="", blank=True)
+    return_address = ForeignKey("business.pfAddress", verbose_name=_(
+        "Return Address"), related_name="returnaddress", blank=True, null=True)
+    billing_address = ForeignKey("business.pfAddress", verbose_name=_(
+        "Billing Address"), related_name="billingaddress", blank=True, null=True)
+    payment_type = CharField(_("Payment Card Type"),
+                             max_length=64, default="", blank=True, null=True)
+    payment_number_mask = CharField(
+        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
+    payment_expires = CharField(
+        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
+    packingslip_email = EmailField(
+        _("Packing Slip Email"), default="", blank=True, null=True)
+    packingslip_phone = CharField(
+        _("Packing Slip Phone"), max_length=64, default="", blank=True, null=True)
+    packingslip_message = CharField(
+        _("Packing Slip Message"), max_length=255, default="", blank=True, null=True)
 
     class Meta:
         ordering = ('-created',)
@@ -1248,7 +1265,7 @@ class pfStore(commonBusinessModel):
         return reverse('business:app_store_pf_detail', args=(self.pk,))
 
     def get_update_url(self):
-        return reverse('business:app_store_pf_detail', args=(self.pk,))
+        return reverse('business:app_store_pf_update', args=(self.pk,))
 
     def has_auth(self):
         return True if self.key else False
@@ -1278,6 +1295,83 @@ class pfStore(commonBusinessModel):
                 return store
         raise ObjectDoesNotExist(
             "Either provide a store object or add at least one pfStore with an API key to the database.")
+
+    def api_pull(self):
+        """
+        Update current store with data from Printful API.
+        """
+        if not self.has_auth():
+            raise Exception("This store is missing the API Key.")
+
+        # TODO Handle states/countries lookup Exceptions
+
+        api = pyPrintful(key=self.key)
+        sData = api.get_store_info()
+        self.website = sData['website']
+        self.name = sData['name']
+        self.pid = sData['id']
+        self.created = sData['created']
+
+        self.packingslip_phone = sData['packing_slip']['phone']
+        self.packingslip_email = sData['packing_slip']['email']
+        self.packingslip_message = sData['packing_slip']['message']
+
+        self.payment_type = sData['payment_card']['type']
+        self.payment_number_mask = sData['payment_card']['number_mask']
+        self.payment_expires = sData['payment_card']['expires']
+
+        if sData['billing_address']:
+            _state = pfState.objects.get(
+                code=sData['billing_address']['state_code'])
+            _country = pfCountry.objects.get(
+                code=sData['billing_address']['country_code'])
+            self.billing_address, created = pfAddress.objects.update_or_create(
+                name=sData['billing_address']['name'],
+                company=sData['billing_address']['company'],
+                address1=sData['billing_address']['address1'],
+                address2=sData['billing_address']['address2'],
+                city=sData['billing_address']['city'],
+                zip=sData['billing_address']['zip'],
+                phone=sData['billing_address']['phone'],
+                email=sData['billing_address']['email'],
+                state=_state,
+                country=_country,
+                defaults={}
+            )
+
+        if sData['return_address']:
+            _state = pfState.objects.get(
+                code=sData['return_address']['state_code'])
+            _country = pfCountry.objects.get(
+                code=sData['return_address']['country_code'])
+
+            self.return_address, created = pfAddress.objects.update_or_create(
+                name=sData['return_address']['name'],
+                company=sData['return_address']['company'],
+                address1=sData['return_address']['address1'],
+                address2=sData['return_address']['address2'],
+                city=sData['return_address']['city'],
+                zip=sData['return_address']['zip'],
+                phone=sData['return_address']['phone'],
+                email=sData['return_address']['email'],
+                state=_state,
+                country=_country,
+                defaults={}
+            )
+
+        self.save()
+
+    def api_push(self):
+        """
+        """
+        if not self.has_auth():
+            raise Exception("This store is missing the API Key.")
+        api = pyPrintful(key=self.key)
+        data = {
+            'email': self.packingslip_email,
+            'phone': self.packingslip_phone,
+            'message': self.packingslip_message,
+        }
 
 
 class pfPrintFile(commonBusinessModel):
@@ -1322,3 +1416,76 @@ class pfPrintFile(commonBusinessModel):
 
     def get_update_url(self):
         return reverse('business:business_pfprintfile_update', args=(self.pk,))
+
+
+class pfAddress(commonBusinessModel):
+    # Fields
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    company = CharField(_("Company"), max_length=255,
+                        default="", blank=True, null=True)
+    address1 = CharField(_("Address 1"), max_length=255,
+                         default="", blank=True, null=True)
+    address2 = CharField(_("Address 2"), max_length=255,
+                         default="", blank=True, null=True)
+    city = CharField(_("City"), max_length=255,
+                     default="", blank=True, null=True)
+    state = ForeignKey("business.pfState", verbose_name=_(
+        "State"), blank=True, null=True)
+    country = ForeignKey("business.pfCountry", verbose_name=_(
+        "Country"), blank=True, null=True)
+    zip = CharField(_("Postal Code"), max_length=24,
+                    default="", blank=True, null=True)
+    phone = CharField(_("Phone"), max_length=24,
+                      default="", blank=True, null=True)
+    email = EmailField(_("Email"), default="", blank=True, null=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = _("Address")
+        verbose_name_plural = _("Addresses")
+
+    def __str__(self):
+        if self.name and self.company:
+            return ", ".join([self.name, self.company])
+        return "Unnamed Address"
+
+    def asHTML(self):
+        """
+        Returns an HTML div, formatted in a 'standard' way:
+
+            Name
+            Company
+            Address1
+            Address2
+            Zip City, State
+            Country
+            Tel: <Phone>
+            E-Mail: <Email>
+
+        """
+        rv = []
+        rv.append("<div class='element-address'>")
+        if self.name:
+            rv.append(self.name + "<br/>")
+        if self.company:
+            rv.append(self.company + "<br/>")
+        if self.address1:
+            rv.append(self.address1 + "<br/>")
+        if self.address2:
+            rv.append(self.address2 + "<br/>")
+        if self.zip:
+            rv.append(self.zip + " ")
+        if self.city:
+            rv.append(self.city + ", ")
+        if self.state:
+            rv.append(self.state.code)
+        if self.country:
+            rv.append("<br/>" + self.country.name)
+        if self.phone:
+            rv.append("<br/>Tel: " + self.phone)
+        if self.email:
+            rv.append(
+                "<br/>Email: <a href='mailto:[]'>[]</a>".replace('[]', self.email))
+        rv.append("</div>")
+        return "".join(rv)
