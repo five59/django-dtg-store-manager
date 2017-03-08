@@ -814,16 +814,22 @@ class pfCountry(commonBusinessModel):
         return reverse('business:business_pfcountry_update', args=(self.pk,))
 
     @staticmethod
-    def api_pull(store=None):
+    def api_pull(store=None, key=None):
         """
         Update the Country and State objects from the Printful API.
 
         :param store: Optional bzStore object. If not provided, method will
                 attempt to use the first store from the database if it exists.
+        :param key: If a key is provided, then it is used instead of store.
+                This is especially useful for when you're first creating a
+                store, and so avoids a race condition.
         """
-        # this method raises exception if problem.
-        _storeObj = pfStore.get_store(store)
-        api = pyPrintful(key=_storeObj.key)
+        if key:
+            api = pyPrintful(key=key)
+        else:
+            _storeObj = pfStore.get_store(store)
+            api = pyPrintful(key=_storeObj.key)
+
         countries = api.get_countries_list()
         for c in countries:
             cObj, cCreated = pfCountry.objects.update_or_create(
@@ -1278,6 +1284,8 @@ class pfStore(commonBusinessModel):
     def save(self, *args, **kwargs):
         logger.debug('Method: pfStore.save() Called')
         if self.pid == 0:
+            if pfCountry.objects.all().count() == 0:
+                pfCountry.api_pull(key=self.key)
             self.api_pull()
         self.api_push()
         self.api_pull()
