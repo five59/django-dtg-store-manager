@@ -1,4 +1,4 @@
-r# Django DTG (Direct-to-Garment) Store Manager
+# Django DTG (Direct-to-Garment) Store Manager
 
 A Django/Python-based app that helps to manage an e-commerce product catalog.
 This tool understands the concept of DTG printing and dropship services
