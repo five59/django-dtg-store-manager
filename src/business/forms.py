@@ -393,8 +393,7 @@ class pfStoreForm(forms.ModelForm):
                 'code',
                 'name',
                 'website',
-                'consumer_key',
-                'consumer_secret',
+                'key',
             ),
             FormActions(
                 Submit('update', 'Save', css_class="btn-success"),
@@ -403,8 +402,7 @@ class pfStoreForm(forms.ModelForm):
 
     class Meta:
         model = pfStore
-        fields = ['code', 'name', 'website',
-                  'consumer_key', 'consumer_secret']
+        fields = ['code', 'name', 'website', 'key', ]
 
 
 class pfPrintFileForm(forms.ModelForm):

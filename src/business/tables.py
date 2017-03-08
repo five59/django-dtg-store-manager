@@ -203,7 +203,7 @@ class pfStoreTable(commonBusinessTable):
         model = pfStore
         sequence = ('actions', 'code', 'name', 'has_auth',
                     'date_added', 'date_updated',)
-        exclude = ('id', 'consumer_key', 'consumer_secret',
+        exclude = ('id', 'key',
                    'created', 'website',)
         attrs = {'class': 'table table-striped table-hover'}
 

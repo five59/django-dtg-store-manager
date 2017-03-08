@@ -19,6 +19,9 @@ from timezone_field import TimeZoneField
 import uuid
 from decimal import *
 
+from pyPrintful import pyPrintful
+from django.core.exceptions import ObjectDoesNotExist
+
 
 class commonBusinessModel(models.Model):
     id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -807,6 +810,35 @@ class pfCountry(commonBusinessModel):
     def get_update_url(self):
         return reverse('business:business_pfcountry_update', args=(self.pk,))
 
+    @staticmethod
+    def api_pull(store=None):
+        """
+        Update the Country and State objects from the Printful API.
+
+        :param store: Optional bzStore object. If not provided, method will
+                attempt to use the first store from the database if it exists.
+        """
+        # this method raises exception if problem.
+        _storeObj = pfStore.get_store(store)
+        api = pyPrintful(key=_storeObj.key)
+        countries = api.get_countries_list()
+        for c in countries:
+            cObj, cCreated = pfCountry.objects.update_or_create(
+                code=c['code'],
+                defaults={
+                    'name': c['name']
+                }
+            )
+            if c['states']:
+                for s in c['states']:
+                    sObj, sCreated = pfState.objects.update_or_create(
+                        code=s['code'],
+                        pfcountry=cObj,
+                        defaults={
+                            'name': s['name'],
+                        }
+                    )
+
     def get_states(self):
         return pfState.objects.filter(pfcountry=self)
     get_states.short_description = _("States")
@@ -1197,10 +1229,7 @@ class pfStore(commonBusinessModel):
                         default="", blank=True, null=True)
     created = CharField(_("Created"), max_length=255,
                         default="", blank=True, null=True)
-    consumer_key = CharField(_("API Consumer Key"),
-                             max_length=64, default="", blank=True)
-    consumer_secret = CharField(
-        _("API Consumer Secret"), max_length=64, default="", blank=True)
+    key = CharField(_("API Key"), max_length=64, default="", blank=True)
 
     class Meta:
         ordering = ('-created',)
@@ -1222,11 +1251,33 @@ class pfStore(commonBusinessModel):
         return reverse('business:app_store_pf_detail', args=(self.pk,))
 
     def has_auth(self):
-        if self.consumer_key and self.consumer_secret:
-            return True
-        return False
+        return True if self.key else False
     has_auth.short_description = _("Auth?")
     has_auth.boolean = True
+
+    @staticmethod
+    def get_store(store=None):
+        """
+        Gets a 'default' Printful store, generally for use with the Printful API
+        methods on other related objects. If a store is provided, then it is
+        validated and returned. Otherwise, this method will attempt to grab the
+        first Printful store object in the database and return that.
+
+        If no stores are in the database, then this method will raise an exception.
+        The wrapping method will need to catch this and respond appropriately.
+
+        :param store: Optional. pfStore object. Will validate that it is a valid
+                pfStore object and return it back.
+        """
+        if type(store) is pfStore and store.has_auth():
+            return store
+        else:
+            store = pfStore.objects.exclude(
+                key__isnull=True).exclude(key__exact='').first()
+            if store:
+                return store
+        raise ObjectDoesNotExist(
+            "Either provide a store object or add at least one pfStore with an API key to the database.")
 
 
 class pfPrintFile(commonBusinessModel):
