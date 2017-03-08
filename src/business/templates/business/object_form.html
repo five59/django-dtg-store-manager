@@ -19,7 +19,6 @@
       <div class="col-md-4">
         <div class="text-right">
           <div class="btn-group" role="group">
-            <a href="{{ action_list }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Cancel</a>
             {# <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button>#}
           </div>
         </div>
@@ -30,11 +29,6 @@
   <div class="container business-body">
     <div class="row">
       <div class="col-md-12">
-          <h3>
-            {% if mode == 'create' %}Create New{% endif %}
-            {% if mode == 'update' %}Update{% endif %}
-             {{ object_name }}</h3>
-          <hr />
           {% csrf_token %}
           {% crispy form %}
       </div>

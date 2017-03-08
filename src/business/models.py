@@ -22,6 +22,9 @@ from decimal import *
 from pyPrintful import pyPrintful
 from django.core.exceptions import ObjectDoesNotExist
 
+from storemanager.logger import *
+logger = StyleAdapter(logging.getLogger("project"))
+
 
 class commonBusinessModel(models.Model):
     id = UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -1272,6 +1275,14 @@ class pfStore(commonBusinessModel):
     has_auth.short_description = _("Auth?")
     has_auth.boolean = True
 
+    def save(self, *args, **kwargs):
+        logger.debug('Method: pfStore.save() Called')
+        if self.pid == 0:
+            self.api_pull()
+        self.api_push()
+        self.api_pull()
+        super(pfStore, self).save(*args, **kwargs)
+
     @staticmethod
     def get_store(store=None):
         """
@@ -1307,6 +1318,9 @@ class pfStore(commonBusinessModel):
 
         api = pyPrintful(key=self.key)
         sData = api.get_store_info()
+        print(sData)
+        print(api._store['last_response_raw'])
+
         self.website = sData['website']
         self.name = sData['name']
         self.pid = sData['id']
@@ -1359,19 +1373,19 @@ class pfStore(commonBusinessModel):
                 defaults={}
             )
 
-        self.save()
-
     def api_push(self):
         """
+        Pushes the only data available to update via the API: packing slip info.
         """
         if not self.has_auth():
             raise Exception("This store is missing the API Key.")
-        api = pyPrintful(key=self.key)
         data = {
             'email': self.packingslip_email,
             'phone': self.packingslip_phone,
             'message': self.packingslip_message,
         }
+        api = pyPrintful(key=self.key)
+        api.put_store_packingslip(data)
 
 
 class pfPrintFile(commonBusinessModel):
