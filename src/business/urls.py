@@ -115,6 +115,8 @@ urlpatterns += (
         appStorePFCreate.as_view(), name='app_store_pf_create'),
     url(r'^store/printful/update/(?P<pk>\S+)/$',
         appStorePFUpdate.as_view(), name='app_store_pf_update'),
+    url(r'^store/printful/pull/(?P<pk>\S+)/$',
+        appStorePFPull.as_view(), name='app_store_pf_pull'),
 
     url(r'^store/wordpress/$', appStoreWPList.as_view(), name='app_store_wp_list'),
     url(r'^store/wordpress/detail/(?P<pk>\S+)/$',

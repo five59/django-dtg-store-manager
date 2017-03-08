@@ -1,12 +1,28 @@
 from __future__ import unicode_literals
 from django import forms
-from crispy_forms.helper import FormHelper
+from crispy_forms.helper import *
 from crispy_forms.layout import *
-from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
+from crispy_forms.bootstrap import *
 from django.contrib.auth import get_user_model
 from .models import *
 
 User = get_user_model()
+
+# Helper methods
+
+
+def generateTable(data):
+    rv = []
+    rv.append('<table class="table table-striped">')
+    for label, value in data.items():
+        # FIXME There is definitely a better way to format this string.
+        rv.append(
+            '<tr><th>{}</th><td>[[object.{}]]</td></tr>'.format(
+                label, value).replace('[', '{').replace(']', '}'))
+    rv.append('</table>')
+    return "".join(rv)
+
+# Forms
 
 
 class bzBrandForm(forms.ModelForm):
@@ -387,24 +403,96 @@ class pfStoreForm(forms.ModelForm):
         super(pfStoreForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
+
+        layout_header = Layout(
+            Div(
+                Div(
+                    HTML("""<h3>
+                         {% if mode == 'create' %}Create New {{ object_name }}{% endif %}
+                         {% if mode == 'update' %}{{ object.name }}{% endif %}
+                         </h3>"""),
+                    css_class="col-md-8"),
+                Div(
+                    Div("",
+                        HTML(
+                            """<a href="{{ action_list }}" role="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back</a>"""),
+                        Submit('update', 'Save', css_class="btn-success"),
+                        css_class="btn-group pull-right", role="group"),
+                    css_class="col-md-4"),
+                css_class="row"),
+        )
+
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'website',
-                'consumer_key',
-                'consumer_secret',
-            ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
+            layout_header,
+            TabHolder(
+                Tab('Basic Info',
+                    Div(
+                        Div(
+                            Fieldset('', 'code', 'key'),
+                            css_class="col-md-5"),
+                        Div(
+                            HTML(
+                                """<h4>{{ object.name }}</h4>
+                                {% if object.website %}<a href="{{ object.website }}" target="_blank">{{ object.website }}</a>{% endif %}"""),
+                            css_class="col-md-7"),
+                        css_class="row"),
+                    ),
+                Tab('Addresses',
+                    Div(
+                        Div(HTML("""
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                        <h3 class="panel-title">Billing Address</h3>
+                                    </div>
+                                    <div class="panel-body">{% if object.billing_address %}{{ object.billing_address.asHTML|safe }}{% else %}None on file.{% endif %}</div>
+                                </div>"""), css_class="col-md-4"),
+                        Div(HTML("""
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                        <h3 class="panel-title">Return Address</h3>
+                                    </div>
+                                    <div class="panel-body">{% if object.return_address %}{{ object.return_address.asHTML|safe }}{% else %}Return address will be Printful's own.{% endif %}</div>
+                                </div>"""), css_class="col-md-4"),
+                        Div(
+                            HTML("""<h4>Address Management</h4>
+                                 <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
+                            css_class="col-md-4"),
+                        css_class="row")),
+                Tab('Credit Card Info',
+                    Div(
+                        Div(
+                            HTML(generateTable({
+                                'Payment Type': 'payment_type',
+                                'Card Number (Masked)': 'payment_number_mask',
+                                'Card Expires': 'payment_expires',
+                            })),
+                            css_class="col-md-8"),
+                        Div(
+                            HTML("""<h4>Payment Details</h4>
+                                 <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
+                            css_class="col-md-4"),
+                        css_class="row"),
+                    ),
+                Tab('Packing Slip',
+                    Div(
+                        Div(
+                            Fieldset('', 'packingslip_email', 'packingslip_phone',
+                                     'packingslip_message'),
+                            css_class="col-md-8"),
+                        Div(
+                            HTML("""<h4>Packing Slip Details</h4>
+                                     <p>This information gets printed on your customers' packing slips.</p>"""),
+                            css_class="col-md-4"
+                        ),
+                        css_class="row"),
+                    ),
             )
         )
 
     class Meta:
         model = pfStore
-        fields = ['code', 'name', 'website',
-                  'consumer_key', 'consumer_secret']
+        fields = ['code', 'key', 'packingslip_email',
+                  'packingslip_phone', 'packingslip_message', ]
 
 
 class pfPrintFileForm(forms.ModelForm):

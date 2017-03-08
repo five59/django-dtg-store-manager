@@ -589,10 +589,11 @@ class pfStoreAdminForm(forms.ModelForm):
 class pfStoreAdmin(admin.ModelAdmin):
     form = pfStoreAdminForm
     list_display = ['id', 'date_added', 'date_updated', 'code', 'name',
-                    'website', 'created', 'consumer_key', 'consumer_secret']
+                    'website', 'created', 'key']
     readonly_fields = ['id', 'date_added', 'date_updated', 'code',
-                       'name', 'website', 'created',
-                       'consumer_key', 'consumer_secret']
+                       'name', 'website', 'created', 'key',
+                       'return_address', 'billing_address',
+                       'payment_type', 'payment_number_mask', 'payment_expires', ]
 
 
 admin.site.register(pfStore, pfStoreAdmin)

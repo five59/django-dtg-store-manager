@@ -7,7 +7,6 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 
 class commonBusinessTable(tables.Table):
     ACTION_TEMPLATE = '''
-       <a href="{% url 'business:[M]_detail' record.pk %}"><span class="glyphicon glyphicon-eye-open"></span></a>
        <a href="{% url 'business:[M]_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
 
@@ -198,13 +197,14 @@ class pfStoreTable(commonBusinessTable):
         '[M]', 'app_store_pf')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
     has_auth = tables.columns.BooleanColumn(A('has_auth'))
+    name = tables.columns.LinkColumn(
+        viewname='business:app_store_pf_update', args=[A('pk')],)
 
     class Meta:
         model = pfStore
-        sequence = ('actions', 'code', 'name', 'has_auth',
-                    'date_added', 'date_updated',)
-        exclude = ('id', 'consumer_key', 'consumer_secret',
-                   'created', 'website',)
+        fields = ('code', 'name', 'has_auth', 'pid',
+                  'date_added', 'date_updated', 'actions',)
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 

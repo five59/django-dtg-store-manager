@@ -27,15 +27,16 @@ class appCreativeHome(TemplateView):
         # context['brands'] = bzBrand.objects.all()
 
         context['creativecollections'] = bzCreativeCollection.objects.all()
+
         # Don't do this if there's no collections.
-        if context['creativecollections']:
+        if len(context['creativecollections']) > 0:
             if 'collection' in self.kwargs:
                 context['active_collection'] = bzCreativeCollection.objects.get(
                     pk=self.kwargs['collection'])
             else:
                 context['active_collection'] = context['creativecollections'][0]
 
-        if context['active_collection']:
+        if 'active_collection' in context:
             context['table_designs'] = bzCreativeDesignTable(
                 bzCreativeDesign.objects.filter(bzcreativecollection=context['active_collection']))
             context['table_layouts'] = bzCreativeLayoutTable(
