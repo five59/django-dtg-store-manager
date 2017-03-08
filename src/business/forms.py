@@ -405,9 +405,6 @@ class pfStoreForm(forms.ModelForm):
         self.helper.form_tag = False
 
         self.helper.layout = Layout(
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            ),
             TabHolder(
                 Tab('Basic Info',
                     Fieldset('',
@@ -431,12 +428,15 @@ class pfStoreForm(forms.ModelForm):
                              'packingslip_email', 'packingslip_phone', 'packingslip_message'),
                     ),
             ),
+            FormActions(
+                Submit('update', 'Save', css_class="btn-success"),
+            )
         )
 
     class Meta:
         model = pfStore
-        # fields = ['code', 'name', 'website', 'key', ]
-        exclude = []
+        fields = ['code', 'name', 'website', 'key', 'packingslip_email',
+                  'packingslip_phone', 'packingslip_message', ]
         readonly_fields = [
             'payment_type', 'payment_number_mask', 'payment_expires',
             'website', 'return_address', 'billing_address',
