@@ -50,11 +50,6 @@ class appCreativeHome(TemplateView):
         return context
 
 
-class appCreativeCollectionDetail(TemplateView):
-    template_name = "app_creative/design_detail.html"
-    model = bzCreativeCollection
-
-
 class appCreativeCollectionCreate(CreateView):
     model = bzCreativeCollection
     form_class = bzCreativeCollectionForm

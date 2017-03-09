@@ -62,8 +62,6 @@ urlpatterns += (
         appCreativeHome.as_view(), name='app_creative_home'),
     url(r'^creative/collection-(?P<collection>\S+)/$',
         appCreativeHome.as_view(), name='app_creative_home'),
-    url(r'^creative/collection/detail/(?P<pk>\S+)/$',
-        appCreativeCollectionDetail.as_view(), name='app_creative_collection_detail'),
 
     url(r'^creative/collection/update/(?P<pk>\S+)/$',
         appCreativeCollectionUpdate.as_view(), name='app_creative_collection_update'),
