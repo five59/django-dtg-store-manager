@@ -35,6 +35,8 @@ class commonBusinessModel(models.Model):
         abstract = True
 
 
+# Primarily Store App Related
+
 class bzBrand(commonBusinessModel):
 
     # Fields
@@ -63,6 +65,210 @@ class bzBrand(commonBusinessModel):
 
     def get_update_url(self):
         return reverse('business:app_store_brand_update', args=(self.pk,))
+
+
+class pfStore(commonBusinessModel):
+
+    # Fields
+    code = CharField(_("Code"), max_length=50,
+                     default="", blank=True, null=True)
+    name = CharField(_("Name"), max_length=255,
+                     default="", blank=True, null=True)
+    pid = IntegerField(_("Printful ID"), default=0)
+    website = CharField(_("Website"), max_length=255,
+                        default="", blank=True, null=True)
+    created = CharField(_("Created"), max_length=255,
+                        default="", blank=True, null=True)
+    key = CharField(_("API Key"), max_length=64, default="", blank=True)
+    return_address = ForeignKey("business.pfAddress", verbose_name=_(
+        "Return Address"), related_name="returnaddress", blank=True, null=True)
+    billing_address = ForeignKey("business.pfAddress", verbose_name=_(
+        "Billing Address"), related_name="billingaddress", blank=True, null=True)
+    payment_type = CharField(_("Payment Card Type"),
+                             max_length=64, default="", blank=True, null=True)
+    payment_number_mask = CharField(
+        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
+    payment_expires = CharField(
+        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
+    packingslip_email = EmailField(
+        _("Packing Slip Email"), default="", blank=True, null=True)
+    packingslip_phone = CharField(
+        _("Packing Slip Phone"), max_length=64, default="", blank=True, null=True)
+    packingslip_message = CharField(
+        _("Packing Slip Message"), max_length=255, default="", blank=True, null=True)
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = _("Printful Store")
+        verbose_name_plural = _("Printful Stores")
+
+    def __str__(self):
+        rv = []
+        if self.code and self.name:
+            return "{} - {}".format(self.code, self.name)
+        elif self.code:
+            return "{}".format(self.code)
+        return _("Unknown Store")
+
+    def get_absolute_url(self):
+        return reverse('business:app_store_pf_detail', args=(self.pk,))
+
+    def get_update_url(self):
+        return reverse('business:app_store_pf_update', args=(self.pk,))
+
+    def has_auth(self):
+        return True if self.key else False
+    has_auth.short_description = _("Auth?")
+    has_auth.boolean = True
+
+    def save(self, *args, **kwargs):
+        logger.debug('Method: pfStore.save() Called')
+        if self.pid == 0:
+            if pfCountry.objects.all().count() == 0:
+                pfCountry.api_pull(key=self.key)
+            self.api_pull()
+        self.api_push()
+        self.api_pull()
+        super(pfStore, self).save(*args, **kwargs)
+
+    @staticmethod
+    def get_store(store=None):
+        """
+        Gets a 'default' Printful store, generally for use with the Printful API
+        methods on other related objects. If a store is provided, then it is
+        validated and returned. Otherwise, this method will attempt to grab the
+        first Printful store object in the database and return that.
+
+        If no stores are in the database, then this method will raise an exception.
+        The wrapping method will need to catch this and respond appropriately.
+
+        :param store: Optional. pfStore object. Will validate that it is a valid
+                pfStore object and return it back.
+        """
+        if type(store) is pfStore and store.has_auth():
+            return store
+        else:
+            store = pfStore.objects.exclude(
+                key__isnull=True).exclude(key__exact='').first()
+            if store:
+                return store
+        raise ObjectDoesNotExist(
+            "Either provide a store object or add at least one pfStore with an API key to the database.")
+
+    def api_pull(self):
+        """
+        Update current store with data from Printful API.
+        """
+        if not self.has_auth():
+            raise Exception("This store is missing the API Key.")
+
+        # TODO Handle states/countries lookup Exceptions
+
+        api = pyPrintful(key=self.key)
+        sData = api.get_store_info()
+        print(sData)
+        print(api._store['last_response_raw'])
+
+        self.website = sData['website']
+        self.name = sData['name']
+        self.pid = sData['id']
+        self.created = sData['created']
+
+        self.packingslip_phone = sData['packing_slip']['phone']
+        self.packingslip_email = sData['packing_slip']['email']
+        self.packingslip_message = sData['packing_slip']['message']
+
+        self.payment_type = sData['payment_card']['type']
+        self.payment_number_mask = sData['payment_card']['number_mask']
+        self.payment_expires = sData['payment_card']['expires']
+
+        if sData['billing_address']:
+            _state = pfState.objects.get(
+                code=sData['billing_address']['state_code'])
+            _country = pfCountry.objects.get(
+                code=sData['billing_address']['country_code'])
+            self.billing_address, created = pfAddress.objects.update_or_create(
+                name=sData['billing_address']['name'],
+                company=sData['billing_address']['company'],
+                address1=sData['billing_address']['address1'],
+                address2=sData['billing_address']['address2'],
+                city=sData['billing_address']['city'],
+                zip=sData['billing_address']['zip'],
+                phone=sData['billing_address']['phone'],
+                email=sData['billing_address']['email'],
+                state=_state,
+                country=_country,
+                defaults={}
+            )
+
+        if sData['return_address']:
+            _state = pfState.objects.get(
+                code=sData['return_address']['state_code'])
+            _country = pfCountry.objects.get(
+                code=sData['return_address']['country_code'])
+
+            self.return_address, created = pfAddress.objects.update_or_create(
+                name=sData['return_address']['name'],
+                company=sData['return_address']['company'],
+                address1=sData['return_address']['address1'],
+                address2=sData['return_address']['address2'],
+                city=sData['return_address']['city'],
+                zip=sData['return_address']['zip'],
+                phone=sData['return_address']['phone'],
+                email=sData['return_address']['email'],
+                state=_state,
+                country=_country,
+                defaults={}
+            )
+
+    def api_push(self):
+        """
+        Pushes the only data available to update via the API: packing slip info.
+        """
+        if not self.has_auth():
+            raise Exception("This store is missing the API Key.")
+        data = {
+            'email': self.packingslip_email,
+            'phone': self.packingslip_phone,
+            'message': self.packingslip_message,
+        }
+        api = pyPrintful(key=self.key)
+        api.put_store_packingslip(data)
+
+
+class wooStore(commonBusinessModel):
+
+    # Fields
+    code = CharField(_("Code"), max_length=2, default="", blank=True, null=True,
+                     help_text=_("Generally, a two-character uppercase code. Used in SKUs."))
+    base_url = URLField(_("Base URL"), default="", blank=True, null=True, help_text=_(
+        "Include the schema and FQDN only (e.g., 'https://example.com'). No trailing slash."))
+    consumer_key = CharField(
+        _("Consumer Key"), max_length=64, blank=True, null=True)
+    consumer_secret = CharField(
+        _("Consumer Secret"), max_length=64, blank=True, null=True)
+    timezone = TimeZoneField(default='America/New_York')
+    verify_ssl = BooleanField(_("Verify SSL?"), default=True, help_text=_(
+        "Uncheck this if you are using a self-signed SSL certificate to disable ssl verification."))
+
+    class Meta:
+        ordering = ('code',)
+        verbose_name = _("WP Store")
+        verbose_name_plural = _("WP Stores")
+
+    def __str__(self):
+        rv = []
+        if self.code and self.base_url:
+            return "{} - {}".format(self.code, self.base_url)
+        elif self.code:
+            return "{}".format(self.code)
+        return _("Unknown Store")
+
+    def get_absolute_url(self):
+        return reverse('business:app_store_wp_detail', args=(self.pk,))
+
+    def get_update_url(self):
+        return reverse('business:app_store_wp_update', args=(self.pk,))
 
 
 class bzCreativeCollection(commonBusinessModel):
@@ -543,39 +749,6 @@ class wooShippingClass(commonBusinessModel):
     def get_update_url(self):
         return reverse(
             'business:business_wooshippingclass_update', args=(self.slug,))
-
-
-class wooStore(commonBusinessModel):
-
-    # Fields
-    code = CharField(_("Code"), max_length=16, default="", blank=True, null=True,
-                     help_text=_("Generally, a two-character uppercase code. Used in SKUs."))
-    base_url = URLField(_("Base URL"), default="", blank=True, null=True, help_text=_(
-        "Include the schema and FQDN only (e.g., 'https://example.com'). No trailing slash."))
-    consumer_secret = CharField(
-        _("Consumer Secret"), max_length=43, blank=True, null=True)
-    timezone = TimeZoneField(default='America/New_York')
-    verify_ssl = BooleanField(_("Verify SSL?"), default=True, help_text=_(
-        "Uncheck this if you are using a self-signed SSL certificate to disable ssl verification."))
-
-    class Meta:
-        ordering = ('code',)
-        verbose_name = _("WP Store")
-        verbose_name_plural = _("WP Stores")
-
-    def __str__(self):
-        rv = []
-        if self.code and self.base_url:
-            return "{} - {}".format(self.code, self.base_url)
-        elif self.code:
-            return "{}".format(self.code)
-        return _("Unknown Store")
-
-    def get_absolute_url(self):
-        return reverse('business:app_store_wp_detail', args=(self.pk,))
-
-    def get_update_url(self):
-        return reverse('business:app_store_wp_update', args=(self.pk,))
 
 
 class wooTag(commonBusinessModel):
@@ -1225,175 +1398,6 @@ class pfCatalogVariant(commonBusinessModel):
     def get_update_url(self):
         return reverse(
             'business:business_pfcatalogvariant_update', args=(self.pk,))
-
-
-class pfStore(commonBusinessModel):
-
-    # Fields
-    code = CharField(_("Code"), max_length=50,
-                     default="", blank=True, null=True)
-    name = CharField(_("Name"), max_length=255,
-                     default="", blank=True, null=True)
-    pid = IntegerField(_("Printful ID"), default=0)
-    website = CharField(_("Website"), max_length=255,
-                        default="", blank=True, null=True)
-    created = CharField(_("Created"), max_length=255,
-                        default="", blank=True, null=True)
-    key = CharField(_("API Key"), max_length=64, default="", blank=True)
-    return_address = ForeignKey("business.pfAddress", verbose_name=_(
-        "Return Address"), related_name="returnaddress", blank=True, null=True)
-    billing_address = ForeignKey("business.pfAddress", verbose_name=_(
-        "Billing Address"), related_name="billingaddress", blank=True, null=True)
-    payment_type = CharField(_("Payment Card Type"),
-                             max_length=64, default="", blank=True, null=True)
-    payment_number_mask = CharField(
-        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
-    payment_expires = CharField(
-        _("Payment Card Type"), max_length=64, default="", blank=True, null=True)
-    packingslip_email = EmailField(
-        _("Packing Slip Email"), default="", blank=True, null=True)
-    packingslip_phone = CharField(
-        _("Packing Slip Phone"), max_length=64, default="", blank=True, null=True)
-    packingslip_message = CharField(
-        _("Packing Slip Message"), max_length=255, default="", blank=True, null=True)
-
-    class Meta:
-        ordering = ('-created',)
-        verbose_name = _("Printful Store")
-        verbose_name_plural = _("Printful Stores")
-
-    def __str__(self):
-        rv = []
-        if self.code and self.name:
-            return "{} - {}".format(self.code, self.name)
-        elif self.code:
-            return "{}".format(self.code)
-        return _("Unknown Store")
-
-    def get_absolute_url(self):
-        return reverse('business:app_store_pf_detail', args=(self.pk,))
-
-    def get_update_url(self):
-        return reverse('business:app_store_pf_update', args=(self.pk,))
-
-    def has_auth(self):
-        return True if self.key else False
-    has_auth.short_description = _("Auth?")
-    has_auth.boolean = True
-
-    def save(self, *args, **kwargs):
-        logger.debug('Method: pfStore.save() Called')
-        if self.pid == 0:
-            if pfCountry.objects.all().count() == 0:
-                pfCountry.api_pull(key=self.key)
-            self.api_pull()
-        self.api_push()
-        self.api_pull()
-        super(pfStore, self).save(*args, **kwargs)
-
-    @staticmethod
-    def get_store(store=None):
-        """
-        Gets a 'default' Printful store, generally for use with the Printful API
-        methods on other related objects. If a store is provided, then it is
-        validated and returned. Otherwise, this method will attempt to grab the
-        first Printful store object in the database and return that.
-
-        If no stores are in the database, then this method will raise an exception.
-        The wrapping method will need to catch this and respond appropriately.
-
-        :param store: Optional. pfStore object. Will validate that it is a valid
-                pfStore object and return it back.
-        """
-        if type(store) is pfStore and store.has_auth():
-            return store
-        else:
-            store = pfStore.objects.exclude(
-                key__isnull=True).exclude(key__exact='').first()
-            if store:
-                return store
-        raise ObjectDoesNotExist(
-            "Either provide a store object or add at least one pfStore with an API key to the database.")
-
-    def api_pull(self):
-        """
-        Update current store with data from Printful API.
-        """
-        if not self.has_auth():
-            raise Exception("This store is missing the API Key.")
-
-        # TODO Handle states/countries lookup Exceptions
-
-        api = pyPrintful(key=self.key)
-        sData = api.get_store_info()
-        print(sData)
-        print(api._store['last_response_raw'])
-
-        self.website = sData['website']
-        self.name = sData['name']
-        self.pid = sData['id']
-        self.created = sData['created']
-
-        self.packingslip_phone = sData['packing_slip']['phone']
-        self.packingslip_email = sData['packing_slip']['email']
-        self.packingslip_message = sData['packing_slip']['message']
-
-        self.payment_type = sData['payment_card']['type']
-        self.payment_number_mask = sData['payment_card']['number_mask']
-        self.payment_expires = sData['payment_card']['expires']
-
-        if sData['billing_address']:
-            _state = pfState.objects.get(
-                code=sData['billing_address']['state_code'])
-            _country = pfCountry.objects.get(
-                code=sData['billing_address']['country_code'])
-            self.billing_address, created = pfAddress.objects.update_or_create(
-                name=sData['billing_address']['name'],
-                company=sData['billing_address']['company'],
-                address1=sData['billing_address']['address1'],
-                address2=sData['billing_address']['address2'],
-                city=sData['billing_address']['city'],
-                zip=sData['billing_address']['zip'],
-                phone=sData['billing_address']['phone'],
-                email=sData['billing_address']['email'],
-                state=_state,
-                country=_country,
-                defaults={}
-            )
-
-        if sData['return_address']:
-            _state = pfState.objects.get(
-                code=sData['return_address']['state_code'])
-            _country = pfCountry.objects.get(
-                code=sData['return_address']['country_code'])
-
-            self.return_address, created = pfAddress.objects.update_or_create(
-                name=sData['return_address']['name'],
-                company=sData['return_address']['company'],
-                address1=sData['return_address']['address1'],
-                address2=sData['return_address']['address2'],
-                city=sData['return_address']['city'],
-                zip=sData['return_address']['zip'],
-                phone=sData['return_address']['phone'],
-                email=sData['return_address']['email'],
-                state=_state,
-                country=_country,
-                defaults={}
-            )
-
-    def api_push(self):
-        """
-        Pushes the only data available to update via the API: packing slip info.
-        """
-        if not self.has_auth():
-            raise Exception("This store is missing the API Key.")
-        data = {
-            'email': self.packingslip_email,
-            'phone': self.packingslip_phone,
-            'message': self.packingslip_message,
-        }
-        api = pyPrintful(key=self.key)
-        api.put_store_packingslip(data)
 
 
 class pfPrintFile(commonBusinessModel):
