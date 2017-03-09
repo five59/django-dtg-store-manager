@@ -83,8 +83,13 @@ class appListSizeList(appListCommonListView):
     object_name = "Size"
 
 
-class appListSizeUpdate(UpdateView):
-    pass
+class appListSizeUpdate(appListCommonUpdateView):
+    model = pfCatalogSize
+    form_class = pfCatalogSizeForm
+    object_name = "Size"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_size_list")
+    action_list = success_url
 
 
 class appListFileSpecList(appListCommonListView):
@@ -182,7 +187,7 @@ class appListTagList(appListCommonListView):
     model = wooTag
     table_class = wooTagTable
     object_name = "Product Tag"
-    action_new = reverse_lazy("business:app_list_tag_create")
+    action_new = reverse_lazy("business:app_list_tag_createeeeee")
 
 
 class appListTagCreate(appListCommonCreateView):
@@ -213,7 +218,7 @@ class appListTagPull(View):
 
 class appListCatProductList(appListCommonListView):
     model = pfCatalogProduct
-    table_class = pfCatalogProduct
+    table_class = pfCatalogProductTable
     object_name = "Catalog Product"
 
 
