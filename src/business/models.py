@@ -271,6 +271,8 @@ class wooStore(commonBusinessModel):
         return reverse('business:app_store_wp_update', args=(self.pk,))
 
 
+# Primarily Creative App Related
+
 class bzCreativeCollection(commonBusinessModel):
 
     # Fields

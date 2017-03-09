@@ -3,6 +3,7 @@ from .models import *
 from django_tables2.utils import A
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.humanize.templatetags.humanize import naturaltime
+from django.template.defaultfilters import title as titlecase
 
 # Master Table Class
 
@@ -19,10 +20,10 @@ class commonBusinessTable(tables.Table):
     date_updated = tables.Column()
 
     def render_date_added(self, value):
-        return naturaltime(value)
+        return titlecase(naturaltime(value))
 
     def render_date_updated(self, value):
-        return naturaltime(value)
+        return titlecase(naturaltime(value))
 
 # App Store
 
@@ -76,17 +77,7 @@ class wooStoreTable(commonBusinessTable):
         sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
-
-class bzCreativeCollectionTable(commonBusinessTable):
-    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
-        '[M]', 'business_bzbrand')
-    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-
-    class Meta:
-        model = bzCreativeCollection
-        sequence = ('actions', 'code', 'name', 'bzbrand',)
-        exclude = ('date_added', 'date_updated', 'id',)
-        attrs = {'class': 'table table-striped table-hover'}
+# App Creative
 
 
 class bzCreativeDesignTable(commonBusinessTable):
@@ -94,12 +85,15 @@ class bzCreativeDesignTable(commonBusinessTable):
         '[M]', 'app_creative_design')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
     product_count = tables.TemplateColumn("{{ record.num_products }}")
+    code = tables.LinkColumn(
+        viewname='business:app_creative_design_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
         model = bzCreativeDesign
-        sequence = ('actions', 'code', 'name', 'product_count', 'date_added',
-                    'date_updated',)
-        exclude = ('id', 'bzcreativecollection',)
+        fields = ('code', 'name', 'product_count', 'date_added',
+                  'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
         empty_text = "No Designs Found."
 
@@ -109,12 +103,15 @@ class bzCreativeLayoutTable(commonBusinessTable):
         '[M]', 'app_creative_layout')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
     product_count = tables.TemplateColumn("{{ record.num_products }}")
+    code = tables.LinkColumn(
+        viewname='business:app_creative_layout_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
         model = bzCreativeLayout
-        sequence = ('actions', 'code', 'name', 'product_count',
-                    'date_added', 'date_updated',)
-        exclude = ('id', 'bzcreativecollection',)
+        fields = ('code', 'name', 'product_count',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
         empty_text = "No Layouts Found."
 

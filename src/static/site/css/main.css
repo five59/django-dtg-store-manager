@@ -25,9 +25,9 @@ h1, h2, h3, h4, h5 {
 }
 .btn-default:hover {
   background-color: rgb(245,245,245);
-  -webkit-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
-  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.1);
 }
 
 .starter-template {

@@ -50,11 +50,6 @@ class appCreativeHome(TemplateView):
         return context
 
 
-class appCreativeCollectionDetail(TemplateView):
-    template_name = "app_creative/design_detail.html"
-    model = bzCreativeCollection
-
-
 class appCreativeCollectionCreate(CreateView):
     model = bzCreativeCollection
     form_class = bzCreativeCollectionForm
@@ -87,11 +82,6 @@ class appCreativeCollectionUpdate(UpdateView):
         context['active_apptitle'] = "Creative Management"
         context['action_list'] = reverse('business:app_creative_home')
         return context
-
-
-class appCreativeDesignDetail(TemplateView):
-    template_name = "app_creative/design_detail.html"
-    model = bzCreativeDesign
 
 
 class appCreativeDesignCreate(CreateView):
@@ -139,11 +129,6 @@ class appCreativeDesignUpdate(UpdateView):
         context['active_apptitle'] = "Creative Management"
         context['action_list'] = reverse('business:app_creative_home')
         return context
-
-
-class appCreativeLayoutDetail(TemplateView):
-    template_name = "app_creative/design_detail.html"
-    model = bzCreativeLayout
 
 
 class appCreativeLayoutCreate(CreateView):
