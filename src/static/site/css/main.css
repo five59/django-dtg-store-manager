@@ -3,19 +3,17 @@
 html, body{
   height:100%;		/* For full height images */
   /*background: #e0eaee;*/
-  background: #e0eef5;
+
   font-family: 'Rubik', sans-serif;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 body {
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
     url("/static/site/img/banner.jpg");
-  background-color: rgb(100,148,170);
-  background-repeat: no-repeat;
-  background-position: 80% center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
+  }
 h1, h2, h3, h4, h5 {
   font-family: 'BioRhyme', serif;
 }
@@ -39,12 +37,14 @@ h1, h2, h3, h4, h5 {
   padding: 0.5em 2em;
   font-size: 0.75em;
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 2.5em;
   background:rgb(100,148,170);
   border: none;
+  left: 0;
+  right: 0;
 }
 .footer a {
   color: #ffffff;
