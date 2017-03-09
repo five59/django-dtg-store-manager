@@ -186,45 +186,41 @@ class wooStoreForm(businessCommonForm):
                   'verify_ssl']
 
 
-class bzCreativeCollectionForm(forms.ModelForm):
+# App: Creative
+
+class bzCreativeCollectionForm(businessCommonForm):
 
     def __init__(self, *args, **kwargs):
         super(bzCreativeCollectionForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'bzbrand',
+            self.businessCommonLayoutHeader,
+            Div(
+                Div(
+                    Fieldset('', 'code', 'name', 'bzbrand',),
+                    css_class="col-md-4"),
             ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            )
         )
 
     class Meta:
         model = bzCreativeCollection
-        fields = "__all__"
+        fields = ['code', 'name', 'bzbrand', ]
 
 
-class bzCreativeDesignForm(forms.ModelForm):
+class bzCreativeDesignForm(businessCommonForm):
 
     def __init__(self, *args, **kwargs):
         super(bzCreativeDesignForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'bzcreativecollection',
+            self.businessCommonLayoutHeader,
+            Div(
+                Div(
+                    Fieldset('', 'code', 'name', 'bzcreativecollection',),
+                    css_class="col-md-4"),
             ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            )
         )
 
     class Meta:
@@ -232,22 +228,19 @@ class bzCreativeDesignForm(forms.ModelForm):
         fields = ['code', 'name', 'bzcreativecollection']
 
 
-class bzCreativeLayoutForm(forms.ModelForm):
+class bzCreativeLayoutForm(businessCommonForm):
 
     def __init__(self, *args, **kwargs):
         super(bzCreativeLayoutForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'bzcreativecollection',
+            self.businessCommonLayoutHeader,
+            Div(
+                Div(
+                    Fieldset('', 'code', 'name', 'bzcreativecollection',),
+                    css_class="col-md-4"),
             ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            )
         )
 
     class Meta:

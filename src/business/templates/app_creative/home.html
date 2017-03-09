@@ -54,8 +54,8 @@
 
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">About</a></li>
-            <li role="presentation"><a href="#designs" aria-controls="designs" role="tab" data-toggle="tab">Designs</a></li>
-            <li role="presentation"><a href="#layouts" aria-controls="layouts" role="tab" data-toggle="tab">Layouts</a></li>
+            <li role="presentation"><a href="#designs" aria-controls="designs" role="tab" data-toggle="tab">Designs ({{ active_collection.num_designs }})</a></li>
+            <li role="presentation"><a href="#layouts" aria-controls="layouts" role="tab" data-toggle="tab">Layouts ({{ active_collection.num_layouts }})</a></li>
           </ul>
 
           <div class="tab-content">
@@ -72,27 +72,23 @@
                 </tr>
                 <tr>
                   <th>Brand</th>
-                  <td><a href="#TODO">{{active_collection.bzbrand}}</a></td>
+                  <td><a href="{% url 'business:app_store_brand_update' pk=active_collection.bzbrand.pk %}">{{active_collection.bzbrand}}</a></td>
                 </tr>
                 <tr>
                   <th>Designs</th>
-                  <td>{{active_collection.num_designs}}</td>
+                  <td>{{active_collection.num_designs|apnumber|title}}</td>
                 </tr>
                 <tr>
                   <th>Layouts</th>
-                  <td>{{active_collection.num_layouts}}</td>
-                </tr>
-                <tr>
-                  <th>UUID</th>
-                  <td>{{ active_collection.pk }}</td>
+                  <td>{{active_collection.num_layouts|apnumber|title}}</td>
                 </tr>
                 <tr>
                   <th>Created</th>
-                  <td>{{ active_collection.date_added|naturaltime }}</td>
+                  <td>{{ active_collection.date_added|naturaltime|title }}</td>
                 </tr>
                 <tr>
                   <th>Updated</th>
-                  <td>{{ active_collection.date_updated|naturaltime }}</td>
+                  <td>{{ active_collection.date_updated|naturaltime|title }}</td>
                 </tr>
               </table>
             </div>
