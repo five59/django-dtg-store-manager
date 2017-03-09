@@ -16,7 +16,7 @@ from business.models import *
 from business.forms import *
 from business.tables import *
 
-from business.helper_backend import commonListView
+from business.helper_backend import commonListView, commonUpdateView, commonCreateView
 
 
 class appListCommonListView(commonListView):
@@ -25,9 +25,25 @@ class appListCommonListView(commonListView):
     object_icon = 'list'
 
 
+class appListCommonUpdateView(commonUpdateView):
+    active_app = 'lists'
+    active_apptitle = 'List Management'
+    object_icon = 'list'
+
+
+class appListCommonCreateView(commonCreateView):
+    active_app = 'lists'
+    active_apptitle = 'List Management'
+    object_icon = 'list'
+
+ # App List
+
+
 class appListsHome(View):
     def get(self, request):
         return redirect(reverse('business:app_list_cprod_list'))
+
+# All List Geo
 
 
 class appListGeoList(appListCommonListView):
@@ -43,6 +59,8 @@ class appListGeoDetail(TemplateView):
 class appListGeoPull(View):
     pass
 
+# App List Colour
+
 
 class appListColorList(appListCommonListView):
     model = pfCatalogColor
@@ -50,8 +68,13 @@ class appListColorList(appListCommonListView):
     object_name = "Colour"
 
 
-class appListColorUpdate(UpdateView):
-    pass
+class appListColorUpdate(appListCommonUpdateView):
+    model = pfCatalogColor
+    form_class = pfCatalogColorForm
+    object_name = "Colour"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_color_list")
+    action_list = reverse_lazy("business:app_list_color_list")
 
 
 class appListSizeList(appListCommonListView):

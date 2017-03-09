@@ -1,4 +1,5 @@
 from django_tables2 import SingleTableView
+from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
 
 class commonListView(SingleTableView):
@@ -20,4 +21,54 @@ class commonListView(SingleTableView):
         context['active_apptitle'] = self.active_apptitle
         context['object_icon'] = self.object_icon
         context['object_name'] = self.object_name
+        return context
+
+
+class commonCreateView(CreateView):
+    model = None
+    form_class = None
+
+    object_name = None
+    object_icon = None
+
+    template_name = "business/object_form.html"
+    success_url = None
+    action_list = None
+
+    active_app = None
+    active_apptitle = None
+
+    def get_context_data(self, **kwargs):
+        context = super(commonCreateView, self).get_context_data(**kwargs)
+        context['mode'] = "create"
+        context['active_app'] = self.active_app
+        context['active_apptitle'] = self.active_apptitle
+        context['object_icon'] = self.object_icon
+        context['object_name'] = self.object_name
+        context['action_list'] = self.action_list
+        return context
+
+
+class commonUpdateView(UpdateView):
+    model = None
+    form_class = None
+
+    object_name = None
+    object_icon = None
+
+    template_name = "business/object_form.html"
+    success_url = None
+    action_list = None
+
+    active_app = None
+    active_apptitle = None
+
+    def get_context_data(self, **kwargs):
+        context = super(commonUpdateView, self).get_context_data(**kwargs)
+        context['mode'] = "update"
+        context['active_app'] = self.active_app
+        context['active_apptitle'] = self.active_apptitle
+        context['object_icon'] = self.object_icon
+        context['object_name'] = self.object_name
+        context['action_list'] = self.action_list
         return context

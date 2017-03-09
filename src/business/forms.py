@@ -26,6 +26,8 @@ def generateTable(data):
 
 
 class businessCommonForm(forms.ModelForm):
+    form_layout = None
+
     businessCommonLayoutHeader = Layout(
         Div(
             Div(
@@ -35,7 +37,8 @@ class businessCommonForm(forms.ModelForm):
                         {% if object.name %}{{ object.name }}{% else %}Edit {{ object_name }}{% endif %}
                      {% endif %}
                      </h3>"""),
-                css_class="col-md-8"),
+                css_class="col-md-8"
+            ),
             Div(
                 Div("",
                     HTML(
@@ -44,33 +47,38 @@ class businessCommonForm(forms.ModelForm):
                     # Submit(<button type="submit">this button submits the form</button>
                     #     'update', "<span class='glyphicon glyphicon-menu-right'> Save", css_class="btn-primary"),
                     css_class="btn-group pull-right", role="group"),
-                css_class="col-md-4"),
-            css_class="row"))
+                css_class="col-md-4"
+            ),
+            css_class="row"
+        )
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(businessCommonForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            self.businessCommonLayoutHeader,
+            Div(self.form_layout),
+        )
 
 # App: Store
 
 
 class bzBrandForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(bzBrandForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
+    form_layout = Layout(
+        Div(
             Div(
-                Div(
-                    Fieldset('Basics', 'code', 'name'),
-                    css_class="col-md-3"),
-                Div(
-                    Fieldset('Relationships', 'vendor', 'outlet'),
-                    css_class="col-md-5"),
-                Div(
-                    HTML("""<h4>Brands</h4>
+                Fieldset('Basics', 'code', 'name'),
+                css_class="col-md-3"),
+            Div(
+                Fieldset('Relationships', 'vendor', 'outlet'),
+                css_class="col-md-5"),
+            Div(
+                HTML("""<h4>Brands</h4>
                          <p>Brands connect a Printful store to a WordPress site. Everything you do within this app is linked to a specific brand.</p>"""),
-                    css_class="col-md-4"),
-                css_class="row"
-            ))
+                css_class="col-md-4"),
+            css_class="row"))
 
     class Meta:
         model = bzBrand
@@ -78,78 +86,72 @@ class bzBrandForm(businessCommonForm):
 
 
 class pfStoreForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(pfStoreForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            TabHolder(
-                Tab('Basic Info',
+    form_layout = Layout(
+        TabHolder(
+            Tab('Basic Info',
+                Div(
                     Div(
-                        Div(
-                            Fieldset('', 'code', 'key'),
-                            css_class="col-md-5"),
-                        Div(
-                            HTML(
-                                """<h4>{{ object.name }}</h4>
-                                {% if object.website %}<a href="{{ object.website }}" target="_blank">{{ object.website }}</a>{% endif %}"""),
-                            css_class="col-md-7"),
-                        css_class="row"),
-                    ),
-                Tab('Addresses',
+                        Fieldset('', 'code', 'key'),
+                        css_class="col-md-5"),
                     Div(
-                        Div(HTML("""
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"
-                                        <h3 class="panel-title">Billing Address</h3>
-                                    </div>
-                                    <div class="panel-body">{% if object.billing_address %}{{ object.billing_address.asHTML|safe }}{% else %}None on file.{% endif %}</div>
-                                </div>"""), css_class="col-md-4"),
-                        Div(HTML("""
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"
-                                        <h3 class="panel-title">Return Address</h3>
-                                    </div>
-                                    <div class="panel-body">{% if object.return_address %}{{ object.return_address.asHTML|safe }}{% else %}Return address will be Printful's own.{% endif %}</div>
-                                </div>"""), css_class="col-md-4"),
-                        Div(
-                            HTML("""<h4>Address Management</h4>
-                                 <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
-                            css_class="col-md-4"),
-                        css_class="row")),
-                Tab('Credit Card Info',
-                    Div(
-                        Div(
-                            HTML(generateTable({
-                                'Payment Type': 'payment_type',
-                                'Card Number (Masked)': 'payment_number_mask',
-                                'Card Expires': 'payment_expires',
-                            })),
-                            css_class="col-md-8"),
-                        Div(
-                            HTML("""<h4>Payment Details</h4>
-                                 <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
-                            css_class="col-md-4"),
-                        css_class="row"),
-                    ),
-                Tab('Packing Slip',
-                    Div(
-                        Div(
-                            Fieldset('', 'packingslip_email', 'packingslip_phone',
-                                     'packingslip_message'),
-                            css_class="col-md-8"),
-                        Div(
-                            HTML("""<h4>Packing Slip Details</h4>
-                                     <p>This information gets printed on your customers' packing slips.</p>"""),
-                            css_class="col-md-4"
+                        HTML(
+                            """<h4>{{ object.name }}</h4>
+                                    {% if object.website %}<a href="{{ object.website }}" target="_blank">{{ object.website }}</a>{% endif %}"""
                         ),
-                        css_class="row"),
-                    ),
-            )
+                        css_class="col-md-7"),
+                    css_class="row")
+                ),
+            Tab('Addresses',
+                Div(
+                    Div(HTML("""
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"
+                                            <h3 class="panel-title">Billing Address</h3>
+                                        </div>
+                                        <div class="panel-body">{% if object.billing_address %}{{ object.billing_address.asHTML|safe }}{% else %}None on file.{% endif %}</div>
+                                    </div>"""), css_class="col-md-4"),
+                    Div(HTML("""
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"
+                                            <h3 class="panel-title">Return Address</h3>
+                                        </div>
+                                        <div class="panel-body">{% if object.return_address %}{{ object.return_address.asHTML|safe }}{% else %}Return address will be Printful's own.{% endif %}</div>
+                                    </div>"""), css_class="col-md-4"),
+                    Div(
+                        HTML("""<h4>Address Management</h4>
+                                     <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
+                        css_class="col-md-4"),
+                    css_class="row")
+                ),
+            Tab('Credit Card Info',
+                Div(
+                    Div(
+                        HTML(generateTable({
+                            'Payment Type': 'payment_type',
+                            'Card Number (Masked)': 'payment_number_mask',
+                            'Card Expires': 'payment_expires',
+                        })),
+                        css_class="col-md-8"),
+                    Div(
+                        HTML("""<h4>Payment Details</h4>
+                                     <p>To manage this information, sign in to your Printful Dashboard.</p>"""),
+                        css_class="col-md-4"),
+                    css_class="row"),
+                ),
+            Tab('Packing Slip',
+                Div(
+                    Div(
+                        Fieldset('', 'packingslip_email', 'packingslip_phone',
+                                 'packingslip_message'),
+                        css_class="col-md-8"),
+                    Div(
+                        HTML("""<h4>Packing Slip Details</h4>
+                                         <p>This information gets printed on your customers' packing slips.</p>"""),
+                        css_class="col-md-4"),
+                    css_class="row"),
+                ),
         )
+    )
 
     class Meta:
         model = pfStore
@@ -442,11 +444,36 @@ class pfSyncItemOptionForm(forms.ModelForm):
         fields = ['pid', 'value', 'pfsyncvariant']
 
 
-class pfCatalogColorForm(forms.ModelForm):
+class pfCatalogColorForm(businessCommonForm):
 
     class Meta:
         model = pfCatalogColor
         fields = ['code', 'label', 'label_clean', 'hex_code']
+
+    def __init__(self, *args, **kwargs):
+        super(pfCatalogColorForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            self.businessCommonLayoutHeader,
+            Div(
+                Div(
+                    Fieldset('Basics', 'code', 'label',
+                             'label_clean', 'hex_code'),
+                    css_class="col-md-3"),
+                Div(
+                    Fieldset(''),
+                    css_class="col-md-5"),
+                Div(
+                    HTML("""<h4>Catalog Colours</h4>
+                         <p>Lorem.</p>"""),
+                    css_class="col-md-4"),
+                css_class="row"
+            ))
+
+    class Meta:
+        model = pfCatalogColor
+        fields = ['code', 'label', 'label_clean', 'hex_code', ]
 
 
 class pfCatalogSizeForm(forms.ModelForm):
