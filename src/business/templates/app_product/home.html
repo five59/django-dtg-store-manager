@@ -14,7 +14,8 @@
   <div class="container business-head">
     <div class="row">
       <div class="col-md-12">
-        <h3>Product Catalog {% if active_product %}<small>/ {{ active_product }}</small>{% endif %}
+        <h3><small><span class="glyphicon glyphicon-sunglasses"></span></small>
+          Product Catalog {% if active_product %}<small>/ {{ active_product }}</small>{% endif %}
           <span class="pull-right">
             <div class="btn-group" role="group">
               <a href="{% url 'business:app_product_create' %}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span> New</a>

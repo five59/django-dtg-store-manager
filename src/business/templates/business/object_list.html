@@ -11,22 +11,20 @@
 
 <div class="container business-head">
   <div class="row">
-    <div class="col-md-8">
-      <h2>
+    <div class="col-md-12">
+      <h3>
         {% if object_icon %}<small><span class="glyphicon glyphicon-{{ object_icon }}"></span></small>{% endif %}
         {{ object_name }}
-      </h2>
-    </div>
-    <div class="col-md-4">
-      <div class="text-right">
-        <div class="btn-group" role="group">
-          <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
-        </div>
-      </div>
+        <span class="pull-right">
+          <div class="btn-group" role="group">
+            <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
+          </div>
+        </span>
+      </h3>
     </div>
   </div>
 </div>
-
+  
 <div class="container business-body">
   <div class="row">
     <div class="col-md-12">
