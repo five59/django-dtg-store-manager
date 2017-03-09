@@ -4,11 +4,16 @@ from django_tables2.utils import A
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.humanize.templatetags.humanize import naturaltime
 
+# Master Table Class
+
 
 class commonBusinessTable(tables.Table):
     ACTION_TEMPLATE = '''
        <a href="{% url 'business:[M]_update' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     '''
+
+    # Used as the attrs of the primary link.
+    PRIMARY_BUTTON_ATTRS = {'a': {'class': 'btn btn-primary btn-xs'}}
 
     date_added = tables.Column()
     date_updated = tables.Column()
@@ -19,17 +24,56 @@ class commonBusinessTable(tables.Table):
     def render_date_updated(self, value):
         return naturaltime(value)
 
+# App Store
+
 
 class bzBrandTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
         '[M]', 'app_store_brand')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_store_brand_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
         model = bzBrand
-        sequence = ('actions', 'code', 'name', 'vendor',
-                    'outlet', 'date_added', 'date_updated',)
-        exclude = ('id',)
+        fields = ('code', 'name', 'vendor',
+                  'outlet', 'date_added', 'date_updated', 'actions', )
+        sequence = fields
+        attrs = {'class': 'table table-striped table-hover'}
+
+
+class pfStoreTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_store_pf')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    has_auth = tables.columns.BooleanColumn(A('has_auth'))
+    code = tables.LinkColumn(
+        viewname='business:app_store_pf_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
+
+    class Meta:
+        model = pfStore
+        fields = ('code', 'name', 'has_auth', 'pid',
+                  'date_added', 'date_updated', 'actions',)
+        sequence = fields
+        attrs = {'class': 'table table-striped table-hover'}
+
+
+class wooStoreTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_store_wp')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    base_url = tables.Column()
+    code = tables.LinkColumn(
+        viewname='business:app_store_wp_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
+
+    class Meta:
+        model = wooStore
+        fields = ('code', 'base_url', 'timezone', 'verify_ssl',
+                  'date_added', 'date_updated', 'actions',)
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -192,22 +236,6 @@ class pfStateTable(commonBusinessTable):
         attrs = {'class': 'table table-striped table-hover'}
 
 
-class pfStoreTable(commonBusinessTable):
-    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
-        '[M]', 'app_store_pf')
-    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    has_auth = tables.columns.BooleanColumn(A('has_auth'))
-    name = tables.columns.LinkColumn(
-        viewname='business:app_store_pf_update', args=[A('pk')],)
-
-    class Meta:
-        model = pfStore
-        fields = ('code', 'name', 'has_auth', 'pid',
-                  'date_added', 'date_updated', 'actions',)
-        sequence = fields
-        attrs = {'class': 'table table-striped table-hover'}
-
-
 class pfSyncItemOptionTable(commonBusinessTable):
 
     class Meta:
@@ -261,19 +289,6 @@ class wooShippingClassTable(commonBusinessTable):
 
     class Meta:
         model = wooShippingClass
-        attrs = {'class': 'table table-striped table-hover'}
-
-
-class wooStoreTable(commonBusinessTable):
-    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
-        '[M]', 'app_store_wp')
-    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-
-    class Meta:
-        model = wooStore
-        sequence = ('actions', 'code', 'base_url', 'timezone', 'verify_ssl',
-                    'date_added', 'date_updated',)
-        exclude = ('id', 'consumer_secret')
         attrs = {'class': 'table table-striped table-hover'}
 
 
