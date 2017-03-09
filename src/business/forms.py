@@ -160,27 +160,19 @@ class pfStoreForm(businessCommonForm):
 
 
 class wooStoreForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(wooStoreForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            Div(
-                Div(
-                    Fieldset('', 'code', 'timezone', 'verify_ssl'),
-                    css_class="col-md-3"),
-                Div(
-                    Fieldset('', 'base_url', 'consumer_key',
-                             'consumer_secret',),
-                    css_class="col-md-5"),
-                Div(
-                    HTML("""<h4>WordPress Site</h4>
+    form_layout = Layout(
+        Div(
+            Fieldset('', 'code', 'timezone', 'verify_ssl'),
+            css_class="col-md-3"),
+        Div(
+            Fieldset('', 'base_url', 'consumer_key',
+                     'consumer_secret',),
+            css_class="col-md-5"),
+        Div(
+            HTML("""<h4>WordPress Site</h4>
                          <p>This sets up the connection to your WordPress site. It will broker all of the interactions with your WooCommerce store.</p>"""),
-                    css_class="col-md-4"),
-                css_class="row"
-            ))
+            css_class="col-md-4")
+    )
 
     class Meta:
         model = wooStore
@@ -191,19 +183,11 @@ class wooStoreForm(businessCommonForm):
 # App: Creative
 
 class bzCreativeCollectionForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(bzCreativeCollectionForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            Div(
-                Div(
-                    Fieldset('', 'code', 'name', 'bzbrand',),
-                    css_class="col-md-4"),
-            ),
-        )
+    form_layout = Layout(
+        Div(
+            Fieldset('', 'code', 'name', 'bzbrand',),
+            css_class="col-md-4")
+    )
 
     class Meta:
         model = bzCreativeCollection
@@ -211,19 +195,11 @@ class bzCreativeCollectionForm(businessCommonForm):
 
 
 class bzCreativeDesignForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(bzCreativeDesignForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            Div(
-                Div(
-                    Fieldset('', 'code', 'name', 'bzcreativecollection',),
-                    css_class="col-md-4"),
-            ),
-        )
+    form_layout = Layout(
+        Div(
+            Fieldset('', 'code', 'name', 'bzcreativecollection',),
+            css_class="col-md-4"),
+    )
 
     class Meta:
         model = bzCreativeDesign
@@ -231,73 +207,51 @@ class bzCreativeDesignForm(businessCommonForm):
 
 
 class bzCreativeLayoutForm(businessCommonForm):
-
-    def __init__(self, *args, **kwargs):
-        super(bzCreativeLayoutForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            Div(
-                Div(
-                    Fieldset('', 'code', 'name', 'bzcreativecollection',),
-                    css_class="col-md-4"),
-            ),
-        )
+    form_layout = Layout(
+        Div(
+            Fieldset('', 'code', 'name', 'bzcreativecollection',),
+            css_class="col-md-4"),
+    )
 
     class Meta:
         model = bzCreativeLayout
         fields = ['code', 'name', 'bzcreativecollection']
 
 
-class bzCreativeRenderingForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(bzCreativeRenderingForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'bzcreativedesign',
-                'bzcreativelayout',
-            ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            )
-        )
+class bzCreativeRenderingForm(businessCommonForm):
+    form_layout = Layout(
+        Fieldset(
+            '',
+            'bzcreativedesign',
+            'bzcreativelayout',
+        ),
+    )
 
     class Meta:
         model = bzCreativeRendering
         fields = ['bzcreativedesign', 'bzcreativelayout']
 
 
-class bzProductForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(bzProductForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'code',
-                'name',
-                'status',
-                'bzDesign',
-                'pfProduct',
-                'wooProduct',
-                'pfSyncProduct',
-            ),
-            FormActions(
-                Submit('update', 'Save', css_class="btn-success"),
-            )
-        )
+class bzProductForm(businessCommonForm):
+    form_layout = Layout(
+        Fieldset(
+            '',
+            'code',
+            'name',
+            'status',
+            'bzDesign',
+            'pfProduct',
+            'wooProduct',
+            'pfSyncProduct',
+        ),
+    )
 
     class Meta:
         model = bzProduct
         fields = ['code', 'name', 'status', 'bzDesign']
 
 
-class bzProductVariantForm(forms.ModelForm):
+class bzProductVariantForm(businessCommonForm):
     def __init__(self, *args, **kwargs):
         super(bzProductVariantForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
@@ -324,7 +278,8 @@ class bzProductVariantForm(forms.ModelForm):
                   'pfcolor', 'pfsize', 'price', ]
 
 
-class wooAttributeForm(forms.ModelForm):
+class wooAttributeForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooAttribute
@@ -332,7 +287,8 @@ class wooAttributeForm(forms.ModelForm):
                   'name', 'slug', 'type', 'has_archives', 'store']
 
 
-class wooCategoryForm(forms.ModelForm):
+class wooCategoryForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooCategory
@@ -341,14 +297,16 @@ class wooCategoryForm(forms.ModelForm):
                   'image_date_created', 'store']
 
 
-class wooImageForm(forms.ModelForm):
+class wooImageForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooImage
         fields = ['is_active', 'wid', 'date_created', 'alt', 'position']
 
 
-class wooProductForm(forms.ModelForm):
+class wooProductForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooProduct
@@ -358,14 +316,16 @@ class wooProductForm(forms.ModelForm):
                   'tags', 'images']
 
 
-class wooShippingClassForm(forms.ModelForm):
+class wooShippingClassForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooShippingClass
         fields = ['wid', 'name', 'slug', 'description', 'count']
 
 
-class wooTagForm(forms.ModelForm):
+class wooTagForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooTag
@@ -373,7 +333,9 @@ class wooTagForm(forms.ModelForm):
                   'name', 'slug', 'description', 'count', 'store']
 
 
-class wooTermForm(forms.ModelForm):
+class wooTermForm(businessCommonForm):
+
+    form_layout = Layout()
 
     class Meta:
         model = wooTerm
@@ -381,7 +343,8 @@ class wooTermForm(forms.ModelForm):
                   'count', 'wr_tooltip', 'wr_label', 'productattribute']
 
 
-class wooVariantForm(forms.ModelForm):
+class wooVariantForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wooVariant
@@ -390,7 +353,8 @@ class wooVariantForm(forms.ModelForm):
                   'dimension_height', 'weight', 'shipping_class', 'images']
 
 
-class wpMediaForm(forms.ModelForm):
+class wpMediaForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wpMedia
@@ -401,7 +365,8 @@ class wpMediaForm(forms.ModelForm):
                   'date_gmt', 'type', 'woostore']
 
 
-class wpMediaSizeForm(forms.ModelForm):
+class wpMediaSizeForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = wpMediaSize
@@ -409,35 +374,40 @@ class wpMediaSizeForm(forms.ModelForm):
                   'mime_type', 'width', 'height', 'source_url', 'wpmedia']
 
 
-class pfCountryForm(forms.ModelForm):
+class pfCountryForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCountry
         fields = ['code', 'name']
 
 
-class pfStateForm(forms.ModelForm):
+class pfStateForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfState
         fields = ['code', 'name', 'pfcountry']
 
 
-class pfSyncProductForm(forms.ModelForm):
+class pfSyncProductForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfSyncProduct
         fields = ['pid', 'external_id', 'variants', 'synced', 'pfstore']
 
 
-class pfSyncVariantForm(forms.ModelForm):
+class pfSyncVariantForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfSyncVariant
         fields = ['pid', 'external_id', 'synced', 'pfsyncproduct', 'files']
 
 
-class pfSyncItemOptionForm(forms.ModelForm):
+class pfSyncItemOptionForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfSyncItemOption
@@ -445,45 +415,34 @@ class pfSyncItemOptionForm(forms.ModelForm):
 
 
 class pfCatalogColorForm(businessCommonForm):
+    form_layout = Layout(
+        Div(
+            Fieldset('Basics', 'code', 'label',
+                     'label_clean', 'hex_code'),
+            css_class="col-md-3"),
+        Div(
+            Fieldset(''),
+            css_class="col-md-5"),
+        Div(
+            HTML("""<h4>Catalog Colours</h4>
+                     <p>Lorem.</p>"""),
+            css_class="col-md-4"),
+    )
 
     class Meta:
         model = pfCatalogColor
         fields = ['code', 'label', 'label_clean', 'hex_code']
 
-    def __init__(self, *args, **kwargs):
-        super(pfCatalogColorForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-        self.helper.layout = Layout(
-            self.businessCommonLayoutHeader,
-            Div(
-                Div(
-                    Fieldset('Basics', 'code', 'label',
-                             'label_clean', 'hex_code'),
-                    css_class="col-md-3"),
-                Div(
-                    Fieldset(''),
-                    css_class="col-md-5"),
-                Div(
-                    HTML("""<h4>Catalog Colours</h4>
-                         <p>Lorem.</p>"""),
-                    css_class="col-md-4"),
-                css_class="row"
-            ))
 
-    class Meta:
-        model = pfCatalogColor
-        fields = ['code', 'label', 'label_clean', 'hex_code', ]
-
-
-class pfCatalogSizeForm(forms.ModelForm):
+class pfCatalogSizeForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCatalogSize
         fields = ['code', 'label', 'label_clean', 'sort_group', 'sort_order']
 
 
-class pfCatalogFileSpecForm(forms.ModelForm):
+class pfCatalogFileSpecForm(businessCommonForm):
 
     class Meta:
         model = pfCatalogFileSpec
@@ -491,14 +450,16 @@ class pfCatalogFileSpecForm(forms.ModelForm):
                   'width_in', 'height_in', 'ratio', 'colorsystem']
 
 
-class pfCatalogFileTypeForm(forms.ModelForm):
+class pfCatalogFileTypeForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCatalogFileType
         fields = ['pid', 'title', 'additional_price', 'pfcatalogvariant']
 
 
-class pfCatalogOptionTypeForm(forms.ModelForm):
+class pfCatalogOptionTypeForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCatalogOptionType
@@ -506,7 +467,8 @@ class pfCatalogOptionTypeForm(forms.ModelForm):
                   'additional_price', 'pfcatalogvariant']
 
 
-class pfCatalogProductForm(forms.ModelForm):
+class pfCatalogProductForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCatalogProduct
@@ -514,7 +476,8 @@ class pfCatalogProductForm(forms.ModelForm):
                   'brand', 'model', 'image', 'variant_count']
 
 
-class pfCatalogVariantForm(forms.ModelForm):
+class pfCatalogVariantForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfCatalogVariant
@@ -522,7 +485,8 @@ class pfCatalogVariantForm(forms.ModelForm):
                   'image', 'price', 'in_stock', 'weight', 'pfsize']
 
 
-class pfPrintFileForm(forms.ModelForm):
+class pfPrintFileForm(businessCommonForm):
+    form_layout = Layout()
 
     class Meta:
         model = pfPrintFile

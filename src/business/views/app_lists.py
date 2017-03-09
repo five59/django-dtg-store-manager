@@ -91,28 +91,50 @@ class appListFileSpecList(appListCommonListView):
     model = pfCatalogFileSpec
     table_class = pfCatalogFileSpecTable
     object_name = "File Specification"
+    action_new = reverse_lazy("business:app_list_filespec_create")
 
 
-class appListFileSpecCreate(CreateView):
-    pass
+class appListFileSpecCreate(appListCommonCreateView):
+    model = pfCatalogFileSpec
+    form_class = pfCatalogFileSpecForm
+    object_name = "File Spec"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_filespec_list")
+    action_list = reverse_lazy("business:app_list_filespec_list")
 
 
-class appListFileSpecUpdate(UpdateView):
-    pass
+class appListFileSpecUpdate(appListCommonUpdateView):
+    model = pfCatalogFileSpec
+    form_class = pfCatalogFileSpecForm
+    object_name = "File Spec"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_filespec_list")
+    action_list = reverse_lazy("business:app_list_filespec_list")
 
 
 class appListShippingList(appListCommonListView):
     model = wooShippingClass
     table_class = wooShippingClassTable
     object_name = "Shipping Class"
+    action_new = reverse_lazy("business:app_list_shipping_create")
 
 
-class appListShippingCreate(CreateView):
-    pass
+class appListShippingCreate(appListCommonCreateView):
+    model = wooShippingClass
+    form_class = wooShippingClassForm
+    object_name = "Shipping Class"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_shipping_list")
+    action_list = reverse_lazy("business:app_list_shipping_list")
 
 
-class appListShippingUpdate(UpdateView):
-    pass
+class appListShippingUpdate(appListCommonUpdateView):
+    model = wooShippingClass
+    form_class = wooShippingClassTable
+    object_name = "Shipping Class"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_shipping_list")
+    action_list = reverse_lazy("business:app_list_shipping_list")
 
 
 class appListShippingPush(View):
@@ -127,14 +149,25 @@ class appListCategoryList(appListCommonListView):
     model = wooCategory
     table_class = wooCategoryTable
     object_name = "Product Category"
+    action_new = reverse_lazy("business:app_list_category_create")
 
 
-class appListCategoryCreate(CreateView):
-    pass
+class appListCategoryCreate(appListCommonCreateView):
+    model = wooCategory
+    form_class = wooCategoryForm
+    object_name = "Product Category"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_category_list")
+    action_list = reverse_lazy("business:app_list_category_list")
 
 
-class appListCategoryUpdate(UpdateView):
-    pass
+class appListCategoryUpdate(appListCommonUpdateView):
+    model = wooCategory
+    form_class = wooCategoryForm
+    object_name = "Product Category"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_category_list")
+    action_list = reverse_lazy("business:app_list_category_list")
 
 
 class appListCategoryPush(View):
@@ -149,14 +182,25 @@ class appListTagList(appListCommonListView):
     model = wooTag
     table_class = wooTagTable
     object_name = "Product Tag"
+    action_new = reverse_lazy("business:app_list_tag_create")
 
 
-class appListTagCreate(CreateView):
-    pass
+class appListTagCreate(appListCommonCreateView):
+    model = wooTag
+    form_class = wooTagForm
+    object_name = "Product Tag"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_tag_list")
+    action_list = reverse_lazy("business:app_list_tag_list")
 
 
-class appListTagUpdate(UpdateView):
-    pass
+class appListTagUpdate(appListCommonUpdateView):
+    model = wooTag
+    form_class = wooTagForm
+    object_name = "Product Tag"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_tag_list")
+    action_list = reverse_lazy("business:app_list_tag_list")
 
 
 class appListTagPush(View):
@@ -173,8 +217,13 @@ class appListCatProductList(appListCommonListView):
     object_name = "Catalog Product"
 
 
-class appListCatProductUpdate(UpdateView):
-    pass
+class appListCatProductUpdate(appListCommonUpdateView):
+    model = pfCatalogProduct
+    form_class = pfCatalogProductForm
+    object_name = "Catalog Product"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_cprod_list")
+    action_list = reverse_lazy("business:app_list_cprod_list")
 
 
 class appListAttributeList(appListCommonListView):
@@ -183,5 +232,10 @@ class appListAttributeList(appListCommonListView):
     object_name = "Product Attribute"
 
 
-class appListAttributeUpdate(UpdateView):
-    pass
+class appListAttributeUpdate(appListCommonUpdateView):
+    model = wooAttribute
+    form_class = wooAttributeForm
+    object_name = "Product Attribute"
+    object_icon = ""
+    success_url = reverse_lazy("business:app_list_attribute_list")
+    action_list = reverse_lazy("business:app_list_attribute_list")

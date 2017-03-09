@@ -15,12 +15,16 @@ class commonListView(SingleTableView):
     active_app = None
     active_apptitle = None
 
+    table_pagination = {'per_page': 10}
+
     def get_context_data(self, **kwargs):
         context = super(commonListView, self).get_context_data(**kwargs)
         context['active_app'] = self.active_app
         context['active_apptitle'] = self.active_apptitle
         context['object_icon'] = self.object_icon
         context['object_name'] = self.object_name
+        if self.action_new:
+            context['action_new'] = self.action_new
         return context
 
 
