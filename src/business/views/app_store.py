@@ -16,26 +16,27 @@ from business.models import *
 from business.forms import *
 from business.tables import *
 
+from business.helper_backend import commonListView
+
+
+class appStoreListCommonListView(commonListView):
+    active_app = 'store'
+    active_apptitle = 'Store Management'
+    object_icon = 'shopping-cart'
+
 
 class appStoreHome(View):
     def get(self, request):
-        return redirect(reverse('business:app_store_brand_list'))
+        return redirect(reverse_lazy('business:app_store_brand_list'))
 
 
 # bzBrand
 
-class appStoreBrandList(TemplateView):
-    template_name = "business/object_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(appStoreBrandList, self).get_context_data(**kwargs)
-        context['active_app'] = "store"
-        context['active_apptitle'] = "Store Management"
-        context['object_icon'] = 'shopping-cart'
-        context['object_name'] = "Brands"
-        context['action_new'] = reverse('business:app_store_brand_create')
-        context['table'] = bzBrandTable(bzBrand.objects.all())
-        return context
+class appStoreBrandList(appStoreListCommonListView):
+    model = bzBrand
+    table_class = bzBrandTable
+    action_new = reverse_lazy('business:app_store_brand_create')
+    object_name = "Brand"
 
 
 class appStoreBrandCreate(CreateView):
@@ -52,7 +53,7 @@ class appStoreBrandCreate(CreateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "Brands"
-        context['action_list'] = reverse('business:app_store_brand_list')
+        context['action_list'] = reverse_lazy('business:app_store_brand_list')
         return context
 
 
@@ -70,24 +71,17 @@ class appStoreBrandUpdate(UpdateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "Brands"
-        context['action_list'] = reverse('business:app_store_brand_list')
+        context['action_list'] = reverse_lazy('business:app_store_brand_list')
         return context
 
 
 # pfStore
 
-class appStorePFList(TemplateView):
-    template_name = "business/object_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(appStorePFList, self).get_context_data(**kwargs)
-        context['active_app'] = "store"
-        context['active_apptitle'] = "Store Management"
-        context['object_icon'] = 'shopping-cart'
-        context['object_name'] = "Printful Stores"
-        context['action_new'] = reverse('business:app_store_pf_create')
-        context['table'] = pfStoreTable(pfStore.objects.all())
-        return context
+class appStorePFList(appStoreListCommonListView):
+    model = pfStore
+    table_class = pfStoreTable
+    action_new = reverse_lazy('business:app_store_pf_create')
+    object_name = "Printful Store"
 
 
 class appStorePFCreate(CreateView):
@@ -104,7 +98,7 @@ class appStorePFCreate(CreateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "Printful Stores"
-        context['action_list'] = reverse('business:app_store_pf_list')
+        context['action_list'] = reverse_lazy('business:app_store_pf_list')
         return context
 
 
@@ -122,24 +116,17 @@ class appStorePFUpdate(UpdateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "Printful Stores"
-        context['action_list'] = reverse('business:app_store_pf_list')
+        context['action_list'] = reverse_lazy('business:app_store_pf_list')
         return context
 
 
 # wpStore
 
-class appStoreWPList(TemplateView):
-    template_name = "business/object_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(appStoreWPList, self).get_context_data(**kwargs)
-        context['active_app'] = "store"
-        context['active_apptitle'] = "Store Management"
-        context['object_icon'] = 'shopping-cart'
-        context['object_name'] = "WordPress Sites"
-        context['action_new'] = reverse('business:app_store_wp_create')
-        context['table'] = wooStoreTable(wooStore.objects.all())
-        return context
+class appStoreWPList(appStoreListCommonListView):
+    model = wooStore
+    table_class = wooStoreTable
+    action_new = reverse_lazy('business:app_store_wp_create')
+    object_name = "Brand"
 
 
 class appStoreWPCreate(CreateView):
@@ -156,7 +143,7 @@ class appStoreWPCreate(CreateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "WordPress Sites"
-        context['action_list'] = reverse('business:app_store_wp_list')
+        context['action_list'] = reverse_lazy('business:app_store_wp_list')
         return context
 
 
@@ -174,5 +161,5 @@ class appStoreWPUpdate(UpdateView):
         context['active_apptitle'] = "Store Management"
         context['object_icon'] = 'shopping-cart'
         context['object_name'] = "WordPress Sites"
-        context['action_list'] = reverse('business:app_store_wp_list')
+        context['action_list'] = reverse_lazy('business:app_store_wp_list')
         return context

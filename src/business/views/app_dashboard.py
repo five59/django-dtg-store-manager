@@ -13,6 +13,7 @@ from django_tables2 import *
 from business.models import *
 from business.forms import *
 from business.tables import *
+from business.helper_backend import commonListView
 
 
 class appDashboardHome(TemplateView):

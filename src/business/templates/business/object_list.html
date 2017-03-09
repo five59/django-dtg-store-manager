@@ -17,14 +17,16 @@
         {{ object_name }}
         <span class="pull-right">
           <div class="btn-group" role="group">
+            {% if action_new %}
             <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
+            {% endif %}
           </div>
         </span>
       </h3>
     </div>
   </div>
 </div>
-  
+
 <div class="container business-body">
   <div class="row">
     <div class="col-md-12">

@@ -128,6 +128,65 @@ urlpatterns += (
 # URLs for List App
 urlpatterns += (
     url(r'^lists/$', appListsHome.as_view(), name='app_lists_home'),
+
+    url(r'^lists/geo/$', appListGeoList.as_view(), name='app_list_geo_list'),
+    url(r'^lists/geo(?P<pk>\S+)/$', appListGeoDetail.as_view(),
+        name='app_list_geo_detail'),
+    url(r'^lists/geo/$', appListGeoPull.as_view(), name='app_list_geo_pull'),
+
+    url(r'^lists/color/$', appListColorList.as_view(), name='app_list_color_list'),
+    url(r'^lists/color(?P<pk>\S+)/$', appListColorUpdate.as_view(),
+        name='app_list_color_update'),
+
+    url(r'^lists/size/$', appListSizeList.as_view(), name='app_list_size_list'),
+    url(r'^lists/size(?P<pk>\S+)/$', appListSizeUpdate.as_view(),
+        name='app_list_size_update'),
+
+    url(r'^lists/filespec/$', appListFileSpecList.as_view(),
+        name='app_list_filespec_list'),
+    url(r'^lists/filespec/$', appListFileSpecCreate.as_view(),
+        name='app_list_filespec_create'),
+    url(r'^lists/filespec(?P<pk>\S+)/$', appListFileSpecUpdate.as_view(),
+        name='app_list_filespec_update'),
+
+    url(r'^lists/shipping/$', appListShippingList.as_view(),
+        name='app_list_shipping_list'),
+    url(r'^lists/shipping/$', appListShippingCreate.as_view(),
+        name='app_list_shipping_create'),
+    url(r'^lists/shipping(?P<pk>\S+)/$', appListShippingUpdate.as_view(),
+        name='app_list_shipping_update'),
+    url(r'^lists/shipping/$', appListShippingPush.as_view(),
+        name='app_list_shipping_push'),
+    url(r'^lists/shipping/$', appListShippingPull.as_view(),
+        name='app_list_shipping_pull'),
+
+    url(r'^lists/category/$', appListCategoryList.as_view(),
+        name='app_list_category_list'),
+    url(r'^lists/category/$', appListCategoryCreate.as_view(),
+        name='app_list_category_create'),
+    url(r'^lists/category(?P<pk>\S+)/$', appListCategoryUpdate.as_view(),
+        name='app_list_category_update'),
+    url(r'^lists/category/$', appListCategoryPush.as_view(),
+        name='app_list_category_push'),
+    url(r'^lists/category/$', appListCategoryPull.as_view(),
+        name='app_list_category_pull'),
+
+    url(r'^lists/tag/$', appListTagList.as_view(), name='app_list_tag_list'),
+    url(r'^lists/tag/$', appListTagCreate.as_view(), name='app_list_tag_create'),
+    url(r'^lists/tag(?P<pk>\S+)/$', appListTagUpdate.as_view(),
+        name='app_list_tag_update'),
+    url(r'^lists/tag/$', appListTagPush.as_view(), name='app_list_tag_push'),
+    url(r'^lists/tag/$', appListTagPull.as_view(), name='app_list_tag_pull'),
+
+    url(r'^lists/cprod/$', appListCatProductList.as_view(),
+        name='app_list_cprod_list'),
+    url(r'^lists/cprod(?P<pk>\S+)/$', appListCatProductUpdate.as_view(),
+        name='app_list_cprod_update'),
+
+    url(r'^lists/attribute/$', appListAttributeList.as_view(),
+        name='app_list_attribute_list'),
+    url(r'^lists/attribute(?P<pk>\S+)/$', appListAttributeUpdate.as_view(),
+        name='app_list_attribute_update'),
 )
 
 
