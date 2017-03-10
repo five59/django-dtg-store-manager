@@ -196,9 +196,21 @@ class pfCatalogOptionTypeTable(commonBusinessTable):
 
 
 class pfCatalogProductTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_cprod')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    local = {'td': {'class': 'text-center'}}
+    pid = tables.LinkColumn(
+        viewname='business:app_list_cprod_update', args=[A('pk')],
+        attrs={**commonBusinessTable.PRIMARY_BUTTON_ATTRS, **local}
+    )
 
     class Meta:
         model = pfCatalogProduct
+        fields = ('pid', 'brand', 'model', 'type', 'is_active',
+                  'actions', )
+        exclude = ('date_added', 'date_updated',)
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 

@@ -15,6 +15,7 @@ from django_tables2 import *
 from business.models import *
 from business.forms import *
 from business.tables import *
+from business.filters import *
 
 from business.helper_backend import commonListView, commonUpdateView, commonCreateView
 
@@ -220,6 +221,17 @@ class appListCatProductList(appListCommonListView):
     model = pfCatalogProduct
     table_class = pfCatalogProductTable
     object_name = "Catalog Product"
+    filter_class = pfCatalogProductFilter
+
+    def get_table_data(self):
+        self.filter = self.filter_class(self.request.GET, queryset=super(
+            appListCatProductList, self).get_table_data())
+        return self.filter.qs
+
+    def get_context_data(self, **kwargs):
+        context = super(appListCatProductList, self).get_context_data(**kwargs)
+        context['filter'] = self.filter
+        return context
 
 
 class appListCatProductUpdate(appListCommonUpdateView):

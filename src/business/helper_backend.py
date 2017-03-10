@@ -25,6 +25,8 @@ class commonListView(SingleTableView):
         context['object_name'] = self.object_name
         if self.action_new:
             context['action_new'] = self.action_new
+        print(self)
+        print(kwargs)
         return context
 
 
@@ -76,3 +78,7 @@ class commonUpdateView(UpdateView):
         context['object_name'] = self.object_name
         context['action_list'] = self.action_list
         return context
+
+
+def cleanValue(value, default=""):
+    return value if value else default

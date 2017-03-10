@@ -472,7 +472,7 @@ class pfCatalogProductForm(businessCommonForm):
 
     class Meta:
         model = pfCatalogProduct
-        fields = ['is_active', 'pid', 'type',
+        fields = ['is_active', 'pid', 'ptype',
                   'brand', 'model', 'image', 'variant_count']
 
 
