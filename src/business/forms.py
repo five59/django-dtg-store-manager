@@ -22,6 +22,18 @@ def generateTable(data):
     rv.append('</table>')
     return "".join(rv)
 
+
+def generateThumbnail(data):
+    rv = []
+    rv.append('<div class="thumbnail">')
+    rv.append('<img src="[[ object.{} ]]" alt="[[ object.{} ]]" />'.format(
+        data['url'], data['name']).replace('[', '{').replace(']', '}'))
+    if 'caption' in data:
+        rv.append(
+            '<div class="caption"><h3>[[ object.{} ]]</h3></div>'.format(data['caption']).replace('[', '{').replace(']', '}'))
+    rv.append('</div>')
+    return "".join(rv)
+
 # Parent Forms
 
 
@@ -468,12 +480,41 @@ class pfCatalogOptionTypeForm(businessCommonForm):
 
 
 class pfCatalogProductForm(businessCommonForm):
-    form_layout = Layout()
+    form_layout = Layout(
+        Div(
+            Div(
+                HTML(
+                    generateThumbnail(
+                        {
+                            'url': 'image',
+                            'name': 'model',
+                            'caption': 'model',
+                        }
+                    )
+                ),
+                css_class="col-md-3"),
+            Div(
+                HTML(generateTable({
+                    'Printful ID': 'pid',
+                    'Brand': 'brand',
+                    'Type': 'ptype',
+                    'Variants': 'variant_count',
+                    'Active?': 'is_active',
+                })),
+                css_class="col-md-5"),
+            Div(
+                HTML("""<h4>Catalog Products</h4>
+                         <p></p>"""),
+                css_class="col-md-4"),
+            css_class="row"
+        )
+    )
 
     class Meta:
         model = pfCatalogProduct
-        fields = ['is_active', 'pid', 'ptype',
-                  'brand', 'model', 'image', 'variant_count']
+        exclude = [
+            'is_active', 'pid', 'ptype',
+            'brand', 'model', 'image', 'variant_count']
 
 
 class pfCatalogVariantForm(businessCommonForm):
