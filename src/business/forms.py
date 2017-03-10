@@ -5,6 +5,7 @@ from crispy_forms.layout import *
 from crispy_forms.bootstrap import *
 from django.contrib.auth import get_user_model
 from .models import *
+from crispy_unforms.layout import *
 
 User = get_user_model()
 
@@ -23,16 +24,16 @@ def generateTable(data):
     return "".join(rv)
 
 
-def generateThumbnail(data):
-    rv = []
-    rv.append('<div class="thumbnail">')
-    rv.append('<img src="[[ object.{} ]]" alt="[[ object.{} ]]" />'.format(
-        data['url'], data['name']).replace('[', '{').replace(']', '}'))
-    if 'caption' in data:
-        rv.append(
-            '<div class="caption"><h3>[[ object.{} ]]</h3></div>'.format(data['caption']).replace('[', '{').replace(']', '}'))
-    rv.append('</div>')
-    return "".join(rv)
+# def generateThumbnail(data):
+#     rv = []
+#     rv.append('<div class="thumbnail">')
+#     rv.append('<img src="[[ object.{} ]]" alt="[[ object.{} ]]" />'.format(
+#         data['url'], data['name']).replace('[', '{').replace(']', '}'))
+#     if 'caption' in data:
+#         rv.append(
+#             '<div class="caption"><h3>[[ object.{} ]]</h3></div>'.format(data['caption']).replace('[', '{').replace(']', '}'))
+#     rv.append('</div>')
+#     return "".join(rv)
 
 # Parent Forms
 
@@ -483,16 +484,9 @@ class pfCatalogProductForm(businessCommonForm):
     form_layout = Layout(
         Div(
             Div(
-                HTML(
-                    generateThumbnail(
-                        {
-                            'url': 'image',
-                            'name': 'model',
-                            'caption': 'model',
-                        }
-                    )
-                ),
-                css_class="col-md-3"),
+                Thumbnail('image', 'model', caption=True),
+                css_class="col-md-3"
+            ),
             Div(
                 HTML(generateTable({
                     'Printful ID': 'pid',
