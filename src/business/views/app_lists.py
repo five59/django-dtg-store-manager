@@ -18,6 +18,7 @@ from business.tables import *
 from business.filters import *
 
 from business.helper_backend import commonListView, commonUpdateView, commonCreateView
+from django.contrib import messages
 
 
 class appListCommonListView(commonListView):
@@ -51,14 +52,30 @@ class appListGeoList(appListCommonListView):
     model = pfCountry
     table_class = pfCountryTable
     object_name = "Geographies"
+    action_list = [
+        {
+            'btn_class': 'default',
+            'view': 'business:app_list_geo_apipull',
+            'text': 'Sync'
+        },
+    ]
 
 
-class appListGeoDetail(TemplateView):
+class appListGeoDetail(View):
     pass
 
 
 class appListGeoPull(View):
-    pass
+    def get(self, request):
+        try:
+            pfCountry.api_pull()
+            messages.add_message(request, messages.SUCCESS,
+                                 'Success! Countries and states have been updated.')
+        except Exception as e:
+            messages.add_message(request, messages.ERROR,
+                                 'API call failed. {}'.format(e))
+        return redirect('business:app_list_geo_list')
+
 
 # App List Colour
 
@@ -188,7 +205,7 @@ class appListTagList(appListCommonListView):
     model = wooTag
     table_class = wooTagTable
     object_name = "Product Tag"
-    action_new = reverse_lazy("business:app_list_tag_createeeeee")
+    action_new = reverse_lazy("business:app_list_tag_create")
 
 
 class appListTagCreate(appListCommonCreateView):
@@ -222,6 +239,13 @@ class appListCatProductList(appListCommonListView):
     table_class = pfCatalogProductTable
     object_name = "Catalog Product"
     filter_class = pfCatalogProductFilter
+    action_list = [
+        {
+            'btn_class': 'default',
+            'view': 'business:app_list_cprod_apipull',
+            'text': 'Sync'
+        },
+    ]
 
     def get_table_data(self):
         self.filter = self.filter_class(self.request.GET, queryset=super(
@@ -232,6 +256,18 @@ class appListCatProductList(appListCommonListView):
         context = super(appListCatProductList, self).get_context_data(**kwargs)
         context['filter'] = self.filter
         return context
+
+
+class appListCatProductPull(View):
+    def get(self, request):
+        try:
+            pfCatalogProduct.api_pull()
+            messages.add_message(request, messages.SUCCESS,
+                                 'Success! Product Catalog has been updated.')
+        except Exception as e:
+            messages.add_message(request, messages.ERROR,
+                                 'API call failed. {}'.format(e))
+        return redirect('business:app_list_cprod_list')
 
 
 class appListCatProductUpdate(appListCommonUpdateView):

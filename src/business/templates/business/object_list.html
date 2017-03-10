@@ -21,6 +21,11 @@
             <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
             {% endif %}
           </div>
+          <div class="btn-group" role="group">
+            {% if action_list %}{% for action in action_list %}
+              <a href="{% url action.view %}" class="btn btn-sm btn-{{ action.btn_class }}">{{ action.text }}</a>
+            {% endfor %}{% endif %}
+          </div>
         </span>
       </h3>
     </div>

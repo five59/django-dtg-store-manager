@@ -132,7 +132,8 @@ urlpatterns += (
     url(r'^lists/geo/$', appListGeoList.as_view(), name='app_list_geo_list'),
     url(r'^lists/geo/(?P<pk>\S+)/$',
         appListGeoDetail.as_view(), name='app_list_geo_detail'),
-    url(r'^lists/geo/$', appListGeoPull.as_view(), name='app_list_geo_pull'),
+    url(r'^lists/geo/pull/$', appListGeoPull.as_view(),
+        name='app_list_geo_apipull'),
 
     url(r'^lists/color/$', appListColorList.as_view(), name='app_list_color_list'),
     url(r'^lists/color/(?P<pk>\S+)/$',
@@ -181,6 +182,8 @@ urlpatterns += (
 
     url(r'^lists/cprod/$', appListCatProductList.as_view(),
         name='app_list_cprod_list'),
+    url(r'^lists/cprod/pull/$', appListCatProductPull.as_view(),
+        name="app_list_cprod_apipull"),
     url(r'^lists/cprod/(?P<pk>\S+)/$',
         appListCatProductUpdate.as_view(), name='app_list_cprod_update'),
 
