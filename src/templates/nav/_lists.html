@@ -16,3 +16,27 @@
     {% endif %}
   </ul>
 </li>
+
+{% block navbar-secondary %}
+<li class="dropdown appnav">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+    aria-haspopup="true" aria-expanded="false">{% if object_name %}{{ object_name }}{% else %}Choose a List to Manage{% endif %}<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+
+        <li><a href="{% url 'business:app_list_cprod_list' %}">Catalog Products</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="{% url 'business:app_list_color_list' %}">Colours</a></li>
+        <li><a href="{% url 'business:app_list_size_list' %}">Sizes</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="{% url 'business:app_list_category_list' %}">Product Categories</a></li>
+        <li><a href="{% url 'business:app_list_tag_list' %}">Product Tags</a></li>
+        <li><a href="{% url 'business:app_list_attribute_list' %}">Product Attributes</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="{% url 'business:app_list_filespec_list' %}">File Specs</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="{% url 'business:app_list_geo_list' %}">Geographies</a></li>
+        <li><a href="{% url 'business:app_list_shipping_list' %}">Shipping Classes</a></li>
+
+  </ul>
+</li>
+{% endblock %}

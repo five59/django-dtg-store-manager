@@ -149,16 +149,35 @@ class bzProductVariantTable(commonBusinessTable):
 
 
 class pfCatalogColorTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_color')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_color_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = pfCatalogColor
+        model = bzBrand
+        fields = ('code', 'label', 'label_clean',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
 class pfCatalogFileSpecTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_filespec')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_filespec_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = pfCatalogFileSpec
+        model = bzBrand
+        fields = ('name', 'note', 'width', 'height', 'width_in', 'height_in',
+                  'ratio', 'colorsystem',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -177,16 +196,37 @@ class pfCatalogOptionTypeTable(commonBusinessTable):
 
 
 class pfCatalogProductTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_cprod')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    local = {'td': {'class': 'text-center'}}
+    pid = tables.LinkColumn(
+        viewname='business:app_list_cprod_update', args=[A('pk')],
+        attrs={**commonBusinessTable.PRIMARY_BUTTON_ATTRS, **local}
+    )
 
     class Meta:
         model = pfCatalogProduct
+        fields = ('pid', 'brand', 'model', 'type', 'is_active',
+                  'actions', )
+        exclude = ('date_added', 'date_updated',)
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
 class pfCatalogSizeTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_color')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_size_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = pfCatalogSize
+        model = bzBrand
+        fields = ('code', 'label', 'label_clean', 'sort_group', 'sort_order',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -262,9 +302,18 @@ class wooAttributeTable(commonBusinessTable):
 
 
 class wooCategoryTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_category')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_category_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = wooCategory
+        model = bzBrand
+        fields = ('name', 'wid', 'is_active', 'display', 'count',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
@@ -283,16 +332,34 @@ class wooProductTable(commonBusinessTable):
 
 
 class wooShippingClassTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_shipping')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_shipping_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = wooShippingClass
+        model = bzBrand
+        fields = ('name', 'count', 'wid',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 
 class wooTagTable(commonBusinessTable):
+    ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
+        '[M]', 'app_list_tag')
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    code = tables.LinkColumn(
+        viewname='business:app_list_tag_update', args=[A('pk')],
+        attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
-        model = wooTag
+        model = bzBrand
+        fields = ('name', 'wid', 'is_active', 'store', 'count',
+                  'date_added', 'date_updated', 'actions', )
+        sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 
 

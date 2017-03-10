@@ -22,6 +22,8 @@ from decimal import *
 from pyPrintful import pyPrintful
 from django.core.exceptions import ObjectDoesNotExist
 
+from business.helper_backend import *
+
 from storemanager.logger import *
 logger = StyleAdapter(logging.getLogger("project"))
 
@@ -1332,16 +1334,44 @@ class pfCatalogOptionType(commonBusinessModel):
             'business:business_pfcatalogoptiontype_update', args=(self.pk,))
 
 
+class pfCatalogBrand(commonBusinessModel):
+    name = CharField(_("Name"), max_length=128,
+                     null=True, blank=True, default="")
+
+    def __str__(self):
+        if self.name:
+            return self.name
+        return "Unknown Brand"
+
+    class Meta:
+        ordering = ('-pk',)
+        verbose_name = _("Catalog Brand")
+        verbose_name_plural = _("Catalog Brands")
+
+
+class pfCatalogType(commonBusinessModel):
+    name = CharField(_("Name"), max_length=128,
+                     null=True, blank=True, default="")
+
+    def __str__(self):
+        if self.name:
+            return self.name
+        return "Unknown Type"
+
+    class Meta:
+        ordering = ('-pk',)
+        verbose_name = _("Catalog Product Type")
+        verbose_name_plural = _("Catalog Product Types")
+
+
 class pfCatalogProduct(commonBusinessModel):
 
     # Fields
     is_active = BooleanField(_("Is Active?"), default=True)
     pid = CharField(_("Printful ID"), max_length=255,
                     default="", blank=True, null=True)
-    type = CharField(_("Type"), max_length=255,
-                     default="", blank=True, null=True)
-    brand = CharField(_("Brand"), max_length=255,
-                      default="", blank=True, null=True)
+    ptype = ForeignKey('business.pfCatalogType', blank=True, null=True)
+    brand = ForeignKey('business.pfCatalogBrand', blank=True, null=True)
     model = CharField(_("Model"), max_length=255,
                       default="", blank=True, null=True)
     image = CharField(_("Image"), max_length=255,
@@ -1363,6 +1393,65 @@ class pfCatalogProduct(commonBusinessModel):
     def get_update_url(self):
         return reverse(
             'business:business_pfcatalogproduct_update', args=(self.pk,))
+
+    @staticmethod
+    def api_pull(store=None, key=None):
+        """
+        Update the Country and State objects from the Printful API.
+
+        :param store: Optional bzStore object. If not provided, method will
+                attempt to use the first store from the database if it exists.
+        :param key: If a key is provided, then it is used instead of store.
+                This is especially useful for when you're first creating a
+                store, and so avoids a race condition.
+        """
+        if key:
+            api = pyPrintful(key=key)
+        else:
+            _storeObj = pfStore.get_store(store)
+            api = pyPrintful(key=_storeObj.key)
+
+        logger.debug("pfCatalogProduct.api_pull / Making API Call")
+        products = api.get_product_list()
+        for p in products:
+
+            # {
+            # 'dimensions': {
+            #     '16×20': '16×20',
+            # },
+            # 'options': [],
+            # 'files': [
+            #     {'id': 'preview', 'title': 'Mockup', 'type': 'mockup', 'additional_price': None}
+            # ]}
+            logger.debug("pfCatalogProduct.api_pull / All: is_active=False")
+            pfCatalogProduct.objects.all().update(is_active=False)
+            pType, tCreated = pfCatalogType.objects.update_or_create(
+                name=p['type'],
+                defaults={}
+            )
+            pBrand, bCreated = pfCatalogBrand.objects.update_or_create(
+                name=p['brand'],
+                defaults={}
+            )
+            pObj, pCreated = pfCatalogProduct.objects.update_or_create(
+                pid=p['id'],
+                defaults={
+                    'brand': pBrand,
+                    'variant_count': cleanValue(p['variant_count']),
+                    'ptype': pType,
+                    'model': cleanValue(p['model']),
+                    'image': cleanValue(p['image']),
+                    'is_active': True,
+                }
+            )
+            logger.debug("pfCatalogProduct.api_pull / {} {}", pCreated, pObj)
+
+            # Handle 'files'
+            # Handle 'dimensions'
+            if pObj.variant_count:
+                # Handle variants
+                # Handle 'options' (Attach to variants)
+                pass
 
 
 class pfCatalogVariant(commonBusinessModel):

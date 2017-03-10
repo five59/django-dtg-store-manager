@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load staticfiles humanize %}
-{% load render_table from django_tables2 %}
+{% load staticfiles humanize crispy_forms_tags %}
+{% load render_table from django_tables2  %}
 {% block title %}{{ block.super }}{{ object_name }}{% endblock %}
 
 {% block navbar-left %}
@@ -17,20 +17,43 @@
         {{ object_name }}
         <span class="pull-right">
           <div class="btn-group" role="group">
+            {% if action_new %}
             <a href="{{ action_new }}" role="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</a>
+            {% endif %}
+          </div>
+          <div class="btn-group" role="group">
+            {% if action_list %}{% for action in action_list %}
+              <a href="{% url action.view %}" class="btn btn-sm btn-{{ action.btn_class }}">{{ action.text }}</a>
+            {% endfor %}{% endif %}
           </div>
         </span>
       </h3>
     </div>
   </div>
 </div>
-  
+
 <div class="container business-body">
+  {% if filter.form.fields %}
+  <div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form method="get">{% crispy filter.form filter.form.helper %}</form>
+          </div>
+          <div class="panel-footer">Displaying {{ filter.qs.count }} of {{ filter.queryset.count }} items.</div>
+        </div>
+    </div>
+    <div class="col-md-9">
+      {% render_table table %}
+    </div>
+  </div>
+  {% else %}
   <div class="row">
     <div class="col-md-12">
       {% render_table table %}
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% endblock %}

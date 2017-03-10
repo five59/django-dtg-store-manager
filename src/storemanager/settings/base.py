@@ -79,6 +79,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'django_tables2',
+    'django_filters',
 
     'profiles',
     'accounts',

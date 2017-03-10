@@ -552,9 +552,9 @@ class pfCatalogProductAdminForm(forms.ModelForm):
 class pfCatalogProductAdmin(admin.ModelAdmin):
     form = pfCatalogProductAdminForm
     list_display = ['id', 'date_added', 'date_updated', 'is_active',
-                    'pid', 'type', 'brand', 'model', 'image', 'variant_count']
+                    'pid', 'ptype', 'brand', 'model', 'image', 'variant_count']
     readonly_fields = ['id', 'date_added', 'date_updated', 'is_active',
-                       'pid', 'type', 'brand', 'model',
+                       'pid', 'ptype', 'brand', 'model',
                        'image', 'variant_count']
 
 

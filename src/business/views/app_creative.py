@@ -14,6 +14,8 @@ from business.models import *
 from business.forms import *
 from business.tables import *
 
+from business.helper_backend import commonListView
+
 
 class appCreativeHome(TemplateView):
     template_name = "app_creative/home.html"

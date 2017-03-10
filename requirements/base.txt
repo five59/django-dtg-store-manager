@@ -16,3 +16,4 @@ six>=1.10.0
 sqlparse>=0.2.3
 requests>=2.13.0
 PyPrintful>=1.0.0
+django-filter>=1.0.1

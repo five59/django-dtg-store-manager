@@ -1,6 +1,7 @@
 engines:
   pep8:
     enabled: true
+    max-line-length: 160
   radon:
     enabled: true
     config:
