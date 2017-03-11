@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from business import api
 from business.views import *
+from business.wizards.bzProductCreate import *
 
 # router = routers.DefaultRouter()
 # router.register(r'bzbrand', api.bzBrandViewSet)
@@ -84,7 +85,7 @@ urlpatterns += (
     url(r'^product/detail-(?P<product>\S+)/$',
         appProductHome.as_view(), name="app_product_home"),
     url(r'^product/create/$',
-        appProductCreate.as_view(), name="app_product_create"),
+        bzProductFormWizard.as_view(), name="app_product_create"),
     url(r'^product/update/(?P<pk>\S+)/$',
         appProductUpdate.as_view(), name="app_product_update"),
 )

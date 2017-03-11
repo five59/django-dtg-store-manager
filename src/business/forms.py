@@ -242,21 +242,22 @@ class bzCreativeRenderingForm(businessCommonForm):
 
 class bzProductForm(businessCommonForm):
     form_layout = Layout(
-        Fieldset(
-            '',
-            'code',
-            'name',
-            'status',
-            'bzDesign',
-            'pfProduct',
-            'wooProduct',
-            'pfSyncProduct',
+        Div(
+            Fieldset("",
+                     "code",
+                     "name"),
+            css_class="col-md-3"
         ),
+        Div(
+            Fieldset("", "bzDesign", "pfProduct"),
+            css_class="col-md-4"
+        )
     )
 
     class Meta:
         model = bzProduct
-        fields = ['code', 'name', 'status', 'bzDesign']
+        fields = ['code', 'name', 'bzDesign', 'pfProduct', ]
+        #   'status', 'wooProduct', 'pfSyncProduct']
 
 
 class bzProductVariantForm(businessCommonForm):

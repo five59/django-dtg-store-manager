@@ -479,11 +479,17 @@ class bzProduct(commonBusinessModel):
         verbose_name_plural = _("Products")
 
     def __str__(self):
+        return self.get_friendly_name()
+
+    def get_friendly_name(self):
         if self.code and self.name:
             return "{} - {}".format(self.code, self.name)
         elif self.name:
             return "{}".format(self.name)
-        return _("Unknown Product")
+        return "Unknown Product"
+
+    def __unicode__(self):
+        return self.__str__
 
     def get_absolute_url(self):
         return reverse('business:business_bzproduct_detail', args=(self.pk,))
@@ -1401,12 +1407,17 @@ class pfCatalogProduct(commonBusinessModel):
     variant_count = IntegerField(_("Variants"), default=0)
 
     class Meta:
-        ordering = ('-pk',)
+        ordering = ('brand', 'model')
         verbose_name = _("Printful Product")
         verbose_name_plural = _("Printful Products")
 
     def __str__(self):
-        return u'%s' % self.pk
+        return self.get_friendly_name()
+
+    def get_friendly_name(self):
+        if self.pid and self.brand and self.brand:
+            return "{} / {} ({})".format(self.brand, self.model, self.pid)
+        return "Unknown Product"
 
     def get_absolute_url(self):
         return reverse(

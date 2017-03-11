@@ -84,6 +84,7 @@ INSTALLED_APPS = (
 
     'authtools',
     'crispy_forms',
+    'formtools',
     'easy_thumbnails',
     'django_extensions',
     'rest_framework',

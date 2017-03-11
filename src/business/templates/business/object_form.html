@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles crispy_forms_tags humanize %}
+{% load staticfiles crispy_forms_tags humanize i18n %}
 {% block title %}{{ block.super }}{{ object_name }}{% endblock %}
 
 {% block navbar-left %}
@@ -30,10 +30,38 @@
     <div class="row">
       <div class="col-md-12">
           {% csrf_token %}
-          {% crispy form %}
+
+          {% if wizard %}
+
+          {{ wizard.form.media }}
+          {{ wizard.management_form }}
+          {% if wizard.form.forms %}
+          <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+
+              {{ wizard.form.management_form }}
+              {% for form in wizard.form.forms %}
+                  {% crispy form %}
+              {% endfor %}
+          {% else %}
+              {% crispy wizard.form %}
+          {% endif %}
+          {% if wizard.steps.prev %}
+            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "Start Over" %}</button>
+            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Back" %}</button>
+          {% endif %}
+
+          {% else %}
+
+            {% crispy form %}
+
+          {% endif %}
+
+
       </div>
     </div>
   </div>
 </form>
+
+
 
 {% endblock %}

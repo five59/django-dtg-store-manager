@@ -17,4 +17,5 @@ sqlparse>=0.2.3
 requests>=2.13.0
 PyPrintful>=1.0.0
 django-filter>=1.0.1
+django-formtools>=2.0
 -e git+https://github.com/559Labs/django-crispy-unforms.git@b51040724023a4eb89462840d3dfeb87df63d67f#egg=django_crispy_unforms
