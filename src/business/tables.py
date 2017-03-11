@@ -224,7 +224,7 @@ class pfCatalogSizeTable(commonBusinessTable):
 
     class Meta:
         model = bzBrand
-        fields = ('code', 'label', 'label_clean', 'sort_group', 'sort_order',
+        fields = ('code', 'name', 'label_clean', 'sort_group', 'sort_order',
                   'date_added', 'date_updated', 'actions', )
         sequence = fields
         attrs = {'class': 'table table-striped table-hover'}

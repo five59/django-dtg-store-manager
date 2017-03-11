@@ -443,11 +443,24 @@ class pfCatalogColorForm(businessCommonForm):
 
 
 class pfCatalogSizeForm(businessCommonForm):
-    form_layout = Layout()
+    form_layout = Layout(
+        Div(
+            Fieldset("", 'code', 'name', 'label_clean'),
+            css_class="col-md-4"
+        ),
+        Div(
+            Fieldset("", 'sort_group', 'sort_order'),
+            css_class="col-md-4"
+        ),
+        Div(
+            HTML("""<h4>Catalog Sizes</h4>
+                     <p>Lorem.</p>"""),
+            css_class="col-md-4"),
+    )
 
     class Meta:
         model = pfCatalogSize
-        fields = ['code', 'label', 'label_clean', 'sort_group', 'sort_order']
+        fields = ['code', 'name', 'label_clean', 'sort_group', 'sort_order']
 
 
 class pfCatalogFileSpecForm(businessCommonForm):

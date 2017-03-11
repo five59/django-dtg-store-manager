@@ -478,9 +478,9 @@ class pfCatalogSizeAdminForm(forms.ModelForm):
 class pfCatalogSizeAdmin(admin.ModelAdmin):
     form = pfCatalogSizeAdminForm
     list_display = ['id', 'date_added', 'date_updated', 'code',
-                    'label', 'label_clean', 'sort_group', 'sort_order']
+                    'name', 'label_clean', 'sort_group', 'sort_order']
     readonly_fields = ['id', 'date_added', 'date_updated', 'code',
-                       'label', 'label_clean', 'sort_group', 'sort_order']
+                       'name', 'label_clean', 'sort_group', 'sort_order']
 
 
 admin.site.register(pfCatalogSize, pfCatalogSizeAdmin)

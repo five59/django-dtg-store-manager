@@ -1198,8 +1198,8 @@ class pfCatalogSize(commonBusinessModel):
     # Fields
     code = CharField(_("Code"), max_length=3,
                      default="", blank=True, null=True)
-    label = CharField(_("Size"), max_length=255,
-                      default="", blank=True, null=True)
+    name = CharField(_("Size"), max_length=255,
+                     default="", blank=True, null=True)
     label_clean = CharField(_("Clean Label"), max_length=255,
                             default="", blank=True, null=True)
     sort_group = CharField(_("Sort Group"), max_length=2,
@@ -1218,8 +1218,8 @@ class pfCatalogSize(commonBusinessModel):
             rv.append(self.code)
         if self.label_clean:
             rv.append(self.label_clean)
-        elif self.label:
-            rv.append(self.label)
+        elif self.name:
+            rv.append(self.name)
         if rv:
             return " - ".join(rv)
         return _("Unknown Size")
