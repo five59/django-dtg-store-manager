@@ -335,14 +335,13 @@ class wooShippingClassTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
         '[M]', 'app_list_shipping')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    code = tables.LinkColumn(
+    name = tables.LinkColumn(
         viewname='business:app_list_shipping_update', args=[A('pk')],
         attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
         model = bzBrand
-        fields = ('name', 'count', 'wid',
-                  'date_added', 'date_updated', 'actions', )
+        fields = ('name', 'count', 'date_added', 'date_updated', 'actions', )
         sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
 

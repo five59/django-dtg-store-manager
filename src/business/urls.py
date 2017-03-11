@@ -156,9 +156,9 @@ urlpatterns += (
         name='app_list_shipping_create'),
     url(r'^lists/shipping/(?P<pk>\S+)/$',
         appListShippingUpdate.as_view(), name='app_list_shipping_update'),
-    url(r'^lists/shipping/$', appListShippingPush.as_view(),
+    url(r'^lists/shipping/push/$', appListShippingPush.as_view(),
         name='app_list_shipping_push'),
-    url(r'^lists/shipping/$', appListShippingPull.as_view(),
+    url(r'^lists/shipping/pull/$', appListShippingPull.as_view(),
         name='app_list_shipping_pull'),
 
     url(r'^lists/category/$', appListCategoryList.as_view(),

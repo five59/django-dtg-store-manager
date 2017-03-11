@@ -748,11 +748,11 @@ class wooShippingClass(commonBusinessModel):
 
     def get_absolute_url(self):
         return reverse(
-            'business:business_wooshippingclass_detail', args=(self.slug,))
+            'business:business_wooshippingclass_detail', args=(self.pk,))
 
     def get_update_url(self):
         return reverse(
-            'business:business_wooshippingclass_update', args=(self.slug,))
+            'business:business_wooshippingclass_update', args=(self.pk,))
 
 
 class wooTag(commonBusinessModel):

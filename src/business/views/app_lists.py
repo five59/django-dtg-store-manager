@@ -166,7 +166,7 @@ class appListShippingCreate(appListCommonCreateView):
 
 class appListShippingUpdate(appListCommonUpdateView):
     model = wooShippingClass
-    form_class = wooShippingClassTable
+    form_class = wooShippingClassForm
     object_name = "Shipping Class"
     object_icon = ""
     success_url = reverse_lazy("business:app_list_shipping_list")

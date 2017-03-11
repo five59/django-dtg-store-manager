@@ -347,11 +347,28 @@ class wooProductForm(businessCommonForm):
 
 
 class wooShippingClassForm(businessCommonForm):
-    form_layout = Layout()
+    form_layout = Layout(
+        Div(
+            Fieldset("", 'name', 'slug', 'description',),
+            css_class="col-md-4"
+        ),
+        Div(
+            HTML("<table class='table table-striped'>"),
+            HTML("<tr><th>Product Count</th><td>{{ object.count }}<td></tr>"),
+            HTML("<tr><th>WordPress ID</th><td>{{ object.wid }}<td></tr>"),
+            HTML("</table>"),
+            css_class="col-md-4"
+        ),
+        Div(
+            HTML("""<h4>Shipping Classes</h4>
+                             <p></p>"""),
+            css_class="col-md-4"),
+
+    )
 
     class Meta:
         model = wooShippingClass
-        fields = ['wid', 'name', 'slug', 'description', 'count']
+        fields = ['slug', 'description', 'name']
 
 
 class wooTagForm(businessCommonForm):
