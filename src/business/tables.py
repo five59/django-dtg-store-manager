@@ -305,7 +305,7 @@ class wooCategoryTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
         '[M]', 'app_list_category')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    code = tables.LinkColumn(
+    name = tables.LinkColumn(
         viewname='business:app_list_category_update', args=[A('pk')],
         attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 

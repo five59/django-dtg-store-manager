@@ -296,13 +296,35 @@ class wooAttributeForm(businessCommonForm):
 
 
 class wooCategoryForm(businessCommonForm):
-    form_layout = Layout()
+    form_layout = Layout(
+        Div(
+            Fieldset("", 'name', 'store', 'display',
+                     'slug', 'parent', 'image_id',),
+            css_class="col-md-4"
+        ),
+        Div(
+            Fieldset("", 'description', 'is_active', ),
+            HTML("<table class='table table-striped'>"),
+            HTML("<tr><th>Product Count</th><td>{{ object.count }}<td></tr>"),
+            HTML("<tr><th>WordPress ID</th><td>{{ object.wid }}<td></tr>"),
+            HTML(
+                "<tr><th>Image Creation Date</th><td>{{ object.image_date_created }}<td></tr>"),
+            HTML("</table>"),
+            css_class="col-md-4"
+        ),
+        Div(
+            HTML("""<h4>Product Category</h4>
+                             <p></p>"""),
+            css_class="col-md-4"),
+
+    )
 
     class Meta:
         model = wooCategory
         fields = ['is_active', 'wid', 'name', 'slug', 'parent',
                   'description', 'display', 'count', 'image_id',
                   'image_date_created', 'store']
+        exclude = ['count', 'wid', 'image_date_created', ]
 
 
 class wooImageForm(businessCommonForm):
