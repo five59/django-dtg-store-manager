@@ -48,3 +48,29 @@ class pfCatalogProductFilter(FilterSet):
         model = pfCatalogProduct
         fields = ['brand', 'ptype']
         form = pfCatalogProductFilterForm
+
+
+# #TODO For Future Development. Implement a 'ratio' filter for the File Spec table view
+#
+# class pfCatalogFileSpecFilterForm(forms.Form):
+#     def __init__(self, *args, **kwargs):
+#         super(pfCatalogFileSpecFilterForm, self).__init__(*args, **kwargs)
+#         self.helper = FormHelper()
+#         self.helper.form_tag = False
+#         self.helper.layout = Layout(
+#             Div(
+#                 Field("ratio"),
+#             ),
+#         )
+#
+#
+# class pfCatalogFileSpecFilter(FilterSet):
+#     ratio = ModelChoiceFilter(
+#         label="Ratio",
+#         queryset=pfCatalogFileSpec.objects.order_by(
+#         ).values_list('ratio').distinct())
+#
+#     class Meta:
+#         model = pfCatalogFileSpec
+#         fields = ['ratio']
+#         form = pfCatalogFileSpecFilterForm

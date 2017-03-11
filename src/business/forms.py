@@ -486,6 +486,24 @@ class pfCatalogSizeForm(businessCommonForm):
 
 
 class pfCatalogFileSpecForm(businessCommonForm):
+    form_layout = Layout(
+        Div(
+            Fieldset("", "name", "note",),
+            css_class="col-md-5"
+        ),
+        Div(
+            Fieldset("", "width_in", "height_in", "ratio",),
+            css_class="col-md-2"
+        ),
+        Div(
+            Fieldset("", "width", "height", "colorsystem",),
+            css_class="col-md-2"
+        ),
+        Div(
+            HTML("""<h4>File Specs</h4>
+                     <p>Complete either the pixel or Imperial measurements. We'll figure out the other for you (at 300dpi).</p>"""),
+            css_class="col-md-3"),
+    )
 
     class Meta:
         model = pfCatalogFileSpec

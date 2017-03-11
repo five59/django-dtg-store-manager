@@ -116,6 +116,19 @@ class appListFileSpecList(appListCommonListView):
     object_name = "File Specification"
     action_new = reverse_lazy("business:app_list_filespec_create")
 
+    # #TODO For Future Development. Implement a 'ratio' filter for the File Spec table view
+    #
+    # filter_class = pfCatalogFileSpecFilter
+    # def get_table_data(self):
+    #     self.filter = self.filter_class(self.request.GET, queryset=super(
+    #         appListFileSpecList, self).get_table_data())
+    #     return self.filter.qs
+    #
+    # def get_context_data(self, **kwargs):
+    #     context = super(appListFileSpecList, self).get_context_data(**kwargs)
+    #     context['filter'] = self.filter
+    #     return context
+
 
 class appListFileSpecCreate(appListCommonCreateView):
     model = pfCatalogFileSpec

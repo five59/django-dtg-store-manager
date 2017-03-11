@@ -168,13 +168,13 @@ class pfCatalogFileSpecTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
         '[M]', 'app_list_filespec')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
-    code = tables.LinkColumn(
+    name = tables.LinkColumn(
         viewname='business:app_list_filespec_update', args=[A('pk')],
         attrs=commonBusinessTable.PRIMARY_BUTTON_ATTRS)
 
     class Meta:
         model = bzBrand
-        fields = ('name', 'note', 'width', 'height', 'width_in', 'height_in',
+        fields = ('name', 'width_in', 'height_in', 'width', 'height',
                   'ratio', 'colorsystem',
                   'date_added', 'date_updated', 'actions', )
         sequence = fields

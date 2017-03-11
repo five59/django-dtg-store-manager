@@ -1,4 +1,5 @@
 from django.conf import settings
+from fractions import Fraction
 
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
@@ -21,7 +22,6 @@ from decimal import *
 
 from pyPrintful import pyPrintful
 from django.core.exceptions import ObjectDoesNotExist
-
 from business.helper_backend import *
 
 from storemanager.logger import *
@@ -1272,6 +1272,25 @@ class pfCatalogFileSpec(commonBusinessModel):
     def get_update_url(self):
         return reverse(
             'business:business_pfcatalogfilespec_update', args=(self.pk,))
+
+    def save(self, *args, **kwargs):
+        if self.width and not self.width_in:
+            self.width_in = int(self.width / 300)
+        elif self.width_in and not self.width:
+            self.width = self.width_in * 300
+
+        if self.height and not self.height_in:
+            self.height_in = int(self.height / 300)
+        elif self.height_in and not self.height:
+            self.height = self.height_in * 300
+
+        # This should prevent ZeroDivisionError exceptions.
+        if not self.ratio and self.width and self.height:
+            _fraction = Fraction(int(self.width), int(self.height))
+            self.ratio = "{}:{}".format(
+                _fraction.numerator, _fraction.denominator)
+
+        super(pfCatalogFileSpec, self).save(*args, **kwargs)
 
 
 class pfCatalogFileType(commonBusinessModel):
