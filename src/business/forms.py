@@ -24,18 +24,13 @@ def generateTable(data):
     return "".join(rv)
 
 
-# def generateThumbnail(data):
-#     rv = []
-#     rv.append('<div class="thumbnail">')
-#     rv.append('<img src="[[ object.{} ]]" alt="[[ object.{} ]]" />'.format(
-#         data['url'], data['name']).replace('[', '{').replace(']', '}'))
-#     if 'caption' in data:
-#         rv.append(
-#             '<div class="caption"><h3>[[ object.{} ]]</h3></div>'.format(data['caption']).replace('[', '{').replace(']', '}'))
-#     rv.append('</div>')
-#     return "".join(rv)
-
-# Parent Forms
+def generateColorSwatch(hex):
+    if hex:
+        rv = []
+        url = "http://placehold.it/350x300/{{object." + hex + "}}?text=%20"
+        rv.append("<div class='thumbnail'><img src='{}' />".format(url))
+        rv.append('<div class="caption">{{ object }}</div></div>')
+    return "".join(rv)
 
 
 class businessCommonForm(forms.ModelForm):
@@ -430,12 +425,12 @@ class pfSyncItemOptionForm(businessCommonForm):
 class pfCatalogColorForm(businessCommonForm):
     form_layout = Layout(
         Div(
-            Fieldset('Basics', 'code', 'label',
-                     'label_clean', 'hex_code'),
-            css_class="col-md-3"),
+            HTML(generateColorSwatch('get_hex_code_clean')),
+            css_class="col-md-3",
+        ),
         Div(
-            Fieldset(''),
-            css_class="col-md-5"),
+            Fieldset('', 'code', 'label_clean', 'hex_code'),
+            css_class="col-md-3"),
         Div(
             HTML("""<h4>Catalog Colours</h4>
                      <p>Lorem.</p>"""),
@@ -444,7 +439,7 @@ class pfCatalogColorForm(businessCommonForm):
 
     class Meta:
         model = pfCatalogColor
-        fields = ['code', 'label', 'label_clean', 'hex_code']
+        fields = ['code', 'label_clean', 'hex_code']
 
 
 class pfCatalogSizeForm(businessCommonForm):
@@ -488,13 +483,16 @@ class pfCatalogProductForm(businessCommonForm):
                 css_class="col-md-3"
             ),
             Div(
-                HTML(generateTable({
-                    'Printful ID': 'pid',
-                    'Brand': 'brand',
-                    'Type': 'ptype',
-                    'Variants': 'variant_count',
-                    'Active?': 'is_active',
-                })),
+                HTML("<table class='table table-striped'>"),
+                HTML("<tr><th>Brand</th><td>{{ object.brand }}<td></tr>"),
+                HTML("<tr><th>Type</th><td>{{ object.ptype }}<td></tr>"),
+                HTML(
+                    "<tr><th>Variants</th><td>{{ object.variant_count }}<td></tr>"),
+                HTML("<tr><th>Printful ID</th><td>{{ object.pid }}<td></tr>"),
+                HTML(
+                    "<tr><th>Active?</th><td>{{ object.is_active }}<td></tr>"),
+                HTML("</table>"),
+                # TODO Add colors and sizes display here.
                 css_class="col-md-5"),
             Div(
                 HTML("""<h4>Catalog Products</h4>

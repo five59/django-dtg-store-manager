@@ -459,10 +459,10 @@ class pfCatalogColorAdminForm(forms.ModelForm):
 
 class pfCatalogColorAdmin(admin.ModelAdmin):
     form = pfCatalogColorAdminForm
-    list_display = ['label', 'code', 'label_clean', 'hex_code', ]
-    readonly_fields = ['label', 'hex_code', ]
+    list_display = ['name', 'code', 'label_clean', 'hex_code', ]
+    readonly_fields = ['name', 'hex_code', ]
     list_editable = ['code', 'label_clean', ]
-    search_fields = ['label', 'code', 'label_clean', 'hex_code', ]
+    search_fields = ['name', 'code', 'label_clean', 'hex_code', ]
 
 
 admin.site.register(pfCatalogColor, pfCatalogColorAdmin)

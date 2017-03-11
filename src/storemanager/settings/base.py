@@ -22,10 +22,19 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             join(BASE_DIR, 'templates'),
+            join(
+                # FIXME The crispy_unforms package doesn't load templates
+                # correctly. This is a temporary hack.
+                "/Users/andrewmarconi/Github/django-crispy-unforms/crispy_unforms/templates",)
             # insert more TEMPLATE_DIRS here
         ],
-        'APP_DIRS': True,
+        # 'APP_DIRS': True,
         'OPTIONS': {
+            'loaders': [
+                'django.template.loaders.eggs.Loader',
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
             'context_processors': [
                 # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
                 # list if you haven't customized them:

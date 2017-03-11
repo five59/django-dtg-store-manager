@@ -158,7 +158,7 @@ class pfCatalogColorTable(commonBusinessTable):
 
     class Meta:
         model = bzBrand
-        fields = ('code', 'label', 'label_clean',
+        fields = ('code', 'name', 'label_clean',
                   'date_added', 'date_updated', 'actions', )
         sequence = fields
         attrs = {'class': 'table table-striped table-hover'}
