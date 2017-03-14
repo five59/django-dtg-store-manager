@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Model Definitions &mdash; Django DTG Store Manager 1.0 documentation</title>
+  <title>Module Documentation &mdash; Django DTG Store Manager 0.1 documentation</title>
   
 
+  
+  
   
   
 
@@ -33,9 +35,9 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Django DTG Store Manager 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Business Module" href="business.html"/>
-        <link rel="prev" title="Publishing a Batch of New Products" href="../how-tos/NewProducts.html"/> 
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Admin" href="admin.html"/>
+        <link rel="prev" title="How-Tos" href="../howtos/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -63,7 +66,7 @@
             
             
               <div class="version">
-                1.0
+                0.1
               </div>
             
           
@@ -84,12 +87,24 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../how-tos/index.html">How-Tos</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Model Definitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="business.html">Business Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="outlet_woocommerce.html">Outlet: WooCommerce Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vendor_printful.html">Vendor: Printful Module</a></li>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
 </ul>
 </li>
 </ul>
@@ -104,8 +119,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Django DTG Store Manager</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
       </nav>
 
 
@@ -114,50 +131,89 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>Model Definitions</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Module Documentation</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../_sources/modules/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="model-definitions">
-<h1>Model Definitions<a class="headerlink" href="#model-definitions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-documentation">
+<h1>Module Documentation<a class="headerlink" href="#module-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="business.html">Business Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="outlet_woocommerce.html">Outlet: WooCommerce Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vendor_printful.html">Vendor: Printful Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views/index.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views/app_content.html">App: Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_creative.html">App: Creative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_dams.html">App: DAMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_dashboard.html">App: Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_lists.html">App: Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_product.html">App: Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/app_store.html">App: Store</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wizards/index.html">Wizards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wizards/bzProductCreate.html">bzProduct Create Wizard</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="business.html" class="btn btn-neutral float-right" title="Business Module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="admin.html" class="btn btn-neutral float-right" title="Admin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../how-tos/NewProducts.html" class="btn btn-neutral" title="Publishing a Batch of New Products" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../howtos/index.html" class="btn btn-neutral" title="How-Tos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -166,7 +222,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, 559 Labs - http://559labs.com/.
+        &copy; Copyright 2017, 559 Labs.
 
     </p>
   </div>
@@ -188,10 +244,11 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

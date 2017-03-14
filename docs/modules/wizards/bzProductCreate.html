@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>bzProduct Create Wizard &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Wizards" href="index.html"/>
+        <link rel="prev" title="Wizards" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Wizards</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">bzProduct Create Wizard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Wizards</a> &raquo;</li>
+        
+      <li>bzProduct Create Wizard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/wizards/bzProductCreate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.wizards.bzProductCreate">
+<span id="bzproduct-create-wizard"></span><h1>bzProduct Create Wizard<a class="headerlink" href="#module-business.wizards.bzProductCreate" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard">
+<em class="property">class </em><code class="descclassname">business.wizards.bzProductCreate.</code><code class="descname">bzProductFormWizard</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.done">
+<code class="descname">done</code><span class="sig-paren">(</span><em>form_list</em>, <em>form_dict</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard.done"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.done" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.form_list">
+<code class="descname">form_list</code><em class="property"> = [&lt;class 'business.wizards.bzProductCreate.bzProductFormWizard_step1'&gt;, &lt;class 'business.wizards.bzProductCreate.bzProductFormWizard_step2'&gt;, &lt;class 'business.wizards.bzProductCreate.bzProductFormWizard_step3'&gt;]</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.form_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.get_form_initial">
+<code class="descname">get_form_initial</code><span class="sig-paren">(</span><em>step</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard.get_form_initial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.get_form_initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.process_step">
+<code class="descname">process_step</code><span class="sig-paren">(</span><em>form</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard.process_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.process_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1">
+<em class="property">class </em><code class="descclassname">business.wizards.bzProductCreate.</code><code class="descname">bzProductFormWizard_step1</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1" title="Permalink to this definition">¶</a></dt>
+<dd><p>bzProductFormWizard. Step 1.
+Collects the name, code (SKU base), design and Vendor Product from the user.</p>
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step1.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'bzDesign', 'pfProduct']</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.base_fields">
+<code class="descclassname">bzProductFormWizard_step1.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('bzDesign', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfProduct', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.declared_fields">
+<code class="descclassname">bzProductFormWizard_step1.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.form_layout">
+<code class="descclassname">bzProductFormWizard_step1.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step1.media">
+<code class="descclassname">bzProductFormWizard_step1.</code><code class="descname">media</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step1.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2">
+<em class="property">class </em><code class="descclassname">business.wizards.bzProductCreate.</code><code class="descname">bzProductFormWizard_step2</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2" title="Permalink to this definition">¶</a></dt>
+<dd><p>bzProductFormWizard. Step 1.
+Assign colors and sizes</p>
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step2.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['colors', 'sizes']</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.base_fields">
+<code class="descclassname">bzProductFormWizard_step2.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('colors', &lt;django.forms.models.ModelMultipleChoiceField object&gt;), ('sizes', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.declared_fields">
+<code class="descclassname">bzProductFormWizard_step2.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.form_layout">
+<code class="descclassname">bzProductFormWizard_step2.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step2.media">
+<code class="descclassname">bzProductFormWizard_step2.</code><code class="descname">media</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step2.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3">
+<em class="property">class </em><code class="descclassname">business.wizards.bzProductCreate.</code><code class="descname">bzProductFormWizard_step3</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3" title="Permalink to this definition">¶</a></dt>
+<dd><p>bzProductFormWizard. Step 3.
+Confirms bzRenderings &amp; Publish</p>
+<dl class="class">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../../_modules/business/wizards/bzProductCreate.html#bzProductFormWizard_step3.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta.fields">
+<code class="descname">fields</code><em class="property"> = []</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.base_fields">
+<code class="descclassname">bzProductFormWizard_step3.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.declared_fields">
+<code class="descclassname">bzProductFormWizard_step3.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.form_layout">
+<code class="descclassname">bzProductFormWizard_step3.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.wizards.bzProductCreate.bzProductFormWizard_step3.media">
+<code class="descclassname">bzProductFormWizard_step3.</code><code class="descname">media</code><a class="headerlink" href="#business.wizards.bzProductCreate.bzProductFormWizard_step3.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Wizards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

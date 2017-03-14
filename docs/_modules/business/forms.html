@@ -1,0 +1,831 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.forms &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.forms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.forms</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="k">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.helper</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.layout</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.bootstrap</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="k">import</span> <span class="n">get_user_model</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_unforms.layout</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="k">import</span> <span class="n">reverse_lazy</span>
+
+<span class="n">User</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
+
+<span class="c1"># Helper methods</span>
+
+
+<div class="viewcode-block" id="generateTable"><a class="viewcode-back" href="../../modules/forms.html#business.admin.generateTable">[docs]</a><span class="k">def</span> <span class="nf">generateTable</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">rv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&lt;table class=&quot;table table-striped&quot;&gt;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># FIXME There is definitely a better way to format this string.</span>
+        <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s1">&#39;&lt;tr&gt;&lt;th&gt;</span><span class="si">{}</span><span class="s1">&lt;/th&gt;&lt;td&gt;[[object.</span><span class="si">{}</span><span class="s1">]]&lt;/td&gt;&lt;/tr&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="s1">&#39;{&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">))</span>
+    <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&lt;/table&gt;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="generateColorSwatch"><a class="viewcode-back" href="../../modules/forms.html#business.admin.generateColorSwatch">[docs]</a><span class="k">def</span> <span class="nf">generateColorSwatch</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hex</span><span class="p">:</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://placehold.it/350x300/{{object.&quot;</span> <span class="o">+</span> <span class="nb">hex</span> <span class="o">+</span> <span class="s2">&quot;}}?text=%20&quot;</span>
+        <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;thumbnail&#39;&gt;&lt;img src=&#39;</span><span class="si">{}</span><span class="s2">&#39; /&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+        <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;caption&quot;&gt;{{ object }}&lt;/div&gt;&lt;/div&gt;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="businessCommonForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.businessCommonForm">[docs]</a><span class="k">class</span> <span class="nc">businessCommonForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">businessCommonLayoutHeader</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h3&gt;</span>
+<span class="s2">                     {</span><span class="si">% i</span><span class="s2">f mode == &#39;create&#39; %}Create New {{ object_name }}{</span><span class="si">% e</span><span class="s2">ndif %}</span>
+<span class="s2">                     {</span><span class="si">% i</span><span class="s2">f mode == &#39;update&#39; %}</span>
+<span class="s2">                        {</span><span class="si">% i</span><span class="s2">f object.name %}{{ object.name }}{</span><span class="si">% e</span><span class="s2">lse %}Edit {{ object_name }}{</span><span class="si">% e</span><span class="s2">ndif %}</span>
+<span class="s2">                     {</span><span class="si">% e</span><span class="s2">ndif %}</span>
+<span class="s2">                     &lt;/h3&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-8&quot;</span>
+            <span class="p">),</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">Div</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="n">HTML</span><span class="p">(</span>
+                        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                        &lt;a href=&quot;{{ action_list }}&quot; role=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;</span>
+<span class="sd">                        &lt;span class=&quot;glyphicon glyphicon-menu-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span>
+<span class="sd">                        {% if action_list_label %}{{ action_list_label }}{% else %}Back{% endif %}&lt;/a&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                    <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                         &lt;button class=&#39;btn btn-primary&#39; type=&quot;submit&quot; name=&quot;update&quot; class=&quot;submit submitButton&quot; id=&quot;submit-id-search&quot;&gt;</span>
+<span class="s2">                         {</span><span class="si">% i</span><span class="s2">f action_list_save_label %}{{ action_list_save_label }}{</span><span class="si">% e</span><span class="s2">lse %}Save{</span><span class="si">% e</span><span class="s2">ndif %}</span>
+<span class="s2">                         &lt;span class=&#39;glyphicon glyphicon-menu-right&#39;&gt;&lt;/button&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                    <span class="c1"># Submit(&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</span>
+                    <span class="c1">#     &#39;update&#39;, &quot;&lt;span class=&#39;glyphicon glyphicon-menu-right&#39;&gt; Save&quot;, css_class=&quot;btn-primary&quot;),</span>
+                    <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;btn-group pull-right&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+            <span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">FormHelper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">form_tag</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">businessCommonLayoutHeader</span><span class="p">,</span>
+            <span class="n">Div</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">form_layout</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+<span class="c1"># App: Store</span>
+
+
+<div class="viewcode-block" id="bzBrandForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzBrandForm">[docs]</a><span class="k">class</span> <span class="nc">bzBrandForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;Basics&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span><span class="p">),</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;Relationships&#39;</span><span class="p">,</span> <span class="s1">&#39;vendor&#39;</span><span class="p">,</span> <span class="s1">&#39;outlet&#39;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-5&quot;</span><span class="p">),</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Brands&lt;/h4&gt;</span>
+<span class="s2">                         &lt;p&gt;Brands connect a Printful store to a WordPress site. Everything you do within this app is linked to a specific brand.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="bzBrandForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzBrandForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;vendor&#39;</span><span class="p">,</span> <span class="s1">&#39;outlet&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfStoreForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfStoreForm">[docs]</a><span class="k">class</span> <span class="nc">pfStoreForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">TabHolder</span><span class="p">(</span>
+            <span class="n">Tab</span><span class="p">(</span><span class="s1">&#39;Basic Info&#39;</span><span class="p">,</span>
+                <span class="n">Div</span><span class="p">(</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-5&quot;</span><span class="p">),</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">HTML</span><span class="p">(</span>
+                            <span class="sd">&quot;&quot;&quot;&lt;h4&gt;{{ object.name }}&lt;/h4&gt;</span>
+<span class="sd">                                    {% if object.website %}&lt;a href=&quot;{{ object.website }}&quot; target=&quot;_blank&quot;&gt;{{ object.website }}&lt;/a&gt;{% endif %}&quot;&quot;&quot;</span>
+                        <span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-7&quot;</span><span class="p">),</span>
+                    <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+                <span class="p">),</span>
+            <span class="n">Tab</span><span class="p">(</span><span class="s1">&#39;Addresses&#39;</span><span class="p">,</span>
+                <span class="n">Div</span><span class="p">(</span>
+                    <span class="n">Div</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                                    &lt;div class=&quot;panel panel-default&quot;&gt;</span>
+<span class="s2">                                        &lt;div class=&quot;panel-heading&quot;</span>
+<span class="s2">                                            &lt;h3 class=&quot;panel-title&quot;&gt;Billing Address&lt;/h3&gt;</span>
+<span class="s2">                                        &lt;/div&gt;</span>
+<span class="s2">                                        &lt;div class=&quot;panel-body&quot;&gt;{</span><span class="si">% i</span><span class="s2">f object.billing_address %}{{ object.billing_address.asHTML|safe }}{</span><span class="si">% e</span><span class="s2">lse %}None on file.{</span><span class="si">% e</span><span class="s2">ndif %}&lt;/div&gt;</span>
+<span class="s2">                                    &lt;/div&gt;&quot;&quot;&quot;</span><span class="p">),</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+                    <span class="n">Div</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                                    &lt;div class=&quot;panel panel-default&quot;&gt;</span>
+<span class="s2">                                        &lt;div class=&quot;panel-heading&quot;</span>
+<span class="s2">                                            &lt;h3 class=&quot;panel-title&quot;&gt;Return Address&lt;/h3&gt;</span>
+<span class="s2">                                        &lt;/div&gt;</span>
+<span class="s2">                                        &lt;div class=&quot;panel-body&quot;&gt;{</span><span class="si">% i</span><span class="s2">f object.return_address %}{{ object.return_address.asHTML|safe }}{</span><span class="si">% e</span><span class="s2">lse %}Return address will be Printful&#39;s own.{</span><span class="si">% e</span><span class="s2">ndif %}&lt;/div&gt;</span>
+<span class="s2">                                    &lt;/div&gt;&quot;&quot;&quot;</span><span class="p">),</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Address Management&lt;/h4&gt;</span>
+<span class="s2">                                     &lt;p&gt;To manage this information, sign in to your Printful Dashboard.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+                    <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+                <span class="p">),</span>
+            <span class="n">Tab</span><span class="p">(</span><span class="s1">&#39;Credit Card Info&#39;</span><span class="p">,</span>
+                <span class="n">Div</span><span class="p">(</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">HTML</span><span class="p">(</span><span class="n">generateTable</span><span class="p">({</span>
+                            <span class="s1">&#39;Payment Type&#39;</span><span class="p">:</span> <span class="s1">&#39;payment_type&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Card Number (Masked)&#39;</span><span class="p">:</span> <span class="s1">&#39;payment_number_mask&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Card Expires&#39;</span><span class="p">:</span> <span class="s1">&#39;payment_expires&#39;</span><span class="p">,</span>
+                        <span class="p">})),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-8&quot;</span><span class="p">),</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Payment Details&lt;/h4&gt;</span>
+<span class="s2">                                     &lt;p&gt;To manage this information, sign in to your Printful Dashboard.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+                    <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">),</span>
+                <span class="p">),</span>
+            <span class="n">Tab</span><span class="p">(</span><span class="s1">&#39;Packing Slip&#39;</span><span class="p">,</span>
+                <span class="n">Div</span><span class="p">(</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;packingslip_email&#39;</span><span class="p">,</span> <span class="s1">&#39;packingslip_phone&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;packingslip_message&#39;</span><span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-8&quot;</span><span class="p">),</span>
+                    <span class="n">Div</span><span class="p">(</span>
+                        <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Packing Slip Details&lt;/h4&gt;</span>
+<span class="s2">                                         &lt;p&gt;This information gets printed on your customers&#39; packing slips.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                        <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+                    <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">),</span>
+                <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfStoreForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfStoreForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;packingslip_email&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;packingslip_phone&#39;</span><span class="p">,</span> <span class="s1">&#39;packingslip_message&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooStoreForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooStoreForm">[docs]</a><span class="k">class</span> <span class="nc">wooStoreForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;timezone&#39;</span><span class="p">,</span> <span class="s1">&#39;verify_ssl&#39;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span><span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;base_url&#39;</span><span class="p">,</span> <span class="s1">&#39;consumer_key&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;consumer_secret&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-5&quot;</span><span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;WordPress Site&lt;/h4&gt;</span>
+<span class="s2">                         &lt;p&gt;This sets up the connection to your WordPress site. It will broker all of the interactions with your WooCommerce store.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="wooStoreForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooStoreForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;base_url&#39;</span><span class="p">,</span> <span class="s1">&#39;consumer_key&#39;</span><span class="p">,</span> <span class="s1">&#39;consumer_secret&#39;</span><span class="p">,</span> <span class="s1">&#39;timezone&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;verify_ssl&#39;</span><span class="p">]</span></div></div>
+
+
+<span class="c1"># App: Creative</span>
+
+<div class="viewcode-block" id="bzCreativeCollectionForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeCollectionForm">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeCollectionForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzbrand&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeCollectionForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeCollectionForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeCollection</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzbrand&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeDesignForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeDesignForm">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeDesignForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeDesignForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeDesignForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeDesign</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeLayoutForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeLayoutForm">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeLayoutForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeLayoutForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeLayoutForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeLayout</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeRenderingForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeRenderingForm">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeRenderingForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Fieldset</span><span class="p">(</span>
+            <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bzcreativedesign&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bzcreativelayout&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeRenderingForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzCreativeRenderingForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeRendering</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bzcreativedesign&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativelayout&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzProductForm">[docs]</a><span class="k">class</span> <span class="nc">bzProductForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;code&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;name&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;bzDesign&quot;</span><span class="p">,</span> <span class="s2">&quot;pfProduct&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzProductForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzDesign&#39;</span><span class="p">,</span> <span class="s1">&#39;pfProduct&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+        <span class="c1">#   &#39;status&#39;, &#39;wooProduct&#39;, &#39;pfSyncProduct&#39;]</span>
+
+
+<div class="viewcode-block" id="bzProductVariantForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzProductVariantForm">[docs]</a><span class="k">class</span> <span class="nc">bzProductVariantForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">bzProductVariantForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">FormHelper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">form_tag</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span>
+                <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;bzproduct&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;pfcolor&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;pfsize&#39;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">PrependedText</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;0.00&quot;</span><span class="p">),</span>
+            <span class="n">FormActions</span><span class="p">(</span>
+                <span class="n">Submit</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="s1">&#39;Save&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;btn-success&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductVariantForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.bzProductVariantForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProductVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;bzproduct&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;pfcolor&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsize&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooAttributeForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooAttributeForm">[docs]</a><span class="k">class</span> <span class="nc">wooAttributeForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooAttributeForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooAttributeForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooAttribute</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;has_archives&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooCategoryForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooCategoryForm">[docs]</a><span class="k">class</span> <span class="nc">wooCategoryForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="s1">&#39;image_id&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;table class=&#39;table table-striped&#39;&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Product Count&lt;/th&gt;&lt;td&gt;{{ object.count }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;WordPress ID&lt;/th&gt;&lt;td&gt;{{ object.wid }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span>
+                <span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Image Creation Date&lt;/th&gt;&lt;td&gt;{{ object.image_date_created }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Product Category&lt;/h4&gt;</span>
+<span class="s2">                             &lt;p&gt;&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="wooCategoryForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooCategoryForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooCategory</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;parent&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;image_id&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;image_date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">]</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;image_date_created&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooImageForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooImageForm">[docs]</a><span class="k">class</span> <span class="nc">wooImageForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooImageForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooImageForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooImage</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooProductForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooProductForm">[docs]</a><span class="k">class</span> <span class="nc">wooProductForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooProductForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooProductForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;permalink&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;reviews_allowed&#39;</span><span class="p">,</span> <span class="s1">&#39;woostore&#39;</span><span class="p">,</span> <span class="s1">&#39;shipping_class&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;images&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooShippingClassForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooShippingClassForm">[docs]</a><span class="k">class</span> <span class="nc">wooShippingClassForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;table class=&#39;table table-striped&#39;&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Product Count&lt;/th&gt;&lt;td&gt;{{ object.count }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;WordPress ID&lt;/th&gt;&lt;td&gt;{{ object.wid }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Shipping Classes&lt;/h4&gt;</span>
+<span class="s2">                             &lt;p&gt;&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="wooShippingClassForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooShippingClassForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooShippingClass</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooTagForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooTagForm">[docs]</a><span class="k">class</span> <span class="nc">wooTagForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooTagForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooTagForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooTag</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooTermForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooTermForm">[docs]</a><span class="k">class</span> <span class="nc">wooTermForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooTermForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooTermForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooTerm</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;menu_order&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;wr_tooltip&#39;</span><span class="p">,</span> <span class="s1">&#39;wr_label&#39;</span><span class="p">,</span> <span class="s1">&#39;productattribute&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wooVariantForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooVariantForm">[docs]</a><span class="k">class</span> <span class="nc">wooVariantForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wooVariantForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wooVariantForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;permalink&#39;</span><span class="p">,</span> <span class="s1">&#39;sku&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;shipping_class&#39;</span><span class="p">,</span> <span class="s1">&#39;images&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wpMediaForm">[docs]</a><span class="k">class</span> <span class="nc">wpMediaForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wpMediaForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wpMediaForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMedia</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;alt_text&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;comment_status&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;source_url&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="s1">&#39;ping_status&#39;</span><span class="p">,</span> <span class="s1">&#39;caption&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;modified&#39;</span><span class="p">,</span> <span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;modified_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;woostore&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaSizeForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wpMediaSizeForm">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSizeForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="wpMediaSizeForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.wpMediaSizeForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMediaSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;source_url&#39;</span><span class="p">,</span> <span class="s1">&#39;wpmedia&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCountryForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCountryForm">[docs]</a><span class="k">class</span> <span class="nc">pfCountryForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfCountryForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCountryForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCountry</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfStateForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfStateForm">[docs]</a><span class="k">class</span> <span class="nc">pfStateForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfStateForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfStateForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfState</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcountry&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncProductForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncProductForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncProductForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfSyncProductForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncProductForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span> <span class="s1">&#39;variants&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">,</span> <span class="s1">&#39;pfstore&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncVariantForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncVariantForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncVariantForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfSyncVariantForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncVariantForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsyncproduct&#39;</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncItemOptionForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncItemOptionForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncItemOptionForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfSyncItemOptionForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfSyncItemOptionForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncItemOption</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsyncvariant&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogColorForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogColorForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogColorForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="n">generateColorSwatch</span><span class="p">(</span><span class="s1">&#39;get_hex_code_clean&#39;</span><span class="p">)),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;hex_code&#39;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span><span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Catalog Colours&lt;/h4&gt;</span>
+<span class="s2">                     &lt;p&gt;Lorem.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogColorForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogColorForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogColor</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;hex_code&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogSizeForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogSizeForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogSizeForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;sort_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_order&#39;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Catalog Sizes&lt;/h4&gt;</span>
+<span class="s2">                     &lt;p&gt;Lorem.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogSizeForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogSizeForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_order&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileSpecForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogFileSpecForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileSpecForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;note&quot;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-5&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;width_in&quot;</span><span class="p">,</span> <span class="s2">&quot;height_in&quot;</span><span class="p">,</span> <span class="s2">&quot;ratio&quot;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-2&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="s2">&quot;colorsystem&quot;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-2&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;File Specs&lt;/h4&gt;</span>
+<span class="s2">                     &lt;p&gt;Complete either the pixel or Imperial measurements. We&#39;ll figure out the other for you (at 300dpi).&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogFileSpecForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogFileSpecForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileSpec</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;note&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;width_in&#39;</span><span class="p">,</span> <span class="s1">&#39;height_in&#39;</span><span class="p">,</span> <span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="s1">&#39;colorsystem&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogFileTypeForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfCatalogFileTypeForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogFileTypeForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogOptionTypeForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfCatalogOptionTypeForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogOptionTypeForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogOptionType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;additional_price&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogProductForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogProductForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">Thumbnail</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span>
+            <span class="p">),</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;table class=&#39;table table-striped&#39;&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Brand&lt;/th&gt;&lt;td&gt;{{ object.brand }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;td&gt;{{ object.ptype }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span>
+                    <span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Variants&lt;/th&gt;&lt;td&gt;{{ object.variant_count }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Printful ID&lt;/th&gt;&lt;td&gt;{{ object.pid }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span>
+                    <span class="s2">&quot;&lt;tr&gt;&lt;th&gt;Active?&lt;/th&gt;&lt;td&gt;{{ object.is_active }}&lt;td&gt;&lt;/tr&gt;&quot;</span><span class="p">),</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">),</span>
+                <span class="c1"># TODO Add colors and sizes display here.</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-5&quot;</span><span class="p">),</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Catalog Products&lt;/h4&gt;</span>
+<span class="s2">                         &lt;p&gt;&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogProductForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogProductForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;ptype&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;variant_count&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogVariantForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogVariantForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfCatalogVariantForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfCatalogVariantForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;in_stock&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsize&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="pfPrintFileForm"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfPrintFileForm">[docs]</a><span class="k">class</span> <span class="nc">pfPrintFileForm</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">()</span>
+
+<div class="viewcode-block" id="pfPrintFileForm.Meta"><a class="viewcode-back" href="../../modules/forms.html#business.admin.pfPrintFileForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfPrintFile</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;dpi&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;thumbnail_url&#39;</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">,</span> <span class="s1">&#39;pfstore&#39;</span><span class="p">]</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

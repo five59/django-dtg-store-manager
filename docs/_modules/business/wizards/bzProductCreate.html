@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.wizards.bzProductCreate &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.wizards.bzProductCreate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.wizards.bzProductCreate</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="k">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.helper</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.layout</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.bootstrap</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="k">import</span> <span class="n">get_user_model</span>
+<span class="kn">from</span> <span class="nn">business.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.forms</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_unforms.layout</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">formtools.wizard.views</span> <span class="k">import</span> <span class="n">SessionWizardView</span>
+
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="k">import</span> <span class="n">reverse</span><span class="p">,</span> <span class="n">reverse_lazy</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">redirect</span>
+
+
+<div class="viewcode-block" id="bzProductFormWizard_step1"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step1">[docs]</a><span class="k">class</span> <span class="nc">bzProductFormWizard_step1</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    bzProductFormWizard. Step 1.</span>
+<span class="sd">    Collects the name, code (SKU base), design and Vendor Product from the user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Step 1&lt;/h4&gt;</span>
+<span class="s2">                &lt;p&gt;Lorem.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;code&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;name&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-3&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Fieldset</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;bzDesign&quot;</span><span class="p">,</span> <span class="s2">&quot;pfProduct&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductFormWizard_step1.Meta"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step1.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzDesign&#39;</span><span class="p">,</span> <span class="s1">&#39;pfProduct&#39;</span><span class="p">,</span> <span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductFormWizard_step2"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step2">[docs]</a><span class="k">class</span> <span class="nc">bzProductFormWizard_step2</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    bzProductFormWizard. Step 1.</span>
+<span class="sd">    Assign colors and sizes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4&gt;Step 2: Variant Matrix&lt;/h4&gt;</span>
+<span class="s2">                &lt;p&gt;You are creating a {{ wizard.form.pfProduct }}. Now, choose the combination of colors and sizes that you&#39;d like to offer for this product.&lt;/p&gt;&quot;&quot;&quot;</span><span class="p">),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;colors&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s1">&#39;chosen&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+        <span class="n">Div</span><span class="p">(</span>
+            <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;sizes&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s1">&#39;chosen&#39;</span><span class="p">,),</span>
+            <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductFormWizard_step2.Meta"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step2.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;colors&#39;</span><span class="p">,</span> <span class="s1">&#39;sizes&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductFormWizard_step3"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step3">[docs]</a><span class="k">class</span> <span class="nc">bzProductFormWizard_step3</span><span class="p">(</span><span class="n">businessCommonForm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    bzProductFormWizard. Step 3.</span>
+<span class="sd">    Confirms bzRenderings &amp; Publish</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">form_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;Step 3&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductFormWizard_step3.Meta"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard_step3.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductFormWizard"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard">[docs]</a><span class="k">class</span> <span class="nc">bzProductFormWizard</span><span class="p">(</span><span class="n">SessionWizardView</span><span class="p">):</span>
+    <span class="n">form_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">bzProductFormWizard_step1</span><span class="p">,</span>
+        <span class="n">bzProductFormWizard_step2</span><span class="p">,</span>
+        <span class="n">bzProductFormWizard_step3</span>
+    <span class="p">]</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+
+<div class="viewcode-block" id="bzProductFormWizard.get_context_data"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">bzProductFormWizard</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;create&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;product&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Product Catalog&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Product&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sunglasses&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Back to List&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;wizardstepcount&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_product_home&#39;</span><span class="p">)</span>
+        <span class="c1"># if self.steps.step1 == 1:</span>
+        <span class="c1">#     self.fields[&#39;sizes&#39;] =</span>
+        <span class="c1">#                 self.fields[&#39;employee&#39;].queryset = Employee.objects.filter(project_id=self.instance.project_id)</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">step1</span><span class="p">:</span>
+            <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list_save_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Next&quot;</span>
+
+        <span class="k">return</span> <span class="n">context</span></div>
+
+<div class="viewcode-block" id="bzProductFormWizard.get_form_initial"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard.get_form_initial">[docs]</a>    <span class="k">def</span> <span class="nf">get_form_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">initial</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>  <span class="c1"># (Step 2 - zero based)</span>
+            <span class="c1"># pfCP = self.storage.request[&#39;0-pfProduct&#39;]</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_step_data</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">pfCP</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;0-pfProduct&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pfCP</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pfCP</span><span class="p">)</span>
+            <span class="n">initial</span><span class="p">[</span><span class="s1">&#39;colors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span><span class="o">.</span><span class="n">get_avail_colors</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+            <span class="n">initial</span><span class="p">[</span><span class="s1">&#39;sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span><span class="o">.</span><span class="n">get_avail_sizes</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">initial</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="bzProductFormWizard.process_step"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard.process_step">[docs]</a>    <span class="k">def</span> <span class="nf">process_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">step1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">pass</span>
+            <span class="c1"># if(form[&#39;pfProduct&#39;]):</span>
+            <span class="c1">#     print(&quot;YEP&quot;)</span>
+            <span class="c1"># print(type(form))</span>
+            <span class="c1"># print(pfCatalogProduct.get_avail_sizes(form[&#39;pfProduct&#39;]))</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">step1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">step1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_form_step_data</span><span class="p">(</span><span class="n">form</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="bzProductFormWizard.done"><a class="viewcode-back" href="../../../modules/wizards/bzProductCreate.html#business.wizards.bzProductCreate.bzProductFormWizard.done">[docs]</a>    <span class="k">def</span> <span class="nf">done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form_list</span><span class="p">,</span> <span class="n">form_dict</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># data = [form.cleaned_data for form in form_list],</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="n">bzProduct</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">form</span> <span class="ow">in</span> <span class="n">form_list</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">instance</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span>
+                                 <span class="s1">&#39;Created new product: </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span>
+                <span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span> <span class="s1">&#39;An error occurred when trying to create a new product. </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;business:app_product_home&#39;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tables &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module Documentation" href="index.html"/>
+        <link rel="next" title="Tests" href="tests.html"/>
+        <link rel="prev" title="Serializers" href="serializers.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module Documentation</a> &raquo;</li>
+        
+      <li>Tables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/tables.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.tables">
+<span id="tables"></span><h1>Tables<a class="headerlink" href="#module-business.tables" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.tables.bzBrandTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzBrandTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzBrandTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzBrandTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzBrandTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_store_brand_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzBrandTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzBrandTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzBrandTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzBrandTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzBrandTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzBrandTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzBrandTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'vendor', 'outlet', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzBrandTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzBrandTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzBrandTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzBrandTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'vendor', 'outlet', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzBrandTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzBrandTable.base_columns">
+<code class="descclassname">bzBrandTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('vendor', &lt;django_tables2.columns.base.Column object&gt;), ('outlet', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.bzBrandTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeDesignTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzCreativeDesignTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzCreativeDesignTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeDesignTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_creative_design_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeDesignTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzCreativeDesignTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.Meta.empty_text">
+<code class="descname">empty_text</code><em class="property"> = 'No Designs Found.'</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta.empty_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'product_count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeDesign</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'product_count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeDesignTable.base_columns">
+<code class="descclassname">bzCreativeDesignTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('product_count', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.bzCreativeDesignTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeLayoutTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzCreativeLayoutTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzCreativeLayoutTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeLayoutTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_creative_layout_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeLayoutTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzCreativeLayoutTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.Meta.empty_text">
+<code class="descname">empty_text</code><em class="property"> = 'No Layouts Found.'</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta.empty_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'product_count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeLayout</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'product_count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeLayoutTable.base_columns">
+<code class="descclassname">bzCreativeLayoutTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('product_count', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.bzCreativeLayoutTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeRenderingTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzCreativeRenderingTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzCreativeRenderingTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeRenderingTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeRenderingTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_creative_rendering_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzCreativeRenderingTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzCreativeRenderingTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzCreativeRenderingTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzCreativeRenderingTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzCreativeRenderingTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzCreativeRenderingTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeRenderingTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzCreativeRenderingTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeRendering</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzCreativeRenderingTable.base_columns">
+<code class="descclassname">bzCreativeRenderingTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('bzcreativedesign', &lt;django_tables2.columns.base.Column object&gt;), ('bzcreativelayout', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.bzCreativeRenderingTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzProductTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzProductTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzProductTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzProductTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzProductTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:business_bzbrand_detail\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n       &lt;a href=&quot;{% url \'business:business_bzbrand_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzProductTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzProductTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzProductTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzProductTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzProductTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzProductTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzProductTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzProductTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzProductTable.base_columns">
+<code class="descclassname">bzProductTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('code', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('status', &lt;django_tables2.columns.base.Column object&gt;), ('bzDesign', &lt;django_tables2.columns.base.Column object&gt;), ('bzLayout', &lt;django_tables2.columns.base.Column object&gt;), ('pfProduct', &lt;django_tables2.columns.base.Column object&gt;), ('wooProduct', &lt;django_tables2.columns.base.Column object&gt;), ('pfSyncProduct', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('variant_count', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.bzProductTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzProductVariantTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">bzProductVariantTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#bzProductVariantTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzProductVariantTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzProductVariantTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:business_bzvariant_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.bzProductVariantTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.bzProductVariantTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#bzProductVariantTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.bzProductVariantTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.bzProductVariantTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.bzProductVariantTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzProductVariantTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.bzProductVariantTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProductVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.bzProductVariantTable.base_columns">
+<code class="descclassname">bzProductVariantTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('code', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('bzproduct', &lt;django_tables2.columns.base.Column object&gt;), ('pfcatalogvariant', &lt;django_tables2.columns.base.Column object&gt;), ('pfcolor', &lt;django_tables2.columns.base.Column object&gt;), ('pfsize', &lt;django_tables2.columns.base.Column object&gt;), ('price', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.bzProductVariantTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.commonBusinessTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">commonBusinessTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#commonBusinessTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.commonBusinessTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.commonBusinessTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:[M]_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.commonBusinessTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.commonBusinessTable.PRIMARY_BUTTON_ATTRS">
+<code class="descname">PRIMARY_BUTTON_ATTRS</code><em class="property"> = {'a': {'class': 'btn btn-primary btn-xs'}}</em><a class="headerlink" href="#business.tables.commonBusinessTable.PRIMARY_BUTTON_ATTRS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.commonBusinessTable.base_columns">
+<code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.commonBusinessTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tables.commonBusinessTable.render_date_added">
+<code class="descname">render_date_added</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#commonBusinessTable.render_date_added"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.commonBusinessTable.render_date_added" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tables.commonBusinessTable.render_date_updated">
+<code class="descname">render_date_updated</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#commonBusinessTable.render_date_updated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.commonBusinessTable.render_date_updated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogColorTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogColorTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogColorTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogColorTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_color_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfCatalogColorTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogColorTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogColorTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogColorTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogColorTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'label_clean', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogColorTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogColorTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'label_clean', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogColorTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogColorTable.base_columns">
+<code class="descclassname">pfCatalogColorTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('label_clean', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogColorTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogFileSpecTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogFileSpecTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogFileSpecTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_filespec_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogFileSpecTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogFileSpecTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('name', 'width_in', 'height_in', 'width', 'height', 'ratio', 'colorsystem', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('name', 'width_in', 'height_in', 'width', 'height', 'ratio', 'colorsystem', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileSpecTable.base_columns">
+<code class="descclassname">pfCatalogFileSpecTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('name', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('width_in', &lt;django_tables2.columns.base.Column object&gt;), ('height_in', &lt;django_tables2.columns.base.Column object&gt;), ('width', &lt;django_tables2.columns.base.Column object&gt;), ('height', &lt;django_tables2.columns.base.Column object&gt;), ('ratio', &lt;django_tables2.columns.base.Column object&gt;), ('colorsystem', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogFileSpecTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogFileTypeTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogFileTypeTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogFileTypeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogFileTypeTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfCatalogFileTypeTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogFileTypeTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogFileTypeTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogFileTypeTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogFileTypeTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileTypeTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogFileTypeTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogFileTypeTable.base_columns">
+<code class="descclassname">pfCatalogFileTypeTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('title', &lt;django_tables2.columns.base.Column object&gt;), ('additional_price', &lt;django_tables2.columns.base.Column object&gt;), ('pfcatalogvariant', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogFileTypeTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogOptionTypeTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogOptionTypeTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogOptionTypeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogOptionTypeTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfCatalogOptionTypeTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogOptionTypeTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogOptionTypeTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogOptionTypeTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogOptionTypeTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogOptionTypeTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogOptionTypeTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogOptionTypeTable.base_columns">
+<code class="descclassname">pfCatalogOptionTypeTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('title', &lt;django_tables2.columns.base.Column object&gt;), ('type', &lt;django_tables2.columns.base.Column object&gt;), ('additional_price', &lt;django_tables2.columns.base.Column object&gt;), ('pfcatalogvariant', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogOptionTypeTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogProductTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogProductTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogProductTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogProductTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_cprod_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogProductTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogProductTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.Meta.exclude">
+<code class="descname">exclude</code><em class="property"> = ('date_added', 'date_updated')</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pid', 'brand', 'model', 'type', 'is_active', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('pid', 'brand', 'model', 'type', 'is_active', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.base_columns">
+<code class="descclassname">pfCatalogProductTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('pid', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('brand', &lt;django_tables2.columns.base.Column object&gt;), ('model', &lt;django_tables2.columns.base.Column object&gt;), ('type', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogProductTable.local">
+<code class="descclassname">pfCatalogProductTable.</code><code class="descname">local</code><em class="property"> = {'td': {'class': 'text-center'}}</em><a class="headerlink" href="#business.tables.pfCatalogProductTable.local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogSizeTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogSizeTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogSizeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogSizeTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_size_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfCatalogSizeTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogSizeTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogSizeTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogSizeTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogSizeTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'label_clean', 'sort_group', 'sort_order', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogSizeTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogSizeTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'label_clean', 'sort_group', 'sort_order', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfCatalogSizeTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogSizeTable.base_columns">
+<code class="descclassname">pfCatalogSizeTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('label_clean', &lt;django_tables2.columns.base.Column object&gt;), ('sort_group', &lt;django_tables2.columns.base.Column object&gt;), ('sort_order', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogSizeTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCatalogVariantTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCatalogVariantTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCatalogVariantTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogVariantTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfCatalogVariantTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCatalogVariantTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCatalogVariantTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCatalogVariantTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCatalogVariantTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogVariantTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCatalogVariantTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCatalogVariantTable.base_columns">
+<code class="descclassname">pfCatalogVariantTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('image', &lt;django_tables2.columns.base.Column object&gt;), ('price', &lt;django_tables2.columns.base.Column object&gt;), ('in_stock', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('weight', &lt;django_tables2.columns.base.Column object&gt;), ('pfsize', &lt;django_tables2.columns.base.Column object&gt;), ('pfcolor', &lt;django_tables2.columns.base.Column object&gt;), ('pfcatalogproduct', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfCatalogVariantTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCountryTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfCountryTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfCountryTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCountryTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCountryTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:business_pfcountry_detail\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n       &lt;a href=&quot;{% url \'business:business_pfcountry_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfCountryTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfCountryTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfCountryTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfCountryTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfCountryTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfCountryTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCountryTable.Meta.exclude">
+<code class="descname">exclude</code><em class="property"> = ('date_added', 'date_updated', 'id')</em><a class="headerlink" href="#business.tables.pfCountryTable.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCountryTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfCountryTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountry</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCountryTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('actions', 'code', 'name', 'num_states')</em><a class="headerlink" href="#business.tables.pfCountryTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfCountryTable.base_columns">
+<code class="descclassname">pfCountryTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('code', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('num_states', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfCountryTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfPrintFileTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfPrintFileTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfPrintFileTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfPrintFileTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfPrintFileTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfPrintFileTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfPrintFileTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfPrintFileTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfPrintFileTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfPrintFileTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfPrintFileTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfPrintFile</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfPrintFileTable.base_columns">
+<code class="descclassname">pfPrintFileTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('type', &lt;django_tables2.columns.base.Column object&gt;), ('hash', &lt;django_tables2.columns.base.Column object&gt;), ('url', &lt;django_tables2.columns.base.Column object&gt;), ('filename', &lt;django_tables2.columns.base.Column object&gt;), ('mime_type', &lt;django_tables2.columns.base.Column object&gt;), ('size', &lt;django_tables2.columns.base.Column object&gt;), ('width', &lt;django_tables2.columns.base.Column object&gt;), ('height', &lt;django_tables2.columns.base.Column object&gt;), ('dpi', &lt;django_tables2.columns.base.Column object&gt;), ('status', &lt;django_tables2.columns.base.Column object&gt;), ('created', &lt;django_tables2.columns.base.Column object&gt;), ('thumbnail_url', &lt;django_tables2.columns.base.Column object&gt;), ('visible', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('pfstore', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfPrintFileTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfStateTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfStateTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfStateTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfStateTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfStateTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:business_pfstate_detail\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n       &lt;a href=&quot;{% url \'business:business_pfstate_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfStateTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfStateTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfStateTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfStateTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfStateTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfStateTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStateTable.Meta.exclude">
+<code class="descname">exclude</code><em class="property"> = ('date_added', 'date_updated', 'id')</em><a class="headerlink" href="#business.tables.pfStateTable.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStateTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfStateTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfState</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStateTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('actions', 'code', 'name', 'pfcountry')</em><a class="headerlink" href="#business.tables.pfStateTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStateTable.base_columns">
+<code class="descclassname">pfStateTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('code', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('pfcountry', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfStateTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfStoreTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfStoreTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfStoreTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfStoreTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfStoreTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_store_pf_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.pfStoreTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfStoreTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfStoreTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfStoreTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfStoreTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfStoreTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStoreTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name', 'has_auth', 'pid', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfStoreTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStoreTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfStoreTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStoreTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'name', 'has_auth', 'pid', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.pfStoreTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfStoreTable.base_columns">
+<code class="descclassname">pfStoreTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('has_auth', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.pfStoreTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfSyncItemOptionTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfSyncItemOptionTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfSyncItemOptionTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncItemOptionTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfSyncItemOptionTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfSyncItemOptionTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncItemOptionTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfSyncItemOptionTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfSyncItemOptionTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncItemOptionTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfSyncItemOptionTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncItemOption</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncItemOptionTable.base_columns">
+<code class="descclassname">pfSyncItemOptionTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('value', &lt;django_tables2.columns.base.Column object&gt;), ('pfsyncvariant', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfSyncItemOptionTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfSyncProductTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfSyncProductTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfSyncProductTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncProductTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfSyncProductTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfSyncProductTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncProductTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfSyncProductTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfSyncProductTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncProductTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfSyncProductTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncProductTable.base_columns">
+<code class="descclassname">pfSyncProductTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('external_id', &lt;django_tables2.columns.base.Column object&gt;), ('variants', &lt;django_tables2.columns.base.Column object&gt;), ('synced', &lt;django_tables2.columns.base.Column object&gt;), ('pfstore', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfSyncProductTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.pfSyncVariantTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">pfSyncVariantTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#pfSyncVariantTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncVariantTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.pfSyncVariantTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#pfSyncVariantTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.pfSyncVariantTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.pfSyncVariantTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.pfSyncVariantTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncVariantTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.pfSyncVariantTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.pfSyncVariantTable.base_columns">
+<code class="descclassname">pfSyncVariantTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('pid', &lt;django_tables2.columns.base.Column object&gt;), ('external_id', &lt;django_tables2.columns.base.Column object&gt;), ('synced', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('pfsyncproduct', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.pfSyncVariantTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooAttributeTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooAttributeTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooAttributeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooAttributeTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wooAttributeTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooAttributeTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooAttributeTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooAttributeTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooAttributeTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooAttributeTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooAttributeTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooAttributeTable.base_columns">
+<code class="descclassname">wooAttributeTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('slug', &lt;django_tables2.columns.base.Column object&gt;), ('type', &lt;django_tables2.columns.base.Column object&gt;), ('has_archives', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('store', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wooAttributeTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooCategoryTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooCategoryTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooCategoryTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooCategoryTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooCategoryTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_category_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.wooCategoryTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooCategoryTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooCategoryTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooCategoryTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooCategoryTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooCategoryTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooCategoryTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('name', 'wid', 'is_active', 'display', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooCategoryTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooCategoryTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooCategoryTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooCategoryTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('name', 'wid', 'is_active', 'display', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooCategoryTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooCategoryTable.base_columns">
+<code class="descclassname">wooCategoryTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('name', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.base.Column object&gt;), ('display', &lt;django_tables2.columns.base.Column object&gt;), ('count', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.wooCategoryTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooImageTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooImageTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooImageTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooImageTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wooImageTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooImageTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooImageTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooImageTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooImageTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooImageTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooImageTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooImage</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooImageTable.base_columns">
+<code class="descclassname">wooImageTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('date_created', &lt;django_tables2.columns.datecolumn.DateColumn object&gt;), ('alt', &lt;django_tables2.columns.base.Column object&gt;), ('position', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wooImageTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooProductTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooProductTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooProductTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooProductTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wooProductTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooProductTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooProductTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooProductTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooProductTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooProductTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooProductTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooProductTable.base_columns">
+<code class="descclassname">wooProductTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('slug', &lt;django_tables2.columns.base.Column object&gt;), ('permalink', &lt;django_tables2.columns.urlcolumn.URLColumn object&gt;), ('date_created', &lt;django_tables2.columns.datecolumn.DateColumn object&gt;), ('dimension_length', &lt;django_tables2.columns.base.Column object&gt;), ('dimension_width', &lt;django_tables2.columns.base.Column object&gt;), ('dimension_height', &lt;django_tables2.columns.base.Column object&gt;), ('weight', &lt;django_tables2.columns.base.Column object&gt;), ('reviews_allowed', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('woostore', &lt;django_tables2.columns.base.Column object&gt;), ('shipping_class', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wooProductTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooShippingClassTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooShippingClassTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooShippingClassTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooShippingClassTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_shipping_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.wooShippingClassTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooShippingClassTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooShippingClassTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooShippingClassTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooShippingClassTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('name', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooShippingClassTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooShippingClassTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('name', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooShippingClassTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooShippingClassTable.base_columns">
+<code class="descclassname">wooShippingClassTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('name', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('count', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.wooShippingClassTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooStoreTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooStoreTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooStoreTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooStoreTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooStoreTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_store_wp_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.wooStoreTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooStoreTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooStoreTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooStoreTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooStoreTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooStoreTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooStoreTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'base_url', 'timezone', 'verify_ssl', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooStoreTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooStoreTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooStoreTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooStoreTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('code', 'base_url', 'timezone', 'verify_ssl', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooStoreTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooStoreTable.base_columns">
+<code class="descclassname">wooStoreTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;), ('base_url', &lt;django_tables2.columns.base.Column object&gt;), ('timezone', &lt;django_tables2.columns.base.Column object&gt;), ('verify_ssl', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;)])</em><a class="headerlink" href="#business.tables.wooStoreTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooTagTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooTagTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooTagTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooTagTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooTagTable.ACTION_TEMPLATE">
+<code class="descname">ACTION_TEMPLATE</code><em class="property"> = '\n       &lt;a href=&quot;{% url \'business:app_list_tag_update\' record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;\n    '</em><a class="headerlink" href="#business.tables.wooTagTable.ACTION_TEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooTagTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooTagTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooTagTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooTagTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooTagTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTagTable.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('name', 'wid', 'is_active', 'store', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooTagTable.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTagTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooTagTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTagTable.Meta.sequence">
+<code class="descname">sequence</code><em class="property"> = ('name', 'wid', 'is_active', 'store', 'count', 'date_added', 'date_updated', 'actions')</em><a class="headerlink" href="#business.tables.wooTagTable.Meta.sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTagTable.base_columns">
+<code class="descclassname">wooTagTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('name', &lt;django_tables2.columns.base.Column object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.base.Column object&gt;), ('store', &lt;django_tables2.columns.base.Column object&gt;), ('count', &lt;django_tables2.columns.base.Column object&gt;), ('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('actions', &lt;django_tables2.columns.templatecolumn.TemplateColumn object&gt;), ('code', &lt;django_tables2.columns.linkcolumn.LinkColumn object&gt;)])</em><a class="headerlink" href="#business.tables.wooTagTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooTermTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooTermTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooTermTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooTermTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wooTermTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooTermTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooTermTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooTermTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooTermTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTermTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooTermTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTerm</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooTermTable.base_columns">
+<code class="descclassname">wooTermTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('slug', &lt;django_tables2.columns.base.Column object&gt;), ('menu_order', &lt;django_tables2.columns.base.Column object&gt;), ('count', &lt;django_tables2.columns.base.Column object&gt;), ('wr_tooltip', &lt;django_tables2.columns.base.Column object&gt;), ('wr_label', &lt;django_tables2.columns.base.Column object&gt;), ('productattribute', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wooTermTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wooVariantTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wooVariantTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wooVariantTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooVariantTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wooVariantTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wooVariantTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wooVariantTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wooVariantTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wooVariantTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooVariantTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wooVariantTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wooVariantTable.base_columns">
+<code class="descclassname">wooVariantTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('date_created', &lt;django_tables2.columns.datecolumn.DateColumn object&gt;), ('permalink', &lt;django_tables2.columns.urlcolumn.URLColumn object&gt;), ('sku', &lt;django_tables2.columns.base.Column object&gt;), ('price', &lt;django_tables2.columns.base.Column object&gt;), ('dimension_length', &lt;django_tables2.columns.base.Column object&gt;), ('dimension_width', &lt;django_tables2.columns.base.Column object&gt;), ('dimension_height', &lt;django_tables2.columns.base.Column object&gt;), ('weight', &lt;django_tables2.columns.base.Column object&gt;), ('shipping_class', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wooVariantTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wpMediaSizeTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wpMediaSizeTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wpMediaSizeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wpMediaSizeTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wpMediaSizeTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wpMediaSizeTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wpMediaSizeTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wpMediaSizeTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wpMediaSizeTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wpMediaSizeTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wpMediaSizeTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMediaSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wpMediaSizeTable.base_columns">
+<code class="descclassname">wpMediaSizeTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('name', &lt;django_tables2.columns.base.Column object&gt;), ('file', &lt;django_tables2.columns.base.Column object&gt;), ('mime_type', &lt;django_tables2.columns.base.Column object&gt;), ('width', &lt;django_tables2.columns.base.Column object&gt;), ('height', &lt;django_tables2.columns.base.Column object&gt;), ('source_url', &lt;django_tables2.columns.urlcolumn.URLColumn object&gt;), ('wpmedia', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wpMediaSizeTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tables.wpMediaTable">
+<em class="property">class </em><code class="descclassname">business.tables.</code><code class="descname">wpMediaTable</code><span class="sig-paren">(</span><em>data</em>, <em>order_by=None</em>, <em>orderable=None</em>, <em>empty_text=None</em>, <em>exclude=None</em>, <em>attrs=None</em>, <em>row_attrs=None</em>, <em>pinned_row_attrs=None</em>, <em>sequence=None</em>, <em>prefix=None</em>, <em>order_by_field=None</em>, <em>page_field=None</em>, <em>per_page_field=None</em>, <em>template=None</em>, <em>default=None</em>, <em>request=None</em>, <em>show_header=None</em>, <em>show_footer=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tables.html#wpMediaTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wpMediaTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.tables.wpMediaTable.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/tables.html#wpMediaTable.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tables.wpMediaTable.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.tables.wpMediaTable.Meta.attrs">
+<code class="descname">attrs</code><em class="property"> = {'class': 'table table-striped table-hover'}</em><a class="headerlink" href="#business.tables.wpMediaTable.Meta.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wpMediaTable.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.tables.wpMediaTable.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMedia</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.tables.wpMediaTable.base_columns">
+<code class="descclassname">wpMediaTable.</code><code class="descname">base_columns</code><em class="property"> = OrderedDict([('date_added', &lt;django_tables2.columns.base.Column object&gt;), ('date_updated', &lt;django_tables2.columns.base.Column object&gt;), ('id', &lt;django_tables2.columns.base.Column object&gt;), ('is_active', &lt;django_tables2.columns.booleancolumn.BooleanColumn object&gt;), ('alt_text', &lt;django_tables2.columns.base.Column object&gt;), ('width', &lt;django_tables2.columns.base.Column object&gt;), ('height', &lt;django_tables2.columns.base.Column object&gt;), ('file', &lt;django_tables2.columns.base.Column object&gt;), ('author', &lt;django_tables2.columns.base.Column object&gt;), ('mime_type', &lt;django_tables2.columns.base.Column object&gt;), ('comment_status', &lt;django_tables2.columns.base.Column object&gt;), ('wid', &lt;django_tables2.columns.base.Column object&gt;), ('source_url', &lt;django_tables2.columns.urlcolumn.URLColumn object&gt;), ('template', &lt;django_tables2.columns.base.Column object&gt;), ('ping_status', &lt;django_tables2.columns.base.Column object&gt;), ('caption', &lt;django_tables2.columns.base.Column object&gt;), ('link', &lt;django_tables2.columns.urlcolumn.URLColumn object&gt;), ('slug', &lt;django_tables2.columns.base.Column object&gt;), ('modified', &lt;django_tables2.columns.datetimecolumn.DateTimeColumn object&gt;), ('guid', &lt;django_tables2.columns.base.Column object&gt;), ('description', &lt;django_tables2.columns.base.Column object&gt;), ('modified_gmt', &lt;django_tables2.columns.datetimecolumn.DateTimeColumn object&gt;), ('title', &lt;django_tables2.columns.base.Column object&gt;), ('date_gmt', &lt;django_tables2.columns.datetimecolumn.DateTimeColumn object&gt;), ('type', &lt;django_tables2.columns.base.Column object&gt;), ('woostore', &lt;django_tables2.columns.base.Column object&gt;)])</em><a class="headerlink" href="#business.tables.wpMediaTable.base_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tests.html" class="btn btn-neutral float-right" title="Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="serializers.html" class="btn btn-neutral" title="Serializers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

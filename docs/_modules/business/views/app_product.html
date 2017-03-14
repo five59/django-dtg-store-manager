@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.views.app_product &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.views.app_product</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.views.app_product</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="k">import</span> <span class="n">reverse</span><span class="p">,</span> <span class="n">reverse_lazy</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="k">import</span> <span class="n">ObjectDoesNotExist</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">render</span>
+
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="k">import</span> <span class="n">View</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="k">import</span> <span class="n">TemplateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="k">import</span> <span class="n">DetailView</span><span class="p">,</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">CreateView</span>
+
+<span class="kn">from</span> <span class="nn">django_tables2</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.forms</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.tables</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.helper_backend</span> <span class="k">import</span> <span class="n">commonListView</span>
+
+
+<div class="viewcode-block" id="appProductCommonListView"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductCommonListView">[docs]</a><span class="k">class</span> <span class="nc">appProductCommonListView</span><span class="p">(</span><span class="n">commonListView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;product&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;Product Catalog&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;sunglasses&#39;</span></div>
+
+
+<div class="viewcode-block" id="appProductCommonUpdateView"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductCommonUpdateView">[docs]</a><span class="k">class</span> <span class="nc">appProductCommonUpdateView</span><span class="p">(</span><span class="n">commonUpdateView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;product&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;Product Catalog&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;sunglasses&#39;</span></div>
+
+
+<div class="viewcode-block" id="appProductCommonCreateView"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductCommonCreateView">[docs]</a><span class="k">class</span> <span class="nc">appProductCommonCreateView</span><span class="p">(</span><span class="n">commonCreateView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;product&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;Product Catalog&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;sunglasses&#39;</span></div>
+
+
+<div class="viewcode-block" id="appProductHome"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductHome">[docs]</a><span class="k">class</span> <span class="nc">appProductHome</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;app_product/home.html&quot;</span>
+
+<div class="viewcode-block" id="appProductHome.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductHome.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appProductHome</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;product&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Product Catalog&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bzProduct</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">context</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;product&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_product&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bzProduct</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                        <span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;product&#39;</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_product&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">except</span> <span class="n">ObjectDoesNotExist</span><span class="p">:</span>
+                <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_product&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="n">context</span><span class="p">[</span><span class="s1">&#39;table_variants&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bzProductVariantTable</span><span class="p">(</span>
+                <span class="n">bzProductVariant</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                    <span class="n">bzproduct</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_product&#39;</span><span class="p">])</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<div class="viewcode-block" id="appProductDetail"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductDetail">[docs]</a><span class="k">class</span> <span class="nc">appProductDetail</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;app_product/product_detail.html&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span></div>
+
+
+<span class="c1"># class appProductCreate(CreateView):</span>
+<span class="c1">#     model = bzProduct</span>
+<span class="c1">#     form_class = bzProductForm</span>
+<span class="c1">#     template_name = &quot;business/object_form.html&quot;</span>
+<span class="c1">#     success_url = reverse_lazy(&#39;business:app_product_home&#39;)</span>
+<span class="c1">#</span>
+<span class="c1">#     def get_context_data(self, **kwargs):</span>
+<span class="c1">#         context = super(appProductCreate,</span>
+<span class="c1">#                         self).get_context_data(**kwargs)</span>
+<span class="c1">#         context[&#39;mode&#39;] = &quot;create&quot;</span>
+<span class="c1">#         context[&#39;active_app&#39;] = &quot;product&quot;</span>
+<span class="c1">#         context[&#39;object_name&#39;] = &quot;Product&quot;</span>
+<span class="c1">#         context[&#39;active_apptitle&#39;] = &quot;Product Catalog&quot;</span>
+<span class="c1">#         context[&#39;action_list&#39;] = reverse(&#39;business:app_product_home&#39;)</span>
+<span class="c1">#         return context</span>
+
+
+<div class="viewcode-block" id="appProductUpdate"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductUpdate">[docs]</a><span class="k">class</span> <span class="nc">appProductUpdate</span><span class="p">(</span><span class="n">appProductCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">bzProductForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_product_home&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appProductUpdate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_product.html#business.views.app_product.appProductUpdate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appProductUpdate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;update&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;business:app_product_home&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

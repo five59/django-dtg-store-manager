@@ -1,0 +1,1604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Forms &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module Documentation" href="index.html"/>
+        <link rel="next" title="Backend Helpers" href="helper_backend.html"/>
+        <link rel="prev" title="Filters" href="filters.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module Documentation</a> &raquo;</li>
+        
+      <li>Forms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.forms">
+<span id="forms"></span><h1>Forms<a class="headerlink" href="#module-business.forms" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.forms.businessCommonForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">businessCommonForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#businessCommonForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.businessCommonForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.businessCommonForm.base_fields">
+<code class="descname">base_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.businessCommonForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.businessCommonForm.businessCommonLayoutHeader">
+<code class="descname">businessCommonLayoutHeader</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.businessCommonForm.businessCommonLayoutHeader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.businessCommonForm.declared_fields">
+<code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.businessCommonForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.businessCommonForm.form_layout">
+<code class="descname">form_layout</code><em class="property"> = None</em><a class="headerlink" href="#business.forms.businessCommonForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.businessCommonForm.media">
+<code class="descname">media</code><a class="headerlink" href="#business.forms.businessCommonForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzBrandForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzBrandForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzBrandForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzBrandForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzBrandForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzBrandForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzBrandForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzBrandForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'vendor', 'outlet']</em><a class="headerlink" href="#business.forms.bzBrandForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzBrandForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzBrandForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzBrandForm.base_fields">
+<code class="descclassname">bzBrandForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('vendor', &lt;django.forms.models.ModelChoiceField object&gt;), ('outlet', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzBrandForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzBrandForm.declared_fields">
+<code class="descclassname">bzBrandForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzBrandForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzBrandForm.form_layout">
+<code class="descclassname">bzBrandForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzBrandForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzBrandForm.media">
+<code class="descclassname">bzBrandForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzBrandForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzCreativeCollectionForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzCreativeCollectionForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzCreativeCollectionForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeCollectionForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzCreativeCollectionForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzCreativeCollectionForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'bzbrand']</em><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeCollection</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.base_fields">
+<code class="descclassname">bzCreativeCollectionForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('bzbrand', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.declared_fields">
+<code class="descclassname">bzCreativeCollectionForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.form_layout">
+<code class="descclassname">bzCreativeCollectionForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeCollectionForm.media">
+<code class="descclassname">bzCreativeCollectionForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzCreativeCollectionForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzCreativeDesignForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzCreativeDesignForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzCreativeDesignForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeDesignForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzCreativeDesignForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzCreativeDesignForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeDesignForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'bzcreativecollection']</em><a class="headerlink" href="#business.forms.bzCreativeDesignForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzCreativeDesignForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeDesign</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.base_fields">
+<code class="descclassname">bzCreativeDesignForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('bzcreativecollection', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzCreativeDesignForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.declared_fields">
+<code class="descclassname">bzCreativeDesignForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzCreativeDesignForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.form_layout">
+<code class="descclassname">bzCreativeDesignForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzCreativeDesignForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeDesignForm.media">
+<code class="descclassname">bzCreativeDesignForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzCreativeDesignForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzCreativeLayoutForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzCreativeLayoutForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzCreativeLayoutForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeLayoutForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzCreativeLayoutForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzCreativeLayoutForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'bzcreativecollection']</em><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeLayout</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.base_fields">
+<code class="descclassname">bzCreativeLayoutForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('bzcreativecollection', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.declared_fields">
+<code class="descclassname">bzCreativeLayoutForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.form_layout">
+<code class="descclassname">bzCreativeLayoutForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeLayoutForm.media">
+<code class="descclassname">bzCreativeLayoutForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzCreativeLayoutForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzCreativeRenderingForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzCreativeRenderingForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzCreativeRenderingForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeRenderingForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzCreativeRenderingForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzCreativeRenderingForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['bzcreativedesign', 'bzcreativelayout']</em><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeRendering</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.base_fields">
+<code class="descclassname">bzCreativeRenderingForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('bzcreativedesign', &lt;django.forms.models.ModelChoiceField object&gt;), ('bzcreativelayout', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.declared_fields">
+<code class="descclassname">bzCreativeRenderingForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.form_layout">
+<code class="descclassname">bzCreativeRenderingForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzCreativeRenderingForm.media">
+<code class="descclassname">bzCreativeRenderingForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzCreativeRenderingForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzProductForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzProductForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzProductForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzProductForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzProductForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzProductForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzProductForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzProductForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'bzDesign', 'pfProduct']</em><a class="headerlink" href="#business.forms.bzProductForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzProductForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductForm.base_fields">
+<code class="descclassname">bzProductForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('bzDesign', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfProduct', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.bzProductForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductForm.declared_fields">
+<code class="descclassname">bzProductForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzProductForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductForm.form_layout">
+<code class="descclassname">bzProductForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.bzProductForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductForm.media">
+<code class="descclassname">bzProductForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzProductForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.bzProductVariantForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">bzProductVariantForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#bzProductVariantForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzProductVariantForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.bzProductVariantForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#bzProductVariantForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.bzProductVariantForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.bzProductVariantForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'is_active', 'bzproduct', 'pfcatalogvariant', 'pfcolor', 'pfsize', 'price']</em><a class="headerlink" href="#business.forms.bzProductVariantForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductVariantForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.bzProductVariantForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProductVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductVariantForm.base_fields">
+<code class="descclassname">bzProductVariantForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('bzproduct', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfcatalogvariant', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfcolor', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfsize', &lt;django.forms.models.ModelChoiceField object&gt;), ('price', &lt;django.forms.fields.DecimalField object&gt;)])</em><a class="headerlink" href="#business.forms.bzProductVariantForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductVariantForm.declared_fields">
+<code class="descclassname">bzProductVariantForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.bzProductVariantForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.bzProductVariantForm.media">
+<code class="descclassname">bzProductVariantForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.bzProductVariantForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="business.forms.generateColorSwatch">
+<code class="descclassname">business.forms.</code><code class="descname">generateColorSwatch</code><span class="sig-paren">(</span><em>hex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#generateColorSwatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.generateColorSwatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.forms.generateTable">
+<code class="descclassname">business.forms.</code><code class="descname">generateTable</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#generateTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.generateTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogColorForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogColorForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogColorForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogColorForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogColorForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogColorForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogColorForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'label_clean', 'hex_code']</em><a class="headerlink" href="#business.forms.pfCatalogColorForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogColorForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColor</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.base_fields">
+<code class="descclassname">pfCatalogColorForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('label_clean', &lt;django.forms.fields.CharField object&gt;), ('hex_code', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogColorForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.declared_fields">
+<code class="descclassname">pfCatalogColorForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogColorForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.form_layout">
+<code class="descclassname">pfCatalogColorForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogColorForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogColorForm.media">
+<code class="descclassname">pfCatalogColorForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogColorForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogFileSpecForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogFileSpecForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogFileSpecForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogFileSpecForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogFileSpecForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['name', 'note', 'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem']</em><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.base_fields">
+<code class="descclassname">pfCatalogFileSpecForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('name', &lt;django.forms.fields.CharField object&gt;), ('note', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('width_in', &lt;django.forms.fields.DecimalField object&gt;), ('height_in', &lt;django.forms.fields.DecimalField object&gt;), ('ratio', &lt;django.forms.fields.CharField object&gt;), ('colorsystem', &lt;django.forms.fields.TypedChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.declared_fields">
+<code class="descclassname">pfCatalogFileSpecForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.form_layout">
+<code class="descclassname">pfCatalogFileSpecForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileSpecForm.media">
+<code class="descclassname">pfCatalogFileSpecForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogFileSpecForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogFileTypeForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogFileTypeForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogFileTypeForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogFileTypeForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogFileTypeForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'title', 'additional_price', 'pfcatalogvariant']</em><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.base_fields">
+<code class="descclassname">pfCatalogFileTypeForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('additional_price', &lt;django.forms.fields.CharField object&gt;), ('pfcatalogvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.declared_fields">
+<code class="descclassname">pfCatalogFileTypeForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.form_layout">
+<code class="descclassname">pfCatalogFileTypeForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogFileTypeForm.media">
+<code class="descclassname">pfCatalogFileTypeForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogFileTypeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogOptionTypeForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogOptionTypeForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogOptionTypeForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogOptionTypeForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogOptionTypeForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'title', 'type', 'additional_price', 'pfcatalogvariant']</em><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.base_fields">
+<code class="descclassname">pfCatalogOptionTypeForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('additional_price', &lt;django.forms.fields.CharField object&gt;), ('pfcatalogvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.declared_fields">
+<code class="descclassname">pfCatalogOptionTypeForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.form_layout">
+<code class="descclassname">pfCatalogOptionTypeForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogOptionTypeForm.media">
+<code class="descclassname">pfCatalogOptionTypeForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogOptionTypeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogProductForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogProductForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogProductForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogProductForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogProductForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogProductForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogProductForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.Meta.exclude">
+<code class="descname">exclude</code><em class="property"> = ['is_active', 'pid', 'ptype', 'brand', 'model', 'image', 'variant_count']</em><a class="headerlink" href="#business.forms.pfCatalogProductForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogProductForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.base_fields">
+<code class="descclassname">pfCatalogProductForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogProductForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.declared_fields">
+<code class="descclassname">pfCatalogProductForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogProductForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.form_layout">
+<code class="descclassname">pfCatalogProductForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogProductForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogProductForm.media">
+<code class="descclassname">pfCatalogProductForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogProductForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogSizeForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogSizeForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogSizeForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogSizeForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogSizeForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogSizeForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogSizeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'label_clean', 'sort_group', 'sort_order']</em><a class="headerlink" href="#business.forms.pfCatalogSizeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogSizeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.base_fields">
+<code class="descclassname">pfCatalogSizeForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('label_clean', &lt;django.forms.fields.CharField object&gt;), ('sort_group', &lt;django.forms.fields.CharField object&gt;), ('sort_order', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogSizeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.declared_fields">
+<code class="descclassname">pfCatalogSizeForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogSizeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.form_layout">
+<code class="descclassname">pfCatalogSizeForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogSizeForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogSizeForm.media">
+<code class="descclassname">pfCatalogSizeForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogSizeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCatalogVariantForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCatalogVariantForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCatalogVariantForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogVariantForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCatalogVariantForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCatalogVariantForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCatalogVariantForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'pid', 'name', 'image', 'price', 'in_stock', 'weight', 'pfsize']</em><a class="headerlink" href="#business.forms.pfCatalogVariantForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCatalogVariantForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.base_fields">
+<code class="descclassname">pfCatalogVariantForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('pid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('image', &lt;django.forms.fields.CharField object&gt;), ('price', &lt;django.forms.fields.CharField object&gt;), ('in_stock', &lt;django.forms.fields.BooleanField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('pfsize', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCatalogVariantForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.declared_fields">
+<code class="descclassname">pfCatalogVariantForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCatalogVariantForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.form_layout">
+<code class="descclassname">pfCatalogVariantForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCatalogVariantForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCatalogVariantForm.media">
+<code class="descclassname">pfCatalogVariantForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCatalogVariantForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfCountryForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfCountryForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfCountryForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCountryForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfCountryForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfCountryForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfCountryForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfCountryForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name']</em><a class="headerlink" href="#business.forms.pfCountryForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCountryForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfCountryForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountry</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCountryForm.base_fields">
+<code class="descclassname">pfCountryForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.forms.pfCountryForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCountryForm.declared_fields">
+<code class="descclassname">pfCountryForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfCountryForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCountryForm.form_layout">
+<code class="descclassname">pfCountryForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfCountryForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfCountryForm.media">
+<code class="descclassname">pfCountryForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfCountryForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfPrintFileForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfPrintFileForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfPrintFileForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfPrintFileForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfPrintFileForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfPrintFileForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfPrintFileForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'type', 'hash', 'url', 'filename', 'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible', 'pfstore']</em><a class="headerlink" href="#business.forms.pfPrintFileForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfPrintFileForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfPrintFile</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.base_fields">
+<code class="descclassname">pfPrintFileForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.IntegerField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('hash', &lt;django.forms.fields.CharField object&gt;), ('url', &lt;django.forms.fields.CharField object&gt;), ('filename', &lt;django.forms.fields.CharField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('size', &lt;django.forms.fields.IntegerField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('dpi', &lt;django.forms.fields.IntegerField object&gt;), ('status', &lt;django.forms.fields.CharField object&gt;), ('created', &lt;django.forms.fields.CharField object&gt;), ('thumbnail_url', &lt;django.forms.fields.CharField object&gt;), ('visible', &lt;django.forms.fields.BooleanField object&gt;), ('pfstore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfPrintFileForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.declared_fields">
+<code class="descclassname">pfPrintFileForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfPrintFileForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.form_layout">
+<code class="descclassname">pfPrintFileForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfPrintFileForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfPrintFileForm.media">
+<code class="descclassname">pfPrintFileForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfPrintFileForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfStateForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfStateForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfStateForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfStateForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfStateForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfStateForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfStateForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfStateForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'name', 'pfcountry']</em><a class="headerlink" href="#business.forms.pfStateForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStateForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfStateForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfState</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStateForm.base_fields">
+<code class="descclassname">pfStateForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('pfcountry', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfStateForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStateForm.declared_fields">
+<code class="descclassname">pfStateForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfStateForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStateForm.form_layout">
+<code class="descclassname">pfStateForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfStateForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStateForm.media">
+<code class="descclassname">pfStateForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfStateForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfStoreForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfStoreForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfStoreForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfStoreForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfStoreForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfStoreForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfStoreForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfStoreForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'key', 'packingslip_email', 'packingslip_phone', 'packingslip_message']</em><a class="headerlink" href="#business.forms.pfStoreForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStoreForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfStoreForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStoreForm.base_fields">
+<code class="descclassname">pfStoreForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('key', &lt;django.forms.fields.CharField object&gt;), ('packingslip_email', &lt;django.forms.fields.EmailField object&gt;), ('packingslip_phone', &lt;django.forms.fields.CharField object&gt;), ('packingslip_message', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.forms.pfStoreForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStoreForm.declared_fields">
+<code class="descclassname">pfStoreForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfStoreForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStoreForm.form_layout">
+<code class="descclassname">pfStoreForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfStoreForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfStoreForm.media">
+<code class="descclassname">pfStoreForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfStoreForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfSyncItemOptionForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfSyncItemOptionForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfSyncItemOptionForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncItemOptionForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfSyncItemOptionForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfSyncItemOptionForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'value', 'pfsyncvariant']</em><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncItemOption</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.base_fields">
+<code class="descclassname">pfSyncItemOptionForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('value', &lt;django.forms.fields.CharField object&gt;), ('pfsyncvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.declared_fields">
+<code class="descclassname">pfSyncItemOptionForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.form_layout">
+<code class="descclassname">pfSyncItemOptionForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncItemOptionForm.media">
+<code class="descclassname">pfSyncItemOptionForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfSyncItemOptionForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfSyncProductForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfSyncProductForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfSyncProductForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncProductForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfSyncProductForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfSyncProductForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncProductForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'external_id', 'variants', 'synced', 'pfstore']</em><a class="headerlink" href="#business.forms.pfSyncProductForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfSyncProductForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.base_fields">
+<code class="descclassname">pfSyncProductForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('external_id', &lt;django.forms.fields.CharField object&gt;), ('variants', &lt;django.forms.fields.IntegerField object&gt;), ('synced', &lt;django.forms.fields.IntegerField object&gt;), ('pfstore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfSyncProductForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.declared_fields">
+<code class="descclassname">pfSyncProductForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfSyncProductForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.form_layout">
+<code class="descclassname">pfSyncProductForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfSyncProductForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncProductForm.media">
+<code class="descclassname">pfSyncProductForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfSyncProductForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.pfSyncVariantForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">pfSyncVariantForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#pfSyncVariantForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncVariantForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.pfSyncVariantForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#pfSyncVariantForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.pfSyncVariantForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['pid', 'external_id', 'synced', 'pfsyncproduct', 'files']</em><a class="headerlink" href="#business.forms.pfSyncVariantForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.pfSyncVariantForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.base_fields">
+<code class="descclassname">pfSyncVariantForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('external_id', &lt;django.forms.fields.CharField object&gt;), ('synced', &lt;django.forms.fields.BooleanField object&gt;), ('pfsyncproduct', &lt;django.forms.models.ModelChoiceField object&gt;), ('files', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.pfSyncVariantForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.declared_fields">
+<code class="descclassname">pfSyncVariantForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.pfSyncVariantForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.form_layout">
+<code class="descclassname">pfSyncVariantForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.pfSyncVariantForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.pfSyncVariantForm.media">
+<code class="descclassname">pfSyncVariantForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.pfSyncVariantForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooAttributeForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooAttributeForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooAttributeForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooAttributeForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooAttributeForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooAttributeForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooAttributeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooAttributeForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'name', 'slug', 'type', 'has_archives', 'store']</em><a class="headerlink" href="#business.forms.wooAttributeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooAttributeForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooAttributeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooAttributeForm.base_fields">
+<code class="descclassname">wooAttributeForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('type', &lt;django.forms.fields.TypedChoiceField object&gt;), ('has_archives', &lt;django.forms.fields.BooleanField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooAttributeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooAttributeForm.declared_fields">
+<code class="descclassname">wooAttributeForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooAttributeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooAttributeForm.form_layout">
+<code class="descclassname">wooAttributeForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooAttributeForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooAttributeForm.media">
+<code class="descclassname">wooAttributeForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooAttributeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooCategoryForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooCategoryForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooCategoryForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooCategoryForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooCategoryForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooCategoryForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooCategoryForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooCategoryForm.Meta.exclude">
+<code class="descname">exclude</code><em class="property"> = ['count', 'wid', 'image_date_created']</em><a class="headerlink" href="#business.forms.wooCategoryForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'name', 'slug', 'parent', 'description', 'display', 'count', 'image_id', 'image_date_created', 'store']</em><a class="headerlink" href="#business.forms.wooCategoryForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooCategoryForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.base_fields">
+<code class="descclassname">wooCategoryForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('parent', &lt;django.forms.fields.IntegerField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('display', &lt;django.forms.fields.TypedChoiceField object&gt;), ('image_id', &lt;django.forms.fields.IntegerField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooCategoryForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.declared_fields">
+<code class="descclassname">wooCategoryForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooCategoryForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.form_layout">
+<code class="descclassname">wooCategoryForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooCategoryForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooCategoryForm.media">
+<code class="descclassname">wooCategoryForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooCategoryForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooImageForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooImageForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooImageForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooImageForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooImageForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooImageForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooImageForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooImageForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'date_created', 'alt', 'position']</em><a class="headerlink" href="#business.forms.wooImageForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooImageForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooImageForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooImage</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooImageForm.base_fields">
+<code class="descclassname">wooImageForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('alt', &lt;django.forms.fields.CharField object&gt;), ('position', &lt;django.forms.fields.IntegerField object&gt;)])</em><a class="headerlink" href="#business.forms.wooImageForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooImageForm.declared_fields">
+<code class="descclassname">wooImageForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooImageForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooImageForm.form_layout">
+<code class="descclassname">wooImageForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooImageForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooImageForm.media">
+<code class="descclassname">wooImageForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooImageForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooProductForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooProductForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooProductForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooProductForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooProductForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooProductForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooProductForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooProductForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'slug', 'permalink', 'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed', 'woostore', 'shipping_class', 'tags', 'images']</em><a class="headerlink" href="#business.forms.wooProductForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooProductForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooProductForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooProductForm.base_fields">
+<code class="descclassname">wooProductForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('permalink', &lt;django.forms.fields.URLField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('dimension_length', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_width', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_height', &lt;django.forms.fields.DecimalField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('reviews_allowed', &lt;django.forms.fields.BooleanField object&gt;), ('woostore', &lt;django.forms.models.ModelChoiceField object&gt;), ('shipping_class', &lt;django.forms.models.ModelChoiceField object&gt;), ('tags', &lt;django.forms.models.ModelMultipleChoiceField object&gt;), ('images', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooProductForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooProductForm.declared_fields">
+<code class="descclassname">wooProductForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooProductForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooProductForm.form_layout">
+<code class="descclassname">wooProductForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooProductForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooProductForm.media">
+<code class="descclassname">wooProductForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooProductForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooShippingClassForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooShippingClassForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooShippingClassForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooShippingClassForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooShippingClassForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooShippingClassForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooShippingClassForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['slug', 'description', 'name']</em><a class="headerlink" href="#business.forms.wooShippingClassForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooShippingClassForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.base_fields">
+<code class="descclassname">wooShippingClassForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('slug', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.forms.wooShippingClassForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.declared_fields">
+<code class="descclassname">wooShippingClassForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooShippingClassForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.form_layout">
+<code class="descclassname">wooShippingClassForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooShippingClassForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooShippingClassForm.media">
+<code class="descclassname">wooShippingClassForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooShippingClassForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooStoreForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooStoreForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooStoreForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooStoreForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooStoreForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooStoreForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooStoreForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooStoreForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['code', 'base_url', 'consumer_key', 'consumer_secret', 'timezone', 'verify_ssl']</em><a class="headerlink" href="#business.forms.wooStoreForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooStoreForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooStoreForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooStoreForm.base_fields">
+<code class="descclassname">wooStoreForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('base_url', &lt;django.forms.fields.URLField object&gt;), ('consumer_key', &lt;django.forms.fields.CharField object&gt;), ('consumer_secret', &lt;django.forms.fields.CharField object&gt;), ('timezone', &lt;django.forms.fields.TypedChoiceField object&gt;), ('verify_ssl', &lt;django.forms.fields.BooleanField object&gt;)])</em><a class="headerlink" href="#business.forms.wooStoreForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooStoreForm.declared_fields">
+<code class="descclassname">wooStoreForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooStoreForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooStoreForm.form_layout">
+<code class="descclassname">wooStoreForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooStoreForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooStoreForm.media">
+<code class="descclassname">wooStoreForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooStoreForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooTagForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooTagForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooTagForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooTagForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooTagForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooTagForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooTagForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooTagForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'name', 'slug', 'description', 'count', 'store']</em><a class="headerlink" href="#business.forms.wooTagForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTagForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooTagForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTagForm.base_fields">
+<code class="descclassname">wooTagForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.IntegerField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooTagForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTagForm.declared_fields">
+<code class="descclassname">wooTagForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooTagForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTagForm.form_layout">
+<code class="descclassname">wooTagForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooTagForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTagForm.media">
+<code class="descclassname">wooTagForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooTagForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooTermForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooTermForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooTermForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooTermForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooTermForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooTermForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooTermForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooTermForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['wid', 'name', 'slug', 'menu_order', 'count', 'wr_tooltip', 'wr_label', 'productattribute']</em><a class="headerlink" href="#business.forms.wooTermForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTermForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooTermForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTerm</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTermForm.base_fields">
+<code class="descclassname">wooTermForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('wid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('menu_order', &lt;django.forms.fields.IntegerField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;), ('wr_tooltip', &lt;django.forms.fields.CharField object&gt;), ('wr_label', &lt;django.forms.fields.CharField object&gt;), ('productattribute', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooTermForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTermForm.declared_fields">
+<code class="descclassname">wooTermForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooTermForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTermForm.form_layout">
+<code class="descclassname">wooTermForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooTermForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooTermForm.media">
+<code class="descclassname">wooTermForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooTermForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wooVariantForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wooVariantForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wooVariantForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooVariantForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wooVariantForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wooVariantForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wooVariantForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wooVariantForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'wid', 'date_created', 'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'shipping_class', 'images']</em><a class="headerlink" href="#business.forms.wooVariantForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooVariantForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wooVariantForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooVariantForm.base_fields">
+<code class="descclassname">wooVariantForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('permalink', &lt;django.forms.fields.URLField object&gt;), ('sku', &lt;django.forms.fields.CharField object&gt;), ('price', &lt;django.forms.fields.CharField object&gt;), ('dimension_length', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_width', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_height', &lt;django.forms.fields.DecimalField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('shipping_class', &lt;django.forms.models.ModelChoiceField object&gt;), ('images', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wooVariantForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooVariantForm.declared_fields">
+<code class="descclassname">wooVariantForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wooVariantForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooVariantForm.form_layout">
+<code class="descclassname">wooVariantForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wooVariantForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wooVariantForm.media">
+<code class="descclassname">wooVariantForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wooVariantForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wpMediaForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wpMediaForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wpMediaForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wpMediaForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wpMediaForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wpMediaForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wpMediaForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wpMediaForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid', 'source_url', 'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type', 'woostore']</em><a class="headerlink" href="#business.forms.wpMediaForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wpMediaForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMedia</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaForm.base_fields">
+<code class="descclassname">wpMediaForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('alt_text', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('file', &lt;django.forms.fields.CharField object&gt;), ('author', &lt;django.forms.fields.IntegerField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('comment_status', &lt;django.forms.fields.TypedChoiceField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('source_url', &lt;django.forms.fields.URLField object&gt;), ('template', &lt;django.forms.fields.CharField object&gt;), ('ping_status', &lt;django.forms.fields.TypedChoiceField object&gt;), ('caption', &lt;django.forms.fields.CharField object&gt;), ('link', &lt;django.forms.fields.URLField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('modified', &lt;django.forms.fields.DateTimeField object&gt;), ('guid', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('modified_gmt', &lt;django.forms.fields.DateTimeField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('date_gmt', &lt;django.forms.fields.DateTimeField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('woostore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wpMediaForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaForm.declared_fields">
+<code class="descclassname">wpMediaForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wpMediaForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaForm.form_layout">
+<code class="descclassname">wpMediaForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wpMediaForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaForm.media">
+<code class="descclassname">wpMediaForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wpMediaForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.forms.wpMediaSizeForm">
+<em class="property">class </em><code class="descclassname">business.forms.</code><code class="descname">wpMediaSizeForm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/forms.html#wpMediaSizeForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wpMediaSizeForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.forms.wpMediaSizeForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/forms.html#wpMediaSizeForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.forms.wpMediaSizeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ['is_active', 'name', 'file', 'mime_type', 'width', 'height', 'source_url', 'wpmedia']</em><a class="headerlink" href="#business.forms.wpMediaSizeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.forms.wpMediaSizeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMediaSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.base_fields">
+<code class="descclassname">wpMediaSizeForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('file', &lt;django.forms.fields.CharField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('source_url', &lt;django.forms.fields.URLField object&gt;), ('wpmedia', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.forms.wpMediaSizeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.declared_fields">
+<code class="descclassname">wpMediaSizeForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.forms.wpMediaSizeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.form_layout">
+<code class="descclassname">wpMediaSizeForm.</code><code class="descname">form_layout</code><em class="property"> = &lt;crispy_forms.layout.Layout object&gt;</em><a class="headerlink" href="#business.forms.wpMediaSizeForm.form_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.forms.wpMediaSizeForm.media">
+<code class="descclassname">wpMediaSizeForm.</code><code class="descname">media</code><a class="headerlink" href="#business.forms.wpMediaSizeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="helper_backend.html" class="btn btn-neutral float-right" title="Backend Helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="filters.html" class="btn btn-neutral" title="Filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

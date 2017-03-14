@@ -1,0 +1,2223 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module Documentation" href="index.html"/>
+        <link rel="next" title="Filters" href="filters.html"/>
+        <link rel="prev" title="Module Documentation" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module Documentation</a> &raquo;</li>
+        
+      <li>Admin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/admin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.admin">
+<span id="admin"></span><h1>Admin<a class="headerlink" href="#module-business.admin" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.admin.bzBrandAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzBrandAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzBrandAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzBrandAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzBrandAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrandForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['code', 'name', 'vendor', 'outlet']</em><a class="headerlink" href="#business.admin.bzBrandAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['vendor', 'outlet']</em><a class="headerlink" href="#business.admin.bzBrandAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzBrandAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzBrandAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzBrandAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'code', 'name']</em><a class="headerlink" href="#business.admin.bzBrandAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzCreativeCollectionAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzCreativeCollectionAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzCreativeCollectionAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeCollectionForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'bzbrand']</em><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['bzbrand']</em><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeCollectionAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'name', 'code']</em><a class="headerlink" href="#business.admin.bzCreativeCollectionAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzCreativeDesignAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzCreativeDesignAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzCreativeDesignAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeDesignForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'bzcreativecollection']</em><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['bzcreativecollection']</em><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeDesignAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'name', 'code']</em><a class="headerlink" href="#business.admin.bzCreativeDesignAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzCreativeLayoutAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzCreativeLayoutAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzCreativeLayoutAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeLayoutForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'bzcreativecollection']</em><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['bzcreativecollection']</em><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeLayoutAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'name', 'code']</em><a class="headerlink" href="#business.admin.bzCreativeLayoutAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzCreativeRenderingAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzCreativeRenderingAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzCreativeRenderingAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeRenderingForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'bzcreativedesign', 'bzcreativelayout']</em><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['bzcreativedesign', 'bzcreativelayout']</em><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzCreativeRenderingAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id']</em><a class="headerlink" href="#business.admin.bzCreativeRenderingAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzProductAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzProductAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzProductAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzProductAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzProductAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzProductAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProductForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'status', 'bzDesign', 'pfProduct', 'wooProduct', 'pfSyncProduct']</em><a class="headerlink" href="#business.admin.bzProductAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['status', 'bzDesign', 'pfProduct', 'wooProduct', 'pfSyncProduct']</em><a class="headerlink" href="#business.admin.bzProductAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzProductAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzProductAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'name', 'code']</em><a class="headerlink" href="#business.admin.bzProductAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.bzProductVariantAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">bzProductVariantAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#bzProductVariantAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.bzProductVariantAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.bzProductVariantAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProductVariantForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'is_active', 'bzproduct', 'pfcatalogvariant', 'pfcolor', 'pfsize', 'price']</em><a class="headerlink" href="#business.admin.bzProductVariantAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['bzproduct', 'pfcatalogvariant', 'pfcolor', 'pfsize']</em><a class="headerlink" href="#business.admin.bzProductVariantAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.bzProductVariantAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.bzProductVariantAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.bzProductVariantAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'code']</em><a class="headerlink" href="#business.admin.bzProductVariantAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogColorAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogColorAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogColorAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogColorAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogColorAdminForm" title="business.admin.pfCatalogColorAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogColorAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['name', 'code', 'label_clean', 'hex_code']</em><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.list_editable">
+<code class="descname">list_editable</code><em class="property"> = ['code', 'label_clean']</em><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.list_editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['name', 'hex_code']</em><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['name', 'code', 'label_clean', 'hex_code']</em><a class="headerlink" href="#business.admin.pfCatalogColorAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogColorAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogColorAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogColorAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogColorAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogColorAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColor</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdminForm.base_fields">
+<code class="descclassname">pfCatalogColorAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('label_clean', &lt;django.forms.fields.CharField object&gt;), ('hex_code', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdminForm.declared_fields">
+<code class="descclassname">pfCatalogColorAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogColorAdminForm.media">
+<code class="descclassname">pfCatalogColorAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogColorAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogFileSpecAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogFileSpecAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileSpecAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogFileSpecAdminForm" title="business.admin.pfCatalogFileSpecAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpecAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'name', 'note', 'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem']</em><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'name', 'note', 'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem']</em><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogFileSpecAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogFileSpecAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileSpecAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileSpecAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.base_fields">
+<code class="descclassname">pfCatalogFileSpecAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('name', &lt;django.forms.fields.CharField object&gt;), ('note', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('width_in', &lt;django.forms.fields.DecimalField object&gt;), ('height_in', &lt;django.forms.fields.DecimalField object&gt;), ('ratio', &lt;django.forms.fields.CharField object&gt;), ('colorsystem', &lt;django.forms.fields.TypedChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.declared_fields">
+<code class="descclassname">pfCatalogFileSpecAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileSpecAdminForm.media">
+<code class="descclassname">pfCatalogFileSpecAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogFileSpecAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogFileTypeAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogFileTypeAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileTypeAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogFileTypeAdminForm" title="business.admin.pfCatalogFileTypeAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileTypeAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'title', 'additional_price']</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'title', 'additional_price']</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogFileTypeAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogFileTypeAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileTypeAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileTypeAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.base_fields">
+<code class="descclassname">pfCatalogFileTypeAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('additional_price', &lt;django.forms.fields.CharField object&gt;), ('pfcatalogvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.declared_fields">
+<code class="descclassname">pfCatalogFileTypeAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeAdminForm.media">
+<code class="descclassname">pfCatalogFileTypeAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogFileTypeInline">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogFileTypeInline</code><span class="sig-paren">(</span><em>parent_model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogFileTypeInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.can_delete">
+<code class="descname">can_delete</code><em class="property"> = False</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.can_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.extra">
+<code class="descname">extra</code><em class="property"> = 0</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.extra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.fields">
+<code class="descname">fields</code><em class="property"> = ('pid', 'title', 'additional_price', 'pfcatalogfilespec')</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileType</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogFileTypeInline.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ('pid', 'title', 'additional_price')</em><a class="headerlink" href="#business.admin.pfCatalogFileTypeInline.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogOptionTypeAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogOptionTypeAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogOptionTypeAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogOptionTypeAdminForm" title="business.admin.pfCatalogOptionTypeAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionTypeAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'title', 'type', 'additional_price']</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'title', 'type', 'additional_price']</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogOptionTypeAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogOptionTypeAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogOptionTypeAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.base_fields">
+<code class="descclassname">pfCatalogOptionTypeAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('additional_price', &lt;django.forms.fields.CharField object&gt;), ('pfcatalogvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.declared_fields">
+<code class="descclassname">pfCatalogOptionTypeAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeAdminForm.media">
+<code class="descclassname">pfCatalogOptionTypeAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogOptionTypeInline">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogOptionTypeInline</code><span class="sig-paren">(</span><em>parent_model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogOptionTypeInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.can_delete">
+<code class="descname">can_delete</code><em class="property"> = False</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.can_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.extra">
+<code class="descname">extra</code><em class="property"> = 0</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.extra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.fields">
+<code class="descname">fields</code><em class="property"> = ('pid', 'type', 'title', 'additional_price')</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionType</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogOptionTypeInline.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ('pid', 'type', 'title', 'additional_price')</em><a class="headerlink" href="#business.admin.pfCatalogOptionTypeInline.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogProductAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogProductAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogProductAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogProductAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogProductAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogProductAdminForm" title="business.admin.pfCatalogProductAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogProductAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'pid', 'ptype', 'brand', 'model', 'image', 'variant_count']</em><a class="headerlink" href="#business.admin.pfCatalogProductAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogProductAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'pid', 'ptype', 'brand', 'model', 'image', 'variant_count']</em><a class="headerlink" href="#business.admin.pfCatalogProductAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogProductAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogProductAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogProductAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogProductAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogProductAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdminForm.base_fields">
+<code class="descclassname">pfCatalogProductAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('pid', &lt;django.forms.fields.CharField object&gt;), ('ptype', &lt;django.forms.models.ModelChoiceField object&gt;), ('brand', &lt;django.forms.models.ModelChoiceField object&gt;), ('model', &lt;django.forms.fields.CharField object&gt;), ('image', &lt;django.forms.fields.CharField object&gt;), ('variant_count', &lt;django.forms.fields.IntegerField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdminForm.declared_fields">
+<code class="descclassname">pfCatalogProductAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogProductAdminForm.media">
+<code class="descclassname">pfCatalogProductAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogProductAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogSizeAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogSizeAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogSizeAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogSizeAdminForm" title="business.admin.pfCatalogSizeAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogSizeAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['name', 'code', 'label_clean', 'sort_group', 'sort_order']</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = ['sort_group']</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['name']</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogSizeAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogSizeAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogSizeAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogSizeAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogSizeAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdminForm.base_fields">
+<code class="descclassname">pfCatalogSizeAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('label_clean', &lt;django.forms.fields.CharField object&gt;), ('sort_group', &lt;django.forms.fields.CharField object&gt;), ('sort_order', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdminForm.declared_fields">
+<code class="descclassname">pfCatalogSizeAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogSizeAdminForm.media">
+<code class="descclassname">pfCatalogSizeAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogSizeAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogVariantAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogVariantAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogVariantAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogVariantAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCatalogVariantAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCatalogVariantAdminForm" title="business.admin.pfCatalogVariantAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariantAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'pid', 'name', 'image', 'price', 'in_stock', 'weight']</em><a class="headerlink" href="#business.admin.pfCatalogVariantAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogVariantAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'pid', 'name', 'image', 'price', 'in_stock', 'weight']</em><a class="headerlink" href="#business.admin.pfCatalogVariantAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogVariantAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogVariantAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogVariantAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCatalogVariantAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCatalogVariantAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdminForm.base_fields">
+<code class="descclassname">pfCatalogVariantAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('pid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('image', &lt;django.forms.fields.CharField object&gt;), ('price', &lt;django.forms.fields.CharField object&gt;), ('in_stock', &lt;django.forms.fields.BooleanField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('pfsize', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfcolor', &lt;django.forms.models.ModelChoiceField object&gt;), ('pfcatalogproduct', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdminForm.declared_fields">
+<code class="descclassname">pfCatalogVariantAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantAdminForm.media">
+<code class="descclassname">pfCatalogVariantAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogVariantAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCatalogVariantInline">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCatalogVariantInline</code><span class="sig-paren">(</span><em>parent_model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCatalogVariantInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCatalogVariantInline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.can_delete">
+<code class="descname">can_delete</code><em class="property"> = False</em><a class="headerlink" href="#business.admin.pfCatalogVariantInline.can_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.extra">
+<code class="descname">extra</code><em class="property"> = 0</em><a class="headerlink" href="#business.admin.pfCatalogVariantInline.extra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.fields">
+<code class="descname">fields</code><em class="property"> = ('get_sku_part', 'pfsize', 'pfcolor', 'price', 'in_stock')</em><a class="headerlink" href="#business.admin.pfCatalogVariantInline.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCatalogVariantInline.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCatalogVariantInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariant</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCatalogVariantInline.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ('get_sku_part', 'pfsize', 'pfcolor', 'price', 'in_stock')</em><a class="headerlink" href="#business.admin.pfCatalogVariantInline.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCountryAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCountryAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCountryAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCountryAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCountryAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfCountryAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfCountryAdminForm" title="business.admin.pfCountryAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfCountryAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name']</em><a class="headerlink" href="#business.admin.pfCountryAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfCountryAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name']</em><a class="headerlink" href="#business.admin.pfCountryAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfCountryAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfCountryAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfCountryAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCountryAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfCountryAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfCountryAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfCountryAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfCountryAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfCountryAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfCountryAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountry</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdminForm.base_fields">
+<code class="descclassname">pfCountryAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.admin.pfCountryAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdminForm.declared_fields">
+<code class="descclassname">pfCountryAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfCountryAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfCountryAdminForm.media">
+<code class="descclassname">pfCountryAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfCountryAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfPrintFileAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfPrintFileAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfPrintFileAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfPrintFileAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfPrintFileAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfPrintFileAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfPrintFileAdminForm" title="business.admin.pfPrintFileAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfPrintFileAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'type', 'hash', 'url', 'filename', 'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible']</em><a class="headerlink" href="#business.admin.pfPrintFileAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfPrintFileAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'type', 'hash', 'url', 'filename', 'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible']</em><a class="headerlink" href="#business.admin.pfPrintFileAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfPrintFileAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfPrintFileAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfPrintFileAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfPrintFileAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfPrintFileAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfPrintFileAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfPrintFileAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfPrintFile</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdminForm.base_fields">
+<code class="descclassname">pfPrintFileAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.IntegerField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('hash', &lt;django.forms.fields.CharField object&gt;), ('url', &lt;django.forms.fields.CharField object&gt;), ('filename', &lt;django.forms.fields.CharField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('size', &lt;django.forms.fields.IntegerField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('dpi', &lt;django.forms.fields.IntegerField object&gt;), ('status', &lt;django.forms.fields.CharField object&gt;), ('created', &lt;django.forms.fields.CharField object&gt;), ('thumbnail_url', &lt;django.forms.fields.CharField object&gt;), ('visible', &lt;django.forms.fields.BooleanField object&gt;), ('pfstore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdminForm.declared_fields">
+<code class="descclassname">pfPrintFileAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfPrintFileAdminForm.media">
+<code class="descclassname">pfPrintFileAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfPrintFileAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfStateAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfStateAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfStateAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStateAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfStateAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfStateAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfStateAdminForm" title="business.admin.pfStateAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfStateAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name']</em><a class="headerlink" href="#business.admin.pfStateAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfStateAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name']</em><a class="headerlink" href="#business.admin.pfStateAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfStateAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfStateAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfStateAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStateAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfStateAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfStateAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStateAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfStateAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfStateAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfStateAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfState</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdminForm.base_fields">
+<code class="descclassname">pfStateAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('pfcountry', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfStateAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdminForm.declared_fields">
+<code class="descclassname">pfStateAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfStateAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateAdminForm.media">
+<code class="descclassname">pfStateAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfStateAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfStateInline">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfStateInline</code><span class="sig-paren">(</span><em>parent_model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfStateInline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStateInline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfStateInline.can_delete">
+<code class="descname">can_delete</code><em class="property"> = False</em><a class="headerlink" href="#business.admin.pfStateInline.can_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateInline.extra">
+<code class="descname">extra</code><em class="property"> = 0</em><a class="headerlink" href="#business.admin.pfStateInline.extra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateInline.fields">
+<code class="descname">fields</code><em class="property"> = ('code', 'name')</em><a class="headerlink" href="#business.admin.pfStateInline.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateInline.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfStateInline.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateInline.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfStateInline.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfState</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStateInline.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ('code', 'name')</em><a class="headerlink" href="#business.admin.pfStateInline.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfStoreAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfStoreAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfStoreAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStoreAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfStoreAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfStoreAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfStoreAdminForm" title="business.admin.pfStoreAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfStoreAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'website', 'created', 'key']</em><a class="headerlink" href="#business.admin.pfStoreAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfStoreAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'name', 'website', 'created', 'key', 'return_address', 'billing_address', 'payment_type', 'payment_number_mask', 'payment_expires']</em><a class="headerlink" href="#business.admin.pfStoreAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfStoreAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfStoreAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfStoreAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStoreAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfStoreAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfStoreAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfStoreAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfStoreAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfStoreAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfStoreAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdminForm.base_fields">
+<code class="descclassname">pfStoreAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('pid', &lt;django.forms.fields.IntegerField object&gt;), ('website', &lt;django.forms.fields.CharField object&gt;), ('created', &lt;django.forms.fields.CharField object&gt;), ('key', &lt;django.forms.fields.CharField object&gt;), ('return_address', &lt;django.forms.models.ModelChoiceField object&gt;), ('billing_address', &lt;django.forms.models.ModelChoiceField object&gt;), ('payment_type', &lt;django.forms.fields.CharField object&gt;), ('payment_number_mask', &lt;django.forms.fields.CharField object&gt;), ('payment_expires', &lt;django.forms.fields.CharField object&gt;), ('packingslip_email', &lt;django.forms.fields.EmailField object&gt;), ('packingslip_phone', &lt;django.forms.fields.CharField object&gt;), ('packingslip_message', &lt;django.forms.fields.CharField object&gt;)])</em><a class="headerlink" href="#business.admin.pfStoreAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdminForm.declared_fields">
+<code class="descclassname">pfStoreAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfStoreAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfStoreAdminForm.media">
+<code class="descclassname">pfStoreAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfStoreAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncItemOptionAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncItemOptionAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncItemOptionAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncItemOptionAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfSyncItemOptionAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfSyncItemOptionAdminForm" title="business.admin.pfSyncItemOptionAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfSyncItemOptionAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'value']</em><a class="headerlink" href="#business.admin.pfSyncItemOptionAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncItemOptionAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'value']</em><a class="headerlink" href="#business.admin.pfSyncItemOptionAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncItemOptionAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncItemOptionAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncItemOptionAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfSyncItemOptionAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfSyncItemOptionAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncItemOption</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdminForm.base_fields">
+<code class="descclassname">pfSyncItemOptionAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('value', &lt;django.forms.fields.CharField object&gt;), ('pfsyncvariant', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdminForm.declared_fields">
+<code class="descclassname">pfSyncItemOptionAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncItemOptionAdminForm.media">
+<code class="descclassname">pfSyncItemOptionAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncItemOptionAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncProductAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncProductAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncProductAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncProductAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncProductAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfSyncProductAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfSyncProductAdminForm" title="business.admin.pfSyncProductAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfSyncProductAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'variants', 'synced']</em><a class="headerlink" href="#business.admin.pfSyncProductAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncProductAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'variants', 'synced']</em><a class="headerlink" href="#business.admin.pfSyncProductAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncProductAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncProductAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncProductAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncProductAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfSyncProductAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfSyncProductAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncProductAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdminForm.base_fields">
+<code class="descclassname">pfSyncProductAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('external_id', &lt;django.forms.fields.CharField object&gt;), ('variants', &lt;django.forms.fields.IntegerField object&gt;), ('synced', &lt;django.forms.fields.IntegerField object&gt;), ('pfstore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdminForm.declared_fields">
+<code class="descclassname">pfSyncProductAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncProductAdminForm.media">
+<code class="descclassname">pfSyncProductAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncProductAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncVariantAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncVariantAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncVariantAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncVariantAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.pfSyncVariantAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.pfSyncVariantAdminForm" title="business.admin.pfSyncVariantAdminForm"><code class="xref py py-class docutils literal"><span class="pre">pfSyncVariantAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'synced']</em><a class="headerlink" href="#business.admin.pfSyncVariantAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncVariantAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'pid', 'external_id', 'synced']</em><a class="headerlink" href="#business.admin.pfSyncVariantAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.pfSyncVariantAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">pfSyncVariantAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#pfSyncVariantAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.pfSyncVariantAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#pfSyncVariantAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdminForm.base_fields">
+<code class="descclassname">pfSyncVariantAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('pid', &lt;django.forms.fields.CharField object&gt;), ('external_id', &lt;django.forms.fields.CharField object&gt;), ('synced', &lt;django.forms.fields.BooleanField object&gt;), ('pfsyncproduct', &lt;django.forms.models.ModelChoiceField object&gt;), ('files', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdminForm.declared_fields">
+<code class="descclassname">pfSyncVariantAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.pfSyncVariantAdminForm.media">
+<code class="descclassname">pfSyncVariantAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.pfSyncVariantAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooAttributeAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooAttributeAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooAttributeAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooAttributeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooAttributeAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooAttributeAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooAttributeAdminForm" title="business.admin.wooAttributeAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooAttributeAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'type', 'has_archives']</em><a class="headerlink" href="#business.admin.wooAttributeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooAttributeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'type', 'has_archives']</em><a class="headerlink" href="#business.admin.wooAttributeAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooAttributeAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooAttributeAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooAttributeAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooAttributeAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooAttributeAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooAttributeAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooAttributeAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooAttributeAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooAttributeAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooAttributeAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdminForm.base_fields">
+<code class="descclassname">wooAttributeAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('type', &lt;django.forms.fields.TypedChoiceField object&gt;), ('has_archives', &lt;django.forms.fields.BooleanField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooAttributeAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdminForm.declared_fields">
+<code class="descclassname">wooAttributeAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooAttributeAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooAttributeAdminForm.media">
+<code class="descclassname">wooAttributeAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooAttributeAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooCategoryAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooCategoryAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooCategoryAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooCategoryAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooCategoryAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooCategoryAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooCategoryAdminForm" title="business.admin.wooCategoryAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooCategoryAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'parent', 'description', 'display', 'count', 'image_id', 'image_date_created']</em><a class="headerlink" href="#business.admin.wooCategoryAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooCategoryAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'parent', 'description', 'display', 'count', 'image_id', 'image_date_created']</em><a class="headerlink" href="#business.admin.wooCategoryAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooCategoryAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooCategoryAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooCategoryAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooCategoryAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooCategoryAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooCategoryAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooCategoryAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooCategoryAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooCategoryAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooCategoryAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdminForm.base_fields">
+<code class="descclassname">wooCategoryAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.IntegerField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('parent', &lt;django.forms.fields.IntegerField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('display', &lt;django.forms.fields.TypedChoiceField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;), ('image_id', &lt;django.forms.fields.IntegerField object&gt;), ('image_date_created', &lt;django.forms.fields.CharField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooCategoryAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdminForm.declared_fields">
+<code class="descclassname">wooCategoryAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooCategoryAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooCategoryAdminForm.media">
+<code class="descclassname">wooCategoryAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooCategoryAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooImageAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooImageAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooImageAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooImageAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooImageAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooImageAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooImageAdminForm" title="business.admin.wooImageAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooImageAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'alt', 'position']</em><a class="headerlink" href="#business.admin.wooImageAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooImageAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'alt', 'position']</em><a class="headerlink" href="#business.admin.wooImageAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooImageAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooImageAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooImageAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooImageAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooImageAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooImageAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooImageAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooImageAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooImageAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooImageAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooImage</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdminForm.base_fields">
+<code class="descclassname">wooImageAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('alt', &lt;django.forms.fields.CharField object&gt;), ('position', &lt;django.forms.fields.IntegerField object&gt;)])</em><a class="headerlink" href="#business.admin.wooImageAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdminForm.declared_fields">
+<code class="descclassname">wooImageAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooImageAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooImageAdminForm.media">
+<code class="descclassname">wooImageAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooImageAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooProductAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooProductAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooProductAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooProductAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooProductAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooProductAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooProductAdminForm" title="business.admin.wooProductAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooProductAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'slug', 'permalink', 'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed']</em><a class="headerlink" href="#business.admin.wooProductAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooProductAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'slug', 'permalink', 'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed']</em><a class="headerlink" href="#business.admin.wooProductAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooProductAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooProductAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooProductAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooProductAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooProductAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooProductAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooProductAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooProductAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooProductAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooProductAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdminForm.base_fields">
+<code class="descclassname">wooProductAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('permalink', &lt;django.forms.fields.URLField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('dimension_length', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_width', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_height', &lt;django.forms.fields.DecimalField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('reviews_allowed', &lt;django.forms.fields.BooleanField object&gt;), ('woostore', &lt;django.forms.models.ModelChoiceField object&gt;), ('shipping_class', &lt;django.forms.models.ModelChoiceField object&gt;), ('tags', &lt;django.forms.models.ModelMultipleChoiceField object&gt;), ('images', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooProductAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdminForm.declared_fields">
+<code class="descclassname">wooProductAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooProductAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooProductAdminForm.media">
+<code class="descclassname">wooProductAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooProductAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooShippingClassAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooShippingClassAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooShippingClassAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooShippingClassAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooShippingClassAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooShippingClassAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooShippingClassAdminForm" title="business.admin.wooShippingClassAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooShippingClassAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'wid', 'name', 'slug', 'description', 'count']</em><a class="headerlink" href="#business.admin.wooShippingClassAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooShippingClassAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'wid', 'name', 'slug', 'description', 'count']</em><a class="headerlink" href="#business.admin.wooShippingClassAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooShippingClassAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooShippingClassAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooShippingClassAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooShippingClassAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooShippingClassAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooShippingClassAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooShippingClassAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdminForm.base_fields">
+<code class="descclassname">wooShippingClassAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('wid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;)])</em><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdminForm.declared_fields">
+<code class="descclassname">wooShippingClassAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooShippingClassAdminForm.media">
+<code class="descclassname">wooShippingClassAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooShippingClassAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooStoreAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooStoreAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooStoreAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooStoreAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooStoreAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooStoreAdminForm" title="business.admin.wooStoreAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooStoreAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'code', 'base_url', 'consumer_secret', 'timezone', 'verify_ssl']</em><a class="headerlink" href="#business.admin.wooStoreAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.list_filter">
+<code class="descname">list_filter</code><em class="property"> = (('timezone', &lt;class 'django.contrib.admin.filters.RelatedOnlyFieldListFilter'&gt;),)</em><a class="headerlink" href="#business.admin.wooStoreAdmin.list_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooStoreAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated']</em><a class="headerlink" href="#business.admin.wooStoreAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdmin.search_fields">
+<code class="descname">search_fields</code><em class="property"> = ['id', 'code']</em><a class="headerlink" href="#business.admin.wooStoreAdmin.search_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooStoreAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooStoreAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooStoreAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooStoreAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooStoreAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooStoreAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooStoreAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooStoreAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooStoreAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooStoreAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdminForm.base_fields">
+<code class="descclassname">wooStoreAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('code', &lt;django.forms.fields.CharField object&gt;), ('base_url', &lt;django.forms.fields.URLField object&gt;), ('consumer_key', &lt;django.forms.fields.CharField object&gt;), ('consumer_secret', &lt;django.forms.fields.CharField object&gt;), ('timezone', &lt;django.forms.fields.TypedChoiceField object&gt;), ('verify_ssl', &lt;django.forms.fields.BooleanField object&gt;)])</em><a class="headerlink" href="#business.admin.wooStoreAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdminForm.declared_fields">
+<code class="descclassname">wooStoreAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooStoreAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooStoreAdminForm.media">
+<code class="descclassname">wooStoreAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooStoreAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooTagAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooTagAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooTagAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTagAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooTagAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooTagAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooTagAdminForm" title="business.admin.wooTagAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooTagAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'description', 'count']</em><a class="headerlink" href="#business.admin.wooTagAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooTagAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'slug', 'description', 'count']</em><a class="headerlink" href="#business.admin.wooTagAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooTagAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooTagAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooTagAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTagAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooTagAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooTagAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTagAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooTagAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooTagAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooTagAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdminForm.base_fields">
+<code class="descclassname">wooTagAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.IntegerField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;), ('store', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooTagAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdminForm.declared_fields">
+<code class="descclassname">wooTagAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooTagAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTagAdminForm.media">
+<code class="descclassname">wooTagAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooTagAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooTermAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooTermAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooTermAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTermAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooTermAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooTermAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooTermAdminForm" title="business.admin.wooTermAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooTermAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'wid', 'name', 'slug', 'menu_order', 'count', 'wr_tooltip', 'wr_label']</em><a class="headerlink" href="#business.admin.wooTermAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooTermAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'wid', 'name', 'slug', 'menu_order', 'count', 'wr_tooltip', 'wr_label']</em><a class="headerlink" href="#business.admin.wooTermAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooTermAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooTermAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooTermAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTermAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooTermAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooTermAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooTermAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooTermAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooTermAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooTermAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTerm</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdminForm.base_fields">
+<code class="descclassname">wooTermAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('wid', &lt;django.forms.fields.CharField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('menu_order', &lt;django.forms.fields.IntegerField object&gt;), ('count', &lt;django.forms.fields.IntegerField object&gt;), ('wr_tooltip', &lt;django.forms.fields.CharField object&gt;), ('wr_label', &lt;django.forms.fields.CharField object&gt;), ('productattribute', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooTermAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdminForm.declared_fields">
+<code class="descclassname">wooTermAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooTermAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooTermAdminForm.media">
+<code class="descclassname">wooTermAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooTermAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooVariantAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooVariantAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooVariantAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooVariantAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooVariantAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wooVariantAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wooVariantAdminForm" title="business.admin.wooVariantAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wooVariantAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight']</em><a class="headerlink" href="#business.admin.wooVariantAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wooVariantAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight']</em><a class="headerlink" href="#business.admin.wooVariantAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wooVariantAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wooVariantAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wooVariantAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooVariantAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wooVariantAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wooVariantAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wooVariantAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wooVariantAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wooVariantAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wooVariantAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdminForm.base_fields">
+<code class="descclassname">wooVariantAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('date_created', &lt;django.forms.fields.DateField object&gt;), ('permalink', &lt;django.forms.fields.URLField object&gt;), ('sku', &lt;django.forms.fields.CharField object&gt;), ('price', &lt;django.forms.fields.CharField object&gt;), ('dimension_length', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_width', &lt;django.forms.fields.DecimalField object&gt;), ('dimension_height', &lt;django.forms.fields.DecimalField object&gt;), ('weight', &lt;django.forms.fields.DecimalField object&gt;), ('shipping_class', &lt;django.forms.models.ModelChoiceField object&gt;), ('images', &lt;django.forms.models.ModelMultipleChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wooVariantAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdminForm.declared_fields">
+<code class="descclassname">wooVariantAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wooVariantAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wooVariantAdminForm.media">
+<code class="descclassname">wooVariantAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wooVariantAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wpMediaAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wpMediaAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wpMediaAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wpMediaAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wpMediaAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wpMediaAdminForm" title="business.admin.wpMediaAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wpMediaAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid', 'source_url', 'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type']</em><a class="headerlink" href="#business.admin.wpMediaAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wpMediaAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid', 'source_url', 'template', 'ping_status', 'caption', 'link', 'slug', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type']</em><a class="headerlink" href="#business.admin.wpMediaAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wpMediaAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wpMediaAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wpMediaAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wpMediaAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wpMediaAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wpMediaAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wpMediaAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wpMediaAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMedia</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdminForm.base_fields">
+<code class="descclassname">wpMediaAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('alt_text', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('file', &lt;django.forms.fields.CharField object&gt;), ('author', &lt;django.forms.fields.IntegerField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('comment_status', &lt;django.forms.fields.TypedChoiceField object&gt;), ('wid', &lt;django.forms.fields.CharField object&gt;), ('source_url', &lt;django.forms.fields.URLField object&gt;), ('template', &lt;django.forms.fields.CharField object&gt;), ('ping_status', &lt;django.forms.fields.TypedChoiceField object&gt;), ('caption', &lt;django.forms.fields.CharField object&gt;), ('link', &lt;django.forms.fields.URLField object&gt;), ('slug', &lt;django.forms.fields.CharField object&gt;), ('modified', &lt;django.forms.fields.DateTimeField object&gt;), ('guid', &lt;django.forms.fields.CharField object&gt;), ('description', &lt;django.forms.fields.CharField object&gt;), ('modified_gmt', &lt;django.forms.fields.DateTimeField object&gt;), ('title', &lt;django.forms.fields.CharField object&gt;), ('date_gmt', &lt;django.forms.fields.DateTimeField object&gt;), ('type', &lt;django.forms.fields.CharField object&gt;), ('woostore', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wpMediaAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdminForm.declared_fields">
+<code class="descclassname">wpMediaAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wpMediaAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaAdminForm.media">
+<code class="descclassname">wpMediaAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wpMediaAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wpMediaSizeAdmin">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wpMediaSizeAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wpMediaSizeAdmin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaSizeAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdmin.form">
+<code class="descname">form</code><a class="headerlink" href="#business.admin.wpMediaSizeAdmin.form" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#business.admin.wpMediaSizeAdminForm" title="business.admin.wpMediaSizeAdminForm"><code class="xref py py-class docutils literal"><span class="pre">wpMediaSizeAdminForm</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdmin.list_display">
+<code class="descname">list_display</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'name', 'file', 'mime_type', 'width', 'height', 'source_url']</em><a class="headerlink" href="#business.admin.wpMediaSizeAdmin.list_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdmin.media">
+<code class="descname">media</code><a class="headerlink" href="#business.admin.wpMediaSizeAdmin.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdmin.readonly_fields">
+<code class="descname">readonly_fields</code><em class="property"> = ['id', 'date_added', 'date_updated', 'is_active', 'name', 'file', 'mime_type', 'width', 'height', 'source_url']</em><a class="headerlink" href="#business.admin.wpMediaSizeAdmin.readonly_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.admin.wpMediaSizeAdminForm">
+<em class="property">class </em><code class="descclassname">business.admin.</code><code class="descname">wpMediaSizeAdminForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/admin.html#wpMediaSizeAdminForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.admin.wpMediaSizeAdminForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/admin.html#wpMediaSizeAdminForm.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdminForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdminForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMediaSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdminForm.base_fields">
+<code class="descclassname">wpMediaSizeAdminForm.</code><code class="descname">base_fields</code><em class="property"> = OrderedDict([('is_active', &lt;django.forms.fields.BooleanField object&gt;), ('name', &lt;django.forms.fields.CharField object&gt;), ('file', &lt;django.forms.fields.CharField object&gt;), ('mime_type', &lt;django.forms.fields.CharField object&gt;), ('width', &lt;django.forms.fields.IntegerField object&gt;), ('height', &lt;django.forms.fields.IntegerField object&gt;), ('source_url', &lt;django.forms.fields.URLField object&gt;), ('wpmedia', &lt;django.forms.models.ModelChoiceField object&gt;)])</em><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdminForm.declared_fields">
+<code class="descclassname">wpMediaSizeAdminForm.</code><code class="descname">declared_fields</code><em class="property"> = OrderedDict()</em><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.admin.wpMediaSizeAdminForm.media">
+<code class="descclassname">wpMediaSizeAdminForm.</code><code class="descname">media</code><a class="headerlink" href="#business.admin.wpMediaSizeAdminForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="filters.html" class="btn btn-neutral float-right" title="Filters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Module Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

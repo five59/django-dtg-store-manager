@@ -1,0 +1,1076 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>App: Lists &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Views" href="index.html"/>
+        <link rel="next" title="App: Product" href="app_product.html"/>
+        <link rel="prev" title="App: Dashboard" href="app_dashboard.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html">Tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Views</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="app_content.html">App: Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_creative.html">App: Creative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_dams.html">App: DAMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_dashboard.html">App: Dashboard</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">App: Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_product.html">App: Product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_store.html">App: Store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Views</a> &raquo;</li>
+        
+      <li>App: Lists</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/views/app_lists.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.views.app_lists">
+<span id="app-lists"></span><h1>App: Lists<a class="headerlink" href="#module-business.views.app_lists" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.views.app_lists.appListAttributeList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListAttributeList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListAttributeList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListAttributeList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListAttributeList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Attribute'</em><a class="headerlink" href="#business.views.app_lists.appListAttributeList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListAttributeList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttributeTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListAttributeUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListAttributeUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListAttributeUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttributeForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Attribute'</em><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListAttributeUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListAttributeUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCatProductList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCatProductList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductList.action_list">
+<code class="descname">action_list</code><em class="property"> = [{'text': 'Sync', 'view': 'business:app_list_cprod_apipull', 'btn_class': 'default'}]</em><a class="headerlink" href="#business.views.app_lists.appListCatProductList.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductList.filter_class">
+<code class="descname">filter_class</code><a class="headerlink" href="#business.views.app_lists.appListCatProductList.filter_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProductFilter</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_lists.appListCatProductList.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductList.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductList.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_lists.appListCatProductList.get_table_data">
+<code class="descname">get_table_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductList.get_table_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductList.get_table_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListCatProductList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Catalog Product'</em><a class="headerlink" href="#business.views.app_lists.appListCatProductList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListCatProductList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProductTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCatProductPull">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCatProductPull</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductPull"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductPull" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="business.views.app_lists.appListCatProductPull.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductPull.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductPull.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCatProductUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCatProductUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCatProductUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProductForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Catalog Product'</em><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCatProductUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCatProductUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCategoryCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCategoryCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCategoryCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategoryForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Category'</em><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCategoryCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCategoryList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCategoryList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCategoryList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCategoryList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCategoryList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListCategoryList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Category'</em><a class="headerlink" href="#business.views.app_lists.appListCategoryList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListCategoryList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategoryTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCategoryPull">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCategoryPull</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCategoryPull"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCategoryPull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCategoryPush">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCategoryPush</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCategoryPush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCategoryPush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCategoryUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCategoryUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCategoryUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategoryForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Category'</em><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCategoryUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListCategoryUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListColorList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListColorList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListColorList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListColorList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListColorList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListColorList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColor</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Colour'</em><a class="headerlink" href="#business.views.app_lists.appListColorList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListColorList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColorTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListColorUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListColorUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListColorUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListColorUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColorForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColor</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Colour'</em><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListColorUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListColorUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCommonCreateView">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCommonCreateView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCommonCreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCommonCreateView" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCommonCreateView.active_app">
+<code class="descname">active_app</code><em class="property"> = 'lists'</em><a class="headerlink" href="#business.views.app_lists.appListCommonCreateView.active_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonCreateView.active_apptitle">
+<code class="descname">active_apptitle</code><em class="property"> = 'List Management'</em><a class="headerlink" href="#business.views.app_lists.appListCommonCreateView.active_apptitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonCreateView.object_icon">
+<code class="descname">object_icon</code><em class="property"> = 'list'</em><a class="headerlink" href="#business.views.app_lists.appListCommonCreateView.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCommonListView">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCommonListView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCommonListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCommonListView" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCommonListView.active_app">
+<code class="descname">active_app</code><em class="property"> = 'lists'</em><a class="headerlink" href="#business.views.app_lists.appListCommonListView.active_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonListView.active_apptitle">
+<code class="descname">active_apptitle</code><em class="property"> = 'List Management'</em><a class="headerlink" href="#business.views.app_lists.appListCommonListView.active_apptitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonListView.object_icon">
+<code class="descname">object_icon</code><em class="property"> = 'list'</em><a class="headerlink" href="#business.views.app_lists.appListCommonListView.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListCommonUpdateView">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListCommonUpdateView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListCommonUpdateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListCommonUpdateView" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListCommonUpdateView.active_app">
+<code class="descname">active_app</code><em class="property"> = 'lists'</em><a class="headerlink" href="#business.views.app_lists.appListCommonUpdateView.active_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonUpdateView.active_apptitle">
+<code class="descname">active_apptitle</code><em class="property"> = 'List Management'</em><a class="headerlink" href="#business.views.app_lists.appListCommonUpdateView.active_apptitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListCommonUpdateView.object_icon">
+<code class="descname">object_icon</code><em class="property"> = 'list'</em><a class="headerlink" href="#business.views.app_lists.appListCommonUpdateView.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListFileSpecCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListFileSpecCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListFileSpecCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpecForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'File Spec'</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListFileSpecList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListFileSpecList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListFileSpecList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListFileSpecList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'File Specification'</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpecTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListFileSpecUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListFileSpecUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListFileSpecUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpecForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'File Spec'</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListFileSpecUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListFileSpecUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListGeoDetail">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListGeoDetail</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListGeoDetail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListGeoDetail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListGeoList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListGeoList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListGeoList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListGeoList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListGeoList.action_list">
+<code class="descname">action_list</code><em class="property"> = [{'text': 'Sync', 'view': 'business:app_list_geo_apipull', 'btn_class': 'default'}]</em><a class="headerlink" href="#business.views.app_lists.appListGeoList.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListGeoList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListGeoList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountry</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListGeoList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Geographies'</em><a class="headerlink" href="#business.views.app_lists.appListGeoList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListGeoList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListGeoList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountryTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListGeoPull">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListGeoPull</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListGeoPull"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListGeoPull" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="business.views.app_lists.appListGeoPull.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListGeoPull.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListGeoPull.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListShippingCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListShippingCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListShippingCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListShippingCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClassForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Shipping Class'</em><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListShippingCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListShippingList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListShippingList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListShippingList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListShippingList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListShippingList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListShippingList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListShippingList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Shipping Class'</em><a class="headerlink" href="#business.views.app_lists.appListShippingList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListShippingList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClassTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListShippingPull">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListShippingPull</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListShippingPull"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListShippingPull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListShippingPush">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListShippingPush</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListShippingPush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListShippingPush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListShippingUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListShippingUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListShippingUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClassForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Shipping Class'</em><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListShippingUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListShippingUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListSizeList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListSizeList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListSizeList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListSizeList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListSizeList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListSizeList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSize</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Size'</em><a class="headerlink" href="#business.views.app_lists.appListSizeList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListSizeList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSizeTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListSizeUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListSizeUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListSizeUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSizeForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSize</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Size'</em><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListSizeUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListSizeUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListTagCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListTagCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListTagCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListTagCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListTagCreate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListTagCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTagForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListTagCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListTagCreate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Tag'</em><a class="headerlink" href="#business.views.app_lists.appListTagCreate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListTagCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListTagList">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListTagList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListTagList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListTagList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListTagList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListTagList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListTagList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Tag'</em><a class="headerlink" href="#business.views.app_lists.appListTagList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_lists.appListTagList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTagTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListTagPull">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListTagPull</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListTagPull"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListTagPull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListTagPush">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListTagPush</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListTagPush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListTagPush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListTagUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListTagUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListTagUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListTagUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.action_list">
+<code class="descname">action_list</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.action_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTagForm</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.object_icon">
+<code class="descname">object_icon</code><em class="property"> = ''</em><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Product Tag'</em><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_lists.appListTagUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_lists.appListTagUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_lists.appListsHome">
+<em class="property">class </em><code class="descclassname">business.views.app_lists.</code><code class="descname">appListsHome</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListsHome"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListsHome" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="business.views.app_lists.appListsHome.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_lists.html#appListsHome.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_lists.appListsHome.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="app_product.html" class="btn btn-neutral float-right" title="App: Product" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app_dashboard.html" class="btn btn-neutral" title="App: Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

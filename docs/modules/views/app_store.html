@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>App: Store &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Views" href="index.html"/>
+        <link rel="next" title="Wizards" href="../wizards/index.html"/>
+        <link rel="prev" title="App: Product" href="app_product.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html">Tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Views</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="app_content.html">App: Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_creative.html">App: Creative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_dams.html">App: DAMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_dashboard.html">App: Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_lists.html">App: Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_product.html">App: Product</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">App: Store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Views</a> &raquo;</li>
+        
+      <li>App: Store</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/views/app_store.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.views.app_store">
+<span id="app-store"></span><h1>App: Store<a class="headerlink" href="#module-business.views.app_store" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.views.app_store.appStoreBrandCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreBrandCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreBrandCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrandForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStoreBrandCreate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreBrandCreate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandCreate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStoreBrandCreate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreBrandList">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreBrandList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreBrandList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreBrandList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreBrandList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreBrandList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Brand'</em><a class="headerlink" href="#business.views.app_store.appStoreBrandList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_store.appStoreBrandList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrandTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreBrandUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreBrandUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreBrandUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrandForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStoreBrandUpdate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreBrandUpdate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreBrandUpdate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStoreBrandUpdate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreHome">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreHome</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreHome"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreHome" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="business.views.app_store.appStoreHome.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreHome.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreHome.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreListCommonListView">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreListCommonListView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreListCommonListView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreListCommonListView" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreListCommonListView.active_app">
+<code class="descname">active_app</code><em class="property"> = 'store'</em><a class="headerlink" href="#business.views.app_store.appStoreListCommonListView.active_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreListCommonListView.active_apptitle">
+<code class="descname">active_apptitle</code><em class="property"> = 'Store Management'</em><a class="headerlink" href="#business.views.app_store.appStoreListCommonListView.active_apptitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreListCommonListView.object_icon">
+<code class="descname">object_icon</code><em class="property"> = 'shopping-cart'</em><a class="headerlink" href="#business.views.app_store.appStoreListCommonListView.object_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStorePFCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStorePFCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStorePFCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStorePFCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStorePFCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStorePFCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStoreForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStorePFCreate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStorePFCreate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStorePFCreate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStorePFCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStorePFCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFCreate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStorePFCreate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStorePFList">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStorePFList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStorePFList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStorePFList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStorePFList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStorePFList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStorePFList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Printful Store'</em><a class="headerlink" href="#business.views.app_store.appStorePFList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_store.appStorePFList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStoreTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStorePFUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStorePFUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStorePFUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStorePFUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStorePFUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStorePFUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStoreForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStorePFUpdate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStorePFUpdate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStorePFUpdate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStorePFUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStorePFUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStorePFUpdate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStorePFUpdate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreWPCreate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreWPCreate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreWPCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreWPCreate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreWPCreate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStoreWPCreate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStoreForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStoreWPCreate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreWPCreate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreWPCreate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPCreate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreWPCreate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPCreate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreWPCreate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPCreate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStoreWPCreate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreWPList">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreWPList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreWPList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreWPList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreWPList.action_new">
+<code class="descname">action_new</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreWPList.action_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPList.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreWPList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPList.object_name">
+<code class="descname">object_name</code><em class="property"> = 'Brand'</em><a class="headerlink" href="#business.views.app_store.appStoreWPList.object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPList.table_class">
+<code class="descname">table_class</code><a class="headerlink" href="#business.views.app_store.appStoreWPList.table_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStoreTable</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.views.app_store.appStoreWPUpdate">
+<em class="property">class </em><code class="descclassname">business.views.app_store.</code><code class="descname">appStoreWPUpdate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreWPUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.views.app_store.appStoreWPUpdate.form_class">
+<code class="descname">form_class</code><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStoreForm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="business.views.app_store.appStoreWPUpdate.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/business/views/app_store.html#appStoreWPUpdate.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPUpdate.model">
+<code class="descname">model</code><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPUpdate.success_url">
+<code class="descname">success_url</code><em class="property"> = &lt;django.utils.functional.lazy.&lt;locals&gt;.__proxy__ object&gt;</em><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.views.app_store.appStoreWPUpdate.template_name">
+<code class="descname">template_name</code><em class="property"> = 'business/object_form.html'</em><a class="headerlink" href="#business.views.app_store.appStoreWPUpdate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wizards/index.html" class="btn btn-neutral float-right" title="Wizards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app_product.html" class="btn btn-neutral" title="App: Product" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

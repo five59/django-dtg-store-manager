@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>crispy_forms.layout &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>crispy_forms.layout</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crispy_forms.layout</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="k">import</span> <span class="n">Template</span>
+<span class="kn">from</span> <span class="nn">django.template.loader</span> <span class="k">import</span> <span class="n">render_to_string</span>
+<span class="kn">from</span> <span class="nn">django.utils.html</span> <span class="k">import</span> <span class="n">conditional_escape</span>
+
+<span class="kn">from</span> <span class="nn">crispy_forms.compatibility</span> <span class="k">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">text_type</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.utils</span> <span class="k">import</span> <span class="n">render_field</span><span class="p">,</span> <span class="n">flatatt</span><span class="p">,</span> <span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="n">get_template_pack</span>
+
+
+<span class="k">class</span> <span class="nc">TemplateNameMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_template_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">:</span>
+            <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">%</span> <span class="n">template_pack</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span>
+
+        <span class="k">return</span> <span class="n">template</span>
+
+
+<span class="k">class</span> <span class="nc">LayoutObject</span><span class="p">(</span><span class="n">TemplateNameMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="nb">slice</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="nb">slice</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="nb">slice</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This allows us to access self.fields list methods like append or insert, without</span>
+<span class="sd">        having to declare them one by one</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check necessary for unpickling, see #107</span>
+        <span class="k">if</span> <span class="s1">&#39;fields&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_field_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a list of lists, those lists are named pointers. First parameter</span>
+<span class="sd">        is the location of the field, second one the name of the field. Example::</span>
+
+<span class="sd">            [</span>
+<span class="sd">                [[0,1,2], &#39;field_name1&#39;],</span>
+<span class="sd">                [[0,3], &#39;field_name2&#39;]</span>
+<span class="sd">            ]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_layout_objects</span><span class="p">(</span><span class="n">string_types</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_layout_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">LayoutClasses</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a list of lists pointing to layout objects of any type matching</span>
+<span class="sd">        `LayoutClasses`::</span>
+
+<span class="sd">            [</span>
+<span class="sd">                [[0,1,2], &#39;div&#39;],</span>
+<span class="sd">                [[0,3], &#39;field_name&#39;]</span>
+<span class="sd">            ]</span>
+
+<span class="sd">        :param max_level: An integer that indicates max level depth to reach when</span>
+<span class="sd">        traversing a layout.</span>
+<span class="sd">        :param greedy: Boolean that indicates whether to be greedy. If set, max_level</span>
+<span class="sd">        is skipped.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">max_level</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;max_level&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">greedy</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;greedy&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">pointers</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layout_object</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layout_object</span><span class="p">,</span> <span class="n">LayoutClasses</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">LayoutClasses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">LayoutClasses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">string_types</span><span class="p">:</span>
+                    <span class="n">pointers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">index</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layout_object</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pointers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">index</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layout_object</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()])</span>
+
+            <span class="c1"># If it&#39;s a layout object and we haven&#39;t reached the max depth limit or greedy</span>
+            <span class="c1"># we recursive call</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">layout_object</span><span class="p">,</span> <span class="s1">&#39;get_field_names&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_level</span> <span class="ow">or</span> <span class="n">greedy</span><span class="p">):</span>
+                <span class="n">new_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="n">index</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;max_level&#39;</span><span class="p">:</span> <span class="n">max_level</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">:</span> <span class="n">greedy</span><span class="p">}</span>
+                <span class="n">pointers</span> <span class="o">=</span> <span class="n">pointers</span> <span class="o">+</span> <span class="n">layout_object</span><span class="o">.</span><span class="n">get_layout_objects</span><span class="p">(</span><span class="o">*</span><span class="n">LayoutClasses</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pointers</span>
+
+    <span class="k">def</span> <span class="nf">get_rendered_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">render_field</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">template_pack</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span>
+        <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Layout</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Form Layout. It is conformed by Layout objects: `Fieldset`, `Row`, `Column`, `MultiField`,</span>
+<span class="sd">    `HTML`, `ButtonHolder`, `Button`, `Hidden`, `Reset`, `Submit` and fields. Form fields</span>
+<span class="sd">    have to be strings.</span>
+<span class="sd">    Layout objects `Fieldset`, `Row`, `Column`, `MultiField` and `ButtonHolder` can hold other</span>
+<span class="sd">    Layout objects within. Though `ButtonHolder` should only hold `HTML` and BaseInput</span>
+<span class="sd">    inherited classes: `Button`, `Hidden`, `Reset` and `Submit`.</span>
+
+<span class="sd">    Example::</span>
+
+<span class="sd">        helper.layout = Layout(</span>
+<span class="sd">            Fieldset(&#39;Company data&#39;,</span>
+<span class="sd">                &#39;is_company&#39;</span>
+<span class="sd">            ),</span>
+<span class="sd">            Fieldset(_(&#39;Contact details&#39;),</span>
+<span class="sd">                &#39;email&#39;,</span>
+<span class="sd">                Row(&#39;password1&#39;, &#39;password2&#39;),</span>
+<span class="sd">                &#39;first_name&#39;,</span>
+<span class="sd">                &#39;last_name&#39;,</span>
+<span class="sd">                HTML(&#39;&lt;img src=&quot;/media/somepicture.jpg&quot;/&gt;&#39;),</span>
+<span class="sd">                &#39;company&#39;</span>
+<span class="sd">            ),</span>
+<span class="sd">            ButtonHolder(</span>
+<span class="sd">                Submit(&#39;Save&#39;, &#39;Save&#39;, css_class=&#39;button white&#39;),</span>
+<span class="sd">            ),</span>
+<span class="sd">        )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ButtonHolder</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It wraps fields in a &lt;div class=&quot;buttonHolder&quot;&gt;</span>
+
+<span class="sd">    This is where you should put Layout objects that render to form buttons like Submit.</span>
+<span class="sd">    It should only hold `HTML` and `BaseInput` inherited objects.</span>
+
+<span class="sd">    Example::</span>
+
+<span class="sd">        ButtonHolder(</span>
+<span class="sd">            HTML(&lt;span style=&quot;display: hidden;&quot;&gt;Information Saved&lt;/span&gt;),</span>
+<span class="sd">            Submit(&#39;Save&#39;, &#39;Save&#39;)</span>
+<span class="sd">        )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/layout/buttonholder.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;css_id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;buttonholder&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;fields_output&#39;</span><span class="p">:</span> <span class="n">html</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">render_to_string</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">BaseInput</span><span class="p">(</span><span class="n">TemplateNameMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A base class to reduce the amount of code in the Input classes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/layout/baseinput.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_id&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="s1">&#39;css_class&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">field_classes</span> <span class="o">+=</span> <span class="s1">&#39; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flat_attrs</span> <span class="o">=</span> <span class="n">flatatt</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Renders an `&lt;input /&gt;` if container is used as a Layout object.</span>
+<span class="sd">        Input button value can be a variable in context.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">text_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">render_to_string</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">Submit</span><span class="p">(</span><span class="n">BaseInput</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to create a Submit button descriptor for the {% crispy %} template tag::</span>
+
+<span class="sd">        submit = Submit(&#39;Search the Site&#39;, &#39;search this site&#39;)</span>
+
+<span class="sd">    .. note:: The first argument is also slugified and turned into the id for the submit button.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_type</span> <span class="o">=</span> <span class="s1">&#39;submit&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_classes</span> <span class="o">=</span> <span class="s1">&#39;submit submitButton&#39;</span> <span class="k">if</span> <span class="n">get_template_pack</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;uni_form&#39;</span> <span class="k">else</span> <span class="s1">&#39;btn btn-primary&#39;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Submit</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Button</span><span class="p">(</span><span class="n">BaseInput</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to create a Submit input descriptor for the {% crispy %} template tag::</span>
+
+<span class="sd">        button = Button(&#39;Button 1&#39;, &#39;Press Me!&#39;)</span>
+
+<span class="sd">    .. note:: The first argument is also slugified and turned into the id for the button.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_type</span> <span class="o">=</span> <span class="s1">&#39;button&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_classes</span> <span class="o">=</span> <span class="s1">&#39;button&#39;</span> <span class="k">if</span> <span class="n">get_template_pack</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;uni_form&#39;</span> <span class="k">else</span> <span class="s1">&#39;btn&#39;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Button</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Hidden</span><span class="p">(</span><span class="n">BaseInput</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to create a Hidden input descriptor for the {% crispy %} template tag.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_type</span> <span class="o">=</span> <span class="s1">&#39;hidden&#39;</span>
+    <span class="n">field_classes</span> <span class="o">=</span> <span class="s1">&#39;hidden&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">Reset</span><span class="p">(</span><span class="n">BaseInput</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to create a Reset button input descriptor for the {% crispy %} template tag::</span>
+
+<span class="sd">        reset = Reset(&#39;Reset This Form&#39;, &#39;Revert Me!&#39;)</span>
+
+<span class="sd">    .. note:: The first argument is also slugified and turned into the id for the reset.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_type</span> <span class="o">=</span> <span class="s1">&#39;reset&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_classes</span> <span class="o">=</span> <span class="s1">&#39;reset resetButton&#39;</span> <span class="k">if</span> <span class="n">get_template_pack</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;uni_form&#39;</span> <span class="k">else</span> <span class="s1">&#39;btn btn-inverse&#39;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Reset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Fieldset</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It wraps fields in a &lt;fieldset&gt;</span>
+
+<span class="sd">    Example::</span>
+
+<span class="sd">        Fieldset(&quot;Text for the legend&quot;,</span>
+<span class="sd">            &#39;form_field_1&#39;,</span>
+<span class="sd">            &#39;form_field_2&#39;</span>
+<span class="sd">        )</span>
+
+<span class="sd">    The first parameter is the text for the fieldset legend. This text is context aware,</span>
+<span class="sd">    so you can do things like::</span>
+
+<span class="sd">        Fieldset(&quot;Data for {{ user.username }}&quot;,</span>
+<span class="sd">            &#39;form_field_1&#39;,</span>
+<span class="sd">            &#39;form_field_2&#39;</span>
+<span class="sd">        )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/layout/fieldset.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">legend</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="n">legend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flat_attrs</span> <span class="o">=</span> <span class="n">flatatt</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">legend</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="p">:</span>
+            <span class="n">legend</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Template</span><span class="p">(</span><span class="n">text_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="p">))</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_to_string</span><span class="p">(</span>
+            <span class="n">template</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;fieldset&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;legend&#39;</span><span class="p">:</span> <span class="n">legend</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="p">,</span> <span class="s1">&#39;form_style&#39;</span><span class="p">:</span> <span class="n">form_style</span><span class="p">}</span>
+        <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">MultiField</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; MultiField container. Renders to a MultiField &lt;div&gt; &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/layout/multifield.html&quot;</span>
+    <span class="n">field_template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/multifield.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_html</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;label_class&#39;</span><span class="p">,</span> <span class="s1">&#39;blockLabel&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">,</span> <span class="s1">&#39;ctrlHolder&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;field_template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_template</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flat_attrs</span> <span class="o">=</span> <span class="n">flatatt</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># If a field within MultiField contains errors</span>
+        <span class="k">if</span> <span class="n">context</span><span class="p">[</span><span class="s1">&#39;form_show_errors&#39;</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pointer</span><span class="p">:</span> <span class="n">pointer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_field_names</span><span class="p">()):</span>
+                <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">form</span><span class="o">.</span><span class="n">errors</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">+=</span> <span class="s2">&quot; error&quot;</span>
+
+        <span class="n">field_template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_template</span> <span class="o">%</span> <span class="n">template_pack</span>
+        <span class="n">fields_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span>
+            <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="n">field_template</span><span class="p">,</span>
+            <span class="n">labelclass</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label_class</span><span class="p">,</span> <span class="n">layout_object</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s1">&#39;multifield&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="s1">&#39;fields_output&#39;</span><span class="p">:</span> <span class="n">fields_output</span>
+        <span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">render_to_string</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">Div</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It wraps fields in a &lt;div&gt;</span>
+
+<span class="sd">    You can set `css_id` for a DOM id and `css_class` for a DOM class. Example::</span>
+
+<span class="sd">        Div(&#39;form_field_1&#39;, &#39;form_field_2&#39;, css_id=&#39;div-example&#39;, css_class=&#39;divs&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/layout/div.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;css_class&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;css_class&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">+=</span> <span class="s1">&#39; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;css_class&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_id</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_id&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flat_attrs</span> <span class="o">=</span> <span class="n">flatatt</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_to_string</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;div&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="p">})</span>
+
+
+<span class="k">class</span> <span class="nc">Row</span><span class="p">(</span><span class="n">Div</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It wraps fields in a div whose default class is &quot;formRow&quot;. Example::</span>
+
+<span class="sd">        Row(&#39;form_field_1&#39;, &#39;form_field_2&#39;, &#39;form_field_3&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">css_class</span> <span class="o">=</span> <span class="s1">&#39;formRow&#39;</span> <span class="k">if</span> <span class="n">get_template_pack</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;uni_form&#39;</span> <span class="k">else</span> <span class="s1">&#39;row&#39;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Row</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Column</span><span class="p">(</span><span class="n">Div</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It wraps fields in a div whose default class is &quot;formColumn&quot;. Example::</span>
+
+<span class="sd">        Column(&#39;form_field_1&#39;, &#39;form_field_2&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">css_class</span> <span class="o">=</span> <span class="s1">&#39;formColumn&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">HTML</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. It can contain pure HTML and it has access to the whole</span>
+<span class="sd">    context of the page where the form is being rendered.</span>
+
+<span class="sd">    Examples::</span>
+
+<span class="sd">        HTML(&quot;{% if saved %}Data saved{% endif %}&quot;)</span>
+<span class="sd">        HTML(&#39;&lt;input type=&quot;hidden&quot; name=&quot;{{ step_field }}&quot; value=&quot;{{ step0 }}&quot; /&gt;&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">html</span> <span class="o">=</span> <span class="n">html</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Template</span><span class="p">(</span><span class="n">text_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">html</span><span class="p">))</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Field</span><span class="p">(</span><span class="n">LayoutObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object, It contains one field name, and you can add attributes to it easily.</span>
+<span class="sd">    For setting class attributes, you need to use `css_class`, as `class` is a Python keyword.</span>
+
+<span class="sd">    Example::</span>
+
+<span class="sd">        Field(&#39;field_name&#39;, style=&quot;color: #333;&quot;, css_class=&quot;whatever&quot;, id=&quot;field_name&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/field.html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;attrs&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="s1">&#39;css_class&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;class&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;css_class&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wrapper_class</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;wrapper_class&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+
+        <span class="c1"># We use kwargs as HTML attributes, turning data_id=&#39;test&#39; into data-id=&#39;test&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">([(</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">),</span> <span class="n">conditional_escape</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()]))</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="o">=</span><span class="n">TEMPLATE_PACK</span><span class="p">,</span> <span class="n">extra_context</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">extra_context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">extra_context</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;wrapper_class&#39;</span><span class="p">):</span>
+            <span class="n">extra_context</span><span class="p">[</span><span class="s1">&#39;wrapper_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper_class</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_name</span><span class="p">(</span><span class="n">template_pack</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rendered_fields</span><span class="p">(</span>
+            <span class="n">form</span><span class="p">,</span> <span class="n">form_style</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">template_pack</span><span class="p">,</span>
+            <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span> <span class="n">extra_context</span><span class="o">=</span><span class="n">extra_context</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">MultiWidgetField</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Layout object. For fields with :class:`~django.forms.MultiWidget` as `widget`, you can pass</span>
+<span class="sd">    additional attributes to each widget.</span>
+
+<span class="sd">    Example::</span>
+
+<span class="sd">        MultiWidgetField(</span>
+<span class="sd">            &#39;multiwidget_field_name&#39;,</span>
+<span class="sd">            attrs=(</span>
+<span class="sd">                {&#39;style&#39;: &#39;width: 30px;&#39;},</span>
+<span class="sd">                {&#39;class&#39;: &#39;second_widget_class&#39;}</span>
+<span class="sd">            ),</span>
+<span class="sd">        )</span>
+
+<span class="sd">    .. note:: To override widget&#39;s css class use ``class`` not ``css_class``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;attrs&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

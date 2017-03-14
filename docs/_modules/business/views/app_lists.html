@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.views.app_lists &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.views.app_lists</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.views.app_lists</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="k">import</span> <span class="n">reverse</span><span class="p">,</span> <span class="n">reverse_lazy</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="k">import</span> <span class="n">ObjectDoesNotExist</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="k">import</span> <span class="n">View</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="k">import</span> <span class="n">TemplateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="k">import</span> <span class="n">DetailView</span><span class="p">,</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">CreateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.detail</span> <span class="k">import</span> <span class="n">SingleObjectMixin</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="k">import</span> <span class="n">RedirectView</span>
+
+<span class="kn">from</span> <span class="nn">django_tables2</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.forms</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.tables</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.filters</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.helper_backend</span> <span class="k">import</span> <span class="n">commonListView</span><span class="p">,</span> <span class="n">commonUpdateView</span><span class="p">,</span> <span class="n">commonCreateView</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="k">import</span> <span class="n">messages</span>
+
+
+<div class="viewcode-block" id="appListCommonListView"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCommonListView">[docs]</a><span class="k">class</span> <span class="nc">appListCommonListView</span><span class="p">(</span><span class="n">commonListView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;lists&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;List Management&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span></div>
+
+
+<div class="viewcode-block" id="appListCommonUpdateView"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCommonUpdateView">[docs]</a><span class="k">class</span> <span class="nc">appListCommonUpdateView</span><span class="p">(</span><span class="n">commonUpdateView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;lists&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;List Management&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span></div>
+
+
+<div class="viewcode-block" id="appListCommonCreateView"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCommonCreateView">[docs]</a><span class="k">class</span> <span class="nc">appListCommonCreateView</span><span class="p">(</span><span class="n">commonCreateView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;lists&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;List Management&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span></div>
+
+ <span class="c1"># App List</span>
+
+
+<div class="viewcode-block" id="appListsHome"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListsHome">[docs]</a><span class="k">class</span> <span class="nc">appListsHome</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<div class="viewcode-block" id="appListsHome.get"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListsHome.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;business:app_list_cprod_list&#39;</span><span class="p">))</span></div></div>
+
+<span class="c1"># All List Geo</span>
+
+
+<div class="viewcode-block" id="appListGeoList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListGeoList">[docs]</a><span class="k">class</span> <span class="nc">appListGeoList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCountry</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfCountryTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Geographies&quot;</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;btn_class&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;view&#39;</span><span class="p">:</span> <span class="s1">&#39;business:app_list_geo_apipull&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Sync&#39;</span>
+        <span class="p">},</span>
+    <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="appListGeoDetail"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListGeoDetail">[docs]</a><span class="k">class</span> <span class="nc">appListGeoDetail</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListGeoPull"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListGeoPull">[docs]</a><span class="k">class</span> <span class="nc">appListGeoPull</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<div class="viewcode-block" id="appListGeoPull.get"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListGeoPull.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pfCountry</span><span class="o">.</span><span class="n">api_pull</span><span class="p">()</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span>
+                                 <span class="s1">&#39;Success! Countries and states have been updated.&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span>
+                                 <span class="s1">&#39;API call failed. </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;business:app_list_geo_list&#39;</span><span class="p">)</span></div></div>
+
+
+<span class="c1"># App List Colour</span>
+
+
+<div class="viewcode-block" id="appListColorList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListColorList">[docs]</a><span class="k">class</span> <span class="nc">appListColorList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogColor</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfCatalogColorTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Colour&quot;</span></div>
+
+
+<div class="viewcode-block" id="appListColorUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListColorUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListColorUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogColor</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfCatalogColorForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Colour&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_color_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_color_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListSizeList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListSizeList">[docs]</a><span class="k">class</span> <span class="nc">appListSizeList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogSize</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfCatalogSizeTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Size&quot;</span></div>
+
+
+<div class="viewcode-block" id="appListSizeUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListSizeUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListSizeUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogSize</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfCatalogSizeForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Size&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_size_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">success_url</span></div>
+
+
+<div class="viewcode-block" id="appListFileSpecList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListFileSpecList">[docs]</a><span class="k">class</span> <span class="nc">appListFileSpecList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileSpec</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfCatalogFileSpecTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;File Specification&quot;</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_filespec_create&quot;</span><span class="p">)</span></div>
+
+    <span class="c1"># #TODO For Future Development. Implement a &#39;ratio&#39; filter for the File Spec table view</span>
+    <span class="c1">#</span>
+    <span class="c1"># filter_class = pfCatalogFileSpecFilter</span>
+    <span class="c1"># def get_table_data(self):</span>
+    <span class="c1">#     self.filter = self.filter_class(self.request.GET, queryset=super(</span>
+    <span class="c1">#         appListFileSpecList, self).get_table_data())</span>
+    <span class="c1">#     return self.filter.qs</span>
+    <span class="c1">#</span>
+    <span class="c1"># def get_context_data(self, **kwargs):</span>
+    <span class="c1">#     context = super(appListFileSpecList, self).get_context_data(**kwargs)</span>
+    <span class="c1">#     context[&#39;filter&#39;] = self.filter</span>
+    <span class="c1">#     return context</span>
+
+
+<div class="viewcode-block" id="appListFileSpecCreate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListFileSpecCreate">[docs]</a><span class="k">class</span> <span class="nc">appListFileSpecCreate</span><span class="p">(</span><span class="n">appListCommonCreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileSpec</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfCatalogFileSpecForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;File Spec&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_filespec_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_filespec_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListFileSpecUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListFileSpecUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListFileSpecUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileSpec</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfCatalogFileSpecForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;File Spec&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_filespec_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_filespec_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListShippingList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListShippingList">[docs]</a><span class="k">class</span> <span class="nc">appListShippingList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooShippingClass</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">wooShippingClassTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Shipping Class&quot;</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_shipping_create&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListShippingCreate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListShippingCreate">[docs]</a><span class="k">class</span> <span class="nc">appListShippingCreate</span><span class="p">(</span><span class="n">appListCommonCreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooShippingClass</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooShippingClassForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Shipping Class&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_shipping_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_shipping_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListShippingUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListShippingUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListShippingUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooShippingClass</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooShippingClassForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Shipping Class&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_shipping_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_shipping_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListShippingPush"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListShippingPush">[docs]</a><span class="k">class</span> <span class="nc">appListShippingPush</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListShippingPull"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListShippingPull">[docs]</a><span class="k">class</span> <span class="nc">appListShippingPull</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListCategoryList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCategoryList">[docs]</a><span class="k">class</span> <span class="nc">appListCategoryList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooCategory</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">wooCategoryTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Category&quot;</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_category_create&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListCategoryCreate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCategoryCreate">[docs]</a><span class="k">class</span> <span class="nc">appListCategoryCreate</span><span class="p">(</span><span class="n">appListCommonCreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooCategory</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooCategoryForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Category&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_category_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_category_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListCategoryUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCategoryUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListCategoryUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooCategory</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooCategoryForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Category&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_category_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_category_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListCategoryPush"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCategoryPush">[docs]</a><span class="k">class</span> <span class="nc">appListCategoryPush</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListCategoryPull"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCategoryPull">[docs]</a><span class="k">class</span> <span class="nc">appListCategoryPull</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListTagList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListTagList">[docs]</a><span class="k">class</span> <span class="nc">appListTagList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooTag</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">wooTagTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Tag&quot;</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_tag_create&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListTagCreate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListTagCreate">[docs]</a><span class="k">class</span> <span class="nc">appListTagCreate</span><span class="p">(</span><span class="n">appListCommonCreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooTag</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooTagForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Tag&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_tag_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_tag_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListTagUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListTagUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListTagUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooTag</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooTagForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Tag&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_tag_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_tag_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListTagPush"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListTagPush">[docs]</a><span class="k">class</span> <span class="nc">appListTagPush</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListTagPull"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListTagPull">[docs]</a><span class="k">class</span> <span class="nc">appListTagPull</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="appListCatProductList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductList">[docs]</a><span class="k">class</span> <span class="nc">appListCatProductList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfCatalogProductTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Catalog Product&quot;</span>
+    <span class="n">filter_class</span> <span class="o">=</span> <span class="n">pfCatalogProductFilter</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;btn_class&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;view&#39;</span><span class="p">:</span> <span class="s1">&#39;business:app_list_cprod_apipull&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Sync&#39;</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="appListCatProductList.get_table_data"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductList.get_table_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_table_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">queryset</span><span class="o">=</span><span class="nb">super</span><span class="p">(</span>
+            <span class="n">appListCatProductList</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_table_data</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="o">.</span><span class="n">qs</span></div>
+
+<div class="viewcode-block" id="appListCatProductList.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductList.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appListCatProductList</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;filter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<div class="viewcode-block" id="appListCatProductPull"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductPull">[docs]</a><span class="k">class</span> <span class="nc">appListCatProductPull</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<div class="viewcode-block" id="appListCatProductPull.get"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductPull.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pfCatalogProduct</span><span class="o">.</span><span class="n">api_pull</span><span class="p">()</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span>
+                                 <span class="s1">&#39;Success! Product Catalog has been updated.&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">messages</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span>
+                                 <span class="s1">&#39;API call failed. </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;business:app_list_cprod_list&#39;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="appListCatProductUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListCatProductUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListCatProductUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfCatalogProductForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Catalog Product&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_cprod_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_cprod_list&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="appListAttributeList"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListAttributeList">[docs]</a><span class="k">class</span> <span class="nc">appListAttributeList</span><span class="p">(</span><span class="n">appListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooAttribute</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">wooAttributeTable</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Attribute&quot;</span></div>
+
+
+<div class="viewcode-block" id="appListAttributeUpdate"><a class="viewcode-back" href="../../../modules/views/app_lists.html#business.views.app_lists.appListAttributeUpdate">[docs]</a><span class="k">class</span> <span class="nc">appListAttributeUpdate</span><span class="p">(</span><span class="n">appListCommonUpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooAttribute</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooAttributeForm</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Product Attribute&quot;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_attribute_list&quot;</span><span class="p">)</span>
+    <span class="n">action_list</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;business:app_list_attribute_list&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

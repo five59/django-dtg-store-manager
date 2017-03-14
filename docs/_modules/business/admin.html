@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.admin &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.admin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.admin</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django</span> <span class="k">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="k">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="k">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="c1"># Inlines</span>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeInline"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileTypeInline">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileType</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogfilespec&#39;</span><span class="p">,)</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">,)</span>
+    <span class="n">can_delete</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeInline"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogOptionTypeInline">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogOptionType</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">,)</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="n">fields</span>
+    <span class="n">can_delete</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="pfCatalogVariantInline"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogVariantInline">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogVariant</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;get_sku_part&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsize&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcolor&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;in_stock&#39;</span><span class="p">,)</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="n">fields</span>
+    <span class="n">can_delete</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="pfStateInline"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStateInline">[docs]</a><span class="k">class</span> <span class="nc">pfStateInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfState</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,)</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="n">fields</span>
+    <span class="n">can_delete</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+<span class="c1"># Standard Admins</span>
+
+<div class="viewcode-block" id="bzBrandAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzBrandAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzBrandAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzBrandForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;vendor&#39;</span><span class="p">,</span> <span class="s1">&#39;outlet&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;vendor&#39;</span><span class="p">,</span> <span class="s1">&#39;outlet&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzBrand</span><span class="p">,</span> <span class="n">bzBrandAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzCreativeCollectionAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzCreativeCollectionAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeCollectionAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzCreativeCollectionForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzbrand&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bzbrand&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzCreativeCollection</span><span class="p">,</span> <span class="n">bzCreativeCollectionAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzCreativeDesignAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzCreativeDesignAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeDesignAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzCreativeDesignForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzCreativeDesign</span><span class="p">,</span> <span class="n">bzCreativeDesignAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzCreativeLayoutAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzCreativeLayoutAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeLayoutAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzCreativeLayoutForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bzcreativecollection&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzCreativeLayout</span><span class="p">,</span> <span class="n">bzCreativeLayoutAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzCreativeRenderingAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzCreativeRenderingAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeRenderingAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzCreativeRenderingForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;bzcreativedesign&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativelayout&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bzcreativedesign&#39;</span><span class="p">,</span> <span class="s1">&#39;bzcreativelayout&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzCreativeRendering</span><span class="p">,</span> <span class="n">bzCreativeRenderingAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzProductAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzProductAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzProductAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzProductForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;bzDesign&#39;</span><span class="p">,</span> <span class="s1">&#39;pfProduct&#39;</span><span class="p">,</span> <span class="s1">&#39;wooProduct&#39;</span><span class="p">,</span> <span class="s1">&#39;pfSyncProduct&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;bzDesign&#39;</span><span class="p">,</span> <span class="s1">&#39;pfProduct&#39;</span><span class="p">,</span> <span class="s1">&#39;wooProduct&#39;</span><span class="p">,</span> <span class="s1">&#39;pfSyncProduct&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzProduct</span><span class="p">,</span> <span class="n">bzProductAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="bzProductVariantAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.bzProductVariantAdmin">[docs]</a><span class="k">class</span> <span class="nc">bzProductVariantAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">bzProductVariantForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;bzproduct&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcolor&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsize&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;bzproduct&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcatalogvariant&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcolor&#39;</span><span class="p">,</span> <span class="s1">&#39;pfsize&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">bzProductVariant</span><span class="p">,</span> <span class="n">bzProductVariantAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooAttributeAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooAttributeAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooAttributeAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooAttributeAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooAttributeAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooAttribute</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooAttributeAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooAttributeAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooAttributeAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooAttributeAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;has_archives&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;has_archives&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooAttribute</span><span class="p">,</span> <span class="n">wooAttributeAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooCategoryAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooCategoryAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooCategoryAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooCategoryAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooCategoryAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooCategory</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooCategoryAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooCategoryAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooCategoryAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooCategoryAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;image_id&#39;</span><span class="p">,</span> <span class="s1">&#39;image_date_created&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;image_id&#39;</span><span class="p">,</span> <span class="s1">&#39;image_date_created&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooCategory</span><span class="p">,</span> <span class="n">wooCategoryAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooImageAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooImageAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooImageAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooImageAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooImageAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooImage</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooImageAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooImageAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooImageAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooImageAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooImage</span><span class="p">,</span> <span class="n">wooImageAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooProductAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooProductAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooProductAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooProductAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooProductAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooProductAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooProductAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooProductAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooProductAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;permalink&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;reviews_allowed&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;permalink&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;date_created&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;reviews_allowed&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooProduct</span><span class="p">,</span> <span class="n">wooProductAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooShippingClassAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooShippingClassAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooShippingClassAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooShippingClassAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooShippingClassAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooShippingClass</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooShippingClassAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooShippingClassAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooShippingClassAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooShippingClassAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooShippingClass</span><span class="p">,</span> <span class="n">wooShippingClassAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooStoreAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooStoreAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooStoreAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooStoreAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooStoreAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooStoreAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooStoreAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooStoreAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooStoreAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;base_url&#39;</span><span class="p">,</span> <span class="s1">&#39;consumer_secret&#39;</span><span class="p">,</span> <span class="s1">&#39;timezone&#39;</span><span class="p">,</span> <span class="s1">&#39;verify_ssl&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;timezone&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">RelatedOnlyFieldListFilter</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooStore</span><span class="p">,</span> <span class="n">wooStoreAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooTagAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTagAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooTagAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooTagAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTagAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooTag</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooTagAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTagAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooTagAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooTagAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooTag</span><span class="p">,</span> <span class="n">wooTagAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooTermAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTermAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooTermAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooTermAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTermAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooTerm</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooTermAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooTermAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooTermAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooTermAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;menu_order&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;wr_tooltip&#39;</span><span class="p">,</span> <span class="s1">&#39;wr_label&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;menu_order&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;wr_tooltip&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;wr_label&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooTerm</span><span class="p">,</span> <span class="n">wooTermAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wooVariantAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooVariantAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wooVariantAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooVariantAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooVariantAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wooVariantAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wooVariantAdmin">[docs]</a><span class="k">class</span> <span class="nc">wooVariantAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wooVariantAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;permalink&#39;</span><span class="p">,</span> <span class="s1">&#39;sku&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;permalink&#39;</span><span class="p">,</span> <span class="s1">&#39;sku&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span> <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wooVariant</span><span class="p">,</span> <span class="n">wooVariantAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wpMediaAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wpMediaAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMedia</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaAdmin">[docs]</a><span class="k">class</span> <span class="nc">wpMediaAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wpMediaAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;alt_text&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;comment_status&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;source_url&#39;</span><span class="p">,</span> <span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="s1">&#39;ping_status&#39;</span><span class="p">,</span> <span class="s1">&#39;caption&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;modified&#39;</span><span class="p">,</span> <span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;modified_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;date_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;alt_text&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;comment_status&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;source_url&#39;</span><span class="p">,</span> <span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="s1">&#39;ping_status&#39;</span><span class="p">,</span> <span class="s1">&#39;caption&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;modified&#39;</span><span class="p">,</span> <span class="s1">&#39;guid&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;modified_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;date_gmt&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wpMedia</span><span class="p">,</span> <span class="n">wpMediaAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wpMediaSizeAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaSizeAdminForm">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSizeAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaSizeAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaSizeAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMediaSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaSizeAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.wpMediaSizeAdmin">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSizeAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">wpMediaSizeAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;source_url&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;source_url&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">wpMediaSize</span><span class="p">,</span> <span class="n">wpMediaSizeAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCountryAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCountryAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCountryAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCountryAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCountryAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCountry</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCountryAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCountryAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCountryAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCountryAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCountry</span><span class="p">,</span> <span class="n">pfCountryAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfStateAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStateAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfStateAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfStateAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStateAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfState</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfStateAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStateAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfStateAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfStateAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfState</span><span class="p">,</span> <span class="n">pfStateAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfSyncProductAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncProductAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncProductAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncProductAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncProductAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncProductAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncProductAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfSyncProductAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfSyncProductAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;variants&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span> <span class="s1">&#39;variants&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfSyncProduct</span><span class="p">,</span> <span class="n">pfSyncProductAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfSyncVariantAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncVariantAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncVariantAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncVariantAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncVariantAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncVariantAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncVariantAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfSyncVariantAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfSyncVariantAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;external_id&#39;</span><span class="p">,</span> <span class="s1">&#39;synced&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfSyncVariant</span><span class="p">,</span> <span class="n">pfSyncVariantAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfSyncItemOptionAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncItemOptionAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfSyncItemOptionAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncItemOptionAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncItemOptionAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncItemOption</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncItemOptionAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfSyncItemOptionAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfSyncItemOptionAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfSyncItemOptionAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfSyncItemOption</span><span class="p">,</span> <span class="n">pfSyncItemOptionAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogColorAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogColorAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogColorAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogColorAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogColorAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogColor</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogColorAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogColorAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogColorAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogColorAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;hex_code&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;hex_code&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">list_editable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;hex_code&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogColor</span><span class="p">,</span> <span class="n">pfCatalogColorAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogSizeAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogSizeAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogSizeAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogSizeAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogSizeAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogSizeAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogSizeAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogSizeAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogSizeAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_order&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sort_group&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogSize</span><span class="p">,</span> <span class="n">pfCatalogSizeAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogFileSpecAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileSpecAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileSpecAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogFileSpecAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileSpecAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileSpec</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileSpecAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileSpecAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileSpecAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogFileSpecAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;note&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;width_in&#39;</span><span class="p">,</span> <span class="s1">&#39;height_in&#39;</span><span class="p">,</span> <span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="s1">&#39;colorsystem&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;note&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;width_in&#39;</span><span class="p">,</span> <span class="s1">&#39;height_in&#39;</span><span class="p">,</span> <span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="s1">&#39;colorsystem&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogFileSpec</span><span class="p">,</span> <span class="n">pfCatalogFileSpecAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileTypeAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogFileTypeAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileTypeAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogFileTypeAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogFileTypeAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogFileType</span><span class="p">,</span> <span class="n">pfCatalogFileTypeAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogOptionTypeAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogOptionTypeAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogOptionTypeAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogOptionType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogOptionTypeAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogOptionTypeAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;additional_price&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogOptionType</span><span class="p">,</span> <span class="n">pfCatalogOptionTypeAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogProductAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogProductAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogProductAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogProductAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogProductAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogProductAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogProductAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;ptype&#39;</span><span class="p">,</span> <span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;variant_count&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;ptype&#39;</span><span class="p">,</span> <span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;variant_count&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogProduct</span><span class="p">,</span> <span class="n">pfCatalogProductAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfCatalogVariantAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogVariantAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogVariantAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogVariantAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogVariantAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfCatalogVariantAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogVariantAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;in_stock&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;in_stock&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfCatalogVariant</span><span class="p">,</span> <span class="n">pfCatalogVariantAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfStoreAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStoreAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfStoreAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfStoreAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStoreAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfStoreAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfStoreAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfStoreAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfStoreAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;website&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;website&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;return_address&#39;</span><span class="p">,</span> <span class="s1">&#39;billing_address&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;payment_type&#39;</span><span class="p">,</span> <span class="s1">&#39;payment_number_mask&#39;</span><span class="p">,</span> <span class="s1">&#39;payment_expires&#39;</span><span class="p">,</span> <span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfStore</span><span class="p">,</span> <span class="n">pfStoreAdmin</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pfPrintFileAdminForm"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfPrintFileAdminForm">[docs]</a><span class="k">class</span> <span class="nc">pfPrintFileAdminForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfPrintFileAdminForm.Meta"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfPrintFileAdminForm.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfPrintFile</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="pfPrintFileAdmin"><a class="viewcode-back" href="../../modules/admin.html#business.admin.pfPrintFileAdmin">[docs]</a><span class="k">class</span> <span class="nc">pfPrintFileAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">pfPrintFileAdminForm</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;dpi&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;thumbnail_url&#39;</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">]</span>
+    <span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;dpi&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;thumbnail_url&#39;</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">]</span></div>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">pfPrintFile</span><span class="p">,</span> <span class="n">pfPrintFileAdmin</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

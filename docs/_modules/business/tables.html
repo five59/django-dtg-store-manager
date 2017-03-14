@@ -1,0 +1,615 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.tables &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.tables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.tables</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">django_tables2</span> <span class="k">as</span> <span class="nn">tables</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">django_tables2.utils</span> <span class="k">import</span> <span class="n">A</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="k">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">django.contrib.humanize.templatetags.humanize</span> <span class="k">import</span> <span class="n">naturaltime</span>
+<span class="kn">from</span> <span class="nn">django.template.defaultfilters</span> <span class="k">import</span> <span class="n">title</span> <span class="k">as</span> <span class="n">titlecase</span>
+
+<span class="c1"># Master Table Class</span>
+
+
+<div class="viewcode-block" id="commonBusinessTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.commonBusinessTable">[docs]</a><span class="k">class</span> <span class="nc">commonBusinessTable</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">Table</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:[M]_update&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># Used as the attrs of the primary link.</span>
+    <span class="n">PRIMARY_BUTTON_ATTRS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;btn btn-primary btn-xs&#39;</span><span class="p">}}</span>
+
+    <span class="n">date_added</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Column</span><span class="p">()</span>
+    <span class="n">date_updated</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Column</span><span class="p">()</span>
+
+<div class="viewcode-block" id="commonBusinessTable.render_date_added"><a class="viewcode-back" href="../../modules/tables.html#business.tables.commonBusinessTable.render_date_added">[docs]</a>    <span class="k">def</span> <span class="nf">render_date_added</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">titlecase</span><span class="p">(</span><span class="n">naturaltime</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="commonBusinessTable.render_date_updated"><a class="viewcode-back" href="../../modules/tables.html#business.tables.commonBusinessTable.render_date_updated">[docs]</a>    <span class="k">def</span> <span class="nf">render_date_updated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">titlecase</span><span class="p">(</span><span class="n">naturaltime</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div></div>
+
+<span class="c1"># App Store</span>
+
+
+<div class="viewcode-block" id="bzBrandTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzBrandTable">[docs]</a><span class="k">class</span> <span class="nc">bzBrandTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_store_brand&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_store_brand_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzBrandTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzBrandTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;vendor&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;outlet&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfStoreTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfStoreTable">[docs]</a><span class="k">class</span> <span class="nc">pfStoreTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_store_pf&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">has_auth</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">BooleanColumn</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;has_auth&#39;</span><span class="p">))</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_store_pf_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="pfStoreTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfStoreTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;has_auth&#39;</span><span class="p">,</span> <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooStoreTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooStoreTable">[docs]</a><span class="k">class</span> <span class="nc">wooStoreTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_store_wp&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Column</span><span class="p">()</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_store_wp_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="wooStoreTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooStoreTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;base_url&#39;</span><span class="p">,</span> <span class="s1">&#39;timezone&#39;</span><span class="p">,</span> <span class="s1">&#39;verify_ssl&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+<span class="c1"># App Creative</span>
+
+
+<div class="viewcode-block" id="bzCreativeDesignTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeDesignTable">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeDesignTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_creative_design&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">product_count</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="s2">&quot;{{ record.num_products }}&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_creative_design_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeDesignTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeDesignTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeDesign</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;product_count&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span>
+        <span class="n">empty_text</span> <span class="o">=</span> <span class="s2">&quot;No Designs Found.&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeLayoutTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeLayoutTable">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeLayoutTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_creative_layout&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">product_count</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="s2">&quot;{{ record.num_products }}&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_creative_layout_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeLayoutTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeLayoutTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeLayout</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;product_count&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span>
+        <span class="n">empty_text</span> <span class="o">=</span> <span class="s2">&quot;No Layouts Found.&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeRenderingTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeRenderingTable">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeRenderingTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_creative_rendering&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzCreativeRenderingTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzCreativeRenderingTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzCreativeRendering</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzProductTable">[docs]</a><span class="k">class</span> <span class="nc">bzProductTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_bzbrand_detail&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_bzbrand_update&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">variant_count</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="s2">&quot;{{ record.num_variants }}&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzProductTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProduct</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductVariantTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzProductVariantTable">[docs]</a><span class="k">class</span> <span class="nc">bzProductVariantTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;business_bzvariant&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="bzProductVariantTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.bzProductVariantTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzProductVariant</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogColorTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogColorTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogColorTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_color&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_color_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogColorTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogColorTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileSpecTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogFileSpecTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileSpecTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_filespec&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_filespec_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogFileSpecTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogFileSpecTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;width_in&#39;</span><span class="p">,</span> <span class="s1">&#39;height_in&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="s1">&#39;colorsystem&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogFileTypeTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogFileTypeTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogFileTypeTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogFileType</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogOptionTypeTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogOptionTypeTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogOptionTypeTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogOptionType</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogProductTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogProductTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_cprod&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">local</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;td&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;text-center&#39;</span><span class="p">}}</span>
+    <span class="n">pid</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_cprod_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="o">**</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">,</span> <span class="o">**</span><span class="n">local</span><span class="p">}</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogProductTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogProductTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogSizeTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogSizeTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogSizeTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_size&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_size_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="pfCatalogSizeTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogSizeTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sort_order&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogVariantTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogVariantTable">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogVariantTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCatalogVariantTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogVariant</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfCountryTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCountryTable">[docs]</a><span class="k">class</span> <span class="nc">pfCountryTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_pfcountry_detail&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_pfcountry_update&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">num_states</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;num_states&#39;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="pfCountryTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfCountryTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCountry</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;num_states&#39;</span><span class="p">)</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfPrintFileTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfPrintFileTable">[docs]</a><span class="k">class</span> <span class="nc">pfPrintFileTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfPrintFileTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfPrintFileTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfPrintFile</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfStateTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfStateTable">[docs]</a><span class="k">class</span> <span class="nc">pfStateTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_pfstate_detail&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-eye-open&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">       &lt;a href=&quot;{</span><span class="si">% u</span><span class="s1">rl &#39;business:business_pfstate_update&#39; record.pk %}&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="pfStateTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfStateTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfState</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;pfcountry&#39;</span><span class="p">,)</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncItemOptionTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncItemOptionTable">[docs]</a><span class="k">class</span> <span class="nc">pfSyncItemOptionTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncItemOptionTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncItemOptionTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncItemOption</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncProductTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncProductTable">[docs]</a><span class="k">class</span> <span class="nc">pfSyncProductTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncProductTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncProductTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncProduct</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncVariantTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncVariantTable">[docs]</a><span class="k">class</span> <span class="nc">pfSyncVariantTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncVariantTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.pfSyncVariantTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfSyncVariant</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooAttributeTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooAttributeTable">[docs]</a><span class="k">class</span> <span class="nc">wooAttributeTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooAttributeTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooAttributeTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooAttribute</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooCategoryTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooCategoryTable">[docs]</a><span class="k">class</span> <span class="nc">wooCategoryTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_category&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_category_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="wooCategoryTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooCategoryTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooImageTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooImageTable">[docs]</a><span class="k">class</span> <span class="nc">wooImageTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooImageTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooImageTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooImage</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooProductTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooProductTable">[docs]</a><span class="k">class</span> <span class="nc">wooProductTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooProductTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooProductTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooProduct</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooShippingClassTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooShippingClassTable">[docs]</a><span class="k">class</span> <span class="nc">wooShippingClassTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_shipping&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_shipping_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="wooShippingClassTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooShippingClassTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooTagTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooTagTable">[docs]</a><span class="k">class</span> <span class="nc">wooTagTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+    <span class="n">ACTION_TEMPLATE</span> <span class="o">=</span> <span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">ACTION_TEMPLATE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="s1">&#39;[M]&#39;</span><span class="p">,</span> <span class="s1">&#39;app_list_tag&#39;</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">TemplateColumn</span><span class="p">(</span><span class="n">ACTION_TEMPLATE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">LinkColumn</span><span class="p">(</span>
+        <span class="n">viewname</span><span class="o">=</span><span class="s1">&#39;business:app_list_tag_update&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)],</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="n">commonBusinessTable</span><span class="o">.</span><span class="n">PRIMARY_BUTTON_ATTRS</span><span class="p">)</span>
+
+<div class="viewcode-block" id="wooTagTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooTagTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;wid&#39;</span><span class="p">,</span> <span class="s1">&#39;is_active&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;date_added&#39;</span><span class="p">,</span> <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">sequence</span> <span class="o">=</span> <span class="n">fields</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooTermTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooTermTable">[docs]</a><span class="k">class</span> <span class="nc">wooTermTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooTermTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooTermTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooTerm</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wooVariantTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooVariantTable">[docs]</a><span class="k">class</span> <span class="nc">wooVariantTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooVariantTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wooVariantTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wooVariant</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wpMediaTable">[docs]</a><span class="k">class</span> <span class="nc">wpMediaTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wpMediaTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMedia</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaSizeTable"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wpMediaSizeTable">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSizeTable</span><span class="p">(</span><span class="n">commonBusinessTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaSizeTable.Meta"><a class="viewcode-back" href="../../modules/tables.html#business.tables.wpMediaSizeTable.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">wpMediaSize</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;table table-striped table-hover&#39;</span><span class="p">}</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

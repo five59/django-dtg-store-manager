@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.views.app_store &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.views.app_store</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.views.app_store</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="k">import</span> <span class="n">reverse</span><span class="p">,</span> <span class="n">reverse_lazy</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="k">import</span> <span class="n">ObjectDoesNotExist</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="k">import</span> <span class="n">View</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="k">import</span> <span class="n">TemplateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="k">import</span> <span class="n">DetailView</span><span class="p">,</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">CreateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.detail</span> <span class="k">import</span> <span class="n">SingleObjectMixin</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="k">import</span> <span class="n">RedirectView</span>
+
+<span class="kn">from</span> <span class="nn">django_tables2</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.forms</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.tables</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">business.helper_backend</span> <span class="k">import</span> <span class="n">commonListView</span>
+
+
+<div class="viewcode-block" id="appStoreListCommonListView"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreListCommonListView">[docs]</a><span class="k">class</span> <span class="nc">appStoreListCommonListView</span><span class="p">(</span><span class="n">commonListView</span><span class="p">):</span>
+    <span class="n">active_app</span> <span class="o">=</span> <span class="s1">&#39;store&#39;</span>
+    <span class="n">active_apptitle</span> <span class="o">=</span> <span class="s1">&#39;Store Management&#39;</span>
+    <span class="n">object_icon</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span></div>
+
+
+<div class="viewcode-block" id="appStoreHome"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreHome">[docs]</a><span class="k">class</span> <span class="nc">appStoreHome</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<div class="viewcode-block" id="appStoreHome.get"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreHome.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_list&#39;</span><span class="p">))</span></div></div>
+
+
+<span class="c1"># bzBrand</span>
+
+<div class="viewcode-block" id="appStoreBrandList"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreBrandList">[docs]</a><span class="k">class</span> <span class="nc">appStoreBrandList</span><span class="p">(</span><span class="n">appStoreListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">bzBrandTable</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_create&#39;</span><span class="p">)</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Brand&quot;</span></div>
+
+
+<div class="viewcode-block" id="appStoreBrandCreate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreBrandCreate">[docs]</a><span class="k">class</span> <span class="nc">appStoreBrandCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">bzBrandForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStoreBrandCreate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreBrandCreate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStoreBrandCreate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;create&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Brands&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<div class="viewcode-block" id="appStoreBrandUpdate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreBrandUpdate">[docs]</a><span class="k">class</span> <span class="nc">appStoreBrandUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">bzBrand</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">bzBrandForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStoreBrandUpdate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreBrandUpdate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStoreBrandUpdate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;update&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Brands&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_brand_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<span class="c1"># pfStore</span>
+
+<div class="viewcode-block" id="appStorePFList"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStorePFList">[docs]</a><span class="k">class</span> <span class="nc">appStorePFList</span><span class="p">(</span><span class="n">appStoreListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">pfStoreTable</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_pf_create&#39;</span><span class="p">)</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Printful Store&quot;</span></div>
+
+
+<div class="viewcode-block" id="appStorePFCreate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStorePFCreate">[docs]</a><span class="k">class</span> <span class="nc">appStorePFCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfStoreForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_pf_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStorePFCreate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStorePFCreate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStorePFCreate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;create&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Printful Stores&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_pf_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<div class="viewcode-block" id="appStorePFUpdate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStorePFUpdate">[docs]</a><span class="k">class</span> <span class="nc">appStorePFUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pfStore</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">pfStoreForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_pf_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStorePFUpdate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStorePFUpdate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStorePFUpdate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;update&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Printful Stores&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_pf_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<span class="c1"># wpStore</span>
+
+<div class="viewcode-block" id="appStoreWPList"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreWPList">[docs]</a><span class="k">class</span> <span class="nc">appStoreWPList</span><span class="p">(</span><span class="n">appStoreListCommonListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+    <span class="n">table_class</span> <span class="o">=</span> <span class="n">wooStoreTable</span>
+    <span class="n">action_new</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_wp_create&#39;</span><span class="p">)</span>
+    <span class="n">object_name</span> <span class="o">=</span> <span class="s2">&quot;Brand&quot;</span></div>
+
+
+<div class="viewcode-block" id="appStoreWPCreate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreWPCreate">[docs]</a><span class="k">class</span> <span class="nc">appStoreWPCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooStoreForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_wp_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStoreWPCreate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreWPCreate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStoreWPCreate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;create&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;WordPress Sites&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_wp_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+
+
+<div class="viewcode-block" id="appStoreWPUpdate"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreWPUpdate">[docs]</a><span class="k">class</span> <span class="nc">appStoreWPUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">wooStore</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">wooStoreForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;business/object_form.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_wp_list&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="appStoreWPUpdate.get_context_data"><a class="viewcode-back" href="../../../modules/views/app_store.html#business.views.app_store.appStoreWPUpdate.get_context_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">appStoreWPUpdate</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;update&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_app&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;store&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;active_apptitle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Store Management&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_icon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;shopping-cart&#39;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;object_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;WordPress Sites&quot;</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;action_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;business:app_store_wp_list&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">context</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

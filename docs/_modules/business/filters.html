@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.filters &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.filters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.filters</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django_filters</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">business.models</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="k">import</span> <span class="n">forms</span>
+
+<span class="kn">from</span> <span class="nn">crispy_forms.helper</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.layout</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.bootstrap</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="k">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="pfCatalogProductFilterForm"><a class="viewcode-back" href="../../modules/filters.html#business.filters.pfCatalogProductFilterForm">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductFilterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">pfCatalogProductFilterForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">FormHelper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">form_tag</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">col_1</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="s2">&quot;brand&quot;</span><span class="p">)</span>
+        <span class="n">col_2</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="s2">&quot;ptype&quot;</span><span class="p">)</span>
+        <span class="n">col_3</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+            <span class="n">Div</span><span class="p">(</span>
+                <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;div class=&quot;btn-group&quot;&gt;</span>
+<span class="s2">                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Filter&lt;/button&gt;</span>
+<span class="s2">                    &lt;a href=&quot;{{ request.path }}&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Reset&lt;/a&gt;</span>
+<span class="s2">                &lt;/div&gt;</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">),</span>
+                <span class="n">css_class</span><span class="o">=</span><span class="s2">&quot;btn-group pull-right&quot;</span><span class="p">,</span>
+                <span class="n">role</span><span class="o">=</span><span class="s2">&quot;group&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+            <span class="n">Div</span><span class="p">(</span><span class="n">col_1</span><span class="p">,</span> <span class="n">col_2</span><span class="p">,</span> <span class="n">col_3</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="pfCatalogProductFilter"><a class="viewcode-back" href="../../modules/filters.html#business.filters.pfCatalogProductFilter">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductFilter</span><span class="p">(</span><span class="n">FilterSet</span><span class="p">):</span>
+
+    <span class="n">brand</span> <span class="o">=</span> <span class="n">ModelChoiceFilter</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">pfCatalogBrand</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">ptype</span> <span class="o">=</span> <span class="n">ModelChoiceFilter</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="n">queryset</span><span class="o">=</span><span class="n">pfCatalogType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+
+<div class="viewcode-block" id="pfCatalogProductFilter.Meta"><a class="viewcode-back" href="../../modules/filters.html#business.filters.pfCatalogProductFilter.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">pfCatalogProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;ptype&#39;</span><span class="p">]</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">pfCatalogProductFilterForm</span></div></div>
+
+
+<span class="c1"># #TODO For Future Development. Implement a &#39;ratio&#39; filter for the File Spec table view</span>
+<span class="c1">#</span>
+<span class="c1"># class pfCatalogFileSpecFilterForm(forms.Form):</span>
+<span class="c1">#     def __init__(self, *args, **kwargs):</span>
+<span class="c1">#         super(pfCatalogFileSpecFilterForm, self).__init__(*args, **kwargs)</span>
+<span class="c1">#         self.helper = FormHelper()</span>
+<span class="c1">#         self.helper.form_tag = False</span>
+<span class="c1">#         self.helper.layout = Layout(</span>
+<span class="c1">#             Div(</span>
+<span class="c1">#                 Field(&quot;ratio&quot;),</span>
+<span class="c1">#             ),</span>
+<span class="c1">#         )</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1"># class pfCatalogFileSpecFilter(FilterSet):</span>
+<span class="c1">#     ratio = ModelChoiceFilter(</span>
+<span class="c1">#         label=&quot;Ratio&quot;,</span>
+<span class="c1">#         queryset=pfCatalogFileSpec.objects.order_by(</span>
+<span class="c1">#         ).values_list(&#39;ratio&#39;).distinct())</span>
+<span class="c1">#</span>
+<span class="c1">#     class Meta:</span>
+<span class="c1">#         model = pfCatalogFileSpec</span>
+<span class="c1">#         fields = [&#39;ratio&#39;]</span>
+<span class="c1">#         form = pfCatalogFileSpecFilterForm</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Django DTG Store Manager’s documentation &mdash; Django DTG Store Manager 1.0 documentation</title>
+  <title>Django DTG Store Manager &mdash; Django DTG Store Manager 0.1 documentation</title>
   
 
+  
+  
   
   
 
@@ -33,8 +35,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Django DTG Store Manager 1.0 documentation" href="#"/>
-        <link rel="next" title="How-Tos" href="how-tos/index.html"/> 
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="#"/>
+        <link rel="next" title="Getting Started" href="gettingstarted/index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -43,6 +45,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -62,7 +65,7 @@
             
             
               <div class="version">
-                1.0
+                0.1
               </div>
             
           
@@ -83,9 +86,14 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="how-tos/index.html">How-Tos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Model Definitions</a></li>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Module Documentation</a></li>
 </ul>
 
             
@@ -98,8 +106,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">Django DTG Store Manager</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Django DTG Store Manager</a>
+        
       </nav>
 
 
@@ -108,46 +118,53 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Django DTG Store Manager&#8217;s documentation</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Django DTG Store Manager</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="django-dtg-store-manager-s-documentation">
-<h1>Django DTG Store Manager&#8217;s documentation<a class="headerlink" href="#django-dtg-store-manager-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
+  <div class="section" id="django-dtg-store-manager">
+<h1>Django DTG Store Manager<a class="headerlink" href="#django-dtg-store-manager" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="how-tos/index.html">How-Tos</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/DataFeeds.html">Data Feeds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/ModelGraphs.html">Model Graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/NewProducts.html">Publishing a Batch of New Products</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Model Definitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules/business.html">Business Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/outlet_woocommerce.html">Outlet: WooCommerce Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/vendor_printful.html">Vendor: Printful Module</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Module Documentation</a></li>
 </ul>
 </div>
 </div>
@@ -158,65 +175,19 @@
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-</tbody>
-</table>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.docker.com">Docker Engine and Docker Composer</a></li>
-</ul>
-</div>
-<div class="section" id="built-with">
-<h2>Built With<a class="headerlink" href="#built-with" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.djangoproject.com/en/1.10/">Django</a>  - the 1.10.x series at the time of this writing.</li>
-<li><a class="reference external" href="https://docs.python.org/3/">Python 3.5</a> - the 3.5.x series at  the time of this writing.</li>
-<li><a class="reference external" href="https://www.postgresql.org/docs/">PostgreSQL</a></li>
-</ul>
-</div>
-<div class="section" id="versioning">
-<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h2>
-<p>We use <a class="reference external" href="http://semver.org">SemVer</a> for versioning. For the versions available, see the
-<a class="reference external" href="https://github.com/559labs/django-dtg-store-manager/tags">tags on this repository</a>.</p>
-</div>
-<div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><strong>Andrew Marconi, 559 Labs</strong> - <em>Initial work</em>, <a class="reference external" href="https://github.com/559Labs">559 Labs</a></li>
-</ul>
-</div>
-<div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p>This open source software is licensed under the <strong>Apache License 2.0</strong> (see
-<a class="reference external" href="https://github.com/559Labs/django-dtg-store-manager/blob/master/LICENSE.md">LICENSE.md</a> for details).</p>
-<blockquote>
-<div>&gt; A permissive license whose main conditions require preservation of copyright and license notices.
-&gt; Contributors provide an express grant of patent rights. Licensed works, modifications, and larger
-&gt; works may be distributed under different terms and without source code.</div></blockquote>
-</div>
-<div class="section" id="acknowledgments">
-<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="http://woocommerce.com/">WooCommerce</a></li>
-<li><a class="reference external" href="http://printful.com">Printful</a></li>
-</ul>
-</div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="how-tos/index.html" class="btn btn-neutral float-right" title="How-Tos" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gettingstarted/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -226,7 +197,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2017, 559 Labs - http://559labs.com/.
+        &copy; Copyright 2017, 559 Labs.
 
     </p>
   </div>
@@ -248,10 +219,11 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0',
+            VERSION:'0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

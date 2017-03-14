@@ -1,0 +1,1419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tests &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module Documentation" href="index.html"/>
+        <link rel="next" title="Views" href="views/index.html"/>
+        <link rel="prev" title="Tables" href="tables.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module Documentation</a> &raquo;</li>
+        
+      <li>Tests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.tests">
+<span id="tests"></span><h1>Tests<a class="headerlink" href="#module-business.tests" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.tests.bzBrandViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzBrandViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzBrand</p>
+<dl class="method">
+<dt id="business.tests.bzBrandViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzBrandViewTest.test_create_bzbrand">
+<code class="descname">test_create_bzbrand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest.test_create_bzbrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest.test_create_bzbrand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzBrandViewTest.test_detail_bzbrand">
+<code class="descname">test_detail_bzbrand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest.test_detail_bzbrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest.test_detail_bzbrand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzBrandViewTest.test_list_bzbrand">
+<code class="descname">test_list_bzbrand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest.test_list_bzbrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest.test_list_bzbrand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzBrandViewTest.test_update_bzbrand">
+<code class="descname">test_update_bzbrand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzBrandViewTest.test_update_bzbrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzBrandViewTest.test_update_bzbrand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzCreativeCollectionViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzCreativeCollectionViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzCreativeCollection</p>
+<dl class="method">
+<dt id="business.tests.bzCreativeCollectionViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeCollectionViewTest.test_create_bzcreativecollection">
+<code class="descname">test_create_bzcreativecollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest.test_create_bzcreativecollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest.test_create_bzcreativecollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeCollectionViewTest.test_detail_bzcreativecollection">
+<code class="descname">test_detail_bzcreativecollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest.test_detail_bzcreativecollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest.test_detail_bzcreativecollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeCollectionViewTest.test_list_bzcreativecollection">
+<code class="descname">test_list_bzcreativecollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest.test_list_bzcreativecollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest.test_list_bzcreativecollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeCollectionViewTest.test_update_bzcreativecollection">
+<code class="descname">test_update_bzcreativecollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeCollectionViewTest.test_update_bzcreativecollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeCollectionViewTest.test_update_bzcreativecollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzCreativeDesignViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzCreativeDesignViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzCreativeDesign</p>
+<dl class="method">
+<dt id="business.tests.bzCreativeDesignViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeDesignViewTest.test_create_bzcreativedesign">
+<code class="descname">test_create_bzcreativedesign</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest.test_create_bzcreativedesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest.test_create_bzcreativedesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeDesignViewTest.test_detail_bzcreativedesign">
+<code class="descname">test_detail_bzcreativedesign</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest.test_detail_bzcreativedesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest.test_detail_bzcreativedesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeDesignViewTest.test_list_bzcreativedesign">
+<code class="descname">test_list_bzcreativedesign</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest.test_list_bzcreativedesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest.test_list_bzcreativedesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeDesignViewTest.test_update_bzcreativedesign">
+<code class="descname">test_update_bzcreativedesign</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeDesignViewTest.test_update_bzcreativedesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeDesignViewTest.test_update_bzcreativedesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzCreativeLayoutViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzCreativeLayoutViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzCreativeLayout</p>
+<dl class="method">
+<dt id="business.tests.bzCreativeLayoutViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeLayoutViewTest.test_create_bzcreativelayout">
+<code class="descname">test_create_bzcreativelayout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest.test_create_bzcreativelayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest.test_create_bzcreativelayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeLayoutViewTest.test_detail_bzcreativelayout">
+<code class="descname">test_detail_bzcreativelayout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest.test_detail_bzcreativelayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest.test_detail_bzcreativelayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeLayoutViewTest.test_list_bzcreativelayout">
+<code class="descname">test_list_bzcreativelayout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest.test_list_bzcreativelayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest.test_list_bzcreativelayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeLayoutViewTest.test_update_bzcreativelayout">
+<code class="descname">test_update_bzcreativelayout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeLayoutViewTest.test_update_bzcreativelayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeLayoutViewTest.test_update_bzcreativelayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzCreativeRenderingViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzCreativeRenderingViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzCreativeRendering</p>
+<dl class="method">
+<dt id="business.tests.bzCreativeRenderingViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeRenderingViewTest.test_create_bzcreativerendering">
+<code class="descname">test_create_bzcreativerendering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest.test_create_bzcreativerendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest.test_create_bzcreativerendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeRenderingViewTest.test_detail_bzcreativerendering">
+<code class="descname">test_detail_bzcreativerendering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest.test_detail_bzcreativerendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest.test_detail_bzcreativerendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeRenderingViewTest.test_list_bzcreativerendering">
+<code class="descname">test_list_bzcreativerendering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest.test_list_bzcreativerendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest.test_list_bzcreativerendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzCreativeRenderingViewTest.test_update_bzcreativerendering">
+<code class="descname">test_update_bzcreativerendering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzCreativeRenderingViewTest.test_update_bzcreativerendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzCreativeRenderingViewTest.test_update_bzcreativerendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzProductVariantViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzProductVariantViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzProductVariant</p>
+<dl class="method">
+<dt id="business.tests.bzProductVariantViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductVariantViewTest.test_create_bzproductvariant">
+<code class="descname">test_create_bzproductvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest.test_create_bzproductvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest.test_create_bzproductvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductVariantViewTest.test_detail_bzproductvariant">
+<code class="descname">test_detail_bzproductvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest.test_detail_bzproductvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest.test_detail_bzproductvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductVariantViewTest.test_list_bzproductvariant">
+<code class="descname">test_list_bzproductvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest.test_list_bzproductvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest.test_list_bzproductvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductVariantViewTest.test_update_bzproductvariant">
+<code class="descname">test_update_bzproductvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductVariantViewTest.test_update_bzproductvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductVariantViewTest.test_update_bzproductvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.bzProductViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">bzProductViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for bzProduct</p>
+<dl class="method">
+<dt id="business.tests.bzProductViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductViewTest.test_create_bzproduct">
+<code class="descname">test_create_bzproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest.test_create_bzproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest.test_create_bzproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductViewTest.test_detail_bzproduct">
+<code class="descname">test_detail_bzproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest.test_detail_bzproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest.test_detail_bzproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductViewTest.test_list_bzproduct">
+<code class="descname">test_list_bzproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest.test_list_bzproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest.test_list_bzproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.bzProductViewTest.test_update_bzproduct">
+<code class="descname">test_update_bzproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#bzProductViewTest.test_update_bzproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.bzProductViewTest.test_update_bzproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzbrand">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzbrand</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzbrand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzbrand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzcreativecollection">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzcreativecollection</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzcreativecollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzcreativecollection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzcreativedesign">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzcreativedesign</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzcreativedesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzcreativedesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzcreativelayout">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzcreativelayout</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzcreativelayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzcreativelayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzcreativerendering">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzcreativerendering</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzcreativerendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzcreativerendering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzproduct">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzproduct</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_bzproductvariant">
+<code class="descclassname">business.tests.</code><code class="descname">create_bzproductvariant</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_bzproductvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_bzproductvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_django_contrib_auth_models_group">
+<code class="descclassname">business.tests.</code><code class="descname">create_django_contrib_auth_models_group</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_django_contrib_auth_models_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_django_contrib_auth_models_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_django_contrib_auth_models_user">
+<code class="descclassname">business.tests.</code><code class="descname">create_django_contrib_auth_models_user</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_django_contrib_auth_models_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_django_contrib_auth_models_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_django_contrib_contenttypes_models_contenttype">
+<code class="descclassname">business.tests.</code><code class="descname">create_django_contrib_contenttypes_models_contenttype</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_django_contrib_contenttypes_models_contenttype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_django_contrib_contenttypes_models_contenttype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogcolor">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogcolor</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogcolor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogfilespec">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogfilespec</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogfilespec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogfilespec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogfiletype">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogfiletype</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogfiletype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogfiletype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogoptiontype">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogoptiontype</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogoptiontype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogoptiontype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogproduct">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogproduct</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogsize">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogsize</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogsize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcatalogvariant">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcatalogvariant</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcatalogvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcatalogvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfcountry">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfcountry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfcountry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfcountry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfprintfile">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfprintfile</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfprintfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfprintfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfstate">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfstate</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfstate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfstore">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfstore</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfstore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfstore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfsyncitemoption">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfsyncitemoption</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfsyncitemoption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfsyncitemoption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfsyncproduct">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfsyncproduct</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfsyncproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfsyncproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_pfsyncvariant">
+<code class="descclassname">business.tests.</code><code class="descname">create_pfsyncvariant</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_pfsyncvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_pfsyncvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wooattribute">
+<code class="descclassname">business.tests.</code><code class="descname">create_wooattribute</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wooattribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wooattribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_woocategory">
+<code class="descclassname">business.tests.</code><code class="descname">create_woocategory</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_woocategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_woocategory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wooimage">
+<code class="descclassname">business.tests.</code><code class="descname">create_wooimage</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wooimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wooimage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wooproduct">
+<code class="descclassname">business.tests.</code><code class="descname">create_wooproduct</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wooproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wooproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wooshippingclass">
+<code class="descclassname">business.tests.</code><code class="descname">create_wooshippingclass</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wooshippingclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wooshippingclass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_woostore">
+<code class="descclassname">business.tests.</code><code class="descname">create_woostore</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_woostore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_woostore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wootag">
+<code class="descclassname">business.tests.</code><code class="descname">create_wootag</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wootag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wootag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wooterm">
+<code class="descclassname">business.tests.</code><code class="descname">create_wooterm</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wooterm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wooterm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_woovariant">
+<code class="descclassname">business.tests.</code><code class="descname">create_woovariant</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_woovariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_woovariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wpmedia">
+<code class="descclassname">business.tests.</code><code class="descname">create_wpmedia</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wpmedia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wpmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="business.tests.create_wpmediasize">
+<code class="descclassname">business.tests.</code><code class="descname">create_wpmediasize</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#create_wpmediasize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.create_wpmediasize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogColorViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogColorViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogColor</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogColorViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogColorViewTest.test_create_pfcatalogcolor">
+<code class="descname">test_create_pfcatalogcolor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest.test_create_pfcatalogcolor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest.test_create_pfcatalogcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogColorViewTest.test_detail_pfcatalogcolor">
+<code class="descname">test_detail_pfcatalogcolor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest.test_detail_pfcatalogcolor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest.test_detail_pfcatalogcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogColorViewTest.test_list_pfcatalogcolor">
+<code class="descname">test_list_pfcatalogcolor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest.test_list_pfcatalogcolor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest.test_list_pfcatalogcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogColorViewTest.test_update_pfcatalogcolor">
+<code class="descname">test_update_pfcatalogcolor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogColorViewTest.test_update_pfcatalogcolor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogColorViewTest.test_update_pfcatalogcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogFileSpecViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogFileSpecViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogFileSpec</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogFileSpecViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileSpecViewTest.test_create_pfcatalogfilespec">
+<code class="descname">test_create_pfcatalogfilespec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest.test_create_pfcatalogfilespec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest.test_create_pfcatalogfilespec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileSpecViewTest.test_detail_pfcatalogfilespec">
+<code class="descname">test_detail_pfcatalogfilespec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest.test_detail_pfcatalogfilespec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest.test_detail_pfcatalogfilespec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileSpecViewTest.test_list_pfcatalogfilespec">
+<code class="descname">test_list_pfcatalogfilespec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest.test_list_pfcatalogfilespec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest.test_list_pfcatalogfilespec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileSpecViewTest.test_update_pfcatalogfilespec">
+<code class="descname">test_update_pfcatalogfilespec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileSpecViewTest.test_update_pfcatalogfilespec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileSpecViewTest.test_update_pfcatalogfilespec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogFileTypeViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogFileTypeViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogFileType</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogFileTypeViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileTypeViewTest.test_create_pfcatalogfiletype">
+<code class="descname">test_create_pfcatalogfiletype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest.test_create_pfcatalogfiletype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest.test_create_pfcatalogfiletype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileTypeViewTest.test_detail_pfcatalogfiletype">
+<code class="descname">test_detail_pfcatalogfiletype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest.test_detail_pfcatalogfiletype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest.test_detail_pfcatalogfiletype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileTypeViewTest.test_list_pfcatalogfiletype">
+<code class="descname">test_list_pfcatalogfiletype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest.test_list_pfcatalogfiletype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest.test_list_pfcatalogfiletype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogFileTypeViewTest.test_update_pfcatalogfiletype">
+<code class="descname">test_update_pfcatalogfiletype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogFileTypeViewTest.test_update_pfcatalogfiletype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogFileTypeViewTest.test_update_pfcatalogfiletype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogOptionTypeViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogOptionTypeViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogOptionType</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogOptionTypeViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogOptionTypeViewTest.test_create_pfcatalogoptiontype">
+<code class="descname">test_create_pfcatalogoptiontype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest.test_create_pfcatalogoptiontype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest.test_create_pfcatalogoptiontype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogOptionTypeViewTest.test_detail_pfcatalogoptiontype">
+<code class="descname">test_detail_pfcatalogoptiontype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest.test_detail_pfcatalogoptiontype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest.test_detail_pfcatalogoptiontype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogOptionTypeViewTest.test_list_pfcatalogoptiontype">
+<code class="descname">test_list_pfcatalogoptiontype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest.test_list_pfcatalogoptiontype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest.test_list_pfcatalogoptiontype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogOptionTypeViewTest.test_update_pfcatalogoptiontype">
+<code class="descname">test_update_pfcatalogoptiontype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogOptionTypeViewTest.test_update_pfcatalogoptiontype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogOptionTypeViewTest.test_update_pfcatalogoptiontype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogProductViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogProductViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogProduct</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogProductViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogProductViewTest.test_create_pfcatalogproduct">
+<code class="descname">test_create_pfcatalogproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest.test_create_pfcatalogproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest.test_create_pfcatalogproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogProductViewTest.test_detail_pfcatalogproduct">
+<code class="descname">test_detail_pfcatalogproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest.test_detail_pfcatalogproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest.test_detail_pfcatalogproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogProductViewTest.test_list_pfcatalogproduct">
+<code class="descname">test_list_pfcatalogproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest.test_list_pfcatalogproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest.test_list_pfcatalogproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogProductViewTest.test_update_pfcatalogproduct">
+<code class="descname">test_update_pfcatalogproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogProductViewTest.test_update_pfcatalogproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogProductViewTest.test_update_pfcatalogproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogSizeViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogSizeViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogSize</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogSizeViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogSizeViewTest.test_create_pfcatalogsize">
+<code class="descname">test_create_pfcatalogsize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest.test_create_pfcatalogsize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest.test_create_pfcatalogsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogSizeViewTest.test_detail_pfcatalogsize">
+<code class="descname">test_detail_pfcatalogsize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest.test_detail_pfcatalogsize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest.test_detail_pfcatalogsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogSizeViewTest.test_list_pfcatalogsize">
+<code class="descname">test_list_pfcatalogsize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest.test_list_pfcatalogsize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest.test_list_pfcatalogsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogSizeViewTest.test_update_pfcatalogsize">
+<code class="descname">test_update_pfcatalogsize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogSizeViewTest.test_update_pfcatalogsize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogSizeViewTest.test_update_pfcatalogsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCatalogVariantViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCatalogVariantViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCatalogVariant</p>
+<dl class="method">
+<dt id="business.tests.pfCatalogVariantViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogVariantViewTest.test_create_pfcatalogvariant">
+<code class="descname">test_create_pfcatalogvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest.test_create_pfcatalogvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest.test_create_pfcatalogvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogVariantViewTest.test_detail_pfcatalogvariant">
+<code class="descname">test_detail_pfcatalogvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest.test_detail_pfcatalogvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest.test_detail_pfcatalogvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogVariantViewTest.test_list_pfcatalogvariant">
+<code class="descname">test_list_pfcatalogvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest.test_list_pfcatalogvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest.test_list_pfcatalogvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCatalogVariantViewTest.test_update_pfcatalogvariant">
+<code class="descname">test_update_pfcatalogvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCatalogVariantViewTest.test_update_pfcatalogvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCatalogVariantViewTest.test_update_pfcatalogvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfCountryViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfCountryViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfCountry</p>
+<dl class="method">
+<dt id="business.tests.pfCountryViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCountryViewTest.test_create_pfcountry">
+<code class="descname">test_create_pfcountry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest.test_create_pfcountry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest.test_create_pfcountry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCountryViewTest.test_detail_pfcountry">
+<code class="descname">test_detail_pfcountry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest.test_detail_pfcountry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest.test_detail_pfcountry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCountryViewTest.test_list_pfcountry">
+<code class="descname">test_list_pfcountry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest.test_list_pfcountry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest.test_list_pfcountry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfCountryViewTest.test_update_pfcountry">
+<code class="descname">test_update_pfcountry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfCountryViewTest.test_update_pfcountry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfCountryViewTest.test_update_pfcountry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfPrintFileViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfPrintFileViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfPrintFile</p>
+<dl class="method">
+<dt id="business.tests.pfPrintFileViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfPrintFileViewTest.test_create_pfprintfile">
+<code class="descname">test_create_pfprintfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest.test_create_pfprintfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest.test_create_pfprintfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfPrintFileViewTest.test_detail_pfprintfile">
+<code class="descname">test_detail_pfprintfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest.test_detail_pfprintfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest.test_detail_pfprintfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfPrintFileViewTest.test_list_pfprintfile">
+<code class="descname">test_list_pfprintfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest.test_list_pfprintfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest.test_list_pfprintfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfPrintFileViewTest.test_update_pfprintfile">
+<code class="descname">test_update_pfprintfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfPrintFileViewTest.test_update_pfprintfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfPrintFileViewTest.test_update_pfprintfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfStateViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfStateViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfState</p>
+<dl class="method">
+<dt id="business.tests.pfStateViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStateViewTest.test_create_pfstate">
+<code class="descname">test_create_pfstate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest.test_create_pfstate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest.test_create_pfstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStateViewTest.test_detail_pfstate">
+<code class="descname">test_detail_pfstate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest.test_detail_pfstate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest.test_detail_pfstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStateViewTest.test_list_pfstate">
+<code class="descname">test_list_pfstate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest.test_list_pfstate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest.test_list_pfstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStateViewTest.test_update_pfstate">
+<code class="descname">test_update_pfstate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStateViewTest.test_update_pfstate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStateViewTest.test_update_pfstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfStoreViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfStoreViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfStore</p>
+<dl class="method">
+<dt id="business.tests.pfStoreViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStoreViewTest.test_create_pfstore">
+<code class="descname">test_create_pfstore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest.test_create_pfstore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest.test_create_pfstore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStoreViewTest.test_detail_pfstore">
+<code class="descname">test_detail_pfstore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest.test_detail_pfstore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest.test_detail_pfstore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStoreViewTest.test_list_pfstore">
+<code class="descname">test_list_pfstore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest.test_list_pfstore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest.test_list_pfstore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfStoreViewTest.test_update_pfstore">
+<code class="descname">test_update_pfstore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfStoreViewTest.test_update_pfstore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfStoreViewTest.test_update_pfstore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfSyncItemOptionViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfSyncItemOptionViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfSyncItemOption</p>
+<dl class="method">
+<dt id="business.tests.pfSyncItemOptionViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncItemOptionViewTest.test_create_pfsyncitemoption">
+<code class="descname">test_create_pfsyncitemoption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest.test_create_pfsyncitemoption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest.test_create_pfsyncitemoption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncItemOptionViewTest.test_detail_pfsyncitemoption">
+<code class="descname">test_detail_pfsyncitemoption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest.test_detail_pfsyncitemoption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest.test_detail_pfsyncitemoption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncItemOptionViewTest.test_list_pfsyncitemoption">
+<code class="descname">test_list_pfsyncitemoption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest.test_list_pfsyncitemoption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest.test_list_pfsyncitemoption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncItemOptionViewTest.test_update_pfsyncitemoption">
+<code class="descname">test_update_pfsyncitemoption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncItemOptionViewTest.test_update_pfsyncitemoption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncItemOptionViewTest.test_update_pfsyncitemoption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfSyncProductViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfSyncProductViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfSyncProduct</p>
+<dl class="method">
+<dt id="business.tests.pfSyncProductViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncProductViewTest.test_create_pfsyncproduct">
+<code class="descname">test_create_pfsyncproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest.test_create_pfsyncproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest.test_create_pfsyncproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncProductViewTest.test_detail_pfsyncproduct">
+<code class="descname">test_detail_pfsyncproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest.test_detail_pfsyncproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest.test_detail_pfsyncproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncProductViewTest.test_list_pfsyncproduct">
+<code class="descname">test_list_pfsyncproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest.test_list_pfsyncproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest.test_list_pfsyncproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncProductViewTest.test_update_pfsyncproduct">
+<code class="descname">test_update_pfsyncproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncProductViewTest.test_update_pfsyncproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncProductViewTest.test_update_pfsyncproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.pfSyncVariantViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">pfSyncVariantViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for pfSyncVariant</p>
+<dl class="method">
+<dt id="business.tests.pfSyncVariantViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncVariantViewTest.test_create_pfsyncvariant">
+<code class="descname">test_create_pfsyncvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest.test_create_pfsyncvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest.test_create_pfsyncvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncVariantViewTest.test_detail_pfsyncvariant">
+<code class="descname">test_detail_pfsyncvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest.test_detail_pfsyncvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest.test_detail_pfsyncvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncVariantViewTest.test_list_pfsyncvariant">
+<code class="descname">test_list_pfsyncvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest.test_list_pfsyncvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest.test_list_pfsyncvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.pfSyncVariantViewTest.test_update_pfsyncvariant">
+<code class="descname">test_update_pfsyncvariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#pfSyncVariantViewTest.test_update_pfsyncvariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.pfSyncVariantViewTest.test_update_pfsyncvariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooAttributeViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooAttributeViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooAttribute</p>
+<dl class="method">
+<dt id="business.tests.wooAttributeViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooAttributeViewTest.test_create_wooattribute">
+<code class="descname">test_create_wooattribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest.test_create_wooattribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest.test_create_wooattribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooAttributeViewTest.test_detail_wooattribute">
+<code class="descname">test_detail_wooattribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest.test_detail_wooattribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest.test_detail_wooattribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooAttributeViewTest.test_list_wooattribute">
+<code class="descname">test_list_wooattribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest.test_list_wooattribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest.test_list_wooattribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooAttributeViewTest.test_update_wooattribute">
+<code class="descname">test_update_wooattribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooAttributeViewTest.test_update_wooattribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooAttributeViewTest.test_update_wooattribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooCategoryViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooCategoryViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooCategory</p>
+<dl class="method">
+<dt id="business.tests.wooCategoryViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooCategoryViewTest.test_create_woocategory">
+<code class="descname">test_create_woocategory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest.test_create_woocategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest.test_create_woocategory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooCategoryViewTest.test_detail_woocategory">
+<code class="descname">test_detail_woocategory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest.test_detail_woocategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest.test_detail_woocategory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooCategoryViewTest.test_list_woocategory">
+<code class="descname">test_list_woocategory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest.test_list_woocategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest.test_list_woocategory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooCategoryViewTest.test_update_woocategory">
+<code class="descname">test_update_woocategory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooCategoryViewTest.test_update_woocategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooCategoryViewTest.test_update_woocategory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooImageViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooImageViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooImage</p>
+<dl class="method">
+<dt id="business.tests.wooImageViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooImageViewTest.test_create_wooimage">
+<code class="descname">test_create_wooimage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest.test_create_wooimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest.test_create_wooimage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooImageViewTest.test_detail_wooimage">
+<code class="descname">test_detail_wooimage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest.test_detail_wooimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest.test_detail_wooimage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooImageViewTest.test_list_wooimage">
+<code class="descname">test_list_wooimage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest.test_list_wooimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest.test_list_wooimage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooImageViewTest.test_update_wooimage">
+<code class="descname">test_update_wooimage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooImageViewTest.test_update_wooimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooImageViewTest.test_update_wooimage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooProductViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooProductViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooProduct</p>
+<dl class="method">
+<dt id="business.tests.wooProductViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooProductViewTest.test_create_wooproduct">
+<code class="descname">test_create_wooproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest.test_create_wooproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest.test_create_wooproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooProductViewTest.test_detail_wooproduct">
+<code class="descname">test_detail_wooproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest.test_detail_wooproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest.test_detail_wooproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooProductViewTest.test_list_wooproduct">
+<code class="descname">test_list_wooproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest.test_list_wooproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest.test_list_wooproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooProductViewTest.test_update_wooproduct">
+<code class="descname">test_update_wooproduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooProductViewTest.test_update_wooproduct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooProductViewTest.test_update_wooproduct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooShippingClassViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooShippingClassViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooShippingClass</p>
+<dl class="method">
+<dt id="business.tests.wooShippingClassViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooShippingClassViewTest.test_create_wooshippingclass">
+<code class="descname">test_create_wooshippingclass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest.test_create_wooshippingclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest.test_create_wooshippingclass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooShippingClassViewTest.test_detail_wooshippingclass">
+<code class="descname">test_detail_wooshippingclass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest.test_detail_wooshippingclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest.test_detail_wooshippingclass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooShippingClassViewTest.test_list_wooshippingclass">
+<code class="descname">test_list_wooshippingclass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest.test_list_wooshippingclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest.test_list_wooshippingclass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooShippingClassViewTest.test_update_wooshippingclass">
+<code class="descname">test_update_wooshippingclass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooShippingClassViewTest.test_update_wooshippingclass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooShippingClassViewTest.test_update_wooshippingclass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooStoreViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooStoreViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooStore</p>
+<dl class="method">
+<dt id="business.tests.wooStoreViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooStoreViewTest.test_create_woostore">
+<code class="descname">test_create_woostore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest.test_create_woostore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest.test_create_woostore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooStoreViewTest.test_detail_woostore">
+<code class="descname">test_detail_woostore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest.test_detail_woostore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest.test_detail_woostore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooStoreViewTest.test_list_woostore">
+<code class="descname">test_list_woostore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest.test_list_woostore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest.test_list_woostore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooStoreViewTest.test_update_woostore">
+<code class="descname">test_update_woostore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooStoreViewTest.test_update_woostore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooStoreViewTest.test_update_woostore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooTagViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooTagViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooTag</p>
+<dl class="method">
+<dt id="business.tests.wooTagViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTagViewTest.test_create_wootag">
+<code class="descname">test_create_wootag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest.test_create_wootag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest.test_create_wootag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTagViewTest.test_detail_wootag">
+<code class="descname">test_detail_wootag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest.test_detail_wootag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest.test_detail_wootag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTagViewTest.test_list_wootag">
+<code class="descname">test_list_wootag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest.test_list_wootag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest.test_list_wootag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTagViewTest.test_update_wootag">
+<code class="descname">test_update_wootag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTagViewTest.test_update_wootag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTagViewTest.test_update_wootag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooTermViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooTermViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooTerm</p>
+<dl class="method">
+<dt id="business.tests.wooTermViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTermViewTest.test_create_wooterm">
+<code class="descname">test_create_wooterm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest.test_create_wooterm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest.test_create_wooterm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTermViewTest.test_detail_wooterm">
+<code class="descname">test_detail_wooterm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest.test_detail_wooterm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest.test_detail_wooterm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTermViewTest.test_list_wooterm">
+<code class="descname">test_list_wooterm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest.test_list_wooterm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest.test_list_wooterm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooTermViewTest.test_update_wooterm">
+<code class="descname">test_update_wooterm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooTermViewTest.test_update_wooterm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooTermViewTest.test_update_wooterm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wooVariantViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wooVariantViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wooVariant</p>
+<dl class="method">
+<dt id="business.tests.wooVariantViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooVariantViewTest.test_create_woovariant">
+<code class="descname">test_create_woovariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest.test_create_woovariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest.test_create_woovariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooVariantViewTest.test_detail_woovariant">
+<code class="descname">test_detail_woovariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest.test_detail_woovariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest.test_detail_woovariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooVariantViewTest.test_list_woovariant">
+<code class="descname">test_list_woovariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest.test_list_woovariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest.test_list_woovariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wooVariantViewTest.test_update_woovariant">
+<code class="descname">test_update_woovariant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wooVariantViewTest.test_update_woovariant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wooVariantViewTest.test_update_woovariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wpMediaSizeViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wpMediaSizeViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wpMediaSize</p>
+<dl class="method">
+<dt id="business.tests.wpMediaSizeViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaSizeViewTest.test_create_wpmediasize">
+<code class="descname">test_create_wpmediasize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest.test_create_wpmediasize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest.test_create_wpmediasize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaSizeViewTest.test_detail_wpmediasize">
+<code class="descname">test_detail_wpmediasize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest.test_detail_wpmediasize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest.test_detail_wpmediasize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaSizeViewTest.test_list_wpmediasize">
+<code class="descname">test_list_wpmediasize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest.test_list_wpmediasize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest.test_list_wpmediasize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaSizeViewTest.test_update_wpmediasize">
+<code class="descname">test_update_wpmediasize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaSizeViewTest.test_update_wpmediasize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaSizeViewTest.test_update_wpmediasize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.tests.wpMediaViewTest">
+<em class="property">class </em><code class="descclassname">business.tests.</code><code class="descname">wpMediaViewTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests for wpMedia</p>
+<dl class="method">
+<dt id="business.tests.wpMediaViewTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaViewTest.test_create_wpmedia">
+<code class="descname">test_create_wpmedia</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest.test_create_wpmedia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest.test_create_wpmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaViewTest.test_detail_wpmedia">
+<code class="descname">test_detail_wpmedia</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest.test_detail_wpmedia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest.test_detail_wpmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaViewTest.test_list_wpmedia">
+<code class="descname">test_list_wpmedia</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest.test_list_wpmedia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest.test_list_wpmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="business.tests.wpMediaViewTest.test_update_wpmedia">
+<code class="descname">test_update_wpmedia</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/tests.html#wpMediaViewTest.test_update_wpmedia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.tests.wpMediaViewTest.test_update_wpmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="views/index.html" class="btn btn-neutral float-right" title="Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tables.html" class="btn btn-neutral" title="Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

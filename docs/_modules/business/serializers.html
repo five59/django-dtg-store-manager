@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>business.serializers &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Module Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>business.serializers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business.serializers</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">business</span> <span class="k">import</span> <span class="n">models</span>
+
+<span class="kn">from</span> <span class="nn">rest_framework</span> <span class="k">import</span> <span class="n">serializers</span>
+
+
+<div class="viewcode-block" id="bzBrandSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzBrandSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzBrandSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzBrandSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzBrandSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzBrand</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeCollectionSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeCollectionSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeCollectionSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzCreativeCollectionSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeCollectionSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzCreativeCollection</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeDesignSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeDesignSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeDesignSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzCreativeDesignSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeDesignSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzCreativeDesign</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeLayoutSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeLayoutSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeLayoutSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzCreativeLayoutSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeLayoutSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzCreativeLayout</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzCreativeRenderingSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeRenderingSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzCreativeRenderingSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzCreativeRenderingSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzCreativeRenderingSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzCreativeRendering</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzProductSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzProductSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzProductSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzProductSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="bzProductVariantSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzProductVariantSerializer">[docs]</a><span class="k">class</span> <span class="nc">bzProductVariantSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="bzProductVariantSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.bzProductVariantSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">bzProductVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooAttributeSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooAttributeSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooAttributeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooAttributeSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooAttributeSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooAttribute</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;has_archives&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooCategorySerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooCategorySerializer">[docs]</a><span class="k">class</span> <span class="nc">wooCategorySerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooCategorySerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooCategorySerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooCategory</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;parent&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;display&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;image_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;image_date_created&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooImageSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooImageSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooImageSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooImageSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooImageSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooImage</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;alt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;position&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooProductSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooProductSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooProductSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooProductSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooProductSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;permalink&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;reviews_allowed&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooShippingClassSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooShippingClassSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooShippingClassSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooShippingClassSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooShippingClassSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooShippingClass</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooStoreSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooStoreSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooStoreSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooStoreSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooStoreSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;base_url&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;consumer_secret&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;timezone&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;verify_ssl&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooTagSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooTagSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooTagSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooTagSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooTagSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooTag</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooTermSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooTermSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooTermSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooTermSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooTermSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooTerm</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;menu_order&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wr_tooltip&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wr_label&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wooVariantSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooVariantSerializer">[docs]</a><span class="k">class</span> <span class="nc">wooVariantSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wooVariantSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wooVariantSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wooVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_created&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;permalink&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sku&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_length&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dimension_height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wpMediaSerializer">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wpMediaSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wpMedia</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;slug&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;alt_text&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;file&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;author&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;comment_status&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;wid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;source_url&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;template&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ping_status&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;caption&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;link&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;modified&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;guid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;modified_gmt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_gmt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="wpMediaSizeSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wpMediaSizeSerializer">[docs]</a><span class="k">class</span> <span class="nc">wpMediaSizeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="wpMediaSizeSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.wpMediaSizeSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">wpMediaSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;file&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;source_url&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCountrySerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCountrySerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCountrySerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCountrySerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCountrySerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCountry</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfStateSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfStateSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfStateSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfStateSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfStateSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfState</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncProductSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncProductSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfSyncProductSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncProductSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncProductSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfSyncProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;external_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;variants&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;synced&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncVariantSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncVariantSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfSyncVariantSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncVariantSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncVariantSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfSyncVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;external_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;synced&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfSyncItemOptionSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncItemOptionSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfSyncItemOptionSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfSyncItemOptionSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfSyncItemOptionSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfSyncItemOption</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogColorSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogColorSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogColorSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogColorSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogColorSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogColor</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hex_code&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogSizeSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogSizeSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogSizeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogSizeSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogSizeSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogSize</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;label_clean&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sort_group&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sort_order&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileSpecSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogFileSpecSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileSpecSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogFileSpecSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogFileSpecSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogFileSpec</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;note&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;width_in&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;height_in&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ratio&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;colorsystem&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogFileTypeSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogFileTypeSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogFileTypeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogFileTypeSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogFileTypeSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogFileType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;additional_price&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogOptionTypeSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogOptionTypeSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogOptionTypeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogOptionTypeSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogOptionTypeSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogOptionType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;additional_price&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogProductSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogProductSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogProductSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogProductSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogProductSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogProduct</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;brand&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;model&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;image&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;variant_count&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfCatalogVariantSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogVariantSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfCatalogVariantSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfCatalogVariantSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfCatalogVariantSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfCatalogVariant</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;image&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;in_stock&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfStoreSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfStoreSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfStoreSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfStoreSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfStoreSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfStore</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;code&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;website&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;created&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;consumer_key&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;consumer_secret&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="pfPrintFileSerializer"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfPrintFileSerializer">[docs]</a><span class="k">class</span> <span class="nc">pfPrintFileSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="pfPrintFileSerializer.Meta"><a class="viewcode-back" href="../../modules/serializers.html#business.serializers.pfPrintFileSerializer.Meta">[docs]</a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">pfPrintFile</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_added&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date_updated&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hash&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;url&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filename&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mime_type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;size&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;dpi&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;created&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;thumbnail_url&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;visible&#39;</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

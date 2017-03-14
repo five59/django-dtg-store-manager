@@ -1,0 +1,924 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Serializers &mdash; Django DTG Store Manager 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Django DTG Store Manager 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module Documentation" href="index.html"/>
+        <link rel="next" title="Tables" href="tables.html"/>
+        <link rel="prev" title="Models" href="models.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Django DTG Store Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-Tos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Module Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helper_backend.html">Backend Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizards/index.html">Wizards</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django DTG Store Manager</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module Documentation</a> &raquo;</li>
+        
+      <li>Serializers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/serializers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-business.serializers">
+<span id="serializers"></span><h1>Serializers<a class="headerlink" href="#module-business.serializers" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="business.serializers.bzBrandSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzBrandSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzBrandSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzBrandSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzBrandSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzBrandSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzBrandSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzBrandSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.bzBrandSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzBrandSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzBrandSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzBrand</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzCreativeCollectionSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzCreativeCollectionSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeCollectionSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeCollectionSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzCreativeCollectionSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeCollectionSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeCollectionSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzCreativeCollectionSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.bzCreativeCollectionSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzCreativeCollectionSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzCreativeCollectionSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeCollection</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzCreativeDesignSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzCreativeDesignSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeDesignSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeDesignSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzCreativeDesignSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeDesignSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeDesignSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzCreativeDesignSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.bzCreativeDesignSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzCreativeDesignSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzCreativeDesignSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeDesign</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzCreativeLayoutSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzCreativeLayoutSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeLayoutSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeLayoutSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzCreativeLayoutSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeLayoutSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeLayoutSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzCreativeLayoutSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.bzCreativeLayoutSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzCreativeLayoutSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzCreativeLayoutSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeLayout</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzCreativeRenderingSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzCreativeRenderingSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeRenderingSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeRenderingSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzCreativeRenderingSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzCreativeRenderingSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzCreativeRenderingSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzCreativeRenderingSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated')</em><a class="headerlink" href="#business.serializers.bzCreativeRenderingSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzCreativeRenderingSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzCreativeRenderingSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzCreativeRendering</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzProductSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzProductSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzProductSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzProductSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzProductSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzProductSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzProductSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzProductSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name', 'status')</em><a class="headerlink" href="#business.serializers.bzProductSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzProductSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzProductSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.bzProductVariantSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">bzProductVariantSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#bzProductVariantSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzProductVariantSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.bzProductVariantSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#bzProductVariantSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.bzProductVariantSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.bzProductVariantSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'is_active')</em><a class="headerlink" href="#business.serializers.bzProductVariantSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.bzProductVariantSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.bzProductVariantSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">bzProductVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogColorSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogColorSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogColorSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogColorSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogColorSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogColorSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogColorSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogColorSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'label', 'label_clean', 'hex_code')</em><a class="headerlink" href="#business.serializers.pfCatalogColorSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogColorSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogColorSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogColor</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogFileSpecSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogFileSpecSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogFileSpecSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogFileSpecSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogFileSpecSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogFileSpecSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogFileSpecSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogFileSpecSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'name', 'note', 'width', 'height', 'width_in', 'height_in', 'ratio', 'colorsystem')</em><a class="headerlink" href="#business.serializers.pfCatalogFileSpecSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogFileSpecSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogFileSpecSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileSpec</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogFileTypeSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogFileTypeSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogFileTypeSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogFileTypeSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogFileTypeSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogFileTypeSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogFileTypeSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogFileTypeSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'title', 'additional_price')</em><a class="headerlink" href="#business.serializers.pfCatalogFileTypeSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogFileTypeSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogFileTypeSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogFileType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogOptionTypeSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogOptionTypeSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogOptionTypeSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogOptionTypeSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogOptionTypeSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogOptionTypeSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogOptionTypeSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogOptionTypeSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'title', 'type', 'additional_price')</em><a class="headerlink" href="#business.serializers.pfCatalogOptionTypeSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogOptionTypeSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogOptionTypeSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogOptionType</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogProductSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogProductSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogProductSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogProductSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogProductSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogProductSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogProductSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogProductSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'is_active', 'pid', 'type', 'brand', 'model', 'image', 'variant_count')</em><a class="headerlink" href="#business.serializers.pfCatalogProductSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogProductSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogProductSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogSizeSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogSizeSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogSizeSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogSizeSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogSizeSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogSizeSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogSizeSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogSizeSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'label', 'label_clean', 'sort_group', 'sort_order')</em><a class="headerlink" href="#business.serializers.pfCatalogSizeSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogSizeSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogSizeSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCatalogVariantSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCatalogVariantSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogVariantSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogVariantSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCatalogVariantSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCatalogVariantSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCatalogVariantSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCatalogVariantSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'is_active', 'pid', 'name', 'image', 'price', 'in_stock', 'weight')</em><a class="headerlink" href="#business.serializers.pfCatalogVariantSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCatalogVariantSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCatalogVariantSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCatalogVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfCountrySerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfCountrySerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfCountrySerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCountrySerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfCountrySerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfCountrySerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfCountrySerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfCountrySerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.pfCountrySerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfCountrySerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfCountrySerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfCountry</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfPrintFileSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfPrintFileSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfPrintFileSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfPrintFileSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfPrintFileSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfPrintFileSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfPrintFileSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfPrintFileSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'type', 'hash', 'url', 'filename', 'mime_type', 'size', 'width', 'height', 'dpi', 'status', 'created', 'thumbnail_url', 'visible')</em><a class="headerlink" href="#business.serializers.pfPrintFileSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfPrintFileSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfPrintFileSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfPrintFile</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfStateSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfStateSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfStateSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfStateSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfStateSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfStateSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfStateSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfStateSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name')</em><a class="headerlink" href="#business.serializers.pfStateSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfStateSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfStateSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfState</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfStoreSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfStoreSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfStoreSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfStoreSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfStoreSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfStoreSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfStoreSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfStoreSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'name', 'website', 'created', 'consumer_key', 'consumer_secret')</em><a class="headerlink" href="#business.serializers.pfStoreSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfStoreSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfStoreSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfSyncItemOptionSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfSyncItemOptionSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfSyncItemOptionSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncItemOptionSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfSyncItemOptionSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfSyncItemOptionSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncItemOptionSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfSyncItemOptionSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'value')</em><a class="headerlink" href="#business.serializers.pfSyncItemOptionSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfSyncItemOptionSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfSyncItemOptionSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncItemOption</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfSyncProductSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfSyncProductSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfSyncProductSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncProductSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfSyncProductSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfSyncProductSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncProductSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfSyncProductSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'external_id', 'variants', 'synced')</em><a class="headerlink" href="#business.serializers.pfSyncProductSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfSyncProductSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfSyncProductSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.pfSyncVariantSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">pfSyncVariantSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#pfSyncVariantSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncVariantSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.pfSyncVariantSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#pfSyncVariantSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.pfSyncVariantSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.pfSyncVariantSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'pid', 'external_id', 'synced')</em><a class="headerlink" href="#business.serializers.pfSyncVariantSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.pfSyncVariantSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.pfSyncVariantSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">pfSyncVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooAttributeSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooAttributeSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooAttributeSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooAttributeSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooAttributeSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooAttributeSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooAttributeSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooAttributeSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'type', 'has_archives')</em><a class="headerlink" href="#business.serializers.wooAttributeSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooAttributeSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooAttributeSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooAttribute</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooCategorySerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooCategorySerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooCategorySerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooCategorySerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooCategorySerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooCategorySerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooCategorySerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooCategorySerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'parent', 'description', 'display', 'count', 'image_id', 'image_date_created')</em><a class="headerlink" href="#business.serializers.wooCategorySerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooCategorySerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooCategorySerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooCategory</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooImageSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooImageSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooImageSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooImageSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooImageSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooImageSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooImageSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooImageSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'alt', 'position')</em><a class="headerlink" href="#business.serializers.wooImageSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooImageSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooImageSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooImage</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooProductSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooProductSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooProductSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooProductSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooProductSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooProductSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooProductSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooProductSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'permalink', 'date_created', 'dimension_length', 'dimension_width', 'dimension_height', 'weight', 'reviews_allowed')</em><a class="headerlink" href="#business.serializers.wooProductSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooProductSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooProductSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooProduct</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooShippingClassSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooShippingClassSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooShippingClassSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooShippingClassSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooShippingClassSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooShippingClassSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooShippingClassSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooShippingClassSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'wid', 'name', 'description', 'count')</em><a class="headerlink" href="#business.serializers.wooShippingClassSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooShippingClassSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooShippingClassSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooShippingClass</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooStoreSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooStoreSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooStoreSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooStoreSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooStoreSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooStoreSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooStoreSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooStoreSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'code', 'base_url', 'consumer_secret', 'timezone', 'verify_ssl')</em><a class="headerlink" href="#business.serializers.wooStoreSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooStoreSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooStoreSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooStore</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooTagSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooTagSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooTagSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooTagSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooTagSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooTagSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooTagSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooTagSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'name', 'description', 'count')</em><a class="headerlink" href="#business.serializers.wooTagSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooTagSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooTagSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTag</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooTermSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooTermSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooTermSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooTermSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooTermSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooTermSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooTermSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooTermSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'wid', 'name', 'menu_order', 'count', 'wr_tooltip', 'wr_label')</em><a class="headerlink" href="#business.serializers.wooTermSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooTermSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooTermSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooTerm</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wooVariantSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wooVariantSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wooVariantSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooVariantSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wooVariantSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wooVariantSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wooVariantSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wooVariantSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'is_active', 'wid', 'date_created', 'permalink', 'sku', 'price', 'dimension_length', 'dimension_width', 'dimension_height', 'weight')</em><a class="headerlink" href="#business.serializers.wooVariantSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wooVariantSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wooVariantSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wooVariant</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wpMediaSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wpMediaSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wpMediaSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wpMediaSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wpMediaSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wpMediaSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wpMediaSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wpMediaSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('slug', 'id', 'date_added', 'date_updated', 'is_active', 'alt_text', 'width', 'height', 'file', 'author', 'mime_type', 'comment_status', 'wid', 'source_url', 'template', 'ping_status', 'caption', 'link', 'modified', 'guid', 'description', 'modified_gmt', 'title', 'date_gmt', 'type')</em><a class="headerlink" href="#business.serializers.wpMediaSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wpMediaSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wpMediaSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMedia</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="business.serializers.wpMediaSizeSerializer">
+<em class="property">class </em><code class="descclassname">business.serializers.</code><code class="descname">wpMediaSizeSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/business/serializers.html#wpMediaSizeSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wpMediaSizeSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="class">
+<dt id="business.serializers.wpMediaSizeSerializer.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="reference internal" href="../_modules/business/serializers.html#wpMediaSizeSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#business.serializers.wpMediaSizeSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="business.serializers.wpMediaSizeSerializer.Meta.fields">
+<code class="descname">fields</code><em class="property"> = ('pk', 'id', 'date_added', 'date_updated', 'is_active', 'name', 'file', 'mime_type', 'width', 'height', 'source_url')</em><a class="headerlink" href="#business.serializers.wpMediaSizeSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="business.serializers.wpMediaSizeSerializer.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#business.serializers.wpMediaSizeSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">wpMediaSize</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tables.html" class="btn btn-neutral float-right" title="Tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models.html" class="btn btn-neutral" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, 559 Labs.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
