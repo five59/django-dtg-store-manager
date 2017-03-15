@@ -16,3 +16,14 @@ def task_api_update_products(userid):
             user, 'Success! Product Catalog has been updated.', constants.SUCCESS)
     except Exception as e:
         message_user(user, 'API call failed. {}'.format(e), constants.ERROR)
+
+
+@shared_task
+def task_api_update_geos(userid):
+    try:
+        user = User.objects.get(pk=userid)
+        pfCountry.api_pull()
+        message_user(
+            user, "Success! Geographic data has been updated.", constants.SUCCESS)
+    except Exception as e:
+        message_user(user, "API call failed. {}".format(e), constants.ERROR)
