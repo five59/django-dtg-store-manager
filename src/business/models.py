@@ -1495,7 +1495,7 @@ class pfCatalogProduct(commonBusinessModel):
     @staticmethod
     def api_pull(store=None, key=None):
         """
-        Update the Country and State objects from the Printful API.
+        Update the product objects from the Printful API.
 
         :param store: Optional bzStore object. If not provided, method will
                 attempt to use the first store from the database if it exists.
@@ -1574,13 +1574,13 @@ class pfCatalogProduct(commonBusinessModel):
                             'name': cleanValue(p['name']),
                             'image': cleanValue(p['image']),
                             'in_stock': cleanValue(p['in_stock'], False),
-                            'price': cleanValue(p['price']),
+                            'price': Decimal(str(cleanValue(p['price']))),
                             'pfcolor': colorObj,
                             'pfsize': sizeObj,
                         }
                     )
 
-                    # Handle 'options' (Attach to variants)
+                # Handle 'options' (Attach to variants)
 
     @staticmethod
     def get_avail_sizes(obj):
@@ -1767,6 +1767,7 @@ class pfPrintFile(commonBusinessModel):
         files = api.get_file_list()
         logger.debug("pfPrintFile.api_pull / All: is_active=False")
         pfPrintFile.objects.all().update(is_active=False)
+
         for p in files:
             if p['mime_type']:
                 _mimetype, c = MimeType.objects.update_or_create(

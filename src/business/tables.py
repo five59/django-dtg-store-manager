@@ -207,7 +207,7 @@ class pfCatalogProductTable(commonBusinessTable):
 
     class Meta:
         model = pfCatalogProduct
-        fields = ('pid', 'brand', 'model', 'type', 'is_active',
+        fields = ('pid', 'brand', 'model', 'ptype', 'is_active',
                   'actions', )
         exclude = ('date_added', 'date_updated',)
         sequence = fields
