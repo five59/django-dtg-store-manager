@@ -82,10 +82,10 @@ urlpatterns += (
 # URLs for Product
 urlpatterns += (
     url(r'^product/$', appProductHome.as_view(), name='app_product_home'),
-    url(r'^product/detail-(?P<product>\S+)/$',
-        appProductHome.as_view(), name="app_product_home"),
     url(r'^product/create/$',
         bzProductFormWizard.as_view(), name="app_product_create"),
+    url(r'^product/view/(?P<product>\S+)/$',
+        appProductHome.as_view(), name="app_product_home"),
     url(r'^product/update/(?P<pk>\S+)/$',
         appProductUpdate.as_view(), name="app_product_update"),
 )
@@ -135,10 +135,10 @@ urlpatterns += (
     url(r'^lists/$', appListsHome.as_view(), name='app_lists_home'),
 
     url(r'^lists/geo/$', appListGeoList.as_view(), name='app_list_geo_list'),
-    url(r'^lists/geo/(?P<pk>\S+)/$',
-        appListGeoDetail.as_view(), name='app_list_geo_detail'),
     url(r'^lists/geo/pull/$', appListGeoPull.as_view(),
         name='app_list_geo_apipull'),
+    url(r'^lists/geo/view/(?P<pk>\S+)/$',
+        appListGeoDetail.as_view(), name='app_list_geo_detail'),
 
     url(r'^lists/color/$', appListColorList.as_view(), name='app_list_color_list'),
     url(r'^lists/color/(?P<pk>\S+)/$',

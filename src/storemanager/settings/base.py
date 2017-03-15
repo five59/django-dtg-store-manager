@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'django_tables2',
     'django_filters',
+    # "pinax.notifications",
 
     'profiles',
     'accounts',
@@ -104,6 +105,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'async_messages.middleware.AsyncMiddleware',
 )
 
 ROOT_URLCONF = 'storemanager.urls'
@@ -154,3 +156,10 @@ LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': join(BASE_DIR, '_cache'),
+    }
+}

@@ -16,9 +16,14 @@ from business.models import *
 from business.forms import *
 from business.tables import *
 from business.filters import *
+from business.tasks import *
 
 from business.helper_backend import commonListView, commonUpdateView, commonCreateView
+from celery import chain
+from authtools.admin import User
+from async_messages import message_user
 from django.contrib import messages
+from django.contrib.messages import constants
 
 
 class appListCommonListView(commonListView):
@@ -67,13 +72,9 @@ class appListGeoDetail(View):
 
 class appListGeoPull(View):
     def get(self, request):
-        try:
-            pfCountry.api_pull()
-            messages.add_message(request, messages.SUCCESS,
-                                 'Success! Countries and states have been updated.')
-        except Exception as e:
-            messages.add_message(request, messages.ERROR,
-                                 'API call failed. {}'.format(e))
+        task_api_update_geos.delay(request.user.pk)
+        message_user(
+            request.user, 'Starting update of geographic data.', constants.INFO)
         return redirect('business:app_list_geo_list')
 
 
@@ -272,14 +273,11 @@ class appListCatProductList(appListCommonListView):
 
 
 class appListCatProductPull(View):
+
     def get(self, request):
-        try:
-            pfCatalogProduct.api_pull()
-            messages.add_message(request, messages.SUCCESS,
-                                 'Success! Product Catalog has been updated.')
-        except Exception as e:
-            messages.add_message(request, messages.ERROR,
-                                 'API call failed. {}'.format(e))
+        task_api_update_products.delay(request.user.pk)
+        message_user(
+            request.user, 'Starting product catalog update.', constants.INFO)
         return redirect('business:app_list_cprod_list')
 
 
