@@ -1511,6 +1511,8 @@ class pfCatalogProduct(commonBusinessModel):
 
         logger.debug("pfCatalogProduct.api_pull / Making API Call")
         products = api.get_product_list()
+        logger.debug("pfCatalogProduct.api_pull / All: is_active=False")
+        pfCatalogProduct.objects.all().update(is_active=False)
         for p in products:
 
             # {
@@ -1521,8 +1523,6 @@ class pfCatalogProduct(commonBusinessModel):
             # 'files': [
             #     {'id': 'preview', 'title': 'Mockup', 'type': 'mockup', 'additional_price': None}
             # ]}
-            logger.debug("pfCatalogProduct.api_pull / All: is_active=False")
-            pfCatalogProduct.objects.all().update(is_active=False)
             pType, tCreated = pfCatalogType.objects.update_or_create(
                 name=p['type'],
                 defaults={}
