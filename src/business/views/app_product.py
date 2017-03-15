@@ -17,6 +17,24 @@ from business.tables import *
 from business.helper_backend import commonListView
 
 
+class appProductCommonListView(commonListView):
+    active_app = 'product'
+    active_apptitle = 'Product Catalog'
+    object_icon = 'sunglasses'
+
+
+class appProductCommonUpdateView(commonUpdateView):
+    active_app = 'product'
+    active_apptitle = 'Product Catalog'
+    object_icon = 'sunglasses'
+
+
+class appProductCommonCreateView(commonCreateView):
+    active_app = 'product'
+    active_apptitle = 'Product Catalog'
+    object_icon = 'sunglasses'
+
+
 class appProductHome(TemplateView):
     template_name = "app_product/home.html"
 
@@ -48,24 +66,24 @@ class appProductDetail(TemplateView):
     model = bzProduct
 
 
-class appProductCreate(CreateView):
-    model = bzProduct
-    form_class = bzProductForm
-    template_name = "business/object_form.html"
-    success_url = reverse_lazy('business:app_product_home')
+# class appProductCreate(CreateView):
+#     model = bzProduct
+#     form_class = bzProductForm
+#     template_name = "business/object_form.html"
+#     success_url = reverse_lazy('business:app_product_home')
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(appProductCreate,
+#                         self).get_context_data(**kwargs)
+#         context['mode'] = "create"
+#         context['active_app'] = "product"
+#         context['object_name'] = "Product"
+#         context['active_apptitle'] = "Product Catalog"
+#         context['action_list'] = reverse('business:app_product_home')
+#         return context
 
-    def get_context_data(self, **kwargs):
-        context = super(appProductCreate,
-                        self).get_context_data(**kwargs)
-        context['mode'] = "create"
-        context['active_app'] = "product"
-        context['object_name'] = "Product"
-        context['active_apptitle'] = "Product Catalog"
-        context['action_list'] = reverse('business:app_product_home')
-        return context
 
-
-class appProductUpdate(UpdateView):
+class appProductUpdate(appProductCommonUpdateView):
     model = bzProduct
     form_class = bzProductForm
     template_name = "business/object_form.html"
@@ -75,8 +93,5 @@ class appProductUpdate(UpdateView):
         context = super(appProductUpdate,
                         self).get_context_data(**kwargs)
         context['mode'] = "update"
-        context['active_app'] = "product"
-        context['object_name'] = "Product"
-        context['active_apptitle'] = "Product Catalog"
         context['action_list'] = reverse('business:app_product_home')
         return context

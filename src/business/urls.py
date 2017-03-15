@@ -117,8 +117,12 @@ urlpatterns += (
 # URLs for DAMS App
 urlpatterns += (
     url(r'^dams/$', appDAMSHome.as_view(), name='app_dams_home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
-    # url(r'^/$', appHome.as_view(), name='app__home'),
+    url(r'^dams/printful/$', appDAMSPFList.as_view(), name='app_dams_pf_list'),
+    url(r'^dams/printful/pull/$', appDAMSPFApiPull.as_view(),
+        name='app_dams_pf_apipull'),
+    url(r'^dams/printful/view(?P<pk>\S+)/$',
+        appDAMSPFDetail.as_view(), name='app_dams_pf_detail'),
+    # TODO Implement appDAMSPFCreate View
 )
 
 # URLs for Content App

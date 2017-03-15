@@ -477,10 +477,9 @@ class pfCatalogSizeAdminForm(forms.ModelForm):
 
 class pfCatalogSizeAdmin(admin.ModelAdmin):
     form = pfCatalogSizeAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'code',
-                    'name', 'label_clean', 'sort_group', 'sort_order']
-    readonly_fields = ['id', 'date_added', 'date_updated', 'code',
-                       'name', 'label_clean', 'sort_group', 'sort_order']
+    list_display = ['name', 'code', 'label_clean', 'sort_group', 'sort_order']
+    readonly_fields = ['name']
+    list_filter = ['sort_group', ]
 
 
 admin.site.register(pfCatalogSize, pfCatalogSizeAdmin)
@@ -608,14 +607,35 @@ class pfPrintFileAdminForm(forms.ModelForm):
 
 class pfPrintFileAdmin(admin.ModelAdmin):
     form = pfPrintFileAdminForm
-    list_display = ['id', 'date_added', 'date_updated', 'pid', 'type',
-                    'hash', 'url', 'filename',
+    list_display = ['id', 'date_added', 'date_updated', 'pid', 'ptype',
+                    'phash', 'url', 'filename',
                     'mime_type', 'size', 'width', 'height', 'dpi',
                     'status', 'created', 'thumbnail_url', 'visible']
     readonly_fields = ['id', 'date_added', 'date_updated', 'pid',
-                       'type', 'hash', 'url', 'filename',
+                       'ptype', 'phash', 'url', 'filename',
                        'mime_type', 'size', 'width', 'height', 'dpi',
                        'status', 'created', 'thumbnail_url', 'visible']
 
 
 admin.site.register(pfPrintFile, pfPrintFileAdmin)
+
+
+class MimeTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(MimeType, MimeTypeAdmin)
+
+
+class pfFileTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(pfFileType, pfFileTypeAdmin)
+
+
+class pfFileStatusAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(pfFileStatus, pfFileStatusAdmin)

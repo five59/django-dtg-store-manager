@@ -6,6 +6,7 @@ from crispy_forms.bootstrap import *
 from django.contrib.auth import get_user_model
 from .models import *
 from crispy_unforms.layout import *
+from django.urls import reverse_lazy
 
 User = get_user_model()
 
@@ -50,8 +51,14 @@ class businessCommonForm(forms.ModelForm):
             Div(
                 Div("",
                     HTML(
-                        """<a href="{{ action_list }}" role="button" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back</a>"""),
-                    HTML("""<button class='btn btn-primary' type="submit" name="update" class="submit submitButton" id="submit-id-search">Save <span class='glyphicon glyphicon-menu-right'></button>"""),
+                        """
+                        <a href="{{ action_list }}" role="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        {% if action_list_label %}{{ action_list_label }}{% else %}Back{% endif %}</a>"""),
+                    HTML("""
+                         <button class='btn btn-primary' type="submit" name="update" class="submit submitButton" id="submit-id-search">
+                         {% if action_list_save_label %}{{ action_list_save_label }}{% else %}Save{% endif %}
+                         <span class='glyphicon glyphicon-menu-right'></button>"""),
                     # Submit(<button type="submit">this button submits the form</button>
                     #     'update', "<span class='glyphicon glyphicon-menu-right'> Save", css_class="btn-primary"),
                     css_class="btn-group pull-right", role="group"),
@@ -594,6 +601,6 @@ class pfPrintFileForm(businessCommonForm):
 
     class Meta:
         model = pfPrintFile
-        fields = ['pid', 'type', 'hash', 'url', 'filename', 'mime_type',
+        fields = ['pid', 'ptype', 'phash', 'url', 'filename', 'mime_type',
                   'size', 'width', 'height', 'dpi', 'status', 'created',
                   'thumbnail_url', 'visible', 'pfstore']

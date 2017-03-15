@@ -216,7 +216,7 @@ class pfCatalogProductTable(commonBusinessTable):
 
 class pfCatalogSizeTable(commonBusinessTable):
     ACTION_TEMPLATE = commonBusinessTable.ACTION_TEMPLATE.replace(
-        '[M]', 'app_list_color')
+        '[M]', 'app_list_size')
     actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
     code = tables.LinkColumn(
         viewname='business:app_list_size_update', args=[A('pk')],
@@ -253,10 +253,34 @@ class pfCountryTable(commonBusinessTable):
 
 
 class pfPrintFileTable(commonBusinessTable):
+    ACTION_TEMPLATE = '''
+       <a href="{% url 'business:app_dams_pf_detail' record.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    '''
+
+    # Used as the attrs of the primary link.
+    PRIMARY_BUTTON_ATTRS = {'a': {'class': 'btn btn-primary btn-xs'}}
+
+    date_added = None
+    date_updated = None
+    actions = tables.TemplateColumn(ACTION_TEMPLATE, verbose_name="")
+    filename = tables.LinkColumn(
+        viewname='business:app_dams_pf_detail', args=[A('pk')],
+        attrs={**commonBusinessTable.PRIMARY_BUTTON_ATTRS}
+    )
 
     class Meta:
         model = pfPrintFile
+        sequence = ('filename', 'pfstore', 'ptype', 'mime_type',
+                    'dimensions', 'status', 'visible', 'is_active', 'actions',)
+        fields = sequence
+        # exclude = ('date_added', 'date_updated', 'id')
         attrs = {'class': 'table table-striped table-hover'}
+
+    def render_date_added(self, value):
+        return titlecase(naturaltime(value))
+
+    def render_date_updated(self, value):
+        return titlecase(naturaltime(value))
 
 
 class pfStateTable(commonBusinessTable):

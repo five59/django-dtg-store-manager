@@ -473,6 +473,11 @@ class bzProduct(commonBusinessModel):
                                verbose_name=_("Sync Product"),
                                blank=True, null=True, )
 
+    colors = ManyToManyField('business.pfCatalogColor',
+                             blank=True, verbose_name=_("Colors"))
+    sizes = ManyToManyField('business.pfCatalogSize',
+                            blank=True, verbose_name=_("Sizes"))
+
     class Meta:
         ordering = ('code',)
         verbose_name = _("Product")
@@ -504,6 +509,18 @@ class bzProduct(commonBusinessModel):
     def num_variants(self):
         return self.get_variants().count()
     num_variants.short_description = _("Variants")
+
+    def get_colors_as_string(self):
+        rv = []
+        for i in self.colors.all():
+            rv.append(i.__str__())
+        return ", ".join(rv)
+
+    def get_sizes_as_string(self):
+        rv = []
+        for i in self.sizes.all():
+            rv.append(i.__str__())
+        return ", ".join(rv)
 
 
 class bzProductVariant(commonBusinessModel):
@@ -1427,6 +1444,54 @@ class pfCatalogProduct(commonBusinessModel):
         return reverse(
             'business:business_pfcatalogproduct_update', args=(self.pk,))
 
+    def get_variants(self):
+        return pfCatalogVariant.objects.filter(pfcatalogproduct=self)
+    get_variants.short_description = _("Variants")
+
+    def get_colors(self):
+        """
+        Get all color objects associated with this product's variants.
+        """
+        return pfCatalogColor.objects.filter(pfcatalogvariant__in=self.get_variants()).distinct()
+    get_colors.short_description = _("Colors")
+
+    def get_colors_as_string(self):
+        c = self.get_colors()
+        if c:
+            rv = ", ".join([v.label for v in c])
+        else:
+            rv = "-"
+        return rv
+    get_colors_as_string.short_description = _("Available Colors")
+
+    def num_colors(self):
+        return self.get_colors().count()
+    num_colors.short_description = _("Colors")
+
+    def get_sizes(self):
+        return pfCatalogSize.objects.filter(pfcatalogvariant__in=self.get_variants()).distinct()
+    get_sizes.short_description = _("Sizes")
+
+    def get_sizes_as_string(self):
+        s = self.get_sizes()
+        if s:
+            rv = ", ".join([v.get_name() for v in s])
+        else:
+            rv = "-"
+        return rv
+    get_sizes_as_string.short_description = _("Available Sizes")
+
+    def num_sizes(self):
+        return self.get_sizes().count()
+    num_sizes.short_description = _("Sizes")
+
+    def get_out_of_stock(self):
+        return pfCatalogVariant.objects.filter(pfcatalogproduct=self, in_stock=False)
+
+    def num_out_of_stock(self):
+        return self.get_out_of_stock().count()
+    num_out_of_stock.short_description = _("Out of Stock")
+
     @staticmethod
     def api_pull(store=None, key=None):
         """
@@ -1482,9 +1547,48 @@ class pfCatalogProduct(commonBusinessModel):
             # Handle 'files'
             # Handle 'dimensions'
             if pObj.variant_count:
-                # Handle variants
-                # Handle 'options' (Attach to variants)
-                pass
+                variants = api.get_product_info(pObj.pid)
+                pfCatalogVariant.objects.all().update(is_active=False)
+
+                for p in variants['variants']:
+                    colorObj = None
+                    if p['color']:
+                        colorObj, colCreated = pfCatalogColor.objects.update_or_create(
+                            name=cleanValue(p['color']),
+                            defaults={
+                                'hex_code': cleanValue(p['color_code']),
+                            }
+                        )
+
+                    sizeObj = None
+                    if p['size']:
+                        sizeObj, szCreated = pfCatalogSize.objects.update_or_create(
+                            name=cleanValue(p['size']),
+                            defaults={}
+                        )
+
+                    vObj, vCreated = pfCatalogVariant.objects.update_or_create(
+                        pid=p['id'],
+                        pfcatalogproduct=pObj,
+                        defaults={
+                            'name': cleanValue(p['name']),
+                            'image': cleanValue(p['image']),
+                            'in_stock': cleanValue(p['in_stock'], False),
+                            'price': cleanValue(p['price']),
+                            'pfcolor': colorObj,
+                            'pfsize': sizeObj,
+                        }
+                    )
+
+                    # Handle 'options' (Attach to variants)
+
+    @staticmethod
+    def get_avail_sizes(obj):
+        return obj.get_sizes()
+
+    @staticmethod
+    def get_avail_colors(obj):
+        return obj.get_colors()
 
 
 class pfCatalogVariant(commonBusinessModel):
@@ -1506,6 +1610,10 @@ class pfCatalogVariant(commonBusinessModel):
     # Relationship Fields
     pfsize = ForeignKey('business.pfCatalogSize', blank=True,
                         null=True, verbose_name=_("Size"))
+    pfcolor = ForeignKey('business.pfCatalogColor', blank=True,
+                         null=True, verbose_name=_("Color"))
+    pfcatalogproduct = ForeignKey('business.pfCatalogProduct', blank=True,
+                                  null=True, verbose_name=_("Catalog Product"))
 
     class Meta:
         ordering = ('-pk',)
@@ -1524,34 +1632,96 @@ class pfCatalogVariant(commonBusinessModel):
             'business:business_pfcatalogvariant_update', args=(self.pk,))
 
 
+class MimeType(commonBusinessModel):
+    name = CharField(_("Name"), max_length=255,
+                     null=True, blank=True, default="")
+    clean_name = CharField(_("Friendly Name"), max_length=255,
+                           null=True, blank=True, default="")
+
+    def __str__(self):
+        if self.clean_name:
+            return self.clean_name
+        if self.name:
+            return self.name
+        return "Unknown"
+
+    class Meta:
+        ordering = ('clean_name', 'name',)
+        verbose_name = _("MIME Type")
+        verbose_name_plural = _("MIME Types")
+
+
+class pfFileType(commonBusinessModel):
+    name = CharField(_("Name"), max_length=255,
+                     null=True, blank=True, default="")
+    clean_name = CharField(_("Friendly Name"), max_length=255,
+                           null=True, blank=True, default="")
+
+    def __str__(self):
+        if self.clean_name:
+            return self.clean_name
+        if self.name:
+            return self.name
+        return "Unknown"
+
+    class Meta:
+        ordering = ('clean_name', 'name',)
+        verbose_name = _("File Type")
+        verbose_name_plural = _("File Types")
+
+
+class pfFileStatus(commonBusinessModel):
+    name = CharField(_("Name"), max_length=255,
+                     null=True, blank=True, default="")
+    clean_name = CharField(_("Friendly Name"), max_length=255,
+                           null=True, blank=True, default="")
+
+    def __str__(self):
+        if self.clean_name:
+            return self.clean_name
+        if self.name:
+            return self.name
+        return "Unknown"
+
+    class Meta:
+        ordering = ('clean_name', 'name',)
+        verbose_name = _("File Status")
+        verbose_name_plural = _("File Statuses")
+
+
 class pfPrintFile(commonBusinessModel):
 
     # Fields
     pid = IntegerField(_("Printful ID"), default=0)
-    type = CharField(_("Type"), max_length=255,
-                     default="", blank=True, null=True)
-    hash = CharField(_("Hash"), max_length=255,
-                     default="", blank=True, null=True)
+    phash = CharField(_("Hash"), max_length=255,
+                      default="", blank=True, null=True)
     url = CharField(_("URL"), max_length=255,
                     default="", blank=True, null=True)
     filename = CharField(_("Filename"), max_length=255,
                          default="", blank=True, null=True)
-    mime_type = CharField(_("MIME Type"), max_length=255,
-                          default="", blank=True, null=True)
     size = IntegerField(_("Size"), default=0)
     width = IntegerField(_("Width"), default=0)
     height = IntegerField(_("Height"), default=0)
     dpi = IntegerField(_("DPI"), default=0)
-    status = CharField(_("Status"), max_length=255,
-                       default="", blank=True, null=True)
     created = CharField(_("Created"), max_length=255,
                         default="", blank=True, null=True)
     thumbnail_url = CharField(
         _("Thumbnail URL"), max_length=255, default="", blank=True, null=True)
+    preview_url = CharField(
+        _("Preview URL"), max_length=255, default="", blank=True, null=True)
     visible = BooleanField(_("Visible"), default=False)
+    is_active = BooleanField(_("Active"), default=True)
 
     # Relationship Fields
-    pfstore = models.ForeignKey('business.pfStore', )
+    mime_type = ForeignKey("business.MimeType",
+                           verbose_name="MIME Type", blank=True, null=True)
+    ptype = ForeignKey("business.pfFileType",
+                       verbose_name="File Type", blank=True, null=True)
+    status = ForeignKey("business.pfFileStatus",
+                        verbose_name="File Status", blank=True, null=True)
+    pfstore = models.ForeignKey('business.pfStore', verbose_name="Store")
+    filespec = models.ForeignKey(
+        'business.pfCatalogFileSpec', verbose_name="File Spec", blank=True, null=True)
 
     class Meta:
         ordering = ('-created',)
@@ -1566,6 +1736,87 @@ class pfPrintFile(commonBusinessModel):
 
     def get_update_url(self):
         return reverse('business:business_pfprintfile_update', args=(self.pk,))
+
+    def dimensions(self, dpi=300):
+        if self.width and self.height:
+            rv = '{}" x {}" / {}dpi'.format(
+                str(int(self.width / 300)),
+                str(int(self.height / 300)),
+                dpi,
+            )
+        else:
+            rv = "Unknown"
+        return rv
+    dimensions.short_description = "Dimensions"
+
+    @staticmethod
+    def api_pull(store=None):
+        """
+        Update the file list from your Printful store.
+
+        :param store: pfStore object.
+        """
+        if store:
+            _storeObj = pfStore.get_store(store)
+            api = pyPrintful(key=_storeObj.key)
+        else:
+            raise("A pfStore object is required.")
+
+        # TODO Implement paging in this call.
+        logger.debug("pfPrintFile.api_pull / Making API Call")
+        files = api.get_file_list()
+        logger.debug("pfPrintFile.api_pull / All: is_active=False")
+        pfPrintFile.objects.all().update(is_active=False)
+        for p in files:
+            if p['mime_type']:
+                _mimetype, c = MimeType.objects.update_or_create(
+                    name=p['mime_type'],
+                    defaults={}
+                )
+            else:
+                _mimetype = None
+
+            if p['status']:
+                _status, c = pfFileStatus.objects.update_or_create(
+                    name=p['status'],
+                    defaults={}
+                )
+            else:
+                _status = None
+
+            if p['type']:
+                _ptype, c = pfFileType.objects.update_or_create(
+                    name=p['type'],
+                    defaults={}
+                )
+            else:
+                _ptype = None
+
+            pObj, pCreated = pfPrintFile.objects.update_or_create(
+                pid=p['id'],
+                pfstore=_storeObj,
+                defaults={
+                    'is_active': True,
+                    'phash': cleanValue(p['hash']),
+                    'url': cleanValue(p['url']),
+                    'filename': cleanValue(p['filename']),
+                    'size': cleanValue(p['size'], 0),
+                    'width': cleanValue(p['width'], 0),
+                    'height': cleanValue(p['height'], 0),
+                    'dpi': cleanValue(p['dpi'], 0),
+                    'created': cleanValue(p['created']),
+                    'thumbnail_url': cleanValue(p['thumbnail_url']),
+                    'preview_url': cleanValue(p['preview_url']),
+                    'visible': cleanValue(p['visible'], True),
+
+                    'mime_type': _mimetype,
+                    'status': _status,
+                    'ptype': _ptype,
+
+                }
+            )
+
+        logger.debug("pfPrintFile.api_pull / {} {}", pCreated, pObj)
 
 
 class pfAddress(commonBusinessModel):

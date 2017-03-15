@@ -78,7 +78,14 @@
                 <th>Brand</th>
                 <td>{{ active_product.bzDesign.bzcreativecollection.bzbrand }}</td>
               </tr>
-
+              <tr>
+                <th>Colors</th>
+                <td><strong>{{ active_product.colors.count|apnumber|title }}:</strong> {{ active_product.get_colors_as_string }}</td>
+              </tr>
+              <tr>
+                <th>Sizes</th>
+                <td><strong>{{ active_product.sizes.count|apnumber|title }}:</strong> {{ active_product.get_sizes_as_string }}</td>
+              </tr>
               <tr>
                 <th>Printful Product</th>
                 <td>{{ active_product.pfProduct }}</td>

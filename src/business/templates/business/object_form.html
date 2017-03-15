@@ -8,18 +8,26 @@
 
 {% block container %}
 <form method="post">
+  {{ wizard.form.media }}
+  {{ wizard.management_form }}
+  {% csrf_token %}
 
   <div class="container business-head">
     <div class="row">
       <div class="col-md-8">
         <h2>
           {% if object_icon %}<small><span class="glyphicon glyphicon-{{ object_icon }}"></span></small>{% endif %}
-          {{ object_name }}</h2>
+          {{ object_name }}
+        </h2>
       </div>
       <div class="col-md-4">
         <div class="text-right">
           <div class="btn-group" role="group">
             {# <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button>#}
+            {% if wizard.steps.prev %}
+              <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "Start Over" %}</button>
+              <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Back" %}</button>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -29,38 +37,37 @@
   <div class="container business-body">
     <div class="row">
       <div class="col-md-12">
-          {% csrf_token %}
 
           {% if wizard %}
 
-          {{ wizard.form.media }}
-          {{ wizard.management_form }}
-          {% if wizard.form.forms %}
-          <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
-
-              {{ wizard.form.management_form }}
-              {% for form in wizard.form.forms %}
-                  {% crispy form %}
+            {% if wizard.steps %}
+              {% for f in wizardstepcount %}
+              <span class="label label-{% if f == wizard.steps.step1 %}primary{% else %}default{% endif %}">{{ f }}</span>
               {% endfor %}
-          {% else %}
-              {% crispy wizard.form %}
-          {% endif %}
-          {% if wizard.steps.prev %}
-            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "Start Over" %}</button>
-            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Back" %}</button>
-          {% endif %}
+            {% endif %}
+
+            {% if wizard.form.forms %}
+                {{ wizard.form.management_form }}
+                {% for form in wizard.form.forms %}
+                    {% crispy form %}
+                {% endfor %}
+            {% else %}
+                {% crispy wizard.form %}
+            {% endif %}
 
           {% else %}
 
-            {% crispy form %}
+              {% crispy form %}
 
           {% endif %}
+
 
 
       </div>
     </div>
   </div>
 </form>
+
 
 
 
